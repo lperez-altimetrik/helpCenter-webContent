@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categories",
+  "info": {
+    "singularName": "category",
+    "pluralName": "categories",
+    "displayName": "Category",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "mainArticles": {
+      "type": "dynamiczone",
+      "components": [
+        "text.article"
+      ]
+    },
+    "moreHelp": {
+      "type": "dynamiczone",
+      "components": [
+        "text.help"
+      ]
+    }
+  }
+}
