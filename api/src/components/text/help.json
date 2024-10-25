@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_text_helps",
+  "info": {
+    "displayName": "help"
+  },
+  "options": {},
+  "attributes": {
+    "needHelp": {
+      "type": "string"
+    }
+  }
+}

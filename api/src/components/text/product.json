@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_text_products",
+  "info": {
+    "displayName": "product"
+  },
+  "options": {},
+  "attributes": {
+    "product": {
+      "type": "richtext"
+    }
+  }
+}
