@@ -1,55 +1,27 @@
-# Help Center - Strapi
+# Client
 
-Welcome to Help Center.
-This repository contains the following:
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11.
 
-- Strapi project with existing Content-types and data (`/api`)
-- Angular client ready to fetch the content of the Strapi application (`/client`)
+## Development server
 
-## Get started
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-You can get started with this project locally on your machine by following the instructions below.
+## Code scaffolding
 
-## Prerequisites
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-Before installing Strapi, the following requirements must be installed on your computer:
+## Build
 
-Node.js: Only Active LTS or Maintenance LTS versions are supported (currently v18 and v20). Odd-number releases of Node, known as "current" versions of Node.js, are not supported (e.g. v19, v21).
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-Your preferred Node.js package manager:
-  npm (v6 and above)
-  yarn
+## Running unit tests
 
-Python (if using a SQLite database)
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## 1. Start Strapi
+## Running end-to-end tests
 
-Navigate to your `./my-projects/helpCenter-project/api` folder by running `cd api` from your command line.
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-- Run the following command in your `./helpCenter-project/api` folder:
+## Further help
 
-```
-npm run develop || yarn develop
-```
-
-This will install the dependencies, fill your application with data and run your server. You can run these commands separately.
-
-#### Credentials
-
-- Super Admin:
-  - email: lperez@altimetrik.com
-  - password: 6uv3@ZtqyCBnisC
-
-## 3. Start Angular
-
-Navigate to your `./my-projects/helpCenter-project/client` folder by running `cd client` from your command line.
-
-- Run the following command in your `./helpCenter-project/client` folder
-
-```
-yarn && yarn dev
-```
-
-This will install the dependencies, and run your server. You can run these commands separately.
-
-
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
