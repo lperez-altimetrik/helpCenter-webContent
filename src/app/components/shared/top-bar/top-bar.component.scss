@@ -1,0 +1,40 @@
+$primary-color: #5A28FF;
+$seconday-color: #FFFFFF;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: $primary-color;
+    color: $seconday-color;
+}
+
+.logo img {
+    height: 50px;
+
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+}
+
+.rh-button {
+    background-color: $primary-color;
+    color: $seconday-color;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 0px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: adjust-color($color: $primary-color, $hue: 0, $saturation: 0%, $lightness: 50%, $alpha: 1.0);
+}
+
+.language-button:hover {
+    background-color: adjust-color($color: $primary-color, $hue: 0, $saturation: 0%, $lightness: 50%, $alpha: 1.0);
+}

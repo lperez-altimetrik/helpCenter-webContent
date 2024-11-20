@@ -9,4 +9,21 @@ import { Component } from '@angular/core';
 })
 export class TopBarComponent {
 
+  constructor() {}
+
+  ngOnInit(): void {
+
+  }
+
+  onLogin() {
+    //Login logic here 
+    //link to login page
+    console.log('login button clicked');
+  }
+
+  onLang() {
+    //Language/region logic here
+    console.log('language button clicked');
+  }
+
 }
