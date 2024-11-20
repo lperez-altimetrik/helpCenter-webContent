@@ -1,14 +1,17 @@
-<p>top-bar works!</p>
-
 <header class="header">
     <div class="logo">
-        <img src="" 
+        <img src="../../../../assets/icons/top-bar/Logo_White.svg" 
         alt="Company Logo">
     </div>
     <nav class="navigation">
         <div class="button-container">
-            <button (click)="onLogin()" class="rh-button">Login</button>
-            <button (click)="onLang()" class="rh-button">Language</button>
+            <button (click)="onLogin()" class="rh-button login">Login</button>
+            <div class="divider">
+                <img src="../../../../assets/icons/top-bar/Divider.svg">
+            </div>
+            <button (click)="onLang()" class="rh-button language">
+                <img src="../../../../assets/icons/top-bar/captive_portal.svg">
+            </button>
         </div>
     </nav>
 </header>

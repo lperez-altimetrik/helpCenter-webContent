@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { inject } from '@angular/core';
 
 @Component({
   selector: 'app-top-bar',
@@ -8,6 +10,7 @@ import { Component } from '@angular/core';
   styleUrl: './top-bar.component.scss'
 })
 export class TopBarComponent {
+  private router = inject(Router);
 
   constructor() {}
 
@@ -18,6 +21,7 @@ export class TopBarComponent {
   onLogin() {
     //Login logic here 
     //link to login page
+    this.router.navigate(['/dashboard']);
     console.log('login button clicked');
   }
 
