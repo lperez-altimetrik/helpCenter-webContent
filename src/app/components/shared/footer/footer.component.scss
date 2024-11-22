@@ -1,0 +1,60 @@
+
+
+.footer {
+    background: var(--color-grey-90, #141414);
+    display: flex;
+    width: 1440px;
+    padding: var(--spacing-8, 32px) var(--spacing-7, 24px);
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    nav {
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 24px;
+            align-self: stretch;
+            li {
+                cursor: pointer;
+                overflow: hidden;
+                color: var(--color-fg-invert, #FFF);
+                text-align: center;
+                leading-trim: both;
+                text-edge: cap;
+                font-variant-numeric: lining-nums;
+                text-overflow: ellipsis;
+
+                /* label/sm/regular */
+                font-family: Inter;
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+        }
+    }
+    .sm-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        align-self: stretch;
+        small {
+            overflow: hidden;
+            color: var(--color-fg-tertiary, #787D78);
+            text-align: center;
+            font-variant-numeric: lining-nums;
+            text-overflow: ellipsis;
+
+            /* label/sm/regular */
+            font-family: Inter;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+}
