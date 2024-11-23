@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { inject } from '@angular/core';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDividerModule} from '@angular/material/divider';
 
 @Component({
   selector: 'app-top-bar',
   standalone: true,
-  imports: [],
+  imports: [MatButtonModule,MatDividerModule,MatIconModule],
   templateUrl: './top-bar.component.html',
   styleUrl: './top-bar.component.scss'
 })

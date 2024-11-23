@@ -1,17 +1,17 @@
 <header class="header">
     <div class="logo">
-        <img src="../../../../assets/icons/top-bar/Logo_White.svg" 
-        alt="Company Logo">
+        <img src="../../../../assets/icons/top-bar/Optic_Logo_White.svg" 
+        alt="Optic Logo">
     </div>
     <nav class="navigation">
         <div class="button-container">
-            <button (click)="onLogin()" class="rh-button login">Login</button>
-            <div class="divider">
-                <img src="../../../../assets/icons/top-bar/Divider.svg">
-            </div>
-            <button (click)="onLang()" class="rh-button language">
-                <img src="../../../../assets/icons/top-bar/captive_portal.svg">
+            <button mat-button (click)="onLogin()" class="rh-button login-button">Login</button>
+            <mat-divider class="divider" [vertical]="true"></mat-divider>
+            <button mat-icon-button color="primary" class="rh-button language-button" (click)="onLang()" aria-label="Language/Region Button">
+                <mat-icon class="language-icon">home</mat-icon>
             </button>
+            <mat-icon>captive_portal</mat-icon>
+            
         </div>
     </nav>
 </header>
