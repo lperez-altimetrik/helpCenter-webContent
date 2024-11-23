@@ -8,8 +8,6 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'top-bar-test', component: TopBarComponent},
-  { path: 'footer-test', component: FooterComponent},
   {
     path: 'dashboard',
     component: DashboardComponent,
