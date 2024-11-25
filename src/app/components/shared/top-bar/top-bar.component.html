@@ -1,1 +1,17 @@
-<p>top-bar works!</p>
+<header class="header">
+    <div class="logo">
+        <img src="../../../../assets/icons/top-bar/Optic_Logo_White.svg" 
+        alt="Optic Logo">
+    </div>
+    <nav class="navigation">
+        <div class="button-container">
+            <button mat-button (click)="onLogin()" class="rh-button login-button">Login</button>
+            <mat-divider class="divider" [vertical]="true"></mat-divider>
+            <button mat-icon-button color="primary" class="rh-button language-button" (click)="onLang()" aria-label="Language/Region Button">
+                <!--instead of "language" below want captive-portal -->
+                <mat-icon class="language-icon">language</mat-icon>
+            </button>
+            
+        </div>
+    </nav>
+</header>
