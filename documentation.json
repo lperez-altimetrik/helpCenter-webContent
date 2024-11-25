@@ -4,7 +4,7 @@
     "injectables": [
         {
             "name": "AuthService",
-            "id": "injectable-AuthService-4ddf65b9a1b61d7f59e03a3aea3211770db8f65b8d00c5bc441f1171ad01171d1ca7ed56c0275ebcf0938d1b4c592e2c8c58b78c0939b1161e01c6eb075635f8",
+            "id": "injectable-AuthService-19f8a7c214ea5290d02d75d330d4f56412ef238435b862caa607aa8ae493ab96d0d21fbbabf54ac9a3e5850db3b298c4cd27e9fbf6eb0374876a5463f48c7ef2",
             "file": "src/app/services/auth.service.ts",
             "properties": [
                 {
@@ -130,13 +130,13 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { inject, Injectable } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { CookieService } from 'ngx-cookie-service';\n\n@Injectable({\n  providedIn: 'root',\n})\nexport class AuthService {\n  private readonly TOKEN_KEY = 'auth_token';\n\n  private router = inject(Router);\n  private cookieService = inject(CookieService);\n\n  login(username: string, password: string): boolean {\n    if (username === 'root' && password === 'root') {\n      this.cookieService.set(this.TOKEN_KEY, 'mock-token', 1);\n      return true;\n    }\n    return false;\n  }\n\n  logout(): void {\n    this.cookieService.delete(this.TOKEN_KEY);\n    this.router.navigate(['/login']);\n  }\n\n  isLoggedIn(): boolean {\n    return this.cookieService.check(this.TOKEN_KEY);\n  }\n\n  getToken(): string | null {\n    return this.cookieService.get(this.TOKEN_KEY);\n  }\n}\n",
+            "sourceCode": "import { inject, Injectable } from '@angular/core';\r\nimport { Router } from '@angular/router';\r\nimport { CookieService } from 'ngx-cookie-service';\r\n\r\n@Injectable({\r\n  providedIn: 'root',\r\n})\r\nexport class AuthService {\r\n  private readonly TOKEN_KEY = 'auth_token';\r\n\r\n  private router = inject(Router);\r\n  private cookieService = inject(CookieService);\r\n\r\n  login(username: string, password: string): boolean {\r\n    if (username === 'root' && password === 'root') {\r\n      this.cookieService.set(this.TOKEN_KEY, 'mock-token', 1);\r\n      return true;\r\n    }\r\n    return false;\r\n  }\r\n\r\n  logout(): void {\r\n    this.cookieService.delete(this.TOKEN_KEY);\r\n    this.router.navigate(['/login']);\r\n  }\r\n\r\n  isLoggedIn(): boolean {\r\n    return this.cookieService.check(this.TOKEN_KEY);\r\n  }\r\n\r\n  getToken(): string | null {\r\n    return this.cookieService.get(this.TOKEN_KEY);\r\n  }\r\n}\r\n",
             "extends": [],
             "type": "injectable"
         },
         {
             "name": "StrapiService",
-            "id": "injectable-StrapiService-66c205f2a803b4c69e23ac70bf34000017f9f25d7b39361b4835a96116d351854269886e8815e44e47b01f9c6ab735d9d8d4f926176f5fee5cd2ba02fffee0ab",
+            "id": "injectable-StrapiService-145dbc31a756a65e4384897c993cbaabcab1b79304d9ab05fbd1762ca34bb644929f3749677d09a009f5585575d7a194fb60d006e0d9dd5a39c516176b514ce4",
             "file": "src/app/services/strapi-service.ts",
             "properties": [
                 {
@@ -170,7 +170,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\nimport { HttpClient } from '@angular/common/http';\nimport { Observable } from 'rxjs';\n\n@Injectable({ \n    providedIn: 'root'\n})\n\nexport class StrapiService {\n    private apiUrl = 'http://localhost:1337';  \n\n    constructor(private http: HttpClient) {}\n\n    getPosts(): Observable<any> {\n        return this.http.get(`${this.apiUrl}/api/restaurants)`);\n    }\n}\n\n    ",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { HttpClient } from '@angular/common/http';\r\nimport { Observable } from 'rxjs';\r\n\r\n@Injectable({ \r\n    providedIn: 'root'\r\n})\r\n\r\nexport class StrapiService {\r\n    private apiUrl = 'http://localhost:1337';  \r\n\r\n    constructor(private http: HttpClient) {}\r\n\r\n    getPosts(): Observable<any> {\r\n        return this.http.get(`${this.apiUrl}/api/restaurants)`);\r\n    }\r\n}\r\n\r\n    ",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -208,7 +208,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-4b2635fdfd444ee6020a31081b739a0026013e15b76b03ca7d52d220b39bd500941c7b64d37b1026f1ac98a473a1ef930da59d5042c9068eca588e2b56d1f1df",
+            "id": "component-AppComponent-500c87b1ba87d72e5920cf80b5a9b42666326b8e30808d38c60529dc177576e739d0f5a923bcbac740d6b74b7a09608017aa7d582dd2b675d6b473d93cd74cde",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -252,17 +252,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { RouterOutlet } from '@angular/router';\n\n@Component({\n  selector: 'app-root',\n  standalone: true,\n  imports: [RouterOutlet],\n  templateUrl: './app.component.html',\n  styleUrl: './app.component.scss',\n})\nexport class AppComponent {\n  title = 'client';\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { RouterOutlet } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  standalone: true,\r\n  imports: [RouterOutlet],\r\n  templateUrl: './app.component.html',\r\n  styleUrl: './app.component.scss',\r\n})\r\nexport class AppComponent {\r\n  title = 'client';\r\n}\r\n",
             "styleUrl": "./app.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<router-outlet />\n"
+            "templateData": "<router-outlet />\r\n"
         },
         {
             "name": "DashboardComponent",
-            "id": "component-DashboardComponent-2d9b382ec9f5b2260f884e15b956783e84b6c7c81922cdc594db76c215394ac86772e7541eaf684c64f18fe0441228946093edaeb803a9a638a8d7965e22521a",
+            "id": "component-DashboardComponent-58dd13d21fd47e538c851d9c1e8076fd6d5b3d7b45b013e90cb3263a325530ef7f920fd767babe1354930d5dcfc7af5b6453b2fff94431c41415e76fd341c864",
             "file": "src/app/components/dashboard/dashboard.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -331,7 +331,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { inject } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { AuthService } from '../../services/auth.service';\n\n@Component({\n  selector: 'app-dashboard',\n  standalone: true,\n  template: `\n    <div>\n      <h2>Dashboard</h2>\n      <p>Welcome to your dashboard!</p>\n      <button (click)=\"logout()\">Logout</button>\n    </div>\n  `,\n  styles: [\n    `\n      div {\n        text-align: center;\n        padding: 20px;\n      }\n      button {\n        margin-top: 20px;\n        padding: 10px 20px;\n        font-size: 16px;\n      }\n    `,\n  ],\n})\nexport class DashboardComponent {\n  private authService = inject(AuthService);\n  private router = inject(Router);\n\n  logout(): void {\n    this.authService.logout();\n    this.router.navigate(['/login']);\n  }\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { inject } from '@angular/core';\r\nimport { Router } from '@angular/router';\r\nimport { AuthService } from '../../services/auth.service';\r\n\r\n@Component({\r\n  selector: 'app-dashboard',\r\n  standalone: true,\r\n  template: `\r\n    <div>\r\n      <h2>Dashboard</h2>\r\n      <p>Welcome to your dashboard!</p>\r\n      <button (click)=\"logout()\">Logout</button>\r\n    </div>\r\n  `,\r\n  styles: [\r\n    `\r\n      div {\r\n        text-align: center;\r\n        padding: 20px;\r\n      }\r\n      button {\r\n        margin-top: 20px;\r\n        padding: 10px 20px;\r\n        font-size: 16px;\r\n      }\r\n    `,\r\n  ],\r\n})\r\nexport class DashboardComponent {\r\n  private authService = inject(AuthService);\r\n  private router = inject(Router);\r\n\r\n  logout(): void {\r\n    this.authService.logout();\r\n    this.router.navigate(['/login']);\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "\n      div {\n        text-align: center;\n        padding: 20px;\n      }\n      button {\n        margin-top: 20px;\n        padding: 10px 20px;\n        font-size: 16px;\n      }\n    \n",
@@ -339,7 +339,7 @@
         },
         {
             "name": "FooterComponent",
-            "id": "component-FooterComponent-8a60337cd99521c7582c2a72c84db07777cc4769e848fd04b47a2e0271da9c95164593ad36dab9db1ee343bdc5c1e938ce8fbb3c6d2d2aa468edd1d3aa2edf10",
+            "id": "component-FooterComponent-3995c07bfe607c4e15b332c98408073eb8b16cd19c7d86beeabce8d195abeea1152869abfa884c3065c96712ae645c34d19239e0b56444e47ef4ad0e93fd779d",
             "file": "src/app/components/shared/footer/footer.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -356,28 +356,67 @@
             "hostDirectives": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "router",
+                    "defaultValue": "inject(Router)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
             "standalone": true,
-            "imports": [],
+            "imports": [
+                {
+                    "name": "MatDividerModule",
+                    "type": "module"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-footer',\n  standalone: true,\n  imports: [],\n  templateUrl: './footer.component.html',\n  styleUrl: './footer.component.scss'\n})\nexport class FooterComponent {\n\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { Router } from '@angular/router';\r\nimport { inject } from '@angular/core';\r\nimport {MatDividerModule} from '@angular/material/divider';\r\n\r\n\r\n@Component({\r\n  selector: 'app-footer',\r\n  standalone: true,\r\n  imports: [MatDividerModule],\r\n  templateUrl: './footer.component.html',\r\n  styleUrl: './footer.component.scss'\r\n})\r\nexport class FooterComponent {\r\n\r\n  private router = inject(Router);\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {\r\n\r\n  }\r\n\r\n\r\n}",
             "styleUrl": "./footer.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 16
+            },
             "extends": [],
-            "templateData": "<p>footer works!</p>\n"
+            "templateData": "<footer class=\"footer\">\r\n    <nav class=\"navigation\">\r\n        <ul>\r\n            <li>Cookie Settings</li>\r\n            <li>Contact Us</li>\r\n            <li>Privacy Policy</li>\r\n            <li>Regulatory Disclosures</li>\r\n        </ul>\r\n    </nav>\r\n    <mat-divider class=\"divider\" [vertical]=\"true\"></mat-divider>\r\n    <div class=\"sm-container\">\r\n        <small>Copyright © 2024 Paysafe Holdings UK Limited. All rights reserved. Paysafe Financial Services Limited (FRN:900015)</small>\r\n    </div>\r\n</footer>"
         },
         {
             "name": "LoginComponent",
-            "id": "component-LoginComponent-b5e7cf8e851cb255e128562c2589004b1e5ed8d64b5016039b97857964063dc0fed7da044fd5ed7bf502f4126e1c379982c5a285799a3c80a669cef8c4df45b6",
+            "id": "component-LoginComponent-535ea40e48f1cb3a098f99689890784d1f02f56e72a21c8e58052b274fc4b220d2135cac75fce402750399bf90bb8c6f46957f3002b44db4458e70e90c4a1066",
             "file": "src/app/components/login/login.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -488,7 +527,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { inject } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { AuthService } from '../../services/auth.service';\nimport { FormsModule } from '@angular/forms';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n  selector: 'app-login',\n  standalone: true,\n  imports: [CommonModule, FormsModule],\n  template: `\n    <div>\n      <h2>Login</h2>\n      <form (ngSubmit)=\"onLogin()\">\n        <input\n          type=\"text\"\n          [(ngModel)]=\"username\"\n          name=\"username\"\n          placeholder=\"Username\"\n          required\n        />\n        <input\n          type=\"password\"\n          [(ngModel)]=\"password\"\n          name=\"password\"\n          placeholder=\"Password\"\n          required\n        />\n        <button type=\"submit\">Login</button>\n      </form>\n      <p *ngIf=\"loginFailed\" class=\"error\">\n        Invalid credentials. Please try again.\n      </p>\n    </div>\n  `,\n  styles: [\n    `\n      .error {\n        color: red;\n      }\n    `,\n  ],\n})\nexport class LoginComponent {\n  username: string = '';\n  password: string = '';\n  loginFailed: boolean = false;\n\n  private authService = inject(AuthService);\n  private router = inject(Router);\n\n  onLogin(): void {\n    const isLoggedIn = this.authService.login(this.username, this.password);\n    if (isLoggedIn) {\n      this.router.navigate(['/dashboard']);\n    } else {\n      this.loginFailed = true;\n    }\n  }\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { inject } from '@angular/core';\r\nimport { Router } from '@angular/router';\r\nimport { AuthService } from '../../services/auth.service';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { CommonModule } from '@angular/common';\r\n\r\n@Component({\r\n  selector: 'app-login',\r\n  standalone: true,\r\n  imports: [CommonModule, FormsModule],\r\n  template: `\r\n    <div>\r\n      <h2>Login</h2>\r\n      <form (ngSubmit)=\"onLogin()\">\r\n        <input\r\n          type=\"text\"\r\n          [(ngModel)]=\"username\"\r\n          name=\"username\"\r\n          placeholder=\"Username\"\r\n          required\r\n        />\r\n        <input\r\n          type=\"password\"\r\n          [(ngModel)]=\"password\"\r\n          name=\"password\"\r\n          placeholder=\"Password\"\r\n          required\r\n        />\r\n        <button type=\"submit\">Login</button>\r\n      </form>\r\n      <p *ngIf=\"loginFailed\" class=\"error\">\r\n        Invalid credentials. Please try again.\r\n      </p>\r\n    </div>\r\n  `,\r\n  styles: [\r\n    `\r\n      .error {\r\n        color: red;\r\n      }\r\n    `,\r\n  ],\r\n})\r\nexport class LoginComponent {\r\n  username: string = '';\r\n  password: string = '';\r\n  loginFailed: boolean = false;\r\n\r\n  private authService = inject(AuthService);\r\n  private router = inject(Router);\r\n\r\n  onLogin(): void {\r\n    const isLoggedIn = this.authService.login(this.username, this.password);\r\n    if (isLoggedIn) {\r\n      this.router.navigate(['/dashboard']);\r\n    } else {\r\n      this.loginFailed = true;\r\n    }\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "\n      .error {\n        color: red;\n      }\n    \n",
@@ -496,7 +535,7 @@
         },
         {
             "name": "PageNotFoundComponent",
-            "id": "component-PageNotFoundComponent-a662779557f78d80caf5dfc2075a256ef22e5303102775a34ce60614af9c7c22aec5631dce885ff7b0e31995648e20714fab75b26b604f304ad5e866609f6a1c",
+            "id": "component-PageNotFoundComponent-8544e4475fed3b9b169f8026128b4505104321b142d82c0e54134d90c920499d8421e295fcaefe3420959ce6e9275709103fd027718647d1cbb075d87b08e533",
             "file": "src/app/components/page-not-found/page-not-found.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -524,17 +563,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-page-not-found',\n  standalone: true,\n  imports: [],\n  templateUrl: './page-not-found.component.html',\n  styleUrl: './page-not-found.component.scss',\n})\nexport class PageNotFoundComponent {}\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-page-not-found',\r\n  standalone: true,\r\n  imports: [],\r\n  templateUrl: './page-not-found.component.html',\r\n  styleUrl: './page-not-found.component.scss',\r\n})\r\nexport class PageNotFoundComponent {}\r\n",
             "styleUrl": "./page-not-found.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>page-not-found works!</p>\n"
+            "templateData": "<p>page-not-found works!</p>\r\n"
         },
         {
             "name": "SearchComponentComponent",
-            "id": "component-SearchComponentComponent-82da727b2092e7e1c3c8a33760db7b65e8ae89ad56cc1e0c14924c73ad4882fb5903aa88c9db6b92709430c32c6b4ba64f1dc9615bab79778725c631fc2a24d0",
+            "id": "component-SearchComponentComponent-be88131f6aafb14259828d417a43f8286cf4bd5db540c1da4d37ef271d2002c2fee9c0dcddf3498c60f3fa3b8df786875a81ed53fd3e91d195a17fe15fdb5e4d",
             "file": "src/app/components/shared/search-component/search-component.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -562,17 +601,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-search-component',\n  standalone: true,\n  imports: [],\n  templateUrl: './search-component.component.html',\n  styleUrl: './search-component.component.scss'\n})\nexport class SearchComponentComponent {\n\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-search-component',\r\n  standalone: true,\r\n  imports: [],\r\n  templateUrl: './search-component.component.html',\r\n  styleUrl: './search-component.component.scss'\r\n})\r\nexport class SearchComponentComponent {\r\n\r\n}\r\n",
             "styleUrl": "./search-component.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>search-component works!</p>\n"
+            "templateData": "<p>search-component works!</p>\r\n"
         },
         {
             "name": "TabsBarComponent",
-            "id": "component-TabsBarComponent-50cd0b310ba5bbf6449cce9bacb52e8f3ba8fd563e31b205ce415d341d4f607cd0bc94b72992544f670065dbd6987e25454444471b931e8b70153ba09c41ebc6",
+            "id": "component-TabsBarComponent-631ef3f2dde3ce6f750397cfbd5a529de9fb48862e149bae889e0739be94571f791273108160eeb65243e09759fd83cfcd892e0960244e7ddd8ac2d50e3db4e1",
             "file": "src/app/components/dashboard/features/tabs-bar/tabs-bar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -600,17 +639,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-tabs-bar',\n  standalone: true,\n  imports: [],\n  templateUrl: './tabs-bar.component.html',\n  styleUrl: './tabs-bar.component.scss'\n})\nexport class TabsBarComponent {\n\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-tabs-bar',\r\n  standalone: true,\r\n  imports: [],\r\n  templateUrl: './tabs-bar.component.html',\r\n  styleUrl: './tabs-bar.component.scss'\r\n})\r\nexport class TabsBarComponent {\r\n\r\n}\r\n",
             "styleUrl": "./tabs-bar.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>tabs-bar works!</p>\n"
+            "templateData": "<p>tabs-bar works!</p>\r\n"
         },
         {
             "name": "TopBarComponent",
-            "id": "component-TopBarComponent-2c879113395a5e4632c1225c77c11bdd2a44a2e3a6658a3846c9ab0e85521d81339446b9d3d9c80112202f6a12b389def51c850d7d85a7fcdbb402e587977432",
+            "id": "component-TopBarComponent-f165397acacaa0a70cf13eda0cf200d3dc0a05447b8bf7b6304344c01b81f9e0048252ea1b0f9ade6ea7fe207dbf67bda4d472a6295b3c71b07f276f9a671a34",
             "file": "src/app/components/shared/top-bar/top-bar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -627,24 +666,102 @@
             "hostDirectives": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "logoPath",
+                    "defaultValue": "\"assets/icons/top-bar/Optic_Logo_White.svg\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
+                },
+                {
+                    "name": "router",
+                    "defaultValue": "inject(Router)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 22,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onLang",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 35,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onLogin",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 26,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
             "standalone": true,
-            "imports": [],
+            "imports": [
+                {
+                    "name": "MatButtonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatDividerModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatIconModule",
+                    "type": "module"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-top-bar',\n  standalone: true,\n  imports: [],\n  templateUrl: './top-bar.component.html',\n  styleUrl: './top-bar.component.scss'\n})\nexport class TopBarComponent {\n\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { Router } from '@angular/router';\r\nimport { inject } from '@angular/core';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { MatButtonModule } from '@angular/material/button';\r\nimport { MatDividerModule } from '@angular/material/divider';\r\nimport { AuthService } from '../../../services/auth.service';\r\n\r\n@Component({\r\n  selector: 'app-top-bar',\r\n  standalone: true,\r\n  imports: [MatButtonModule,MatDividerModule,MatIconModule],\r\n  templateUrl: './top-bar.component.html',\r\n  styleUrl: './top-bar.component.scss'\r\n})\r\nexport class TopBarComponent {\r\n  private router = inject(Router);\r\n  logoPath = \"assets/icons/top-bar/Optic_Logo_White.svg\";\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {\r\n\r\n  }\r\n\r\n  onLogin() {\r\n    //Login logic here \r\n    //link to login page\r\n    this.router.navigate(['/dashboard']);\r\n    console.log('login button clicked');\r\n    //once logged in\r\n\r\n  }\r\n\r\n  onLang() {\r\n    //Language/region logic here\r\n    console.log('language button clicked');\r\n  }\r\n\r\n}\r\n",
             "styleUrl": "./top-bar.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 18
+            },
             "extends": [],
-            "templateData": "<p>top-bar works!</p>\n"
+            "templateData": "<header class=\"header\">\r\n    <div class=\"logo\">\r\n        <img [src]=\"logoPath\" alt=\"Optic Logo\">\r\n    </div>\r\n    <nav class=\"navigation\">\r\n        <div class=\"button-container\">\r\n            <button mat-button (click)=\"onLogin()\" class=\"rh-button login-button\">Login</button>\r\n            <mat-divider class=\"divider\" [vertical]=\"true\"></mat-divider>\r\n            <button mat-icon-button color=\"primary\" class=\"rh-button language-button\" (click)=\"onLang()\" aria-label=\"Language/Region Button\">\r\n                <!--instead of \"language\" below want captive-portal -->\r\n                <mat-icon class=\"language-icon\">language</mat-icon>\r\n            </button>\r\n            \r\n        </div>\r\n    </nav>\r\n</header>"
         }
     ],
     "modules": [],
@@ -658,7 +775,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "ApplicationConfig",
-                "defaultValue": "{\n  providers: [\n    provideRouter(routes),\n    provideClientHydration(),\n    provideHttpClient(withInterceptors([authInterceptor])),\n  ],\n}"
+                "defaultValue": "{\r\n  providers: [\r\n    provideRouter(routes),\r\n    provideClientHydration(),\r\n    provideHttpClient(withInterceptors([authInterceptor])), provideAnimationsAsync('noop'),\r\n  ],\r\n}"
             },
             {
                 "name": "authGuard",
@@ -668,7 +785,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "CanActivateFn",
-                "defaultValue": "(route, state) => {\n  const authService = inject(AuthService);\n  const router = inject(Router);\n\n  if (authService.isLoggedIn()) {\n    return true; // Allow navigation if logged in\n  }\n\n  // Redirect to the login page if not logged in\n  router.navigate(['/login']);\n  return false; // Prevent navigation\n}"
+                "defaultValue": "(route, state) => {\r\n  const authService = inject(AuthService);\r\n  const router = inject(Router);\r\n\r\n  if (authService.isLoggedIn()) {\r\n    return true; // Allow navigation if logged in\r\n  }\r\n\r\n  // Redirect to the login page if not logged in\r\n  router.navigate(['/login']);\r\n  return false; // Prevent navigation\r\n}"
             },
             {
                 "name": "authInterceptor",
@@ -678,7 +795,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "HttpInterceptorFn",
-                "defaultValue": "(req, next) => {\n  const authService = inject(AuthService);\n  const token = authService.getToken();\n\n  const authReq = token\n    ? req.clone({\n        setHeaders: { Authorization: `Bearer ${token}` },\n      })\n    : req;\n\n  return next(authReq);\n}"
+                "defaultValue": "(req, next) => {\r\n  const authService = inject(AuthService);\r\n  const token = authService.getToken();\r\n\r\n  const authReq = token\r\n    ? req.clone({\r\n        setHeaders: { Authorization: `Bearer ${token}` },\r\n      })\r\n    : req;\r\n\r\n  return next(authReq);\r\n}"
             },
             {
                 "name": "bootstrap",
@@ -768,7 +885,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Preview",
-                "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/,\n      },\n    },\n  },\n}"
+                "defaultValue": "{\r\n  parameters: {\r\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/,\r\n      },\r\n    },\r\n  },\r\n}"
             },
             {
                 "name": "serverConfig",
@@ -778,7 +895,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "ApplicationConfig",
-                "defaultValue": "{\n  providers: [\n    provideServerRendering()\n  ]\n}"
+                "defaultValue": "{\r\n  providers: [\r\n    provideServerRendering()\r\n  ]\r\n}"
             },
             {
                 "name": "Template",
@@ -788,7 +905,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "StoryFn",
-                "defaultValue": "(args) => ({\n  props: args,\n})"
+                "defaultValue": "(args) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -798,7 +915,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "StoryFn",
-                "defaultValue": "(args) => ({\n  component: FooterComponent,\n  props: args,\n})"
+                "defaultValue": "(args) => ({\r\n  component: FooterComponent,\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -808,7 +925,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "StoryFn",
-                "defaultValue": "(args) => ({\n  props: args,\n})"
+                "defaultValue": "(args) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -818,7 +935,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "StoryFn",
-                "defaultValue": "(args) => ({\n  props: args,\n})"
+                "defaultValue": "(args) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -828,7 +945,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "StoryFn",
-                "defaultValue": "(args) => ({\n  component: SearchComponentComponent,\n  props: args,\n})"
+                "defaultValue": "(args) => ({\r\n  component: SearchComponentComponent,\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -838,7 +955,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "StoryFn",
-                "defaultValue": "(args) => ({\n  component: TopBarComponent,\n  props: args,\n})"
+                "defaultValue": "(args) => ({\r\n  component: TopBarComponent,\r\n  props: args,\r\n})"
             }
         ],
         "functions": [],
@@ -854,7 +971,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "ApplicationConfig",
-                    "defaultValue": "{\n  providers: [\n    provideRouter(routes),\n    provideClientHydration(),\n    provideHttpClient(withInterceptors([authInterceptor])),\n  ],\n}"
+                    "defaultValue": "{\r\n  providers: [\r\n    provideRouter(routes),\r\n    provideClientHydration(),\r\n    provideHttpClient(withInterceptors([authInterceptor])), provideAnimationsAsync('noop'),\r\n  ],\r\n}"
                 }
             ],
             "src/app/guards/auth.guard.ts": [
@@ -866,7 +983,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "CanActivateFn",
-                    "defaultValue": "(route, state) => {\n  const authService = inject(AuthService);\n  const router = inject(Router);\n\n  if (authService.isLoggedIn()) {\n    return true; // Allow navigation if logged in\n  }\n\n  // Redirect to the login page if not logged in\n  router.navigate(['/login']);\n  return false; // Prevent navigation\n}"
+                    "defaultValue": "(route, state) => {\r\n  const authService = inject(AuthService);\r\n  const router = inject(Router);\r\n\r\n  if (authService.isLoggedIn()) {\r\n    return true; // Allow navigation if logged in\r\n  }\r\n\r\n  // Redirect to the login page if not logged in\r\n  router.navigate(['/login']);\r\n  return false; // Prevent navigation\r\n}"
                 }
             ],
             "src/app/interceptors/auth.interceptor.ts": [
@@ -878,7 +995,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "HttpInterceptorFn",
-                    "defaultValue": "(req, next) => {\n  const authService = inject(AuthService);\n  const token = authService.getToken();\n\n  const authReq = token\n    ? req.clone({\n        setHeaders: { Authorization: `Bearer ${token}` },\n      })\n    : req;\n\n  return next(authReq);\n}"
+                    "defaultValue": "(req, next) => {\r\n  const authService = inject(AuthService);\r\n  const token = authService.getToken();\r\n\r\n  const authReq = token\r\n    ? req.clone({\r\n        setHeaders: { Authorization: `Bearer ${token}` },\r\n      })\r\n    : req;\r\n\r\n  return next(authReq);\r\n}"
                 }
             ],
             "src/main.server.ts": [
@@ -912,7 +1029,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "ApplicationConfig",
-                    "defaultValue": "{\n  providers: [\n    provideServerRendering()\n  ]\n}"
+                    "defaultValue": "{\r\n  providers: [\r\n    provideServerRendering()\r\n  ]\r\n}"
                 }
             ],
             "src/stories/dashboard.component.stories.ts": [
@@ -934,7 +1051,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "StoryFn",
-                    "defaultValue": "(args) => ({\n  props: args,\n})"
+                    "defaultValue": "(args) => ({\r\n  props: args,\r\n})"
                 }
             ],
             "src/stories/footer.component.stories.ts": [
@@ -956,7 +1073,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "StoryFn",
-                    "defaultValue": "(args) => ({\n  component: FooterComponent,\n  props: args,\n})"
+                    "defaultValue": "(args) => ({\r\n  component: FooterComponent,\r\n  props: args,\r\n})"
                 }
             ],
             "src/stories/login.component.stories.ts": [
@@ -978,7 +1095,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "StoryFn",
-                    "defaultValue": "(args) => ({\n  props: args,\n})"
+                    "defaultValue": "(args) => ({\r\n  props: args,\r\n})"
                 }
             ],
             "src/stories/page-not-found.component.stories.ts": [
@@ -1000,7 +1117,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "StoryFn",
-                    "defaultValue": "(args) => ({\n  props: args,\n})"
+                    "defaultValue": "(args) => ({\r\n  props: args,\r\n})"
                 }
             ],
             "src/stories/search-component.component.stories.ts": [
@@ -1022,7 +1139,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "StoryFn",
-                    "defaultValue": "(args) => ({\n  component: SearchComponentComponent,\n  props: args,\n})"
+                    "defaultValue": "(args) => ({\r\n  component: SearchComponentComponent,\r\n  props: args,\r\n})"
                 }
             ],
             "src/stories/top-bar.component.stories.ts": [
@@ -1044,7 +1161,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "StoryFn",
-                    "defaultValue": "(args) => ({\n  component: TopBarComponent,\n  props: args,\n})"
+                    "defaultValue": "(args) => ({\r\n  component: TopBarComponent,\r\n  props: args,\r\n})"
                 }
             ],
             ".storybook/preview.ts": [
@@ -1056,7 +1173,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Preview",
-                    "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/,\n      },\n    },\n  },\n}"
+                    "defaultValue": "{\r\n  parameters: {\r\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/,\r\n      },\r\n    },\r\n  },\r\n}"
                 }
             ]
         },
@@ -1160,7 +1277,7 @@
                 "linktype": "component",
                 "name": "FooterComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -1178,7 +1295,7 @@
                 "linktype": "component",
                 "name": "TopBarComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {

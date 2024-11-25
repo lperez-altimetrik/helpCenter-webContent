@@ -28,6 +28,7 @@ $divider-color: #A587FF;
 
         .button-container {
             display: flex;
+            flex-direction: row;
             align-items: center;
             gap: var(--spacing-6, 16px);
 
@@ -69,12 +70,42 @@ $divider-color: #A587FF;
                 display: flex;
                 width: 32px;
                 height: 32px;
-                flex-direction:column;
+                flex-direction:row;
                 justify-content:center;
                 align-items:center;     
             }
 
+            .profile-button {
+                display: flex;
+                width: 32px;
+                height: 32px;
+                flex-direction:row;
+                justify-content:center;
+                align-items:center;     
+            }
+
+            .search-button {
+                display: flex;
+                width: 32px;
+                height: 32px;
+                flex-direction:row;
+                justify-content:center;
+                align-items:center;   
+            }
+
             .language-icon {
+                color: #FFFFFF;
+                min-width: 28px;
+                min-height: 24px; //Icon boundaries are not uniform about the origin
+            }
+
+            .profile-icon {
+                color: #FFFFFF;
+                min-width: 28px;
+                min-height: 24px; //Icon boundaries are not uniform about the origin
+            }
+
+            .search-icon {
                 color: #FFFFFF;
                 min-width: 28px;
                 min-height: 24px; //Icon boundaries are not uniform about the origin

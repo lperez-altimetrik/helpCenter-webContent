@@ -1,11 +1,20 @@
 <header class="header">
     <div class="logo">
-        <img src="../../../../assets/icons/top-bar/Optic_Logo_White.svg" 
-        alt="Optic Logo">
+        <img [src]="logoPath" alt="Optic Logo">
     </div>
     <nav class="navigation">
         <div class="button-container">
-            <button mat-button (click)="onLogin()" class="rh-button login-button">Login</button>
+            <div *ngIf="!isLoggedIn"> 
+                <button  mat-button (click)="onLogin()" class="rh-button login-button">Login</button>
+            </div>
+            <div *ngIf="isLoggedIn">
+                <button mat-icon-button (click)="onSearch()" class="rh-button search-button">
+                    <mat-icon class="search-icon">search</mat-icon>
+                </button>
+                <button mat-icon-button (click)="onProfile()" class="rh-button profile-button">
+                    <mat-icon class="profile-icon">person</mat-icon>    
+                </button>
+            </div>
             <mat-divider class="divider" [vertical]="true"></mat-divider>
             <button mat-icon-button color="primary" class="rh-button language-button" (click)="onLang()" aria-label="Language/Region Button">
                 <!--instead of "language" below want captive-portal -->
