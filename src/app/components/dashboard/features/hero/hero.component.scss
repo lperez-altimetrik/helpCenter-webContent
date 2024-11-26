@@ -1,0 +1,10 @@
+$primary-color: #5A28FF;
+
+.hero-container{
+    height: 485px;
+    background-color: $primary-color;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

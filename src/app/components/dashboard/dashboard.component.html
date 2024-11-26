@@ -1,3 +1,45 @@
-<p>dashboard works!</p>
-
+<app-top-bar></app-top-bar>
+<app-hero></app-hero>
+<div class="dashboard-view">
+    <div class="topics-containers elements-container">
+        <div class="title-holder">
+            <div class="icon-holder"> 
+                <object data="../../../assets/icons/dashboard/newspaper-icon.svg"> </object>
+            </div>
+            <p>News & Updates</p>
+        </div>
+        <div class="news-card" *ngFor="let newsData of newsAndUpdates">
+            <app-news-card></app-news-card>
+        </div>
+    </div>
+    <div class="products-container elements-container">
+        <div class="title-holder">
+            <object data="../../../assets/icons/dashboard/products-icon.svg" width="24" height="24"> </object>
+            <p>Products</p>
+        </div>
+        @for(product of products; track product.title){
+            <app-product-card title="{{product.title}}" description="{{product.description}}" imageUrl="{{product.imageUrl}}"></app-product-card>
+        }
+    </div>
+    <div class="elements-container">
+        <div class="title-holder">
+            <object data="../../../assets/icons/dashboard/products-icon.svg" width="24" height="24"> </object>
+            <p>Topics</p>
+        </div>
+        <div class="cards-container">
+            @for(topic of topics; track topic.title){
+                <app-topic-card title="{{topic.title}}" description="{{topic.description}}"></app-topic-card>
+            }
+        </div>
+    </div>
+    <div class="links-container">
+        <div class="links-child">
+            <p>Trending Articles</p>
+        </div>
+        <div class="links-child">
+            <p>FAQs</p>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
 <button (click)="logout()">Logout</button>

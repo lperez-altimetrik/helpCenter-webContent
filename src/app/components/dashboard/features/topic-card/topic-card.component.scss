@@ -1,0 +1,28 @@
+$color-fg-secundary: #414641;
+
+.topic-card-container{
+    border-bottom: 1px solid;
+    width: 164px;
+    height: 195px;
+}
+
+.card-title{
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.78px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.card-text{
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.52px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: $color-fg-secundary;
+}

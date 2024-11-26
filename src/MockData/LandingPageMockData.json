@@ -1,0 +1,114 @@
+{
+    "productsMock": [
+        {
+          "title": "Software de Monitoreo de Fraudes",
+          "description": "Herramienta avanzada para detectar y prevenir fraudes en transacciones bancarias en tiempo real.",
+          "imageUrl": "https://via.placeholder.com/300x200?text=Monitoreo+de+Fraudes"
+        },
+        {
+          "title": "Cartera Digital Segura",
+          "description": "Aplicación para almacenar y gestionar tus tarjetas con cifrado de extremo a extremo.",
+          "imageUrl": "https://via.placeholder.com/300x200?text=Cartera+Digital"
+        },
+        {
+          "title": "Plataforma de Pagos Encriptados",
+          "description": "Solución para procesar pagos en línea con protocolos de seguridad de última generación.",
+          "imageUrl": "https://via.placeholder.com/300x200?text=Pagos+Encriptados"
+        },
+        {
+          "title": "Authenticator: Verificación en Dos Pasos",
+          "description": "Aplicación para añadir una capa adicional de seguridad en accesos y pagos.",
+          "imageUrl": "https://via.placeholder.com/300x200?text=Authenticator"
+        },
+        {
+          "title": "Guía de Ciberseguridad Financiera",
+          "description": "Ebook que enseña cómo proteger tus datos y transacciones en línea de manera efectiva.",
+          "imageUrl": "https://via.placeholder.com/300x200?text=Ciberseguridad+Financiera"
+        }
+      ],
+    "newsAndUpdatesMock" : [
+        {
+        "title": "Nuevas especies marinas descubiertas en el Ártico",
+        "imageUrl": "https://via.placeholder.com/300x200",
+        "readTime": "3 minutos",
+        "description": "Descubren nuevas especies marinas en el océano Ártico tras investigación científica.",
+        "url": "https://example.com/noticia1"
+        },
+        {
+        "title": "IA revoluciona el sector de la salud",
+        "imageUrl": "https://via.placeholder.com/300x200",
+        "readTime": "5 minutos",
+        "description": "Avances en inteligencia artificial transforman el sector de la salud y diagnósticos médicos.",
+        "url": "https://example.com/noticia2"
+        },
+        {
+        "title": "Impacto del cambio climático en la economía mundial",
+        "imageUrl": "https://via.placeholder.com/300x200",
+        "readTime": "4 minutos",
+        "description": "Economía mundial enfrenta retos debido a conflictos geopolíticos y cambios climáticos.",
+        "url": "https://example.com/noticia3"
+        },
+        {
+        "title": "Nuevas tecnologías revolucionan la educación",
+        "imageUrl": "https://via.placeholder.com/300x200",
+        "readTime": "2 minutos",
+        "description": "Innovaciones tecnológicas están transformando los métodos de enseñanza y aprendizaje.",
+        "url": "https://example.com/noticia4"
+        },
+        {
+        "title": "Exploración espacial alcanza nuevos hitos",
+        "imageUrl": "https://via.placeholder.com/300x200",
+        "readTime": "6 minutos",
+        "description": "Nave espacial logra aterrizaje exitoso en asteroide para recolectar muestras.",
+        "url": "https://example.com/noticia5"
+        },
+        {
+        "title": "Crisis energética impulsa energías renovables",
+        "imageUrl": "https://via.placeholder.com/300x200",
+        "readTime": "4 minutos",
+        "description": "Aumento de inversión en energía solar y eólica debido a la crisis energética global.",
+        "url": "https://example.com/noticia6"
+        },
+        {
+        "title": "Nuevas tendencias en el mundo del deporte",
+        "imageUrl": "https://via.placeholder.com/300x200",
+        "readTime": "3 minutos",
+        "description": "El impacto de la tecnología y datos en el rendimiento deportivo.",
+        "url": "https://example.com/noticia7"
+        }
+    ],
+    "topicsMock": [
+      {
+        "title": "Finance Tracker",
+        "description": "Track expenses and manage your budget."
+      },
+      {
+        "title": "Quick Payments",
+        "description": "Fast and secure online transactions."
+      },
+      {
+        "title": "Budget Planner",
+        "description": "Plan monthly expenses with ease."
+      },
+      {
+        "title": "Crypto Wallet",
+        "description": "Store and manage digital currencies securely."
+      },
+      {
+        "title": "Tax Calculator",
+        "description": "Calculate taxes quickly and accurately."
+      },
+      {
+        "title": "Invoice Manager",
+        "description": "Create and manage client invoices easily."
+      },
+      {
+        "title": "Savings Tracker",
+        "description": "Monitor savings goals and progress."
+      },
+      {
+        "title": "Payment Gateway",
+        "description": "Process payments across multiple platforms."
+      }
+    ]
+}

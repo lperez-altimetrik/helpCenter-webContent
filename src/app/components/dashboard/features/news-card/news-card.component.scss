@@ -1,0 +1,58 @@
+$color-fg-secundary: #414641;
+$color-fg-tertiary: #787D78;
+$color-fg-cta: #AAA;
+
+.card-article{
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.52px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: $color-fg-tertiary;
+}
+
+.news-card-container{
+    text-align: left;
+    width: 256px;
+}
+
+.card-inner{
+    padding: 12px;
+}
+
+.card-header{
+    padding: 0px;
+}
+
+.card-article{
+    color: $color-fg-tertiary;
+    font-size: 12px;
+}
+
+.card-text{
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.52px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.link-button{
+    color: #5A28FF;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.card-title{
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.78px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}

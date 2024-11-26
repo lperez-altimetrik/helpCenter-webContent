@@ -3,7 +3,7 @@ $divider-color: #414641;
 .footer {
     background: var(--color-grey-90, #141414);
     display: flex;
-    width: 1440px;
+    width: auto;
     padding: var(--spacing-8, 32px) var(--spacing-7, 24px);
     flex-direction: column;
     align-items: center;

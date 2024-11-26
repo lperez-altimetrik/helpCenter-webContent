@@ -1,0 +1,40 @@
+.product-img{
+    width: 320px;
+    height: 147px;
+}
+
+.product-img{
+    text-align: center;
+}
+
+.card-title{
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.78px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+.card-subtitle{
+    font-family: Inter;
+    font-size: 12px;
+    margin: 15px;
+    font-weight: 400;
+    line-height: 14.52px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.card-inner{
+    margin-top: 10px 0px;
+    padding: 0;
+    *{
+       margin-top: 10px; 
+    }
+}
+
+.product-card{
+    width: 320px;
+}
