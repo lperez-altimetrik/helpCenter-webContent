@@ -1,0 +1,159 @@
+@import "./../../../../styles/mixins.scss";
+
+.contact-us-container {
+  padding: 0;
+  margin: 40px;
+  border-radius: 20px;
+
+  .content {
+    padding: 40px;
+
+    .mat-headline-4 {
+      color: #141414;
+      leading-trim: both;
+      text-edge: cap;
+      font-variant-numeric: lining-nums;
+      font-family: Inter;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 38.4px;
+      margin: 0;
+      margin-bottom: 24px;
+    }
+
+    p {
+      width: 100%;
+      max-width: 565px;
+      color: var(--hc-light-black);
+      font-family: "Inter";
+      font-weight: 400;
+      font-size: 16px;
+    }
+
+    .mat-body-2 {
+      color: var(--hc-dark-gray);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      margin-bottom: 10px;
+    }
+
+    .chip-list {
+      gap: 16px;
+      margin-bottom: 20px;
+
+      .chip {
+        background: var(--hc-primary-color);
+        border-radius: 20px;
+        color: white;
+        display: flex;
+        height: 20px;
+        justify-content: space-between;
+        align-items: center;
+        width: fit-content;
+        padding: 8px 12px;
+        font-size: 12px;
+
+        mat-icon {
+          margin-right: 8px;
+        }
+      }
+    }
+
+    .primary {
+      color: var(--hc-primary-color);
+    }
+
+    .link {
+      font-size: 14px;
+      color: var(--hc-link-color);
+    }
+  }
+
+  .footer {
+    background-color: var(--hc-gray-color);
+    padding: 40px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    .need-help-button {
+      padding: 34px 16px;
+      width: 100%;
+    }
+
+    .button-content {
+      display: flex;
+      align-items: center;
+
+      .mail-icon {
+        margin-right: 8px; /* Add spacing between the first icon and the text */
+        background: var(--hc-light-purple);
+        color: var(--hc-primary-color);
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+        align-items: center;
+        justify-content: center;
+        display: none;
+        @include respond-to("mobile") {
+          display: flex;
+        }
+      }
+      .section {
+        display: flex;
+
+        @include respond-to("mobile") {
+          display: block;
+        }
+
+        .mail-icon {
+          margin-right: 8px; /* Add spacing between the first icon and the text */
+          background: var(--hc-light-purple);
+          color: var(--hc-primary-color);
+          border-radius: 50%;
+          height: 40px;
+          width: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          @include respond-to("mobile") {
+            display: none;
+          }
+        }
+
+        .button-text {
+          font-size: 22px;
+          font-weight: 500;
+          @include respond-to("mobile") {
+            font-size: 14px;
+          }
+        }
+
+        .go-icon {
+          color: var(--hc-link-color);
+          display: block;
+
+          @include respond-to("mobile") {
+            display: none;
+          }
+        }
+
+        .link {
+          font-size: 18px;
+          color: var(--hc-link-color);
+          @include respond-to("mobile") {
+            font-size: 12px;
+          }
+        }
+      }
+      .go-icon {
+        display: none;
+        @include respond-to("mobile") {
+          display: block;
+        }
+      }
+    }
+  }
+}
