@@ -261,8 +261,63 @@
             "templateData": "<router-outlet />\n"
         },
         {
+            "name": "ContactUsComponent",
+            "id": "component-ContactUsComponent-a6345ddd2c305a539d11f91a7692c52ad7b2d6f9b60412184bd72631849da7c69cdf6dbe3954ad188b907ce807c3fdd113c0f261f1a1550d56826d19872688b0",
+            "file": "src/app/components/shared/contact-us/contact-us.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-contact-us",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./contact-us.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "MatCardModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatChipsModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatButtonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatIconModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { MatButtonModule } from '@angular/material/button';\n\nimport { MatCardModule } from '@angular/material/card';\nimport { MatChipsModule } from '@angular/material/chips';\nimport { MatIconModule } from '@angular/material/icon';\n\n@Component({\n  selector: 'app-contact-us',\n  standalone: true,\n  imports: [MatCardModule, MatChipsModule, MatButtonModule, MatIconModule],\n  templateUrl: './contact-us.component.html',\n  styleUrl: './contact-us.component.scss',\n})\nexport class ContactUsComponent {}\n",
+            "styleUrl": "./contact-us.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<mat-card class=\"mat-typography contact-us-container\">\n  <div class=\"content\">\n    <h4 class=\"mat-headline-4\">Contact Us</h4>\n    <p>\n      Lorem Ipsum is simply dummy text of the printing and typesetting industry.\n      Lorem Ipsum has been the industry's standard dummy text ever since the\n      1500s, when an unknown printer took a galley of type and scrambled it to\n      make a type specimen book.\n    </p>\n    <div class=\"mat-body-2\">Platform</div>\n\n    <!-- CHIP LIST  -->\n    <div class=\"row chip-list\">\n      <div class=\"chip\">\n        <mat-icon> check </mat-icon>\n        Mobile\n      </div>\n      <div class=\"chip\"><mat-icon> check </mat-icon>Desktop</div>\n    </div>\n\n    <!-- LINKS -->\n    <div class=\"row mb2\">\n      <div class=\"mat-body-2 mr2\">Optic Mobile</div>\n      <div class=\"mat-body-2 primary\">Optic Help Center</div>\n    </div>\n\n    <div class=\"row\">\n      <a href=\"\" class=\"link\"> External link </a>\n    </div>\n  </div>\n  <div class=\"footer\">\n    <button mat-raised-button class=\"need-help-button\">\n      <div class=\"button-content\">\n        <mat-icon class=\"mail-icon mr1\">mail</mat-icon>\n        <div class=\"section\">\n          <span class=\"row centered\">\n            <mat-icon class=\"mail-icon mr1\">mail</mat-icon>\n            <div class=\"button-text mr1\">Need more help?</div>\n          </span>\n\n          <span class=\"row centered\">\n            <div class=\"link mr1\">Contact us</div>\n            <mat-icon class=\"go-icon\">chevron_right</mat-icon>\n          </span>\n        </div>\n        <mat-icon class=\"go-icon\">chevron_right</mat-icon>\n      </div>\n    </button>\n  </div>\n</mat-card>\n"
+        },
+        {
             "name": "DashboardComponent",
-            "id": "component-DashboardComponent-2d9b382ec9f5b2260f884e15b956783e84b6c7c81922cdc594db76c215394ac86772e7541eaf684c64f18fe0441228946093edaeb803a9a638a8d7965e22521a",
+            "id": "component-DashboardComponent-cba87678dd525c7bc7afe502883563c29699673e8febdefcbd841abb22c51f80468d696974a8c369096f902d66807548bb37416127b9aa48169f4701d91aea47",
             "file": "src/app/components/dashboard/dashboard.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -271,11 +326,10 @@
             "providers": [],
             "selector": "app-dashboard",
             "styleUrls": [],
-            "styles": [
-                "\n      div {\n        text-align: center;\n        padding: 20px;\n      }\n      button {\n        margin-top: 20px;\n        padding: 10px 20px;\n        font-size: 16px;\n      }\n    "
+            "styles": [],
+            "templateUrl": [
+                "./dashboard.component.html"
             ],
-            "template": "<div>\n  <h2>Dashboard</h2>\n  <p>Welcome to your dashboard!</p>\n  <button (click)=\"logout()\">Logout</button>\n</div>\n",
-            "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [],
@@ -290,7 +344,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 32,
+                    "line": 16,
                     "modifierKind": [
                         123
                     ]
@@ -304,7 +358,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 33,
+                    "line": 17,
                     "modifierKind": [
                         123
                     ]
@@ -317,7 +371,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 35,
+                    "line": 19,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -327,19 +381,26 @@
             "hostBindings": [],
             "hostListeners": [],
             "standalone": true,
-            "imports": [],
+            "imports": [
+                {
+                    "name": "ContactUsComponent",
+                    "type": "component"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { inject } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { AuthService } from '../../services/auth.service';\n\n@Component({\n  selector: 'app-dashboard',\n  standalone: true,\n  template: `\n    <div>\n      <h2>Dashboard</h2>\n      <p>Welcome to your dashboard!</p>\n      <button (click)=\"logout()\">Logout</button>\n    </div>\n  `,\n  styles: [\n    `\n      div {\n        text-align: center;\n        padding: 20px;\n      }\n      button {\n        margin-top: 20px;\n        padding: 10px 20px;\n        font-size: 16px;\n      }\n    `,\n  ],\n})\nexport class DashboardComponent {\n  private authService = inject(AuthService);\n  private router = inject(Router);\n\n  logout(): void {\n    this.authService.logout();\n    this.router.navigate(['/login']);\n  }\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { inject } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { AuthService } from '../../services/auth.service';\nimport { ContactUsComponent } from '../shared/contact-us/contact-us.component';\n\n@Component({\n  selector: 'app-dashboard',\n  standalone: true,\n  imports: [ContactUsComponent],\n  templateUrl: './dashboard.component.html',\n  styleUrl: './dashboard.component.scss',\n})\nexport class DashboardComponent {\n  private authService = inject(AuthService);\n  private router = inject(Router);\n\n  logout(): void {\n    this.authService.logout();\n    this.router.navigate(['/login']);\n  }\n}\n",
+            "styleUrl": "./dashboard.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
-            "stylesData": "\n      div {\n        text-align: center;\n        padding: 20px;\n      }\n      button {\n        margin-top: 20px;\n        padding: 10px 20px;\n        font-size: 16px;\n      }\n    \n",
-            "extends": []
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<p>dashboard works!</p>\n\n<button (click)=\"logout()\">Logout</button>\n\n<app-contact-us> </app-contact-us>\n"
         },
         {
             "name": "FooterComponent",
-            "id": "component-FooterComponent-8a60337cd99521c7582c2a72c84db07777cc4769e848fd04b47a2e0271da9c95164593ad36dab9db1ee343bdc5c1e938ce8fbb3c6d2d2aa468edd1d3aa2edf10",
+            "id": "component-FooterComponent-45c8b21a5a2ef5cf17ae1b254643c95bbfb68df2b2dbdf9576d82f26b32394b40ce2c65fddbb0993969ae88e7e8eb00383f6d3be1b4f3d629bd15bb495a23d29",
             "file": "src/app/components/shared/footer/footer.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -356,24 +417,63 @@
             "hostDirectives": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "router",
+                    "defaultValue": "inject(Router)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
             "standalone": true,
-            "imports": [],
+            "imports": [
+                {
+                    "name": "MatDividerModule",
+                    "type": "module"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-footer',\n  standalone: true,\n  imports: [],\n  templateUrl: './footer.component.html',\n  styleUrl: './footer.component.scss'\n})\nexport class FooterComponent {\n\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { inject } from '@angular/core';\nimport {MatDividerModule} from '@angular/material/divider';\n\n\n@Component({\n  selector: 'app-footer',\n  standalone: true,\n  imports: [MatDividerModule],\n  templateUrl: './footer.component.html',\n  styleUrl: './footer.component.scss'\n})\nexport class FooterComponent {\n\n  private router = inject(Router);\n\n  constructor() {}\n\n  ngOnInit(): void {\n\n  }\n\n\n}",
             "styleUrl": "./footer.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 16
+            },
             "extends": [],
-            "templateData": "<p>footer works!</p>\n"
+            "templateData": "<footer class=\"footer\">\n    <nav class=\"navigation\">\n        <ul>\n            <li>Cookie Settings</li>\n            <li>Contact Us</li>\n            <li>Privacy Policy</li>\n            <li>Regulatory Disclosures</li>\n        </ul>\n    </nav>\n    <mat-divider class=\"divider\" [vertical]=\"true\"></mat-divider>\n    <div class=\"sm-container\">\n        <small>Copyright © 2024 Paysafe Holdings UK Limited. All rights reserved. Paysafe Financial Services Limited (FRN:900015)</small>\n    </div>\n</footer>"
         },
         {
             "name": "LoginComponent",
@@ -610,7 +710,7 @@
         },
         {
             "name": "TopBarComponent",
-            "id": "component-TopBarComponent-2c879113395a5e4632c1225c77c11bdd2a44a2e3a6658a3846c9ab0e85521d81339446b9d3d9c80112202f6a12b389def51c850d7d85a7fcdbb402e587977432",
+            "id": "component-TopBarComponent-a732a57417cf0180923aa0678a61f0135adc065cf2442c541ab6b5b1f40af3ad9f64f704078cb9accadab9cd6ed31a7fa640cfc9aebeddc163fb790ce20b874f",
             "file": "src/app/components/shared/top-bar/top-bar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -627,24 +727,91 @@
             "hostDirectives": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "router",
+                    "defaultValue": "inject(Router)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onLang",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 31,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onLogin",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 24,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
             "standalone": true,
-            "imports": [],
+            "imports": [
+                {
+                    "name": "MatButtonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatDividerModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatIconModule",
+                    "type": "module"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-top-bar',\n  standalone: true,\n  imports: [],\n  templateUrl: './top-bar.component.html',\n  styleUrl: './top-bar.component.scss'\n})\nexport class TopBarComponent {\n\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { inject } from '@angular/core';\nimport {MatIconModule} from '@angular/material/icon';\nimport {MatButtonModule} from '@angular/material/button';\nimport {MatDividerModule} from '@angular/material/divider';\n\n@Component({\n  selector: 'app-top-bar',\n  standalone: true,\n  imports: [MatButtonModule,MatDividerModule,MatIconModule],\n  templateUrl: './top-bar.component.html',\n  styleUrl: './top-bar.component.scss'\n})\nexport class TopBarComponent {\n  private router = inject(Router);\n\n  constructor() {}\n\n  ngOnInit(): void {\n\n  }\n\n  onLogin() {\n    //Login logic here \n    //link to login page\n    this.router.navigate(['/dashboard']);\n    console.log('login button clicked');\n  }\n\n  onLang() {\n    //Language/region logic here\n    console.log('language button clicked');\n  }\n\n}\n",
             "styleUrl": "./top-bar.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 16
+            },
             "extends": [],
-            "templateData": "<p>top-bar works!</p>\n"
+            "templateData": "<header class=\"header\">\n    <div class=\"logo\">\n        <img src=\"../../../../assets/icons/top-bar/Optic_Logo_White.svg\" \n        alt=\"Optic Logo\">\n    </div>\n    <nav class=\"navigation\">\n        <div class=\"button-container\">\n            <button mat-button (click)=\"onLogin()\" class=\"rh-button login-button\">Login</button>\n            <mat-divider class=\"divider\" [vertical]=\"true\"></mat-divider>\n            <button mat-icon-button color=\"primary\" class=\"rh-button language-button\" (click)=\"onLang()\" aria-label=\"Language/Region Button\">\n                <!--instead of \"language\" below want captive-portal -->\n                <mat-icon class=\"language-icon\">language</mat-icon>\n            </button>\n            \n        </div>\n    </nav>\n</header>"
         }
     ],
     "modules": [],
@@ -658,7 +825,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "ApplicationConfig",
-                "defaultValue": "{\n  providers: [\n    provideRouter(routes),\n    provideClientHydration(),\n    provideHttpClient(withInterceptors([authInterceptor])),\n  ],\n}"
+                "defaultValue": "{\n  providers: [\n    provideRouter(routes),\n    provideClientHydration(),\n    provideHttpClient(withInterceptors([authInterceptor])), provideAnimationsAsync('noop'),\n  ],\n}"
             },
             {
                 "name": "authGuard",
@@ -699,6 +866,16 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "mergeApplicationConfig(appConfig, serverConfig)"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/contact-us.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Default",
@@ -784,6 +961,16 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/contact-us.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryFn",
+                "defaultValue": "(args) => ({\n  component: ContactUsComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/dashboard.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -854,7 +1041,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "ApplicationConfig",
-                    "defaultValue": "{\n  providers: [\n    provideRouter(routes),\n    provideClientHydration(),\n    provideHttpClient(withInterceptors([authInterceptor])),\n  ],\n}"
+                    "defaultValue": "{\n  providers: [\n    provideRouter(routes),\n    provideClientHydration(),\n    provideHttpClient(withInterceptors([authInterceptor])), provideAnimationsAsync('noop'),\n  ],\n}"
                 }
             ],
             "src/app/guards/auth.guard.ts": [
@@ -913,6 +1100,28 @@
                     "deprecationMessage": "",
                     "type": "ApplicationConfig",
                     "defaultValue": "{\n  providers: [\n    provideServerRendering()\n  ]\n}"
+                }
+            ],
+            "src/stories/contact-us.component.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/contact-us.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/contact-us.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryFn",
+                    "defaultValue": "(args) => ({\n  component: ContactUsComponent,\n  props: args,\n})"
                 }
             ],
             "src/stories/dashboard.component.stories.ts": [
@@ -1155,12 +1364,21 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/components/shared/contact-us/contact-us.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ContactUsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/components/shared/footer/footer.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "FooterComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -1178,7 +1396,7 @@
                 "linktype": "component",
                 "name": "TopBarComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -1225,6 +1443,26 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "bootstrap",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/contact-us.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/contact-us.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

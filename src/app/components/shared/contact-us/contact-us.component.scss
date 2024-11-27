@@ -10,8 +10,6 @@
 
     .mat-headline-4 {
       color: #141414;
-      leading-trim: both;
-      text-edge: cap;
       font-variant-numeric: lining-nums;
       font-family: Inter;
       font-size: 40px;
@@ -20,6 +18,10 @@
       line-height: 38.4px;
       margin: 0;
       margin-bottom: 24px;
+
+      @include respond-to("mobile") {
+        font-size: 32px;
+      }
     }
 
     p {
@@ -41,6 +43,8 @@
     }
 
     .chip-list {
+      display: flex;
+      flex-wrap: wrap;
       gap: 16px;
       margin-bottom: 20px;
 
@@ -88,7 +92,7 @@
       align-items: center;
 
       .mail-icon {
-        margin-right: 8px; /* Add spacing between the first icon and the text */
+        margin-right: 8px;
         background: var(--hc-light-purple);
         color: var(--hc-primary-color);
         border-radius: 50%;
@@ -109,7 +113,7 @@
         }
 
         .mail-icon {
-          margin-right: 8px; /* Add spacing between the first icon and the text */
+          margin-right: 8px;
           background: var(--hc-light-purple);
           color: var(--hc-primary-color);
           border-radius: 50%;
