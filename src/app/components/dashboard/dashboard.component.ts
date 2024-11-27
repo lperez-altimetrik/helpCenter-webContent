@@ -3,15 +3,18 @@ import { Component } from '@angular/core';
 import { inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { RelatedArticlesComponent } from '../shared/related-articles/related-articles.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
+  imports: [RelatedArticlesComponent],
   template: `
     <div>
       <h2>Dashboard</h2>
       <p>Welcome to your dashboard!</p>
-      <button (click)="logout()">Logout</button>
+      <app-related-articles></app-related-articles>
+
     </div>
   `,
   styles: [
