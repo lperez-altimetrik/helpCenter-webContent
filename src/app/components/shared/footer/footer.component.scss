@@ -1,43 +1,93 @@
 $divider-color: #414641;
 
+
+
+@media (max-width: 480px) {
+    .nav-container {
+        
+        justify-content: flex-start !important;
+        nav {
+            flex-direction: column;
+            align-items: start;
+            ul {
+                flex-direction: column;
+                
+                li {
+                    margin-right: 0;
+                    margin-bottom: 8px;
+                    
+                    a {
+                        text-align: center;
+                    }
+                }
+            }
+
+        }
+    }
+
+}
+
+
 .footer {
+    position: absolute;
+    bottom: 0;
     background: var(--color-grey-90, #141414);
     display: flex;
-    width: 1440px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    min-width: 10%;
+    height: fit-content;
     padding: var(--spacing-8, 32px) var(--spacing-7, 24px);
     flex-direction: column;
     align-items: center;
     gap: 10px;
-
-    nav {
-        ul {
+    
+    .nav-container {
+        display: flex;
+        box-sizing: border-box;
+        width: 100%;
+        height: fit-content;
+        justify-content: center;
+        align-items: center;
+        nav {
             display: flex;
             justify-content: center;
-            align-items: flex-start;
             gap: 24px;
-            align-self: stretch;
-            margin-block-start: 0px;
-            margin-block-end: 0px;
-            padding-inline-start: 0px;
-            li {
-                cursor: pointer;
+            align-items: flex-start;
+            padding: 0;
+            margin: 0;
+            ul {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 24px;
                 overflow: hidden;
-                color: var(--color-fg-invert, #FFF);
-                text-align: center;
-                leading-trim: both;
-                text-edge: cap;
-                font-variant-numeric: lining-nums;
-                text-overflow: ellipsis;
+                align-self: stretch;
+                margin-block-start: 0px;
+                margin-block-end: 0px;
+                padding-inline-start: 0px;
+                li {
+                    display: block;
+                    cursor: pointer;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    color: var(--color-fg-invert, #FFF);
+                    text-align: center;
+                    font-variant-numeric: lining-nums;
+                    text-overflow: ellipsis;
 
-                /* label/sm/regular */
-                font-family: Inter;
-                font-size: 12px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: normal;
+                    /* label/sm/regular */
+                    font-family: Inter;
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                }
             }
         }
     }
+
     .divider {
         display: flex;
         background-color: $divider-color;
@@ -51,10 +101,11 @@ $divider-color: #414641;
         justify-content: center;
         align-items: center;
         -webkit-box-orient: vertical;
-        -webkit-line-clamp: 1;
-        align-self: stretch;
+        max-width: 100%;
         small {
+            display: block;
             overflow: hidden;
+            white-space: nowrap;
             color: var(--color-fg-tertiary, #787D78);
             text-align: center;
             font-variant-numeric: lining-nums;
