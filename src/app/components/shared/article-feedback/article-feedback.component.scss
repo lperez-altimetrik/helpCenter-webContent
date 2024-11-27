@@ -1,4 +1,4 @@
-
+@import "./../../../../styles/mixins.scss";
 
 .feedback-container{
     display: flex;
@@ -21,8 +21,6 @@
             gap: var(--spacing-4, 10px);
             .article-title-bg{
                 color: var(--color-fg-primary, #141414);
-                leading-trim: both;
-                text-edge: cap;
                 font-variant-numeric: lining-nums;
                 font-family: Inter;
                 font-size: 32px;
@@ -68,8 +66,6 @@
 
                 color: var(--color-fg-primary, #141414);
                 text-align: center;
-                leading-trim: both;
-                text-edge: cap;
                 font-variant-numeric: lining-nums;
 
                 font-family: Inter;
@@ -83,7 +79,7 @@
     }
 }
 
-@media screen and (max-width: 600px){
+@include respond-to("mobile-mb"){
     .article-title-bg{
         display: none;
     }
@@ -95,7 +91,7 @@
         height: 32px;
     }
 }
-@media screen and (min-width: 601px){
+@include respond-to("desktop-bg"){
     .article-title-mb{
         display: none;
     }

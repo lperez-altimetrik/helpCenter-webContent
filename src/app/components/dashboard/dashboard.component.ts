@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
-import { ArticleFeedbackComponent } from '../article-feedback/article-feedback.component';
+import { ArticleFeedbackComponent } from '../shared/article-feedback/article-feedback.component';
 
 @Component({
   selector: 'app-dashboard',

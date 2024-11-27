@@ -3,15 +3,15 @@
     <div class="article-feedback">
         <div class="article-title-container">
             <div class="icon-holder">
-                <object data="../../../assets/icons/common/note-stack-icon.svg" width="22" height="22"> 
+                <object data="./../../../../assets/icons/common/note-stack-icon.svg" width="22" height="22"> 
                 </object>
             </div>
             <h2 class="article-title-bg">Was this article helpful?</h2>
             <h3 class="article-title-mb">Was this article helpful?</h3>
         </div>
         <div class="feedback-buttons-container">
-            <button class="feedback-button">Yes</button>
-            <button class="feedback-button">No</button>
+            <button class="feedback-button" (click)="onYesClick()">Yes</button>
+            <button class="feedback-button" (click)="onNoClick()">No</button>
         </div>
     </div>
 </div>
