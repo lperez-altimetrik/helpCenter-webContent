@@ -396,7 +396,7 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>dashboard works!</p>\n\n<button (click)=\"logout()\">Logout</button>\n\n<app-contact-us> </app-contact-us>\n"
+            "templateData": "<p>dashboard works!</p>\n\n<button (click)=\"logout()\">Logout</button>\n"
         },
         {
             "name": "FooterComponent",
