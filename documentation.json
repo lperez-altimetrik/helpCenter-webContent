@@ -261,6 +261,73 @@
             "templateData": "<router-outlet />\n"
         },
         {
+            "name": "ArticleFeedbackComponent",
+            "id": "component-ArticleFeedbackComponent-c71fd25d421033c216f6b81fce40e89b9b5454924638f5ba12e2c8279b41e9936fb35cecb39bd7b14a782322aed57e51e999587bff7d3eb9d2a3c46cea7cbc97",
+            "file": "src/app/components/shared/article-feedback/article-feedback.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-article-feedback",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./article-feedback.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "onNoClick",
+                    "defaultValue": "() => {...}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "modifierKind": [
+                        125
+                    ]
+                },
+                {
+                    "name": "onYesClick",
+                    "defaultValue": "() => {...}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "modifierKind": [
+                        125
+                    ]
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-article-feedback',\n  standalone: true,\n  imports: [],\n  templateUrl: './article-feedback.component.html',\n  styleUrl: './article-feedback.component.scss'\n})\nexport class ArticleFeedbackComponent {\n  public onYesClick = () => {\n    alert(\"On Yes Action triggered\");\n  }\n  public onNoClick = () => {\n    alert(\"On No Action triggered\");\n  }\n\n}\n",
+            "styleUrl": "./article-feedback.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "\n<div class=\"feedback-container\">\n    <div class=\"article-feedback\">\n        <div class=\"article-title-container\">\n            <div class=\"icon-holder\">\n                <object data=\"./../../../../assets/icons/common/note-stack-icon.svg\" width=\"22\" height=\"22\"> \n                </object>\n            </div>\n            <h2 class=\"article-title-bg\">Was this article helpful?</h2>\n            <h3 class=\"article-title-mb\">Was this article helpful?</h3>\n        </div>\n        <div class=\"feedback-buttons-container\">\n            <button class=\"feedback-button\" (click)=\"onYesClick()\">Yes</button>\n            <button class=\"feedback-button\" (click)=\"onNoClick()\">No</button>\n        </div>\n    </div>\n</div>"
+        },
+        {
             "name": "BreadcrumComponent",
             "id": "component-BreadcrumComponent-a47274a65421aff5931c56817e1501f39f3b1ded475fe31f543a33c70d58d096d6433bc9c7065f00280e7b840d910f3ba3234656ab745bac94d8fe0d500a6b2a",
             "file": "src/app/components/shared/breadcrum/breadcrum.component.ts",
@@ -329,7 +396,7 @@
         },
         {
             "name": "DashboardComponent",
-            "id": "component-DashboardComponent-436a7d31a843a59b669c5da2fabf46bb0981db9578396ff7d054d9ece4e09499f3e025c2ab4ae0d0c98b8bf91058dbe8c38cb5ff8c14e1dc80dc4fc42bbda6c4",
+            "id": "component-DashboardComponent-44c2b1633d845c60c4f20f908accdcc56f34db5ece4314adbe8bf49226bf1bbc0a8bc31d841a8476e8dad78d7cc8033b63e75267033ec11eb6f2302349bad7d2",
             "file": "src/app/components/dashboard/dashboard.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -341,7 +408,7 @@
             "styles": [
                 "\n      div {\n        text-align: center;\n        padding: 20px;\n      }\n      button {\n        margin-top: 20px;\n        padding: 10px 20px;\n        font-size: 16px;\n      }\n    "
             ],
-            "template": "<div>\n  <h2>Dashboard</h2>\n  <p>Welcome to your dashboard!</p>\n  <app-breadcrum></app-breadcrum>\n\n</div>\n",
+            "template": "<div>\n  <h2>Dashboard</h2>\n  <p>Welcome to your dashboard!</p>\n  <app-related-articles></app-related-articles>\n\n</div>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -396,14 +463,14 @@
             "standalone": true,
             "imports": [
                 {
-                    "name": "BreadcrumComponent",
+                    "name": "RelatedArticlesComponent",
                     "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { inject } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { AuthService } from '../../services/auth.service';\nimport { BreadcrumComponent } from '../shared/breadcrum/breadcrum.component';\n\n@Component({\n  selector: 'app-dashboard',\n  standalone: true,\n  imports: [BreadcrumComponent],\n  template: `\n    <div>\n      <h2>Dashboard</h2>\n      <p>Welcome to your dashboard!</p>\n      <app-breadcrum></app-breadcrum>\n\n    </div>\n  `,\n  styles: [\n    `\n      div {\n        text-align: center;\n        padding: 20px;\n      }\n      button {\n        margin-top: 20px;\n        padding: 10px 20px;\n        font-size: 16px;\n      }\n    `,\n  ],\n})\nexport class DashboardComponent {\n  private authService = inject(AuthService);\n  private router = inject(Router);\n\n  logout(): void {\n    this.authService.logout();\n    this.router.navigate(['/login']);\n  }\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { inject } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { AuthService } from '../../services/auth.service';\nimport { RelatedArticlesComponent } from '../shared/related-articles/related-articles.component';\n\n@Component({\n  selector: 'app-dashboard',\n  standalone: true,\n  imports: [RelatedArticlesComponent],\n  template: `\n    <div>\n      <h2>Dashboard</h2>\n      <p>Welcome to your dashboard!</p>\n      <app-related-articles></app-related-articles>\n\n    </div>\n  `,\n  styles: [\n    `\n      div {\n        text-align: center;\n        padding: 20px;\n      }\n      button {\n        margin-top: 20px;\n        padding: 10px 20px;\n        font-size: 16px;\n      }\n    `,\n  ],\n})\nexport class DashboardComponent {\n  private authService = inject(AuthService);\n  private router = inject(Router);\n\n  logout(): void {\n    this.authService.logout();\n    this.router.navigate(['/login']);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "\n      div {\n        text-align: center;\n        padding: 20px;\n      }\n      button {\n        margin-top: 20px;\n        padding: 10px 20px;\n        font-size: 16px;\n      }\n    \n",
@@ -949,6 +1016,16 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/article-feedback.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/breadcrumb-component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1044,6 +1121,16 @@
                 "deprecationMessage": "",
                 "type": "ApplicationConfig",
                 "defaultValue": "{\n  providers: [\n    provideServerRendering()\n  ]\n}"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/article-feedback.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryFn",
+                "defaultValue": "(args) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -1198,6 +1285,28 @@
                     "deprecationMessage": "",
                     "type": "ApplicationConfig",
                     "defaultValue": "{\n  providers: [\n    provideServerRendering()\n  ]\n}"
+                }
+            ],
+            "src/stories/article-feedback.component.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/article-feedback.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/article-feedback.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryFn",
+                    "defaultValue": "(args) => ({\n  props: args,\n})"
                 }
             ],
             "src/stories/breadcrumb-component.stories.ts": [
@@ -1484,6 +1593,15 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/components/shared/article-feedback/article-feedback.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ArticleFeedbackComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/components/shared/breadcrum/breadcrum.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -1572,6 +1690,26 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "bootstrap",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/article-feedback.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/article-feedback.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
