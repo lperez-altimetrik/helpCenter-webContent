@@ -1,0 +1,32 @@
+<div class="sidebar-container">
+    <select class="business-select">
+        @for (option of businessOptions; track option.option) {
+            <option class="business-option" [value]="option.option">{{option.option}}</option>
+        }  
+    </select>
+
+   
+    @for (menuSection of menuSections; track menuSection.title) {
+        <span class="menu-section-title">{{menuSection.title}}</span>
+        @for (menuElement of menuSection.sections; track menuElement.title) {
+            <div class="menu-section-element">
+                <div class="subsection-title-holder">                
+                    <div class="icon-holder">
+                        <object data="./../../../../assets/icons/common/note-stack-icon.svg" width="20" height="20"> 
+                        </object>
+                    </div>
+                    <label for="" class="section-element-title">{{menuElement.title}}</label>
+                    <object data="./../../../../assets/icons/common/arrow-outward-icon.svg" width="20" height="20"> </object>
+                </div>
+                @for (menuItem of menuElement.menuItems; track menuItem.title) {
+                    <div class="menu-link-element">
+                        <label for="" class="link-element-title">{{menuItem.title}}</label>
+                    </div>
+                }  
+            </div>
+        }  
+        <svg class="separator" xmlns="http://www.w3.org/2000/svg" width="211" height="2" viewBox="0 0 211 2" fill="none">
+            <path d="M0 1H211" stroke="#CDD2C8"/>
+        </svg>
+    }  
+</div>
