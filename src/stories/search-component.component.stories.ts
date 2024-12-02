@@ -1,4 +1,4 @@
-import { moduleMetadata, Meta, StoryFn } from '@storybook/angular';
+import { Meta, StoryFn } from '@storybook/angular';
 import { SearchComponentComponent } from '../app/components/shared/search-component/search-component.component';
 
 export default {

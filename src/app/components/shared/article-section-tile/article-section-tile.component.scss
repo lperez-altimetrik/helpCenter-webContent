@@ -12,8 +12,44 @@
     border-radius: 50%;
     height: 40px;
     width: 40px;
+    font-size: 16px;
+    padding: 8px;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @include respond-to("mobile-mb") {
+      height: 32px;
+      width: 32px;
+    }
+  }
+
+  .flat-icon {
+    margin-right: 8px;
+    color: var(--hc-primary-color);
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include respond-to("mobile-mb") {
+      height: 32px;
+      width: 32px;
+    }
+  }
+
+  h2 {
+    font-family: "Inter";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+
+    @include respond-to("mobile-mb") {
+      font-size: 22px;
+    }
   }
 }
