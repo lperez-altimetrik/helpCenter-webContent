@@ -20,7 +20,7 @@
             align-items: center;
             gap: var(--spacing-4, 10px);
             .article-title-bg{
-                color: var(--color-fg-primary, #141414);
+                color: var(--hc-color-fg-primary, #141414);
                 font-variant-numeric: lining-nums;
                 font-family: Inter;
                 font-size: 32px;
@@ -29,7 +29,7 @@
                 line-height: 96%; /* 30.72px */
             }
             .article-title-mb{
-                color: var(--color-fg-primary, #141414);
+                color: var(--hc-color-fg-primary, #141414);
 
                 font-family: Inter;
                 font-size: 22px;
@@ -39,7 +39,7 @@
             }
             .icon-holder{
                 border-radius: var(--spacing-99, 999px);
-                background: var(--color-paysafe-blue-05, #E8E0FF);
+                background: var(--hc-color-paysafe-blue-05, #E8E0FF);
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -62,9 +62,9 @@
                 gap: var(--spacing-1, 4px);
                 border: 0px;
                 border-radius: var(--spacing-2, 6px);
-                background: var(--color-bg-secondary, #F5F5F0);
+                background: var(--hc-color-bg-secondary, #F5F5F0);
 
-                color: var(--color-fg-primary, #141414);
+                color: var(--hc-color-fg-primary, #141414);
                 text-align: center;
                 font-variant-numeric: lining-nums;
 
