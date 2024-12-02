@@ -3,18 +3,17 @@ import { Component } from '@angular/core';
 import { inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
-import { RelatedArticlesComponent } from '../shared/related-articles/related-articles.component';
+import { ArticleSectionTileComponent } from '../shared/article-section-tile/article-section-tile.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [RelatedArticlesComponent],
+  imports: [ArticleSectionTileComponent],
   template: `
     <div>
       <h2>Dashboard</h2>
       <p>Welcome to your dashboard!</p>
-      <app-related-articles></app-related-articles>
-
+      <app-article-section-tile></app-article-section-tile>
     </div>
   `,
   styles: [
