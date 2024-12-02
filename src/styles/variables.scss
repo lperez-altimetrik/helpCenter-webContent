@@ -1,5 +1,4 @@
 :root {
-    //* Color variables*//
     --hc-primary-color: #5a28ff;
     --hc-link-color: #7d55ff;
     --hc-light-purple: #e8e0ff;
@@ -9,14 +8,14 @@
   
     --hc-light-black: #414641;
 
-    --color-paysafe-blue-05: #E8E0FF;
-    --color-fg-primary: #141414;
-    --color-fg-secondary: #414641;
-    --color-bg-cta: #5A28FF;
-    --color-bg-secondary: #F5F5F0;
+    --hc-color-paysafe-blue-05: #E8E0FF;
+    --hc-color-fg-primary: #141414;
+    --hc-color-fg-secondary: #414641;
+    --hc-color-bg-cta: #5A28FF;
+    --hc-color-bg-secondary: #F5F5F0;
 
-    --color-white: #FFF;
-    --color-grey-20: #CDD2C8;
+    --hc-color-white: #FFF;
+    --hc-color-grey-20: #CDD2C8;
 
     //* Spacing variables*//
     --spacing-7: 24px;
