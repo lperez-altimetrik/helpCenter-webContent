@@ -52,15 +52,23 @@
             .link-element{
                 display: flex;
                 flex-direction: row;
+                text-decoration: none;
                 .related-link{
                     color: var(--hc-color-bg-cta, #5A28FF);
 
                     font-family: Inter;
                     font-style: normal;
                     font-weight: 500;
+                    height: 20px;
                     line-height: normal;
                     margin: 0px;
                     text-align: left;
+                }
+                .arrow-outward-icon{
+                    font-size: 18px;
+                    color: var(--hc-color-bg-cta, #5A28FF);
+                    display: flex;
+                    align-items: center;
                 }
             }
             
@@ -77,6 +85,12 @@
             background: var(--hc-color-bg-secondary, #F5F5F0);
             border: none;
             cursor: pointer;
+            .arrow-forward-icon{
+                font-size: 16px;
+                display: flex;
+                align-items: center;
+                color: var(--hc-color-fg-primary, #141414)
+            }
         }
     }
 }
