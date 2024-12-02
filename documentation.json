@@ -395,6 +395,59 @@
             "templateData": "<div class=\"article-index-container\">\n    <label class=\"top-text\">\n        In this article\n    </label>\n    <div class=\"content-container\">\n        <div class=\"header-content\">\n            <label class=\"header-title\">Payment Links</label>\n        </div>\n        @for (articleLink of articleLinks; track articleLink.title) {\n            <div class=\"link-content\">\n                <label class=\"article-link\" (click)=\"onLinkClick(articleLink.url)\">{{ articleLink.title }}</label>\n            </div>\n        }  \n    </div>\n</div>"
         },
         {
+            "name": "ArticleSectionTitleComponent",
+            "id": "component-ArticleSectionTitleComponent-e9bb4de45d90cd18f337cf232b849a617480b5e1a1e203bc1475176049eb4b24641fe52141085569b5a2f0de9b9ba400c553b0aead9e9fabbc8bc3ec2c213fb3",
+            "file": "src/app/components/shared/article-section-title/article-section-title.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-article-section-title",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./article-section-title.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "'Article Section Title'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "MatIconModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { MatIconModule } from '@angular/material/icon';\n\n@Component({\n  selector: 'app-article-section-title',\n  standalone: true,\n  imports: [MatIconModule],\n  templateUrl: './article-section-title.component.html',\n  styleUrl: './article-section-title.component.scss',\n})\nexport class ArticleSectionTitleComponent {\n  @Input() title = 'Article Section Title';\n}\n",
+            "styleUrl": "./article-section-title.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"section-title\">\n  <img class=\"icon\" src=\"assets/icons/common/note-stack-icon.svg\" />\n\n  <h2>\n    {{ title }}\n  </h2>\n\n  <mat-icon class=\"flat-icon\"> link </mat-icon>\n</div>\n"
+        },
+        {
             "name": "BreadcrumComponent",
             "id": "component-BreadcrumComponent-d3f7a6d95b2c6cd95ee8a911619d6448d6bed4dc3b4041f3ff24a0afd4718ca3244599346c4a7a00418fb080730bea5d05520e403c858a63c19f40a5b1c3a1b7",
             "file": "src/app/components/shared/breadcrum/breadcrum.component.ts",
@@ -523,7 +576,7 @@
         },
         {
             "name": "DashboardComponent",
-            "id": "component-DashboardComponent-34c53048fc729e57053dcd72e950207848eb22b80bfd85fe51f5fd49a53ca71bdfe79ca050425d62e8df02cc2c23855e0d42c1dad915ea28cd018bb4630f3d8c",
+            "id": "component-DashboardComponent-a1d231308b2855eb38424b96cfccfdc89798b3087977a8dee4a73a6d0db38b95a280456662c24632e62c4a72f359340471d5be75fc717e5ca3869b2592a884c4",
             "file": "src/app/components/dashboard/dashboard.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -589,20 +642,20 @@
             "standalone": true,
             "imports": [
                 {
-                    "name": "RelatedArticlesComponent",
+                    "name": "ArticleSectionTitleComponent",
                     "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { inject } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { AuthService } from '../../services/auth.service';\nimport { RelatedArticlesComponent } from '../shared/related-articles/related-articles.component';\n\n@Component({\n  selector: 'app-dashboard',\n  standalone: true,\n  imports: [RelatedArticlesComponent],\n  templateUrl: './dashboard.component.html',\n  styleUrl: './dashboard.component.scss',\n})\nexport class DashboardComponent {\n  private authService = inject(AuthService);\n  private router = inject(Router);\n\n  logout(): void {\n    this.authService.logout();\n    this.router.navigate(['/login']);\n  }\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { inject } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { AuthService } from '../../services/auth.service';\nimport { ArticleSectionTitleComponent } from '../shared/article-section-title/article-section-title.component';\n\n@Component({\n  selector: 'app-dashboard',\n  standalone: true,\n  imports: [ArticleSectionTitleComponent],\n  templateUrl: './dashboard.component.html',\n  styleUrl: './dashboard.component.scss',\n})\nexport class DashboardComponent {\n  private authService = inject(AuthService);\n  private router = inject(Router);\n\n  logout(): void {\n    this.authService.logout();\n    this.router.navigate(['/login']);\n  }\n}\n",
             "styleUrl": "./dashboard.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div>\n  <h2>Dashboard</h2>\n  <button (click)=\"logout()\">Logout</button>\n  <p>Welcome to your dashboard!</p>\n  <app-related-articles></app-related-articles>\n</div>\n"
+            "templateData": "<div>\n  <h2>Dashboard</h2>\n  <button (click)=\"logout()\">Logout</button>\n  <p>Welcome to your dashboard!</p>\n  <app-article-section-title></app-article-section-title>\n</div>\n"
         },
         {
             "name": "FooterComponent",
@@ -1164,6 +1217,16 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/article-section-title.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/breadcrumb-component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1289,6 +1352,16 @@
                 "deprecationMessage": "",
                 "type": "StoryFn",
                 "defaultValue": "(args) => ({\n  component: ArticleIndexComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/article-section-title.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryFn",
+                "defaultValue": "(args) => ({\n  component: ArticleSectionTitleComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -1497,6 +1570,28 @@
                     "deprecationMessage": "",
                     "type": "StoryFn",
                     "defaultValue": "(args) => ({\n  component: ArticleIndexComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/stories/article-section-title.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/article-section-title.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/article-section-title.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryFn",
+                    "defaultValue": "(args) => ({\n  component: ArticleSectionTitleComponent,\n  props: args,\n})"
                 }
             ],
             "src/stories/breadcrumb-component.stories.ts": [
@@ -1823,6 +1918,15 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/components/shared/article-section-title/article-section-title.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ArticleSectionTitleComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/components/shared/breadcrum/breadcrum.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -1956,6 +2060,26 @@
             },
             {
                 "filePath": "src/stories/article-index.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/article-section-title.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/article-section-title.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
