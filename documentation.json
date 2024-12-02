@@ -392,7 +392,79 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"article-index-container\">\n    <label for=\"\" class=\"top-text\">\n        In this article\n    </label>\n    <div class=\"content-container\">\n        <div class=\"header-content\">\n            <label for=\"\" class=\"header-title\">Payment Links</label>\n        </div>\n        @for (articleLink of articleLinks; track articleLink.title) {\n            <div class=\"link-content\">\n                <label class=\"article-link\" (click)=\"onLinkClick(articleLink.url)\">{{ articleLink.title }}</label>\n            </div>\n        }  \n    </div>\n</div>"
+            "templateData": "<div class=\"article-index-container\">\n    <label class=\"top-text\">\n        In this article\n    </label>\n    <div class=\"content-container\">\n        <div class=\"header-content\">\n            <label class=\"header-title\">Payment Links</label>\n        </div>\n        @for (articleLink of articleLinks; track articleLink.title) {\n            <div class=\"link-content\">\n                <label class=\"article-link\" (click)=\"onLinkClick(articleLink.url)\">{{ articleLink.title }}</label>\n            </div>\n        }  \n    </div>\n</div>"
+        },
+        {
+            "name": "BreadcrumComponent",
+            "id": "component-BreadcrumComponent-d3f7a6d95b2c6cd95ee8a911619d6448d6bed4dc3b4041f3ff24a0afd4718ca3244599346c4a7a00418fb080730bea5d05520e403c858a63c19f40a5b1c3a1b7",
+            "file": "src/app/components/shared/breadcrum/breadcrum.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-breadcrum",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./breadcrum.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "currentElement",
+                    "defaultValue": "\"page 5\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18,
+                    "modifierKind": [
+                        125
+                    ]
+                },
+                {
+                    "name": "pagesPath",
+                    "defaultValue": "[\n    { title: \"Page 1\", url: \"#\"},\n    { title: \"Page 2\", url: \"#\"},\n    { title: \"Page 3\", url: \"#\"},\n    { title: \"Page 4\", url: \"#\"}\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        125
+                    ]
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "MatIconModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { MatIconModule } from '@angular/material/icon';\n\n@Component({\n  selector: 'app-breadcrum',\n  standalone: true,\n  imports: [MatIconModule],\n  templateUrl: './breadcrum.component.html',\n  styleUrl: './breadcrum.component.scss'\n})\nexport class BreadcrumComponent {\n  public pagesPath: any = [\n    { title: \"Page 1\", url: \"#\"},\n    { title: \"Page 2\", url: \"#\"},\n    { title: \"Page 3\", url: \"#\"},\n    { title: \"Page 4\", url: \"#\"}\n  ]\n  public currentElement: string = \"page 5\";\n}\n",
+            "styleUrl": "./breadcrum.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"breadcrumb-container\">\n    @for (pageElement of pagesPath; track pageElement.title) {\n        <a class=\"prev-link-item\" href=\"{{pageElement.url}}\">{{ pageElement.title }}</a>\n        <mat-icon aria-hidden=\"false\" aria-label=\"chevron-right\" fontIcon=\"chevron_right\"></mat-icon>\n    }\n    <span class=\".current-element\">{{ currentElement }}</span>\n</div>\n"
         },
         {
             "name": "ContactUsComponent",
@@ -1092,6 +1164,16 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/breadcrumb-component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/contact-us.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1207,6 +1289,16 @@
                 "deprecationMessage": "",
                 "type": "StoryFn",
                 "defaultValue": "(args) => ({\n  component: ArticleIndexComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/breadcrumb-component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryFn",
+                "defaultValue": "(args) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -1405,6 +1497,28 @@
                     "deprecationMessage": "",
                     "type": "StoryFn",
                     "defaultValue": "(args) => ({\n  component: ArticleIndexComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/stories/breadcrumb-component.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/breadcrumb-component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/breadcrumb-component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryFn",
+                    "defaultValue": "(args) => ({\n  props: args,\n})"
                 }
             ],
             "src/stories/contact-us.component.stories.ts": [
@@ -1709,6 +1823,15 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/components/shared/breadcrum/breadcrum.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BreadcrumComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/components/shared/contact-us/contact-us.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -1833,6 +1956,26 @@
             },
             {
                 "filePath": "src/stories/article-index.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/breadcrumb-component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/breadcrumb-component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
