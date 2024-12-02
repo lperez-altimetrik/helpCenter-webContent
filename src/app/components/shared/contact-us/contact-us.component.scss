@@ -1,0 +1,85 @@
+@import "./../../../../styles/mixins.scss";
+
+.contact-us-container {
+  padding: 0;
+  margin: 40px;
+  border-radius: 20px;
+
+  .need-help-button {
+    padding: 34px 16px;
+    width: 100%;
+  }
+
+  .button-content {
+    display: flex;
+    align-items: center;
+
+    .mail-icon {
+      margin-right: 8px;
+      background: var(--hc-light-purple);
+      color: var(--hc-primary-color);
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+      align-items: center;
+      justify-content: center;
+      display: none;
+      @include respond-to("mobile") {
+        display: flex;
+      }
+    }
+    .section {
+      display: flex;
+
+      @include respond-to("mobile") {
+        display: block;
+      }
+
+      .mail-icon {
+        margin-right: 8px;
+        background: var(--hc-light-purple);
+        color: var(--hc-primary-color);
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include respond-to("mobile") {
+          display: none;
+        }
+      }
+
+      .button-text {
+        font-size: 22px;
+        font-weight: 500;
+        @include respond-to("mobile") {
+          font-size: 14px;
+        }
+      }
+
+      .go-icon {
+        color: var(--hc-link-color);
+        display: block;
+
+        @include respond-to("mobile") {
+          display: none;
+        }
+      }
+
+      .link {
+        font-size: 18px;
+        color: var(--hc-link-color);
+        @include respond-to("mobile") {
+          font-size: 12px;
+        }
+      }
+    }
+    .go-icon {
+      display: none;
+      @include respond-to("mobile") {
+        display: block;
+      }
+    }
+  }
+}

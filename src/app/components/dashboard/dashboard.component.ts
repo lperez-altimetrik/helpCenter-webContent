@@ -9,27 +9,8 @@ import { RelatedArticlesComponent } from '../shared/related-articles/related-art
   selector: 'app-dashboard',
   standalone: true,
   imports: [RelatedArticlesComponent],
-  template: `
-    <div>
-      <h2>Dashboard</h2>
-      <p>Welcome to your dashboard!</p>
-      <app-related-articles></app-related-articles>
-
-    </div>
-  `,
-  styles: [
-    `
-      div {
-        text-align: center;
-        padding: 20px;
-      }
-      button {
-        margin-top: 20px;
-        padding: 10px 20px;
-        font-size: 16px;
-      }
-    `,
-  ],
+  templateUrl: './dashboard.component.html',
+  styleUrl: './dashboard.component.scss',
 })
 export class DashboardComponent {
   private authService = inject(AuthService);
