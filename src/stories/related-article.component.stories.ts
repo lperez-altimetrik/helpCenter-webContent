@@ -2,7 +2,7 @@ import { Meta, StoryFn } from '@storybook/angular';
 import { RelatedArticlesComponent } from '../app/components/shared/related-articles/related-articles.component';
 
 export default {
-  title: 'Shared/Related-Articles',
+  title: 'Shared/RelatedArticles',
   component: RelatedArticlesComponent,
 } as Meta;
 

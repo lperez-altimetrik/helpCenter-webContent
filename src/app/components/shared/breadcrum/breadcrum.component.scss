@@ -1,0 +1,37 @@
+@import "./../../../../styles/mixins.scss";
+
+.breadcrumb-container{
+    display: inline-flex;
+    height: 24px;
+    align-items: center;
+    gap: var(--spacing-1, 4px);
+    flex-shrink: 0;
+}
+
+.prev-link-item{
+    color: var(--color-paysafe-blue-40, #5A28FF);
+    leading-trim: both;
+    text-edge: cap;
+    font-variant-numeric: lining-nums;
+
+    /* label/md/medium */
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+}
+
+.current-element{
+    display: inline-flex;
+    height: 24px;
+    align-items: center;
+    gap: var(--spacing-1, 4px);
+    flex-shrink: 0;
+}

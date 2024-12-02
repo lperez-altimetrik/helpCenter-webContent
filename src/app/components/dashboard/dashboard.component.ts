@@ -3,13 +3,12 @@ import { Component } from '@angular/core';
 import { inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
-import { ArticleSectionTileComponent } from '../shared/article-section-tile/article-section-tile.component';
-import { ContactUsComponent } from '../shared/contact-us/contact-us.component';
+import { ArticleSectionTitleComponent } from '../shared/article-section-title/article-section-title.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [ArticleSectionTileComponent, ContactUsComponent],
+  imports: [ArticleSectionTitleComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })
