@@ -261,24 +261,41 @@
             "templateData": "<router-outlet />\n"
         },
         {
+<<<<<<< HEAD
+            "name": "ContactUsComponent",
+            "id": "component-ContactUsComponent-a6345ddd2c305a539d11f91a7692c52ad7b2d6f9b60412184bd72631849da7c69cdf6dbe3954ad188b907ce807c3fdd113c0f261f1a1550d56826d19872688b0",
+            "file": "src/app/components/shared/contact-us/contact-us.component.ts",
+=======
             "name": "ArticleFeedbackComponent",
             "id": "component-ArticleFeedbackComponent-c71fd25d421033c216f6b81fce40e89b9b5454924638f5ba12e2c8279b41e9936fb35cecb39bd7b14a782322aed57e51e999587bff7d3eb9d2a3c46cea7cbc97",
             "file": "src/app/components/shared/article-feedback/article-feedback.component.ts",
+>>>>>>> 0d54bd04e51432666a0d86b83e531f5b5744762c
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
+<<<<<<< HEAD
+            "selector": "app-contact-us",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./contact-us.component.html"
+=======
             "selector": "app-article-feedback",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
                 "./article-feedback.component.html"
+>>>>>>> 0d54bd04e51432666a0d86b83e531f5b5744762c
             ],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [],
             "outputsClass": [],
+<<<<<<< HEAD
+            "propertiesClass": [],
+=======
             "propertiesClass": [
                 {
                     "name": "onNoClick",
@@ -309,27 +326,58 @@
                     ]
                 }
             ],
+>>>>>>> 0d54bd04e51432666a0d86b83e531f5b5744762c
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
             "standalone": true,
+<<<<<<< HEAD
+            "imports": [
+                {
+                    "name": "MatCardModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatChipsModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatButtonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatIconModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { MatButtonModule } from '@angular/material/button';\n\nimport { MatCardModule } from '@angular/material/card';\nimport { MatChipsModule } from '@angular/material/chips';\nimport { MatIconModule } from '@angular/material/icon';\n\n@Component({\n  selector: 'app-contact-us',\n  standalone: true,\n  imports: [MatCardModule, MatChipsModule, MatButtonModule, MatIconModule],\n  templateUrl: './contact-us.component.html',\n  styleUrl: './contact-us.component.scss',\n})\nexport class ContactUsComponent {}\n",
+            "styleUrl": "./contact-us.component.scss",
+=======
             "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
             "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-article-feedback',\n  standalone: true,\n  imports: [],\n  templateUrl: './article-feedback.component.html',\n  styleUrl: './article-feedback.component.scss'\n})\nexport class ArticleFeedbackComponent {\n  public onYesClick = () => {\n    alert(\"On Yes Action triggered\");\n  }\n  public onNoClick = () => {\n    alert(\"On No Action triggered\");\n  }\n\n}\n",
             "styleUrl": "./article-feedback.component.scss",
+>>>>>>> 0d54bd04e51432666a0d86b83e531f5b5744762c
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
+<<<<<<< HEAD
+            "templateData": "<mat-card class=\"mat-typography contact-us-container\">\n  <button mat-raised-button class=\"need-help-button\">\n    <div class=\"button-content\">\n      <mat-icon class=\"mail-icon mr1\">mail</mat-icon>\n      <div class=\"section\">\n        <span class=\"row centered\">\n          <mat-icon class=\"mail-icon mr1\">mail</mat-icon>\n          <div class=\"button-text mr1\">Need more help?</div>\n        </span>\n\n        <span class=\"row centered\">\n          <div class=\"link mr1\">Contact us</div>\n          <mat-icon class=\"go-icon\">chevron_right</mat-icon>\n        </span>\n      </div>\n      <mat-icon class=\"go-icon\">chevron_right</mat-icon>\n    </div>\n  </button>\n</mat-card>\n"
+=======
             "templateData": "\n<div class=\"feedback-container\">\n    <div class=\"article-feedback\">\n        <div class=\"article-title-container\">\n            <div class=\"icon-holder\">\n                <object data=\"./../../../../assets/icons/common/note-stack-icon.svg\" width=\"22\" height=\"22\"> \n                </object>\n            </div>\n            <h2 class=\"article-title-bg\">Was this article helpful?</h2>\n            <h3 class=\"article-title-mb\">Was this article helpful?</h3>\n        </div>\n        <div class=\"feedback-buttons-container\">\n            <button class=\"feedback-button\" (click)=\"onYesClick()\">Yes</button>\n            <button class=\"feedback-button\" (click)=\"onNoClick()\">No</button>\n        </div>\n    </div>\n</div>"
+>>>>>>> 0d54bd04e51432666a0d86b83e531f5b5744762c
         },
         {
             "name": "DashboardComponent",
-            "id": "component-DashboardComponent-2d9b382ec9f5b2260f884e15b956783e84b6c7c81922cdc594db76c215394ac86772e7541eaf684c64f18fe0441228946093edaeb803a9a638a8d7965e22521a",
+            "id": "component-DashboardComponent-cba87678dd525c7bc7afe502883563c29699673e8febdefcbd841abb22c51f80468d696974a8c369096f902d66807548bb37416127b9aa48169f4701d91aea47",
             "file": "src/app/components/dashboard/dashboard.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -338,11 +386,10 @@
             "providers": [],
             "selector": "app-dashboard",
             "styleUrls": [],
-            "styles": [
-                "\n      div {\n        text-align: center;\n        padding: 20px;\n      }\n      button {\n        margin-top: 20px;\n        padding: 10px 20px;\n        font-size: 16px;\n      }\n    "
+            "styles": [],
+            "templateUrl": [
+                "./dashboard.component.html"
             ],
-            "template": "<div>\n  <h2>Dashboard</h2>\n  <p>Welcome to your dashboard!</p>\n  <button (click)=\"logout()\">Logout</button>\n</div>\n",
-            "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [],
@@ -357,7 +404,11 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
+<<<<<<< HEAD
+                    "line": 16,
+=======
                     "line": 35,
+>>>>>>> 0d54bd04e51432666a0d86b83e531f5b5744762c
                     "modifierKind": [
                         123
                     ]
@@ -371,7 +422,11 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
+<<<<<<< HEAD
+                    "line": 17,
+=======
                     "line": 36,
+>>>>>>> 0d54bd04e51432666a0d86b83e531f5b5744762c
                     "modifierKind": [
                         123
                     ]
@@ -384,7 +439,11 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
+<<<<<<< HEAD
+                    "line": 19,
+=======
                     "line": 38,
+>>>>>>> 0d54bd04e51432666a0d86b83e531f5b5744762c
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -394,15 +453,22 @@
             "hostBindings": [],
             "hostListeners": [],
             "standalone": true,
-            "imports": [],
+            "imports": [
+                {
+                    "name": "ContactUsComponent",
+                    "type": "component"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { inject } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { AuthService } from '../../services/auth.service';\n\n@Component({\n  selector: 'app-dashboard',\n  standalone: true,\n  template: `\n    <div>\n      <h2>Dashboard</h2>\n      <p>Welcome to your dashboard!</p>\n      <button (click)=\"logout()\">Logout</button>\n    </div>\n  `,\n  styles: [\n    `\n      div {\n        text-align: center;\n        padding: 20px;\n      }\n      button {\n        margin-top: 20px;\n        padding: 10px 20px;\n        font-size: 16px;\n      }\n    `,\n  ],\n})\nexport class DashboardComponent {\n  private authService = inject(AuthService);\n  private router = inject(Router);\n\n  logout(): void {\n    this.authService.logout();\n    this.router.navigate(['/login']);\n  }\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { inject } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { AuthService } from '../../services/auth.service';\nimport { ContactUsComponent } from '../shared/contact-us/contact-us.component';\n\n@Component({\n  selector: 'app-dashboard',\n  standalone: true,\n  imports: [ContactUsComponent],\n  templateUrl: './dashboard.component.html',\n  styleUrl: './dashboard.component.scss',\n})\nexport class DashboardComponent {\n  private authService = inject(AuthService);\n  private router = inject(Router);\n\n  logout(): void {\n    this.authService.logout();\n    this.router.navigate(['/login']);\n  }\n}\n",
+            "styleUrl": "./dashboard.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
-            "stylesData": "\n      div {\n        text-align: center;\n        padding: 20px;\n      }\n      button {\n        margin-top: 20px;\n        padding: 10px 20px;\n        font-size: 16px;\n      }\n    \n",
-            "extends": []
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<p>dashboard works!</p>\n\n<button (click)=\"logout()\">Logout</button>\n"
         },
         {
             "name": "FooterComponent",
@@ -944,7 +1010,11 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+<<<<<<< HEAD
+                "file": "src/stories/contact-us.component.stories.ts",
+=======
                 "file": "src/stories/article-feedback.component.stories.ts",
+>>>>>>> 0d54bd04e51432666a0d86b83e531f5b5744762c
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1044,11 +1114,19 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+<<<<<<< HEAD
+                "file": "src/stories/contact-us.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryFn",
+                "defaultValue": "(args) => ({\n  component: ContactUsComponent,\n  props: args,\n})"
+=======
                 "file": "src/stories/article-feedback.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "StoryFn",
                 "defaultValue": "(args) => ({\n  props: args,\n})"
+>>>>>>> 0d54bd04e51432666a0d86b83e531f5b5744762c
             },
             {
                 "name": "Template",
@@ -1195,12 +1273,20 @@
                     "defaultValue": "{\n  providers: [\n    provideServerRendering()\n  ]\n}"
                 }
             ],
+<<<<<<< HEAD
+            "src/stories/contact-us.component.stories.ts": [
+=======
             "src/stories/article-feedback.component.stories.ts": [
+>>>>>>> 0d54bd04e51432666a0d86b83e531f5b5744762c
                 {
                     "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
+<<<<<<< HEAD
+                    "file": "src/stories/contact-us.component.stories.ts",
+=======
                     "file": "src/stories/article-feedback.component.stories.ts",
+>>>>>>> 0d54bd04e51432666a0d86b83e531f5b5744762c
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -1210,11 +1296,19 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
+<<<<<<< HEAD
+                    "file": "src/stories/contact-us.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryFn",
+                    "defaultValue": "(args) => ({\n  component: ContactUsComponent,\n  props: args,\n})"
+=======
                     "file": "src/stories/article-feedback.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "StoryFn",
                     "defaultValue": "(args) => ({\n  props: args,\n})"
+>>>>>>> 0d54bd04e51432666a0d86b83e531f5b5744762c
                 }
             ],
             "src/stories/dashboard.component.stories.ts": [
@@ -1479,12 +1573,21 @@
                 "status": "low"
             },
             {
+<<<<<<< HEAD
+                "filePath": "src/app/components/shared/contact-us/contact-us.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ContactUsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+=======
                 "filePath": "src/app/components/shared/article-feedback/article-feedback.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ArticleFeedbackComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
+>>>>>>> 0d54bd04e51432666a0d86b83e531f5b5744762c
                 "status": "low"
             },
             {
@@ -1493,7 +1596,7 @@
                 "linktype": "component",
                 "name": "FooterComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -1563,7 +1666,11 @@
                 "status": "low"
             },
             {
+<<<<<<< HEAD
+                "filePath": "src/stories/contact-us.component.stories.ts",
+=======
                 "filePath": "src/stories/article-feedback.component.stories.ts",
+>>>>>>> 0d54bd04e51432666a0d86b83e531f5b5744762c
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -1573,7 +1680,11 @@
                 "status": "low"
             },
             {
+<<<<<<< HEAD
+                "filePath": "src/stories/contact-us.component.stories.ts",
+=======
                 "filePath": "src/stories/article-feedback.component.stories.ts",
+>>>>>>> 0d54bd04e51432666a0d86b83e531f5b5744762c
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

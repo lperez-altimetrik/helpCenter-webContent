@@ -1,4 +1,20 @@
 @mixin respond-to($media) {
+<<<<<<< HEAD
+  @if $media == "mobile" {
+    @media (max-width: 480px) {
+      @content;
+    }
+  } @else if $media == "tablet" {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $media == "desktop" {
+    @media (min-width: 769px) {
+      @content;
+    }
+  }
+}
+=======
     @if $media == "mobile" {
         @media (max-width: 480px) {
         @content;
@@ -25,3 +41,4 @@
         }
     }
 }
+>>>>>>> 0d54bd04e51432666a0d86b83e531f5b5744762c
