@@ -1,4 +1,5 @@
 @mixin respond-to($media) {
+<<<<<<< HEAD
   @if $media == "mobile" {
     @media (max-width: 480px) {
       @content;
@@ -13,3 +14,31 @@
     }
   }
 }
+=======
+    @if $media == "mobile" {
+        @media (max-width: 480px) {
+        @content;
+        }
+    } @else if $media == "tablet" {
+        @media (max-width: 768px) {
+        @content;
+        }
+    } @else if $media == "desktop" {
+        @media (min-width: 769px) {
+        @content;
+        }
+    }
+}
+
+@mixin respond-to($media) {
+    @if $media == "mobile-mb" {
+        @media (max-width: 480px) {
+        @content;
+        }
+    } @else if $media == "desktop-bg" {
+        @media (min-width: 481px) {
+        @content;
+        }
+    }
+}
+>>>>>>> 0d54bd04e51432666a0d86b83e531f5b5744762c
