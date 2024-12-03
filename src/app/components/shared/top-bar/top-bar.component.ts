@@ -20,7 +20,7 @@ import { Subscription } from 'rxjs';
 export class TopBarComponent implements OnInit, OnDestroy {
   private router = inject(Router);
   private authSubscription!: Subscription;
-  isLoggedIn = true;
+  isLoggedIn = false;
   logoPath = "assets/icons/top-bar/Optic_Logo_White.svg";
 
 
@@ -29,14 +29,12 @@ export class TopBarComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    /*
     this.authSubscription = this.authService.isLoggedIn$.subscribe(
       (isLoggedIn) => {
         this.isLoggedIn = isLoggedIn;
         console.log('Auth state changed: ',this.isLoggedIn);
       }
     );
-    */
   }
 
   ngOnDestroy() {
@@ -51,14 +49,21 @@ export class TopBarComponent implements OnInit, OnDestroy {
     this.router.navigate(['/dashboard']);
     console.log('login button clicked');
     //once logged in
+  }
 
+  onMenu() {
+    //Menu logic here
+    console.log('menu button clicked');
   }
 
   onProfile() {
-
+    //Profile logic here
+    console.log('profile button clicked');
   }
 
   onSearch() {
+    //Search logic here
+    console.log('search button clicked');
 
   }
 
@@ -68,32 +73,3 @@ export class TopBarComponent implements OnInit, OnDestroy {
   }
 
 }
-
-/*
-
-export class TopBarComponent {
-  private router = inject(Router);
-  logoPath = "assets/icons/top-bar/Optic_Logo_White.svg";
-
-  constructor() {}
-
-  ngOnInit(): void {
-
-  }
-
-  onLogin() {
-    //Login logic here 
-    //link to login page
-    this.router.navigate(['/dashboard']);
-    console.log('login button clicked');
-    //once logged in
-
-  }
-
-  onLang() {
-    //Language/region logic here
-    console.log('language button clicked');
-  }
-
-}
-*/

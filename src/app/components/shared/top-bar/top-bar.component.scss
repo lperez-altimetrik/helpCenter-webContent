@@ -3,6 +3,33 @@ $primary-color-selected: #320FA0;
 $seconday-color: #FFFFFF;
 $divider-color: #A587FF;
 
+
+@media (max-width: 480px) {
+    .header {
+        .lhs-container {
+            .menu-toggle {
+                display: flex !important;
+            }
+        }
+        .navigation {
+            .rhs-container {
+                .user-buttons-container {
+                    gap: var(--spacing-6, 16px) !important;
+                    .mobile-divider {
+                        display: flex !important;
+                    }
+                }
+                .fs-divider {
+                    display: none !important;
+                }
+                .language-button {
+                    display: none !important;
+                }
+            }
+        }
+    }     
+}
+
 .header {
     display: flex;
     box-sizing: border-box;
@@ -12,8 +39,43 @@ $divider-color: #A587FF;
     padding: var(--spacing-6, 16px) var(--spacing-9, 40px);
     background-color: $primary-color;
     color: $seconday-color;
-    .logo {
+    
+    .lhs-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0px;
+
+        .lh-button{
+            display: flex;
+            width: 32px;
+            height: 32px;
+            flex-direction:row;
+            justify-content:center;
+            align-items:center;   
+            background-color: $primary-color;
+            color: $seconday-color;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .lh-button:hover {
+            background-color: $primary-color-selected
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+        .menu-icon {
+            color: #FFFFFF;
+            min-width: 28px;
+            min-height: 24px; //Icon boundaries are not uniform about the origin
+        }
         img {
+            vertical-align: middle;
             display: flex;
             height: 40px;
             flex-direction: column;
@@ -26,12 +88,11 @@ $divider-color: #A587FF;
         display: flex;
         align-items: center;
 
-        .button-container {
+        .rhs-container {
             display: flex;
             flex-direction: row;
             align-items: center;
             gap: var(--spacing-6, 16px);
-
             
             .divider {
                 display: flex;
@@ -40,9 +101,14 @@ $divider-color: #A587FF;
                 width: 0;
                 height: 24px;
             }
-
+            
             .rh-button {
-                //styleName: label/lg/medium;
+                display: flex;
+                width: 32px;
+                height: 32px;
+                flex-direction:row;
+                justify-content:center;
+                align-items:center;   
                 background-color: $primary-color;
                 color: $seconday-color;
                 border: none;
@@ -56,41 +122,34 @@ $divider-color: #A587FF;
                 background-color: $primary-color-selected
             }
 
-            .login-button { //google font inter needed
+            .user-buttons-container {
                 display: flex;
-                height: 32px;
-                padding: var(--spacing-0, 0px) var(--spacing-2, 6px);
-                justify-content: center;
+                flex-direction: row;
                 align-items: center;
-                align-self: stretch;
-                //padding on sides 6px, height should be 32
-            }
+                gap: 16px;
 
-            .language-button {
-                display: flex;
-                width: 32px;
-                height: 32px;
-                flex-direction:row;
-                justify-content:center;
-                align-items:center;     
-            }
+                .login-button {
+                    max-width: 52px;
+                    min-width: 52px;
+                    padding-inline-end: 0 !important;
+                    padding-inline-start: 0 !important;
+                }
+    
+                .profile-icon {
+                    color: #FFFFFF;
+                    min-width: 28px;
+                    min-height: 24px; //Icon boundaries are not uniform about the origin
+                }
 
-            .profile-button {
-                display: flex;
-                width: 32px;
-                height: 32px;
-                flex-direction:row;
-                justify-content:center;
-                align-items:center;     
-            }
-
-            .search-button {
-                display: flex;
-                width: 32px;
-                height: 32px;
-                flex-direction:row;
-                justify-content:center;
-                align-items:center;   
+                .mobile-divider {
+                    display: none;
+                }
+    
+                .search-icon {
+                    color: #FFFFFF;
+                    min-width: 28px;
+                    min-height: 24px; //Icon boundaries are not uniform about the origin
+                }
             }
 
             .language-icon {
@@ -99,17 +158,6 @@ $divider-color: #A587FF;
                 min-height: 24px; //Icon boundaries are not uniform about the origin
             }
 
-            .profile-icon {
-                color: #FFFFFF;
-                min-width: 28px;
-                min-height: 24px; //Icon boundaries are not uniform about the origin
-            }
-
-            .search-icon {
-                color: #FFFFFF;
-                min-width: 28px;
-                min-height: 24px; //Icon boundaries are not uniform about the origin
-            }
         }
     }
 }
