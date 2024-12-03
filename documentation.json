@@ -576,7 +576,7 @@
         },
         {
             "name": "DashboardComponent",
-            "id": "component-DashboardComponent-a1d231308b2855eb38424b96cfccfdc89798b3087977a8dee4a73a6d0db38b95a280456662c24632e62c4a72f359340471d5be75fc717e5ca3869b2592a884c4",
+            "id": "component-DashboardComponent-4a6af9e8822dc65fa01eed0ccfd5ac42bb0fde6c6f0e2eb30ff5fee63734d78e893fada1c2014c04e311c9427609e0cd3b78cd1b3dda696721892512149882e3",
             "file": "src/app/components/dashboard/dashboard.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -642,20 +642,20 @@
             "standalone": true,
             "imports": [
                 {
-                    "name": "ArticleSectionTitleComponent",
+                    "name": "VideoPlayerComponent",
                     "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { inject } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { AuthService } from '../../services/auth.service';\nimport { ArticleSectionTitleComponent } from '../shared/article-section-title/article-section-title.component';\n\n@Component({\n  selector: 'app-dashboard',\n  standalone: true,\n  imports: [ArticleSectionTitleComponent],\n  templateUrl: './dashboard.component.html',\n  styleUrl: './dashboard.component.scss',\n})\nexport class DashboardComponent {\n  private authService = inject(AuthService);\n  private router = inject(Router);\n\n  logout(): void {\n    this.authService.logout();\n    this.router.navigate(['/login']);\n  }\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { inject } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { AuthService } from '../../services/auth.service';\nimport { VideoPlayerComponent } from '../shared/video-player/video-player.component';\n\n@Component({\n  selector: 'app-dashboard',\n  standalone: true,\n  imports: [VideoPlayerComponent],\n  templateUrl: './dashboard.component.html',\n  styleUrl: './dashboard.component.scss',\n})\nexport class DashboardComponent {\n  private authService = inject(AuthService);\n  private router = inject(Router);\n\n  logout(): void {\n    this.authService.logout();\n    this.router.navigate(['/login']);\n  }\n}\n",
             "styleUrl": "./dashboard.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div>\n  <h2>Dashboard</h2>\n  <button (click)=\"logout()\">Logout</button>\n  <p>Welcome to your dashboard!</p>\n  <app-article-section-title></app-article-section-title>\n</div>\n"
+            "templateData": "<div>\n  <h2>Dashboard</h2>\n  <button (click)=\"logout()\">Logout</button>\n  <p>Welcome to your dashboard!</p>\n  <app-video-player></app-video-player>\n</div>\n"
         },
         {
             "name": "FooterComponent",
@@ -1138,6 +1138,79 @@
             },
             "extends": [],
             "templateData": "<header class=\"header\">\n    <div class=\"logo\">\n        <img src=\"../../../../assets/icons/top-bar/Optic_Logo_White.svg\" \n        alt=\"Optic Logo\">\n    </div>\n    <nav class=\"navigation\">\n        <div class=\"button-container\">\n            <button mat-button (click)=\"onLogin()\" class=\"rh-button login-button\">Login</button>\n            <mat-divider class=\"divider\" [vertical]=\"true\"></mat-divider>\n            <button mat-icon-button color=\"primary\" class=\"rh-button language-button\" (click)=\"onLang()\" aria-label=\"Language/Region Button\">\n                <!--instead of \"language\" below want captive-portal -->\n                <mat-icon class=\"language-icon\">language</mat-icon>\n            </button>\n            \n        </div>\n    </nav>\n</header>"
+        },
+        {
+            "name": "VideoPlayerComponent",
+            "id": "component-VideoPlayerComponent-f3385945277a49f3c6940f94b009fd211953f4cf5283d39b8810c40d7023b8431dc66edc8479b7aa3532b3418efb0caf67ded24b0b32e906cc00bee3932476a4",
+            "file": "src/app/components/shared/video-player/video-player.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-video-player",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./video-player.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "videoUrl",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "SafeResourceUrl",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';\n\n@Component({\n  selector: 'app-video-player',\n  standalone: true,\n  imports: [],\n  templateUrl: './video-player.component.html',\n  styleUrl: './video-player.component.scss',\n})\nexport class VideoPlayerComponent {\n  @Input() videoUrl: SafeResourceUrl;\n\n  constructor(private sanitizer: DomSanitizer) {\n    this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(\n      'https://www.youtube.com/embed/a9PR9wcuaBk?si=ubFLljQ88i5U8Lr2'\n    );\n  }\n}\n",
+            "styleUrl": "./video-player.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "sanitizer",
+                        "type": "DomSanitizer",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 12,
+                "jsdoctags": [
+                    {
+                        "name": "sanitizer",
+                        "type": "DomSanitizer",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "templateData": "<div class=\"video-container\">\n  <iframe\n    width=\"560\"\n    height=\"315\"\n    [src]=\"videoUrl\"\n    title=\"YouTube video player\"\n    frameborder=\"0\"\n    allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\"\n    referrerpolicy=\"strict-origin-when-cross-origin\"\n    allowfullscreen\n  ></iframe>\n</div>\n"
         }
     ],
     "modules": [],
@@ -1314,6 +1387,16 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/video-player.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "preview",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1452,6 +1535,16 @@
                 "deprecationMessage": "",
                 "type": "StoryFn",
                 "defaultValue": "(args) => ({\n  component: TopBarComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/video-player.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryFn",
+                "defaultValue": "(args) => ({\n  component: VideoPlayerComponent,\n  props: args,\n})"
             }
         ],
         "functions": [],
@@ -1792,6 +1885,28 @@
                     "defaultValue": "(args) => ({\n  component: TopBarComponent,\n  props: args,\n})"
                 }
             ],
+            "src/stories/video-player.component.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/video-player.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/video-player.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryFn",
+                    "defaultValue": "(args) => ({\n  component: VideoPlayerComponent,\n  props: args,\n})"
+                }
+            ],
             ".storybook/preview.ts": [
                 {
                     "name": "preview",
@@ -1978,6 +2093,15 @@
                 "name": "TopBarComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/shared/video-player/video-player.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "VideoPlayerComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -2260,6 +2384,26 @@
             },
             {
                 "filePath": "src/stories/top-bar.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/video-player.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/video-player.component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
