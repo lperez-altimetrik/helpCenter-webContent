@@ -14,6 +14,14 @@
     /* md */
     box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.04), 0px 4px 6px -1px rgba(0, 0, 0, 0.06);
 
+    .app-nav-accordion{
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-6, 16px);
+        .mat-expansion-panel-spacing{
+            margin: 0px;
+        }
+    }
     .business-select{
         display: flex;
         min-width: 160px;
@@ -69,6 +77,16 @@
         justify-content: space-between;
         gap: 8px;
         align-self: stretch;
+
+        .expansion-menu-container{
+            width: 100%;
+            .mat-expansion-panel-header{
+                padding: 0px var(--spacing-3, 8px) 0px 0px;
+                height: 28px;
+                gap: var(--spacing-6, 16px);
+            }
+        }
+
         .subsection-title-holder{
             display: flex;
             align-items: center;
