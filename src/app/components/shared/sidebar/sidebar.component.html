@@ -5,28 +5,37 @@
         }  
     </select>
 
-   
+    <mat-accordion class="app-nav-accordion">
     @for (menuSection of menuSections; track menuSection.title) {
-        <span class="menu-section-title">{{menuSection.title}}</span>
+        <div class="menu-section-container">
+            <span class="menu-section-title">{{menuSection.title}}</span>
+        </div>
         @for (menuElement of menuSection.sections; track menuElement.title) {
             <div class="menu-section-element">
-                <div class="subsection-title-holder">                
-                    <div class="icon-holder">
-                        <object data="./../../../../assets/icons/common/note-stack-icon.svg" width="20" height="20"> 
-                        </object>
-                    </div>
-                    <label for="" class="section-element-title">{{menuElement.title}}</label>
-                    <object data="./../../../../assets/icons/common/arrow-outward-icon.svg" width="20" height="20"> </object>
-                </div>
-                @for (menuItem of menuElement.menuItems; track menuItem.title) {
-                    <div class="menu-link-element">
-                        <label for="" class="link-element-title">{{menuItem.title}}</label>
-                    </div>
-                }  
+                <mat-expansion-panel class="mat-elevation-z0">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <div class="subsection-title-holder">
+                                <div class="icon-holder">
+                                    <mat-icon class="title-icon" [fontIcon]="menuElement.iconUrl"></mat-icon>
+                                </div>
+                                <label for="" class="section-element-title">{{menuElement.title}}</label>
+                            </div>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-nav-list>
+                        @for (menuItem of menuElement.menuItems; track menuItem.title) {
+                            <div class="menu-link-element">
+                                <label for="" class="link-element-title">{{menuItem.title}}</label>
+                            </div>
+                        }
+                    </mat-nav-list>
+                  </mat-expansion-panel>
             </div>
         }  
-        <svg class="separator" xmlns="http://www.w3.org/2000/svg" width="211" height="2" viewBox="0 0 211 2" fill="none">
-            <path d="M0 1H211" stroke="#CDD2C8"/>
+        <svg class="separator" xmlns="http://www.w3.org/2000/svg" width="259" height="2" viewBox="0 0 259 2" fill="none">
+            <path d="M0 1H259" stroke="#CDD2C8"/>
         </svg>
     }  
+    </mat-accordion>
 </div>

@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatListModule } from '@angular/material/list';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [],
+  imports: [MatIconModule, MatExpansionModule, MatListModule],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })
@@ -20,7 +23,7 @@ export class SidebarComponent {
       sections: [
         {
           title: "News & Updates",
-          iconUrl: "",
+          iconUrl: "newspaper",
           menuItems: [
             {title: "Link 1", url: "#"},
             {title: "Link 2", url: "#"},
@@ -34,7 +37,7 @@ export class SidebarComponent {
       sections: [
         {
           title: "Payments",
-          iconUrl: "",
+          iconUrl: "attach_money",
           menuItems: [
             {title: "Link 1", url: "#"},
             {title: "Link 2", url: "#"},
@@ -43,7 +46,7 @@ export class SidebarComponent {
         },
         {
           title: "Wallet",
-          iconUrl: "",
+          iconUrl: "account_balance_wallet",
           menuItems: [
             {title: "Link 1", url: "#"},
             {title: "Link 2", url: "#"},
@@ -52,7 +55,7 @@ export class SidebarComponent {
         },
         {
           title: "Paysafe Card",
-          iconUrl: "",
+          iconUrl: "credit_card",
           menuItems: [
             {title: "Link 1", url: "#"},
             {title: "Link 2", url: "#"},
@@ -66,7 +69,7 @@ export class SidebarComponent {
       sections: [
         {
           title: "Getting started",
-          iconUrl: "",
+          iconUrl: "arrow_upward",
           menuItems: [
             {title: "Link 1", url: "#"},
             {title: "Link 2", url: "#"},
@@ -75,7 +78,7 @@ export class SidebarComponent {
         },
         {
           title: "My account",
-          iconUrl: "",
+          iconUrl: "person",
           menuItems: [
             {title: "Link 1", url: "#"},
             {title: "Link 2", url: "#"},
@@ -84,7 +87,7 @@ export class SidebarComponent {
         },
         {
           title: "Disputes",
-          iconUrl: "",
+          iconUrl: "error",
           menuItems: [
             {title: "Link 1", url: "#"},
             {title: "Link 2", url: "#"},
@@ -93,7 +96,7 @@ export class SidebarComponent {
         },
         {
           title: "Analytics",
-          iconUrl: "",
+          iconUrl: "trending_up",
           menuItems: [
             {title: "Link 1", url: "#"},
             {title: "Link 2", url: "#"},
@@ -102,7 +105,7 @@ export class SidebarComponent {
         },
         {
           title: "Transactions",
-          iconUrl: "",
+          iconUrl: "chip_extraction",
           menuItems: [
             {title: "Link 1", url: "#"},
             {title: "Link 2", url: "#"},
@@ -111,7 +114,7 @@ export class SidebarComponent {
         },
         {
           title: "Fees & Pricing",
-          iconUrl: "",
+          iconUrl: "receipt_long",
           menuItems: [
             {title: "Link 1", url: "#"},
             {title: "Link 2", url: "#"},
@@ -125,7 +128,7 @@ export class SidebarComponent {
       sections: [
         {
           title: "Glosary",
-          iconUrl: "",
+          iconUrl: "receipt",
           menuItems: [
             {title: "Link 1", url: "#"},
             {title: "Link 2", url: "#"},
@@ -134,7 +137,7 @@ export class SidebarComponent {
         },
         {
           title: "FAQs",
-          iconUrl: "",
+          iconUrl: "question_mark",
           menuItems: [
             {title: "Link 1", url: "#"},
             {title: "Link 2", url: "#"},
@@ -143,7 +146,7 @@ export class SidebarComponent {
         },
         {
           title: "Trending Articles",
-          iconUrl: "",
+          iconUrl: "arrow_outward",
           menuItems: [
             {title: "Link 1", url: "#"},
             {title: "Link 2", url: "#"},
