@@ -1,36 +1,9 @@
-$divider-color: #414641;
-
-
-
-@media (max-width: 480px) {
-    .nav-container {
-        
-        justify-content: flex-start !important;
-        nav {
-            flex-direction: column;
-            align-items: start;
-            ul {
-                flex-direction: column;
-                
-                li {
-                    margin-right: 0;
-                    margin-bottom: 8px;
-                    
-                    a {
-                        text-align: center;
-                    }
-                }
-            }
-
-        }
-    }
-}
-
+@import "./../../../../styles/mixins.scss";
 
 .footer {
     position: absolute;
     bottom: 0;
-    background: var(--color-grey-90, #141414);
+    background: var(--hc-color-fg-primary, #141414);
     display: flex;
     box-sizing: border-box;
     width: 100%;
@@ -49,6 +22,11 @@ $divider-color: #414641;
         height: fit-content;
         justify-content: center;
         align-items: center;
+        @include respond-to("mobile-mb") {
+            justify-content: flex-start;
+        }
+
+
         nav {
             display: flex;
             justify-content: center;
@@ -56,6 +34,11 @@ $divider-color: #414641;
             align-items: flex-start;
             padding: 0;
             margin: 0;
+            @include respond-to("mobile-mb") {
+                flex-direction: column;
+                align-items: start;
+            }
+
             ul {
                 display: flex;
                 justify-content: center;
@@ -66,12 +49,15 @@ $divider-color: #414641;
                 margin-block-start: 0px;
                 margin-block-end: 0px;
                 padding-inline-start: 0px;
+                @include respond-to("mobile-mb") {
+                    flex-direction: column;
+                }
                 li {
                     display: block;
                     cursor: pointer;
                     overflow: hidden;
                     white-space: nowrap;
-                    color: var(--color-fg-invert, #FFF);
+                    color: var(--hc-color-fg-invert, #FFF);
                     text-align: center;
                     font-variant-numeric: lining-nums;
                     text-overflow: ellipsis;
@@ -80,13 +66,20 @@ $divider-color: #414641;
                     font-style: normal;
                     font-weight: 400;
                     line-height: normal;
+                    @include respond-to("mobile-mb") {
+                        margin-right: 0;
+                        margin-bottom: var(--spacing-3,8px);
+                    }
 
                     a {
                         text-decoration: none;
+                        @include respond-to("mobile-mb") {
+                            text-align: center;
+                        }
                     }
 
                     a:visited {
-                        color: white;
+                        color: var(--hc-color-fg-invert, #FFF);
                     }
                 }
             }
@@ -95,7 +88,7 @@ $divider-color: #414641;
 
     .divider {
         display: flex;
-        background-color: $divider-color;
+        background-color: var(--hc-color-fg-secondary, #414641);
         --mat-divider-width: 1.5px;
         width: 100%;
         height: 1px;
@@ -111,7 +104,7 @@ $divider-color: #414641;
             display: block;
             overflow: hidden;
             white-space: nowrap;
-            color: var(--color-fg-tertiary, #787D78);
+            color: var(--hc-color-fg-tertiary, #787D78);
             text-align: center;
             font-variant-numeric: lining-nums;
             text-overflow: ellipsis;

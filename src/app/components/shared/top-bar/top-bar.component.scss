@@ -1,34 +1,4 @@
-$primary-color: var(--hc-primary-color, #5A28FF);
-$primary-color-selected: #320FA0;
-$seconday-color: #FFFFFF;
-$divider-color: #A587FF;
-
-
-@media (max-width: 480px) {
-    .header {
-        .lhs-container {
-            .menu-toggle {
-                display: flex !important;
-            }
-        }
-        .navigation {
-            .rhs-container {
-                .user-buttons-container {
-                    gap: var(--spacing-6, 16px) !important;
-                    .mobile-divider {
-                        display: flex !important;
-                    }
-                }
-                .fs-divider {
-                    display: none !important;
-                }
-                .language-button {
-                    display: none !important;
-                }
-            }
-        }
-    }     
-}
+@import "./../../../../styles/mixins.scss";
 
 .header {
     display: flex;
@@ -37,8 +7,8 @@ $divider-color: #A587FF;
     justify-content: space-between;
     align-items: center;
     padding: var(--spacing-6, 16px) var(--spacing-9, 40px);
-    background-color: $primary-color;
-    color: $seconday-color;
+    background-color: var(--hc-primary-color, #5A28FF);
+    color: #FFFFFF;
     
     .lhs-container {
         display: flex;
@@ -53,8 +23,8 @@ $divider-color: #A587FF;
             flex-direction:row;
             justify-content:center;
             align-items:center;   
-            background-color: $primary-color;
-            color: $seconday-color;
+            background-color: var(--hc-primary-color, #5A28FF);
+            color: #FFFFFF;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -63,12 +33,16 @@ $divider-color: #A587FF;
         }
 
         .lh-button:hover {
-            background-color: $primary-color-selected
+            background-color: var(--hc-primary-color-dark, #320FA0);
         }
 
         .menu-toggle {
             display: none;
+            @include respond-to("mobile-mb") {
+                display: flex;
+            }
         }
+
         .menu-icon {
             color: #FFFFFF;
             min-width: 28px;
@@ -96,7 +70,7 @@ $divider-color: #A587FF;
             
             .divider {
                 display: flex;
-                background-color: $divider-color;
+                background-color: var(--hc-divider-purple,a587ff);
                 --mat-divider-width: 1.5px;
                 width: 0;
                 height: 24px;
@@ -109,8 +83,8 @@ $divider-color: #A587FF;
                 flex-direction:row;
                 justify-content:center;
                 align-items:center;   
-                background-color: $primary-color;
-                color: $seconday-color;
+                background-color: var(--hc-primary-color, #5A28FF);
+                color: #FFFFFF;
                 border: none;
                 border-radius: 5px;
                 cursor: pointer;
@@ -119,7 +93,7 @@ $divider-color: #A587FF;
             }
 
             .rh-button:hover {
-                background-color: $primary-color-selected
+                background-color: var(--hc-primary-color-dark, #320FA0);
             }
 
             .user-buttons-container {
@@ -127,6 +101,10 @@ $divider-color: #A587FF;
                 flex-direction: row;
                 align-items: center;
                 gap: var(--spacing-6,16px);
+
+                @include respond-to("mobile-mb") {
+                    gap: var(--spacing-6, 16px) !important;
+                }
 
                 .login-button {
                     max-width: 52px;
@@ -141,14 +119,29 @@ $divider-color: #A587FF;
                     min-height: 24px; //Icon boundaries are not uniform about the origin
                 }
 
+                .fs-divider {
+                    @include respond-to("mobile-mb") { 
+                        display: none !important;
+                    }
+                }
+
                 .mobile-divider {
                     display: none;
+                    @include respond-to("mobile-mb") {
+                        display: flex;
+                    }
                 }
     
                 .search-icon {
                     color: #FFFFFF;
                     min-width: 28px;
                     min-height: 24px; //Icon boundaries are not uniform about the origin
+                }
+            }
+
+            .language-button {
+                @include respond-to("mobile-mb") {
+                    display: none !important;
                 }
             }
 
