@@ -156,5 +156,17 @@ mat-card {
         }
       }
     }
+
+    .go-icon {
+      display: none;
+      @include respond-to("mobile-mb") {
+        display: flex;
+        height: 16px;
+        width: 16px;
+        color: var(--hc-dark-gray);
+        font-size: 20px;
+        margin-right: 12px;
+      }
+    }
   }
 }
