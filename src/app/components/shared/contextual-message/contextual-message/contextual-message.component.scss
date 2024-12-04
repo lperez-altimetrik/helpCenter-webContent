@@ -1,6 +1,15 @@
 
 $neutral-accent: var(--hc-link-color); 
-$neutral-text: var(--hc-color-paysafe-blue-50);
+$neutral-title: var(--hc-color-paysafe-blue-50);
+
+$positive-accent: var(--hc-color-positive-accent);
+$positive-title: var(--hc-color-positive-title);
+
+$warning-accent: var(--hc-color-warning-accent);
+$warning-title: var(--hc-color-warning-title);
+
+$danger-accent: var(--hc-color-danger-accent);
+$danger-title: var(--hc-color-danger-title);
 
 
 mat-card {
@@ -35,7 +44,7 @@ mat-card {
                 margin-top: 0px;
                 font-size: 20px;
                 font-weight: 500;
-                color: $neutral-text;
+                color: $neutral-title;
             }
         
             .message-body {
