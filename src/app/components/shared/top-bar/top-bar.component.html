@@ -1,17 +1,45 @@
 <header class="header">
-    <div class="logo">
-        <img src="../../../../assets/icons/top-bar/Optic_Logo_White.svg" 
-        alt="Optic Logo">
+    <div class="lhs-container">
+        <button *ngIf="isLoggedIn" mat-icon-button (click)="onMenu()" class="menu-toggle lh-button">
+            <span class="material-symbols-outlined">
+                menu
+            </span>
+        </button>
+        <img [src]="logoPath" alt="Optic Logo">
     </div>
     <nav class="navigation">
-        <div class="button-container">
-            <button mat-button (click)="onLogin()" class="rh-button login-button">Login</button>
-            <mat-divider class="divider" [vertical]="true"></mat-divider>
-            <button mat-icon-button color="primary" class="rh-button language-button" (click)="onLang()" aria-label="Language/Region Button">
-                <!--instead of "language" below want captive-portal -->
-                <mat-icon class="language-icon">language</mat-icon>
-            </button>
-            
+        <div class="rhs-container">
+            <div *ngIf="!isLoggedIn" class="user-buttons-container"> 
+                <button  mat-button (click)="onLogin()" class="rh-button login-button">Login</button>
+                <mat-divider class="divider" [vertical]="true"></mat-divider>
+                <button mat-icon-button color="primary" class="rh-button" (click)="onLang()" aria-label="Language/Region Button">
+                    <!--instead of "language" below want captive-portal -->
+                    <span class="material-symbols-outlined">
+                        captive_portal
+                    </span>
+                </button>
+            </div>
+            <div *ngIf="isLoggedIn" class="user-buttons-container">
+                
+                <button mat-icon-button (click)="onSearch()" class="rh-button">
+                    <span class="material-symbols-outlined">
+                        search
+                    </span>
+                </button>
+                <mat-divider class="divider mobile-divider" [vertical]="true"></mat-divider>
+                <button mat-icon-button (click)="onProfile()" class="rh-button">
+                    <span class="material-symbols-outlined">
+                        person
+                    </span>
+                </button>
+                <mat-divider class="divider fs-divider" [vertical]="true"></mat-divider>
+                <button mat-icon-button color="primary" class="rh-button language-button" (click)="onLang()" aria-label="Language/Region Button">
+                    <!--instead of "language" below want captive-portal -->
+                    <span class="material-symbols-outlined">
+                        captive_portal
+                    </span>
+                </button>
+            </div>
         </div>
     </nav>
 </header>
