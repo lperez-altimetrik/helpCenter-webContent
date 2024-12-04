@@ -105,13 +105,15 @@ mat-card {
 
         @include respond-to("mobile-mb") {
           display: -webkit-box;
-          overflow: hidden;
-          line-clamp: 2;
           max-height: 3em;
           line-height: 1.5em;
-          text-overflow: ellipsis;
           margin-bottom: 0;
           font-size: 10px;
+          min-width: 160px;
+          overflow: hidden;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          align-self: stretch;
         }
       }
 
