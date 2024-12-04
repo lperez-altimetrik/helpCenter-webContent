@@ -670,7 +670,7 @@
             "standalone": true,
             "imports": [
                 {
-                    "name": "ArticleSectionTitleComponent",
+                    "name": "VideoPlayerComponent",
                     "type": "component"
                 }
             ],
@@ -1267,6 +1267,7 @@
                 "OnDestroy"
             ],
             "templateData": "<header class=\"header\">\r\n    <div class=\"lhs-container\">\r\n        <button *ngIf=\"isLoggedIn\" mat-icon-button (click)=\"onMenu()\" class=\"menu-toggle lh-button\">\r\n            <span class=\"material-symbols-outlined\">\r\n                menu\r\n            </span>\r\n        </button>\r\n        <img [src]=\"logoPath\" alt=\"Optic Logo\">\r\n    </div>\r\n    <nav class=\"navigation\">\r\n        <div class=\"rhs-container\">\r\n            <div *ngIf=\"!isLoggedIn\" class=\"user-buttons-container\"> \r\n                <button  mat-button (click)=\"onLogin()\" class=\"rh-button login-button\">Login</button>\r\n                <mat-divider class=\"divider\" [vertical]=\"true\"></mat-divider>\r\n                <button mat-icon-button color=\"primary\" class=\"rh-button\" (click)=\"onLang()\" aria-label=\"Language/Region Button\">\r\n                    <!--instead of \"language\" below want captive-portal -->\r\n                    <span class=\"material-symbols-outlined\">\r\n                        captive_portal\r\n                    </span>\r\n                </button>\r\n            </div>\r\n            <div *ngIf=\"isLoggedIn\" class=\"user-buttons-container\">\r\n                \r\n                <button mat-icon-button (click)=\"onSearch()\" class=\"rh-button\">\r\n                    <span class=\"material-symbols-outlined\">\r\n                        search\r\n                    </span>\r\n                </button>\r\n                <mat-divider class=\"divider mobile-divider\" [vertical]=\"true\"></mat-divider>\r\n                <button mat-icon-button (click)=\"onProfile()\" class=\"rh-button\">\r\n                    <span class=\"material-symbols-outlined\">\r\n                        person\r\n                    </span>\r\n                </button>\r\n                <mat-divider class=\"divider fs-divider\" [vertical]=\"true\"></mat-divider>\r\n                <button mat-icon-button color=\"primary\" class=\"rh-button language-button\" (click)=\"onLang()\" aria-label=\"Language/Region Button\">\r\n                    <!--instead of \"language\" below want captive-portal -->\r\n                    <span class=\"material-symbols-outlined\">\r\n                        captive_portal\r\n                    </span>\r\n                </button>\r\n            </div>\r\n        </div>\r\n    </nav>\r\n</header>"
+
         }
     ],
     "modules": [],
@@ -1443,6 +1444,16 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/video-player.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "preview",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1581,6 +1592,7 @@
                 "deprecationMessage": "",
                 "type": "StoryFn",
                 "defaultValue": "(args) => ({\r\n  component: TopBarComponent,\r\n  props: args,\r\n})"
+
             }
         ],
         "functions": [],
@@ -1921,6 +1933,28 @@
                     "defaultValue": "(args) => ({\r\n  component: TopBarComponent,\r\n  props: args,\r\n})"
                 }
             ],
+            "src/stories/video-player.component.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/video-player.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/video-player.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryFn",
+                    "defaultValue": "(args) => ({\n  component: VideoPlayerComponent,\n  props: args,\n})"
+                }
+            ],
             ".storybook/preview.ts": [
                 {
                     "name": "preview",
@@ -2107,6 +2141,15 @@
                 "name": "TopBarComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/13",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/shared/video-player/video-player.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "VideoPlayerComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -2389,6 +2432,26 @@
             },
             {
                 "filePath": "src/stories/top-bar.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/video-player.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/video-player.component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
