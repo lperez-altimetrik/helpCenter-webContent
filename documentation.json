@@ -604,7 +604,7 @@
         },
         {
             "name": "DashboardComponent",
-            "id": "component-DashboardComponent-ff40de27295579765285372b19a1e1912535850a27c827cfe227369f7b29900c95e6076166defdeb116d93cfdd2cd556ce91085715e9e583e9712e651ddaa93e",
+            "id": "component-DashboardComponent-9c1ff19e2d3c12dc5f9c0daed56abf1e243b303c9dbcdc02885327eebd4f0f1509fb05cc830c47af181e6e3e408b82d6c21bf571ac5322c63d698fc69a0b719c",
             "file": "src/app/components/dashboard/dashboard.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -677,13 +677,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { inject } from '@angular/core';\r\nimport { Router } from '@angular/router';\r\nimport { AuthService } from '../../services/auth.service';\r\nimport { ArticleSectionTitleComponent } from '../shared/article-section-title/article-section-title.component';\r\n\r\n@Component({\r\n  selector: 'app-dashboard',\r\n  standalone: true,\r\n  imports: [ArticleSectionTitleComponent],\r\n  templateUrl: './dashboard.component.html',\r\n  styleUrl: './dashboard.component.scss',\r\n})\r\nexport class DashboardComponent {\r\n  private authService = inject(AuthService);\r\n  private router = inject(Router);\r\n\r\n  logout(): void {\r\n    this.authService.logout();\r\n    this.router.navigate(['/login']);\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { inject } from '@angular/core';\r\nimport { Router } from '@angular/router';\r\nimport { AuthService } from '../../services/auth.service';\r\nimport { VideoPlayerComponent } from '../shared/video-player/video-player.component';\r\n\r\n@Component({\r\n  selector: 'app-dashboard',\r\n  standalone: true,\r\n  imports: [VideoPlayerComponent],\r\n  templateUrl: './dashboard.component.html',\r\n  styleUrl: './dashboard.component.scss',\r\n})\r\nexport class DashboardComponent {\r\n  private authService = inject(AuthService);\r\n  private router = inject(Router);\r\n\r\n  logout(): void {\r\n    this.authService.logout();\r\n    this.router.navigate(['/login']);\r\n  }\r\n}\r\n",
             "styleUrl": "./dashboard.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div>\r\n  <h2>Dashboard</h2>\r\n  <button (click)=\"logout()\">Logout</button>\r\n  <p>Welcome to your dashboard!</p>\r\n  <app-article-section-title></app-article-section-title>\r\n</div>\r\n"
+            "templateData": "<div>\r\n  <h2>Dashboard</h2>\r\n  <button (click)=\"logout()\">Logout</button>\r\n  <p>Welcome to your dashboard!</p>\r\n  <app-video-player></app-video-player>\r\n</div>\r\n"
         },
         {
             "name": "FooterComponent",
@@ -1267,7 +1267,79 @@
                 "OnDestroy"
             ],
             "templateData": "<header class=\"header\">\r\n    <div class=\"lhs-container\">\r\n        <button *ngIf=\"isLoggedIn\" mat-icon-button (click)=\"onMenu()\" class=\"menu-toggle lh-button\">\r\n            <span class=\"material-symbols-outlined\">\r\n                menu\r\n            </span>\r\n        </button>\r\n        <img [src]=\"logoPath\" alt=\"Optic Logo\">\r\n    </div>\r\n    <nav class=\"navigation\">\r\n        <div class=\"rhs-container\">\r\n            <div *ngIf=\"!isLoggedIn\" class=\"user-buttons-container\"> \r\n                <button  mat-button (click)=\"onLogin()\" class=\"rh-button login-button\">Login</button>\r\n                <mat-divider class=\"divider\" [vertical]=\"true\"></mat-divider>\r\n                <button mat-icon-button color=\"primary\" class=\"rh-button\" (click)=\"onLang()\" aria-label=\"Language/Region Button\">\r\n                    <!--instead of \"language\" below want captive-portal -->\r\n                    <span class=\"material-symbols-outlined\">\r\n                        captive_portal\r\n                    </span>\r\n                </button>\r\n            </div>\r\n            <div *ngIf=\"isLoggedIn\" class=\"user-buttons-container\">\r\n                \r\n                <button mat-icon-button (click)=\"onSearch()\" class=\"rh-button\">\r\n                    <span class=\"material-symbols-outlined\">\r\n                        search\r\n                    </span>\r\n                </button>\r\n                <mat-divider class=\"divider mobile-divider\" [vertical]=\"true\"></mat-divider>\r\n                <button mat-icon-button (click)=\"onProfile()\" class=\"rh-button\">\r\n                    <span class=\"material-symbols-outlined\">\r\n                        person\r\n                    </span>\r\n                </button>\r\n                <mat-divider class=\"divider fs-divider\" [vertical]=\"true\"></mat-divider>\r\n                <button mat-icon-button color=\"primary\" class=\"rh-button language-button\" (click)=\"onLang()\" aria-label=\"Language/Region Button\">\r\n                    <!--instead of \"language\" below want captive-portal -->\r\n                    <span class=\"material-symbols-outlined\">\r\n                        captive_portal\r\n                    </span>\r\n                </button>\r\n            </div>\r\n        </div>\r\n    </nav>\r\n</header>"
-
+        },
+        {
+            "name": "VideoPlayerComponent",
+            "id": "component-VideoPlayerComponent-a6718b478ed407d0ae04dc8aa17e198b36efc40f01c8d1981cc41cb942783f4ec649bffb55a95e233fe1eece8e487574d1cfac08999af677196b7cd3c51abf16",
+            "file": "src/app/components/shared/video-player/video-player.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-video-player",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./video-player.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "videoUrl",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "SafeResourceUrl",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';\r\n\r\n@Component({\r\n  selector: 'app-video-player',\r\n  standalone: true,\r\n  imports: [],\r\n  templateUrl: './video-player.component.html',\r\n  styleUrl: './video-player.component.scss',\r\n})\r\nexport class VideoPlayerComponent {\r\n  @Input() videoUrl: SafeResourceUrl;\r\n\r\n  constructor(private sanitizer: DomSanitizer) {\r\n    this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(\r\n      'https://www.youtube.com/embed/a9PR9wcuaBk?si=ubFLljQ88i5U8Lr2'\r\n    );\r\n  }\r\n}\r\n",
+            "styleUrl": "./video-player.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "sanitizer",
+                        "type": "DomSanitizer",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 12,
+                "jsdoctags": [
+                    {
+                        "name": "sanitizer",
+                        "type": "DomSanitizer",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "templateData": "<div class=\"video-container\">\r\n  <iframe\r\n    width=\"560\"\r\n    height=\"315\"\r\n    [src]=\"videoUrl\"\r\n    title=\"YouTube video player\"\r\n    frameborder=\"0\"\r\n    allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\"\r\n    referrerpolicy=\"strict-origin-when-cross-origin\"\r\n    allowfullscreen\r\n  ></iframe>\r\n</div>\r\n"
         }
     ],
     "modules": [],
@@ -1592,7 +1664,16 @@
                 "deprecationMessage": "",
                 "type": "StoryFn",
                 "defaultValue": "(args) => ({\r\n  component: TopBarComponent,\r\n  props: args,\r\n})"
-
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/video-player.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryFn",
+                "defaultValue": "(args) => ({\r\n  component: VideoPlayerComponent,\r\n  props: args,\r\n})"
             }
         ],
         "functions": [],
@@ -1952,7 +2033,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "StoryFn",
-                    "defaultValue": "(args) => ({\n  component: VideoPlayerComponent,\n  props: args,\n})"
+                    "defaultValue": "(args) => ({\r\n  component: VideoPlayerComponent,\r\n  props: args,\r\n})"
                 }
             ],
             ".storybook/preview.ts": [

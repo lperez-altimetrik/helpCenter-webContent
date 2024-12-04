@@ -1,0 +1,51 @@
+
+$neutral-accent: var(--hc-link-color); 
+$neutral-text: var(--hc-color-paysafe-blue-50);
+
+
+mat-card {
+    border: 1px solid var(--hc-color-grey-20);
+    padding: 16px;
+    background: var(--hc-color-bg-secondary);
+    border-radius: 8px;
+    max-height: fit-content;
+
+    .content-container {
+        padding: 4px 4px 4px 4px;
+        max-height: 100%;
+        height: fit-content;
+        display: flex;
+        gap: 12px;
+        flex-direction: row;
+        align-items: start;
+
+        .detail {
+            background-color: $neutral-accent;
+            border-radius: 5px;
+            align-self: stretch;
+            max-width: 4px;
+            min-width: 4px;
+        }
+
+        .text-content {
+            flex: 1;
+            align-items: stretch;
+
+            .message-title {
+                margin-top: 0px;
+                font-size: 20px;
+                font-weight: 500;
+                color: $neutral-text;
+            }
+        
+            .message-body {
+                margin: 0;
+                font-size: 16px;
+                color: var(--hc-color-fg-secondary);
+            }
+        }
+
+
+    }
+   
+}
