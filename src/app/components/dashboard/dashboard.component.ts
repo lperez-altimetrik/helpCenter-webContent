@@ -3,12 +3,12 @@ import { Component } from '@angular/core';
 import { inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
-import { VideoPlayerComponent } from '../shared/video-player/video-player.component';
+import { CardComponent } from '../shared/card/card.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [VideoPlayerComponent],
+  imports: [CardComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })
