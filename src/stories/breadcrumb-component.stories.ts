@@ -1,9 +1,9 @@
 import { Meta, StoryFn } from '@storybook/angular';
-import { BreadcrumComponent } from '../app/components/shared/breadcrum/breadcrum.component';
+import { BreadcrumbComponent } from '../app/components/shared/breadcrum/breadcrumb.component';
 
 export default {
-  title: 'Shared/BreadcrumComponent',
-  component: BreadcrumComponent,
+  title: 'Shared/BreadcrumbComponent',
+  component: BreadcrumbComponent,
 } as Meta;
 
 const Template: StoryFn = (args) => ({

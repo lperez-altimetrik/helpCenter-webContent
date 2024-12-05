@@ -1,7 +1,0 @@
-<div class="breadcrumb-container">
-    @for (pageElement of pagesPath; track pageElement.title) {
-        <a class="prev-link-item" href="{{pageElement.url}}">{{ pageElement.title }}</a>
-        <mat-icon aria-hidden="false" aria-label="chevron-right" fontIcon="chevron_right"></mat-icon>
-    }
-    <span class=".current-element">{{ currentElement }}</span>
-</div>
