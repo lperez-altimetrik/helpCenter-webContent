@@ -4,7 +4,7 @@
     "injectables": [
         {
             "name": "AuthService",
-            "id": "injectable-AuthService-75f48fc64ba66b32a6fde165cb24513ac565264943365c00b364a6a6533fc7c00e2d54a713f33b6456445e2a6d728c5afa0c308c240564b3ad06db0579bcfd44",
+            "id": "injectable-AuthService-154ad2d491af80a22f287f64a65b4f3f767e85150e2546705d48d8ee019767604fbff3b12789e7f4ac9c263b94210733dfff451a9855d720eae60ee5937beb34",
             "file": "src/app/services/auth.service.ts",
             "properties": [
                 {
@@ -158,13 +158,13 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { inject, Injectable } from '@angular/core';\r\nimport { Router } from '@angular/router';\r\nimport { CookieService } from 'ngx-cookie-service';\r\nimport { Observable, BehaviorSubject } from 'rxjs';\r\n\r\n@Injectable({\r\n  providedIn: 'root',\r\n})\r\nexport class AuthService {\r\n  private readonly TOKEN_KEY = 'auth_token';\r\n\r\n  private router = inject(Router);\r\n  private cookieService = inject(CookieService);\r\n\r\n  private _isLoggedInSubject = new BehaviorSubject<boolean>(false);\r\n  public isLoggedIn$: Observable<boolean> = this._isLoggedInSubject.asObservable();\r\n\r\n  login(username: string, password: string): boolean {\r\n    if (username === 'root' && password === 'root') {\r\n      this.cookieService.set(this.TOKEN_KEY, 'mock-token', 1);\r\n      this._isLoggedInSubject.next(true);\r\n      return true;\r\n    }\r\n    return false;\r\n  }\r\n\r\n  logout(): void {\r\n    this.cookieService.delete(this.TOKEN_KEY);\r\n    this._isLoggedInSubject.next(false);\r\n    this.router.navigate(['/login']);\r\n  }\r\n\r\n  isLoggedIn(): boolean {\r\n    const isLoggedIn = this.cookieService.check(this.TOKEN_KEY);\r\n\r\n    this._isLoggedInSubject.next(isLoggedIn);\r\n    \r\n    return isLoggedIn;\r\n  }\r\n\r\n  getToken(): string | null {\r\n    return this.cookieService.get(this.TOKEN_KEY);\r\n  }\r\n}\r\n",
+            "sourceCode": "import { inject, Injectable } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { CookieService } from 'ngx-cookie-service';\nimport { Observable, BehaviorSubject } from 'rxjs';\n\n@Injectable({\n  providedIn: 'root',\n})\nexport class AuthService {\n  private readonly TOKEN_KEY = 'auth_token';\n\n  private router = inject(Router);\n  private cookieService = inject(CookieService);\n\n  private _isLoggedInSubject = new BehaviorSubject<boolean>(false);\n  public isLoggedIn$: Observable<boolean> = this._isLoggedInSubject.asObservable();\n\n  login(username: string, password: string): boolean {\n    if (username === 'root' && password === 'root') {\n      this.cookieService.set(this.TOKEN_KEY, 'mock-token', 1);\n      this._isLoggedInSubject.next(true);\n      return true;\n    }\n    return false;\n  }\n\n  logout(): void {\n    this.cookieService.delete(this.TOKEN_KEY);\n    this._isLoggedInSubject.next(false);\n    this.router.navigate(['/login']);\n  }\n\n  isLoggedIn(): boolean {\n    const isLoggedIn = this.cookieService.check(this.TOKEN_KEY);\n\n    this._isLoggedInSubject.next(isLoggedIn);\n    \n    return isLoggedIn;\n  }\n\n  getToken(): string | null {\n    return this.cookieService.get(this.TOKEN_KEY);\n  }\n}\n",
             "extends": [],
             "type": "injectable"
         },
         {
             "name": "StrapiService",
-            "id": "injectable-StrapiService-145dbc31a756a65e4384897c993cbaabcab1b79304d9ab05fbd1762ca34bb644929f3749677d09a009f5585575d7a194fb60d006e0d9dd5a39c516176b514ce4",
+            "id": "injectable-StrapiService-66c205f2a803b4c69e23ac70bf34000017f9f25d7b39361b4835a96116d351854269886e8815e44e47b01f9c6ab735d9d8d4f926176f5fee5cd2ba02fffee0ab",
             "file": "src/app/services/strapi-service.ts",
             "properties": [
                 {
@@ -198,7 +198,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { HttpClient } from '@angular/common/http';\r\nimport { Observable } from 'rxjs';\r\n\r\n@Injectable({ \r\n    providedIn: 'root'\r\n})\r\n\r\nexport class StrapiService {\r\n    private apiUrl = 'http://localhost:1337';  \r\n\r\n    constructor(private http: HttpClient) {}\r\n\r\n    getPosts(): Observable<any> {\r\n        return this.http.get(`${this.apiUrl}/api/restaurants)`);\r\n    }\r\n}\r\n\r\n    ",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { HttpClient } from '@angular/common/http';\nimport { Observable } from 'rxjs';\n\n@Injectable({ \n    providedIn: 'root'\n})\n\nexport class StrapiService {\n    private apiUrl = 'http://localhost:1337';  \n\n    constructor(private http: HttpClient) {}\n\n    getPosts(): Observable<any> {\n        return this.http.get(`${this.apiUrl}/api/restaurants)`);\n    }\n}\n\n    ",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -235,8 +235,55 @@
     "directives": [],
     "components": [
         {
+            "name": "AccordionComponent",
+            "id": "component-AccordionComponent-cb3735a6dce7cb78ec6eed6a307f34f92dd62355da43a5a4075755632aab84524276eebdd38bf5345bea666bb86dc4df9247408a03fb00296158a1e3949dc459",
+            "file": "src/app/components/shared/accordion/accordion.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-accordion",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./accordion.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "MatExpansionModule",
+                    "type": "module"
+                },
+                {
+                    "name": "LinkComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { MatExpansionModule } from '@angular/material/expansion';\nimport { LinkComponent } from '../link/link.component';\n\n@Component({\n  selector: 'app-accordion',\n  standalone: true,\n  imports: [MatExpansionModule, LinkComponent],\n  templateUrl: './accordion.component.html',\n  styleUrl: './accordion.component.scss',\n})\nexport class AccordionComponent {}\n",
+            "styleUrl": "./accordion.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<mat-accordion>\n  <mat-expansion-panel>\n    <mat-expansion-panel-header class=\"accordion\">\n      <mat-panel-title> Accordion Section Title </mat-panel-title>\n    </mat-expansion-panel-header>\n    <div class=\"content\">\n      <div>\n        <app-link [label]=\"'Accordion Item Title'\"> </app-link>\n        <p>\n          Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.\n        </p>\n      </div>\n      <div>\n        <app-link [label]=\"'Accordion Item Title'\"> </app-link>\n        <p>\n          Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.\n        </p>\n      </div>\n      <div>\n        <app-link [label]=\"'Accordion Item Title'\"> </app-link>\n        <p>\n          Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.\n        </p>\n      </div>\n      <div>\n        <app-link [label]=\"'Accordion Item Title'\"> </app-link>\n        <p>\n          Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.\n        </p>\n      </div>\n    </div>\n  </mat-expansion-panel>\n</mat-accordion>\n"
+        },
+        {
             "name": "AppComponent",
-            "id": "component-AppComponent-500c87b1ba87d72e5920cf80b5a9b42666326b8e30808d38c60529dc177576e739d0f5a923bcbac740d6b74b7a09608017aa7d582dd2b675d6b473d93cd74cde",
+            "id": "component-AppComponent-4b2635fdfd444ee6020a31081b739a0026013e15b76b03ca7d52d220b39bd500941c7b64d37b1026f1ac98a473a1ef930da59d5042c9068eca588e2b56d1f1df",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -280,17 +327,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { RouterOutlet } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  standalone: true,\r\n  imports: [RouterOutlet],\r\n  templateUrl: './app.component.html',\r\n  styleUrl: './app.component.scss',\r\n})\r\nexport class AppComponent {\r\n  title = 'client';\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { RouterOutlet } from '@angular/router';\n\n@Component({\n  selector: 'app-root',\n  standalone: true,\n  imports: [RouterOutlet],\n  templateUrl: './app.component.html',\n  styleUrl: './app.component.scss',\n})\nexport class AppComponent {\n  title = 'client';\n}\n",
             "styleUrl": "./app.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<router-outlet />\r\n"
+            "templateData": "<router-outlet />\n"
         },
         {
             "name": "ArticleFeedbackComponent",
-            "id": "component-ArticleFeedbackComponent-67146dc0a5101c85710ab9d2c432432d6a5cdb1abae6b187d6d3da168789e7bf1220b6b90ea2dff7a26c61bd6c7ce62766327977b71f07cb88e1777c2e537de2",
+            "id": "component-ArticleFeedbackComponent-97d7381c9fa7a40b92b0827fe33756229825e5e231fe40f1f40ad3975462ce389c61f772d46cf88e18794c6b422872906e434140f8593c8c8b24277217b463ac",
             "file": "src/app/components/shared/article-feedback/article-feedback.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -309,6 +356,62 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
+                    "name": "currentMessage",
+                    "defaultValue": "this.messages.askMessage",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 20,
+                    "modifierKind": [
+                        125
+                    ]
+                },
+                {
+                    "name": "feedbackResponse",
+                    "defaultValue": "\"None\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "modifierKind": [
+                        125
+                    ]
+                },
+                {
+                    "name": "messages",
+                    "defaultValue": "{\n    askMessage: \"Was this article helpful?\",\n    thanksMessage: \"Thanks for your feedback\",\n    requestingMessage: \"Help us improve?\"\n  }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "noFeedbackClick",
+                    "defaultValue": "() => {...}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 36,
+                    "modifierKind": [
+                        125
+                    ]
+                },
+                {
                     "name": "onNoClick",
                     "defaultValue": "() => {...}",
                     "deprecated": false,
@@ -317,7 +420,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 14,
+                    "line": 25,
                     "modifierKind": [
                         125
                     ]
@@ -331,7 +434,35 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 11,
+                    "line": 21,
+                    "modifierKind": [
+                        125
+                    ]
+                },
+                {
+                    "name": "sendFeedbackClick",
+                    "defaultValue": "() => {...}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 30,
+                    "modifierKind": [
+                        125
+                    ]
+                },
+                {
+                    "name": "textAreaPlaceholder",
+                    "defaultValue": "\"leave your comment\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17,
                     "modifierKind": [
                         125
                     ]
@@ -347,17 +478,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-article-feedback',\r\n  standalone: true,\r\n  imports: [],\r\n  templateUrl: './article-feedback.component.html',\r\n  styleUrl: './article-feedback.component.scss'\r\n})\r\nexport class ArticleFeedbackComponent {\r\n  public onYesClick = () => {\r\n    alert(\"On Yes Action triggered\");\r\n  }\r\n  public onNoClick = () => {\r\n    alert(\"On No Action triggered\");\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-article-feedback',\n  standalone: true,\n  imports: [],\n  templateUrl: './article-feedback.component.html',\n  styleUrl: './article-feedback.component.scss'\n})\nexport class ArticleFeedbackComponent {\n  public feedbackResponse: string = \"None\";\n  private messages: any = {\n    askMessage: \"Was this article helpful?\",\n    thanksMessage: \"Thanks for your feedback\",\n    requestingMessage: \"Help us improve?\"\n  };\n  public textAreaPlaceholder: string =  \"leave your comment\";\n\n  \n  public currentMessage: string = this.messages.askMessage;\n  public onYesClick = () => {\n    this.feedbackResponse = \"\";\n    this.currentMessage = this.messages.thanksMessage;\n  }\n  public onNoClick = () => {\n    this.feedbackResponse = \"No\"\n    this.currentMessage = this.messages.requestingMessage;\n  }\n\n  public sendFeedbackClick = () => {\n    //looks like duplicated method but this will call an API here\n    this.feedbackResponse = \"\";\n    this.currentMessage = this.messages.thanksMessage;\n  }\n  \n  public noFeedbackClick = () => {\n    this.feedbackResponse = \"\";\n    this.currentMessage = this.messages.thanksMessage;\n  }\n\n}\n",
             "styleUrl": "./article-feedback.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "\r\n<div class=\"feedback-container\">\r\n    <div class=\"article-feedback\">\r\n        <div class=\"article-title-container\">\r\n            <div class=\"icon-holder\">\r\n                <object data=\"./../../../../assets/icons/common/note-stack-icon.svg\" width=\"22\" height=\"22\"> \r\n                </object>\r\n            </div>\r\n            <h2 class=\"article-title-bg\">Was this article helpful?</h2>\r\n            <h3 class=\"article-title-mb\">Was this article helpful?</h3>\r\n        </div>\r\n        <div class=\"feedback-buttons-container\">\r\n            <button class=\"feedback-button\" (click)=\"onYesClick()\">Yes</button>\r\n            <button class=\"feedback-button\" (click)=\"onNoClick()\">No</button>\r\n        </div>\r\n    </div>\r\n</div>"
+            "templateData": "\n<div class=\"feedback-container\">\n    <div class=\"article-feedback\">\n        <div class=\"article-title-container\">\n            <div class=\"icon-holder\">\n                <img src=\"./../../../../assets/icons/common/note-stack-icon.svg\" width=\"22\" height=\"22\"> \n            </div>\n            <h2 class=\"article-title-bg\">{{currentMessage}}</h2>\n            <h3 class=\"article-title-mb\">{{currentMessage}}</h3>\n        </div>\n        @switch(feedbackResponse){\n            @case(\"None\"){\n                <div class=\"feedback-buttons-container\">\n                    <button class=\"feedback-button\" (click)=\"onYesClick()\">Yes</button>\n                    <button class=\"feedback-button\" (click)=\"onNoClick()\">No</button>\n                </div>\n            }\n            @case(\"No\"){\n                <div class=\"feedback-textfield-container\">\n                    <textarea [placeholder]=\"textAreaPlaceholder\" class=\"feedback-textarea\" ></textarea>\n                </div>\n                <div class=\"feedback-buttons-container\">\n                    <button class=\"send-button\" (click)=\"sendFeedbackClick()\">Send</button>\n                    <button class=\"feedback-button\" (click)=\"noFeedbackClick()\">No, thanks</button>\n                </div>\n            }\n        }\n    </div>\n</div>"
         },
         {
             "name": "ArticleIndexComponent",
-            "id": "component-ArticleIndexComponent-94809677db4624a7bf503b387eac08debedefa7e95a60bb1cbd1e63fef64a03d5e8070e257e7547839763c2746aed4c4bac59c51d88b8a0c9920fa3798072a6c",
+            "id": "component-ArticleIndexComponent-e5bb36e74b78b39f7b42066e16897773373dde691364ca0f19d20fae3b57a56feaf8736b73ffd6f64975d56a36ac75403190cf0911976b2eef33889105aed7f2",
             "file": "src/app/components/shared/article-index/article-index.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -377,7 +508,7 @@
             "propertiesClass": [
                 {
                     "name": "articleLinks",
-                    "defaultValue": "[\r\n    {title:\"Why Use a Payment Link\", url: \"#\"},\r\n    {title:\"Steps to Create and Share a Payment Link\", url: \"#\"},\r\n    {title:\"QR Codes\", url: \"#\"}\r\n  ]",
+                    "defaultValue": "[\n    {title:\"Why Use a Payment Link\", url: \"#\"},\n    {title:\"Steps to Create and Share a Payment Link\", url: \"#\"},\n    {title:\"QR Codes\", url: \"#\"}\n  ]",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "any[]",
@@ -414,17 +545,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-article-index',\r\n  standalone: true,\r\n  imports: [],\r\n  templateUrl: './article-index.component.html',\r\n  styleUrl: './article-index.component.scss'\r\n})\r\nexport class ArticleIndexComponent {\r\n  public articleLinks: any[] = [\r\n    {title:\"Why Use a Payment Link\", url: \"#\"},\r\n    {title:\"Steps to Create and Share a Payment Link\", url: \"#\"},\r\n    {title:\"QR Codes\", url: \"#\"}\r\n  ];\r\n\r\n  public onLinkClick = (url: string) => {\r\n    alert(`clicked element: loading ${url}`);\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-article-index',\n  standalone: true,\n  imports: [],\n  templateUrl: './article-index.component.html',\n  styleUrl: './article-index.component.scss'\n})\nexport class ArticleIndexComponent {\n  public articleLinks: any[] = [\n    {title:\"Why Use a Payment Link\", url: \"#\"},\n    {title:\"Steps to Create and Share a Payment Link\", url: \"#\"},\n    {title:\"QR Codes\", url: \"#\"}\n  ];\n\n  public onLinkClick = (url: string) => {\n    alert(`clicked element: loading ${url}`);\n  }\n}\n",
             "styleUrl": "./article-index.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"article-index-container\">\r\n    <label class=\"top-text\">\r\n        In this article\r\n    </label>\r\n    <div class=\"content-container\">\r\n        <div class=\"header-content\">\r\n            <label class=\"header-title\">Payment Links</label>\r\n        </div>\r\n        @for (articleLink of articleLinks; track articleLink.title) {\r\n            <div class=\"link-content\">\r\n                <label class=\"article-link\" (click)=\"onLinkClick(articleLink.url)\">{{ articleLink.title }}</label>\r\n            </div>\r\n        }  \r\n    </div>\r\n</div>"
+            "templateData": "<div class=\"article-index-container\">\n    <label class=\"top-text\">\n        In this article\n    </label>\n    <div class=\"content-container\">\n        <div class=\"header-content\">\n            <label class=\"header-title\">Payment Links</label>\n        </div>\n        @for (articleLink of articleLinks; track articleLink.title) {\n            <div class=\"link-content\">\n                <label class=\"article-link\" (click)=\"onLinkClick(articleLink.url)\">{{ articleLink.title }}</label>\n            </div>\n        }  \n    </div>\n</div>"
         },
         {
             "name": "ArticleSectionTitleComponent",
-            "id": "component-ArticleSectionTitleComponent-67393acba2d6a056e62935f2f2399b5fcbe59cfc384665b26e7d31dc2ac08b3bb9c29026884003f893b582e889deefef677c50384d3fb4691e22e80ab85c213d",
+            "id": "component-ArticleSectionTitleComponent-e9bb4de45d90cd18f337cf232b849a617480b5e1a1e203bc1475176049eb4b24641fe52141085569b5a2f0de9b9ba400c553b0aead9e9fabbc8bc3ec2c213fb3",
             "file": "src/app/components/shared/article-section-title/article-section-title.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -467,18 +598,69 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { MatIconModule } from '@angular/material/icon';\r\n\r\n@Component({\r\n  selector: 'app-article-section-title',\r\n  standalone: true,\r\n  imports: [MatIconModule],\r\n  templateUrl: './article-section-title.component.html',\r\n  styleUrl: './article-section-title.component.scss',\r\n})\r\nexport class ArticleSectionTitleComponent {\r\n  @Input() title = 'Article Section Title';\r\n}\r\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { MatIconModule } from '@angular/material/icon';\n\n@Component({\n  selector: 'app-article-section-title',\n  standalone: true,\n  imports: [MatIconModule],\n  templateUrl: './article-section-title.component.html',\n  styleUrl: './article-section-title.component.scss',\n})\nexport class ArticleSectionTitleComponent {\n  @Input() title = 'Article Section Title';\n}\n",
             "styleUrl": "./article-section-title.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"section-title\">\r\n  <img class=\"icon\" src=\"assets/icons/common/note-stack-icon.svg\" />\r\n\r\n  <h2>\r\n    {{ title }}\r\n  </h2>\r\n\r\n  <mat-icon class=\"flat-icon\"> link </mat-icon>\r\n</div>\r\n"
+            "templateData": "<div class=\"section-title\">\n  <img class=\"icon\" src=\"assets/icons/common/note-stack-icon.svg\" />\n\n  <h2>\n    {{ title }}\n  </h2>\n\n  <mat-icon class=\"flat-icon\"> link </mat-icon>\n</div>\n"
         },
         {
-            "name": "BreadcrumComponent",
-            "id": "component-BreadcrumComponent-6a8a84d0ee7fd6d1baa4d3be0057286866766df34a668c0d6f884c6cc2830b9c9c6c9168f841113005ed9675e02921673bcd079a8b3ddb4965cdc1683b422b21",
-            "file": "src/app/components/shared/breadcrum/breadcrum.component.ts",
+            "name": "BannerComponent",
+            "id": "component-BannerComponent-c0d0fc80b660d6ca0552fbfd9fc739b6977818f0e57145a3e27999bfd7329118898ab982a3a1aad9573aa40251de2d071ce686aa6ecb66b68bd3dfcfdd544c41",
+            "file": "src/app/components/shared/banner/banner.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-banner",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./banner.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "MatCardModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatIconModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatButtonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { MatButtonModule } from '@angular/material/button';\nimport { MatCardModule } from '@angular/material/card';\nimport { MatIconModule } from '@angular/material/icon';\n\n@Component({\n  selector: 'app-banner',\n  standalone: true,\n  imports: [MatCardModule, MatIconModule, MatButtonModule],\n  templateUrl: './banner.component.html',\n  styleUrl: './banner.component.scss',\n})\nexport class BannerComponent {}\n",
+            "styleUrl": "./banner.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"mat-typography banner-container\">\n  <div class=\"initial-content\">\n    <mat-icon class=\"icon mr1\">campaign</mat-icon>\n\n    <div class=\"info\">\n      <h5>New feature alert</h5>\n      <p>Product Catalogue is here!</p>\n    </div>\n  </div>\n\n  <div class=\"secondary-content\">\n    <p class=\"mr1\">\n      Streamline your checkout experience and track sales insights for all of\n      your business products today!\n    </p>\n    <button mat-raised-button color=\"primary\">Learn More</button>\n  </div>\n\n  <mat-icon class=\"mobile-icon\">chevron_right</mat-icon>\n</div>\n"
+        },
+        {
+            "name": "BreadcrumbComponent",
+            "id": "component-BreadcrumbComponent-ea6f3a82a5f6bbf3b9350ae5efd60d572789efebbe6f2b5a817abf1dbf916de090ea6372b1d493a7b66cf43c2f37e670be94c1fcef84f8ee031e34a2bdec9681",
+            "file": "src/app/components/shared/breadcrum/breadcrumb.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -488,7 +670,7 @@
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
-                "./breadcrum.component.html"
+                "./breadcrumb.component.html"
             ],
             "viewProviders": [],
             "hostDirectives": [],
@@ -511,7 +693,7 @@
                 },
                 {
                     "name": "pagesPath",
-                    "defaultValue": "[\r\n    { title: \"Page 1\", url: \"#\"},\r\n    { title: \"Page 2\", url: \"#\"},\r\n    { title: \"Page 3\", url: \"#\"},\r\n    { title: \"Page 4\", url: \"#\"}\r\n  ]",
+                    "defaultValue": "[\n    { title: \"Page 1\", url: \"#\"},\n    { title: \"Page 2\", url: \"#\"},\n    { title: \"Page 3\", url: \"#\"},\n    { title: \"Page 4\", url: \"#\"}\n  ]",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "any",
@@ -539,17 +721,132 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { MatIconModule } from '@angular/material/icon';\r\n\r\n@Component({\r\n  selector: 'app-breadcrum',\r\n  standalone: true,\r\n  imports: [MatIconModule],\r\n  templateUrl: './breadcrum.component.html',\r\n  styleUrl: './breadcrum.component.scss'\r\n})\r\nexport class BreadcrumComponent {\r\n  public pagesPath: any = [\r\n    { title: \"Page 1\", url: \"#\"},\r\n    { title: \"Page 2\", url: \"#\"},\r\n    { title: \"Page 3\", url: \"#\"},\r\n    { title: \"Page 4\", url: \"#\"}\r\n  ]\r\n  public currentElement: string = \"page 5\";\r\n}\r\n",
-            "styleUrl": "./breadcrum.component.scss",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { MatIconModule } from '@angular/material/icon';\n\n@Component({\n  selector: 'app-breadcrum',\n  standalone: true,\n  imports: [MatIconModule],\n  templateUrl: './breadcrumb.component.html',\n  styleUrl: './breadcrumb.component.scss'\n})\nexport class BreadcrumbComponent {\n  public pagesPath: any = [\n    { title: \"Page 1\", url: \"#\"},\n    { title: \"Page 2\", url: \"#\"},\n    { title: \"Page 3\", url: \"#\"},\n    { title: \"Page 4\", url: \"#\"}\n  ]\n  public currentElement: string = \"page 5\";\n}\n",
+            "styleUrl": "./breadcrumb.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"breadcrumb-container\">\r\n    @for (pageElement of pagesPath; track pageElement.title) {\r\n        <a class=\"prev-link-item\" href=\"{{pageElement.url}}\">{{ pageElement.title }}</a>\r\n        <mat-icon aria-hidden=\"false\" aria-label=\"chevron-right\" fontIcon=\"chevron_right\"></mat-icon>\r\n    }\r\n    <span class=\".current-element\">{{ currentElement }}</span>\r\n</div>\r\n"
+            "templateData": "<div class=\"breadcrumb-container\">\n    @for (pageElement of pagesPath; track pageElement.title) {\n        <a class=\"prev-link-item\" href=\"{{pageElement.url}}\">{{ pageElement.title }}</a>\n        <mat-icon aria-hidden=\"false\" aria-label=\"chevron-right\" fontIcon=\"chevron_right\"></mat-icon>\n    }\n    <span class=\".current-element\">{{ currentElement }}</span>\n</div>\n"
+        },
+        {
+            "name": "CardComponent",
+            "id": "component-CardComponent-ec8606155c9a801f84ccb07ddfbd450e705b80b27fb9c5f0ff94245a6e4952b24a429103afcd60987717ae474eacf2ef4bdc8d58e14444a707dfe088504077f3",
+            "file": "src/app/components/shared/card/card.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-card",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./card.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "image",
+                    "defaultValue": "'assets/images/card-image.png'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "link",
+                    "defaultValue": "'Learn more'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "linkIcon",
+                    "defaultValue": "'north_east'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "linkUrl",
+                    "defaultValue": "'https://www.paysafe.com/us-en/'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "span",
+                    "defaultValue": "'15 min read'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "text",
+                    "defaultValue": "'We give ambitious businesses their launchpad through safe and secure online payment solutions'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "title",
+                    "defaultValue": "'new optic app'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "MatCardModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatIconModule",
+                    "type": "module"
+                },
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input } from '@angular/core';\nimport { MatCardModule } from '@angular/material/card';\nimport { MatIconModule } from '@angular/material/icon';\n\n@Component({\n  selector: 'app-card',\n  standalone: true,\n  imports: [MatCardModule, MatIconModule, CommonModule],\n  templateUrl: './card.component.html',\n  styleUrl: './card.component.scss',\n})\nexport class CardComponent {\n  @Input() image = 'assets/images/card-image.png';\n  @Input() title = 'new optic app';\n  @Input() span = '15 min read';\n  @Input() text =\n    'We give ambitious businesses their launchpad through safe and secure online payment solutions';\n  @Input() link = 'Learn more';\n  @Input() linkUrl = 'https://www.paysafe.com/us-en/';\n  @Input() linkIcon = 'north_east';\n}\n",
+            "styleUrl": "./card.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<mat-card>\n  <mat-card-content>\n    <div class=\"header\">\n      <img [src]=\"image\" alt=\"Card image\" class=\"image\" />\n    </div>\n    <div class=\"content\">\n      <div class=\"title-section\">\n        <mat-icon class=\"icon\"> arrow_upward </mat-icon>\n        <div>\n          <h4>\n            {{ title | titlecase }}\n          </h4>\n          <span>\n            {{ span }}\n          </span>\n        </div>\n      </div>\n      <p>\n        {{ text }}\n      </p>\n      <a [href]=\"linkUrl\" target=\"_blank\">\n        <span>\n          {{ link }}\n        </span>\n        <mat-icon class=\"flat-icon\">\n          {{ linkIcon }}\n        </mat-icon>\n      </a>\n    </div>\n    <mat-icon class=\"go-icon\">chevron_right</mat-icon>\n  </mat-card-content>\n</mat-card>\n"
         },
         {
             "name": "ContactUsComponent",
-            "id": "component-ContactUsComponent-b47c4c1eede91af6a7dcd41715bfd860bb772137f65f6437a9326e27ba9c5b427f680c85290de3d457a836f287fb0d010a5256f739b1b44be53c59b1849ed930",
+            "id": "component-ContactUsComponent-a6345ddd2c305a539d11f91a7692c52ad7b2d6f9b60412184bd72631849da7c69cdf6dbe3954ad188b907ce807c3fdd113c0f261f1a1550d56826d19872688b0",
             "file": "src/app/components/shared/contact-us/contact-us.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -594,13 +891,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { MatButtonModule } from '@angular/material/button';\r\n\r\nimport { MatCardModule } from '@angular/material/card';\r\nimport { MatChipsModule } from '@angular/material/chips';\r\nimport { MatIconModule } from '@angular/material/icon';\r\n\r\n@Component({\r\n  selector: 'app-contact-us',\r\n  standalone: true,\r\n  imports: [MatCardModule, MatChipsModule, MatButtonModule, MatIconModule],\r\n  templateUrl: './contact-us.component.html',\r\n  styleUrl: './contact-us.component.scss',\r\n})\r\nexport class ContactUsComponent {}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { MatButtonModule } from '@angular/material/button';\n\nimport { MatCardModule } from '@angular/material/card';\nimport { MatChipsModule } from '@angular/material/chips';\nimport { MatIconModule } from '@angular/material/icon';\n\n@Component({\n  selector: 'app-contact-us',\n  standalone: true,\n  imports: [MatCardModule, MatChipsModule, MatButtonModule, MatIconModule],\n  templateUrl: './contact-us.component.html',\n  styleUrl: './contact-us.component.scss',\n})\nexport class ContactUsComponent {}\n",
             "styleUrl": "./contact-us.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<mat-card class=\"mat-typography contact-us-container\">\r\n  <button mat-raised-button class=\"need-help-button\">\r\n    <div class=\"button-content\">\r\n      <mat-icon class=\"mail-icon mr1\">mail</mat-icon>\r\n      <div class=\"section\">\r\n        <span class=\"row centered\">\r\n          <mat-icon class=\"mail-icon mr1\">mail</mat-icon>\r\n          <div class=\"button-text mr1\">Need more help?</div>\r\n        </span>\r\n\r\n        <span class=\"row centered\">\r\n          <div class=\"link mr1\">Contact us</div>\r\n          <mat-icon class=\"go-icon\">chevron_right</mat-icon>\r\n        </span>\r\n      </div>\r\n      <mat-icon class=\"go-icon\">chevron_right</mat-icon>\r\n    </div>\r\n  </button>\r\n</mat-card>\r\n"
+            "templateData": "<mat-card class=\"mat-typography contact-us-container\">\n  <button mat-raised-button class=\"need-help-button\">\n    <div class=\"button-content\">\n      <mat-icon class=\"mail-icon mr1\">mail</mat-icon>\n      <div class=\"section\">\n        <span class=\"row centered\">\n          <mat-icon class=\"mail-icon mr1\">mail</mat-icon>\n          <div class=\"button-text mr1\">Need more help?</div>\n        </span>\n\n        <span class=\"row centered\">\n          <div class=\"link mr1\">Contact us</div>\n          <mat-icon class=\"go-icon\">chevron_right</mat-icon>\n        </span>\n      </div>\n      <mat-icon class=\"mobile-icon\">chevron_right</mat-icon>\n    </div>\n  </button>\n</mat-card>\n"
         },
         {
             "name": "DashboardComponent",
@@ -670,7 +967,7 @@
             "standalone": true,
             "imports": [
                 {
-                    "name": "VideoPlayerComponent",
+                    "name": "AccordionComponent",
                     "type": "component"
                 }
             ],
@@ -687,7 +984,7 @@
         },
         {
             "name": "FooterComponent",
-            "id": "component-FooterComponent-3995c07bfe607c4e15b332c98408073eb8b16cd19c7d86beeabce8d195abeea1152869abfa884c3065c96712ae645c34d19239e0b56444e47ef4ad0e93fd779d",
+            "id": "component-FooterComponent-45c8b21a5a2ef5cf17ae1b254643c95bbfb68df2b2dbdf9576d82f26b32394b40ce2c65fddbb0993969ae88e7e8eb00383f6d3be1b4f3d629bd15bb495a23d29",
             "file": "src/app/components/shared/footer/footer.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -746,7 +1043,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { Router } from '@angular/router';\r\nimport { inject } from '@angular/core';\r\nimport {MatDividerModule} from '@angular/material/divider';\r\n\r\n\r\n@Component({\r\n  selector: 'app-footer',\r\n  standalone: true,\r\n  imports: [MatDividerModule],\r\n  templateUrl: './footer.component.html',\r\n  styleUrl: './footer.component.scss'\r\n})\r\nexport class FooterComponent {\r\n\r\n  private router = inject(Router);\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {\r\n\r\n  }\r\n\r\n\r\n}",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { inject } from '@angular/core';\nimport {MatDividerModule} from '@angular/material/divider';\n\n\n@Component({\n  selector: 'app-footer',\n  standalone: true,\n  imports: [MatDividerModule],\n  templateUrl: './footer.component.html',\n  styleUrl: './footer.component.scss'\n})\nexport class FooterComponent {\n\n  private router = inject(Router);\n\n  constructor() {}\n\n  ngOnInit(): void {\n\n  }\n\n\n}",
             "styleUrl": "./footer.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -760,11 +1057,95 @@
                 "line": 16
             },
             "extends": [],
-            "templateData": "<footer class=\"footer\">\r\n    <div class=\"nav-container\">\r\n        <nav class=\"navigation\">\r\n            <ul>\r\n                <li><a href=\"\">Cookie Settings</a></li>\r\n                <li><a href=\"\">Contact Us</a></li>\r\n                <li><a href=\"\">Privacy Policy</a></li>\r\n                <li><a href=\"\">Regulatory Disclosures</a></li>\r\n            </ul>\r\n        </nav>\r\n    </div>\r\n    <mat-divider class=\"divider\" [vertical]=\"true\"></mat-divider>\r\n    <div class=\"sm-container\">\r\n        <small>Copyright © 2024 Paysafe Holdings UK Limited. All rights reserved. Paysafe Financial Services Limited (FRN:900015)</small>\r\n    </div>\r\n</footer>"
+            "templateData": "<footer class=\"footer\">\n    <div class=\"nav-container\">\n        <nav class=\"navigation\">\n            <ul>\n                <li><a href=\"\">Cookie Settings</a></li>\n                <li><a href=\"\">Contact Us</a></li>\n                <li><a href=\"\">Privacy Policy</a></li>\n                <li><a href=\"\">Regulatory Disclosures</a></li>\n            </ul>\n        </nav>\n    </div>\n    <mat-divider class=\"divider\" [vertical]=\"true\"></mat-divider>\n    <div class=\"sm-container\">\n        <small>Copyright © 2024 Paysafe Holdings UK Limited. All rights reserved. Paysafe Financial Services Limited (FRN:900015)</small>\n    </div>\n</footer>"
+        },
+        {
+            "name": "LinkComponent",
+            "id": "component-LinkComponent-cc1b4155c34e638a8dd609e81b90572c6a5c52e7f8dc08398f101cfdc620d5bc2a5512e0836756729c9d045676d4c274083688ea33b1d9acc7ba6086fe2b7ca7",
+            "file": "src/app/components/shared/link/link.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-link",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./link.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "displayIcon",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Label'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "linkIcon",
+                    "defaultValue": "'north_east'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "url",
+                    "defaultValue": "'https://www.paysafe.com/us-en/'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatIconModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input } from '@angular/core';\nimport { MatIconModule } from '@angular/material/icon';\n\n@Component({\n  selector: 'app-link',\n  standalone: true,\n  imports: [CommonModule, MatIconModule],\n  templateUrl: './link.component.html',\n  styleUrl: './link.component.scss',\n})\nexport class LinkComponent {\n  @Input() label = 'Label';\n  @Input() url = 'https://www.paysafe.com/us-en/';\n  @Input() linkIcon = 'north_east';\n  @Input() displayIcon = true;\n}\n",
+            "styleUrl": "./link.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<a [href]=\"url\" class=\"link\" target=\"_blank\">\n  <span>\n    {{ label | titlecase }}\n  </span>\n  <mat-icon class=\"flat-icon\">\n    {{ linkIcon }}\n  </mat-icon>\n</a>\n"
         },
         {
             "name": "LoginComponent",
-            "id": "component-LoginComponent-535ea40e48f1cb3a098f99689890784d1f02f56e72a21c8e58052b274fc4b220d2135cac75fce402750399bf90bb8c6f46957f3002b44db4458e70e90c4a1066",
+            "id": "component-LoginComponent-b5e7cf8e851cb255e128562c2589004b1e5ed8d64b5016039b97857964063dc0fed7da044fd5ed7bf502f4126e1c379982c5a285799a3c80a669cef8c4df45b6",
             "file": "src/app/components/login/login.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -875,7 +1256,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { inject } from '@angular/core';\r\nimport { Router } from '@angular/router';\r\nimport { AuthService } from '../../services/auth.service';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { CommonModule } from '@angular/common';\r\n\r\n@Component({\r\n  selector: 'app-login',\r\n  standalone: true,\r\n  imports: [CommonModule, FormsModule],\r\n  template: `\r\n    <div>\r\n      <h2>Login</h2>\r\n      <form (ngSubmit)=\"onLogin()\">\r\n        <input\r\n          type=\"text\"\r\n          [(ngModel)]=\"username\"\r\n          name=\"username\"\r\n          placeholder=\"Username\"\r\n          required\r\n        />\r\n        <input\r\n          type=\"password\"\r\n          [(ngModel)]=\"password\"\r\n          name=\"password\"\r\n          placeholder=\"Password\"\r\n          required\r\n        />\r\n        <button type=\"submit\">Login</button>\r\n      </form>\r\n      <p *ngIf=\"loginFailed\" class=\"error\">\r\n        Invalid credentials. Please try again.\r\n      </p>\r\n    </div>\r\n  `,\r\n  styles: [\r\n    `\r\n      .error {\r\n        color: red;\r\n      }\r\n    `,\r\n  ],\r\n})\r\nexport class LoginComponent {\r\n  username: string = '';\r\n  password: string = '';\r\n  loginFailed: boolean = false;\r\n\r\n  private authService = inject(AuthService);\r\n  private router = inject(Router);\r\n\r\n  onLogin(): void {\r\n    const isLoggedIn = this.authService.login(this.username, this.password);\r\n    if (isLoggedIn) {\r\n      this.router.navigate(['/dashboard']);\r\n    } else {\r\n      this.loginFailed = true;\r\n    }\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { inject } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { AuthService } from '../../services/auth.service';\nimport { FormsModule } from '@angular/forms';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n  selector: 'app-login',\n  standalone: true,\n  imports: [CommonModule, FormsModule],\n  template: `\n    <div>\n      <h2>Login</h2>\n      <form (ngSubmit)=\"onLogin()\">\n        <input\n          type=\"text\"\n          [(ngModel)]=\"username\"\n          name=\"username\"\n          placeholder=\"Username\"\n          required\n        />\n        <input\n          type=\"password\"\n          [(ngModel)]=\"password\"\n          name=\"password\"\n          placeholder=\"Password\"\n          required\n        />\n        <button type=\"submit\">Login</button>\n      </form>\n      <p *ngIf=\"loginFailed\" class=\"error\">\n        Invalid credentials. Please try again.\n      </p>\n    </div>\n  `,\n  styles: [\n    `\n      .error {\n        color: red;\n      }\n    `,\n  ],\n})\nexport class LoginComponent {\n  username: string = '';\n  password: string = '';\n  loginFailed: boolean = false;\n\n  private authService = inject(AuthService);\n  private router = inject(Router);\n\n  onLogin(): void {\n    const isLoggedIn = this.authService.login(this.username, this.password);\n    if (isLoggedIn) {\n      this.router.navigate(['/dashboard']);\n    } else {\n      this.loginFailed = true;\n    }\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "\n      .error {\n        color: red;\n      }\n    \n",
@@ -883,7 +1264,7 @@
         },
         {
             "name": "PageNotFoundComponent",
-            "id": "component-PageNotFoundComponent-8544e4475fed3b9b169f8026128b4505104321b142d82c0e54134d90c920499d8421e295fcaefe3420959ce6e9275709103fd027718647d1cbb075d87b08e533",
+            "id": "component-PageNotFoundComponent-a662779557f78d80caf5dfc2075a256ef22e5303102775a34ce60614af9c7c22aec5631dce885ff7b0e31995648e20714fab75b26b604f304ad5e866609f6a1c",
             "file": "src/app/components/page-not-found/page-not-found.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -911,17 +1292,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-page-not-found',\r\n  standalone: true,\r\n  imports: [],\r\n  templateUrl: './page-not-found.component.html',\r\n  styleUrl: './page-not-found.component.scss',\r\n})\r\nexport class PageNotFoundComponent {}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-page-not-found',\n  standalone: true,\n  imports: [],\n  templateUrl: './page-not-found.component.html',\n  styleUrl: './page-not-found.component.scss',\n})\nexport class PageNotFoundComponent {}\n",
             "styleUrl": "./page-not-found.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>page-not-found works!</p>\r\n"
+            "templateData": "<p>page-not-found works!</p>\n"
         },
         {
             "name": "RelatedArticlesComponent",
-            "id": "component-RelatedArticlesComponent-46d0b194d28f62bfadf8817419b0dd3ddf64eb75e055a3ee324634afab2f7bf29c83cb0b98503f48e1654725e6868287ae1170e79b8b1640b0854b18b5898c23",
+            "id": "component-RelatedArticlesComponent-a09033875218d19e18e88c9cf6406f8d6ad2d046b964cb58312581ed8033198e365263b869ae60038ba45bff9f9f86629c5bd9c761eb8f40f25347f10273acab",
             "file": "src/app/components/shared/related-articles/related-articles.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -955,7 +1336,7 @@
                 },
                 {
                     "name": "relatedLinks",
-                    "defaultValue": "[\r\n    {\r\n      \"title\": \"Paysafe Glossary of Payment Terms for Merchants\",\r\n      \"link\": \"#\"\r\n    },\r\n    {\r\n      \"title\": \"Accept payments with Tap to Pay on iPhone\",\r\n      \"link\": \"#\"\r\n    },\r\n    {\r\n      \"title\": \"Set up and edit transfer options\",\r\n      \"link\": \"#\"\r\n    },\r\n    {\r\n      \"title\": \"Chargeback Guide\",\r\n      \"link\": \"#\"\r\n    }\r\n]",
+                    "defaultValue": "[\n    {\n      \"title\": \"Paysafe Glossary of Payment Terms for Merchants\",\n      \"link\": \"#\"\n    },\n    {\n      \"title\": \"Accept payments with Tap to Pay on iPhone\",\n      \"link\": \"#\"\n    },\n    {\n      \"title\": \"Set up and edit transfer options\",\n      \"link\": \"#\"\n    },\n    {\n      \"title\": \"Chargeback Guide\",\n      \"link\": \"#\"\n    }\n]",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "any[]",
@@ -978,17 +1359,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-related-articles',\r\n  standalone: true,\r\n  imports: [],\r\n  templateUrl: './related-articles.component.html',\r\n  styleUrl: './related-articles.component.scss'\r\n})\r\nexport class RelatedArticlesComponent {\r\n  public relatedLinks: any[] = [\r\n    {\r\n      \"title\": \"Paysafe Glossary of Payment Terms for Merchants\",\r\n      \"link\": \"#\"\r\n    },\r\n    {\r\n      \"title\": \"Accept payments with Tap to Pay on iPhone\",\r\n      \"link\": \"#\"\r\n    },\r\n    {\r\n      \"title\": \"Set up and edit transfer options\",\r\n      \"link\": \"#\"\r\n    },\r\n    {\r\n      \"title\": \"Chargeback Guide\",\r\n      \"link\": \"#\"\r\n    }\r\n];\r\n  public onClickViewMore = () =>{\r\n    alert(\"View more clicked\");\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-related-articles',\n  standalone: true,\n  imports: [],\n  templateUrl: './related-articles.component.html',\n  styleUrl: './related-articles.component.scss'\n})\nexport class RelatedArticlesComponent {\n  public relatedLinks: any[] = [\n    {\n      \"title\": \"Paysafe Glossary of Payment Terms for Merchants\",\n      \"link\": \"#\"\n    },\n    {\n      \"title\": \"Accept payments with Tap to Pay on iPhone\",\n      \"link\": \"#\"\n    },\n    {\n      \"title\": \"Set up and edit transfer options\",\n      \"link\": \"#\"\n    },\n    {\n      \"title\": \"Chargeback Guide\",\n      \"link\": \"#\"\n    }\n];\n  public onClickViewMore = () =>{\n    alert(\"View more clicked\");\n  }\n}\n",
             "styleUrl": "./related-articles.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"related-articles-container\">\r\n    <div class=\"related-title-container\">\r\n        <div class=\"icon-holder\">\r\n            <object data=\"./../../../../assets/icons/common/note-stack-icon.svg\" width=\"22\" height=\"22\"> \r\n            </object>\r\n        </div>\r\n        <h2 class=\"related-title-bg\">Related articles</h2>\r\n        <h3 class=\"related-title-mb\">Related articles</h3>\r\n    </div>\r\n    <div class=\"related-articles-content\">\r\n        <div class=\"related-links-container\">\r\n            @for (relatedLink of relatedLinks; track relatedLink.title) {\r\n                <a class=\"link-element\" href=\"{{relatedLink.link}}\">\r\n                    <span class=\"related-link\">{{ relatedLink.title }}</span>\r\n                    <object data=\"./../../../../assets/icons/common/arrow-outward-icon.svg\" width=\"18\" height=\"18\"> </object>\r\n                </a>\r\n            }      \r\n        </div>\r\n        <button class=\"view-more-btn\" (click)=\"onClickViewMore()\">\r\n            View More\r\n            <object data=\"./../../../../assets/icons/common/arrow-forward-icon.svg\" width=\"16\" height=\"16\"> </object>\r\n        </button>\r\n    </div>\r\n</div>"
+            "templateData": "<div class=\"related-articles-container\">\n    <div class=\"related-title-container\">\n        <div class=\"icon-holder\">\n            <object data=\"./../../../../assets/icons/common/note-stack-icon.svg\" width=\"22\" height=\"22\"> \n            </object>\n        </div>\n        <h2 class=\"related-title-bg\">Related articles</h2>\n        <h3 class=\"related-title-mb\">Related articles</h3>\n    </div>\n    <div class=\"related-articles-content\">\n        <div class=\"related-links-container\">\n            @for (relatedLink of relatedLinks; track relatedLink.title) {\n                <a class=\"link-element\" href=\"{{relatedLink.link}}\">\n                    <span class=\"related-link\">{{ relatedLink.title }}</span>\n                    <object data=\"./../../../../assets/icons/common/arrow-outward-icon.svg\" width=\"18\" height=\"18\"> </object>\n                </a>\n            }      \n        </div>\n        <button class=\"view-more-btn\" (click)=\"onClickViewMore()\">\n            View More\n            <object data=\"./../../../../assets/icons/common/arrow-forward-icon.svg\" width=\"16\" height=\"16\"> </object>\n        </button>\n    </div>\n</div>"
         },
         {
             "name": "SearchComponentComponent",
-            "id": "component-SearchComponentComponent-be88131f6aafb14259828d417a43f8286cf4bd5db540c1da4d37ef271d2002c2fee9c0dcddf3498c60f3fa3b8df786875a81ed53fd3e91d195a17fe15fdb5e4d",
+            "id": "component-SearchComponentComponent-82da727b2092e7e1c3c8a33760db7b65e8ae89ad56cc1e0c14924c73ad4882fb5903aa88c9db6b92709430c32c6b4ba64f1dc9615bab79778725c631fc2a24d0",
             "file": "src/app/components/shared/search-component/search-component.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1016,17 +1397,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-search-component',\r\n  standalone: true,\r\n  imports: [],\r\n  templateUrl: './search-component.component.html',\r\n  styleUrl: './search-component.component.scss'\r\n})\r\nexport class SearchComponentComponent {\r\n\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-search-component',\n  standalone: true,\n  imports: [],\n  templateUrl: './search-component.component.html',\n  styleUrl: './search-component.component.scss'\n})\nexport class SearchComponentComponent {\n\n}\n",
             "styleUrl": "./search-component.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>search-component works!</p>\r\n"
+            "templateData": "<p>search-component works!</p>\n"
         },
         {
             "name": "TabsBarComponent",
-            "id": "component-TabsBarComponent-631ef3f2dde3ce6f750397cfbd5a529de9fb48862e149bae889e0739be94571f791273108160eeb65243e09759fd83cfcd892e0960244e7ddd8ac2d50e3db4e1",
+            "id": "component-TabsBarComponent-50cd0b310ba5bbf6449cce9bacb52e8f3ba8fd563e31b205ce415d341d4f607cd0bc94b72992544f670065dbd6987e25454444471b931e8b70153ba09c41ebc6",
             "file": "src/app/components/dashboard/features/tabs-bar/tabs-bar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1054,17 +1435,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-tabs-bar',\r\n  standalone: true,\r\n  imports: [],\r\n  templateUrl: './tabs-bar.component.html',\r\n  styleUrl: './tabs-bar.component.scss'\r\n})\r\nexport class TabsBarComponent {\r\n\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-tabs-bar',\n  standalone: true,\n  imports: [],\n  templateUrl: './tabs-bar.component.html',\n  styleUrl: './tabs-bar.component.scss'\n})\nexport class TabsBarComponent {\n\n}\n",
             "styleUrl": "./tabs-bar.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>tabs-bar works!</p>\r\n"
+            "templateData": "<p>tabs-bar works!</p>\n"
         },
         {
             "name": "TopBarComponent",
-            "id": "component-TopBarComponent-3f09acd791fc892df4956c15db5a9c734e3196893baa443c874383837568f1d4b4beca8a3a567c5da549a16957071d1cd4d717e9bd963d068b9c09804a4f4202",
+            "id": "component-TopBarComponent-1aeb5858ef4961b460af170296157f2acefdbe9307eb4b5c50c1ba4937f3e983b201c25f62b7b6c83c3888438206d67a3662cb7366850ab5004e622a5e56fa12",
             "file": "src/app/components/shared/top-bar/top-bar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1230,7 +1611,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, OnDestroy } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { Router } from '@angular/router';\r\nimport { inject } from '@angular/core';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { MatButtonModule } from '@angular/material/button';\r\nimport { MatDividerModule } from '@angular/material/divider';\r\nimport { AuthService } from '../../../services/auth.service';\r\nimport { Subscription } from 'rxjs';\r\n\r\n@Component({\r\n  selector: 'app-top-bar',\r\n  standalone: true,\r\n  imports: [MatButtonModule,MatDividerModule,MatIconModule,CommonModule],\r\n  templateUrl: './top-bar.component.html',\r\n  styleUrl: './top-bar.component.scss'\r\n})\r\n\r\n\r\nexport class TopBarComponent implements OnInit, OnDestroy {\r\n  private router = inject(Router);\r\n  private authSubscription!: Subscription;\r\n  isLoggedIn = false;\r\n  logoPath = \"assets/icons/top-bar/Optic_Logo_White.svg\";\r\n\r\n\r\n  constructor(private authService: AuthService) {\r\n    this.authSubscription = new Subscription();\r\n  }\r\n\r\n  ngOnInit() {\r\n    this.authSubscription = this.authService.isLoggedIn$.subscribe(\r\n      (isLoggedIn) => {\r\n        this.isLoggedIn = isLoggedIn;\r\n        console.log('Auth state changed: ',this.isLoggedIn);\r\n      }\r\n    );\r\n  }\r\n\r\n  ngOnDestroy() {\r\n    if (this.authSubscription){\r\n      this.authSubscription.unsubscribe();\r\n    }\r\n  }\r\n\r\n  onLogin() {\r\n    //Login logic here \r\n    //link to login page\r\n    this.router.navigate(['/dashboard']);\r\n    console.log('login button clicked');\r\n    //once logged in\r\n  }\r\n\r\n  onMenu() {\r\n    //Menu logic here\r\n    console.log('menu button clicked');\r\n  }\r\n\r\n  onProfile() {\r\n    //Profile logic here\r\n    console.log('profile button clicked');\r\n  }\r\n\r\n  onSearch() {\r\n    //Search logic here\r\n    console.log('search button clicked');\r\n\r\n  }\r\n\r\n  onLang() {\r\n    //Language/region logic here\r\n    console.log('language button clicked');\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit, OnDestroy } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { Router } from '@angular/router';\nimport { inject } from '@angular/core';\nimport { MatIconModule } from '@angular/material/icon';\nimport { MatButtonModule } from '@angular/material/button';\nimport { MatDividerModule } from '@angular/material/divider';\nimport { AuthService } from '../../../services/auth.service';\nimport { Subscription } from 'rxjs';\n\n@Component({\n  selector: 'app-top-bar',\n  standalone: true,\n  imports: [MatButtonModule,MatDividerModule,MatIconModule,CommonModule],\n  templateUrl: './top-bar.component.html',\n  styleUrl: './top-bar.component.scss'\n})\n\n\nexport class TopBarComponent implements OnInit, OnDestroy {\n  private router = inject(Router);\n  private authSubscription!: Subscription;\n  isLoggedIn = false;\n  logoPath = \"assets/icons/top-bar/Optic_Logo_White.svg\";\n\n\n  constructor(private authService: AuthService) {\n    this.authSubscription = new Subscription();\n  }\n\n  ngOnInit() {\n    this.authSubscription = this.authService.isLoggedIn$.subscribe(\n      (isLoggedIn) => {\n        this.isLoggedIn = isLoggedIn;\n        console.log('Auth state changed: ',this.isLoggedIn);\n      }\n    );\n  }\n\n  ngOnDestroy() {\n    if (this.authSubscription){\n      this.authSubscription.unsubscribe();\n    }\n  }\n\n  onLogin() {\n    //Login logic here \n    //link to login page\n    this.router.navigate(['/dashboard']);\n    console.log('login button clicked');\n    //once logged in\n  }\n\n  onMenu() {\n    //Menu logic here\n    console.log('menu button clicked');\n  }\n\n  onProfile() {\n    //Profile logic here\n    console.log('profile button clicked');\n  }\n\n  onSearch() {\n    //Search logic here\n    console.log('search button clicked');\n\n  }\n\n  onLang() {\n    //Language/region logic here\n    console.log('language button clicked');\n  }\n\n}\n",
             "styleUrl": "./top-bar.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -1253,6 +1634,83 @@
                     {
                         "name": "authService",
                         "type": "AuthService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "implements": [
+                "OnInit",
+                "OnDestroy"
+            ],
+            "templateData": "<header class=\"header\">\n    <div class=\"lhs-container\">\n        <button *ngIf=\"isLoggedIn\" mat-icon-button (click)=\"onMenu()\" class=\"menu-toggle lh-button\">\n            <span class=\"material-symbols-outlined\">\n                menu\n            </span>\n        </button>\n        <img [src]=\"logoPath\" alt=\"Optic Logo\">\n    </div>\n    <nav class=\"navigation\">\n        <div class=\"rhs-container\">\n            <div *ngIf=\"!isLoggedIn\" class=\"user-buttons-container\"> \n                <button  mat-button (click)=\"onLogin()\" class=\"rh-button login-button\">Login</button>\n                <mat-divider class=\"divider\" [vertical]=\"true\"></mat-divider>\n                <button mat-icon-button color=\"primary\" class=\"rh-button\" (click)=\"onLang()\" aria-label=\"Language/Region Button\">\n                    <!--instead of \"language\" below want captive-portal -->\n                    <span class=\"material-symbols-outlined\">\n                        captive_portal\n                    </span>\n                </button>\n            </div>\n            <div *ngIf=\"isLoggedIn\" class=\"user-buttons-container\">\n                \n                <button mat-icon-button (click)=\"onSearch()\" class=\"rh-button\">\n                    <span class=\"material-symbols-outlined\">\n                        search\n                    </span>\n                </button>\n                <mat-divider class=\"divider mobile-divider\" [vertical]=\"true\"></mat-divider>\n                <button mat-icon-button (click)=\"onProfile()\" class=\"rh-button\">\n                    <span class=\"material-symbols-outlined\">\n                        person\n                    </span>\n                </button>\n                <mat-divider class=\"divider fs-divider\" [vertical]=\"true\"></mat-divider>\n                <button mat-icon-button color=\"primary\" class=\"rh-button language-button\" (click)=\"onLang()\" aria-label=\"Language/Region Button\">\n                    <!--instead of \"language\" below want captive-portal -->\n                    <span class=\"material-symbols-outlined\">\n                        captive_portal\n                    </span>\n                </button>\n            </div>\n        </div>\n    </nav>\n</header>"
+        },
+        {
+            "name": "VideoPlayerComponent",
+            "id": "component-VideoPlayerComponent-f3385945277a49f3c6940f94b009fd211953f4cf5283d39b8810c40d7023b8431dc66edc8479b7aa3532b3418efb0caf67ded24b0b32e906cc00bee3932476a4",
+            "file": "src/app/components/shared/video-player/video-player.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-video-player",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./video-player.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "videoUrl",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "SafeResourceUrl",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';\n\n@Component({\n  selector: 'app-video-player',\n  standalone: true,\n  imports: [],\n  templateUrl: './video-player.component.html',\n  styleUrl: './video-player.component.scss',\n})\nexport class VideoPlayerComponent {\n  @Input() videoUrl: SafeResourceUrl;\n\n  constructor(private sanitizer: DomSanitizer) {\n    this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(\n      'https://www.youtube.com/embed/a9PR9wcuaBk?si=ubFLljQ88i5U8Lr2'\n    );\n  }\n}\n",
+            "styleUrl": "./video-player.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "sanitizer",
+                        "type": "DomSanitizer",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 12,
+                "jsdoctags": [
+                    {
+                        "name": "sanitizer",
+                        "type": "DomSanitizer",
                         "deprecated": false,
                         "deprecationMessage": "",
                         "tagName": {
@@ -1353,7 +1811,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "ApplicationConfig",
-                "defaultValue": "{\r\n  providers: [\r\n    provideRouter(routes),\r\n    provideClientHydration(),\r\n    provideHttpClient(withInterceptors([authInterceptor])), provideAnimationsAsync('noop'),\r\n  ],\r\n}"
+                "defaultValue": "{\n  providers: [\n    provideRouter(routes),\n    provideClientHydration(),\n    provideHttpClient(withInterceptors([authInterceptor])),\n    provideAnimations(),\n  ],\n}"
             },
             {
                 "name": "authGuard",
@@ -1363,7 +1821,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "CanActivateFn",
-                "defaultValue": "(route, state) => {\r\n  const authService = inject(AuthService);\r\n  const router = inject(Router);\r\n\r\n  if (authService.isLoggedIn()) {\r\n    return true; // Allow navigation if logged in\r\n  }\r\n\r\n  // Redirect to the login page if not logged in\r\n  router.navigate(['/login']);\r\n  return false; // Prevent navigation\r\n}"
+                "defaultValue": "(route, state) => {\n  const authService = inject(AuthService);\n  const router = inject(Router);\n\n  if (authService.isLoggedIn()) {\n    return true; // Allow navigation if logged in\n  }\n\n  // Redirect to the login page if not logged in\n  router.navigate(['/login']);\n  return false; // Prevent navigation\n}"
             },
             {
                 "name": "authInterceptor",
@@ -1373,7 +1831,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "HttpInterceptorFn",
-                "defaultValue": "(req, next) => {\r\n  const authService = inject(AuthService);\r\n  const token = authService.getToken();\r\n\r\n  const authReq = token\r\n    ? req.clone({\r\n        setHeaders: { Authorization: `Bearer ${token}` },\r\n      })\r\n    : req;\r\n\r\n  return next(authReq);\r\n}"
+                "defaultValue": "(req, next) => {\n  const authService = inject(AuthService);\n  const token = authService.getToken();\n\n  const authReq = token\n    ? req.clone({\n        setHeaders: { Authorization: `Bearer ${token}` },\n      })\n    : req;\n\n  return next(authReq);\n}"
             },
             {
                 "name": "bootstrap",
@@ -1394,6 +1852,16 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "mergeApplicationConfig(appConfig, serverConfig)"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/accordion.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Default",
@@ -1429,7 +1897,27 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/banner.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/breadcrumb-component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/card.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1460,6 +1948,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/footer.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/link.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1533,7 +2031,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Preview",
-                "defaultValue": "{\r\n  parameters: {\r\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/,\r\n      },\r\n    },\r\n  },\r\n}"
+                "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/,\n      },\n    },\n  },\n}"
             },
             {
                 "name": "serverConfig",
@@ -1543,7 +2041,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "ApplicationConfig",
-                "defaultValue": "{\r\n  providers: [\r\n    provideServerRendering()\r\n  ]\r\n}"
+                "defaultValue": "{\n  providers: [\n    provideServerRendering()\n  ]\n}"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/accordion.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryFn",
+                "defaultValue": "(args) => ({\n  component: AccordionComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -1553,7 +2061,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "StoryFn",
-                "defaultValue": "(args) => ({\r\n  props: args,\r\n})"
+                "defaultValue": "(args) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -1563,7 +2071,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "StoryFn",
-                "defaultValue": "(args) => ({\r\n  component: ArticleIndexComponent,\r\n  props: args,\r\n})"
+                "defaultValue": "(args) => ({\n  component: ArticleIndexComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -1573,7 +2081,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "StoryFn",
-                "defaultValue": "(args) => ({\r\n  component: ArticleSectionTitleComponent,\r\n  props: args,\r\n})"
+                "defaultValue": "(args) => ({\n  component: ArticleSectionTitleComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/banner.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryFn",
+                "defaultValue": "(args) => ({\n  component: BannerComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -1583,7 +2101,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "StoryFn",
-                "defaultValue": "(args) => ({\r\n  props: args,\r\n})"
+                "defaultValue": "(args) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/card.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryFn",
+                "defaultValue": "(args) => ({\n  component: CardComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -1593,7 +2121,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "StoryFn",
-                "defaultValue": "(args) => ({\r\n  component: ContactUsComponent,\r\n  props: args,\r\n})"
+                "defaultValue": "(args) => ({\n  component: ContactUsComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -1603,7 +2131,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "StoryFn",
-                "defaultValue": "(args) => ({\r\n  props: args,\r\n})"
+                "defaultValue": "(args) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -1613,7 +2141,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "StoryFn",
-                "defaultValue": "(args) => ({\r\n  component: FooterComponent,\r\n  props: args,\r\n})"
+                "defaultValue": "(args) => ({\n  component: FooterComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/link.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryFn",
+                "defaultValue": "(args) => ({\n  component: LinkComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -1623,7 +2161,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "StoryFn",
-                "defaultValue": "(args) => ({\r\n  props: args,\r\n})"
+                "defaultValue": "(args) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -1633,7 +2171,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "StoryFn",
-                "defaultValue": "(args) => ({\r\n  props: args,\r\n})"
+                "defaultValue": "(args) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -1643,7 +2181,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "StoryFn",
-                "defaultValue": "(args) => ({\r\n  component: RelatedArticlesComponent,\r\n  props: args,\r\n})"
+                "defaultValue": "(args) => ({\n  component: RelatedArticlesComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -1653,7 +2191,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "StoryFn",
-                "defaultValue": "(args) => ({\r\n  component: SearchComponentComponent,\r\n  props: args,\r\n})"
+                "defaultValue": "(args) => ({\n  component: SearchComponentComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -1689,7 +2227,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "ApplicationConfig",
-                    "defaultValue": "{\r\n  providers: [\r\n    provideRouter(routes),\r\n    provideClientHydration(),\r\n    provideHttpClient(withInterceptors([authInterceptor])), provideAnimationsAsync('noop'),\r\n  ],\r\n}"
+                    "defaultValue": "{\n  providers: [\n    provideRouter(routes),\n    provideClientHydration(),\n    provideHttpClient(withInterceptors([authInterceptor])),\n    provideAnimations(),\n  ],\n}"
                 }
             ],
             "src/app/guards/auth.guard.ts": [
@@ -1701,7 +2239,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "CanActivateFn",
-                    "defaultValue": "(route, state) => {\r\n  const authService = inject(AuthService);\r\n  const router = inject(Router);\r\n\r\n  if (authService.isLoggedIn()) {\r\n    return true; // Allow navigation if logged in\r\n  }\r\n\r\n  // Redirect to the login page if not logged in\r\n  router.navigate(['/login']);\r\n  return false; // Prevent navigation\r\n}"
+                    "defaultValue": "(route, state) => {\n  const authService = inject(AuthService);\n  const router = inject(Router);\n\n  if (authService.isLoggedIn()) {\n    return true; // Allow navigation if logged in\n  }\n\n  // Redirect to the login page if not logged in\n  router.navigate(['/login']);\n  return false; // Prevent navigation\n}"
                 }
             ],
             "src/app/interceptors/auth.interceptor.ts": [
@@ -1713,7 +2251,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "HttpInterceptorFn",
-                    "defaultValue": "(req, next) => {\r\n  const authService = inject(AuthService);\r\n  const token = authService.getToken();\r\n\r\n  const authReq = token\r\n    ? req.clone({\r\n        setHeaders: { Authorization: `Bearer ${token}` },\r\n      })\r\n    : req;\r\n\r\n  return next(authReq);\r\n}"
+                    "defaultValue": "(req, next) => {\n  const authService = inject(AuthService);\n  const token = authService.getToken();\n\n  const authReq = token\n    ? req.clone({\n        setHeaders: { Authorization: `Bearer ${token}` },\n      })\n    : req;\n\n  return next(authReq);\n}"
                 }
             ],
             "src/main.server.ts": [
@@ -1747,7 +2285,29 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "ApplicationConfig",
-                    "defaultValue": "{\r\n  providers: [\r\n    provideServerRendering()\r\n  ]\r\n}"
+                    "defaultValue": "{\n  providers: [\n    provideServerRendering()\n  ]\n}"
+                }
+            ],
+            "src/stories/accordion.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryFn",
+                    "defaultValue": "(args) => ({\n  component: AccordionComponent,\n  props: args,\n})"
                 }
             ],
             "src/stories/article-feedback.component.stories.ts": [
@@ -1769,7 +2329,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "StoryFn",
-                    "defaultValue": "(args) => ({\r\n  props: args,\r\n})"
+                    "defaultValue": "(args) => ({\n  props: args,\n})"
                 }
             ],
             "src/stories/article-index.component.stories.ts": [
@@ -1791,7 +2351,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "StoryFn",
-                    "defaultValue": "(args) => ({\r\n  component: ArticleIndexComponent,\r\n  props: args,\r\n})"
+                    "defaultValue": "(args) => ({\n  component: ArticleIndexComponent,\n  props: args,\n})"
                 }
             ],
             "src/stories/article-section-title.stories.ts": [
@@ -1813,7 +2373,29 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "StoryFn",
-                    "defaultValue": "(args) => ({\r\n  component: ArticleSectionTitleComponent,\r\n  props: args,\r\n})"
+                    "defaultValue": "(args) => ({\n  component: ArticleSectionTitleComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/stories/banner.component.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/banner.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/banner.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryFn",
+                    "defaultValue": "(args) => ({\n  component: BannerComponent,\n  props: args,\n})"
                 }
             ],
             "src/stories/breadcrumb-component.stories.ts": [
@@ -1835,7 +2417,29 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "StoryFn",
-                    "defaultValue": "(args) => ({\r\n  props: args,\r\n})"
+                    "defaultValue": "(args) => ({\n  props: args,\n})"
+                }
+            ],
+            "src/stories/card.component.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/card.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/card.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryFn",
+                    "defaultValue": "(args) => ({\n  component: CardComponent,\n  props: args,\n})"
                 }
             ],
             "src/stories/contact-us.component.stories.ts": [
@@ -1857,7 +2461,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "StoryFn",
-                    "defaultValue": "(args) => ({\r\n  component: ContactUsComponent,\r\n  props: args,\r\n})"
+                    "defaultValue": "(args) => ({\n  component: ContactUsComponent,\n  props: args,\n})"
                 }
             ],
             "src/stories/dashboard.component.stories.ts": [
@@ -1879,7 +2483,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "StoryFn",
-                    "defaultValue": "(args) => ({\r\n  props: args,\r\n})"
+                    "defaultValue": "(args) => ({\n  props: args,\n})"
                 }
             ],
             "src/stories/footer.component.stories.ts": [
@@ -1901,7 +2505,29 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "StoryFn",
-                    "defaultValue": "(args) => ({\r\n  component: FooterComponent,\r\n  props: args,\r\n})"
+                    "defaultValue": "(args) => ({\n  component: FooterComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/stories/link.component.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/link.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/link.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryFn",
+                    "defaultValue": "(args) => ({\n  component: LinkComponent,\n  props: args,\n})"
                 }
             ],
             "src/stories/login.component.stories.ts": [
@@ -1923,7 +2549,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "StoryFn",
-                    "defaultValue": "(args) => ({\r\n  props: args,\r\n})"
+                    "defaultValue": "(args) => ({\n  props: args,\n})"
                 }
             ],
             "src/stories/page-not-found.component.stories.ts": [
@@ -1945,7 +2571,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "StoryFn",
-                    "defaultValue": "(args) => ({\r\n  props: args,\r\n})"
+                    "defaultValue": "(args) => ({\n  props: args,\n})"
                 }
             ],
             "src/stories/related-article.component.stories.ts": [
@@ -1967,7 +2593,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "StoryFn",
-                    "defaultValue": "(args) => ({\r\n  component: RelatedArticlesComponent,\r\n  props: args,\r\n})"
+                    "defaultValue": "(args) => ({\n  component: RelatedArticlesComponent,\n  props: args,\n})"
                 }
             ],
             "src/stories/search-component.component.stories.ts": [
@@ -1989,7 +2615,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "StoryFn",
-                    "defaultValue": "(args) => ({\r\n  component: SearchComponentComponent,\r\n  props: args,\r\n})"
+                    "defaultValue": "(args) => ({\n  component: SearchComponentComponent,\n  props: args,\n})"
                 }
             ],
             "src/stories/top-bar.component.stories.ts": [
@@ -2011,7 +2637,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "StoryFn",
-                    "defaultValue": "(args) => ({\r\n  component: TopBarComponent,\r\n  props: args,\r\n})"
+                    "defaultValue": "(args) => ({\n  component: TopBarComponent,\n  props: args,\n})"
                 }
             ],
             "src/stories/video-player.component.stories.ts": [
@@ -2045,7 +2671,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Preview",
-                    "defaultValue": "{\r\n  parameters: {\r\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/,\r\n      },\r\n    },\r\n  },\r\n}"
+                    "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/,\n      },\n    },\n  },\n}"
                 }
             ]
         },
@@ -2144,12 +2770,21 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/components/shared/accordion/accordion.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AccordionComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/components/shared/article-feedback/article-feedback.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ArticleFeedbackComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {
@@ -2171,12 +2806,30 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/components/shared/breadcrum/breadcrum.component.ts",
+                "filePath": "src/app/components/shared/banner/banner.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "BreadcrumComponent",
+                "name": "BannerComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/shared/breadcrum/breadcrumb.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BreadcrumbComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/shared/card/card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
                 "status": "low"
             },
             {
@@ -2195,6 +2848,15 @@
                 "name": "FooterComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/shared/link/link.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "LinkComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -2282,6 +2944,26 @@
                 "status": "low"
             },
             {
+                "filePath": "src/stories/accordion.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/accordion.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/stories/article-feedback.component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -2342,6 +3024,26 @@
                 "status": "low"
             },
             {
+                "filePath": "src/stories/banner.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/banner.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/stories/breadcrumb-component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -2353,6 +3055,26 @@
             },
             {
                 "filePath": "src/stories/breadcrumb-component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/card.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/card.component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -2413,6 +3135,26 @@
             },
             {
                 "filePath": "src/stories/footer.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/link.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/link.component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

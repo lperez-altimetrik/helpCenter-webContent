@@ -44,7 +44,7 @@
         }
       }
 
-      .go-icon {
+      .mobile-icon {
         color: var(--hc-link-color);
         display: block;
 
@@ -61,7 +61,7 @@
         }
       }
     }
-    .go-icon {
+    .mobile-icon {
       display: none;
       @include respond-to("mobile-mb") {
         display: block;
