@@ -1,3 +1,5 @@
+@import "./../../../../styles/mixins.scss";
+
 mat-expansion-panel {
   box-shadow: none !important;
   border: none;
@@ -22,6 +24,10 @@ mat-expansion-panel {
   font-size: 18px;
   color: var(--hc-light-black);
   font-weight: 400;
+
+  @include respond-to("mobile-mb") {
+    font-size: 16px;
+  }
 }
 
 :host ::ng-deep .mat-expansion-indicator:after {
