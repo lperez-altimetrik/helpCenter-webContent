@@ -15,37 +15,23 @@
     align-items: center;
 
     .mail-icon {
-      margin-right: 8px;
-      background: var(--hc-light-purple);
-      color: var(--hc-primary-color);
-      border-radius: 50%;
-      height: 40px;
-      width: 40px;
-      align-items: center;
-      justify-content: center;
       display: none;
-      @include respond-to("mobile") {
+      @include respond-to("mobile-mb") {
         display: flex;
+        @include icon-style();
       }
     }
+
     .section {
       display: flex;
 
-      @include respond-to("mobile") {
+      @include respond-to("mobile-mb") {
         display: block;
       }
 
       .mail-icon {
-        margin-right: 8px;
-        background: var(--hc-light-purple);
-        color: var(--hc-primary-color);
-        border-radius: 50%;
-        height: 40px;
-        width: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        @include respond-to("mobile") {
+        @include icon-style();
+        @include respond-to("mobile-mb") {
           display: none;
         }
       }
@@ -53,7 +39,7 @@
       .button-text {
         font-size: 22px;
         font-weight: 500;
-        @include respond-to("mobile") {
+        @include respond-to("mobile-mb") {
           font-size: 14px;
         }
       }
@@ -62,7 +48,7 @@
         color: var(--hc-link-color);
         display: block;
 
-        @include respond-to("mobile") {
+        @include respond-to("mobile-mb") {
           display: none;
         }
       }
@@ -70,14 +56,14 @@
       .link {
         font-size: 18px;
         color: var(--hc-link-color);
-        @include respond-to("mobile") {
+        @include respond-to("mobile-mb") {
           font-size: 12px;
         }
       }
     }
     .go-icon {
       display: none;
-      @include respond-to("mobile") {
+      @include respond-to("mobile-mb") {
         display: block;
       }
     }

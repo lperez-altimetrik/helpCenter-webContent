@@ -3,12 +3,12 @@ import { Component } from '@angular/core';
 import { inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
-import { RelatedArticlesComponent } from '../shared/related-articles/related-articles.component';
+import { CardComponent } from '../shared/card/card.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [RelatedArticlesComponent],
+  imports: [CardComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })
