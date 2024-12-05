@@ -1,0 +1,74 @@
+@import "./../../../../styles/mixins.scss";
+
+.banner-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background-color: var(--hc-light-blue);
+  width: 100%;
+  box-sizing: border-box;
+
+  .initial-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .icon {
+      @include icon-style();
+      background: var(--hc-accent-blue);
+      color: var(--hc-dark-blue);
+    }
+
+    .info {
+      display: flex;
+      flex-flow: column;
+
+      h5 {
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--hc-dark-blue);
+        margin: 0;
+      }
+
+      p {
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--hc-deep-dark-blue);
+        margin: 0;
+      }
+    }
+  }
+
+  .secondary-content {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    p {
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--hc-deep-dark-blue);
+    }
+
+    button {
+      background-color: var(--hc-primary-color);
+    }
+
+    @include respond-to("mobile-mb") {
+      display: none;
+    }
+  }
+
+  .mobile-icon {
+    display: none;
+    color: var(--hc-dark-blue);
+    font-size: 16px;
+    height: 16px;
+    width: 16px;
+
+    @include respond-to("mobile-mb") {
+      display: flex;
+    }
+  }
+}
