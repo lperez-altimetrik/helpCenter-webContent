@@ -3,7 +3,6 @@ import { Component,Input } from '@angular/core';
 import { MatCard, MatCardContent, MatCardHeader, MatCardTitle } from '@angular/material/card';
 import { of } from 'rxjs';
 
-
 export enum MessageType {
   Neutral = 'neutral',
   Positive = 'positive',
@@ -43,7 +42,3 @@ export class ContextualMessageComponent {
   }
 
 }
-
-/*
-Little Red Riding Hood went on a mission accross the sea to find someone with whom to share her wheat. The Big Bad Wolf followed in his submarine to see if he could make her into a meal to eat.Little Red Riding Hood went on a mission accross the sea to find someone with whom to share her wheat. The Big Bad Wolf followed in his submarine to see if he could make her into a meal to eat. Little Red Riding Hood went on a mission accross the sea to find someone with whom to share her wheat. The Big Bad Wolf followed in his submarine to see if he could make her into a meal to eat.Little Red Riding Hood went on a mission accross the sea to find someone with whom to share her wheat. The Big Bad Wolf followed in his submarine to see if he could make her into a meal to eat. Little Red Riding Hood went on a mission accross the sea to find someone with whom to share her wheat. The Big Bad Wolf followed in his submarine to see if he could make her into a meal to eat.Little Red Riding Hood went on a mission accross the sea to find someone with whom to share her wheat. The Big Bad Wolf followed in his submarine to see if he could make her into a meal to eat. Little Red Riding Hood went on a mission accross the sea to find someone with whom to share her wheat. The Big Bad Wolf followed in his submarine to see if he could make her into a meal to eat.Little Red Riding Hood went on a mission accross the sea to find someone with whom to share her wheat. The Big Bad Wolf followed in his submarine to see if he could make her into a meal to eat.
-*/
