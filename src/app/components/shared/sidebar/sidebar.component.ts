@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [MatIconModule, MatExpansionModule, MatListModule],
+  imports: [MatIconModule, MatExpansionModule, MatListModule, MatFormFieldModule, MatSelectModule],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })
@@ -16,6 +18,9 @@ export class SidebarComponent {
     {option: "Enterprise"},
     {option: "Partners"}
   ];
+  public selectedBusiness: any = this.businessOptions[0].option;
+
+  public currentActiveItem: any = null;
 
   public menuSections: any[] = [
     {
@@ -105,6 +110,7 @@ export class SidebarComponent {
         },
         {
           title: "Transactions",
+          svgUrl: "./../../../../assets/icons/common/chip-extraction-icon.svg",
           iconUrl: "chip_extraction",
           menuItems: [
             {title: "Link 1", url: "#"},
@@ -125,6 +131,7 @@ export class SidebarComponent {
     },
     {
       title: "Resources",
+      isLastSection: true,
       sections: [
         {
           title: "Glosary",
@@ -156,4 +163,12 @@ export class SidebarComponent {
       ]
     },
   ];
+
+  public onMenuItemClick(event: any){
+    if (this.currentActiveItem !== null){
+      this.currentActiveItem.classList.remove('menu-element-active');
+    }
+    event.target.parentElement.classList.add('menu-element-active');
+    this.currentActiveItem = event.target.parentElement;
+  }
 }
