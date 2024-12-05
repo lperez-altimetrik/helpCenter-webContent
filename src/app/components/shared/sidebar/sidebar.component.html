@@ -1,9 +1,19 @@
 <div class="sidebar-container">
-    <mat-select class="business-select" [(value)]="selectedBusiness">
+    <mat-expansion-panel [(expanded)]="businessPanelOpened" class="business-select">
+        <mat-expansion-panel-header class="business-select-header">
+        <mat-panel-title class="business-selected-option"> {{selectedBusiness.option}} </mat-panel-title>
+        </mat-expansion-panel-header>
         @for (option of businessOptions; track option.option) {
-            <mat-option class="business-option" [value]="option.option">{{option.option}}</mat-option>
+            @if(option.option !== selectedBusiness.option){
+                <div class="business-option" (click)="changeOption(option)">
+                    <span class="business-option-text">
+                        {{option.option}}
+                    </span>
+                </div>
+            }
         }  
-    </mat-select>
+    </mat-expansion-panel>
+
 
     <mat-accordion class="app-nav-accordion">
     @for (menuSection of menuSections; track menuSection.title) {

@@ -18,9 +18,6 @@ export class SidebarComponent {
     {option: "Enterprise"},
     {option: "Partners"}
   ];
-  public selectedBusiness: any = this.businessOptions[0].option;
-
-  public currentActiveItem: any = null;
 
   public menuSections: any[] = [
     {
@@ -164,11 +161,24 @@ export class SidebarComponent {
     },
   ];
 
+  public businessPanelOpened: boolean = false;
+
+  public selectedBusiness: any = this.businessOptions[0];
+
+  public currentActiveItem: any = null;
+
+  
+
   public onMenuItemClick(event: any){
     if (this.currentActiveItem !== null){
       this.currentActiveItem.classList.remove('menu-element-active');
     }
     event.target.parentElement.classList.add('menu-element-active');
     this.currentActiveItem = event.target.parentElement;
+  }
+  
+  public changeOption (option: any){
+    this.selectedBusiness = option;
+    this.businnessPanelOpened = !this.businnessPanelOpened ;
   }
 }
