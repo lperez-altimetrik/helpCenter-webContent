@@ -1,12 +1,13 @@
 import { Meta, StoryFn } from '@storybook/angular';
-import { BreadcrumbComponent } from '../app/components/shared/breadcrum/breadcrumb.component';
+import { LinkComponent } from 'app/components/shared/link/link.component';
 
 export default {
-  title: 'Shared/BreadcrumbComponent',
-  component: BreadcrumbComponent,
+  title: 'Shared/Link',
+  component: LinkComponent,
 } as Meta;
 
 const Template: StoryFn = (args) => ({
+  component: LinkComponent,
   props: args,
 });
 
