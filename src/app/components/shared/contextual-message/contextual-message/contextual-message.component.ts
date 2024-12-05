@@ -23,7 +23,6 @@ export class ContextualMessageComponent {
   @Input() title: string = '';
   @Input() message: string = '';
   @Input() messageType: string = '';
-  
 
   private _messageValue: MessageType = MessageType.Neutral;
 

@@ -11,7 +11,6 @@ $warning-title: var(--hc-color-warning-title);
 $danger-accent: var(--hc-color-danger-accent);
 $danger-title: var(--hc-color-danger-title);
 
-
 mat-card {
     border: 1px solid var(--hc-color-grey-20);
     padding: 16px;
@@ -41,7 +40,6 @@ mat-card {
         .warning-detail { background-color: $warning-accent };
         .danger-detail { background-color: $danger-accent };
 
-
         .text-content {
             flex: 1;
             align-items: stretch;
@@ -63,8 +61,5 @@ mat-card {
                 color: var(--hc-color-fg-secondary);
             }
         }
-
-
     }
-   
 }
