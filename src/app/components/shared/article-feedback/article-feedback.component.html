@@ -3,15 +3,27 @@
     <div class="article-feedback">
         <div class="article-title-container">
             <div class="icon-holder">
-                <object data="./../../../../assets/icons/common/note-stack-icon.svg" width="22" height="22"> 
-                </object>
+                <img src="./../../../../assets/icons/common/note-stack-icon.svg" width="22" height="22"> 
             </div>
-            <h2 class="article-title-bg">Was this article helpful?</h2>
-            <h3 class="article-title-mb">Was this article helpful?</h3>
+            <h2 class="article-title-bg">{{currentMessage}}</h2>
+            <h3 class="article-title-mb">{{currentMessage}}</h3>
         </div>
-        <div class="feedback-buttons-container">
-            <button class="feedback-button" (click)="onYesClick()">Yes</button>
-            <button class="feedback-button" (click)="onNoClick()">No</button>
-        </div>
+        @switch(feedbackResponse){
+            @case("None"){
+                <div class="feedback-buttons-container">
+                    <button class="feedback-button" (click)="onYesClick()">Yes</button>
+                    <button class="feedback-button" (click)="onNoClick()">No</button>
+                </div>
+            }
+            @case("No"){
+                <div class="feedback-textfield-container">
+                    <textarea [placeholder]="textAreaPlaceholder" class="feedback-textarea" ></textarea>
+                </div>
+                <div class="feedback-buttons-container">
+                    <button class="send-button" (click)="sendFeedbackClick()">Send</button>
+                    <button class="feedback-button" (click)="noFeedbackClick()">No, thanks</button>
+                </div>
+            }
+        }
     </div>
 </div>
