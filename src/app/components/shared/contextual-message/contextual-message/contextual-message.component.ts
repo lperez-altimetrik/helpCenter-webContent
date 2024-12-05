@@ -20,9 +20,8 @@ export enum MessageType {
 export class ContextualMessageComponent {
   readonly DETAIL_STYLE_STRING: string = "-detail";
   readonly TITLE_STYLE_STRING: string = "-title";
-  @Input() title: string = '';
-  @Input() message: string = '';
-  @Input() messageType: string = '';
+  @Input() title: string = 'TEST TITLE';
+  @Input() message: string = 'nadfbasdlkjfnalskjdfnlaksdjflnaksdfnasdkjfnalksdjfnalkjsdfnlaksdfnlkajsdfnkaljsdfnlak';
 
   private _messageValue: MessageType = MessageType.Neutral;
 

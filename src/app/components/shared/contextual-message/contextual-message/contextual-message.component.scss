@@ -13,9 +13,9 @@ $danger-title: var(--hc-color-danger-title);
 
 mat-card {
     border: 1px solid var(--hc-color-grey-20);
-    padding: 16px;
+    padding: 4px 3px 4px 3px;
     background: var(--hc-color-bg-secondary);
-    border-radius: 8px;
+    border-radius: 4px;
     max-height: fit-content;
 
     .content-container {
@@ -46,7 +46,7 @@ mat-card {
 
             .message-title {
                 margin-top: 0px;
-                font-size: 20px;
+                font-size: 14px;
                 font-weight: 500;
             }
 
@@ -57,7 +57,9 @@ mat-card {
         
             .message-body {
                 margin: 0;
-                font-size: 16px;
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 400;
                 color: var(--hc-color-fg-secondary);
             }
         }
