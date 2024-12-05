@@ -29,12 +29,18 @@ mat-card {
         align-items: start;
 
         .detail {
-            background-color: $neutral-accent;
+            
             border-radius: 5px;
             align-self: stretch;
             max-width: 4px;
             min-width: 4px;
         }
+
+        .neutral-detail { background-color: $neutral-accent };
+        .positive-detail { background-color: $positive-accent };
+        .warning-detail { background-color: $warning-accent };
+        .danger-detail { background-color: $danger-accent };
+
 
         .text-content {
             flex: 1;
@@ -44,8 +50,12 @@ mat-card {
                 margin-top: 0px;
                 font-size: 20px;
                 font-weight: 500;
-                color: $neutral-title;
             }
+
+            .neutral-title { color: $neutral-title };
+            .positive-title { color: $positive-title };
+            .warning-title { color: $warning-title };
+            .danger-title { color: $danger-title };
         
             .message-body {
                 margin: 0;
