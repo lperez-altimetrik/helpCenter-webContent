@@ -17,9 +17,13 @@ mat-card {
     background: var(--hc-color-bg-secondary);
     border-radius: 4px;
     max-height: fit-content;
+    max-width: 100%;
     box-shadow: none;
 
     .content-container {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
         padding: 4px 4px 4px 4px;
         max-height: 100%;
         height: fit-content;
@@ -29,7 +33,7 @@ mat-card {
         align-items: start;
 
         .detail {
-            
+            margin-top: 1.5px;
             border-radius: 5px;
             align-self: stretch;
             max-width: 4px;
@@ -42,13 +46,21 @@ mat-card {
         .danger-detail { background-color: $danger-accent };
 
         .text-content {
+            box-sizing: border-box;
+            overflow: hidden;
+            max-width: 100%;
             flex: 1;
             align-items: stretch;
 
             .message-title {
-                margin-top: 0px;
+                margin: 0;
                 font-size: 14px;
+                line-height: 14px;
                 font-weight: 500;
+                font-variant-numeric: lining-nums;
+                margin-bottom: 4px;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
             }
 
             .neutral-title { color: $neutral-title };
@@ -61,6 +73,10 @@ mat-card {
                 font-size: 12px;
                 font-style: normal;
                 font-weight: 400;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                overflow: hidden;
+
                 color: var(--hc-color-fg-secondary);
             }
         }
