@@ -5,10 +5,10 @@ import { MatIconModule } from '@angular/material/icon';
   selector: 'app-breadcrum',
   standalone: true,
   imports: [MatIconModule],
-  templateUrl: './breadcrum.component.html',
-  styleUrl: './breadcrum.component.scss'
+  templateUrl: './breadcrumb.component.html',
+  styleUrl: './breadcrumb.component.scss'
 })
-export class BreadcrumComponent {
+export class BreadcrumbComponent {
   public pagesPath: any = [
     { title: "Page 1", url: "#"},
     { title: "Page 2", url: "#"},
