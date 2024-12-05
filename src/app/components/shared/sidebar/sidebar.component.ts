@@ -4,11 +4,12 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [MatIconModule, MatExpansionModule, MatListModule, MatFormFieldModule, MatSelectModule],
+  imports: [MatIconModule, MatExpansionModule, MatListModule, MatFormFieldModule, MatSelectModule, CommonModule],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })
@@ -179,6 +180,6 @@ export class SidebarComponent {
   
   public changeOption (option: any){
     this.selectedBusiness = option;
-    this.businnessPanelOpened = !this.businnessPanelOpened ;
+    this.businessPanelOpened = !this.businessPanelOpened ;
   }
 }
