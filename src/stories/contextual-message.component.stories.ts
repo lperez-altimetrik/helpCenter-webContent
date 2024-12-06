@@ -1,5 +1,5 @@
 import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
-import { ContextualMessageComponent } from 'app/components/shared/contextual-message/contextual-message/contextual-message.component';
+import { ContextualMessageComponent } from 'app/components/shared/contextual-message/contextual-message.component';
 import { MatIconModule } from '@angular/material/icon';
 export default {
   title: 'Shared/Contextual-Message',

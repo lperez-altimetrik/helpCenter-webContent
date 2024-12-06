@@ -1,7 +1,6 @@
 import { NgClass } from '@angular/common';
 import { Component,Input } from '@angular/core';
-import { MatCard, MatCardContent, MatCardHeader, MatCardTitle } from '@angular/material/card';
-import { of } from 'rxjs';
+import { MatCard } from '@angular/material/card';
 
 export enum MessageType {
   Neutral = 'neutral',
@@ -20,8 +19,8 @@ export enum MessageType {
 export class ContextualMessageComponent {
   readonly DETAIL_STYLE_STRING: string = "-detail";
   readonly TITLE_STYLE_STRING: string = "-title";
-  @Input() title: string = 'Message Title';
-  @Input() message: string = 'nadfbasdlkjfnalskjdfnlaksdjflnaksdfnasdkjfnalksdjfnalkjsdfnlaksdfnlkajsdfnkaljsdfnlakaksdfnasdkjfnaljfnalkjjfnalkjsdfnlaksdfnlkajsdfnkaljsdfnlakaksdfnasdkjfnalksdjfnalkjsdfnlaksdfnlkajsdfnkaljsdfnlak';
+  @Input() title: string = '';
+  @Input() message: string = '';
 
   private _messageValue: MessageType = MessageType.Neutral;
 
