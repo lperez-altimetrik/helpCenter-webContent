@@ -1,0 +1,58 @@
+<div class="sidebar-container">
+    <mat-expansion-panel [(expanded)]="businessPanelOpened" class="business-select">
+        <mat-expansion-panel-header class="business-select-header">
+        <mat-panel-title class="business-selected-option"> {{selectedBusiness.option}} </mat-panel-title>
+        </mat-expansion-panel-header>
+        @for (option of businessOptions; track option.option) {
+            @if(option.option !== selectedBusiness.option){
+                <div class="business-option" (click)="changeOption(option)">
+                    <span class="business-option-text">
+                        {{option.option}}
+                    </span>
+                </div>
+            }
+        }  
+    </mat-expansion-panel>
+
+
+    <mat-accordion class="app-nav-accordion">
+    @for (menuSection of menuSections; track menuSection.title) {
+        <div class="menu-section-container">
+            <span class="menu-section-title">{{menuSection.title}}</span>
+        </div>
+        @for (menuElement of menuSection.sections; track menuElement.title) {
+            <div class="menu-section-element">
+                <mat-expansion-panel class="mat-elevation-z0 expansion-menu-container">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <div class="subsection-title-holder">
+                                <div class="icon-holder">
+                                    @if(menuElement.svgUrl){
+                                        <img class="title-icon-svg" src="{{menuElement.svgUrl}}"> 
+                                    }
+                                    @else {
+                                        <mat-icon class="title-icon" [fontIcon]="menuElement.iconUrl"></mat-icon>
+                                    }
+                                </div>
+                                <label class="section-element-title">{{menuElement.title}}</label>
+                            </div>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-nav-list>
+                        @for (menuItem of menuElement.menuItems; track menuItem.title) {
+                            <div class="menu-link-element" >
+                                <label class="link-element-title" (click)="onMenuItemClick($event)">{{menuItem.title}}</label>
+                            </div>
+                        }
+                    </mat-nav-list>
+                  </mat-expansion-panel>
+            </div>
+        }  
+        @if(!menuSection.isLastSection){
+            <svg class="separator" xmlns="http://www.w3.org/2000/svg" width="259" height="2" viewBox="0 0 259 2" fill="none">
+                <path d="M0 1H259" stroke="#CDD2C8"/>
+            </svg>
+        }
+    }  
+    </mat-accordion>
+</div>
