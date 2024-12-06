@@ -1,6 +1,6 @@
 import { moduleMetadata, Meta, StoryFn } from '@storybook/angular'; 
 import { SidebarComponent } from 'app/components/shared/sidebar/sidebar.component';
-import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 export default {
   title: 'Shared/Sidebar',
@@ -8,7 +8,7 @@ export default {
   decorators: [
     moduleMetadata({
       imports: [ BrowserAnimationsModule],
-      providers: [provideAnimations()]
+      providers: []
     }),
   ],
 } as Meta;
