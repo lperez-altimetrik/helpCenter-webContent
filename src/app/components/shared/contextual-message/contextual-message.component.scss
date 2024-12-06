@@ -1,0 +1,71 @@
+
+mat-card {
+    border: 0px;
+    padding: 4px 3px 4px 3px;
+    background: var(--hc-color-bg-secondary);
+    border-radius: 4px;
+    max-height: fit-content;
+    max-width: 100%;
+    box-shadow: none;
+
+    .content-container {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
+        padding: 4px 4px 4px 4px;
+        max-height: 100%;
+        height: fit-content;
+        display: flex;
+        gap: 12px;
+        flex-direction: row;
+        align-items: start;
+
+        .detail {
+            margin-top: 1.5px;
+            border-radius: 5px;
+            align-self: stretch;
+            max-width: 4px;
+            min-width: 4px;
+        }
+
+        .neutral-detail { background-color: var(--hc-link-color) };
+        .positive-detail { background-color: var(--hc-color-positive-accent) };
+        .warning-detail { background-color: var(--hc-color-warning-title) };
+        .danger-detail { background-color: var(--hc-color-danger-accent) };
+
+        .text-content {
+            box-sizing: border-box;
+            overflow: hidden;
+            max-width: 100%;
+            flex: 1;
+            align-items: stretch;
+
+            .message-title {
+                margin: 0;
+                font-size: 14px;
+                line-height: 14px;
+                font-weight: 500;
+                font-variant-numeric: lining-nums;
+                margin-bottom: 4px;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+            }
+ 
+            .neutral-title { color: var(--hc-color-paysafe-blue-50) };
+            .positive-title { color: var(--hc-color-positive-title) };
+            .warning-title { color: var(--hc-color-warning-title) };
+            .danger-title { color: var(--hc-color-danger-title) };
+        
+            .message-body {
+                margin: 0;
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 400;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                overflow: hidden;
+                color: var(--hc-color-fg-secondary);
+            }
+        }
+    }
+}

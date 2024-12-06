@@ -1,0 +1,13 @@
+@import "./../../../../styles/mixins.scss";
+
+.subtitle {
+  font-size: 22px;
+  color: var(--hc-color-fg-tertiary);
+  font-weight: 300;
+  margin: 0;
+  font-variant-numeric: lining-nums;
+
+  @include respond-to("mobile-mb") {
+    font-size: 18px;
+  }
+}
