@@ -1,16 +1,4 @@
 
-$neutral-accent: var(--hc-link-color); 
-$neutral-title: var(--hc-color-paysafe-blue-50);
-
-$positive-accent: var(--hc-color-positive-accent);
-$positive-title: var(--hc-color-positive-title);
-
-$warning-accent: var(--hc-color-warning-accent);
-$warning-title: var(--hc-color-warning-title);
-
-$danger-accent: var(--hc-color-danger-accent);
-$danger-title: var(--hc-color-danger-title);
-
 mat-card {
     border: 0px;
     padding: 4px 3px 4px 3px;
@@ -40,10 +28,10 @@ mat-card {
             min-width: 4px;
         }
 
-        .neutral-detail { background-color: $neutral-accent };
-        .positive-detail { background-color: $positive-accent };
-        .warning-detail { background-color: $warning-accent };
-        .danger-detail { background-color: $danger-accent };
+        .neutral-detail { background-color: var(--hc-link-color) };
+        .positive-detail { background-color: var(--hc-color-positive-accent) };
+        .warning-detail { background-color: var(--hc-color-warning-title) };
+        .danger-detail { background-color: var(--hc-color-danger-accent) };
 
         .text-content {
             box-sizing: border-box;
@@ -62,11 +50,11 @@ mat-card {
                 word-wrap: break-word;
                 overflow-wrap: break-word;
             }
-
-            .neutral-title { color: $neutral-title };
-            .positive-title { color: $positive-title };
-            .warning-title { color: $warning-title };
-            .danger-title { color: $danger-title };
+ 
+            .neutral-title { color: var(--hc-color-paysafe-blue-50) };
+            .positive-title { color: var(--hc-color-positive-title) };
+            .warning-title { color: var(--hc-color-warning-title) };
+            .danger-title { color: var(--hc-color-danger-title) };
         
             .message-body {
                 margin: 0;
