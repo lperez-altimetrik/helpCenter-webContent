@@ -3,14 +3,14 @@
 .footer {
     position: absolute;
     bottom: 0;
-    background: var(--hc-color-fg-primary, #141414);
+    background: var(--hc-color-fg-primary);
     display: flex;
     box-sizing: border-box;
     width: 100%;
     max-width: 100%;
     min-width: 10%;
     height: fit-content;
-    padding: var(--spacing-8, 32px) var(--spacing-7, 24px);
+    padding: var(--spacing-8) var(--spacing-7);
     flex-direction: column;
     align-items: center;
     gap: 10px;
@@ -57,7 +57,7 @@
                     cursor: pointer;
                     overflow: hidden;
                     white-space: nowrap;
-                    color: var(--hc-color-fg-invert, #FFF);
+                    color: var(--hc-color-fg-invert);
                     text-align: center;
                     font-variant-numeric: lining-nums;
                     text-overflow: ellipsis;
@@ -67,7 +67,7 @@
                     line-height: normal;
                     @include respond-to("mobile-mb") {
                         margin-right: 0;
-                        margin-bottom: var(--spacing-3,8px);
+                        margin-bottom: var(--spacing-3);
                     }
 
                     a {
@@ -78,7 +78,7 @@
                     }
 
                     a:visited {
-                        color: var(--hc-color-fg-invert, #FFF);
+                        color: var(--hc-color-fg-invert);
                     }
                 }
             }
@@ -87,7 +87,7 @@
 
     .divider {
         display: flex;
-        background-color: var(--hc-color-fg-secondary, #414641);
+        background-color: var(--hc-color-fg-secondary);
         --mat-divider-width: 1.5px;
         width: 100%;
         height: 1px;
@@ -103,7 +103,7 @@
             display: block;
             overflow: hidden;
             white-space: nowrap;
-            color: var(--hc-color-fg-tertiary, #787D78);
+            color: var(--hc-color-fg-tertiary);
             text-align: center;
             font-variant-numeric: lining-nums;
             text-overflow: ellipsis;

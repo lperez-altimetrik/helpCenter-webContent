@@ -3,12 +3,13 @@ import { Component } from '@angular/core';
 import { inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
-import { LinkComponent } from '../shared/link/link.component';
+import { AccordionComponent } from '../shared/accordion/accordion.component';
+import { ArticleFeedbackComponent } from "../shared/article-feedback/article-feedback.component";
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [LinkComponent],
+  imports: [AccordionComponent, ArticleFeedbackComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })

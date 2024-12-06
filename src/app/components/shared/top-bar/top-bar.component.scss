@@ -6,8 +6,8 @@
     height: 72px;
     justify-content: space-between;
     align-items: center;
-    padding: var(--spacing-6, 16px) var(--spacing-9, 40px);
-    background-color: var(--hc-primary-color, #5A28FF);
+    padding: var(--spacing-6) var(--spacing-9);
+    background-color: var(--hc-primary-color);
     color: #FFFFFF;
     
     .lhs-container {
@@ -23,7 +23,7 @@
             flex-direction:row;
             justify-content:center;
             align-items:center;   
-            background-color: var(--hc-primary-color, #5A28FF);
+            background-color: var(--hc-primary-color);
             color: #FFFFFF;
             border: none;
             border-radius: 5px;
@@ -33,7 +33,7 @@
         }
 
         .lh-button:hover {
-            background-color: var(--hc-primary-color-dark, #320FA0);
+            background-color: var(--hc-primary-color-dark);
         }
 
         .menu-toggle {
@@ -55,7 +55,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: var(--spacing-3, 8px);
+            gap: var(--spacing-3);
         }
     }
     .navigation {
@@ -66,11 +66,11 @@
             display: flex;
             flex-direction: row;
             align-items: center;
-            gap: var(--spacing-6, 16px);
+            gap: var(--spacing-6);
             
             .divider {
                 display: flex;
-                background-color: var(--hc-divider-purple,a587ff);
+                background-color: var(--hc-divider-purple);
                 --mat-divider-width: 1.5px;
                 width: 0;
                 height: 24px;
@@ -83,7 +83,7 @@
                 flex-direction:row;
                 justify-content:center;
                 align-items:center;   
-                background-color: var(--hc-primary-color, #5A28FF);
+                background-color: var(--hc-primary-color);
                 color: #FFFFFF;
                 border: none;
                 border-radius: 5px;
@@ -93,17 +93,17 @@
             }
 
             .rh-button:hover {
-                background-color: var(--hc-primary-color-dark, #320FA0);
+                background-color: var(--hc-primary-color-dark);
             }
 
             .user-buttons-container {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                gap: var(--spacing-6,16px);
+                gap: var(--spacing-6);
 
                 @include respond-to("mobile-mb") {
-                    gap: var(--spacing-6, 16px) !important;
+                    gap: var(--spacing-6) !important;
                 }
 
                 .login-button {

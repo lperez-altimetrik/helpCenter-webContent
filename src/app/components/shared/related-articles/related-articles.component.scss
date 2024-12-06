@@ -4,23 +4,23 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: var(--spacing-6, 16px);
-    border-radius: var(--spacing-3, 8px);
+    gap: var(--spacing-6);
+    border-radius: var(--spacing-3);
     .related-title-container{
         display: flex;
         height: 40px;
         align-items: center;
-        gap: var(--spacing-4, 10px);
+        gap: var(--spacing-4);
         align-self: stretch;
         .icon-holder{
-            border-radius: var(--spacing-99, 999px);
-            background: var(--hc-color-paysafe-blue-05, #E8E0FF);
+            border-radius: var(--spacing-99);
+            background: var(--hc-color-paysafe-blue-05);
             display: flex;
             align-items: center;
             justify-content: center;
         }
         .related-title-bg{
-            color: var(--hc-color-fg-primary, #141414);
+            color: var(--hc-color-fg-primary);
             font-variant-numeric: lining-nums;
 
             font-size: 32px;
@@ -29,7 +29,7 @@
             line-height: 96%; /* 30.72px */
         }
         .related-title-mb{
-            color: var(--hc-color-fg-primary, #141414);
+            color: var(--hc-color-fg-primary);
             font-size: 22px;
             font-style: normal;
             font-weight: 500;
@@ -41,18 +41,18 @@
         padding-left: 50px;
         flex-direction: column;
         align-items: flex-start;
-        gap: var(--spacing-7, 24px);
+        gap: var(--spacing-7);
         .related-links-container{
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            gap: var(--spacing-6, 16px);
+            gap: var(--spacing-6);
             .link-element{
                 display: flex;
                 flex-direction: row;
                 text-decoration: none;
                 .related-link{
-                    color: var(--hc-color-bg-cta, #5A28FF);
+                    color: var(--hc-color-bg-cta);
 
                     font-style: normal;
                     font-weight: 500;
@@ -67,12 +67,12 @@
             display: flex;
             height: 32px;
             min-width: 80px;
-            padding: var(--spacing-3, 8px) var(--spacing-3, 8px) var(--spacing-3, 8px) var(--spacing-4, 10px);
+            padding: var(--spacing-3) var(--spacing-3) var(--spacing-3) var(--spacing-4);
             justify-content: center;
             align-items: center;
-            gap: var(--spacing-1, 4px);
-            border-radius: var(--spacing-2, 6px);
-            background: var(--hc-color-bg-secondary, #F5F5F0);
+            gap: var(--spacing-1);
+            border-radius: var(--spacing-2);
+            background: var(--hc-color-bg-secondary);
             border: none;
             cursor: pointer;
         }
