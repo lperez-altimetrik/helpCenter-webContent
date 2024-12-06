@@ -1,15 +1,15 @@
-@import "./../../../../styles/variables.scss";
+
 .sidebar-container{
     display: flex;
     width: 259px;
-    padding: var(--spacing-8, 32px) var(--spacing-7, 24px);
+    padding: var(--spacing-8) var(--spacing-7);
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--spacing-6, 16px);
+    gap: var(--spacing-6);
 
-    border-radius: var(--spacing-0, 0px) var(--spacing-3, 8px) var(--spacing-3, 8px) var(--spacing-0, 0px);
-    border-right: 1px solid var(--color-grey-20, #CDD2C8);
-    background: var(--color-white, #FFF);
+    border-radius: var(--spacing-0) var(--spacing-3) var(--spacing-3) var(--spacing-0);
+    border-right: 1px solid var(--hc-color-grey-20);
+    background: var(--hc-color-white);
     
     /* md */
     box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.04), 0px 4px 6px -1px rgba(0, 0, 0, 0.06);
@@ -17,7 +17,7 @@
     .app-nav-accordion{
         display: flex;
         flex-direction: column;
-        gap: var(--spacing-6, 16px);
+        gap: var(--spacing-6);
         .mat-expansion-panel-spacing{
             margin: 0px;
         }
@@ -26,20 +26,20 @@
         display: flex;
         min-width: 160px;
         width: auto;    
-        padding: var(--spacing-4, 10px) var(--spacing-5, 12px);
+        padding: var(--spacing-4) var(--spacing-5);
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
         align-self: stretch;
 
         border-radius: 5px;
-        border: 1px solid var(--color-bg-tertiary, #CDD2C8);
-        background: var(--color-bg-secondary, #F5F5F0);
+        border: 1px solid var(--hc-color-bg-tertiary);
+        background: var(--hc-color-bg-secondary);
         .business-select-header{
             height: auto;
             width: 100%;
             .business-selected-option{
-                color: var(--color-fg-secondary, #414641);
+                color: var(--hc-color-fg-secondary);
                 leading-trim: both;
                 text-edge: cap;
                 font-variant-numeric: lining-nums;
@@ -80,7 +80,7 @@
         align-self: stretch;
         .menu-section-title{
             flex: 1 0 0;
-            color: var(--color-fg-tertiary, #787D78);
+            color: var(--hc-color-fg-tertiary);
             leading-trim: both;
             text-edge: cap;
             font-variant-numeric: lining-nums;
@@ -94,7 +94,7 @@
     .separator{
         align-self: stretch;
         stroke-width: 1px;
-        stroke: var(--color-grey-20, #CDD2C8);
+        stroke: var(--hc-color-grey-20);
     }
     .menu-section-element{
         display: flex;
@@ -110,10 +110,10 @@
         .subsection-title-holder{
             display: flex;
             align-items: center;
-            gap: var(--spacing-3, 8px);
+            gap: var(--spacing-3);
             .icon-holder{
-                border-radius: var(--spacing-99, 999px);
-                background: var(--color-paysafe-blue-05, #E8E0FF);
+                border-radius: var(--spacing-99);
+                background: var(--hc-color-paysafe-blue-05);
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -123,7 +123,7 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    color: var(--hc-color-bg-cta, #5A28FF);
+                    color: var(--hc-color-bg-cta);
                 }
                 .title-icon-svg{
                     transform: scale(0.5);
@@ -131,13 +131,13 @@
                     align-items: center;
                     justify-content: center;
                     .svg-icon{
-                        color: var(--hc-color-bg-cta, #5A28FF);
+                        color: var(--hc-color-bg-cta);
                     }
                 }
             }
     
             .section-element-title{
-                color: var(--color-fg-secondary, #414641);
+                color: var(--hc-color-fg-secondary);
                 leading-trim: both;
                 text-edge: cap;
                 font-variant-numeric: lining-nums;
@@ -161,12 +161,12 @@
             padding: 8px 0px 8px 16px;
             align-items: center;
             align-self: stretch;
-            border-left: 1px solid var(--color-grey-20, #CDD2C8);
-            background: var(--color-white, #FFF);
+            border-left: 1px solid var(--hc-color-grey-20);
+            background: var(--hc-color-white);
 
             .link-element-title{
                 flex: 1 0 0;
-                color: var(--color-fg-secondary, #414641);
+                color: var(--hc-color-fg-secondary);
                 leading-trim: both;
                 text-edge: cap;
                 font-variant-numeric: lining-nums;
@@ -182,9 +182,9 @@
         .expansion-menu-container{
             width: 100%;
             .mat-expansion-panel-header{
-                padding: 0px var(--spacing-3, 8px) 0px 0px;
+                padding: 0px var(--spacing-3) 0px 0px;
                 height: 28px;
-                gap: var(--spacing-6, 16px);
+                gap: var(--spacing-6);
             }
             .menu-element-active{
                 display: flex;
@@ -194,7 +194,7 @@
                 background: #F6F2FF;
                 .link-element-title{
                     flex: 1 0 0;
-                    color: var(--color-bg-cta, #5A28FF);
+                    color: var(--hc-color-bg-cta);
                     leading-trim: both;
                     text-edge: cap;
                     font-variant-numeric: lining-nums;
