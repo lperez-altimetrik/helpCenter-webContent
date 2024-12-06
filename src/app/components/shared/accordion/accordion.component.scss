@@ -18,17 +18,40 @@ mat-expansion-panel {
   .content {
     padding: 20px;
   }
-}
 
-.mat-expansion-panel-header-title {
-  font-size: 18px;
-  color: var(--hc-light-black);
-  font-weight: 400;
+  .mat-expansion-panel-header-title {
+    color: var(--hc-color-fg-secondary);
+    leading-trim: both;
+    text-edge: cap;
+    font-variant-numeric: lining-nums;
+  
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  
+    @include respond-to("mobile-mb") {
+      font-size: 16px;
+    }
 
-  @include respond-to("mobile-mb") {
-    font-size: 16px;
+    &:hover{
+      color: var(--hc-color-fg-primary);
+    }
+  }
+
+  .accordion-paragraph{
+    color: var(--hc-color-fg-secondary);
+    leading-trim: both;
+    text-edge: cap;
+    font-variant-numeric: lining-nums;
+  
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 171.429% */
   }
 }
+
 
 :host ::ng-deep .mat-expansion-indicator:after {
   --mat-expansion-header-indicator-color: var(--hc-primary-color);
