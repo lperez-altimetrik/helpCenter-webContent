@@ -6,12 +6,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { AuthService } from '../../../services/auth.service';
+import { PillComponent } from '../pill/pill.component';
 import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-top-bar',
   standalone: true,
-  imports: [MatButtonModule,MatDividerModule,MatIconModule,CommonModule],
+  imports: [MatButtonModule,MatDividerModule,MatIconModule,CommonModule,PillComponent],
   templateUrl: './top-bar.component.html',
   styleUrl: './top-bar.component.scss'
 })
@@ -32,7 +33,7 @@ export class TopBarComponent implements OnInit, OnDestroy {
     this.authSubscription = this.authService.isLoggedIn$.subscribe(
       (isLoggedIn) => {
         this.isLoggedIn = isLoggedIn;
-        console.log('Auth state changed: ',this.isLoggedIn);
+        console.log('Auth state changed: ', this.isLoggedIn);
       }
     );
   }

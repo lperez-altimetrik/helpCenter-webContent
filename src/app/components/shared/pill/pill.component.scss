@@ -1,0 +1,81 @@
+.mat-typography {
+    background-color: black !important;
+}
+
+::ng-deep {
+    .mat-mdc-button-ripple,
+    .mdc-button__ripple {
+      display: none !important;
+    }
+}
+
+.pill {
+    font-size: 12px;
+    border-radius: var(--spacing-99);
+    padding: var(--spacing-2) var(--spacing-5) var(--spacing-2) var(--spacing-5);
+    border: none;
+    line-height: normal;
+    font-weight: normal;
+    height: fit-content;
+    //padding-top: var(--spacing-5);
+}
+
+.primary {
+    color: var(--hc-color-fg-primary);
+    background-color: var(--hc-color-bg-secondary);
+}
+
+.primary.mat-mdc-button:not(:disabled) {
+    color: var(--hc-color-fg-primary);
+    background-color: var(--hc-color-bg-secondary);
+}
+
+.primary:active {
+    color: var(--hc-color-fg-invert);
+    background-color: var(--hc-color-bg-cta);
+}
+
+.primary:active.mat-mdc-button:not(:disabled) {
+    color: var(--hc-color-fg-invert);
+    background-color: var(--hc-color-bg-cta);
+}
+
+.primary:disabled {
+    color: var(--hc-color-fg-tertiary);
+    background-color: var(--hc-color-bg-secondary);
+}
+
+.primary:disabled.mat-mdc-button:not(:disabled) {
+    color: var(--hc-color-fg-tertiary);
+    background-color: var(--hc-color-bg-secondary);
+}
+
+.secondary {
+    color: var(--hc-color-paysafe-blue-05);
+    background: var(--hc-color-paysafe-blue-50);
+}
+
+.secondary.mat-mdc-button:not(:disabled) {
+    color: var(--hc-color-paysafe-blue-05);
+    background: var(--hc-color-paysafe-blue-50);
+}
+
+.secondary:active {
+    color: var(--hc-color-bg-cta-secondary);
+    background-color: var(--hc-color-bg-primary);
+}
+
+.secondary:active.mat-mdc-button:not(:disabled) {
+    color: var(--hc-color-bg-cta-secondary);
+    background-color: var(--hc-color-bg-primary);
+}
+
+.secondary:disabled {
+    color: var(--hc-color-paysafe-blue-10);
+    background-color: var(--hc-color-paysafe-blue-70);
+}
+
+.secondary:disabled.mat-mdc-button:not(:disabled) {
+    color: var(--hc-color-paysafe-blue-10);
+    background-color: var(--hc-color-paysafe-blue-70);
+}
