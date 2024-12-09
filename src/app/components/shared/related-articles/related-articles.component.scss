@@ -51,6 +51,7 @@
                 display: flex;
                 flex-direction: row;
                 text-decoration: none;
+                height: auto;
                 .related-link{
                     color: var(--hc-color-bg-cta);
 
@@ -59,6 +60,13 @@
                     line-height: normal;
                     margin: 0px;
                     text-align: left;
+                }
+                .arrow-outward-icon{
+                    transform: scale(0.75);
+                    color: var(--hc-primary-color);
+                    @include respond-to("mobile-mb") {
+                        transform: scale(0.58);
+                    }
                 }
             }
             
@@ -75,6 +83,9 @@
             background: var(--hc-color-bg-secondary);
             border: none;
             cursor: pointer;
+            .arrow-outward-icon{
+                transform: scale(0.66);
+            }
         }
     }
 }
@@ -91,6 +102,7 @@
     .related-link{
         overflow: hidden;
         font-size: 14px;
+        height: 18px;
         display: -webkit-box;
         max-width: 238px;
         -webkit-box-orient: vertical;
@@ -99,7 +111,7 @@
         text-overflow: ellipsis;
     }
 }
-@include respond-to("desktop-bg") {
+@include respond-to("medium") {
     .related-title-mb{
         display: none;
     }
