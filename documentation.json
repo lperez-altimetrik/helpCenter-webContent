@@ -1066,7 +1066,7 @@
         },
         {
             "name": "DashboardComponent",
-            "id": "component-DashboardComponent-14bc90ad6a89ece0766b4e4d10f6b44177aa62151b28de5cf65e103d6ae68d733d8579d7f6e9678a0d9648505028ccc24e5ca1828663444cadadb332140fbc4e",
+            "id": "component-DashboardComponent-a7056c9b535c7daadfef10b010cd4b2729fd4e90c09c4f27c3b2b92f0dc7c51127014031c968caa31953651e30c6937b35e2d70a5bae667ef12344c221040824",
             "file": "src/app/components/dashboard/dashboard.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1132,20 +1132,20 @@
             "standalone": true,
             "imports": [
                 {
-                    "name": "TableComponent",
+                    "name": "LabelComponent",
                     "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { inject } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { AuthService } from '../../services/auth.service';\nimport { TableComponent } from '../shared/table/table.component';\n\n@Component({\n  selector: 'app-dashboard',\n  standalone: true,\n  imports: [TableComponent],\n  templateUrl: './dashboard.component.html',\n  styleUrl: './dashboard.component.scss',\n})\nexport class DashboardComponent {\n  private authService = inject(AuthService);\n  private router = inject(Router);\n\n  logout(): void {\n    this.authService.logout();\n    this.router.navigate(['/login']);\n  }\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { inject } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { AuthService } from '../../services/auth.service';\nimport { LabelComponent } from '../shared/label/label.component';\n\n@Component({\n  selector: 'app-dashboard',\n  standalone: true,\n  imports: [LabelComponent],\n  templateUrl: './dashboard.component.html',\n  styleUrl: './dashboard.component.scss',\n})\nexport class DashboardComponent {\n  private authService = inject(AuthService);\n  private router = inject(Router);\n\n  logout(): void {\n    this.authService.logout();\n    this.router.navigate(['/login']);\n  }\n}\n",
             "styleUrl": "./dashboard.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"container\">\n  <h2>Dashboard</h2>\n  <button (click)=\"logout()\">Logout</button>\n  <p>Welcome to your dashboard!</p>\n  <app-table></app-table>\n</div>\n"
+            "templateData": "<div class=\"container\">\n  <h2>Dashboard</h2>\n  <button (click)=\"logout()\">Logout</button>\n  <p>Welcome to your dashboard!</p>\n  <app-label></app-label>\n</div>\n"
         },
         {
             "name": "FooterComponent",
@@ -1223,6 +1223,59 @@
             },
             "extends": [],
             "templateData": "<footer class=\"footer\">\n    <div class=\"nav-container\">\n        <nav class=\"navigation\">\n            <ul>\n                <li><a href=\"\">Cookie Settings</a></li>\n                <li><a href=\"\">Contact Us</a></li>\n                <li><a href=\"\">Privacy Policy</a></li>\n                <li><a href=\"\">Regulatory Disclosures</a></li>\n            </ul>\n        </nav>\n    </div>\n    <mat-divider class=\"divider\" [vertical]=\"true\"></mat-divider>\n    <div class=\"sm-container\">\n        <small>Copyright © 2024 Paysafe Holdings UK Limited. All rights reserved. Paysafe Financial Services Limited (FRN:900015)</small>\n    </div>\n</footer>"
+        },
+        {
+            "name": "LabelComponent",
+            "id": "component-LabelComponent-094779c804099e4b753f126a5474df019ee3c4bd175106534c3998e436ce4c7d3d50c476dc571dea9f56e99aaead8e5e81e24ac04b64135450ff99745bfae43b",
+            "file": "src/app/components/shared/label/label.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-label",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./label.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "label",
+                    "defaultValue": "'label'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-label',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './label.component.html',\n  styleUrl: './label.component.scss',\n})\nexport class LabelComponent {\n  @Input() label = 'label';\n}\n",
+            "styleUrl": "./label.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"label-container\">\n  {{ label | titlecase }}\n</div>\n"
         },
         {
             "name": "LinkComponent",
@@ -2424,6 +2477,16 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/label.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/link.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2659,6 +2722,16 @@
                 "deprecationMessage": "",
                 "type": "StoryFn",
                 "defaultValue": "(args) => ({\n  component: FooterComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/label.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryFn",
+                "defaultValue": "(args) => ({\n  component: LabelComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -3121,6 +3194,28 @@
                     "deprecationMessage": "",
                     "type": "StoryFn",
                     "defaultValue": "(args) => ({\n  component: FooterComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/stories/label.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/label.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/label.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryFn",
+                    "defaultValue": "(args) => ({\n  component: LabelComponent,\n  props: args,\n})"
                 }
             ],
             "src/stories/link.component.stories.ts": [
@@ -3601,6 +3696,15 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/components/shared/label/label.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "LabelComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/components/shared/link/link.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -3941,6 +4045,26 @@
             },
             {
                 "filePath": "src/stories/footer.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/label.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/label.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
