@@ -901,7 +901,7 @@
         },
         {
             "name": "DashboardComponent",
-            "id": "component-DashboardComponent-666f61576bd986ebe55ebd9115d6181dfa898ba38d715c6337ddaac580521ce89e159cfd8ef09ba3241ac1980a2dc1a6a5fcb770e9e2f98c4b0477231c4a5ecc",
+            "id": "component-DashboardComponent-14bc90ad6a89ece0766b4e4d10f6b44177aa62151b28de5cf65e103d6ae68d733d8579d7f6e9678a0d9648505028ccc24e5ca1828663444cadadb332140fbc4e",
             "file": "src/app/components/dashboard/dashboard.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -967,20 +967,20 @@
             "standalone": true,
             "imports": [
                 {
-                    "name": "AccordionComponent",
+                    "name": "TableComponent",
                     "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { inject } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { AuthService } from '../../services/auth.service';\nimport { AccordionComponent } from '../shared/accordion/accordion.component';\n\n@Component({\n  selector: 'app-dashboard',\n  standalone: true,\n  imports: [AccordionComponent],\n  templateUrl: './dashboard.component.html',\n  styleUrl: './dashboard.component.scss',\n})\nexport class DashboardComponent {\n  private authService = inject(AuthService);\n  private router = inject(Router);\n\n  logout(): void {\n    this.authService.logout();\n    this.router.navigate(['/login']);\n  }\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { inject } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { AuthService } from '../../services/auth.service';\nimport { TableComponent } from '../shared/table/table.component';\n\n@Component({\n  selector: 'app-dashboard',\n  standalone: true,\n  imports: [TableComponent],\n  templateUrl: './dashboard.component.html',\n  styleUrl: './dashboard.component.scss',\n})\nexport class DashboardComponent {\n  private authService = inject(AuthService);\n  private router = inject(Router);\n\n  logout(): void {\n    this.authService.logout();\n    this.router.navigate(['/login']);\n  }\n}\n",
             "styleUrl": "./dashboard.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"container\">\n  <h2>Dashboard</h2>\n  <button (click)=\"logout()\">Logout</button>\n  <p>Welcome to your dashboard!</p>\n  <app-accordion></app-accordion>\n</div>\n"
+            "templateData": "<div class=\"container\">\n  <h2>Dashboard</h2>\n  <button (click)=\"logout()\">Logout</button>\n  <p>Welcome to your dashboard!</p>\n  <app-table></app-table>\n</div>\n"
         },
         {
             "name": "FooterComponent",
@@ -1406,6 +1406,269 @@
             "templateData": "<p>search-component works!</p>\n"
         },
         {
+            "name": "SidebarComponent",
+            "id": "component-SidebarComponent-4bbd5ceb44e06a038149df132478320e007a261cea4c387db31a365c5118ca3e49a7abd6a26ef88f7439c75b2e61ab046765520c76f63394f0d73dd0777f1b35",
+            "file": "src/app/components/shared/sidebar/sidebar.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-sidebar",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./sidebar.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "businessOptions",
+                    "defaultValue": "[\n    {option: \"Small business\"},\n    {option: \"Enterprise\"},\n    {option: \"Partners\"}\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17,
+                    "modifierKind": [
+                        125
+                    ]
+                },
+                {
+                    "name": "businessPanelOpened",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 165,
+                    "modifierKind": [
+                        125
+                    ]
+                },
+                {
+                    "name": "currentActiveItem",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 169,
+                    "modifierKind": [
+                        125
+                    ]
+                },
+                {
+                    "name": "menuSections",
+                    "defaultValue": "[\n    {\n      title: \"News & Updates\",\n      sections: [\n        {\n          title: \"News & Updates\",\n          iconUrl: \"newspaper\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        }  \n      ]\n    },\n    {\n      title: \"Products\",\n      sections: [\n        {\n          title: \"Payments\",\n          iconUrl: \"attach_money\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"Wallet\",\n          iconUrl: \"account_balance_wallet\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"Paysafe Card\",\n          iconUrl: \"credit_card\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        }  \n      ]\n    },\n    {\n      title: \"Topics\",\n      sections: [\n        {\n          title: \"Getting started\",\n          iconUrl: \"arrow_upward\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"My account\",\n          iconUrl: \"person\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"Disputes\",\n          iconUrl: \"error\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"Analytics\",\n          iconUrl: \"trending_up\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"Transactions\",\n          svgUrl: \"./../../../../assets/icons/common/chip-extraction-icon.svg\",\n          iconUrl: \"chip_extraction\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"Fees & Pricing\",\n          iconUrl: \"receipt_long\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ] \n        }\n      ]\n    },\n    {\n      title: \"Resources\",\n      isLastSection: true,\n      sections: [\n        {\n          title: \"Glosary\",\n          iconUrl: \"receipt\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"FAQs\",\n          iconUrl: \"question_mark\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"Trending Articles\",\n          iconUrl: \"arrow_outward\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        }  \n      ]\n    },\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 23,
+                    "modifierKind": [
+                        125
+                    ]
+                },
+                {
+                    "name": "selectedBusiness",
+                    "defaultValue": "this.businessOptions[0]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 167,
+                    "modifierKind": [
+                        125
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "changeOption",
+                    "args": [
+                        {
+                            "name": "option",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 181,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "option",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onMenuItemClick",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 173,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "MatIconModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatExpansionModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatListModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatFormFieldModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatSelectModule",
+                    "type": "module"
+                },
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { MatIconModule } from '@angular/material/icon';\nimport { MatExpansionModule } from '@angular/material/expansion';\nimport { MatListModule } from '@angular/material/list';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport { MatSelectModule } from '@angular/material/select';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n  selector: 'app-sidebar',\n  standalone: true,\n  imports: [MatIconModule, MatExpansionModule, MatListModule, MatFormFieldModule, MatSelectModule, CommonModule],\n  templateUrl: './sidebar.component.html',\n  styleUrl: './sidebar.component.scss'\n})\nexport class SidebarComponent {\n  public businessOptions: any[] = [\n    {option: \"Small business\"},\n    {option: \"Enterprise\"},\n    {option: \"Partners\"}\n  ];\n\n  public menuSections: any[] = [\n    {\n      title: \"News & Updates\",\n      sections: [\n        {\n          title: \"News & Updates\",\n          iconUrl: \"newspaper\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        }  \n      ]\n    },\n    {\n      title: \"Products\",\n      sections: [\n        {\n          title: \"Payments\",\n          iconUrl: \"attach_money\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"Wallet\",\n          iconUrl: \"account_balance_wallet\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"Paysafe Card\",\n          iconUrl: \"credit_card\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        }  \n      ]\n    },\n    {\n      title: \"Topics\",\n      sections: [\n        {\n          title: \"Getting started\",\n          iconUrl: \"arrow_upward\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"My account\",\n          iconUrl: \"person\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"Disputes\",\n          iconUrl: \"error\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"Analytics\",\n          iconUrl: \"trending_up\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"Transactions\",\n          svgUrl: \"./../../../../assets/icons/common/chip-extraction-icon.svg\",\n          iconUrl: \"chip_extraction\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"Fees & Pricing\",\n          iconUrl: \"receipt_long\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ] \n        }\n      ]\n    },\n    {\n      title: \"Resources\",\n      isLastSection: true,\n      sections: [\n        {\n          title: \"Glosary\",\n          iconUrl: \"receipt\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"FAQs\",\n          iconUrl: \"question_mark\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"Trending Articles\",\n          iconUrl: \"arrow_outward\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        }  \n      ]\n    },\n  ];\n\n  public businessPanelOpened: boolean = false;\n\n  public selectedBusiness: any = this.businessOptions[0];\n\n  public currentActiveItem: any = null;\n\n  \n\n  public onMenuItemClick(event: any){\n    if (this.currentActiveItem !== null){\n      this.currentActiveItem.classList.remove('menu-element-active');\n    }\n    event.target.parentElement.classList.add('menu-element-active');\n    this.currentActiveItem = event.target.parentElement;\n  }\n  \n  public changeOption (option: any){\n    this.selectedBusiness = option;\n    this.businessPanelOpened = !this.businessPanelOpened ;\n  }\n}\n",
+            "styleUrl": "./sidebar.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"sidebar-container\">\n    <mat-expansion-panel [(expanded)]=\"businessPanelOpened\" class=\"business-select\">\n        <mat-expansion-panel-header class=\"business-select-header\">\n        <mat-panel-title class=\"business-selected-option\"> {{selectedBusiness.option}} </mat-panel-title>\n        </mat-expansion-panel-header>\n        @for (option of businessOptions; track option.option) {\n            @if(option.option !== selectedBusiness.option){\n                <div class=\"business-option\" (click)=\"changeOption(option)\">\n                    <span class=\"business-option-text\">\n                        {{option.option}}\n                    </span>\n                </div>\n            }\n        }  \n    </mat-expansion-panel>\n\n\n    <mat-accordion class=\"app-nav-accordion\">\n    @for (menuSection of menuSections; track menuSection.title) {\n        <div class=\"menu-section-container\">\n            <span class=\"menu-section-title\">{{menuSection.title}}</span>\n        </div>\n        @for (menuElement of menuSection.sections; track menuElement.title) {\n            <div class=\"menu-section-element\">\n                <mat-expansion-panel class=\"mat-elevation-z0 expansion-menu-container\">\n                    <mat-expansion-panel-header>\n                        <mat-panel-title>\n                            <div class=\"subsection-title-holder\">\n                                <div class=\"icon-holder\">\n                                    @if(menuElement.svgUrl){\n                                        <img class=\"title-icon-svg\" src=\"{{menuElement.svgUrl}}\"> \n                                    }\n                                    @else {\n                                        <mat-icon class=\"title-icon\" [fontIcon]=\"menuElement.iconUrl\"></mat-icon>\n                                    }\n                                </div>\n                                <label class=\"section-element-title\">{{menuElement.title}}</label>\n                            </div>\n                        </mat-panel-title>\n                    </mat-expansion-panel-header>\n                    <mat-nav-list>\n                        @for (menuItem of menuElement.menuItems; track menuItem.title) {\n                            <div class=\"menu-link-element\" >\n                                <label class=\"link-element-title\" (click)=\"onMenuItemClick($event)\">{{menuItem.title}}</label>\n                            </div>\n                        }\n                    </mat-nav-list>\n                  </mat-expansion-panel>\n            </div>\n        }  \n        @if(!menuSection.isLastSection){\n            <svg class=\"separator\" xmlns=\"http://www.w3.org/2000/svg\" width=\"259\" height=\"2\" viewBox=\"0 0 259 2\" fill=\"none\">\n                <path d=\"M0 1H259\" stroke=\"#CDD2C8\"/>\n            </svg>\n        }\n    }  \n    </mat-accordion>\n</div>"
+        },
+        {
+            "name": "TableComponent",
+            "id": "component-TableComponent-e68e26f8b461962075af8a4dc6386ba204e39aa02b82eddfae58568b2edb40984d2b607aede332dc2c5c8d95e0ba37091d5901fe96580dcbeff77be6fa7e01cf",
+            "file": "src/app/components/shared/table/table.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-table",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./table.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "columnKeys",
+                    "defaultValue": "['feature 1', 'feature 2', 'feature 3']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 57,
+                    "type": "string[]",
+                    "decorators": []
+                },
+                {
+                    "name": "tableData",
+                    "defaultValue": "[\n    {\n      'feature 1': 'Create a Payment Link',\n      'feature 2':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n      'feature 3':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n    },\n    {\n      'feature 1': 'Copy the QR Code',\n      'feature 2':\n        'Click \"Download\" to save the QR code in a preferred format (such as PNG, JPEG, or SVG). This makes it easy to share digitally or in print.',\n      'feature 3':\n        'Click \"Download\" to save the QR code in a preferred format (such as PNG, JPEG, or SVG). This makes it easy to share digitally or in print.',\n    },\n    {\n      'feature 1': 'Download the QR Code',\n      'feature 2':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n      'feature 3':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n    },\n    {\n      'feature 1': 'Share or Display the QR Code',\n      'feature 2':\n        'You can now add the QR code to invoices, emails, or your website. Customers simply scan the code with their mobile device to be redirected to the payment page, enabling quick and easy payment.',\n      'feature 3':\n        'You can now add the QR code to invoices, emails, or your website. Customers simply scan the code with their mobile device to be redirected to the payment page, enabling quick and easy payment.',\n    },\n    {\n      'feature 1': 'Download the QR Code',\n      'feature 2':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n      'feature 3':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n    },\n    {\n      'feature 1': 'Share or Display the QR Code',\n      'feature 2':\n        'You can now add the QR code to invoices, emails, or your website. Customers simply scan the code with their mobile device to be redirected to the payment page, enabling quick and easy payment.',\n      'feature 3':\n        'You can now add the QR code to invoices, emails, or your website. Customers simply scan the code with their mobile device to be redirected to the payment page, enabling quick and easy payment.',\n    },\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "any[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatTableModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input } from '@angular/core';\nimport { MatTableModule } from '@angular/material/table';\n\n@Component({\n  selector: 'app-table',\n  standalone: true,\n  imports: [CommonModule, MatTableModule],\n  templateUrl: './table.component.html',\n  styleUrl: './table.component.scss',\n})\nexport class TableComponent {\n  @Input() tableData: any[] = [\n    {\n      'feature 1': 'Create a Payment Link',\n      'feature 2':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n      'feature 3':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n    },\n    {\n      'feature 1': 'Copy the QR Code',\n      'feature 2':\n        'Click \"Download\" to save the QR code in a preferred format (such as PNG, JPEG, or SVG). This makes it easy to share digitally or in print.',\n      'feature 3':\n        'Click \"Download\" to save the QR code in a preferred format (such as PNG, JPEG, or SVG). This makes it easy to share digitally or in print.',\n    },\n    {\n      'feature 1': 'Download the QR Code',\n      'feature 2':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n      'feature 3':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n    },\n    {\n      'feature 1': 'Share or Display the QR Code',\n      'feature 2':\n        'You can now add the QR code to invoices, emails, or your website. Customers simply scan the code with their mobile device to be redirected to the payment page, enabling quick and easy payment.',\n      'feature 3':\n        'You can now add the QR code to invoices, emails, or your website. Customers simply scan the code with their mobile device to be redirected to the payment page, enabling quick and easy payment.',\n    },\n    {\n      'feature 1': 'Download the QR Code',\n      'feature 2':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n      'feature 3':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n    },\n    {\n      'feature 1': 'Share or Display the QR Code',\n      'feature 2':\n        'You can now add the QR code to invoices, emails, or your website. Customers simply scan the code with their mobile device to be redirected to the payment page, enabling quick and easy payment.',\n      'feature 3':\n        'You can now add the QR code to invoices, emails, or your website. Customers simply scan the code with their mobile device to be redirected to the payment page, enabling quick and easy payment.',\n    },\n  ]; // Data for the table\n  @Input() columnKeys: string[] = ['feature 1', 'feature 2', 'feature 3']; // Column keys for headers\n}\n",
+            "styleUrl": "./table.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div *ngIf=\"tableData!.length > 0\">\n  <table mat-table [dataSource]=\"tableData\" class=\"mat-elevation-z8\">\n    <!-- Dynamic Columns -->\n    <ng-container *ngFor=\"let column of columnKeys\" [matColumnDef]=\"column\">\n      <th\n        mat-header-cell\n        *matHeaderCellDef\n        [style.width.%]=\"100 / columnKeys.length\"\n        class=\"cell-header\"\n      >\n        {{ column | uppercase }}\n      </th>\n      <td mat-cell class=\"cell-content\" *matCellDef=\"let element\">\n        {{ element[column] }}\n      </td>\n    </ng-container>\n\n    <!-- Header Row -->\n    <tr mat-header-row *matHeaderRowDef=\"columnKeys\"></tr>\n\n    <!-- Data Rows -->\n    <tr\n      mat-row\n      *matRowDef=\"let row; columns: columnKeys\"\n      [class.white-row]=\"tableData!.indexOf(row) % 2 === 0\"\n      [class.gray-row]=\"tableData!.indexOf(row) % 2 !== 0\"\n    ></tr>\n  </table>\n</div>\n<p *ngIf=\"!tableData!.length\">No data available.</p>\n"
+        },
+        {
             "name": "TabsBarComponent",
             "id": "component-TabsBarComponent-50cd0b310ba5bbf6449cce9bacb52e8f3ba8fd563e31b205ce415d341d4f607cd0bc94b72992544f670065dbd6987e25454444471b931e8b70153ba09c41ebc6",
             "file": "src/app/components/dashboard/features/tabs-bar/tabs-bar.component.ts",
@@ -1734,7 +1997,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "ApplicationConfig",
-                "defaultValue": "{\n  providers: [\n    provideRouter(routes),\n    provideClientHydration(),\n    provideHttpClient(withInterceptors([authInterceptor])),\n    provideAnimations(),\n  ],\n}"
+                "defaultValue": "{\n  providers: [\n    provideRouter(routes),\n    provideClientHydration(),\n    provideHttpClient(withInterceptors([authInterceptor])),\n    provideAnimations()\n  ],\n}"
             },
             {
                 "name": "authGuard",
@@ -1921,6 +2184,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/search-component.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/sidebar-component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -2120,6 +2393,16 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/sidebar-component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryFn",
+                "defaultValue": "(args) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/top-bar.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2150,7 +2433,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "ApplicationConfig",
-                    "defaultValue": "{\n  providers: [\n    provideRouter(routes),\n    provideClientHydration(),\n    provideHttpClient(withInterceptors([authInterceptor])),\n    provideAnimations(),\n  ],\n}"
+                    "defaultValue": "{\n  providers: [\n    provideRouter(routes),\n    provideClientHydration(),\n    provideHttpClient(withInterceptors([authInterceptor])),\n    provideAnimations()\n  ],\n}"
                 }
             ],
             "src/app/guards/auth.guard.ts": [
@@ -2541,6 +2824,28 @@
                     "defaultValue": "(args) => ({\n  component: SearchComponentComponent,\n  props: args,\n})"
                 }
             ],
+            "src/stories/sidebar-component.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/sidebar-component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/sidebar-component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryFn",
+                    "defaultValue": "(args) => ({\n  props: args,\n})"
+                }
+            ],
             "src/stories/top-bar.component.stories.ts": [
                 {
                     "name": "Default",
@@ -2798,6 +3103,24 @@
                 "name": "SearchComponentComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/shared/sidebar/sidebar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SidebarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/shared/table/table.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TableComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -3158,6 +3481,26 @@
             },
             {
                 "filePath": "src/stories/search-component.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/sidebar-component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/sidebar-component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
