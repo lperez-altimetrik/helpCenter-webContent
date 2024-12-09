@@ -1,82 +1,25 @@
 @import "./../../../../styles/mixins.scss";
 
-.header {
-    display: flex;
-    box-sizing: border-box;
-    height: 72px;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--spacing-6) var(--spacing-9);
-    background-color: var(--hc-primary-color);
-    color: #FFFFFF;
-    
-    .lhs-container {
+
+.grid-container {
+
+    .item1 {
         display: flex;
-        flex-direction: row;
+        box-sizing: border-box;
+        height: 72px;
+        justify-content: space-between;
         align-items: center;
-        gap: 0px;
-
-        .lh-button{
-            display: flex;
-            width: 32px;
-            height: 32px;
-            flex-direction:row;
-            justify-content:center;
-            align-items:center;   
-            background-color: var(--hc-primary-color);
-            color: #FFFFFF;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
-
-        .lh-button:hover {
-            background-color: var(--hc-primary-color-dark);
-        }
-
-        .menu-toggle {
-            display: none;
-            @include respond-to("mobile-mb") {
-                display: flex;
-            }
-        }
-
-        .menu-icon {
-            color: #FFFFFF;
-            min-width: 28px;
-            min-height: 24px; //Icon boundaries are not uniform about the origin
-        }
-        img {
-            vertical-align: middle;
-            display: flex;
-            height: 40px;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: var(--spacing-3);
-        }
-    }
-    .navigation {
-        display: flex;
-        align-items: center;
-
-        .rhs-container {
+        padding: var(--spacing-6) var(--spacing-9);
+        background-color: var(--hc-primary-color);
+        color: #FFFFFF;
+        
+        .lhs-container {
             display: flex;
             flex-direction: row;
             align-items: center;
-            gap: var(--spacing-6);
-            
-            .divider {
-                display: flex;
-                background-color: var(--hc-divider-purple);
-                --mat-divider-width: 1.5px;
-                width: 0;
-                height: 24px;
-            }
-            
-            .rh-button {
+            gap: 0px;
+
+            .lh-button{
                 display: flex;
                 width: 32px;
                 height: 32px;
@@ -92,65 +35,182 @@
                 transition: background-color 0.3s;
             }
 
-            .rh-button:hover {
+            .lh-button:hover {
                 background-color: var(--hc-primary-color-dark);
             }
 
-            .user-buttons-container {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                gap: var(--spacing-6);
-
+            .menu-toggle {
+                display: none;
                 @include respond-to("mobile-mb") {
-                    gap: var(--spacing-6) !important;
-                }
-
-                .login-button {
-                    max-width: 52px;
-                    min-width: 52px;
-                    padding-inline-end: 0 !important;
-                    padding-inline-start: 0 !important;
-                }
-    
-                .profile-icon {
-                    color: #FFFFFF;
-                    min-width: 28px;
-                    min-height: 24px; //Icon boundaries are not uniform about the origin
-                }
-
-                .fs-divider {
-                    @include respond-to("mobile-mb") { 
-                        display: none !important;
-                    }
-                }
-
-                .mobile-divider {
-                    display: none;
-                    @include respond-to("mobile-mb") {
-                        display: flex;
-                    }
-                }
-    
-                .search-icon {
-                    color: #FFFFFF;
-                    min-width: 28px;
-                    min-height: 24px; //Icon boundaries are not uniform about the origin
+                    display: flex;
                 }
             }
 
-            .language-button {
-                @include respond-to("mobile-mb") {
-                    display: none !important;
-                }
-            }
-
-            .language-icon {
+            .menu-icon {
                 color: #FFFFFF;
                 min-width: 28px;
                 min-height: 24px; //Icon boundaries are not uniform about the origin
             }
+            img {
+                vertical-align: middle;
+                display: flex;
+                height: 40px;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: var(--spacing-3);
+            }
+        }
+        .navigation {
+            display: flex;
+            align-items: center;
+
+            .rhs-container {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: var(--spacing-6);
+                
+                .divider {
+                    display: flex;
+                    background-color: var(--hc-divider-purple);
+                    --mat-divider-width: 1.5px;
+                    width: 0;
+                    height: 24px;
+                }
+                
+                .rh-button {
+                    display: flex;
+                    width: 32px;
+                    height: 32px;
+                    flex-direction:row;
+                    justify-content:center;
+                    align-items:center;   
+                    background-color: var(--hc-primary-color);
+                    color: #FFFFFF;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-size: 16px;
+                    transition: background-color 0.3s;
+                }
+
+                .rh-button:hover {
+                    background-color: var(--hc-primary-color-dark);
+                }
+
+                .user-buttons-container {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: var(--spacing-6);
+
+                    @include respond-to("mobile-mb") {
+                        gap: var(--spacing-6) !important;
+                    }
+
+                    .login-button {
+                        max-width: 52px;
+                        min-width: 52px;
+                        padding-inline-end: 0 !important;
+                        padding-inline-start: 0 !important;
+                    }
+        
+                    .profile-icon {
+                        color: #FFFFFF;
+                        min-width: 28px;
+                        min-height: 24px; //Icon boundaries are not uniform about the origin
+                    }
+
+                    .fs-divider {
+                        @include respond-to("mobile-mb") { 
+                            display: none !important;
+                        }
+                    }
+
+                    .mobile-divider {
+                        display: none;
+                        @include respond-to("mobile-mb") {
+                            display: flex;
+                        }
+                    }
+        
+                    .search-icon {
+                        color: #FFFFFF;
+                        min-width: 28px;
+                        min-height: 24px; //Icon boundaries are not uniform about the origin
+                    }
+                }
+
+                .language-button {
+                    @include respond-to("mobile-mb") {
+                        display: none !important;
+                    }
+                }
+
+                .language-icon {
+                    color: #FFFFFF;
+                    min-width: 28px;
+                    min-height: 24px; //Icon boundaries are not uniform about the origin
+                }
+
+            }
+        }
+    }
+
+    .item2 {
+        display: flex;
+        min-height: fit-content;
+        flex-direction: column;
+        justify-content: center;
+        box-sizing: border-box;
+        height: 72px;
+        align-items: center;
+        text-align: center;
+        padding: var(--spacing-6) var(--spacing-9);
+        background-color: var(--hc-primary-color);
+        color: #FFFFFF;
+        padding-top: 0;
+
+        h1 {
+            margin-top: var(--spacing-9);
+            margin-bottom: var(--spacing-9);
+        }
+
+        .tab-container {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: var(--spacing-9);
+
+            .tab-cell {
+                cursor: pointer;
+                width: 176px;
+                min-width: 120px;
+                border: 1px solid var(--hc-link-color);
+                background: var(--hc-primary-color);
+                padding: 12px;
+            }
+
+            .lh-tab {
+                border-top-left-radius: 4px;
+                border-bottom-left-radius: 4px;
+                border-right: 0px !important;
+            }
+
+            .rh-tab {
+                border-top-right-radius: 4px;
+                border-bottom-right-radius: 4px;
+                border-left: 0px !important;
+            }
+
+            .tab-cell:hover {
+                background-color: white;
+                color: var(--hc-primary-color);
+            }
+
 
         }
+
+
     }
 }

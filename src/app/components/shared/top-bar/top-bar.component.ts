@@ -43,12 +43,19 @@ export class TopBarComponent implements OnInit, OnDestroy {
     }
   }
 
+  toggleLogin() { // TEST FUNCTION, DELETE
+    this.isLoggedIn = !this.isLoggedIn;
+  }
+
   onLogin() {
     //Login logic here 
     //link to login page
-    this.router.navigate(['/dashboard']);
+    
+    //this.router.navigate(['/dashboard']);
     console.log('login button clicked');
     //once logged in
+
+    this.toggleLogin(); // DELETE
   }
 
   onMenu() {
@@ -64,6 +71,8 @@ export class TopBarComponent implements OnInit, OnDestroy {
   onSearch() {
     //Search logic here
     console.log('search button clicked');
+
+    this.toggleLogin(); // DELETE
 
   }
 
