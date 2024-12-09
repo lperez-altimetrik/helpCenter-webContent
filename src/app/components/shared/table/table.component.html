@@ -1,0 +1,30 @@
+<div *ngIf="tableData!.length > 0">
+  <table mat-table [dataSource]="tableData" class="mat-elevation-z8">
+    <!-- Dynamic Columns -->
+    <ng-container *ngFor="let column of columnKeys" [matColumnDef]="column">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        [style.width.%]="100 / columnKeys.length"
+        class="cell-header"
+      >
+        {{ column | uppercase }}
+      </th>
+      <td mat-cell class="cell-content" *matCellDef="let element">
+        {{ element[column] }}
+      </td>
+    </ng-container>
+
+    <!-- Header Row -->
+    <tr mat-header-row *matHeaderRowDef="columnKeys"></tr>
+
+    <!-- Data Rows -->
+    <tr
+      mat-row
+      *matRowDef="let row; columns: columnKeys"
+      [class.white-row]="tableData!.indexOf(row) % 2 === 0"
+      [class.gray-row]="tableData!.indexOf(row) % 2 !== 0"
+    ></tr>
+  </table>
+</div>
+<p *ngIf="!tableData!.length">No data available.</p>
