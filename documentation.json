@@ -1874,6 +1874,72 @@
             "templateData": "<div class=\"subtitle\">\n  {{ subtitle | titlecase }}\n</div>\n"
         },
         {
+            "name": "TableComponent",
+            "id": "component-TableComponent-e68e26f8b461962075af8a4dc6386ba204e39aa02b82eddfae58568b2edb40984d2b607aede332dc2c5c8d95e0ba37091d5901fe96580dcbeff77be6fa7e01cf",
+            "file": "src/app/components/shared/table/table.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-table",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./table.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "columnKeys",
+                    "defaultValue": "['feature 1', 'feature 2', 'feature 3']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 57,
+                    "type": "string[]",
+                    "decorators": []
+                },
+                {
+                    "name": "tableData",
+                    "defaultValue": "[\n    {\n      'feature 1': 'Create a Payment Link',\n      'feature 2':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n      'feature 3':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n    },\n    {\n      'feature 1': 'Copy the QR Code',\n      'feature 2':\n        'Click \"Download\" to save the QR code in a preferred format (such as PNG, JPEG, or SVG). This makes it easy to share digitally or in print.',\n      'feature 3':\n        'Click \"Download\" to save the QR code in a preferred format (such as PNG, JPEG, or SVG). This makes it easy to share digitally or in print.',\n    },\n    {\n      'feature 1': 'Download the QR Code',\n      'feature 2':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n      'feature 3':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n    },\n    {\n      'feature 1': 'Share or Display the QR Code',\n      'feature 2':\n        'You can now add the QR code to invoices, emails, or your website. Customers simply scan the code with their mobile device to be redirected to the payment page, enabling quick and easy payment.',\n      'feature 3':\n        'You can now add the QR code to invoices, emails, or your website. Customers simply scan the code with their mobile device to be redirected to the payment page, enabling quick and easy payment.',\n    },\n    {\n      'feature 1': 'Download the QR Code',\n      'feature 2':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n      'feature 3':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n    },\n    {\n      'feature 1': 'Share or Display the QR Code',\n      'feature 2':\n        'You can now add the QR code to invoices, emails, or your website. Customers simply scan the code with their mobile device to be redirected to the payment page, enabling quick and easy payment.',\n      'feature 3':\n        'You can now add the QR code to invoices, emails, or your website. Customers simply scan the code with their mobile device to be redirected to the payment page, enabling quick and easy payment.',\n    },\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "any[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatTableModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input } from '@angular/core';\nimport { MatTableModule } from '@angular/material/table';\n\n@Component({\n  selector: 'app-table',\n  standalone: true,\n  imports: [CommonModule, MatTableModule],\n  templateUrl: './table.component.html',\n  styleUrl: './table.component.scss',\n})\nexport class TableComponent {\n  @Input() tableData: any[] = [\n    {\n      'feature 1': 'Create a Payment Link',\n      'feature 2':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n      'feature 3':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n    },\n    {\n      'feature 1': 'Copy the QR Code',\n      'feature 2':\n        'Click \"Download\" to save the QR code in a preferred format (such as PNG, JPEG, or SVG). This makes it easy to share digitally or in print.',\n      'feature 3':\n        'Click \"Download\" to save the QR code in a preferred format (such as PNG, JPEG, or SVG). This makes it easy to share digitally or in print.',\n    },\n    {\n      'feature 1': 'Download the QR Code',\n      'feature 2':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n      'feature 3':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n    },\n    {\n      'feature 1': 'Share or Display the QR Code',\n      'feature 2':\n        'You can now add the QR code to invoices, emails, or your website. Customers simply scan the code with their mobile device to be redirected to the payment page, enabling quick and easy payment.',\n      'feature 3':\n        'You can now add the QR code to invoices, emails, or your website. Customers simply scan the code with their mobile device to be redirected to the payment page, enabling quick and easy payment.',\n    },\n    {\n      'feature 1': 'Download the QR Code',\n      'feature 2':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n      'feature 3':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n    },\n    {\n      'feature 1': 'Share or Display the QR Code',\n      'feature 2':\n        'You can now add the QR code to invoices, emails, or your website. Customers simply scan the code with their mobile device to be redirected to the payment page, enabling quick and easy payment.',\n      'feature 3':\n        'You can now add the QR code to invoices, emails, or your website. Customers simply scan the code with their mobile device to be redirected to the payment page, enabling quick and easy payment.',\n    },\n  ]; // Data for the table\n  @Input() columnKeys: string[] = ['feature 1', 'feature 2', 'feature 3']; // Column keys for headers\n}\n",
+            "styleUrl": "./table.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div *ngIf=\"tableData!.length > 0\">\n  <table mat-table [dataSource]=\"tableData\" class=\"mat-elevation-z8\">\n    <!-- Dynamic Columns -->\n    <ng-container *ngFor=\"let column of columnKeys\" [matColumnDef]=\"column\">\n      <th\n        mat-header-cell\n        *matHeaderCellDef\n        [style.width.%]=\"100 / columnKeys.length\"\n        class=\"cell-header\"\n      >\n        {{ column | uppercase }}\n      </th>\n      <td mat-cell class=\"cell-content\" *matCellDef=\"let element\">\n        {{ element[column] }}\n      </td>\n    </ng-container>\n\n    <!-- Header Row -->\n    <tr mat-header-row *matHeaderRowDef=\"columnKeys\"></tr>\n\n    <!-- Data Rows -->\n    <tr\n      mat-row\n      *matRowDef=\"let row; columns: columnKeys\"\n      [class.white-row]=\"tableData!.indexOf(row) % 2 === 0\"\n      [class.gray-row]=\"tableData!.indexOf(row) % 2 !== 0\"\n    ></tr>\n  </table>\n</div>\n<p *ngIf=\"!tableData!.length\">No data available.</p>\n"
+        },
+        {
             "name": "TabsBarComponent",
             "id": "component-TabsBarComponent-50cd0b310ba5bbf6449cce9bacb52e8f3ba8fd563e31b205ce415d341d4f607cd0bc94b72992544f670065dbd6987e25454444471b931e8b70153ba09c41ebc6",
             "file": "src/app/components/dashboard/features/tabs-bar/tabs-bar.component.ts",
@@ -2491,6 +2557,16 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/table.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/title.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2726,6 +2802,16 @@
                 "deprecationMessage": "",
                 "type": "StoryFn",
                 "defaultValue": "(args) => ({\n  component: SubtitleComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/table.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryFn",
+                "defaultValue": "(args) => ({\n  component: TableComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -3286,6 +3372,28 @@
                     "defaultValue": "(args) => ({\n  component: SubtitleComponent,\n  props: args,\n})"
                 }
             ],
+            "src/stories/table.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/table.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/table.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryFn",
+                    "defaultValue": "(args) => ({\n  component: TableComponent,\n  props: args,\n})"
+                }
+            ],
             "src/stories/title.stories.ts": [
                 {
                     "name": "Default",
@@ -3639,6 +3747,15 @@
                 "name": "SubtitleComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/shared/table/table.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TableComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -4088,6 +4205,26 @@
             },
             {
                 "filePath": "src/stories/subtitle.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/table.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/table.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
