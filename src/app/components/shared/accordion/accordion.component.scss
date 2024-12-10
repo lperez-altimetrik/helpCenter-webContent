@@ -49,6 +49,17 @@ mat-expansion-panel {
     font-style: normal;
     font-weight: 400;
     line-height: 24px; /* 171.429% */
+    @include respond-to("mobile-mb") {
+      color: var(--color-fg-secondary, #414641);
+      leading-trim: both;
+
+      text-edge: cap;
+      font-variant-numeric: lining-nums;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
   }
 }
 
