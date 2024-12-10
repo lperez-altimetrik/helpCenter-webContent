@@ -1,0 +1,30 @@
+@import "./../../../../styles/mixins.scss";
+
+.label-container {
+  display: flex;
+  padding: 12px;
+  min-width: 120px;
+  align-items: center;
+  justify-content: center;
+  color: var(--hc-color-white);
+  border: 1px solid var(--hc-link-color);
+  background: var(--hc-primary-color);
+  font-size: 16px;
+  font-weight: 400;
+  width: fit-content;
+  cursor: pointer;
+
+  @include respond-to("mobile-mb") {
+    min-width: 60px;
+    font-size: 12px;
+  }
+
+  &:hover {
+    background: var(--hc-color-paysafe-blue-50);
+  }
+
+  &:active {
+    background: var(--hc-color-white);
+    color: var(--hc-primary-color);
+  }
+}
