@@ -115,15 +115,19 @@
                 border-radius: var(--spacing-99);
                 background: var(--hc-color-paysafe-blue-05);
                 display: flex;
+                width: 20px;
+                height: 20px;
                 align-items: center;
                 justify-content: center;
 
                 .title-icon{
-                    font-size: 12px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     color: var(--hc-color-bg-cta);
+                    .material-symbols-outlined{
+                        font-size: 12px !important;
+                    }
                 }
                 .title-icon-svg{
                     transform: scale(0.5);

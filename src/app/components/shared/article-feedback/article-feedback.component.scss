@@ -122,6 +122,11 @@
                 font-weight: 400;
                 line-height: normal;
             }
+            .feedback-textarea::placeholder {
+                font-variant-numeric: lining-nums;
+                font-style: normal;
+                font-weight: 500;
+            }
         }
 
         

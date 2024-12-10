@@ -6,6 +6,10 @@
     align-items: center;
     gap: var(--spacing-1);
     flex-shrink: 0;
+
+    .chevron-icon{
+        color: var(--hc-color-fg-secondary);
+    }
 }
 
 .prev-link-item{
@@ -33,4 +37,11 @@
     align-items: center;
     gap: var(--spacing-1);
     flex-shrink: 0;
+
+    color: var(--hc-color-fg-secondary);
+    font-variant-numeric: lining-nums;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
