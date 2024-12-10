@@ -8,11 +8,12 @@ import { MatDividerModule } from '@angular/material/divider';
 import { AuthService } from '../../../services/auth.service';
 import { PillComponent } from '../pill/pill.component';
 import { Subscription } from 'rxjs';
+import { DragScrollDirective } from './drag-scroll.directive';
 
 @Component({
   selector: 'app-top-bar',
   standalone: true,
-  imports: [MatButtonModule,MatDividerModule,MatIconModule,CommonModule,PillComponent],
+  imports: [MatButtonModule,MatDividerModule,MatIconModule,CommonModule,PillComponent, DragScrollDirective],
   templateUrl: './top-bar.component.html',
   styleUrl: './top-bar.component.scss'
 })
