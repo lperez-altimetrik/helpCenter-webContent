@@ -31,7 +31,9 @@
                                         <img class="title-icon-svg" src="{{menuElement.svgUrl}}"> 
                                     }
                                     @else {
-                                        <mat-icon class="title-icon" [fontIcon]="menuElement.iconUrl"></mat-icon>
+                                        <div class="title-icon">
+                                            <span class="material-symbols-outlined">{{menuElement.iconUrl}}</span>
+                                        </div>
                                     }
                                 </div>
                                 <label class="section-element-title">{{menuElement.title}}</label>
