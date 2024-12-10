@@ -1,0 +1,10 @@
+<div class="tab-bar">
+  <div
+    *ngFor="let tab of tabs; let index = index"
+    [ngClass]="index === _activeTab ? 'active' : ''"
+    class="tab"
+    (click)="onTabClicked(index)"
+  >
+    {{ tab }}
+  </div>
+</div>

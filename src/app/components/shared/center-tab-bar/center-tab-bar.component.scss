@@ -1,0 +1,44 @@
+@import "./../../../../styles/mixins.scss";
+
+.tab-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .tab {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: var(--hc-primary-color);
+    border: 1px solid var(--hc-link-color);
+    color: var(--hc-light-purple);
+    padding: 12px;
+    box-sizing: content-box;
+    font-size: 16px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+    font-variant-numeric: lining-nums;
+    text-overflow: ellipsis;
+
+    @include respond-to("mobile-mb") {
+      font-size: 12px;
+    }
+
+    &:first-child {
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+    }
+
+    &:last-child {
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+  }
+  .active {
+    color: var(--hc-primary-color);
+    background: var(--hc-color-white);
+    border: 1px solid var(--hc-primary-color);
+  }
+}
