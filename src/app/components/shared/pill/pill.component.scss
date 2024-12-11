@@ -10,7 +10,7 @@
 }
 
 .pill {
-    font-size: 12px;
+    font-size: var(--spacing-5);
     border-radius: var(--spacing-99);
     padding: var(--spacing-2) var(--spacing-5) var(--spacing-2) var(--spacing-5);
     border: none;

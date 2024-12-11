@@ -24,7 +24,7 @@ export class DragScrollDirective {
   onMouseMove(event: MouseEvent) {
     if(!this.isDragging) return;
     const x = event.pageX - this.el.nativeElement.offsetLeft;
-    const walk = (x - this.startX) * 1.25;
+    const walk = (x - this.startX) * 1.25; //scroll speed
     this.el.nativeElement.scrollLeft = this.scrollLeft - walk;
   } 
 
