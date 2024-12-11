@@ -1,5 +1,5 @@
 import { Meta, StoryFn } from '@storybook/angular';
-import { BreadcrumbComponent } from '../app/components/shared/breadcrum/breadcrumb.component';
+import { BreadcrumbComponent } from '../app/components/shared/breadcrumb/breadcrumb.component';
 
 export default {
   title: 'Shared/BreadcrumbComponent',

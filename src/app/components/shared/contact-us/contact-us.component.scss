@@ -60,6 +60,13 @@
           font-size: 12px;
         }
       }
+
+      .go-icon{
+        color: var(--hc-link-color);
+        @include respond-to("mobile-mb"){
+          display: none;
+        }
+      }
     }
     .mobile-icon {
       display: none;
