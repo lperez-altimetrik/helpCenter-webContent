@@ -1,1 +1,18 @@
-<p>search-bar works!</p>
+<mat-form-field class="example-full-width">
+    <span class="material-symbols-outlined search-icon">search</span>
+    <input type="text"
+            placeholder="Search"
+            aria-label="Number"
+            matInput
+            [formControl]="myControl"
+            [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+        <span class="option-header">Popular articles</span>
+        @for (option of filteredOptions | async; track option) {
+            <div class="option-container">
+                <span class="material-symbols-outlined search-icon">search</span>
+                <mat-option [value]="option">{{option}}</mat-option>
+            </div>
+        }
+    </mat-autocomplete>
+</mat-form-field>
