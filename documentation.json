@@ -236,7 +236,7 @@
     "components": [
         {
             "name": "AccordionComponent",
-            "id": "component-AccordionComponent-cb3735a6dce7cb78ec6eed6a307f34f92dd62355da43a5a4075755632aab84524276eebdd38bf5345bea666bb86dc4df9247408a03fb00296158a1e3949dc459",
+            "id": "component-AccordionComponent-edacb656d391d2dc3981c9b1c9330014c791d5651bd0625aa7b034fac43fb0d9398692cf6452ca6ceec3a7ea054479447275372f8ad0610364ab27bd99640350",
             "file": "src/app/components/shared/accordion/accordion.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -253,7 +253,22 @@
             "hostDirectives": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "accordionData",
+                    "defaultValue": "[\n    {\n      title: \"Accordion Section Title\",\n      text: `Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.`\n    },\n    {\n      title: \"Accordion Section Title\",\n      text: `Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.`\n    },\n    {\n      title: \"Accordion Section Title\",\n      text: `Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.`\n    },\n    {\n      title: \"Accordion Section Title\",\n      text: `Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.`\n    }\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "modifierKind": [
+                        125
+                    ]
+                }
+            ],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
@@ -273,13 +288,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { MatExpansionModule } from '@angular/material/expansion';\nimport { LinkComponent } from '../link/link.component';\n\n@Component({\n  selector: 'app-accordion',\n  standalone: true,\n  imports: [MatExpansionModule, LinkComponent],\n  templateUrl: './accordion.component.html',\n  styleUrl: './accordion.component.scss',\n})\nexport class AccordionComponent {}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { MatExpansionModule } from '@angular/material/expansion';\nimport { LinkComponent } from '../link/link.component';\n\n@Component({\n  selector: 'app-accordion',\n  standalone: true,\n  imports: [MatExpansionModule, LinkComponent],\n  templateUrl: './accordion.component.html',\n  styleUrl: './accordion.component.scss',\n})\nexport class AccordionComponent {\n  public accordionData: any[] = [\n    {\n      title: \"Accordion Section Title\",\n      text: `Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.`\n    },\n    {\n      title: \"Accordion Section Title\",\n      text: `Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.`\n    },\n    {\n      title: \"Accordion Section Title\",\n      text: `Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.`\n    },\n    {\n      title: \"Accordion Section Title\",\n      text: `Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.`\n    }\n  ];\n}\n",
             "styleUrl": "./accordion.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<mat-accordion>\n  <mat-expansion-panel>\n    <mat-expansion-panel-header class=\"accordion\">\n      <mat-panel-title> Accordion Section Title </mat-panel-title>\n    </mat-expansion-panel-header>\n    <div class=\"content\">\n      <div>\n        <app-link [label]=\"'Accordion Item Title'\"> </app-link>\n        <p>\n          Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.\n        </p>\n      </div>\n      <div>\n        <app-link [label]=\"'Accordion Item Title'\"> </app-link>\n        <p>\n          Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.\n        </p>\n      </div>\n      <div>\n        <app-link [label]=\"'Accordion Item Title'\"> </app-link>\n        <p>\n          Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.\n        </p>\n      </div>\n      <div>\n        <app-link [label]=\"'Accordion Item Title'\"> </app-link>\n        <p>\n          Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.\n        </p>\n      </div>\n    </div>\n  </mat-expansion-panel>\n</mat-accordion>\n"
+            "templateData": "<mat-accordion>\n  <mat-expansion-panel>\n    <mat-expansion-panel-header class=\"accordion\">\n      <mat-panel-title> Accordion Section Title </mat-panel-title>\n    </mat-expansion-panel-header>\n    <div class=\"content\">\n      @for(context of accordionData; track context.title){\n        <div>\n          <app-link [label]='context.title'> </app-link>\n          <p class=\"accordion-paragraph\">\n            {{context.text}}\n          </p>\n        </div>\n      }\n    </div>\n  </mat-expansion-panel>\n</mat-accordion>\n"
         },
         {
             "name": "AppComponent",
@@ -337,7 +352,7 @@
         },
         {
             "name": "ArticleFeedbackComponent",
-            "id": "component-ArticleFeedbackComponent-97d7381c9fa7a40b92b0827fe33756229825e5e231fe40f1f40ad3975462ce389c61f772d46cf88e18794c6b422872906e434140f8593c8c8b24277217b463ac",
+            "id": "component-ArticleFeedbackComponent-ce3e3b8ca390919c613a3b212df85f987462346a0aa20256259520da5431a95ff3738d3f9c0a88112790611b8ef6dcea28965dfe1e7fa6290c6c5f7a5b109acb",
             "file": "src/app/components/shared/article-feedback/article-feedback.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -385,7 +400,7 @@
                 },
                 {
                     "name": "messages",
-                    "defaultValue": "{\n    askMessage: \"Was this article helpful?\",\n    thanksMessage: \"Thanks for your feedback\",\n    requestingMessage: \"Help us improve?\"\n  }",
+                    "defaultValue": "{\n    askMessage: \"Was this article helpful?\",\n    thanksMessage: \"Thanks for your feedback\",\n    requestingMessage: \"Help us improve\"\n  }",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "any",
@@ -478,7 +493,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-article-feedback',\n  standalone: true,\n  imports: [],\n  templateUrl: './article-feedback.component.html',\n  styleUrl: './article-feedback.component.scss'\n})\nexport class ArticleFeedbackComponent {\n  public feedbackResponse: string = \"None\";\n  private messages: any = {\n    askMessage: \"Was this article helpful?\",\n    thanksMessage: \"Thanks for your feedback\",\n    requestingMessage: \"Help us improve?\"\n  };\n  public textAreaPlaceholder: string =  \"leave your comment\";\n\n  \n  public currentMessage: string = this.messages.askMessage;\n  public onYesClick = () => {\n    this.feedbackResponse = \"\";\n    this.currentMessage = this.messages.thanksMessage;\n  }\n  public onNoClick = () => {\n    this.feedbackResponse = \"No\"\n    this.currentMessage = this.messages.requestingMessage;\n  }\n\n  public sendFeedbackClick = () => {\n    //looks like duplicated method but this will call an API here\n    this.feedbackResponse = \"\";\n    this.currentMessage = this.messages.thanksMessage;\n  }\n  \n  public noFeedbackClick = () => {\n    this.feedbackResponse = \"\";\n    this.currentMessage = this.messages.thanksMessage;\n  }\n\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-article-feedback',\n  standalone: true,\n  imports: [],\n  templateUrl: './article-feedback.component.html',\n  styleUrl: './article-feedback.component.scss'\n})\nexport class ArticleFeedbackComponent {\n  public feedbackResponse: string = \"None\";\n  private messages: any = {\n    askMessage: \"Was this article helpful?\",\n    thanksMessage: \"Thanks for your feedback\",\n    requestingMessage: \"Help us improve\"\n  };\n  public textAreaPlaceholder: string =  \"leave your comment\";\n\n  \n  public currentMessage: string = this.messages.askMessage;\n  public onYesClick = () => {\n    this.feedbackResponse = \"\";\n    this.currentMessage = this.messages.thanksMessage;\n  }\n  public onNoClick = () => {\n    this.feedbackResponse = \"No\"\n    this.currentMessage = this.messages.requestingMessage;\n  }\n\n  public sendFeedbackClick = () => {\n    //looks like duplicated method but this will call an API here\n    this.feedbackResponse = \"\";\n    this.currentMessage = this.messages.thanksMessage;\n  }\n  \n  public noFeedbackClick = () => {\n    this.feedbackResponse = \"\";\n    this.currentMessage = this.messages.thanksMessage;\n  }\n\n}\n",
             "styleUrl": "./article-feedback.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -488,7 +503,7 @@
         },
         {
             "name": "ArticleIndexComponent",
-            "id": "component-ArticleIndexComponent-e5bb36e74b78b39f7b42066e16897773373dde691364ca0f19d20fae3b57a56feaf8736b73ffd6f64975d56a36ac75403190cf0911976b2eef33889105aed7f2",
+            "id": "component-ArticleIndexComponent-fb9a76cd6d5026097da40fc358fb532a6684b2705a407ece27f04500bc5c79a7753a25121e54dd69b8ffff3168f5483aafbdfa861b3082a5c4e2febfc3692dc4",
             "file": "src/app/components/shared/article-index/article-index.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -508,16 +523,44 @@
             "propertiesClass": [
                 {
                     "name": "articleLinks",
-                    "defaultValue": "[\n    {title:\"Why Use a Payment Link\", url: \"#\"},\n    {title:\"Steps to Create and Share a Payment Link\", url: \"#\"},\n    {title:\"QR Codes\", url: \"#\"}\n  ]",
+                    "defaultValue": "[\n    {title:\"Payment Links\", url: \"#\"},\n    {title:\"Why Use a Payment Link\", url: \"#\"},\n    {title:\"Steps to Create and Share a Payment Link\", url: \"#\"},\n    {title:\"QR Codes\", url: \"#\"}\n  ]",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "any[]",
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 11,
+                    "line": 15,
                     "modifierKind": [
                         125
+                    ]
+                },
+                {
+                    "name": "articlePanelOpened",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "modifierKind": [
+                        125
+                    ]
+                },
+                {
+                    "name": "currentSelectedSection",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        123
                     ]
                 },
                 {
@@ -529,33 +572,84 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 17,
+                    "line": 22,
+                    "modifierKind": [
+                        125
+                    ]
+                },
+                {
+                    "name": "selectedSectionTitle",
+                    "defaultValue": "undefined",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
                     "modifierKind": [
                         125
                     ]
                 }
             ],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "changeOption",
+                    "args": [
+                        {
+                            "name": "option",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 32,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "option",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
             "standalone": true,
-            "imports": [],
+            "imports": [
+                {
+                    "name": "MatExpansionModule",
+                    "type": "module"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-article-index',\n  standalone: true,\n  imports: [],\n  templateUrl: './article-index.component.html',\n  styleUrl: './article-index.component.scss'\n})\nexport class ArticleIndexComponent {\n  public articleLinks: any[] = [\n    {title:\"Why Use a Payment Link\", url: \"#\"},\n    {title:\"Steps to Create and Share a Payment Link\", url: \"#\"},\n    {title:\"QR Codes\", url: \"#\"}\n  ];\n\n  public onLinkClick = (url: string) => {\n    alert(`clicked element: loading ${url}`);\n  }\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { MatExpansionModule } from '@angular/material/expansion';\n\n@Component({\n  selector: 'app-article-index',\n  standalone: true,\n  imports: [MatExpansionModule],\n  templateUrl: './article-index.component.html',\n  styleUrl: './article-index.component.scss'\n})\nexport class ArticleIndexComponent {\n  private currentSelectedSection: any = null;\n  public selectedSectionTitle: any = undefined;\n  public articlePanelOpened: boolean = false;\n  public articleLinks: any[] = [\n    {title:\"Payment Links\", url: \"#\"},\n    {title:\"Why Use a Payment Link\", url: \"#\"},\n    {title:\"Steps to Create and Share a Payment Link\", url: \"#\"},\n    {title:\"QR Codes\", url: \"#\"}\n  ];\n\n  public onLinkClick = (event: any, url: string) => {\n    if(this.currentSelectedSection){\n      this.currentSelectedSection.classList.remove(\"header-title\");\n      this.currentSelectedSection.parentElement.classList.remove(\"header-content\");\n    }\n    event.target.classList.add(\"header-title\");\n    event.target.parentElement.classList.add(\"header-content\");\n    this.currentSelectedSection = event.target;\n  }\n\n  public changeOption (option: any){\n    this.selectedSectionTitle = option.title;\n    this.articlePanelOpened = !this.articlePanelOpened;\n  }\n}\n",
             "styleUrl": "./article-index.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"article-index-container\">\n    <label class=\"top-text\">\n        In this article\n    </label>\n    <div class=\"content-container\">\n        <div class=\"header-content\">\n            <label class=\"header-title\">Payment Links</label>\n        </div>\n        @for (articleLink of articleLinks; track articleLink.title) {\n            <div class=\"link-content\">\n                <label class=\"article-link\" (click)=\"onLinkClick(articleLink.url)\">{{ articleLink.title }}</label>\n            </div>\n        }  \n    </div>\n</div>"
+            "templateData": "<div class=\"article-index-container\">\n    <label class=\"top-text\">\n        In this article\n    </label>\n    <div class=\"content-container\">\n        @for (articleLink of articleLinks; track articleLink.title) {\n            <div class=\"link-content\">\n                <label class=\"article-link\" (click)=\"onLinkClick($event, articleLink.url)\">{{ articleLink.title }}</label>\n            </div>\n        }  \n    </div>\n</div>\n<div class=\"article-index-container-mb\">\n    <mat-expansion-panel [(expanded)]=\"articlePanelOpened\" class=\"article-select\">\n        <mat-expansion-panel-header class=\"article-select-header\">\n        <mat-panel-title class=\"article-selected-option\"> {{selectedSectionTitle || \"In this article\"}} </mat-panel-title>\n        </mat-expansion-panel-header>\n        @for (articleLink of articleLinks; track articleLink.title) {\n            <div class=\"article-option\" (click)=\"changeOption(articleLink)\">\n                <span class=\"article-option-text\">\n                    {{articleLink.title}}\n                </span>\n            </div>\n        }  \n    </mat-expansion-panel>\n</div>"
         },
         {
             "name": "ArticleSectionTitleComponent",
-            "id": "component-ArticleSectionTitleComponent-e9bb4de45d90cd18f337cf232b849a617480b5e1a1e203bc1475176049eb4b24641fe52141085569b5a2f0de9b9ba400c553b0aead9e9fabbc8bc3ec2c213fb3",
+            "id": "component-ArticleSectionTitleComponent-8b2f327f705cbb7966cdd71ed61371570a827fb13a4c26a6fb00a01567f47d4e82a78a08352cc3264c6ecc412b1f9fd6dec60847e7cdaf723a1c5f599f6f29c4",
             "file": "src/app/components/shared/article-section-title/article-section-title.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -576,14 +670,34 @@
                     "defaultValue": "'Article Section Title'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "url",
+                    "defaultValue": "'#URL#'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
                     "type": "string",
                     "decorators": []
                 }
             ],
             "outputsClass": [],
             "propertiesClass": [],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "copyArticleUrl",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 18,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -593,18 +707,48 @@
                 {
                     "name": "MatIconModule",
                     "type": "module"
+                },
+                {
+                    "name": "MatTooltipModule",
+                    "type": "module"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { MatIconModule } from '@angular/material/icon';\n\n@Component({\n  selector: 'app-article-section-title',\n  standalone: true,\n  imports: [MatIconModule],\n  templateUrl: './article-section-title.component.html',\n  styleUrl: './article-section-title.component.scss',\n})\nexport class ArticleSectionTitleComponent {\n  @Input() title = 'Article Section Title';\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { MatIconModule } from '@angular/material/icon';\nimport { Clipboard } from '@angular/cdk/clipboard';\nimport {MatTooltipModule} from '@angular/material/tooltip';\n\n@Component({\n  selector: 'app-article-section-title',\n  standalone: true,\n  imports: [MatIconModule, MatTooltipModule],\n  templateUrl: './article-section-title.component.html',\n  styleUrl: './article-section-title.component.scss',\n})\nexport class ArticleSectionTitleComponent {\n  constructor(private clipboard: Clipboard) {}\n  @Input() title = 'Article Section Title';\n  @Input() url = '#URL#';\n\n  copyArticleUrl() {\n    this.clipboard.copy(this.url);\n  }\n}\n",
             "styleUrl": "./article-section-title.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "clipboard",
+                        "type": "Clipboard",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 13,
+                "jsdoctags": [
+                    {
+                        "name": "clipboard",
+                        "type": "Clipboard",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
             "extends": [],
-            "templateData": "<div class=\"section-title\">\n  <img class=\"icon\" src=\"assets/icons/common/note-stack-icon.svg\" />\n\n  <h2>\n    {{ title }}\n  </h2>\n\n  <mat-icon class=\"flat-icon\"> link </mat-icon>\n</div>\n"
+            "templateData": "<div class=\"section-title\">\n  <img class=\"icon\" src=\"assets/icons/common/note-stack-icon.svg\" />\n\n  <h2>\n    {{ title }}\n  </h2>\n\n  <mat-icon class=\"flat-icon\" (click) = \"copyArticleUrl()\" matTooltip=\"Click to copy article URL\"> link </mat-icon>\n</div>\n"
         },
         {
             "name": "BannerComponent",
@@ -655,12 +799,12 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"mat-typography banner-container\">\n  <div class=\"initial-content\">\n    <mat-icon class=\"icon mr1\">campaign</mat-icon>\n\n    <div class=\"info\">\n      <h5>New feature alert</h5>\n      <p>Product Catalogue is here!</p>\n    </div>\n  </div>\n\n  <div class=\"secondary-content\">\n    <p class=\"mr1\">\n      Streamline your checkout experience and track sales insights for all of\n      your business products today!\n    </p>\n    <button mat-raised-button color=\"primary\">Learn More</button>\n  </div>\n\n  <mat-icon class=\"mobile-icon\">chevron_right</mat-icon>\n</div>\n"
+            "templateData": "<div class=\"mat-typography banner-container\">\n  <div class=\"initial-content\">\n    <mat-icon class=\"icon mr1\">campaign</mat-icon>\n\n    <div class=\"info\">\n      <h5>New feature alert</h5>\n      <p>Product Catalogue is here!</p>\n    </div>\n  </div>\n\n  <div class=\"secondary-content\">\n    <p class=\"mr1\">\n      Streamline your checkout experience and track sales insights for all of\n      your business products today!\n    </p>\n    <button mat-flat-button color=\"primary\">Learn More</button>\n  </div>\n\n  <mat-icon class=\"mobile-icon\">chevron_right</mat-icon>\n</div>\n"
         },
         {
             "name": "BreadcrumbComponent",
-            "id": "component-BreadcrumbComponent-ea6f3a82a5f6bbf3b9350ae5efd60d572789efebbe6f2b5a817abf1dbf916de090ea6372b1d493a7b66cf43c2f37e670be94c1fcef84f8ee031e34a2bdec9681",
-            "file": "src/app/components/shared/breadcrum/breadcrumb.component.ts",
+            "id": "component-BreadcrumbComponent-63e2ca25ac3acd12792d227878727ce610508fb7e641f06b9b62df101e779b6de546635ed1dfc2c1f02ff25835ec1a174605bf1bef922197399610e417c270c6",
+            "file": "src/app/components/shared/breadcrumb/breadcrumb.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -679,7 +823,7 @@
             "propertiesClass": [
                 {
                     "name": "currentElement",
-                    "defaultValue": "\"page 5\"",
+                    "defaultValue": "\"Page 5\"",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
@@ -721,13 +865,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { MatIconModule } from '@angular/material/icon';\n\n@Component({\n  selector: 'app-breadcrum',\n  standalone: true,\n  imports: [MatIconModule],\n  templateUrl: './breadcrumb.component.html',\n  styleUrl: './breadcrumb.component.scss'\n})\nexport class BreadcrumbComponent {\n  public pagesPath: any = [\n    { title: \"Page 1\", url: \"#\"},\n    { title: \"Page 2\", url: \"#\"},\n    { title: \"Page 3\", url: \"#\"},\n    { title: \"Page 4\", url: \"#\"}\n  ]\n  public currentElement: string = \"page 5\";\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { MatIconModule } from '@angular/material/icon';\n\n@Component({\n  selector: 'app-breadcrum',\n  standalone: true,\n  imports: [MatIconModule],\n  templateUrl: './breadcrumb.component.html',\n  styleUrl: './breadcrumb.component.scss'\n})\nexport class BreadcrumbComponent {\n  public pagesPath: any = [\n    { title: \"Page 1\", url: \"#\"},\n    { title: \"Page 2\", url: \"#\"},\n    { title: \"Page 3\", url: \"#\"},\n    { title: \"Page 4\", url: \"#\"}\n  ]\n  public currentElement: string = \"Page 5\";\n}\n",
             "styleUrl": "./breadcrumb.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"breadcrumb-container\">\n    @for (pageElement of pagesPath; track pageElement.title) {\n        <a class=\"prev-link-item\" href=\"{{pageElement.url}}\">{{ pageElement.title }}</a>\n        <mat-icon aria-hidden=\"false\" aria-label=\"chevron-right\" fontIcon=\"chevron_right\"></mat-icon>\n    }\n    <span class=\".current-element\">{{ currentElement }}</span>\n</div>\n"
+            "templateData": "<div class=\"breadcrumb-container\">\n    @for (pageElement of pagesPath; track pageElement.title) {\n        <a class=\"prev-link-item\" href=\"{{pageElement.url}}\">{{ pageElement.title }}</a>\n        <mat-icon class=\"chevron-icon\" fontIcon=\"chevron_right\"></mat-icon>\n    }\n    <span class=\"current-element\">{{ currentElement }}</span>\n</div>\n"
         },
         {
             "name": "CardComponent",
@@ -845,6 +989,133 @@
             "templateData": "<mat-card>\n  <mat-card-content>\n    <div class=\"header\">\n      <img [src]=\"image\" alt=\"Card image\" class=\"image\" />\n    </div>\n    <div class=\"content\">\n      <div class=\"title-section\">\n        <mat-icon class=\"icon\"> arrow_upward </mat-icon>\n        <div>\n          <h4>\n            {{ title | titlecase }}\n          </h4>\n          <span>\n            {{ span }}\n          </span>\n        </div>\n      </div>\n      <p>\n        {{ text }}\n      </p>\n      <a [href]=\"linkUrl\" target=\"_blank\">\n        <span>\n          {{ link }}\n        </span>\n        <mat-icon class=\"flat-icon\">\n          {{ linkIcon }}\n        </mat-icon>\n      </a>\n    </div>\n    <mat-icon class=\"go-icon\">chevron_right</mat-icon>\n  </mat-card-content>\n</mat-card>\n"
         },
         {
+            "name": "CenterTabBarComponent",
+            "id": "component-CenterTabBarComponent-32757171ab5ee14b7010a6f64484c81ac5eb39992539fc3e4a4c3a82afcf44fa90f7dd937574bb863a50c7cced15322157d3909684b729ee872a4faa04235814",
+            "file": "src/app/components/shared/center-tab-bar/center-tab-bar.component.ts",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-center-tab-bar",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./center-tab-bar.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "initialTabIndex",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "tabs",
+                    "defaultValue": "['Small Business', 'Enterprise', 'Partners']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "string[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "tabChanged",
+                    "defaultValue": "new EventEmitter()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "_activeTab",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 24
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 26,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onTabClicked",
+                    "args": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 29,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport {\n  Component,\n  EventEmitter,\n  Input,\n  OnInit,\n  Output,\n  ViewEncapsulation,\n} from '@angular/core';\n\n@Component({\n  selector: 'app-center-tab-bar',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './center-tab-bar.component.html',\n  styleUrl: './center-tab-bar.component.scss',\n  encapsulation: ViewEncapsulation.None,\n})\nexport class CenterTabBarComponent implements OnInit {\n  @Input() tabs: string[] = ['Small Business', 'Enterprise', 'Partners'];\n  @Input() initialTabIndex = 0;\n  @Output() tabChanged = new EventEmitter();\n\n  _activeTab: number = 0;\n\n  ngOnInit(): void {\n    this._activeTab = this.initialTabIndex;\n  }\n  onTabClicked(index: number) {\n    this._activeTab = index;\n    this.tabChanged.emit(index);\n  }\n}\n",
+            "styleUrl": "./center-tab-bar.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"tab-bar\">\n  <div\n    *ngFor=\"let tab of tabs; let index = index\"\n    [ngClass]=\"index === _activeTab ? 'active' : ''\"\n    class=\"tab\"\n    (click)=\"onTabClicked(index)\"\n  >\n    {{ tab }}\n  </div>\n</div>\n"
+        },
+        {
             "name": "ContactUsComponent",
             "id": "component-ContactUsComponent-a6345ddd2c305a539d11f91a7692c52ad7b2d6f9b60412184bd72631849da7c69cdf6dbe3954ad188b907ce807c3fdd113c0f261f1a1550d56826d19872688b0",
             "file": "src/app/components/shared/contact-us/contact-us.component.ts",
@@ -897,7 +1168,7 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<mat-card class=\"mat-typography contact-us-container\">\n  <button mat-raised-button class=\"need-help-button\">\n    <div class=\"button-content\">\n      <mat-icon class=\"mail-icon mr1\">mail</mat-icon>\n      <div class=\"section\">\n        <span class=\"row centered\">\n          <mat-icon class=\"mail-icon mr1\">mail</mat-icon>\n          <div class=\"button-text mr1\">Need more help?</div>\n        </span>\n\n        <span class=\"row centered\">\n          <div class=\"link mr1\">Contact us</div>\n          <mat-icon class=\"go-icon\">chevron_right</mat-icon>\n        </span>\n      </div>\n      <mat-icon class=\"mobile-icon\">chevron_right</mat-icon>\n    </div>\n  </button>\n</mat-card>\n"
+            "templateData": "<mat-card class=\"mat-typography contact-us-container\">\n  <button mat-raised-button class=\"need-help-button\">\n    <div class=\"button-content\">\n      <mat-icon fontSet=\"material-icons-outlined\" class=\"mail-icon mr1\">mail</mat-icon>\n      <div class=\"section\">\n        <span class=\"row centered\">\n          <mat-icon fontSet=\"material-icons-outlined\" class=\"mail-icon mr1\">mail</mat-icon>\n          <div class=\"button-text mr1\">Need more help?</div>\n        </span>\n\n        <span class=\"row centered\">\n          <div class=\"link\">Contact us</div>\n          <mat-icon class=\"go-icon\">chevron_right</mat-icon>\n        </span>\n      </div>\n      <mat-icon class=\"mobile-icon\">chevron_right</mat-icon>\n    </div>\n  </button>\n</mat-card>\n"
         },
         {
             "name": "ContextualMessageComponent",
@@ -1066,7 +1337,7 @@
         },
         {
             "name": "DashboardComponent",
-            "id": "component-DashboardComponent-a7056c9b535c7daadfef10b010cd4b2729fd4e90c09c4f27c3b2b92f0dc7c51127014031c968caa31953651e30c6937b35e2d70a5bae667ef12344c221040824",
+            "id": "component-DashboardComponent-31db7f3a210284241263522e8625b9859f871e254916c21715d2fa795d3272b17cd2c2a05b825ab159b06810490a304bdbd0b852f549803cbac294b2fd1beba5",
             "file": "src/app/components/dashboard/dashboard.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1132,20 +1403,20 @@
             "standalone": true,
             "imports": [
                 {
-                    "name": "LabelComponent",
+                    "name": "CenterTabBarComponent",
                     "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { inject } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { AuthService } from '../../services/auth.service';\nimport { LabelComponent } from '../shared/label/label.component';\n\n@Component({\n  selector: 'app-dashboard',\n  standalone: true,\n  imports: [LabelComponent],\n  templateUrl: './dashboard.component.html',\n  styleUrl: './dashboard.component.scss',\n})\nexport class DashboardComponent {\n  private authService = inject(AuthService);\n  private router = inject(Router);\n\n  logout(): void {\n    this.authService.logout();\n    this.router.navigate(['/login']);\n  }\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { inject } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { AuthService } from '../../services/auth.service';\nimport { CenterTabBarComponent } from '../shared/center-tab-bar/center-tab-bar.component';\n\n@Component({\n  selector: 'app-dashboard',\n  standalone: true,\n  imports: [CenterTabBarComponent],\n  templateUrl: './dashboard.component.html',\n  styleUrl: './dashboard.component.scss',\n})\nexport class DashboardComponent {\n  private authService = inject(AuthService);\n  private router = inject(Router);\n\n  logout(): void {\n    this.authService.logout();\n    this.router.navigate(['/login']);\n  }\n}\n",
             "styleUrl": "./dashboard.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"container\">\n  <h2>Dashboard</h2>\n  <button (click)=\"logout()\">Logout</button>\n  <p>Welcome to your dashboard!</p>\n  <app-label></app-label>\n</div>\n"
+            "templateData": "<div class=\"container\">\n  <h2>Dashboard</h2>\n  <button (click)=\"logout()\">Logout</button>\n  <p>Welcome to your dashboard!</p>\n  <app-center-tab-bar></app-center-tab-bar>\n</div>\n"
         },
         {
             "name": "FooterComponent",
@@ -1223,6 +1494,63 @@
             },
             "extends": [],
             "templateData": "<footer class=\"footer\">\n    <div class=\"nav-container\">\n        <nav class=\"navigation\">\n            <ul>\n                <li><a href=\"\">Cookie Settings</a></li>\n                <li><a href=\"\">Contact Us</a></li>\n                <li><a href=\"\">Privacy Policy</a></li>\n                <li><a href=\"\">Regulatory Disclosures</a></li>\n            </ul>\n        </nav>\n    </div>\n    <mat-divider class=\"divider\" [vertical]=\"true\"></mat-divider>\n    <div class=\"sm-container\">\n        <small>Copyright © 2024 Paysafe Holdings UK Limited. All rights reserved. Paysafe Financial Services Limited (FRN:900015)</small>\n    </div>\n</footer>"
+        },
+        {
+            "name": "ImageComponent",
+            "id": "component-ImageComponent-9ad903922dbd3e5bee970189bab267cd080e2e8f09bb4d07f35680f3dace09986e4bd3dd9a9906402c6beec8320476a63730da5aac5904f0d025e3d17219a557",
+            "file": "src/app/components/shared/image/image.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-image",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./image.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "alt",
+                    "defaultValue": "'image alt'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "src",
+                    "defaultValue": "'https://s3-alpha-sig.figma.com/img/9521/b025/c902562d3a282bff2b33cd66078f7c87?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=C0B7MQ0nWHWzMoNlvv2k7FFlfVrXebCiC1EfnrpfAe9dyPsBvoAC1FmBVTz7ElTzcpZDHdzOWgMzZlrWXLbj3zeV2sK51MriwNfyq~CiGCEjrMwjVxkYNaERJvQFw700kANLETBxYtpCNcYtxfjivnu~oidjmegFfWNSZKs~EvhvzfY94morJJHEh86856AgspjTuRb6Pgclczk9vUWJ~RnNuWnKBcFuqKXA55GNLUxfmn-ZGgsaGcNvBcll2kMX0BMIT~VRLgPoXT9-pbk8od4P87jG~l-LKcuiBj1ii1B9MQjd1D8xGjzKJVg0RtI~99DHaynyzAlYwsVZQVbWKQ__'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-image',\n  standalone: true,\n  imports: [],\n  templateUrl: './image.component.html',\n  styleUrl: './image.component.scss',\n})\nexport class ImageComponent {\n  @Input() src =\n    'https://s3-alpha-sig.figma.com/img/9521/b025/c902562d3a282bff2b33cd66078f7c87?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=C0B7MQ0nWHWzMoNlvv2k7FFlfVrXebCiC1EfnrpfAe9dyPsBvoAC1FmBVTz7ElTzcpZDHdzOWgMzZlrWXLbj3zeV2sK51MriwNfyq~CiGCEjrMwjVxkYNaERJvQFw700kANLETBxYtpCNcYtxfjivnu~oidjmegFfWNSZKs~EvhvzfY94morJJHEh86856AgspjTuRb6Pgclczk9vUWJ~RnNuWnKBcFuqKXA55GNLUxfmn-ZGgsaGcNvBcll2kMX0BMIT~VRLgPoXT9-pbk8od4P87jG~l-LKcuiBj1ii1B9MQjd1D8xGjzKJVg0RtI~99DHaynyzAlYwsVZQVbWKQ__';\n  @Input() alt = 'image alt';\n}\n",
+            "styleUrl": "./image.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<img [src]=\"src\" [alt]=\"alt\" />\n"
         },
         {
             "name": "LabelComponent",
@@ -1520,7 +1848,7 @@
         },
         {
             "name": "RelatedArticlesComponent",
-            "id": "component-RelatedArticlesComponent-a09033875218d19e18e88c9cf6406f8d6ad2d046b964cb58312581ed8033198e365263b869ae60038ba45bff9f9f86629c5bd9c761eb8f40f25347f10273acab",
+            "id": "component-RelatedArticlesComponent-641e8cc3d25131caf0355abcabbbf78cef60a1af6af143b570c38d500bc852866ccd4b510e2ae4f35431d24106641a0af854e764b2a4743b5fc8aeaf4073240f",
             "file": "src/app/components/shared/related-articles/related-articles.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1547,7 +1875,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 29,
+                    "line": 30,
                     "modifierKind": [
                         125
                     ]
@@ -1561,7 +1889,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 11,
+                    "line": 12,
                     "modifierKind": [
                         125
                     ]
@@ -1573,17 +1901,22 @@
             "hostBindings": [],
             "hostListeners": [],
             "standalone": true,
-            "imports": [],
+            "imports": [
+                {
+                    "name": "MatIconModule",
+                    "type": "module"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-related-articles',\n  standalone: true,\n  imports: [],\n  templateUrl: './related-articles.component.html',\n  styleUrl: './related-articles.component.scss'\n})\nexport class RelatedArticlesComponent {\n  public relatedLinks: any[] = [\n    {\n      \"title\": \"Paysafe Glossary of Payment Terms for Merchants\",\n      \"link\": \"#\"\n    },\n    {\n      \"title\": \"Accept payments with Tap to Pay on iPhone\",\n      \"link\": \"#\"\n    },\n    {\n      \"title\": \"Set up and edit transfer options\",\n      \"link\": \"#\"\n    },\n    {\n      \"title\": \"Chargeback Guide\",\n      \"link\": \"#\"\n    }\n];\n  public onClickViewMore = () =>{\n    alert(\"View more clicked\");\n  }\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { MatIconModule } from '@angular/material/icon';\n\n@Component({\n  selector: 'app-related-articles',\n  standalone: true,\n  imports: [MatIconModule],\n  templateUrl: './related-articles.component.html',\n  styleUrl: './related-articles.component.scss'\n})\nexport class RelatedArticlesComponent {\n  public relatedLinks: any[] = [\n    {\n      \"title\": \"Paysafe Glossary of Payment Terms for Merchants\",\n      \"link\": \"#\"\n    },\n    {\n      \"title\": \"Accept payments with Tap to Pay on iPhone\",\n      \"link\": \"#\"\n    },\n    {\n      \"title\": \"Set up and edit transfer options\",\n      \"link\": \"#\"\n    },\n    {\n      \"title\": \"Chargeback Guide\",\n      \"link\": \"#\"\n    }\n];\n  public onClickViewMore = () =>{\n    alert(\"View more clicked\");\n  }\n}\n",
             "styleUrl": "./related-articles.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"related-articles-container\">\n    <div class=\"related-title-container\">\n        <div class=\"icon-holder\">\n            <object data=\"./../../../../assets/icons/common/note-stack-icon.svg\" width=\"22\" height=\"22\"> \n            </object>\n        </div>\n        <h2 class=\"related-title-bg\">Related articles</h2>\n        <h3 class=\"related-title-mb\">Related articles</h3>\n    </div>\n    <div class=\"related-articles-content\">\n        <div class=\"related-links-container\">\n            @for (relatedLink of relatedLinks; track relatedLink.title) {\n                <a class=\"link-element\" href=\"{{relatedLink.link}}\">\n                    <span class=\"related-link\">{{ relatedLink.title }}</span>\n                    <object data=\"./../../../../assets/icons/common/arrow-outward-icon.svg\" width=\"18\" height=\"18\"> </object>\n                </a>\n            }      \n        </div>\n        <button class=\"view-more-btn\" (click)=\"onClickViewMore()\">\n            View More\n            <object data=\"./../../../../assets/icons/common/arrow-forward-icon.svg\" width=\"16\" height=\"16\"> </object>\n        </button>\n    </div>\n</div>"
+            "templateData": "<div class=\"related-articles-container\">\n    <div class=\"related-title-container\">\n        <div class=\"icon-holder\">\n            <img src=\"./../../../../assets/icons/common/note-stack-icon.svg\" width=\"22\" height=\"22\"> \n        </div>\n        <h2 class=\"related-title-bg\">Related articles</h2>\n        <h3 class=\"related-title-mb\">Related articles</h3>\n    </div>\n    <div class=\"related-articles-content\">\n        <div class=\"related-links-container\">\n            @for (relatedLink of relatedLinks; track relatedLink.title) {\n                <a class=\"link-element\" href=\"{{relatedLink.link}}\">\n                    <span class=\"related-link\">{{ relatedLink.title }}</span>\n                    <mat-icon class=\"arrow-outward-icon\" fontIcon=\"arrow_outward\"></mat-icon>\n                </a>\n            }      \n        </div>\n        <button class=\"view-more-btn\" (click)=\"onClickViewMore()\">\n            View More\n            <mat-icon class=\"arrow-outward-icon\" fontIcon=\"arrow_forward\"></mat-icon>\n        </button>\n    </div>\n</div>"
         },
         {
             "name": "SearchComponentComponent",
@@ -1818,7 +2151,7 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"sidebar-container\">\n    <mat-expansion-panel [(expanded)]=\"businessPanelOpened\" class=\"business-select\">\n        <mat-expansion-panel-header class=\"business-select-header\">\n        <mat-panel-title class=\"business-selected-option\"> {{selectedBusiness.option}} </mat-panel-title>\n        </mat-expansion-panel-header>\n        @for (option of businessOptions; track option.option) {\n            @if(option.option !== selectedBusiness.option){\n                <div class=\"business-option\" (click)=\"changeOption(option)\">\n                    <span class=\"business-option-text\">\n                        {{option.option}}\n                    </span>\n                </div>\n            }\n        }  \n    </mat-expansion-panel>\n\n\n    <mat-accordion class=\"app-nav-accordion\">\n    @for (menuSection of menuSections; track menuSection.title) {\n        <div class=\"menu-section-container\">\n            <span class=\"menu-section-title\">{{menuSection.title}}</span>\n        </div>\n        @for (menuElement of menuSection.sections; track menuElement.title) {\n            <div class=\"menu-section-element\">\n                <mat-expansion-panel class=\"mat-elevation-z0 expansion-menu-container\">\n                    <mat-expansion-panel-header>\n                        <mat-panel-title>\n                            <div class=\"subsection-title-holder\">\n                                <div class=\"icon-holder\">\n                                    @if(menuElement.svgUrl){\n                                        <img class=\"title-icon-svg\" src=\"{{menuElement.svgUrl}}\"> \n                                    }\n                                    @else {\n                                        <mat-icon class=\"title-icon\" [fontIcon]=\"menuElement.iconUrl\"></mat-icon>\n                                    }\n                                </div>\n                                <label class=\"section-element-title\">{{menuElement.title}}</label>\n                            </div>\n                        </mat-panel-title>\n                    </mat-expansion-panel-header>\n                    <mat-nav-list>\n                        @for (menuItem of menuElement.menuItems; track menuItem.title) {\n                            <div class=\"menu-link-element\" >\n                                <label class=\"link-element-title\" (click)=\"onMenuItemClick($event)\">{{menuItem.title}}</label>\n                            </div>\n                        }\n                    </mat-nav-list>\n                  </mat-expansion-panel>\n            </div>\n        }  \n        @if(!menuSection.isLastSection){\n            <svg class=\"separator\" xmlns=\"http://www.w3.org/2000/svg\" width=\"259\" height=\"2\" viewBox=\"0 0 259 2\" fill=\"none\">\n                <path d=\"M0 1H259\" stroke=\"#CDD2C8\"/>\n            </svg>\n        }\n    }  \n    </mat-accordion>\n</div>"
+            "templateData": "<div class=\"sidebar-container\">\n    <mat-expansion-panel [(expanded)]=\"businessPanelOpened\" class=\"business-select\">\n        <mat-expansion-panel-header class=\"business-select-header\">\n        <mat-panel-title class=\"business-selected-option\"> {{selectedBusiness.option}} </mat-panel-title>\n        </mat-expansion-panel-header>\n        @for (option of businessOptions; track option.option) {\n            @if(option.option !== selectedBusiness.option){\n                <div class=\"business-option\" (click)=\"changeOption(option)\">\n                    <span class=\"business-option-text\">\n                        {{option.option}}\n                    </span>\n                </div>\n            }\n        }  \n    </mat-expansion-panel>\n\n\n    <mat-accordion class=\"app-nav-accordion\">\n    @for (menuSection of menuSections; track menuSection.title) {\n        <div class=\"menu-section-container\">\n            <span class=\"menu-section-title\">{{menuSection.title}}</span>\n        </div>\n        @for (menuElement of menuSection.sections; track menuElement.title) {\n            <div class=\"menu-section-element\">\n                <mat-expansion-panel class=\"mat-elevation-z0 expansion-menu-container\">\n                    <mat-expansion-panel-header>\n                        <mat-panel-title>\n                            <div class=\"subsection-title-holder\">\n                                <div class=\"icon-holder\">\n                                    @if(menuElement.svgUrl){\n                                        <img class=\"title-icon-svg\" src=\"{{menuElement.svgUrl}}\"> \n                                    }\n                                    @else {\n                                        <div class=\"title-icon\">\n                                            <span class=\"material-symbols-outlined\">{{menuElement.iconUrl}}</span>\n                                        </div>\n                                    }\n                                </div>\n                                <label class=\"section-element-title\">{{menuElement.title}}</label>\n                            </div>\n                        </mat-panel-title>\n                    </mat-expansion-panel-header>\n                    <mat-nav-list>\n                        @for (menuItem of menuElement.menuItems; track menuItem.title) {\n                            <div class=\"menu-link-element\" >\n                                <label class=\"link-element-title\" (click)=\"onMenuItemClick($event)\">{{menuItem.title}}</label>\n                            </div>\n                        }\n                    </mat-nav-list>\n                  </mat-expansion-panel>\n            </div>\n        }  \n        @if(!menuSection.isLastSection){\n            <svg class=\"separator\" xmlns=\"http://www.w3.org/2000/svg\" width=\"259\" height=\"2\" viewBox=\"0 0 259 2\" fill=\"none\">\n                <path d=\"M0 1H259\" stroke=\"#CDD2C8\"/>\n            </svg>\n        }\n    }  \n    </mat-accordion>\n</div>"
         },
         {
             "name": "SubtitleComponent",
@@ -2437,6 +2770,16 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/center-tab-bar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/contact-us.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2468,6 +2811,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/footer.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/image.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -2687,6 +3040,16 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/center-tab-bar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryFn",
+                "defaultValue": "(args) => ({\n  component: CenterTabBarComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/contact-us.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2722,6 +3085,16 @@
                 "deprecationMessage": "",
                 "type": "StoryFn",
                 "defaultValue": "(args) => ({\n  component: FooterComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/image.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryFn",
+                "defaultValue": "(args) => ({\n  component: ImageComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -3108,6 +3481,28 @@
                     "defaultValue": "(args) => ({\n  component: CardComponent,\n  props: args,\n})"
                 }
             ],
+            "src/stories/center-tab-bar.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/center-tab-bar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/center-tab-bar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryFn",
+                    "defaultValue": "(args) => ({\n  component: CenterTabBarComponent,\n  props: args,\n})"
+                }
+            ],
             "src/stories/contact-us.component.stories.ts": [
                 {
                     "name": "Default",
@@ -3194,6 +3589,28 @@
                     "deprecationMessage": "",
                     "type": "StoryFn",
                     "defaultValue": "(args) => ({\n  component: FooterComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/stories/image.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/image.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/image.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryFn",
+                    "defaultValue": "(args) => ({\n  component: ImageComponent,\n  props: args,\n})"
                 }
             ],
             "src/stories/label.stories.ts": [
@@ -3611,7 +4028,7 @@
                 "linktype": "component",
                 "name": "AccordionComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {
@@ -3629,7 +4046,7 @@
                 "linktype": "component",
                 "name": "ArticleIndexComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
@@ -3638,7 +4055,7 @@
                 "linktype": "component",
                 "name": "ArticleSectionTitleComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -3651,7 +4068,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/components/shared/breadcrum/breadcrumb.component.ts",
+                "filePath": "src/app/components/shared/breadcrumb/breadcrumb.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "BreadcrumbComponent",
@@ -3666,6 +4083,15 @@
                 "name": "CardComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/shared/center-tab-bar/center-tab-bar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CenterTabBarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
@@ -3693,6 +4119,15 @@
                 "name": "FooterComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/shared/image/image.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ImageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -3974,6 +4409,26 @@
                 "status": "low"
             },
             {
+                "filePath": "src/stories/center-tab-bar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/center-tab-bar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/stories/contact-us.component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -4045,6 +4500,26 @@
             },
             {
                 "filePath": "src/stories/footer.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/image.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/image.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
