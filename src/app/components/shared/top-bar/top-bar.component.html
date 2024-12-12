@@ -55,7 +55,7 @@
             <a class="rh-tab tab-cell">Partners</a>
         </div>
         <div class="search-container">
-            
+
         </div>
         <div appDragScroll class="pill-container">
             <app-pill title="Get Started!" pillStyle="Secondary"></app-pill>
@@ -64,6 +64,29 @@
             <app-pill title="Disputes" pillStyle="Secondary"></app-pill>
             <app-pill title="Payments" pillStyle="Secondary"></app-pill>
             <app-pill title="My Account" pillStyle="Secondary"></app-pill>
-        </div>
+        </div>  
+        
+        <mat-chip-listbox>
+            @for (chip of chipLabels; track chip) {
+                <mat-chip-option
+                [value]="chip"
+                (selectionChange)="onChipSelect($event)"
+                >
+                    {{ chip }}
+                </mat-chip-option>
+            }
+        </mat-chip-listbox>
+
+        <mat-form-field>
+            <mat-label>Input</mat-label>
+            <input matInput [value]="_query">
+        </mat-form-field>
+
+        
+    
     </div>
+
+    
+    
+    
 </div>

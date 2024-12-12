@@ -9,11 +9,31 @@ import { AuthService } from '../../../services/auth.service';
 import { PillComponent } from '../pill/pill.component';
 import { Subscription } from 'rxjs';
 import { DragScrollDirective } from './drag-scroll.directive';
+import { MatChipsModule } from '@angular/material/chips';
+
+import { MatChipSelectionChange } from '@angular/material/chips';
+import { NgFor } from '@angular/common';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatLabel } from '@angular/material/form-field';
 
 @Component({
   selector: 'app-top-bar',
   standalone: true,
-  imports: [MatButtonModule,MatDividerModule,MatIconModule,CommonModule,PillComponent, DragScrollDirective],
+  imports: [
+    MatButtonModule,
+    MatDividerModule,
+    MatIconModule,
+    CommonModule,
+    PillComponent, 
+    DragScrollDirective, 
+
+    NgFor,
+    MatInputModule,
+    MatChipsModule, 
+    MatFormFieldModule, 
+    MatLabel],
+
   templateUrl: './top-bar.component.html',
   styleUrl: './top-bar.component.scss'
 })
@@ -25,6 +45,13 @@ export class TopBarComponent implements OnInit, OnDestroy {
   isLoggedIn = false;
   logoPath = "assets/icons/top-bar/Optic_Logo_White.svg";
 
+  _query: string = "";
+
+  chipLabels: string[] = [
+    'chip-one',
+    'chip-two',
+    'chip-three',
+  ]
 
   constructor(private authService: AuthService) {
     this.authSubscription = new Subscription();
@@ -47,6 +74,24 @@ export class TopBarComponent implements OnInit, OnDestroy {
 
   toggleLogin() { // TEST FUNCTION, DELETE
     this.isLoggedIn = !this.isLoggedIn;
+  }
+
+  onChipSelect(event: MatChipSelectionChange) {
+    const val = event.source.value;
+
+    if (!event.source.selected){
+      event.source.deselect;
+      this._query = ""
+    } else if (val) {
+      console.log("value: " + val);
+      this._query = val;
+    }
+
+  } 
+
+
+  populateSearch(input: string) {
+
   }
 
   onLogin() {

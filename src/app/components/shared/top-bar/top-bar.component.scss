@@ -26,12 +26,6 @@ $inter-size-9: 480px;
         padding: var(--spacing-6) var(--spacing-9);
         background-color: var(--hc-primary-color);
         color: #FFFFFF;
-
-        .icon {
-            color: #FFFFFF;
-            min-width: $inter-size-2;
-            min-height: var(--spacing-7); //Icon boundaries are not uniform about the origin
-        }
         
         .lhs-container {
             display: flex;
@@ -245,7 +239,6 @@ $inter-size-9: 480px;
             flex-wrap: nowrap;
             overflow-x: visible;
             overflow-y: hidden;
-            flex-direction: row;
             gap: var(--spacing-3);
             -ms-text-overflow: none; /* IE10+ */
             scrollbar-width: none; /* Firefox */
