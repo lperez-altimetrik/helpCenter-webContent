@@ -20,20 +20,28 @@ import {MatFormFieldModule} from '@angular/material/form-field';
   styleUrl: './search-bar.component.scss'
 })
 export class SearchBarComponent implements OnInit {
-  myControl = new FormControl('');
-  options: string[] = ['One', 'Two', 'Three'];
+  searchString = new FormControl('');
+  options: string[] = [
+    'Paysafe Glossary of Payment Terms for Merchants', 
+    'Paysafe Glossary of Payment Terms for Merchants', 
+    'Paysafe Glossary of Payment Terms for Merchants',
+    'Paysafe Glossary of Payment Terms for Merchants'
+  ];
   filteredOptions: Observable<string[]> | undefined;
 
   ngOnInit() {
-    this.filteredOptions = this.myControl.valueChanges.pipe(
+    this.filteredOptions = this.searchString.valueChanges.pipe(
       startWith(''),
       map(value => this._filter(value || '')),
     );
   }
 
+  cleanSearch(){
+    this.searchString.setValue(""); 
+  }
+
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
-
     return this.options.filter(option => option.toLowerCase().includes(filterValue));
   }
 
