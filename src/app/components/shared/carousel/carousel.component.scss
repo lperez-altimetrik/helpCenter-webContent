@@ -1,0 +1,143 @@
+@import "./../../../../styles/mixins.scss";
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  max-width: 1600px;
+  padding: 40px 27px;
+  border-radius: 8px;
+  background: var(--hc-color-bg-primary);
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.04),
+    0px 4px 6px -1px rgba(0, 0, 0, 0.06);
+
+  .nav-button {
+    transform: translateY(-50%);
+    background: var(--hc-color-bg-secondary);
+    color: var(--hc-color-fg-primary);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    justify-content: center;
+    align-items: center;
+
+    &:disabled {
+      opacity: 0.5;
+      color: var(--hc-color-gray-30);
+      cursor: not-allowed;
+    }
+
+    &.prev {
+      left: 10px;
+    }
+
+    &.next {
+      right: 10px;
+    }
+
+    span {
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    @include respond-to("mobile-mb") {
+      display: none;
+    }
+  }
+
+  .carousel-container {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    overflow: hidden;
+    gap: 16px;
+    width: 100%;
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 8px; // Space between the icon and title
+
+      .icon {
+        @include icon-style(); // Use mixin for consistent icon styling
+
+        @include respond-to("mobile-mb") {
+          width: 32px;
+          height: 32px;
+          font-size: 20px;
+        }
+      }
+
+      h3 {
+        color: var(--hc-color-fg-primary);
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 1.2;
+        margin: 0;
+        @include respond-to("mobile-mb") {
+          font-size: 22px;
+        }
+      }
+    }
+
+    .carousel-track-wrapper {
+      overflow: hidden;
+      width: 100%; // Ensure the wrapper adapts to container size
+
+      .toggle-button {
+        display: none;
+        text-align: center;
+        margin-top: 16px;
+
+        @include respond-to("mobile-mb") {
+          display: block;
+        }
+
+        a {
+          cursor: pointer;
+          color: var(--hc-color-link-primary);
+          font-weight: 500;
+          text-decoration: underline;
+          &:hover {
+            color: var(--hc-color-link-hover);
+          }
+        }
+
+        @include respond-to("mobile-mb") {
+          margin-top: 8px;
+          a {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.3s ease; // Smooth transition for the scroll
+      padding: 4px 0;
+
+      @include respond-to("mobile-mb") {
+        flex-flow: column;
+      }
+
+      .carousel-item {
+        flex: 0 0 auto;
+        margin: 0 10px; // Space between items
+        max-width: 300px;
+        background: var(--hc-color-bg-secondary);
+        border-radius: 8px;
+        transition: transform 0.2s ease;
+
+        @include respond-to("mobile-mb") {
+          margin: 8px 0; // Space between items
+        }
+      }
+    }
+  }
+}
