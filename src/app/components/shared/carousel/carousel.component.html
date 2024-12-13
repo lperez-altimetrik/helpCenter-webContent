@@ -1,6 +1,7 @@
 <div class="carousel">
   <button
     class="nav-button prev"
+    [disabled]="!canScrollLeft"
     (mousedown)="startScroll(-1)"
     (mouseup)="stopScroll()"
     (mouseleave)="stopScroll()"
@@ -40,6 +41,7 @@
     (mousedown)="startScroll(1)"
     (mouseup)="stopScroll()"
     (mouseleave)="stopScroll()"
+    [disabled]="!canScrollRight"
   >
     <span class="material-symbols-outlined">chevron_right</span>
   </button>

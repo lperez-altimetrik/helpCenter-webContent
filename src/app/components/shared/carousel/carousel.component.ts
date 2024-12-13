@@ -12,8 +12,6 @@ import {
 import { MatIconModule } from '@angular/material/icon';
 import { CardComponent } from '../card/card.component';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { ArticleIndexComponent } from '../article-index/article-index.component';
-import { ArticleFeedbackComponent } from '../article-feedback/article-feedback.component';
 
 @Component({
   selector: 'app-carousel',
@@ -37,7 +35,6 @@ export class CarouselComponent {
     { id: 6, name: 'Item 6' },
     { id: 6, name: 'Item 6' },
   ];
-  // @Input() itemTemplate: any = '<app-card>'; // Input for the template to render each item
 
   @Input() itemType: any = CardComponent;
   @ViewChild('dynamic', { static: true, read: ViewContainerRef }) dynHost: any;
@@ -50,6 +47,9 @@ export class CarouselComponent {
   scrollSpeed: number = 20;
   isCollapsed: boolean = true;
   isMobile: boolean = false;
+
+  canScrollLeft: boolean = false;
+  canScrollRight: boolean = true;
 
   constructor(
     private breakpointObserver: BreakpointObserver,
@@ -64,25 +64,8 @@ export class CarouselComponent {
         this.isMobile = result.matches;
         this.updateVisibleItems();
       });
-
+    this.updateScrollLimits();
     this.loadComponent();
-  }
-
-  yyystartScroll(direction: number): void {
-    this.scrollDirection = direction;
-    this.scrollInterval = setInterval(() => {
-      const trackElement = this.carouselTrack.nativeElement;
-      const maxScrollLeft = trackElement.scrollWidth - trackElement.offsetWidth;
-
-      trackElement.scrollLeft += this.scrollSpeed * this.scrollDirection;
-
-      if (
-        (this.scrollDirection === -1 && trackElement.scrollLeft <= 0) ||
-        (this.scrollDirection === 1 && trackElement.scrollLeft >= maxScrollLeft)
-      ) {
-        this.stopScroll();
-      }
-    }, 10); // Adjust scroll interval for smoothness
   }
 
   startScroll(direction: number): void {
@@ -102,6 +85,7 @@ export class CarouselComponent {
       }
 
       this.scrollPosition += this.scrollSpeed * this.scrollDirection;
+      this.updateScrollLimits();
     }, 1);
   }
 
@@ -120,6 +104,15 @@ export class CarouselComponent {
       this.isCollapsed = !this.isCollapsed;
       this.updateVisibleItems();
     }
+  }
+
+  updateScrollLimits(): void {
+    const trackWidth =
+      this.carouselTrack.nativeElement.scrollWidth -
+      this.carouselTrack.nativeElement.offsetWidth;
+
+    this.canScrollLeft = this.scrollPosition > 0;
+    this.canScrollRight = this.scrollPosition < trackWidth;
   }
 
   /**
