@@ -8,6 +8,9 @@
 }
 .close-icon{
     cursor: pointer;
+    @include respond-to("mobile-mb"){
+        font-size: 14px;
+    }
 }
 
 :host ::ng-deep .mat-mdc-text-field-wrapper{
@@ -21,7 +24,6 @@
     gap: var(--spacing-5, 12px);
     flex-shrink: 0;
 
-    //border-radius: var(--spacing-7);
     border-radius: var(--spacing-7);
     background: var(--hc-color-bg-secondary) !important;
     overflow: hidden;
@@ -41,13 +43,15 @@
     }
 }
 
-:host ::ng-deep .mat-mdc-text-field-wrapper:focus-within {
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-    transition: 0s;
+.search-bar-container{
+    ::ng-deep .mat-mdc-text-field-wrapper {
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        transition: 0s;
+    }
 }
 
-//line
+
 :host ::ng-deep .mdc-line-ripple{
     display: none;
 }
@@ -114,6 +118,7 @@
             font-style: normal;
             font-weight: 400;
             line-height: normal;
+            background-color: var(--hc-color-bg-secondary) !important;
     
             span{
                 display: flex;
@@ -153,7 +158,16 @@
             gap: var(--spacing-6);
         }
     }
-    
+   
+    .no-data-container{
+        color: var(--hc-color-fg-secondary);
+        opacity: 1;
+        @include respond-to("mobile-mb"){
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-6);
+        }
+    }
 
     .mat-mdc-option{
         @include respond-to("mobile-mb") {

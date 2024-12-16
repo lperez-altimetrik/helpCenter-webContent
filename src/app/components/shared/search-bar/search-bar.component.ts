@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
@@ -19,30 +19,35 @@ import {MatFormFieldModule} from '@angular/material/form-field';
   templateUrl: './search-bar.component.html',
   styleUrl: './search-bar.component.scss'
 })
-export class SearchBarComponent implements OnInit {
+export class SearchBarComponent {
   searchString = new FormControl('');
-  options: string[] = [
+  isPanelOpened = false;
+  @Input() options: string[] = [
     'Paysafe Glossary of Payment Terms for Merchants', 
     'Paysafe Glossary of Payment Terms for Merchants', 
     'Paysafe Glossary of Payment Terms for Merchants',
     'Paysafe Glossary of Payment Terms for Merchants'
   ];
-  filteredOptions: Observable<string[]> | undefined;
+  filteredOptions: any[] = [];
 
-  ngOnInit() {
-    this.filteredOptions = this.searchString.valueChanges.pipe(
-      startWith(''),
-      map(value => this._filter(value || '')),
-    );
+  onSearchChange() {
+    this.filteredOptions = this._filter(this.searchString.value || "");
+  }
+
+  onClosedEvent(){
+    this.isPanelOpened = false;
   }
 
   cleanSearch(){
     this.searchString.setValue(""); 
+    this.filteredOptions = this._filter("");
   }
 
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
-    return this.options.filter(option => option.toLowerCase().includes(filterValue));
+    const filteredItems = this.options.filter(option => option.toLowerCase().includes(filterValue));
+    this.isPanelOpened = filteredItems.length != 0;
+    return filteredItems;
   }
 
 }
