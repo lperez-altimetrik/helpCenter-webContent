@@ -181,6 +181,9 @@
                 font-weight: 400;
                 line-height: normal;
             }
+            &:hover{
+                background: var(--hc-color-bg-secondary);
+            }
         }
         
         .expansion-menu-container{

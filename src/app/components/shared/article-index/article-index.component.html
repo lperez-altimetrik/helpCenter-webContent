@@ -4,8 +4,8 @@
     </label>
     <div class="content-container">
         @for (articleLink of articleLinks; track articleLink.title) {
-            <div class="link-content">
-                <label class="article-link" (click)="onLinkClick($event, articleLink.url)">{{ articleLink.title }}</label>
+            <div class="link-content" (click)="onLinkClick($event, articleLink.url)">
+                <label class="article-link" >{{ articleLink.title }}</label>
             </div>
         }  
     </div>
