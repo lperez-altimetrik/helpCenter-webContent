@@ -248,6 +248,18 @@ $inter-size-9: 480px;
             }
         }
 
+        .pill-bar-container {
+            box-sizing: border-box;
+            display: flex;
+            max-width: 100%;
+
+            app-pill-bar {
+                box-sizing: border-box;
+                max-width: 100%;
+            }
+        }
+        
+
         .pill-container::-webkit-scrollbar {
             display: none; /* Safari + Chrome */
         }

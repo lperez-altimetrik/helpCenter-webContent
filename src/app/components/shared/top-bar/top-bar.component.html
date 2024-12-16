@@ -55,38 +55,19 @@
             <a class="rh-tab tab-cell">Partners</a>
         </div>
         <div class="search-container">
-
+            <app-search-bar [searchString]="_query"></app-search-bar>
+            <!--
+            <mat-form-field>
+                <mat-label>Input</mat-label>
+                <input matInput [value]="_query">
+            </mat-form-field>
+            -->
         </div>
-        <div appDragScroll class="pill-container">
-            <app-pill title="Get Started!" pillStyle="Secondary"></app-pill>
-            <app-pill title="Wallet" pillStyle="Secondary"></app-pill>
-            <app-pill title="Payment Link" pillStyle="Secondary"></app-pill>
-            <app-pill title="Disputes" pillStyle="Secondary"></app-pill>
-            <app-pill title="Payments" pillStyle="Secondary"></app-pill>
-            <app-pill title="My Account" pillStyle="Secondary"></app-pill>
-        </div>  
+
+        <div class="pill-bar-container">
+            <app-pill-bar (notifyParentEvent)="handlePillEvent($event)"></app-pill-bar>
         
-        <mat-chip-listbox>
-            @for (chip of chipLabels; track chip) {
-                <mat-chip-option
-                [value]="chip"
-                (selectionChange)="onChipSelect($event)"
-                >
-                    {{ chip }}
-                </mat-chip-option>
-            }
-        </mat-chip-listbox>
+        </div>
 
-        <mat-form-field>
-            <mat-label>Input</mat-label>
-            <input matInput [value]="_query">
-        </mat-form-field>
-
-        
-    
-    </div>
-
-    
-    
-    
+    </div>    
 </div>

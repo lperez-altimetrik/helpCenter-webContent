@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, viewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { inject } from '@angular/core';
@@ -6,16 +6,18 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { AuthService } from '../../../services/auth.service';
-import { PillComponent } from '../pill/pill.component';
 import { Subscription } from 'rxjs';
 import { DragScrollDirective } from './drag-scroll.directive';
-import { MatChipsModule } from '@angular/material/chips';
+import { SearchBarComponent } from '../search-bar/search-bar.component';
 
-import { MatChipSelectionChange } from '@angular/material/chips';
+
 import { NgFor } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatLabel } from '@angular/material/form-field';
+import { PillBarComponent } from '../pill-bar/pill-bar.component';
+import { MatChipSelectionChange, MatChipsModule } from '@angular/material/chips';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-top-bar',
@@ -25,32 +27,33 @@ import { MatLabel } from '@angular/material/form-field';
     MatDividerModule,
     MatIconModule,
     CommonModule,
-    PillComponent, 
     DragScrollDirective, 
-
+    MatChipsModule,
+    PillBarComponent,
+    SearchBarComponent,
     NgFor,
     MatInputModule,
-    MatChipsModule, 
     MatFormFieldModule, 
     MatLabel],
 
   templateUrl: './top-bar.component.html',
   styleUrl: './top-bar.component.scss'
 })
-
-
 export class TopBarComponent implements OnInit, OnDestroy {
   private router = inject(Router);
   private authSubscription!: Subscription;
   isLoggedIn = false;
   logoPath = "assets/icons/top-bar/Optic_Logo_White.svg";
 
-  _query: string = "";
+  _query: FormControl = new FormControl("");
 
-  chipLabels: string[] = [
-    'chip-one',
-    'chip-two',
-    'chip-three',
+  chipLabels: string[] = [  //make input parameter for this
+    'Get Started!',
+    'Wallet',
+    'Payment Link',
+    'Disputes',
+    'Payments',
+    'My Account',
   ]
 
   constructor(private authService: AuthService) {
@@ -76,23 +79,24 @@ export class TopBarComponent implements OnInit, OnDestroy {
     this.isLoggedIn = !this.isLoggedIn;
   }
 
+  handlePillEvent(message: string) {
+    if (message === this._query.value) this._query.setValue("");
+    else this._query.setValue(message);
+  }
+
+  /*
   onChipSelect(event: MatChipSelectionChange) {
     const val = event.source.value;
 
     if (!event.source.selected){
       event.source.deselect;
-      this._query = ""
+      this._query = "";
     } else if (val) {
-      console.log("value: " + val);
+
       this._query = val;
     }
-
   } 
-
-
-  populateSearch(input: string) {
-
-  }
+  */
 
   onLogin() {
     //Login logic here 

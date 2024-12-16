@@ -1,0 +1,85 @@
+
+@import "./../../../../styles/mixins.scss";
+
+:host ::ng-deep .mat-mdc-chip-listbox 
+    .mdc-evolution-chip-set__chips {
+    flex-direction: row;
+    max-width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: visible;
+    gap: 8px;
+    margin-left: 0;
+    overflow-y: hidden;
+    //white-space: nowrap;
+    
+    -ms-text-overflow: none; /* IE10+ */
+    scrollbar-width: none; /* Firefox */
+}
+
+:host ::ng-deep .mat-mdc-chip-listbox 
+    .mdc-evolution-chip-set__chips::-webkit-scrollbar {
+    display: none; /* Safari + Chrome */
+}
+
+:host ::ng-deep .mdc-evolution-chip__graphic.mat-mdc-chip-graphic {
+    display: none;
+}
+
+:host ::ng-deep .mat-mdc-standard-chip.mdc-evolution-chip--with-primary-graphic .mdc-evolution-chip__action--primary {
+    padding-right: 0px;
+}
+
+:host ::ng-deep .mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__text-label {
+    color:  var(--hc-color-paysafe-blue-05);
+}
+
+.pill-container { 
+    justify-content: center;
+    box-sizing: border-box;
+    flex-direction: row;
+    max-width: 650px;
+    max-height: fit-content;
+    margin-bottom: var(--spacing-8);
+    white-space: nowrap;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: visible;
+    overflow-y: hidden;
+    gap: var(--spacing-3);
+    -ms-text-overflow: none; /* IE10+ */
+    scrollbar-width: none; /* Firefox */
+
+    .pill {
+
+        margin: 0;
+        max-height: 26px;
+        box-sizing: border-box;
+
+        color: var(--hc-color-paysafe-blue-05);
+        background: var(--hc-color-paysafe-blue-50);
+
+        font-size: var(--spacing-5);
+        border-radius: var(--spacing-99);
+        padding: var(--spacing-2) var(--spacing-5) var(--spacing-2) var(--spacing-5);
+        border: none;
+        line-height: normal;
+        font-weight: normal;
+        height: fit-content;
+        cursor: pointer;
+    }
+
+    .pill-spacer {
+        display: none;
+        max-height: 26px;
+        font-size: var(--spacing-5);
+        padding: var(--spacing-2) var(--spacing-5) var(--spacing-2) var(--spacing-5);
+        border: none;
+        box-sizing: border-box;
+        opacity: 0;
+        cursor: default;
+        pointer-events: none;
+        @include respond-to("mobile-mb") {
+            display: inline-block;
+        }
+    }    
+}
