@@ -15,5 +15,5 @@ export class BreadcrumbComponent {
     { title: "Page 3", url: "#"},
     { title: "Page 4", url: "#"}
   ]
-  public currentElement: string = "page 5";
+  public currentElement: string = "Page 5";
 }

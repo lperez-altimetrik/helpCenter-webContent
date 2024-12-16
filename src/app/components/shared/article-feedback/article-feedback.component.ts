@@ -12,7 +12,7 @@ export class ArticleFeedbackComponent {
   private messages: any = {
     askMessage: "Was this article helpful?",
     thanksMessage: "Thanks for your feedback",
-    requestingMessage: "Help us improve?"
+    requestingMessage: "Help us improve"
   };
   public textAreaPlaceholder: string =  "leave your comment";
 
