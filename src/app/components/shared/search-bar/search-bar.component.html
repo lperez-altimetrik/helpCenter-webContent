@@ -1,0 +1,24 @@
+<mat-form-field [class.search-bar-container]="isPanelOpened" #matSelect = 'matFormField'>
+    <span class="material-symbols-outlined search-icon">search</span>
+    <input type="text"
+            placeholder="Search"
+            class="search-input"
+            matInput
+            (input)="onSearchChange()"
+            (click)="onSearchChange()"
+            [formControl]="searchString"
+            [matAutocomplete]="auto">
+    <span class="material-symbols-outlined close-icon" (click)="cleanSearch()">close</span>
+    <mat-autocomplete #auto="matAutocomplete" class="autocomplete-container" (closed)="onClosedEvent()" >
+        <div class="divider-line"></div>
+        <span class="option-header">Popular articles</span>
+        <div class="options-list">
+            @for (option of filteredOptions; track option) {
+                <mat-option [value]="option" class="option-container">
+                    <span class="material-symbols-outlined search-icon">search</span>
+                    <span class="option-text">{{option}}</span>
+                </mat-option>
+            }
+        </div>
+    </mat-autocomplete>
+</mat-form-field>
