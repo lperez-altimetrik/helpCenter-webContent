@@ -176,19 +176,11 @@
         min-height: 19px;
     }
 
-    .svg-line{
-        stroke-width: 1px;
-        stroke: var(--hc-color-grey-20);
-        @include respond-to("mobile-mb") {
-            display: none;
-        }
-    }
-    
-    .svg-line-mb{
-        display: none;
-        @include respond-to("mobile-mb") {
-            display: block;
-        }
+    .divider-line{
+        width: 100%;
+        min-height: 1px;
+        height: 1px;
+        background-color: var(--hc-color-grey-20);
     }
 
     @include respond-to("mobile-mb") {
