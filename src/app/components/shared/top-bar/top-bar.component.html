@@ -10,7 +10,7 @@
             </button>
             <img [src]="logoPath" alt="Optic Logo">
         </div>
-        
+
         <nav class="navigation">
             <div class="rhs-container">
 
@@ -18,7 +18,6 @@
                     <button  mat-button (click)="onLogin()" class="rh-button login-button">Login</button>
                     <mat-divider class="divider" [vertical]="true"></mat-divider>
                     <button mat-icon-button color="primary" class="rh-button" (click)="onLang()" aria-label="Language/Region Button">
-                        <!--instead of "language" below want captive-portal -->
                         <span class="material-symbols-outlined">
                             captive_portal
                         </span>
@@ -39,7 +38,6 @@
                     </button>
                     <mat-divider class="divider fs-divider" [vertical]="true"></mat-divider>
                     <button mat-icon-button color="primary" class="rh-button language-button" (click)="onLang()" aria-label="Language/Region Button">
-                        <!--instead of "language" below want captive-portal -->
                         <span class="material-symbols-outlined">
                             captive_portal
                         </span>
@@ -57,10 +55,19 @@
             <a class="rh-tab tab-cell">Partners</a>
         </div>
         <div class="search-container">
-
+            <app-search-bar [searchString]="_query"></app-search-bar>
+            <!--
+            <mat-form-field>
+                <mat-label>Input</mat-label>
+                <input matInput [value]="_query">
+            </mat-form-field>
+            -->
         </div>
-        <div class="pill-container">
 
+        <div class="pill-bar-container">
+            <app-pill-bar (notifyParentEvent)="handlePillEvent($event)"></app-pill-bar>
+        
         </div>
-    </div>
+
+    </div>    
 </div>

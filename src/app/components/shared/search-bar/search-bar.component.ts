@@ -17,7 +17,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
   styleUrl: './search-bar.component.scss'
 })
 export class SearchBarComponent {
-  searchString = new FormControl('');
+  @Input() searchString = new FormControl('');
   isPanelOpened = false;
   @Input() options: string[] = [
     'Paysafe Glossary of Payment Terms for Merchants', 

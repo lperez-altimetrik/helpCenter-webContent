@@ -1,0 +1,13 @@
+<mat-chip-listbox appDragScroll aria-orientation="horizontal" class="pill-container">
+    <mat-chip-option class="pill-spacer">spacer</mat-chip-option>
+    @for (chip of chipLabels; track chip) {
+        <mat-chip-option 
+        class="pill"
+        [value]="chip"
+        (selectionChange)="onChipSelect($event)"
+        >
+            {{ chip }}
+        </mat-chip-option>
+    }
+    <mat-chip-option class="pill-spacer">spacer</mat-chip-option>
+</mat-chip-listbox>
