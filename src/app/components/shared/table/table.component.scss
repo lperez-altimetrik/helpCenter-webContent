@@ -1,0 +1,36 @@
+@import "./../../../../styles/mixins.scss";
+
+table {
+  width: 100%;
+  box-shadow: none;
+
+  .cell-header {
+    color: var(--hc-dark-gray);
+    font-size: 14px;
+    font-weight: 400;
+    padding: 0 24px;
+
+    @include respond-to("mobile-mb") {
+      font-size: 12px;
+    }
+  }
+
+  .cell-content {
+    color: var(--hc-light-black);
+    font-size: 14px;
+    font-weight: 400;
+    padding: 24px;
+
+    @include respond-to("mobile-mb") {
+      font-size: 12px;
+    }
+  }
+
+  .white-row {
+    background-color: white;
+  }
+
+  .gray-row {
+    background-color: var(--hc-color-bg-secondary);
+  }
+}

@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-related-articles',
   standalone: true,
-  imports: [],
+  imports: [MatIconModule],
   templateUrl: './related-articles.component.html',
   styleUrl: './related-articles.component.scss'
 })

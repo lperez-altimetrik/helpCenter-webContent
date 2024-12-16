@@ -3,13 +3,12 @@ import { Component } from '@angular/core';
 import { inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
-import { TitleComponent } from '../shared/title/title.component';
-import { SubtitleComponent } from '../shared/subtitle/subtitle.component';
+import { CenterTabBarComponent } from '../shared/center-tab-bar/center-tab-bar.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [TitleComponent, SubtitleComponent],
+  imports: [CenterTabBarComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })
