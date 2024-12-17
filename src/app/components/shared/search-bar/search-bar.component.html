@@ -1,11 +1,11 @@
-<mat-form-field [class.search-bar-container]="isPanelOpened" #matSelect = 'matFormField'>
+<mat-form-field [class.search-bar-container]="isPanelOpened" #matSelect = 'matFormField' (click)="onSearchChange()">
     <span class="material-symbols-outlined search-icon">search</span>
     <input type="text"
             placeholder="Search"
             class="search-input"
             matInput
+            #searchInput
             (input)="onSearchChange()"
-            (click)="onSearchChange()"
             [formControl]="searchString"
             [matAutocomplete]="auto">
     <span class="material-symbols-outlined close-icon" (click)="cleanSearch()">close</span>

@@ -2,12 +2,14 @@
 
 .search-icon{
     font-size: 22px;
+    color: var(--hc-color-fg-secondary);
     @include respond-to("mobile-mb"){
         font-size: 18px;
     }
 }
 .close-icon{
     cursor: pointer;
+    color: var(--hc-color-fg-secondary);
     @include respond-to("mobile-mb"){
         font-size: 14px;
     }
@@ -47,10 +49,13 @@
     ::ng-deep .mat-mdc-text-field-wrapper {
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 0px;
-        transition: 0s;
+        transition-duration: 0.1s;
     }
 }
 
+:host ::ng-deep .mat-autocomplete-panel {
+    transition: transform 2s ease-in-out, opacity 3s ease-in-out !important;
+}
 
 :host ::ng-deep .mdc-line-ripple{
     display: none;

@@ -80,8 +80,8 @@ export class TopBarComponent implements OnInit, OnDestroy {
   }
 
   handlePillEvent(message: string) {
-    if (message === this._query.value) this._query.setValue("");
-    else this._query.setValue(message);
+    if (message === this._query.value) this._query = new FormControl("");
+    else this._query = new FormControl(message);
   }
 
   /*
