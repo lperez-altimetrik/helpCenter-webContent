@@ -989,6 +989,374 @@
             "templateData": "<mat-card>\n  <mat-card-content>\n    <div class=\"header\">\n      <img [src]=\"image\" alt=\"Card image\" class=\"image\" />\n    </div>\n    <div class=\"content\">\n      <div class=\"title-section\">\n        <mat-icon class=\"icon\"> arrow_upward </mat-icon>\n        <div>\n          <h4>\n            {{ title | titlecase }}\n          </h4>\n          <span>\n            {{ span }}\n          </span>\n        </div>\n      </div>\n      <p>\n        {{ text }}\n      </p>\n      <a [href]=\"linkUrl\" target=\"_blank\">\n        <span>\n          {{ link }}\n        </span>\n        <mat-icon class=\"flat-icon\">\n          {{ linkIcon }}\n        </mat-icon>\n      </a>\n    </div>\n    <mat-icon class=\"go-icon\">chevron_right</mat-icon>\n  </mat-card-content>\n</mat-card>\n"
         },
         {
+            "name": "CarouselComponent",
+            "id": "component-CarouselComponent-08ec63942c2fa7864d9ac7e6c488f6f572b33492a3cab056c93f057f43b9d53afe758697afecd44a494bd666558e2e8f5fcea5250c7ac95586f7fdf3c6c2c847",
+            "file": "src/app/components/shared/carousel/carousel.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-carousel",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./carousel.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "items",
+                    "defaultValue": "[\n    { id: 1, name: 'Item 1' },\n    { id: 2, name: 'Item 2' },\n    { id: 3, name: 'Item 3' },\n    { id: 4, name: 'Item 4' },\n    { id: 5, name: 'Item 5' },\n    { id: 6, name: 'Item 6' },\n    { id: 6, name: 'Item 6' },\n    { id: 6, name: 'Item 6' },\n    { id: 6, name: 'Item 6' },\n    { id: 6, name: 'Item 6' },\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 26,
+                    "type": "any[]",
+                    "decorators": []
+                },
+                {
+                    "name": "itemType",
+                    "defaultValue": "CardComponent",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 39,
+                    "type": "any",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "canScrollLeft",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 51
+                },
+                {
+                    "name": "canScrollRight",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 52
+                },
+                {
+                    "name": "carouselTrack",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ElementRef",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 24,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'carouselTrack'"
+                        }
+                    ],
+                    "modifierKind": [
+                        170
+                    ]
+                },
+                {
+                    "name": "componentFactoryResolver",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ComponentFactoryResolver",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 56,
+                    "modifierKind": [
+                        125
+                    ]
+                },
+                {
+                    "name": "componentRef",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ComponentRef<any> | undefined",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 41,
+                    "modifierKind": [
+                        125
+                    ]
+                },
+                {
+                    "name": "dynHost",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 40,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'dynamic', {static: true, read: ViewContainerRef}"
+                        }
+                    ],
+                    "modifierKind": [
+                        170
+                    ]
+                },
+                {
+                    "name": "isCollapsed",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 48
+                },
+                {
+                    "name": "isMobile",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 49
+                },
+                {
+                    "name": "scrollDirection",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 45
+                },
+                {
+                    "name": "scrollInterval",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 46
+                },
+                {
+                    "name": "scrollPosition",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 44
+                },
+                {
+                    "name": "scrollSpeed",
+                    "defaultValue": "20",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 47
+                },
+                {
+                    "name": "visibleItems",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 43
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "loadComponent",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 121,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nLoad dynamicly row component.\n",
+                    "description": "<p>Load dynamicly row component.</p>\n",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 59,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "startScroll",
+                    "args": [
+                        {
+                            "name": "direction",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 71,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "direction",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "stopScroll",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 92,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "toggleView",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 102,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "updateScrollLimits",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 109,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "updateVisibleItems",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 97,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatIconModule",
+                    "type": "module"
+                },
+                {
+                    "name": "CardComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport {\n  Component,\n  ComponentFactory,\n  ComponentFactoryResolver,\n  ComponentRef,\n  ElementRef,\n  Input,\n  ViewChild,\n  ViewContainerRef,\n} from '@angular/core';\nimport { MatIconModule } from '@angular/material/icon';\nimport { CardComponent } from '../card/card.component';\nimport { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';\n\n@Component({\n  selector: 'app-carousel',\n  standalone: true,\n  imports: [CommonModule, MatIconModule, CardComponent],\n  templateUrl: './carousel.component.html',\n  styleUrl: './carousel.component.scss',\n})\nexport class CarouselComponent {\n  @ViewChild('carouselTrack') carouselTrack!: ElementRef;\n\n  @Input() items: any[] = [\n    { id: 1, name: 'Item 1' },\n    { id: 2, name: 'Item 2' },\n    { id: 3, name: 'Item 3' },\n    { id: 4, name: 'Item 4' },\n    { id: 5, name: 'Item 5' },\n    { id: 6, name: 'Item 6' },\n    { id: 6, name: 'Item 6' },\n    { id: 6, name: 'Item 6' },\n    { id: 6, name: 'Item 6' },\n    { id: 6, name: 'Item 6' },\n  ];\n\n  @Input() itemType: any = CardComponent;\n  @ViewChild('dynamic', { static: true, read: ViewContainerRef }) dynHost: any;\n  public componentRef: ComponentRef<any> | undefined;\n\n  visibleItems: any[] = [];\n  scrollPosition: number = 0;\n  scrollDirection: number = 0;\n  scrollInterval!: any;\n  scrollSpeed: number = 20;\n  isCollapsed: boolean = true;\n  isMobile: boolean = false;\n\n  canScrollLeft: boolean = false;\n  canScrollRight: boolean = true;\n\n  constructor(\n    private breakpointObserver: BreakpointObserver,\n    public componentFactoryResolver: ComponentFactoryResolver\n  ) {}\n\n  ngOnInit(): void {\n    // Observe screen size\n    this.breakpointObserver\n      .observe([Breakpoints.HandsetPortrait])\n      .subscribe((result) => {\n        this.isMobile = result.matches;\n        this.updateVisibleItems();\n      });\n    this.updateScrollLimits();\n    this.loadComponent();\n  }\n\n  startScroll(direction: number): void {\n    this.scrollDirection = direction;\n\n    this.scrollInterval = setInterval(() => {\n      const trackWidth =\n        this.carouselTrack.nativeElement.scrollWidth -\n        this.carouselTrack.nativeElement.offsetWidth;\n\n      if (\n        (this.scrollDirection === -1 && this.scrollPosition <= 0) ||\n        (this.scrollDirection === 1 && this.scrollPosition >= trackWidth)\n      ) {\n        this.stopScroll();\n        return;\n      }\n\n      this.scrollPosition += this.scrollSpeed * this.scrollDirection;\n      this.updateScrollLimits();\n    }, 1);\n  }\n\n  stopScroll(): void {\n    clearInterval(this.scrollInterval);\n    this.scrollDirection = 0;\n  }\n\n  updateVisibleItems(): void {\n    this.visibleItems =\n      this.isMobile && this.isCollapsed ? this.items.slice(0, 3) : this.items;\n  }\n\n  toggleView(): void {\n    if (this.isMobile) {\n      this.isCollapsed = !this.isCollapsed;\n      this.updateVisibleItems();\n    }\n  }\n\n  updateScrollLimits(): void {\n    const trackWidth =\n      this.carouselTrack.nativeElement.scrollWidth -\n      this.carouselTrack.nativeElement.offsetWidth;\n\n    this.canScrollLeft = this.scrollPosition > 0;\n    this.canScrollRight = this.scrollPosition < trackWidth;\n  }\n\n  /**\n   * Load dynamicly row component.\n   */\n  private loadComponent(): void {\n    this.dynHost.clear();\n    const factory: ComponentFactory<any> =\n      this.componentFactoryResolver.resolveComponentFactory(this.itemType);\n\n    this.componentRef = this.dynHost.createComponent(factory);\n    this.componentRef!.location.nativeElement.setAttribute(\n      'style',\n      'width: 100%'\n    );\n  }\n}\n",
+            "styleUrl": "./carousel.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "breakpointObserver",
+                        "type": "BreakpointObserver",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "componentFactoryResolver",
+                        "type": "ComponentFactoryResolver",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 52,
+                "jsdoctags": [
+                    {
+                        "name": "breakpointObserver",
+                        "type": "BreakpointObserver",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "componentFactoryResolver",
+                        "type": "ComponentFactoryResolver",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "templateData": "<div class=\"carousel\">\n  <button\n    class=\"nav-button prev\"\n    [disabled]=\"!canScrollLeft\"\n    (mousedown)=\"startScroll(-1)\"\n    (mouseup)=\"stopScroll()\"\n    (mouseleave)=\"stopScroll()\"\n  >\n    <span class=\"material-symbols-outlined\">chevron_left</span>\n  </button>\n\n  <div class=\"carousel-container\">\n    <div class=\"header\">\n      <span class=\"material-symbols-outlined icon\">note_stack</span>\n      <h3>Carousel Title</h3>\n    </div>\n\n    <div class=\"carousel-track-wrapper\">\n      <div\n        class=\"carousel-track\"\n        #carouselTrack\n        [style.transform]=\"'translateX(-' + scrollPosition + 'px)'\"\n      >\n        <div class=\"carousel-item\" *ngFor=\"let item of visibleItems\">\n          <ng-container *ngIf=\"itemType\">\n            <ng-container *ngComponentOutlet=\"itemType\"></ng-container>\n          </ng-container>\n        </div>\n      </div>\n\n      <div class=\"toggle-button\">\n        <a (click)=\"toggleView()\">\n          {{ isCollapsed ? \"See All Items\" : \"Collapse\" }}\n        </a>\n      </div>\n    </div>\n  </div>\n\n  <button\n    class=\"nav-button next\"\n    (mousedown)=\"startScroll(1)\"\n    (mouseup)=\"stopScroll()\"\n    (mouseleave)=\"stopScroll()\"\n    [disabled]=\"!canScrollRight\"\n  >\n    <span class=\"material-symbols-outlined\">chevron_right</span>\n  </button>\n</div>\n"
+        },
+        {
             "name": "CenterTabBarComponent",
             "id": "component-CenterTabBarComponent-32757171ab5ee14b7010a6f64484c81ac5eb39992539fc3e4a4c3a82afcf44fa90f7dd937574bb863a50c7cced15322157d3909684b729ee872a4faa04235814",
             "file": "src/app/components/shared/center-tab-bar/center-tab-bar.component.ts",
@@ -1337,7 +1705,7 @@
         },
         {
             "name": "DashboardComponent",
-            "id": "component-DashboardComponent-31db7f3a210284241263522e8625b9859f871e254916c21715d2fa795d3272b17cd2c2a05b825ab159b06810490a304bdbd0b852f549803cbac294b2fd1beba5",
+            "id": "component-DashboardComponent-5765d2b2b2a348f525c4d2c191c23df7a1385c3facbf38f459f6ee382eb400940b8b0b82e812d2c6509506f414c95fede58cfaee984bd9f7e09325439c863ea5",
             "file": "src/app/components/dashboard/dashboard.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1364,10 +1732,21 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 16,
+                    "line": 17,
                     "modifierKind": [
                         123
                     ]
+                },
+                {
+                    "name": "items",
+                    "defaultValue": "[\n    { id: 1, name: 'Item 1' },\n    { id: 2, name: 'Item 2' },\n    { id: 3, name: 'Item 3' },\n    { id: 4, name: 'Item 4' },\n    { id: 5, name: 'Item 5' },\n    { id: 6, name: 'Item 6' },\n    { id: 6, name: 'Item 6' },\n    { id: 6, name: 'Item 6' },\n    { id: 6, name: 'Item 6' },\n    { id: 6, name: 'Item 6' },\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
                 },
                 {
                     "name": "router",
@@ -1378,7 +1757,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 17,
+                    "line": 18,
                     "modifierKind": [
                         123
                     ]
@@ -1391,7 +1770,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 19,
+                    "line": 33,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -1403,20 +1782,24 @@
             "standalone": true,
             "imports": [
                 {
-                    "name": "CenterTabBarComponent",
+                    "name": "CarouselComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "CardComponent",
                     "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { inject } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { AuthService } from '../../services/auth.service';\nimport { CenterTabBarComponent } from '../shared/center-tab-bar/center-tab-bar.component';\n\n@Component({\n  selector: 'app-dashboard',\n  standalone: true,\n  imports: [CenterTabBarComponent],\n  templateUrl: './dashboard.component.html',\n  styleUrl: './dashboard.component.scss',\n})\nexport class DashboardComponent {\n  private authService = inject(AuthService);\n  private router = inject(Router);\n\n  logout(): void {\n    this.authService.logout();\n    this.router.navigate(['/login']);\n  }\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { inject } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { AuthService } from '../../services/auth.service';\nimport { CarouselComponent } from '../shared/carousel/carousel.component';\nimport { CardComponent } from '../shared/card/card.component';\n\n@Component({\n  selector: 'app-dashboard',\n  standalone: true,\n  imports: [CarouselComponent, CardComponent],\n  templateUrl: './dashboard.component.html',\n  styleUrl: './dashboard.component.scss',\n})\nexport class DashboardComponent {\n  private authService = inject(AuthService);\n  private router = inject(Router);\n\n  items: any[] = [\n    { id: 1, name: 'Item 1' },\n    { id: 2, name: 'Item 2' },\n    { id: 3, name: 'Item 3' },\n    { id: 4, name: 'Item 4' },\n    { id: 5, name: 'Item 5' },\n    { id: 6, name: 'Item 6' },\n    { id: 6, name: 'Item 6' },\n    { id: 6, name: 'Item 6' },\n    { id: 6, name: 'Item 6' },\n    { id: 6, name: 'Item 6' },\n  ];\n\n  logout(): void {\n    this.authService.logout();\n    this.router.navigate(['/login']);\n  }\n}\n",
             "styleUrl": "./dashboard.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"container\">\n  <h2>Dashboard</h2>\n  <button (click)=\"logout()\">Logout</button>\n  <p>Welcome to your dashboard!</p>\n  <app-center-tab-bar></app-center-tab-bar>\n</div>\n"
+            "templateData": "<div class=\"container\">\n  <h2>Dashboard</h2>\n  <button (click)=\"logout()\">Logout</button>\n  <p>Welcome to your dashboard!</p>\n  <app-carousel> </app-carousel>\n</div>\n"
         },
         {
             "name": "FooterComponent",
@@ -2770,6 +3153,16 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/carousel.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/center-tab-bar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3035,6 +3428,16 @@
                 "deprecationMessage": "",
                 "type": "StoryFn",
                 "defaultValue": "(args) => ({\n  component: CardComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/carousel.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryFn",
+                "defaultValue": "(args) => ({\n  component: CarouselComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -3479,6 +3882,28 @@
                     "deprecationMessage": "",
                     "type": "StoryFn",
                     "defaultValue": "(args) => ({\n  component: CardComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/stories/carousel.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/carousel.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/carousel.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryFn",
+                    "defaultValue": "(args) => ({\n  component: CarouselComponent,\n  props: args,\n})"
                 }
             ],
             "src/stories/center-tab-bar.stories.ts": [
@@ -3992,7 +4417,7 @@
                 "linktype": "component",
                 "name": "DashboardComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -4083,6 +4508,15 @@
                 "name": "CardComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/shared/carousel/carousel.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CarouselComponent",
+                "coveragePercent": 4,
+                "coverageCount": "1/24",
                 "status": "low"
             },
             {
@@ -4400,6 +4834,26 @@
             },
             {
                 "filePath": "src/stories/card.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/carousel.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/carousel.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

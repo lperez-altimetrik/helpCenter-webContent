@@ -1,0 +1,48 @@
+<div class="carousel">
+  <button
+    class="nav-button prev"
+    [disabled]="!canScrollLeft"
+    (mousedown)="startScroll(-1)"
+    (mouseup)="stopScroll()"
+    (mouseleave)="stopScroll()"
+  >
+    <span class="material-symbols-outlined">chevron_left</span>
+  </button>
+
+  <div class="carousel-container">
+    <div class="header">
+      <span class="material-symbols-outlined icon">note_stack</span>
+      <h3>Carousel Title</h3>
+    </div>
+
+    <div class="carousel-track-wrapper">
+      <div
+        class="carousel-track"
+        #carouselTrack
+        [style.transform]="'translateX(-' + scrollPosition + 'px)'"
+      >
+        <div class="carousel-item" *ngFor="let item of visibleItems">
+          <ng-container *ngIf="itemType">
+            <ng-container *ngComponentOutlet="itemType"></ng-container>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="toggle-button">
+        <a (click)="toggleView()">
+          {{ isCollapsed ? "See All Items" : "Collapse" }}
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <button
+    class="nav-button next"
+    (mousedown)="startScroll(1)"
+    (mouseup)="stopScroll()"
+    (mouseleave)="stopScroll()"
+    [disabled]="!canScrollRight"
+  >
+    <span class="material-symbols-outlined">chevron_right</span>
+  </button>
+</div>
