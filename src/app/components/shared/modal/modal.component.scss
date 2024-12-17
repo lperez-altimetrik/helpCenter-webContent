@@ -25,12 +25,19 @@ mat-card {
         font-size: 18px;
         font-weight: 400;
         margin-bottom: 4px;
+
+        @include respond-to("mobile-mb") {
+          font-size: 14px;
+        }
       }
 
       .subtitle {
         color: var(--hc-color-fg-tertiary);
         font-size: 12px;
         font-weight: 300;
+        @include respond-to("mobile-mb") {
+          font-size: 12px;
+        }
       }
     }
 
