@@ -1,0 +1,118 @@
+@import "./../../../../styles/mixins.scss";
+
+mat-card {
+  display: flex;
+  width: 100%;
+  max-width: 501px;
+  box-shadow: none;
+  border: 1px solid var(--hc-color-bg-secondary);
+
+  .header-container {
+    display: flex;
+    flex-direction: row;
+    padding: var(--spacing-7);
+    padding-bottom: 0;
+    gap: var(--spacing-6);
+
+    mat-card-header {
+      padding: 0;
+      width: 100%;
+
+      .title {
+        width: 100%;
+        height: auto;
+        color: var(--hc-color-fg-primary);
+        font-size: 18px;
+        font-weight: 400;
+        margin-bottom: 4px;
+
+        @include respond-to("mobile-mb") {
+          font-size: 14px;
+        }
+      }
+
+      .subtitle {
+        color: var(--hc-color-fg-tertiary);
+        font-size: 12px;
+        font-weight: 300;
+        @include respond-to("mobile-mb") {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .up-arrow {
+      display: flex;
+      width: 28px;
+      height: 28px;
+      color: var(--hc-primary-color);
+      background-color: var(--hc-color-paysafe-blue-05);
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    .arrow-icon {
+      font-size: var(--spacing-6);
+    }
+
+    .close {
+      display: flex;
+      color: var(--hc-color-fg-tertiary);
+      width: 20px;
+      height: 20px;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+  }
+
+  mat-card-content {
+    padding: var(--spacing-7);
+
+    p {
+      margin-top: 0;
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--hc-color-fg-secondary);
+    }
+  }
+
+  mat-card-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: var(--spacing-5);
+    padding-right: var(--spacing-7);
+    padding-left: var(--spacing-7);
+    padding-bottom: var(--spacing-7);
+    gap: var(--spacing-5);
+
+    @include respond-to("mobile-mb") {
+      justify-content: space-between;
+    }
+
+    .primary-button {
+      min-width: 80px;
+      color: white;
+      background-color: var(--hc-primary-color);
+      font-weight: 400;
+      font-size: 14px;
+      padding: var(--spacing-3);
+    }
+
+    .secondary-button {
+      min-width: 80px;
+      background-color: var(--hc-color-bg-secondary);
+      font-weight: 400;
+      font-size: 14px;
+      padding: var(--spacing-3);
+    }
+  }
+}

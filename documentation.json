@@ -645,7 +645,7 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"article-index-container\">\n    <label class=\"top-text\">\n        In this article\n    </label>\n    <div class=\"content-container\">\n        @for (articleLink of articleLinks; track articleLink.title) {\n            <div class=\"link-content\">\n                <label class=\"article-link\" (click)=\"onLinkClick($event, articleLink.url)\">{{ articleLink.title }}</label>\n            </div>\n        }  \n    </div>\n</div>\n<div class=\"article-index-container-mb\">\n    <mat-expansion-panel [(expanded)]=\"articlePanelOpened\" class=\"article-select\">\n        <mat-expansion-panel-header class=\"article-select-header\">\n        <mat-panel-title class=\"article-selected-option\"> {{selectedSectionTitle || \"In this article\"}} </mat-panel-title>\n        </mat-expansion-panel-header>\n        @for (articleLink of articleLinks; track articleLink.title) {\n            <div class=\"article-option\" (click)=\"changeOption(articleLink)\">\n                <span class=\"article-option-text\">\n                    {{articleLink.title}}\n                </span>\n            </div>\n        }  \n    </mat-expansion-panel>\n</div>"
+            "templateData": "<div class=\"article-index-container\">\n    <label class=\"top-text\">\n        In this article\n    </label>\n    <div class=\"content-container\">\n        @for (articleLink of articleLinks; track articleLink.title) {\n            <div class=\"link-content\" (click)=\"onLinkClick($event, articleLink.url)\">\n                <label class=\"article-link\" >{{ articleLink.title }}</label>\n            </div>\n        }  \n    </div>\n</div>\n<div class=\"article-index-container-mb\">\n    <mat-expansion-panel [(expanded)]=\"articlePanelOpened\" class=\"article-select\">\n        <mat-expansion-panel-header class=\"article-select-header\">\n        <mat-panel-title class=\"article-selected-option\"> {{selectedSectionTitle || \"In this article\"}} </mat-panel-title>\n        </mat-expansion-panel-header>\n        @for (articleLink of articleLinks; track articleLink.title) {\n            <div class=\"article-option\" (click)=\"changeOption(articleLink)\">\n                <span class=\"article-option-text\">\n                    {{articleLink.title}}\n                </span>\n            </div>\n        }  \n    </mat-expansion-panel>\n</div>"
         },
         {
             "name": "ArticleSectionTitleComponent",
@@ -1705,7 +1705,7 @@
         },
         {
             "name": "DashboardComponent",
-            "id": "component-DashboardComponent-5765d2b2b2a348f525c4d2c191c23df7a1385c3facbf38f459f6ee382eb400940b8b0b82e812d2c6509506f414c95fede58cfaee984bd9f7e09325439c863ea5",
+            "id": "component-DashboardComponent-735db4b4e192818787b2cf6ab3bb6726b29c1a55f4f816a2ffa3f5e18e240fc30dd556591f92bfdd1eff8b367674ab1656af9c2875395627afe9cc0c7c55375a",
             "file": "src/app/components/dashboard/dashboard.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1732,7 +1732,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 17,
+                    "line": 16,
                     "modifierKind": [
                         123
                     ]
@@ -1746,7 +1746,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 20
+                    "line": 19
                 },
                 {
                     "name": "router",
@@ -1757,7 +1757,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 18,
+                    "line": 17,
                     "modifierKind": [
                         123
                     ]
@@ -1770,7 +1770,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 33,
+                    "line": 32,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -1782,24 +1782,20 @@
             "standalone": true,
             "imports": [
                 {
-                    "name": "CarouselComponent",
-                    "type": "component"
-                },
-                {
-                    "name": "CardComponent",
+                    "name": "ModalComponent",
                     "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { inject } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { AuthService } from '../../services/auth.service';\nimport { CarouselComponent } from '../shared/carousel/carousel.component';\nimport { CardComponent } from '../shared/card/card.component';\n\n@Component({\n  selector: 'app-dashboard',\n  standalone: true,\n  imports: [CarouselComponent, CardComponent],\n  templateUrl: './dashboard.component.html',\n  styleUrl: './dashboard.component.scss',\n})\nexport class DashboardComponent {\n  private authService = inject(AuthService);\n  private router = inject(Router);\n\n  items: any[] = [\n    { id: 1, name: 'Item 1' },\n    { id: 2, name: 'Item 2' },\n    { id: 3, name: 'Item 3' },\n    { id: 4, name: 'Item 4' },\n    { id: 5, name: 'Item 5' },\n    { id: 6, name: 'Item 6' },\n    { id: 6, name: 'Item 6' },\n    { id: 6, name: 'Item 6' },\n    { id: 6, name: 'Item 6' },\n    { id: 6, name: 'Item 6' },\n  ];\n\n  logout(): void {\n    this.authService.logout();\n    this.router.navigate(['/login']);\n  }\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { inject } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { AuthService } from '../../services/auth.service';\nimport { ModalComponent } from '../shared/modal/modal.component';\n\n@Component({\n  selector: 'app-dashboard',\n  standalone: true,\n  imports: [ModalComponent],\n  templateUrl: './dashboard.component.html',\n  styleUrl: './dashboard.component.scss',\n})\nexport class DashboardComponent {\n  private authService = inject(AuthService);\n  private router = inject(Router);\n\n  items: any[] = [\n    { id: 1, name: 'Item 1' },\n    { id: 2, name: 'Item 2' },\n    { id: 3, name: 'Item 3' },\n    { id: 4, name: 'Item 4' },\n    { id: 5, name: 'Item 5' },\n    { id: 6, name: 'Item 6' },\n    { id: 6, name: 'Item 6' },\n    { id: 6, name: 'Item 6' },\n    { id: 6, name: 'Item 6' },\n    { id: 6, name: 'Item 6' },\n  ];\n\n  logout(): void {\n    this.authService.logout();\n    this.router.navigate(['/login']);\n  }\n}\n",
             "styleUrl": "./dashboard.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"container\">\n  <h2>Dashboard</h2>\n  <button (click)=\"logout()\">Logout</button>\n  <p>Welcome to your dashboard!</p>\n  <app-carousel> </app-carousel>\n</div>\n"
+            "templateData": "<div class=\"container\">\n  <h2>Dashboard</h2>\n  <button (click)=\"logout()\">Logout</button>\n  <p>Welcome to your dashboard!</p>\n  <app-modal></app-modal>\n</div>\n"
         },
         {
             "name": "FooterComponent",
@@ -2192,6 +2188,57 @@
             "extends": []
         },
         {
+            "name": "ModalComponent",
+            "id": "component-ModalComponent-14b1fca6fd96da00296b04916a6a8e7a7525e4d6bd5754571ae4e9a7952a55103ea5823c60032c078b56559013f9257fb3cec08018b57ea7710254d1a3fe81de",
+            "file": "src/app/components/shared/modal/modal.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-modal",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./modal.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "MatCardModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatButtonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatIconModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { MatCardModule } from '@angular/material/card';\nimport { MatButtonModule } from '@angular/material/button';\nimport { MatIconModule } from '@angular/material/icon';\n\n@Component({\n  selector: 'app-modal',\n  standalone: true,\n  imports: [MatCardModule, MatButtonModule, MatIconModule],\n  templateUrl: './modal.component.html',\n  styleUrl: './modal.component.scss'\n})\nexport class ModalComponent {\n\n}\n",
+            "styleUrl": "./modal.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<mat-card>\n  <div class=\"header-container\">\n    <button mat-icon-button type=\"button\" class=\"up-arrow\">\n      <span class=\"material-symbols-outlined arrow-icon\"> arrow_upward </span>\n    </button>\n    <mat-card-header>\n      <mat-card-title class=\"title\">Title</mat-card-title>\n      <mat-card-subtitle class=\"subtitle\">Subtitle</mat-card-subtitle>\n    </mat-card-header>\n    <button mat-icon-button type=\"button\" class=\"close\">\n      <span class=\"material-symbols-outlined\"> close </span>\n    </button>\n  </div>\n  <mat-card-content>\n    <p>\n      We give ambitious businesses their launchpad through safe and secure\n      online payment solutionsWe give ambitious businesses their launchpad\n      through safe and secure online payment solutions\n    </p>\n  </mat-card-content>\n  <mat-card-actions>\n    <button mat-button class=\"primary-button\">Send</button>\n    <button mat-button class=\"secondary-button\">No, Thanks</button>\n  </mat-card-actions>\n</mat-card>\n"
+        },
+        {
             "name": "PageNotFoundComponent",
             "id": "component-PageNotFoundComponent-a662779557f78d80caf5dfc2075a256ef22e5303102775a34ce60614af9c7c22aec5631dce885ff7b0e31995648e20714fab75b26b604f304ad5e866609f6a1c",
             "file": "src/app/components/page-not-found/page-not-found.component.ts",
@@ -2300,6 +2347,171 @@
             "stylesData": "",
             "extends": [],
             "templateData": "<div class=\"related-articles-container\">\n    <div class=\"related-title-container\">\n        <div class=\"icon-holder\">\n            <img src=\"./../../../../assets/icons/common/note-stack-icon.svg\" width=\"22\" height=\"22\"> \n        </div>\n        <h2 class=\"related-title-bg\">Related articles</h2>\n        <h3 class=\"related-title-mb\">Related articles</h3>\n    </div>\n    <div class=\"related-articles-content\">\n        <div class=\"related-links-container\">\n            @for (relatedLink of relatedLinks; track relatedLink.title) {\n                <a class=\"link-element\" href=\"{{relatedLink.link}}\">\n                    <span class=\"related-link\">{{ relatedLink.title }}</span>\n                    <mat-icon class=\"arrow-outward-icon\" fontIcon=\"arrow_outward\"></mat-icon>\n                </a>\n            }      \n        </div>\n        <button class=\"view-more-btn\" (click)=\"onClickViewMore()\">\n            View More\n            <mat-icon class=\"arrow-outward-icon\" fontIcon=\"arrow_forward\"></mat-icon>\n        </button>\n    </div>\n</div>"
+        },
+        {
+            "name": "SearchBarComponent",
+            "id": "component-SearchBarComponent-21eb9a34a6fa7d9631ca387ecb8992fb6e03995bb3a5f4185c8ac441478ad29351e1a928b0033f1e7b4f11e698bc5f12346ded8521d506b52a9b33a1c1ac3064",
+            "file": "src/app/components/shared/search-bar/search-bar.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-search-bar",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./search-bar.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "options",
+                    "defaultValue": "[\n    'Paysafe Glossary of Payment Terms for Merchants', \n    'Paysafe Glossary of Payment Terms for Merchants', \n    'Paysafe Glossary of Payment Terms for Merchants',\n    'Paysafe Glossary of Payment Terms for Merchants'\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "string[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "filteredOptions",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 28
+                },
+                {
+                    "name": "isPanelOpened",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 21
+                },
+                {
+                    "name": "searchString",
+                    "defaultValue": "new FormControl('')",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "_filter",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string[]",
+                    "typeParameters": [],
+                    "line": 43,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "cleanSearch",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 38,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onClosedEvent",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 34,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onSearchChange",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 30,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatFormFieldModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatInputModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatAutocompleteModule",
+                    "type": "module"
+                },
+                {
+                    "name": "ReactiveFormsModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from '@angular/core';\nimport {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';\nimport {MatAutocompleteModule} from '@angular/material/autocomplete';\nimport {MatInputModule} from '@angular/material/input';\nimport {MatFormFieldModule} from '@angular/material/form-field';\n\n@Component({\n  selector: 'app-search-bar',\n  standalone: true,\n  imports: [FormsModule,\n    MatFormFieldModule,\n    MatInputModule,\n    MatAutocompleteModule,\n    ReactiveFormsModule,\n    ],\n  templateUrl: './search-bar.component.html',\n  styleUrl: './search-bar.component.scss'\n})\nexport class SearchBarComponent {\n  searchString = new FormControl('');\n  isPanelOpened = false;\n  @Input() options: string[] = [\n    'Paysafe Glossary of Payment Terms for Merchants', \n    'Paysafe Glossary of Payment Terms for Merchants', \n    'Paysafe Glossary of Payment Terms for Merchants',\n    'Paysafe Glossary of Payment Terms for Merchants'\n  ];\n  filteredOptions: any[] = [];\n\n  onSearchChange() {\n    this.filteredOptions = this._filter(this.searchString.value || \"\");\n  }\n\n  onClosedEvent(){\n    this.isPanelOpened = false;\n  }\n\n  cleanSearch(){\n    this.searchString.setValue(\"\"); \n    this.filteredOptions = this._filter(\"\");\n  }\n\n  private _filter(value: string): string[] {\n    const filterValue = value.toLowerCase();\n    const filteredItems = this.options.filter(option => option.toLowerCase().includes(filterValue));\n    this.isPanelOpened = filteredItems.length != 0;\n    return filteredItems;\n  }\n\n}\n",
+            "styleUrl": "./search-bar.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<mat-form-field [class.search-bar-container]=\"isPanelOpened\" #matSelect = 'matFormField'>\n    <span class=\"material-symbols-outlined search-icon\">search</span>\n    <input type=\"text\"\n            placeholder=\"Search\"\n            class=\"search-input\"\n            matInput\n            (input)=\"onSearchChange()\"\n            (click)=\"onSearchChange()\"\n            [formControl]=\"searchString\"\n            [matAutocomplete]=\"auto\">\n    <span class=\"material-symbols-outlined close-icon\" (click)=\"cleanSearch()\">close</span>\n    <mat-autocomplete #auto=\"matAutocomplete\" class=\"autocomplete-container\" (closed)=\"onClosedEvent()\" >\n        <div class=\"divider-line\"></div>\n        <span class=\"option-header\">Popular articles</span>\n        <div class=\"options-list\">\n            @for (option of filteredOptions; track option) {\n                <mat-option [value]=\"option\" class=\"option-container\">\n                    <span class=\"material-symbols-outlined search-icon\">search</span>\n                    <span class=\"option-text\">{{option}}</span>\n                </mat-option>\n            }\n        </div>\n    </mat-autocomplete>\n</mat-form-field>"
         },
         {
             "name": "SearchComponentComponent",
@@ -3253,6 +3465,16 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/modal.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/page-not-found.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3264,6 +3486,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/related-article.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/search-bar-component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -3533,6 +3765,16 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/modal.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryFn",
+                "defaultValue": "(args) => ({\n  component: ModalComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/page-not-found.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3548,6 +3790,16 @@
                 "deprecationMessage": "",
                 "type": "StoryFn",
                 "defaultValue": "(args) => ({\n  component: RelatedArticlesComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/search-bar-component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryFn",
+                "defaultValue": "(args) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -4104,6 +4356,28 @@
                     "defaultValue": "(args) => ({\n  props: args,\n})"
                 }
             ],
+            "src/stories/modal.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/modal.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/modal.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryFn",
+                    "defaultValue": "(args) => ({\n  component: ModalComponent,\n  props: args,\n})"
+                }
+            ],
             "src/stories/page-not-found.component.stories.ts": [
                 {
                     "name": "Default",
@@ -4146,6 +4420,28 @@
                     "deprecationMessage": "",
                     "type": "StoryFn",
                     "defaultValue": "(args) => ({\n  component: RelatedArticlesComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/stories/search-bar-component.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/search-bar-component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/search-bar-component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryFn",
+                    "defaultValue": "(args) => ({\n  props: args,\n})"
                 }
             ],
             "src/stories/search-component.component.stories.ts": [
@@ -4583,12 +4879,30 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/components/shared/modal/modal.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ModalComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/components/shared/related-articles/related-articles.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "RelatedArticlesComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/shared/search-bar/search-bar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SearchBarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {
@@ -5043,6 +5357,26 @@
                 "status": "low"
             },
             {
+                "filePath": "src/stories/modal.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/modal.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/stories/page-not-found.component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -5074,6 +5408,26 @@
             },
             {
                 "filePath": "src/stories/related-article.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/search-bar-component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/search-bar-component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
