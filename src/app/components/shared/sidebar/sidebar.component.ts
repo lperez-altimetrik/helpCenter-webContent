@@ -171,11 +171,15 @@ export class SidebarComponent {
   
 
   public onMenuItemClick(event: any){
+    let eventTarget = event.target;
+    if(event.target.childElementCount == 1){
+      eventTarget = eventTarget.firstChild;
+    }
     if (this.currentActiveItem !== null){
       this.currentActiveItem.classList.remove('menu-element-active');
     }
-    event.target.parentElement.classList.add('menu-element-active');
-    this.currentActiveItem = event.target.parentElement;
+    eventTarget.parentElement.classList.add('menu-element-active');
+    this.currentActiveItem = eventTarget.parentElement;
   }
   
   public changeOption (option: any){

@@ -42,8 +42,8 @@
                     </mat-expansion-panel-header>
                     <mat-nav-list>
                         @for (menuItem of menuElement.menuItems; track menuItem.title) {
-                            <div class="menu-link-element" >
-                                <label class="link-element-title" (click)="onMenuItemClick($event)">{{menuItem.title}}</label>
+                            <div class="menu-link-element" (click)="onMenuItemClick($event)">
+                                <label class="link-element-title" >{{menuItem.title}}</label>
                             </div>
                         }
                     </mat-nav-list>
