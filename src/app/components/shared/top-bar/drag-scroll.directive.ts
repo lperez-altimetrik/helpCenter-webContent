@@ -9,17 +9,13 @@ export class DragScrollDirective {
   private startX: number = 0;
   private scrollLeft: number = 0;
 
-
   constructor(private el: ElementRef) { }
-
 
   @HostListener('mousedown', ['$event'])
   onMouseDown(event: MouseEvent) {
     this.isDragging = true;
     this.startX = event.pageX - this.el.nativeElement.firstChild.offsetLeft;
     this.scrollLeft = this.el.nativeElement.firstChild.scrollLeft;
-    
-
   }
 
   @HostListener('mousemove', ['$event'])

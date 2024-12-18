@@ -3,12 +3,13 @@
 
 :host ::ng-deep .mat-mdc-chip-listbox 
     .mdc-evolution-chip-set__chips {
+    display: flex;
     flex-direction: row;
     max-width: 100%;
     flex-wrap: nowrap;
-    overflow-x: visible;
-    gap: 8px;
+    gap: var(--spacing-3);
     margin-left: 0;
+    //overflow-x: visible;
     overflow-y: hidden;
     //white-space: nowrap;
     
@@ -21,6 +22,30 @@
     display: none; /* Safari + Chrome */
 }
 
+
+:host ::ng-deep .mat-mdc-standard-chip.mdc-evolution-chip--selected:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__text-label {
+    color: var(--hc-link-color);
+}
+
+/*
+:host ::ng-deep .mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__text-label {
+    color: var(--hc-link-color);
+}
+
+:host ::ng-deep .mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__text-label {
+    color: blue;
+}
+
+:host ::ng-deep .mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__text-label {
+    color: orange;
+}
+*/
+//test
+:host ::ng-deep .mat-mdc-standard-chip.mdc-evolution-chip--selected:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__text-label .mat-mdc-chip-selected.mdc-evolution-chip--selected {
+    color: var(--hc-link-color)!important;
+    background-color: #fff !important;
+}
+
 :host ::ng-deep .mdc-evolution-chip__graphic.mat-mdc-chip-graphic {
     display: none;
 }
@@ -29,57 +54,62 @@
     padding-right: 0px;
 }
 
+:host ::ng-deep .mat-mdc-chip-selected.mdc-evolution-chip--selected {
+    color: var(--hc-link-color)!important;
+    background-color: #fff !important;
+}
+
+
+:host ::ng-deep .mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__text-label:active {
+    color: var(--hc-link-color);
+}
+
 :host ::ng-deep .mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__text-label {
     color:  var(--hc-color-paysafe-blue-05);
 }
 
-.pill-container { 
-    justify-content: center;
+/* Pill styles */
+:host ::ng-deep .mdc-evolution-chip__action.mat-mdc-chip-action.mdc-evolution-chip__action--primary {
+    margin: 0;
+    max-height: 33px;
     box-sizing: border-box;
-    flex-direction: row;
-    max-width: 650px;
-    max-height: fit-content;
+    padding: var(--spacing-2) var(--spacing-5) var(--spacing-2) var(--spacing-5);
+}
+
+.pill-container {
     margin-bottom: var(--spacing-8);
-    white-space: nowrap;
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: visible;
-    overflow-y: hidden;
-    gap: var(--spacing-3);
-    -ms-text-overflow: none; /* IE10+ */
-    scrollbar-width: none; /* Firefox */
 
     .pill {
-
-        margin: 0;
-        max-height: 26px;
-        box-sizing: border-box;
-
         color: var(--hc-color-paysafe-blue-05);
         background: var(--hc-color-paysafe-blue-50);
-
+        margin: 0;
+        --mdc-chip-container-height: 33px;
         font-size: var(--spacing-5);
         border-radius: var(--spacing-99);
-        padding: var(--spacing-2) var(--spacing-5) var(--spacing-2) var(--spacing-5);
         border: none;
         line-height: normal;
         font-weight: normal;
-        height: fit-content;
-        cursor: pointer;
+    }
+
+    .pill:active {
+        background-color: #fff;
+        color: var(--hc-link-color);
     }
 
     .pill-spacer {
-        display: none;
+        //display: none;
+        display: flex;
+        justify-content: flex-end;
+        width: var(--spacing-8);
+        margin: 0;
         max-height: 26px;
-        font-size: var(--spacing-5);
-        padding: var(--spacing-2) var(--spacing-5) var(--spacing-2) var(--spacing-5);
-        border: none;
-        box-sizing: border-box;
         opacity: 0;
         cursor: default;
         pointer-events: none;
+        /*
         @include respond-to("mobile-mb") {
-            display: inline-block;
+            display: flex;
         }
+        */
     }    
 }

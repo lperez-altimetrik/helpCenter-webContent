@@ -229,25 +229,6 @@ $inter-size-9: 480px;
             }
         }
 
-        .pill-container {
-            flex-direction: row;
-            max-width: 100%;
-            max-height: fit-content;
-            margin-bottom: var(--spacing-8);
-            white-space: nowrap;
-            display: flex;
-            flex-wrap: nowrap;
-            overflow-x: visible;
-            overflow-y: hidden;
-            gap: var(--spacing-3);
-            -ms-text-overflow: none; /* IE10+ */
-            scrollbar-width: none; /* Firefox */
-
-            app-pill { 
-                display: inline-block;
-            }
-        }
-
         .pill-bar-container {
             box-sizing: border-box;
             display: flex;
@@ -257,11 +238,6 @@ $inter-size-9: 480px;
                 box-sizing: border-box;
                 max-width: 100%;
             }
-        }
-        
-
-        .pill-container::-webkit-scrollbar {
-            display: none; /* Safari + Chrome */
         }
 
     }
