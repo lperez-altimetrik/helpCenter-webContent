@@ -1,0 +1,61 @@
+<app-top-bar></app-top-bar>
+<div class="content-container">
+    <div>
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="article-root">
+        <div class="article-container">
+            <div class="inner-content">
+                <app-breadcrum [pagesPath]="pagesPath" [currentElement]="currentElement"></app-breadcrum>
+                <section>
+                    <app-title title="Payment Link"></app-title>
+                    <app-subtitle></app-subtitle>
+                    <app-contextual-message
+                        message="Lorem ipsum dolor sit amet consectetur. Turpis pharetra aliquet amet praesent ipsum eleifend suspendisse. Sed et posuere elementum mattis non sit amet aenean lacus. Quis donec id gravida habitasse tristique. Sed orci cras consectetur nisi morbi."
+                        title="Message title"
+                        state="Warning"
+                    ></app-contextual-message>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni quam sit numquam expedita sint, nihil iusto placeat unde dolorum quibusdam commodi sed corrupti, dolore aperiam. Assumenda maiores at saepe deleniti!, Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, voluptatem blanditiis, ut, iure porro veniam soluta at quod voluptatibus libero impedit autem repellendus nam eveniet cumque sapiente. Deserunt, natus harum?, Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, voluptatem blanditiis, ut, iure porro veniam soluta at quod voluptatibus libero impedit autem repellendus nam eveniet cumque sapiente. Deserunt, natus harum?</p>
+                </section>
+                <section>
+                    <app-article-section-title title="Why use a Payment Link?"></app-article-section-title>
+                    <div>
+                        <ul>
+                          <li>freeCodeCamp</li>
+                          <li>CSS-Tricks</li>
+                          <li>Traversy Media</li>
+                        </ul>
+                      </div>
+                    <app-contextual-message
+                        message="Lorem ipsum dolor sit amet consectetur. Turpis pharetra aliquet amet praesent ipsum eleifend suspendisse. Sed et posuere elementum mattis non sit amet aenean lacus. Quis donec id gravida habitasse tristique. Sed orci cras consectetur nisi morbi."
+                        title="Message title"
+                    ></app-contextual-message>
+                </section>
+                <section>
+                    <app-article-section-title title="Steps to Create and Share a Payment Link"></app-article-section-title>
+                    <app-accordion></app-accordion>
+                    <app-accordion></app-accordion>
+                    <app-accordion></app-accordion>
+                    <app-accordion></app-accordion>
+                </section>
+                <section>
+                    <app-article-section-title title="QR Codes"></app-article-section-title>
+                    <app-video-player></app-video-player>
+                </section>
+                <section>
+                    <app-article-section-title title="QR Codes"></app-article-section-title>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, voluptatem blanditiis, ut, iure porro veniam soluta at quod voluptatibus libero impedit autem repellendus nam eveniet cumque sapiente. Deserunt, natus harum?, Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, voluptatem blanditiis, ut, iure porro veniam soluta at quod voluptatibus libero impedit autem repellendus nam eveniet cumque sapiente. Deserunt, natus harum?, Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, voluptatem blanditiis, ut, iure porro veniam soluta at quod voluptatibus libero impedit autem repellendus nam eveniet cumque sapiente. Deserunt, natus harum?</p>
+                    <app-table></app-table>
+                    <app-image></app-image>
+                </section>
+                <app-article-feedback></app-article-feedback>
+                <app-related-articles></app-related-articles>
+            </div>
+            <div class="article-index-container">
+                <app-article-index></app-article-index>
+            </div>
+        </div>
+        <app-contact-us></app-contact-us>
+    </div>
+</div>
+<app-footer></app-footer>

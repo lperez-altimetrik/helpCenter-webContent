@@ -1,26 +1,28 @@
-<div class="article-index-container">
-    <label class="top-text">
-        In this article
-    </label>
-    <div class="content-container">
-        @for (articleLink of articleLinks; track articleLink.title) {
-            <div class="link-content" (click)="onLinkClick($event, articleLink.url)">
-                <label class="article-link" >{{ articleLink.title }}</label>
-            </div>
-        }  
+<div class="article-index-root">
+    <div class="article-index-container">
+        <label class="top-text">
+            In this article
+        </label>
+        <div class="content-container">
+            @for (articleLink of articleLinks; track articleLink.title) {
+                <div class="link-content" (click)="onLinkClick($event, articleLink.url)">
+                    <label class="article-link" >{{ articleLink.title }}</label>
+                </div>
+            }  
+        </div>
     </div>
-</div>
-<div class="article-index-container-mb">
-    <mat-expansion-panel [(expanded)]="articlePanelOpened" class="article-select">
-        <mat-expansion-panel-header class="article-select-header">
-        <mat-panel-title class="article-selected-option"> {{selectedSectionTitle || "In this article"}} </mat-panel-title>
-        </mat-expansion-panel-header>
-        @for (articleLink of articleLinks; track articleLink.title) {
-            <div class="article-option" (click)="changeOption(articleLink)">
-                <span class="article-option-text">
-                    {{articleLink.title}}
-                </span>
-            </div>
-        }  
-    </mat-expansion-panel>
+    <div class="article-index-container-mb">
+        <mat-expansion-panel [(expanded)]="articlePanelOpened" class="article-select">
+            <mat-expansion-panel-header class="article-select-header">
+            <mat-panel-title class="article-selected-option"> {{selectedSectionTitle || "In this article"}} </mat-panel-title>
+            </mat-expansion-panel-header>
+            @for (articleLink of articleLinks; track articleLink.title) {
+                <div class="article-option" (click)="changeOption(articleLink)">
+                    <span class="article-option-text">
+                        {{articleLink.title}}
+                    </span>
+                </div>
+            }  
+        </mat-expansion-panel>
+    </div>
 </div>

@@ -1,5 +1,7 @@
 @import "./../../../../styles/mixins.scss";
-
+.article-index-root{
+    //position: fixed;
+}
 .article-index-container{
     display: flex;
     width: 253px;

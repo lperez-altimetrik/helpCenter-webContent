@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
@@ -9,11 +9,9 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './breadcrumb.component.scss'
 })
 export class BreadcrumbComponent {
-  public pagesPath: any = [
+  @Input() pagesPath: any = [
     { title: "Page 1", url: "#"},
     { title: "Page 2", url: "#"},
-    { title: "Page 3", url: "#"},
-    { title: "Page 4", url: "#"}
   ]
-  public currentElement: string = "Page 5";
+  @Input() currentElement: string = "Page 3";
 }
