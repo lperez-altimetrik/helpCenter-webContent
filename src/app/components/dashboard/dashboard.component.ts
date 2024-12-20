@@ -3,12 +3,12 @@ import { Component } from '@angular/core';
 import { inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
-import { ModalComponent } from '../shared/modal/modal.component';
+import { ContactUsComponent } from '../shared/contact-us/contact-us.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [ModalComponent],
+  imports: [ContactUsComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })
