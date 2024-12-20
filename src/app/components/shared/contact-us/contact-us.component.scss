@@ -3,75 +3,79 @@
 .contact-us-container {
   padding: 0;
   margin: 40px;
-  border-radius: 20px;
+  border-radius: 8px;
+  border: 1px solid var(--hc-color-bg-primary);
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.04),
+    0px 4px 6px -1px rgba(0, 0, 0, 0.06);
 
-  .need-help-button {
-    padding: 34px 16px;
+  .need-help {
+    padding: var(--spacing-6);
     width: 100%;
-  }
-
-  .button-content {
-    display: flex;
-    align-items: center;
-
-    .mail-icon {
-      display: none;
-      @include respond-to("mobile-mb") {
-        display: flex;
-        @include icon-style();
-      }
-    }
-
-    .section {
+    .content {
+      cursor: pointer;
       display: flex;
-
-      @include respond-to("mobile-mb") {
-        display: block;
-      }
+      align-items: center;
+      justify-content: center;
 
       .mail-icon {
-        @include icon-style();
+        display: none;
         @include respond-to("mobile-mb") {
-          display: none;
+          display: flex;
+          @include icon-style();
         }
       }
 
-      .button-text {
-        font-size: 22px;
-        font-weight: 500;
+      .section {
+        display: flex;
+
         @include respond-to("mobile-mb") {
-          font-size: 14px;
+          display: block;
+        }
+
+        .mail-icon {
+          @include icon-style();
+          @include respond-to("mobile-mb") {
+            display: none;
+          }
+        }
+
+        .button-text {
+          font-size: 22px;
+          font-weight: 500;
+          @include respond-to("mobile-mb") {
+            font-size: 14px;
+          }
+        }
+
+        .mobile-icon {
+          color: var(--hc-link-color);
+          display: block;
+
+          @include respond-to("mobile-mb") {
+            display: none;
+          }
+        }
+
+        .link {
+          font-size: 18px;
+          color: var(--hc-link-color);
+          @include respond-to("mobile-mb") {
+            font-size: 12px;
+          }
+        }
+
+        .go-icon {
+          color: var(--hc-link-color);
+          @include respond-to("mobile-mb") {
+            display: none;
+          }
         }
       }
-
       .mobile-icon {
-        color: var(--hc-link-color);
-        display: block;
-
+        display: none;
         @include respond-to("mobile-mb") {
-          display: none;
+          display: block;
         }
-      }
-
-      .link {
-        font-size: 18px;
-        color: var(--hc-link-color);
-        @include respond-to("mobile-mb") {
-          font-size: 12px;
-        }
-      }
-
-      .go-icon{
-        color: var(--hc-link-color);
-        @include respond-to("mobile-mb"){
-          display: none;
-        }
-      }
-    }
-    .mobile-icon {
-      display: none;
-      @include respond-to("mobile-mb") {
-        display: block;
       }
     }
   }
