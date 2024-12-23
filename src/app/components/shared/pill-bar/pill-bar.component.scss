@@ -9,9 +9,7 @@
     flex-wrap: nowrap;
     gap: var(--spacing-3);
     margin-left: 0;
-    //overflow-x: visible;
     overflow-y: hidden;
-    //white-space: nowrap;
     
     -ms-text-overflow: none; /* IE10+ */
     scrollbar-width: none; /* Firefox */
@@ -41,6 +39,7 @@
 }
 */
 //test
+
 :host ::ng-deep .mat-mdc-standard-chip.mdc-evolution-chip--selected:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__text-label .mat-mdc-chip-selected.mdc-evolution-chip--selected {
     color: var(--hc-link-color)!important;
     background-color: #fff !important;
@@ -97,7 +96,6 @@
     }
 
     .pill-spacer {
-        //display: none;
         display: flex;
         justify-content: flex-end;
         width: var(--spacing-8);
@@ -106,10 +104,5 @@
         opacity: 0;
         cursor: default;
         pointer-events: none;
-        /*
-        @include respond-to("mobile-mb") {
-            display: flex;
-        }
-        */
     }    
 }

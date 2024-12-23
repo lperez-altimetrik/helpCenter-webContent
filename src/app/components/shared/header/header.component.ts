@@ -10,17 +10,16 @@ import { Subscription } from 'rxjs';
 import { DragScrollDirective } from './drag-scroll.directive';
 import { SearchBarComponent } from '../search-bar/search-bar.component';
 
-
 import { NgFor } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatLabel } from '@angular/material/form-field';
 import { PillBarComponent } from '../pill-bar/pill-bar.component';
-import { MatChipSelectionChange, MatChipsModule } from '@angular/material/chips';
+import { MatChipsModule } from '@angular/material/chips';
 import { FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-top-bar',
+  selector: 'app-header',
   standalone: true,
   imports: [
     MatButtonModule,
@@ -36,10 +35,10 @@ import { FormControl } from '@angular/forms';
     MatFormFieldModule, 
     MatLabel],
 
-  templateUrl: './top-bar.component.html',
-  styleUrl: './top-bar.component.scss'
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.scss'
 })
-export class TopBarComponent implements OnInit, OnDestroy {
+export class HeaderComponent implements OnInit, OnDestroy {
   private router = inject(Router);
   private authSubscription!: Subscription;
   isLoggedIn = false;
@@ -83,20 +82,6 @@ export class TopBarComponent implements OnInit, OnDestroy {
     if (message === this._query.value) this._query = new FormControl("");
     else this._query = new FormControl(message);
   }
-
-  /*
-  onChipSelect(event: MatChipSelectionChange) {
-    const val = event.source.value;
-
-    if (!event.source.selected){
-      event.source.deselect;
-      this._query = "";
-    } else if (val) {
-
-      this._query = val;
-    }
-  } 
-  */
 
   onLogin() {
     //Login logic here 

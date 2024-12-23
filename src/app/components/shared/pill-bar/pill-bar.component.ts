@@ -1,11 +1,11 @@
-import { Component, OnInit, OnDestroy, EventEmitter, Output, ContentChildren, AfterContentInit, QueryList, Query, ChangeDetectorRef } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 
-import { DragScrollDirective } from '../top-bar/drag-scroll.directive';
-import { MatChipOption, MatChipsModule } from '@angular/material/chips';
+import { DragScrollDirective } from '../header/drag-scroll.directive';
+import { MatChipsModule } from '@angular/material/chips';
 import { MatChipSelectionChange } from '@angular/material/chips';
 import { NgFor } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
@@ -60,39 +60,3 @@ export class PillBarComponent {
   } 
 
 }
-/*
-export class PillBarComponent implements AfterContentInit {
-
-  @ContentChildren(MatChipOption) chips!: QueryList<MatChipOption>;
-  private selectedChip: MatChipOption | null = null;
-
-  constructor(private cdr: ChangeDetectorRef) {}
-
-  ngAfterContentInit() {
-    this.chips.changes.subscribe(() => {
-      this.setupChips();
-    })
-
-    this.setupChips();
-  }
-
-  private setupChips() {
-    this.chips.forEach(chip => {
-      chip.selectionChange.subscribe(event => {
-        if (event.isUserInput) {
-          if (this.selectedChip && this.selectedChip != chip) {
-            this.selectedChip.deselect();
-          }
-          if (event.selected) {
-            this.selectedChip = chip;
-          } else {
-            this.selectedChip = null;
-          }
-          
-        }
-      });
-    });
-  }
-  
-}
-*/

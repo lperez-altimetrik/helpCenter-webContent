@@ -19,9 +19,13 @@
     display: inline-flex;
     height: 40px;
     min-width: 400px;
-    width: 700px;
+    //width: 700px;
+    width: clamp(310px, 75vw, 670px);
+    align-items: center;
+
     padding: var(--spacing-4) var(--spacing-6);
     flex-direction: column;
+    //
     align-items: flex-start;
     gap: var(--spacing-5, 12px);
     flex-shrink: 0;
@@ -125,7 +129,8 @@
             line-height: normal;
             background-color: var(--hc-color-bg-secondary) !important;
     
-            span{
+            span{        
+                max-width: 100%;
                 display: flex;
                 gap: 16px;
                 align-items: center;
@@ -133,6 +138,15 @@
                     gap: var(--spacing-1);
                 }
             }
+            
+            .option-text {
+                display: inline-block;
+                white-space: nowrap;
+                max-width: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            
             @include respond-to("mobile-mb") {                  
                 .option-text{
                     display: -webkit-box;
