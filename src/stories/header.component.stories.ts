@@ -1,10 +1,10 @@
 import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
-import { TopBarComponent } from '../app/components/shared/top-bar/top-bar.component';
+import { HeaderComponent } from '../app/components/shared/header/header.component';
 import { MatIconModule } from '@angular/material/icon';
 
 export default {
-  title: 'Shared/TopBar',
-  component: TopBarComponent,
+  title: 'Shared/Header',
+  component: HeaderComponent,
   decorators: [
     moduleMetadata({
       imports: [MatIconModule],
@@ -13,7 +13,7 @@ export default {
 } as Meta;
 
 const Template: StoryFn = (args) => ({
-  component: TopBarComponent,
+  component: HeaderComponent,
   props: args,
 });
 
