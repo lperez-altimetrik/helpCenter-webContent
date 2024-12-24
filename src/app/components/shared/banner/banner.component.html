@@ -3,17 +3,18 @@
     <mat-icon class="icon mr1">campaign</mat-icon>
 
     <div class="info">
-      <h5>New feature alert</h5>
-      <p>Product Catalogue is here!</p>
+      <h5>{{ title }}</h5>
+      <p>{{ subtitle }}</p>
     </div>
   </div>
 
   <div class="secondary-content">
     <p class="mr1">
-      Streamline your checkout experience and track sales insights for all of
-      your business products today!
+      {{ description }}
     </p>
-    <button mat-flat-button color="primary">Learn More</button>
+    <a [href]="url" target="_blank">
+      <button mat-flat-button color="primary">Learn More</button>
+    </a>
   </div>
 
   <mat-icon class="mobile-icon">chevron_right</mat-icon>
