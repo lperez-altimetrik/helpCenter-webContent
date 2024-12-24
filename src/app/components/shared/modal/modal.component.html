@@ -4,8 +4,8 @@
       <span class="material-symbols-outlined arrow-icon"> arrow_upward </span>
     </button>
     <mat-card-header>
-      <mat-card-title class="title">Title</mat-card-title>
-      <mat-card-subtitle class="subtitle">Subtitle</mat-card-subtitle>
+      <mat-card-title class="title">{{ title }}</mat-card-title>
+      <mat-card-subtitle class="subtitle">{{ subtitle }}</mat-card-subtitle>
     </mat-card-header>
     <button mat-icon-button type="button" class="close">
       <span class="material-symbols-outlined"> close </span>
@@ -13,13 +13,11 @@
   </div>
   <mat-card-content>
     <p>
-      We give ambitious businesses their launchpad through safe and secure
-      online payment solutionsWe give ambitious businesses their launchpad
-      through safe and secure online payment solutions
+      {{ content }}
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button class="primary-button">Send</button>
-    <button mat-button class="secondary-button">No, Thanks</button>
+    <button mat-button class="primary-button">{{ primaryButton }}</button>
+    <button mat-button class="secondary-button">{{ secondaryButton }}</button>
   </mat-card-actions>
 </mat-card>

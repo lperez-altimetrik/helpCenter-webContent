@@ -8,8 +8,13 @@ import { MatIconModule } from '@angular/material/icon';
   standalone: true,
   imports: [MatCardModule, MatButtonModule, MatIconModule],
   templateUrl: './modal.component.html',
-  styleUrl: './modal.component.scss'
+  styleUrl: './modal.component.scss',
 })
 export class ModalComponent {
-
+  @Input() title = 'Title';
+  @Input() subtitle = 'Subtitle';
+  @Input() content =
+    'We give ambitious businesses their launchpad through safe and secure online payment solutionsWe give ambitious businesses their launchpad through safe and secure online payment solutions';
+  @Input() primaryButton = 'Send';
+  @Input() secondaryButton = 'No, Thanks';
 }

@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import {
+  AfterViewInit,
   Component,
   ComponentFactory,
   ComponentFactoryResolver,
@@ -16,11 +17,11 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 @Component({
   selector: 'app-carousel',
   standalone: true,
-  imports: [CommonModule, MatIconModule, CardComponent],
+  imports: [CommonModule, MatIconModule],
   templateUrl: './carousel.component.html',
   styleUrl: './carousel.component.scss',
 })
-export class CarouselComponent {
+export class CarouselComponent implements AfterViewInit {
   @ViewChild('carouselTrack') carouselTrack!: ElementRef;
 
   @Input() items: any[] = [
@@ -56,6 +57,11 @@ export class CarouselComponent {
     public componentFactoryResolver: ComponentFactoryResolver
   ) {}
 
+  ngAfterViewInit(): void {
+    this.updateScrollLimits();
+    this.loadComponent();
+  }
+
   ngOnInit(): void {
     // Observe screen size
     this.breakpointObserver
@@ -64,8 +70,6 @@ export class CarouselComponent {
         this.isMobile = result.matches;
         this.updateVisibleItems();
       });
-    this.updateScrollLimits();
-    this.loadComponent();
   }
 
   startScroll(direction: number): void {
@@ -108,8 +112,8 @@ export class CarouselComponent {
 
   updateScrollLimits(): void {
     const trackWidth =
-      this.carouselTrack.nativeElement.scrollWidth -
-      this.carouselTrack.nativeElement.offsetWidth;
+      this.carouselTrack?.nativeElement?.scrollWidth -
+      this.carouselTrack?.nativeElement?.offsetWidth;
 
     this.canScrollLeft = this.scrollPosition > 0;
     this.canScrollRight = this.scrollPosition < trackWidth;
@@ -119,12 +123,12 @@ export class CarouselComponent {
    * Load dynamicly row component.
    */
   private loadComponent(): void {
-    this.dynHost.clear();
+    if (this.dynHost) this.dynHost?.clear();
     const factory: ComponentFactory<any> =
       this.componentFactoryResolver.resolveComponentFactory(this.itemType);
 
-    this.componentRef = this.dynHost.createComponent(factory);
-    this.componentRef!.location.nativeElement.setAttribute(
+    this.componentRef = this.dynHost?.createComponent(factory);
+    this.componentRef?.location?.nativeElement?.setAttribute(
       'style',
       'width: 100%'
     );
