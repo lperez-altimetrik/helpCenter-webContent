@@ -46,7 +46,6 @@ export class SearchBarComponent implements OnChanges,  AfterViewInit{
   }
   
   ngAfterViewInit() {
-    // Optionally, you might want to add some delay or debounce to avoid too frequent calls
     if (isPlatformBrowser(this.platformId)) {
       window.addEventListener('scroll', this.onWindowScroll.bind(this));
     }
@@ -79,9 +78,17 @@ export class SearchBarComponent implements OnChanges,  AfterViewInit{
     this.isPanelOpened = false;
   }
 
-  cleanSearch(){
+  cleanSearch(event: Event) {
     this.searchString.setValue(""); 
     this.filteredOptions = this._filter(this.searchString.value || "");
+    this.closePanel(event);
+  }
+
+  closePanel(event: Event) {
+    if (this.autocomplete?.panelOpen) {
+      event.stopPropagation();
+      this.autocomplete?.closePanel();
+    }
   }
 
   private _filter(value: string): string[] {

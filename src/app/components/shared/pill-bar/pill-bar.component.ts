@@ -21,12 +21,10 @@ import { MatLabel } from '@angular/material/form-field';
     MatIconModule,
     CommonModule,
     DragScrollDirective, 
-
-    NgFor,
     MatInputModule,
     MatChipsModule, 
     MatFormFieldModule, 
-    MatLabel],
+  ],
   templateUrl: './pill-bar.component.html',
   styleUrl: './pill-bar.component.scss'
 })

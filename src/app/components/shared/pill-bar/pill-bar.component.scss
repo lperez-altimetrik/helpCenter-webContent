@@ -25,21 +25,6 @@
     color: var(--hc-link-color);
 }
 
-/*
-:host ::ng-deep .mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__text-label {
-    color: var(--hc-link-color);
-}
-
-:host ::ng-deep .mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__text-label {
-    color: blue;
-}
-
-:host ::ng-deep .mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__text-label {
-    color: orange;
-}
-*/
-//test
-
 :host ::ng-deep .mat-mdc-standard-chip.mdc-evolution-chip--selected:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__text-label .mat-mdc-chip-selected.mdc-evolution-chip--selected {
     color: var(--hc-link-color)!important;
     background-color: #fff !important;

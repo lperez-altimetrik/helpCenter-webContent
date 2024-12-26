@@ -8,7 +8,7 @@
             (input)="onSearchChange()"
             [formControl]="searchString"
             [matAutocomplete]="auto">
-    <span class="material-symbols-outlined close-icon" (click)="cleanSearch()">close</span>
+    <span class="material-symbols-outlined close-icon" (click)="cleanSearch($event)">close</span>
     <mat-autocomplete #auto="matAutocomplete" class="autocomplete-container" (closed)="onClosedEvent()" >
         <div class="divider-line"></div>
         <span class="option-header">Popular articles</span>
