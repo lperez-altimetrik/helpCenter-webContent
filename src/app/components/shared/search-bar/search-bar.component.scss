@@ -2,12 +2,14 @@
 
 .search-icon{
     font-size: 22px;
+    color: var(--hc-color-fg-secondary);
     @include respond-to("mobile-mb"){
         font-size: 18px;
     }
 }
 .close-icon{
     cursor: pointer;
+    color: var(--hc-color-fg-secondary);
     @include respond-to("mobile-mb"){
         font-size: 14px;
     }
@@ -17,9 +19,13 @@
     display: inline-flex;
     height: 40px;
     min-width: 400px;
-    width: 700px;
+    //width: 700px;
+    width: clamp(310px, 75vw, 670px);
+    align-items: center;
+
     padding: var(--spacing-4) var(--spacing-6);
     flex-direction: column;
+    //
     align-items: flex-start;
     gap: var(--spacing-5, 12px);
     flex-shrink: 0;
@@ -47,10 +53,13 @@
     ::ng-deep .mat-mdc-text-field-wrapper {
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 0px;
-        transition: 0s;
+        transition-duration: 0.1s;
     }
 }
 
+:host ::ng-deep .mat-autocomplete-panel {
+    transition: transform 2s ease-in-out, opacity 3s ease-in-out !important;
+}
 
 :host ::ng-deep .mdc-line-ripple{
     display: none;
@@ -120,7 +129,8 @@
             line-height: normal;
             background-color: var(--hc-color-bg-secondary) !important;
     
-            span{
+            span{        
+                max-width: 100%;
                 display: flex;
                 gap: 16px;
                 align-items: center;
@@ -128,6 +138,15 @@
                     gap: var(--spacing-1);
                 }
             }
+            
+            .option-text {
+                display: inline-block;
+                white-space: nowrap;
+                max-width: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            
             @include respond-to("mobile-mb") {                  
                 .option-text{
                     display: -webkit-box;
