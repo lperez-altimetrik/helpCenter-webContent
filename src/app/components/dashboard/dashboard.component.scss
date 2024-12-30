@@ -1,3 +1,41 @@
+@import "./../../../styles/mixins.scss";
+
+:host {
+  position: relative;
+}
+
 .container {
   padding: 10px;
+  padding-bottom: 140px;
+}
+
+.pill-container {
+  margin-bottom: var(--spacing-8);
+
+  .pill {
+    margin: 0;
+    --mdc-chip-container-height: 33px;
+    font-size: var(--spacing-5);
+    border-radius: var(--spacing-99);
+    border: none;
+    line-height: normal;
+    font-weight: normal;
+    color: white !important;
+  }
+
+  .pill:active {
+    background-color: #fff;
+    color: var(--hc-link-color);
+  }
+
+  .pill-spacer {
+    display: flex;
+    justify-content: flex-end;
+    width: var(--spacing-8);
+    margin: 0;
+    max-height: 26px;
+    opacity: 0;
+    cursor: default;
+    pointer-events: none;
+  }
 }

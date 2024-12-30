@@ -26,34 +26,33 @@ import { FormControl } from '@angular/forms';
     MatDividerModule,
     MatIconModule,
     CommonModule,
-    DragScrollDirective, 
     MatChipsModule,
     PillBarComponent,
     SearchBarComponent,
-    NgFor,
     MatInputModule,
-    MatFormFieldModule, 
-    MatLabel],
+    MatFormFieldModule,
+  ],
 
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.scss',
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   private router = inject(Router);
   private authSubscription!: Subscription;
   isLoggedIn = false;
-  logoPath = "assets/icons/top-bar/Optic_Logo_White.svg";
+  logoPath = 'assets/icons/top-bar/Optic_Logo_White.svg';
 
-  _query: FormControl = new FormControl("");
+  _query: FormControl = new FormControl('');
 
-  chipLabels: string[] = [  //make input parameter for this
+  chipLabels: string[] = [
+    //make input parameter for this
     'Get Started!',
     'Wallet',
     'Payment Link',
     'Disputes',
     'Payments',
     'My Account',
-  ]
+  ];
 
   constructor(private authService: AuthService) {
     this.authSubscription = new Subscription();
@@ -69,24 +68,25 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    if (this.authSubscription){
+    if (this.authSubscription) {
       this.authSubscription.unsubscribe();
     }
   }
 
-  toggleLogin() { // TEST FUNCTION, DELETE
+  toggleLogin() {
+    // TEST FUNCTION, DELETE
     this.isLoggedIn = !this.isLoggedIn;
   }
 
   handlePillEvent(message: string) {
-    if (message === this._query.value) this._query = new FormControl("");
+    if (message === this._query.value) this._query = new FormControl('');
     else this._query = new FormControl(message);
   }
 
   onLogin() {
-    //Login logic here 
+    //Login logic here
     //link to login page
-    
+
     //this.router.navigate(['/dashboard']);
     console.log('login button clicked');
     //once logged in
@@ -109,12 +109,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
     console.log('search button clicked');
 
     this.toggleLogin(); // DELETE
-
   }
 
   onLang() {
     //Language/region logic here
     console.log('language button clicked');
   }
-
 }

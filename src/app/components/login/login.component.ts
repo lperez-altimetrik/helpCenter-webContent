@@ -54,7 +54,10 @@ export class LoginComponent {
   onLogin(): void {
     const isLoggedIn = this.authService.login(this.username, this.password);
     if (isLoggedIn) {
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/dashboard'], { replaceUrl: true }).then(() => {
+        // Force a full page reload
+        window.location.href = '/dashboard';
+      });
     } else {
       this.loginFailed = true;
     }

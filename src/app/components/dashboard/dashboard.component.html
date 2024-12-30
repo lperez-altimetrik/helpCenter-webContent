@@ -1,6 +1,23 @@
 <div class="container">
   <h2>Dashboard</h2>
   <button (click)="logout()">Logout</button>
-  <p>Welcome to your dashboard!</p>
-  <app-contact-us></app-contact-us>
+
+  <mat-chip-listbox
+    aria-orientation="horizontal"
+    class="pill-container"
+    multiple
+  >
+    <div class="pill-spacer">spacer</div>
+    <mat-chip-option
+      *ngFor="let chip of chipLabels"
+      class="pill"
+      [selected]="chip.selected"
+      (selectionChange)="onChipSelect($event, chip)"
+    >
+      {{ chip.label }}
+    </mat-chip-option>
+    <div class="pill-spacer">spacer</div>
+  </mat-chip-listbox>
+
+  <ng-container #dynamicContainer></ng-container>
 </div>
