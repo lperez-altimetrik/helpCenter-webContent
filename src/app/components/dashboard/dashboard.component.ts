@@ -120,7 +120,7 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
 
     const selectedComponents = this.chipLabels.filter((chip) => chip.selected);
 
-    selectedComponents.forEach((chip) => {
+    selectedComponents.forEach((chip: any) => {
       const componentRef = this.dynamicContainer.createComponent(chip.value);
       this.componentRefs.push(componentRef);
     });
