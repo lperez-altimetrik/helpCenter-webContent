@@ -12,9 +12,7 @@
   <div class="related-articles-content">
     <div class="related-links-container">
       @for (relatedLink of relatedLinks; track relatedLink.title) {
-
       <app-link [url]="relatedLink.url" [label]="relatedLink.title"></app-link>
-
       }
     </div>
     <button class="view-more-btn" (click)="onClickViewMore()">
