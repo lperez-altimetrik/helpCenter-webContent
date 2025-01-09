@@ -8,12 +8,12 @@ import { Component, Input } from '@angular/core';
   styleUrl: './article-feedback.component.scss',
 })
 export class ArticleFeedbackComponent {
-  public feedbackResponse: string = 'None';
+  @Input() feedbackResponse: string = 'None';
   @Input() askMessage = 'Was this article helpful?';
   @Input() thanksMessage = 'Thanks for your feedback';
   @Input() requestingMessage = 'Help us improve';
 
-  public textAreaPlaceholder: string = 'leave your comment';
+  @Input() textAreaPlaceholder: string = 'leave your comment';
 
   public currentMessage: string = this.askMessage;
   public onYesClick = () => {

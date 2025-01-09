@@ -3,7 +3,7 @@ import { CardComponent } from '../app/components/shared/card/card.component';
 import { CenterTabBarComponent } from 'app/components/shared/center-tab-bar/center-tab-bar.component';
 
 export default {
-  title: 'Shared/CenterTabCenter',
+  title: 'Shared/CenterTabBar',
   component: CenterTabBarComponent,
   decorators: [moduleMetadata({})],
 } as Meta;

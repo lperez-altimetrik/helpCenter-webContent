@@ -1,5 +1,5 @@
 import { Meta, StoryFn } from '@storybook/angular';
-import { ArticleFeedbackComponent } from '../app/components/shared/article-feedback/article-feedback.component';
+import { ArticleFeedbackComponent } from 'app/components/shared/article-feedback/article-feedback.component';
 
 export default {
   title: 'Shared/ArticleFeedback',

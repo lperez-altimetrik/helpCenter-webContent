@@ -1,6 +1,202 @@
 {
     "pipes": [],
-    "interfaces": [],
+    "interfaces": [
+        {
+            "name": "IAccordionData",
+            "id": "interface-IAccordionData-a825af2521042d34775b17cede027f51e8ac6c0706821928b6f62c4c020302b7aacc7bb706cd2295263bb6252d8040bb1310b4601ef041576ef563b464f7c066",
+            "file": "src/app/components/shared/accordion/accordion.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { MatExpansionModule } from '@angular/material/expansion';\nimport { LinkComponent } from '../link/link.component';\n\nexport interface IAccordionData {\n  title: string;\n  text: string;\n}\n\n@Component({\n  selector: 'app-accordion',\n  standalone: true,\n  imports: [MatExpansionModule, LinkComponent],\n  templateUrl: './accordion.component.html',\n  styleUrl: './accordion.component.scss',\n})\nexport class AccordionComponent {\n  @Input() accordionData: IAccordionData[] = [\n    {\n      title: 'Accordion Section Title',\n      text: `Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.`,\n    },\n    {\n      title: 'Accordion Section Title',\n      text: `Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.`,\n    },\n    {\n      title: 'Accordion Section Title',\n      text: `Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.`,\n    },\n    {\n      title: 'Accordion Section Title',\n      text: `Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.`,\n    },\n  ];\n}\n",
+            "properties": [
+                {
+                    "name": "text",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                },
+                {
+                    "name": "title",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "IBusinessOption",
+            "id": "interface-IBusinessOption-db7073e904f66e96035990091bc3a2d85304a9c1e5e42c572445b659d5e82c1328dc83883def66a92e3d32ac045b016df95bd5e9062887c9a1385b837e4962b0",
+            "file": "src/app/interfaces/input-data.interface.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface IInputData {\n  title: string;\n  url: string;\n}\n\n// SIDEBAR INTERFACES\nexport interface ISidebarSection {\n  title: string;\n  sections: ISection[];\n  isLastSection?: boolean;\n}\n\nexport interface ISection {\n  title: string;\n  iconUrl: string;\n  menuItems: IInputData[];\n  svgUrl?: string;\n}\n\nexport interface IBusinessOption {\n  option: string;\n}\n",
+            "properties": [
+                {
+                    "name": "option",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 21
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "IInputData",
+            "id": "interface-IInputData-db7073e904f66e96035990091bc3a2d85304a9c1e5e42c572445b659d5e82c1328dc83883def66a92e3d32ac045b016df95bd5e9062887c9a1385b837e4962b0",
+            "file": "src/app/interfaces/input-data.interface.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface IInputData {\n  title: string;\n  url: string;\n}\n\n// SIDEBAR INTERFACES\nexport interface ISidebarSection {\n  title: string;\n  sections: ISection[];\n  isLastSection?: boolean;\n}\n\nexport interface ISection {\n  title: string;\n  iconUrl: string;\n  menuItems: IInputData[];\n  svgUrl?: string;\n}\n\nexport interface IBusinessOption {\n  option: string;\n}\n",
+            "properties": [
+                {
+                    "name": "title",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "url",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "ISection",
+            "id": "interface-ISection-db7073e904f66e96035990091bc3a2d85304a9c1e5e42c572445b659d5e82c1328dc83883def66a92e3d32ac045b016df95bd5e9062887c9a1385b837e4962b0",
+            "file": "src/app/interfaces/input-data.interface.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface IInputData {\n  title: string;\n  url: string;\n}\n\n// SIDEBAR INTERFACES\nexport interface ISidebarSection {\n  title: string;\n  sections: ISection[];\n  isLastSection?: boolean;\n}\n\nexport interface ISection {\n  title: string;\n  iconUrl: string;\n  menuItems: IInputData[];\n  svgUrl?: string;\n}\n\nexport interface IBusinessOption {\n  option: string;\n}\n",
+            "properties": [
+                {
+                    "name": "iconUrl",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "menuItems",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "IInputData[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                },
+                {
+                    "name": "svgUrl",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 17
+                },
+                {
+                    "name": "title",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "ISidebarSection",
+            "id": "interface-ISidebarSection-db7073e904f66e96035990091bc3a2d85304a9c1e5e42c572445b659d5e82c1328dc83883def66a92e3d32ac045b016df95bd5e9062887c9a1385b837e4962b0",
+            "file": "src/app/interfaces/input-data.interface.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface IInputData {\n  title: string;\n  url: string;\n}\n\n// SIDEBAR INTERFACES\nexport interface ISidebarSection {\n  title: string;\n  sections: ISection[];\n  isLastSection?: boolean;\n}\n\nexport interface ISection {\n  title: string;\n  iconUrl: string;\n  menuItems: IInputData[];\n  svgUrl?: string;\n}\n\nexport interface IBusinessOption {\n  option: string;\n}\n",
+            "properties": [
+                {
+                    "name": "isLastSection",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "sections",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ISection[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                },
+                {
+                    "name": "title",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        }
+    ],
     "injectables": [
         {
             "name": "AuthService",
@@ -478,7 +674,7 @@
     "components": [
         {
             "name": "AccordionComponent",
-            "id": "component-AccordionComponent-edacb656d391d2dc3981c9b1c9330014c791d5651bd0625aa7b034fac43fb0d9398692cf6452ca6ceec3a7ea054479447275372f8ad0610364ab27bd99640350",
+            "id": "component-AccordionComponent-a825af2521042d34775b17cede027f51e8ac6c0706821928b6f62c4c020302b7aacc7bb706cd2295263bb6252d8040bb1310b4601ef041576ef563b464f7c066",
             "file": "src/app/components/shared/accordion/accordion.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -493,24 +689,19 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [
+            "inputsClass": [
                 {
                     "name": "accordionData",
-                    "defaultValue": "[\n    {\n      title: \"Accordion Section Title\",\n      text: `Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.`\n    },\n    {\n      title: \"Accordion Section Title\",\n      text: `Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.`\n    },\n    {\n      title: \"Accordion Section Title\",\n      text: `Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.`\n    },\n    {\n      title: \"Accordion Section Title\",\n      text: `Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.`\n    }\n  ]",
+                    "defaultValue": "[\n    {\n      title: 'Accordion Section Title',\n      text: `Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.`,\n    },\n    {\n      title: 'Accordion Section Title',\n      text: `Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.`,\n    },\n    {\n      title: 'Accordion Section Title',\n      text: `Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.`,\n    },\n    {\n      title: 'Accordion Section Title',\n      text: `Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.`,\n    },\n  ]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "any[]",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 13,
-                    "modifierKind": [
-                        125
-                    ]
+                    "line": 18,
+                    "type": "IAccordionData[]",
+                    "decorators": []
                 }
             ],
+            "outputsClass": [],
+            "propertiesClass": [],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
@@ -530,7 +721,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { MatExpansionModule } from '@angular/material/expansion';\nimport { LinkComponent } from '../link/link.component';\n\n@Component({\n  selector: 'app-accordion',\n  standalone: true,\n  imports: [MatExpansionModule, LinkComponent],\n  templateUrl: './accordion.component.html',\n  styleUrl: './accordion.component.scss',\n})\nexport class AccordionComponent {\n  public accordionData: any[] = [\n    {\n      title: \"Accordion Section Title\",\n      text: `Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.`\n    },\n    {\n      title: \"Accordion Section Title\",\n      text: `Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.`\n    },\n    {\n      title: \"Accordion Section Title\",\n      text: `Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.`\n    },\n    {\n      title: \"Accordion Section Title\",\n      text: `Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.`\n    }\n  ];\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { MatExpansionModule } from '@angular/material/expansion';\nimport { LinkComponent } from '../link/link.component';\n\nexport interface IAccordionData {\n  title: string;\n  text: string;\n}\n\n@Component({\n  selector: 'app-accordion',\n  standalone: true,\n  imports: [MatExpansionModule, LinkComponent],\n  templateUrl: './accordion.component.html',\n  styleUrl: './accordion.component.scss',\n})\nexport class AccordionComponent {\n  @Input() accordionData: IAccordionData[] = [\n    {\n      title: 'Accordion Section Title',\n      text: `Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.`,\n    },\n    {\n      title: 'Accordion Section Title',\n      text: `Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.`,\n    },\n    {\n      title: 'Accordion Section Title',\n      text: `Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.`,\n    },\n    {\n      title: 'Accordion Section Title',\n      text: `Lorem ipsum dolor sit amet consectetur. Dui quam consectetur tincidunt\n          adipiscing. Et in blandit nisi integer. Non risus sed odio sed dui\n          nisl. Dolor mattis malesuada morbi lacus integer elementum nulla.\n          Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque\n          nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare\n          tempor nisl.`,\n    },\n  ];\n}\n",
             "styleUrl": "./accordion.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -594,7 +785,7 @@
         },
         {
             "name": "ArticleFeedbackComponent",
-            "id": "component-ArticleFeedbackComponent-ce3e3b8ca390919c613a3b212df85f987462346a0aa20256259520da5431a95ff3738d3f9c0a88112790611b8ef6dcea28965dfe1e7fa6290c6c5f7a5b109acb",
+            "id": "component-ArticleFeedbackComponent-294056b399c35e4d390729d9c2c3a79942553d4f4e8ce20f806c2cc1d77d9d71a5c7b3250cef06c8c9ba3ee216f9f217e29968cf8de13ad47a75fd16640a4e46",
             "file": "src/app/components/shared/article-feedback/article-feedback.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -609,49 +800,67 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "askMessage",
+                    "defaultValue": "'Was this article helpful?'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "feedbackResponse",
+                    "defaultValue": "'None'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "requestingMessage",
+                    "defaultValue": "'Help us improve'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "textAreaPlaceholder",
+                    "defaultValue": "'leave your comment'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "thanksMessage",
+                    "defaultValue": "'Thanks for your feedback'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [
                 {
                     "name": "currentMessage",
-                    "defaultValue": "this.messages.askMessage",
+                    "defaultValue": "this.askMessage",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 20,
+                    "line": 18,
                     "modifierKind": [
                         125
-                    ]
-                },
-                {
-                    "name": "feedbackResponse",
-                    "defaultValue": "\"None\"",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 11,
-                    "modifierKind": [
-                        125
-                    ]
-                },
-                {
-                    "name": "messages",
-                    "defaultValue": "{\n    askMessage: \"Was this article helpful?\",\n    thanksMessage: \"Thanks for your feedback\",\n    requestingMessage: \"Help us improve\"\n  }",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "any",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 12,
-                    "modifierKind": [
-                        123
                     ]
                 },
                 {
@@ -663,7 +872,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 36,
+                    "line": 34,
                     "modifierKind": [
                         125
                     ]
@@ -677,7 +886,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 25,
+                    "line": 23,
                     "modifierKind": [
                         125
                     ]
@@ -691,7 +900,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 21,
+                    "line": 19,
                     "modifierKind": [
                         125
                     ]
@@ -705,21 +914,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 30,
-                    "modifierKind": [
-                        125
-                    ]
-                },
-                {
-                    "name": "textAreaPlaceholder",
-                    "defaultValue": "\"leave your comment\"",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 17,
+                    "line": 28,
                     "modifierKind": [
                         125
                     ]
@@ -735,7 +930,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-article-feedback',\n  standalone: true,\n  imports: [],\n  templateUrl: './article-feedback.component.html',\n  styleUrl: './article-feedback.component.scss'\n})\nexport class ArticleFeedbackComponent {\n  public feedbackResponse: string = \"None\";\n  private messages: any = {\n    askMessage: \"Was this article helpful?\",\n    thanksMessage: \"Thanks for your feedback\",\n    requestingMessage: \"Help us improve\"\n  };\n  public textAreaPlaceholder: string =  \"leave your comment\";\n\n  \n  public currentMessage: string = this.messages.askMessage;\n  public onYesClick = () => {\n    this.feedbackResponse = \"\";\n    this.currentMessage = this.messages.thanksMessage;\n  }\n  public onNoClick = () => {\n    this.feedbackResponse = \"No\"\n    this.currentMessage = this.messages.requestingMessage;\n  }\n\n  public sendFeedbackClick = () => {\n    //looks like duplicated method but this will call an API here\n    this.feedbackResponse = \"\";\n    this.currentMessage = this.messages.thanksMessage;\n  }\n  \n  public noFeedbackClick = () => {\n    this.feedbackResponse = \"\";\n    this.currentMessage = this.messages.thanksMessage;\n  }\n\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-article-feedback',\n  standalone: true,\n  imports: [],\n  templateUrl: './article-feedback.component.html',\n  styleUrl: './article-feedback.component.scss',\n})\nexport class ArticleFeedbackComponent {\n  @Input() feedbackResponse: string = 'None';\n  @Input() askMessage = 'Was this article helpful?';\n  @Input() thanksMessage = 'Thanks for your feedback';\n  @Input() requestingMessage = 'Help us improve';\n\n  @Input() textAreaPlaceholder: string = 'leave your comment';\n\n  public currentMessage: string = this.askMessage;\n  public onYesClick = () => {\n    this.feedbackResponse = '';\n    this.currentMessage = this.thanksMessage;\n  };\n  public onNoClick = () => {\n    this.feedbackResponse = 'No';\n    this.currentMessage = this.requestingMessage;\n  };\n\n  public sendFeedbackClick = () => {\n    //looks like duplicated method but this will call an API here\n    this.feedbackResponse = '';\n    this.currentMessage = this.thanksMessage;\n  };\n\n  public noFeedbackClick = () => {\n    this.feedbackResponse = '';\n    this.currentMessage = this.thanksMessage;\n  };\n}\n",
             "styleUrl": "./article-feedback.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -745,7 +940,7 @@
         },
         {
             "name": "ArticleIndexComponent",
-            "id": "component-ArticleIndexComponent-fb9a76cd6d5026097da40fc358fb532a6684b2705a407ece27f04500bc5c79a7753a25121e54dd69b8ffff3168f5483aafbdfa861b3082a5c4e2febfc3692dc4",
+            "id": "component-ArticleIndexComponent-e076a9330beae3e2f8959d97ca341ffa5dfe7d55bb3514d9e3c0637d20a8bd8263c3bd77b1db701b2277b64b11d4c1e74b5d8229ec7269cff507c6793cbdd4b9",
             "file": "src/app/components/shared/article-index/article-index.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -760,23 +955,19 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [
+            "inputsClass": [
                 {
                     "name": "articleLinks",
-                    "defaultValue": "[\n    {title:\"Payment Links\", url: \"#\"},\n    {title:\"Why Use a Payment Link\", url: \"#\"},\n    {title:\"Steps to Create and Share a Payment Link\", url: \"#\"},\n    {title:\"QR Codes\", url: \"#\"}\n  ]",
+                    "defaultValue": "[\n    { title: 'Payment Links', url: '#' },\n    { title: 'Why Use a Payment Link', url: '#' },\n    { title: 'Steps to Create and Share a Payment Link', url: '#' },\n    { title: 'QR Codes', url: '#' },\n  ]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "any[]",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 15,
-                    "modifierKind": [
-                        125
-                    ]
-                },
+                    "line": 16,
+                    "type": "IInputData[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
                 {
                     "name": "articlePanelOpened",
                     "defaultValue": "false",
@@ -786,7 +977,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 14,
+                    "line": 15,
                     "modifierKind": [
                         125
                     ]
@@ -800,7 +991,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 12,
+                    "line": 13,
                     "modifierKind": [
                         123
                     ]
@@ -814,7 +1005,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 22,
+                    "line": 23,
                     "modifierKind": [
                         125
                     ]
@@ -828,7 +1019,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 13,
+                    "line": 14,
                     "modifierKind": [
                         125
                     ]
@@ -848,7 +1039,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 32,
+                    "line": 35,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -881,13 +1072,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { MatExpansionModule } from '@angular/material/expansion';\n\n@Component({\n  selector: 'app-article-index',\n  standalone: true,\n  imports: [MatExpansionModule],\n  templateUrl: './article-index.component.html',\n  styleUrl: './article-index.component.scss'\n})\nexport class ArticleIndexComponent {\n  private currentSelectedSection: any = null;\n  public selectedSectionTitle: any = undefined;\n  public articlePanelOpened: boolean = false;\n  public articleLinks: any[] = [\n    {title:\"Payment Links\", url: \"#\"},\n    {title:\"Why Use a Payment Link\", url: \"#\"},\n    {title:\"Steps to Create and Share a Payment Link\", url: \"#\"},\n    {title:\"QR Codes\", url: \"#\"}\n  ];\n\n  public onLinkClick = (event: any, url: string) => {\n    if(this.currentSelectedSection){\n      this.currentSelectedSection.classList.remove(\"header-title\");\n      this.currentSelectedSection.parentElement.classList.remove(\"header-content\");\n    }\n    event.target.classList.add(\"header-title\");\n    event.target.parentElement.classList.add(\"header-content\");\n    this.currentSelectedSection = event.target;\n  }\n\n  public changeOption (option: any){\n    this.selectedSectionTitle = option.title;\n    this.articlePanelOpened = !this.articlePanelOpened;\n  }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { MatExpansionModule } from '@angular/material/expansion';\nimport { IInputData } from 'app/interfaces/input-data.interface';\n\n@Component({\n  selector: 'app-article-index',\n  standalone: true,\n  imports: [MatExpansionModule],\n  templateUrl: './article-index.component.html',\n  styleUrl: './article-index.component.scss',\n})\nexport class ArticleIndexComponent {\n  private currentSelectedSection: any = null;\n  public selectedSectionTitle: any = undefined;\n  public articlePanelOpened: boolean = false;\n  @Input() articleLinks: IInputData[] = [\n    { title: 'Payment Links', url: '#' },\n    { title: 'Why Use a Payment Link', url: '#' },\n    { title: 'Steps to Create and Share a Payment Link', url: '#' },\n    { title: 'QR Codes', url: '#' },\n  ];\n\n  public onLinkClick = (event: any) => {\n    if (this.currentSelectedSection) {\n      this.currentSelectedSection.classList.remove('header-title');\n      this.currentSelectedSection.parentElement.classList.remove(\n        'header-content'\n      );\n    }\n    event.target.classList.add('header-title');\n    event.target.parentElement.classList.add('header-content');\n    this.currentSelectedSection = event.target;\n  };\n\n  public changeOption(option: any) {\n    this.selectedSectionTitle = option.title;\n    this.articlePanelOpened = !this.articlePanelOpened;\n  }\n}\n",
             "styleUrl": "./article-index.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"article-index-container\">\n    <label class=\"top-text\">\n        In this article\n    </label>\n    <div class=\"content-container\">\n        @for (articleLink of articleLinks; track articleLink.title) {\n            <div class=\"link-content\" (click)=\"onLinkClick($event, articleLink.url)\">\n                <label class=\"article-link\" >{{ articleLink.title }}</label>\n            </div>\n        }  \n    </div>\n</div>\n<div class=\"article-index-container-mb\">\n    <mat-expansion-panel [(expanded)]=\"articlePanelOpened\" class=\"article-select\">\n        <mat-expansion-panel-header class=\"article-select-header\">\n        <mat-panel-title class=\"article-selected-option\"> {{selectedSectionTitle || \"In this article\"}} </mat-panel-title>\n        </mat-expansion-panel-header>\n        @for (articleLink of articleLinks; track articleLink.title) {\n            <div class=\"article-option\" (click)=\"changeOption(articleLink)\">\n                <span class=\"article-option-text\">\n                    {{articleLink.title}}\n                </span>\n            </div>\n        }  \n    </mat-expansion-panel>\n</div>"
+            "templateData": "<div class=\"article-index-container\">\n  <label class=\"top-text\"> In this article </label>\n  <div class=\"content-container\">\n    @for (articleLink of articleLinks; track articleLink.title) {\n    <div class=\"link-content\" (click)=\"onLinkClick($event)\">\n      <label class=\"article-link\">{{ articleLink.title }}</label>\n    </div>\n    }\n  </div>\n</div>\n<div class=\"article-index-container-mb\">\n  <mat-expansion-panel [(expanded)]=\"articlePanelOpened\" class=\"article-select\">\n    <mat-expansion-panel-header class=\"article-select-header\">\n      <mat-panel-title class=\"article-selected-option\">\n        {{ selectedSectionTitle || \"In this article\" }}\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n    @for (articleLink of articleLinks; track articleLink.title) {\n    <div class=\"article-option\" (click)=\"changeOption(articleLink)\">\n      <span class=\"article-option-text\">\n        {{ articleLink.title }}\n      </span>\n    </div>\n    }\n  </mat-expansion-panel>\n</div>\n"
         },
         {
             "name": "ArticleSectionTitleComponent",
@@ -1086,7 +1277,7 @@
         },
         {
             "name": "BreadcrumbComponent",
-            "id": "component-BreadcrumbComponent-63e2ca25ac3acd12792d227878727ce610508fb7e641f06b9b62df101e779b6de546635ed1dfc2c1f02ff25835ec1a174605bf1bef922197399610e417c270c6",
+            "id": "component-BreadcrumbComponent-534a404ac900fd31648d879b064bd9e02c19db9b4003e1ce1e89ff7eda8153ae70fa107ea534968c5b4bfa4df24cfe7db68748fc2e755a606b8b4b8e369d1f19",
             "file": "src/app/components/shared/breadcrumb/breadcrumb.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1101,38 +1292,28 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [
+            "inputsClass": [
                 {
                     "name": "currentElement",
-                    "defaultValue": "\"Page 5\"",
+                    "defaultValue": "'Page 5'",
                     "deprecated": false,
                     "deprecationMessage": "",
+                    "line": 19,
                     "type": "string",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 18,
-                    "modifierKind": [
-                        125
-                    ]
+                    "decorators": []
                 },
                 {
                     "name": "pagesPath",
-                    "defaultValue": "[\n    { title: \"Page 1\", url: \"#\"},\n    { title: \"Page 2\", url: \"#\"},\n    { title: \"Page 3\", url: \"#\"},\n    { title: \"Page 4\", url: \"#\"}\n  ]",
+                    "defaultValue": "[\n    { title: 'Page 1', url: '#' },\n    { title: 'Page 2', url: '#' },\n    { title: 'Page 3', url: '#' },\n    { title: 'Page 4', url: '#' },\n  ]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "any",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 12,
-                    "modifierKind": [
-                        125
-                    ]
+                    "line": 13,
+                    "type": "IInputData[]",
+                    "decorators": []
                 }
             ],
+            "outputsClass": [],
+            "propertiesClass": [],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
@@ -1148,7 +1329,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { MatIconModule } from '@angular/material/icon';\n\n@Component({\n  selector: 'app-breadcrum',\n  standalone: true,\n  imports: [MatIconModule],\n  templateUrl: './breadcrumb.component.html',\n  styleUrl: './breadcrumb.component.scss'\n})\nexport class BreadcrumbComponent {\n  public pagesPath: any = [\n    { title: \"Page 1\", url: \"#\"},\n    { title: \"Page 2\", url: \"#\"},\n    { title: \"Page 3\", url: \"#\"},\n    { title: \"Page 4\", url: \"#\"}\n  ]\n  public currentElement: string = \"Page 5\";\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { MatIconModule } from '@angular/material/icon';\nimport { IInputData } from 'app/interfaces/input-data.interface';\n\n@Component({\n  selector: 'app-breadcrum',\n  standalone: true,\n  imports: [MatIconModule],\n  templateUrl: './breadcrumb.component.html',\n  styleUrl: './breadcrumb.component.scss',\n})\nexport class BreadcrumbComponent {\n  @Input() pagesPath: IInputData[] = [\n    { title: 'Page 1', url: '#' },\n    { title: 'Page 2', url: '#' },\n    { title: 'Page 3', url: '#' },\n    { title: 'Page 4', url: '#' },\n  ];\n  @Input() currentElement: string = 'Page 5';\n}\n",
             "styleUrl": "./breadcrumb.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -1158,7 +1339,7 @@
         },
         {
             "name": "CardComponent",
-            "id": "component-CardComponent-ec8606155c9a801f84ccb07ddfbd450e705b80b27fb9c5f0ff94245a6e4952b24a429103afcd60987717ae474eacf2ef4bdc8d58e14444a707dfe088504077f3",
+            "id": "component-CardComponent-7fbf1bf6d1ad68051b30f77a8def737c8ea32f2a6fbea080e115c040ac2f945d56e2734fd038ecf798b950a5995bf6fca2da9b4090c7f14740ad59cda63968b4",
             "file": "src/app/components/shared/card/card.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1179,7 +1360,7 @@
                     "defaultValue": "'assets/images/card-image.png'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 14,
+                    "line": 15,
                     "type": "string",
                     "decorators": []
                 },
@@ -1188,7 +1369,7 @@
                     "defaultValue": "'Learn more'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 20,
                     "type": "string",
                     "decorators": []
                 },
@@ -1197,7 +1378,7 @@
                     "defaultValue": "'north_east'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 22,
                     "type": "string",
                     "decorators": []
                 },
@@ -1206,7 +1387,7 @@
                     "defaultValue": "'https://www.paysafe.com/us-en/'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 20,
+                    "line": 21,
                     "type": "string",
                     "decorators": []
                 },
@@ -1215,7 +1396,7 @@
                     "defaultValue": "'15 min read'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 17,
                     "type": "string",
                     "decorators": []
                 },
@@ -1224,7 +1405,7 @@
                     "defaultValue": "'We give ambitious businesses their launchpad through safe and secure online payment solutions'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 18,
                     "type": "string",
                     "decorators": []
                 },
@@ -1233,7 +1414,7 @@
                     "defaultValue": "'new optic app'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 16,
                     "type": "string",
                     "decorators": []
                 }
@@ -1258,22 +1439,26 @@
                 {
                     "name": "CommonModule",
                     "type": "module"
+                },
+                {
+                    "name": "LinkComponent",
+                    "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input } from '@angular/core';\nimport { MatCardModule } from '@angular/material/card';\nimport { MatIconModule } from '@angular/material/icon';\n\n@Component({\n  selector: 'app-card',\n  standalone: true,\n  imports: [MatCardModule, MatIconModule, CommonModule],\n  templateUrl: './card.component.html',\n  styleUrl: './card.component.scss',\n})\nexport class CardComponent {\n  @Input() image = 'assets/images/card-image.png';\n  @Input() title = 'new optic app';\n  @Input() span = '15 min read';\n  @Input() text =\n    'We give ambitious businesses their launchpad through safe and secure online payment solutions';\n  @Input() link = 'Learn more';\n  @Input() linkUrl = 'https://www.paysafe.com/us-en/';\n  @Input() linkIcon = 'north_east';\n}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input } from '@angular/core';\nimport { MatCardModule } from '@angular/material/card';\nimport { MatIconModule } from '@angular/material/icon';\nimport { LinkComponent } from '../link/link.component';\n\n@Component({\n  selector: 'app-card',\n  standalone: true,\n  imports: [MatCardModule, MatIconModule, CommonModule, LinkComponent],\n  templateUrl: './card.component.html',\n  styleUrl: './card.component.scss',\n})\nexport class CardComponent {\n  @Input() image = 'assets/images/card-image.png';\n  @Input() title = 'new optic app';\n  @Input() span = '15 min read';\n  @Input() text =\n    'We give ambitious businesses their launchpad through safe and secure online payment solutions';\n  @Input() link = 'Learn more';\n  @Input() linkUrl = 'https://www.paysafe.com/us-en/';\n  @Input() linkIcon = 'north_east';\n}\n",
             "styleUrl": "./card.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<mat-card>\n  <mat-card-content>\n    <div class=\"header\">\n      <img [src]=\"image\" alt=\"Card image\" class=\"image\" />\n    </div>\n    <div class=\"content\">\n      <div class=\"title-section\">\n        <mat-icon class=\"icon\"> arrow_upward </mat-icon>\n        <div>\n          <h4>\n            {{ title | titlecase }}\n          </h4>\n          <span>\n            {{ span }}\n          </span>\n        </div>\n      </div>\n      <p>\n        {{ text }}\n      </p>\n      <a [href]=\"linkUrl\" target=\"_blank\">\n        <span>\n          {{ link }}\n        </span>\n        <mat-icon class=\"flat-icon\">\n          {{ linkIcon }}\n        </mat-icon>\n      </a>\n    </div>\n    <mat-icon class=\"go-icon\">chevron_right</mat-icon>\n  </mat-card-content>\n</mat-card>\n"
+            "templateData": "<mat-card>\n  <mat-card-content>\n    <div class=\"header\">\n      <img [src]=\"image\" alt=\"Card image\" class=\"image\" />\n    </div>\n    <div class=\"content\">\n      <div class=\"title-section\">\n        <mat-icon class=\"icon\"> arrow_upward </mat-icon>\n        <div>\n          <h4>\n            {{ title | titlecase }}\n          </h4>\n          <span>\n            {{ span }}\n          </span>\n        </div>\n      </div>\n      <p>\n        {{ text }}\n      </p>\n\n      <app-link [url]=\"linkUrl\" [label]=\"link\"></app-link>\n    </div>\n    <mat-icon class=\"go-icon\">chevron_right</mat-icon>\n  </mat-card-content>\n</mat-card>\n"
         },
         {
             "name": "CarouselComponent",
-            "id": "component-CarouselComponent-bf7fcd490e7c5c8b4b397e41a4d2648b1c5d74489babd8187eed70e762945371ecfb31da662369df8ab7ac8759ef4c77e10a02f9ac062b9ee39528d87e665071",
+            "id": "component-CarouselComponent-2c99497d30e319e2fcc969fc151f8644e36d5314c775bd046c58fc8d527d2d0550203d306a4520cb22c7d63a24c8125fd9ecde4007d133cbc0bc216bb9f3d68c",
             "file": "src/app/components/shared/carousel/carousel.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1306,6 +1491,15 @@
                     "line": 40,
                     "type": "any",
                     "decorators": []
+                },
+                {
+                    "name": "title",
+                    "defaultValue": "'Carousel Title'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 41,
+                    "type": "string",
+                    "decorators": []
                 }
             ],
             "outputsClass": [],
@@ -1319,7 +1513,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 52
+                    "line": 53
                 },
                 {
                     "name": "canScrollRight",
@@ -1330,7 +1524,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 53
+                    "line": 54
                 },
                 {
                     "name": "carouselTrack",
@@ -1359,7 +1553,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 57,
+                    "line": 58,
                     "modifierKind": [
                         125
                     ]
@@ -1372,7 +1566,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 42,
+                    "line": 43,
                     "modifierKind": [
                         125
                     ]
@@ -1385,7 +1579,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 41,
+                    "line": 42,
                     "decorators": [
                         {
                             "name": "ViewChild",
@@ -1405,7 +1599,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 49
+                    "line": 50
                 },
                 {
                     "name": "isMobile",
@@ -1416,7 +1610,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 50
+                    "line": 51
                 },
                 {
                     "name": "scrollDirection",
@@ -1427,7 +1621,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 46
+                    "line": 47
                 },
                 {
                     "name": "scrollInterval",
@@ -1437,7 +1631,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 47
+                    "line": 48
                 },
                 {
                     "name": "scrollPosition",
@@ -1448,7 +1642,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 45
+                    "line": 46
                 },
                 {
                     "name": "scrollSpeed",
@@ -1459,7 +1653,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 48
+                    "line": 49
                 },
                 {
                     "name": "visibleItems",
@@ -1470,7 +1664,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 44
+                    "line": 45
                 }
             ],
             "methodsClass": [
@@ -1480,7 +1674,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 125,
+                    "line": 126,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "rawdescription": "\n\nLoad dynamicly row component.\n",
@@ -1495,7 +1689,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 60,
+                    "line": 61,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -1505,7 +1699,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 65,
+                    "line": 66,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -1522,7 +1716,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 75,
+                    "line": 76,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -1543,7 +1737,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 96,
+                    "line": 97,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -1553,7 +1747,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 106,
+                    "line": 107,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -1563,7 +1757,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 113,
+                    "line": 114,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -1573,7 +1767,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 101,
+                    "line": 102,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -1596,7 +1790,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport {\n  AfterViewInit,\n  Component,\n  ComponentFactory,\n  ComponentFactoryResolver,\n  ComponentRef,\n  ElementRef,\n  Input,\n  ViewChild,\n  ViewContainerRef,\n} from '@angular/core';\nimport { MatIconModule } from '@angular/material/icon';\nimport { CardComponent } from '../card/card.component';\nimport { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';\n\n@Component({\n  selector: 'app-carousel',\n  standalone: true,\n  imports: [CommonModule, MatIconModule],\n  templateUrl: './carousel.component.html',\n  styleUrl: './carousel.component.scss',\n})\nexport class CarouselComponent implements AfterViewInit {\n  @ViewChild('carouselTrack') carouselTrack!: ElementRef;\n\n  @Input() items: any[] = [\n    { id: 1, name: 'Item 1' },\n    { id: 2, name: 'Item 2' },\n    { id: 3, name: 'Item 3' },\n    { id: 4, name: 'Item 4' },\n    { id: 5, name: 'Item 5' },\n    { id: 6, name: 'Item 6' },\n    { id: 6, name: 'Item 6' },\n    { id: 6, name: 'Item 6' },\n    { id: 6, name: 'Item 6' },\n    { id: 6, name: 'Item 6' },\n  ];\n\n  @Input() itemType: any = CardComponent;\n  @ViewChild('dynamic', { static: true, read: ViewContainerRef }) dynHost: any;\n  public componentRef: ComponentRef<any> | undefined;\n\n  visibleItems: any[] = [];\n  scrollPosition: number = 0;\n  scrollDirection: number = 0;\n  scrollInterval!: any;\n  scrollSpeed: number = 20;\n  isCollapsed: boolean = true;\n  isMobile: boolean = false;\n\n  canScrollLeft: boolean = false;\n  canScrollRight: boolean = true;\n\n  constructor(\n    private breakpointObserver: BreakpointObserver,\n    public componentFactoryResolver: ComponentFactoryResolver\n  ) {}\n\n  ngAfterViewInit(): void {\n    this.updateScrollLimits();\n    this.loadComponent();\n  }\n\n  ngOnInit(): void {\n    // Observe screen size\n    this.breakpointObserver\n      .observe([Breakpoints.HandsetPortrait])\n      .subscribe((result) => {\n        this.isMobile = result.matches;\n        this.updateVisibleItems();\n      });\n  }\n\n  startScroll(direction: number): void {\n    this.scrollDirection = direction;\n\n    this.scrollInterval = setInterval(() => {\n      const trackWidth =\n        this.carouselTrack.nativeElement.scrollWidth -\n        this.carouselTrack.nativeElement.offsetWidth;\n\n      if (\n        (this.scrollDirection === -1 && this.scrollPosition <= 0) ||\n        (this.scrollDirection === 1 && this.scrollPosition >= trackWidth)\n      ) {\n        this.stopScroll();\n        return;\n      }\n\n      this.scrollPosition += this.scrollSpeed * this.scrollDirection;\n      this.updateScrollLimits();\n    }, 1);\n  }\n\n  stopScroll(): void {\n    clearInterval(this.scrollInterval);\n    this.scrollDirection = 0;\n  }\n\n  updateVisibleItems(): void {\n    this.visibleItems =\n      this.isMobile && this.isCollapsed ? this.items.slice(0, 3) : this.items;\n  }\n\n  toggleView(): void {\n    if (this.isMobile) {\n      this.isCollapsed = !this.isCollapsed;\n      this.updateVisibleItems();\n    }\n  }\n\n  updateScrollLimits(): void {\n    const trackWidth =\n      this.carouselTrack?.nativeElement?.scrollWidth -\n      this.carouselTrack?.nativeElement?.offsetWidth;\n\n    this.canScrollLeft = this.scrollPosition > 0;\n    this.canScrollRight = this.scrollPosition < trackWidth;\n  }\n\n  /**\n   * Load dynamicly row component.\n   */\n  private loadComponent(): void {\n    if (this.dynHost) this.dynHost?.clear();\n    const factory: ComponentFactory<any> =\n      this.componentFactoryResolver.resolveComponentFactory(this.itemType);\n\n    this.componentRef = this.dynHost?.createComponent(factory);\n    this.componentRef?.location?.nativeElement?.setAttribute(\n      'style',\n      'width: 100%'\n    );\n  }\n}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport {\n  AfterViewInit,\n  Component,\n  ComponentFactory,\n  ComponentFactoryResolver,\n  ComponentRef,\n  ElementRef,\n  Input,\n  ViewChild,\n  ViewContainerRef,\n} from '@angular/core';\nimport { MatIconModule } from '@angular/material/icon';\nimport { CardComponent } from '../card/card.component';\nimport { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';\n\n@Component({\n  selector: 'app-carousel',\n  standalone: true,\n  imports: [CommonModule, MatIconModule],\n  templateUrl: './carousel.component.html',\n  styleUrl: './carousel.component.scss',\n})\nexport class CarouselComponent implements AfterViewInit {\n  @ViewChild('carouselTrack') carouselTrack!: ElementRef;\n\n  @Input() items: any[] = [\n    { id: 1, name: 'Item 1' },\n    { id: 2, name: 'Item 2' },\n    { id: 3, name: 'Item 3' },\n    { id: 4, name: 'Item 4' },\n    { id: 5, name: 'Item 5' },\n    { id: 6, name: 'Item 6' },\n    { id: 6, name: 'Item 6' },\n    { id: 6, name: 'Item 6' },\n    { id: 6, name: 'Item 6' },\n    { id: 6, name: 'Item 6' },\n  ];\n\n  @Input() itemType: any = CardComponent;\n  @Input() title: string = 'Carousel Title';\n  @ViewChild('dynamic', { static: true, read: ViewContainerRef }) dynHost: any;\n  public componentRef: ComponentRef<any> | undefined;\n\n  visibleItems: any[] = [];\n  scrollPosition: number = 0;\n  scrollDirection: number = 0;\n  scrollInterval!: any;\n  scrollSpeed: number = 20;\n  isCollapsed: boolean = true;\n  isMobile: boolean = false;\n\n  canScrollLeft: boolean = false;\n  canScrollRight: boolean = true;\n\n  constructor(\n    private breakpointObserver: BreakpointObserver,\n    public componentFactoryResolver: ComponentFactoryResolver\n  ) {}\n\n  ngAfterViewInit(): void {\n    this.updateScrollLimits();\n    this.loadComponent();\n  }\n\n  ngOnInit(): void {\n    // Observe screen size\n    this.breakpointObserver\n      .observe([Breakpoints.HandsetPortrait])\n      .subscribe((result) => {\n        this.isMobile = result.matches;\n        this.updateVisibleItems();\n      });\n  }\n\n  startScroll(direction: number): void {\n    this.scrollDirection = direction;\n\n    this.scrollInterval = setInterval(() => {\n      const trackWidth =\n        this.carouselTrack.nativeElement.scrollWidth -\n        this.carouselTrack.nativeElement.offsetWidth;\n\n      if (\n        (this.scrollDirection === -1 && this.scrollPosition <= 0) ||\n        (this.scrollDirection === 1 && this.scrollPosition >= trackWidth)\n      ) {\n        this.stopScroll();\n        return;\n      }\n\n      this.scrollPosition += this.scrollSpeed * this.scrollDirection;\n      this.updateScrollLimits();\n    }, 1);\n  }\n\n  stopScroll(): void {\n    clearInterval(this.scrollInterval);\n    this.scrollDirection = 0;\n  }\n\n  updateVisibleItems(): void {\n    this.visibleItems =\n      this.isMobile && this.isCollapsed ? this.items.slice(0, 3) : this.items;\n  }\n\n  toggleView(): void {\n    if (this.isMobile) {\n      this.isCollapsed = !this.isCollapsed;\n      this.updateVisibleItems();\n    }\n  }\n\n  updateScrollLimits(): void {\n    const trackWidth =\n      this.carouselTrack?.nativeElement?.scrollWidth -\n      this.carouselTrack?.nativeElement?.offsetWidth;\n\n    this.canScrollLeft = this.scrollPosition > 0;\n    this.canScrollRight = this.scrollPosition < trackWidth;\n  }\n\n  /**\n   * Load dynamicly row component.\n   */\n  private loadComponent(): void {\n    if (this.dynHost) this.dynHost?.clear();\n    const factory: ComponentFactory<any> =\n      this.componentFactoryResolver.resolveComponentFactory(this.itemType);\n\n    this.componentRef = this.dynHost?.createComponent(factory);\n    this.componentRef?.location?.nativeElement?.setAttribute(\n      'style',\n      'width: 100%'\n    );\n  }\n}\n",
             "styleUrl": "./carousel.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -1620,7 +1814,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 53,
+                "line": 54,
                 "jsdoctags": [
                     {
                         "name": "breakpointObserver",
@@ -1646,7 +1840,7 @@
             "implements": [
                 "AfterViewInit"
             ],
-            "templateData": "<div class=\"carousel\">\n  <button\n    class=\"nav-button prev\"\n    [disabled]=\"!canScrollLeft\"\n    (mousedown)=\"startScroll(-1)\"\n    (mouseup)=\"stopScroll()\"\n    (mouseleave)=\"stopScroll()\"\n  >\n    <span class=\"material-symbols-outlined\">chevron_left</span>\n  </button>\n\n  <div class=\"carousel-container\">\n    <div class=\"header\">\n      <span class=\"material-symbols-outlined icon\">note_stack</span>\n      <h3>Carousel Title</h3>\n    </div>\n\n    <div class=\"carousel-track-wrapper\">\n      <div\n        class=\"carousel-track\"\n        #carouselTrack\n        [style.transform]=\"'translateX(-' + scrollPosition + 'px)'\"\n      >\n        <div class=\"carousel-item\" *ngFor=\"let item of visibleItems\">\n          <ng-container *ngIf=\"itemType\">\n            <ng-container *ngComponentOutlet=\"itemType\"></ng-container>\n          </ng-container>\n        </div>\n      </div>\n\n      <div class=\"toggle-button\">\n        <a (click)=\"toggleView()\">\n          {{ isCollapsed ? \"See All Items\" : \"Collapse\" }}\n        </a>\n      </div>\n    </div>\n  </div>\n\n  <button\n    class=\"nav-button next\"\n    (mousedown)=\"startScroll(1)\"\n    (mouseup)=\"stopScroll()\"\n    (mouseleave)=\"stopScroll()\"\n    [disabled]=\"!canScrollRight\"\n  >\n    <span class=\"material-symbols-outlined\">chevron_right</span>\n  </button>\n</div>\n"
+            "templateData": "<div class=\"carousel\">\n  <button\n    class=\"nav-button prev\"\n    [disabled]=\"!canScrollLeft\"\n    (mousedown)=\"startScroll(-1)\"\n    (mouseup)=\"stopScroll()\"\n    (mouseleave)=\"stopScroll()\"\n  >\n    <span class=\"material-symbols-outlined\">chevron_left</span>\n  </button>\n\n  <div class=\"carousel-container\">\n    <div class=\"header\">\n      <span class=\"material-symbols-outlined icon\">note_stack</span>\n      <h3>{{ title }}</h3>\n    </div>\n\n    <div class=\"carousel-track-wrapper\">\n      <div\n        class=\"carousel-track\"\n        #carouselTrack\n        [style.transform]=\"'translateX(-' + scrollPosition + 'px)'\"\n      >\n        <div class=\"carousel-item\" *ngFor=\"let item of visibleItems\">\n          <ng-container *ngIf=\"itemType\">\n            <ng-container *ngComponentOutlet=\"itemType\"></ng-container>\n          </ng-container>\n        </div>\n      </div>\n\n      <div class=\"toggle-button\">\n        <a (click)=\"toggleView()\">\n          {{ isCollapsed ? \"See All Items\" : \"Collapse\" }}\n        </a>\n      </div>\n    </div>\n  </div>\n\n  <button\n    class=\"nav-button next\"\n    (mousedown)=\"startScroll(1)\"\n    (mouseup)=\"stopScroll()\"\n    (mouseleave)=\"stopScroll()\"\n    [disabled]=\"!canScrollRight\"\n  >\n    <span class=\"material-symbols-outlined\">chevron_right</span>\n  </button>\n</div>\n"
         },
         {
             "name": "CenterTabBarComponent",
@@ -1777,7 +1971,7 @@
         },
         {
             "name": "ContactUsComponent",
-            "id": "component-ContactUsComponent-a6345ddd2c305a539d11f91a7692c52ad7b2d6f9b60412184bd72631849da7c69cdf6dbe3954ad188b907ce807c3fdd113c0f261f1a1550d56826d19872688b0",
+            "id": "component-ContactUsComponent-17fab70e7265b91c7a7d30de99efb5cf7e850206bd323cb9344e818f59114f3869b122193b83856a656433fa0b04e9a467fb0fe141f22ca933461bbac1554cfd",
             "file": "src/app/components/shared/contact-us/contact-us.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1792,7 +1986,26 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "buttonText",
+                    "defaultValue": "'Need more help?'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "linkLabel",
+                    "defaultValue": "'Contact us'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [],
@@ -1822,13 +2035,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { MatButtonModule } from '@angular/material/button';\n\nimport { MatCardModule } from '@angular/material/card';\nimport { MatChipsModule } from '@angular/material/chips';\nimport { MatIconModule } from '@angular/material/icon';\n\n@Component({\n  selector: 'app-contact-us',\n  standalone: true,\n  imports: [MatCardModule, MatChipsModule, MatButtonModule, MatIconModule],\n  templateUrl: './contact-us.component.html',\n  styleUrl: './contact-us.component.scss',\n})\nexport class ContactUsComponent {}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { MatButtonModule } from '@angular/material/button';\n\nimport { MatCardModule } from '@angular/material/card';\nimport { MatChipsModule } from '@angular/material/chips';\nimport { MatIconModule } from '@angular/material/icon';\n\n@Component({\n  selector: 'app-contact-us',\n  standalone: true,\n  imports: [MatCardModule, MatChipsModule, MatButtonModule, MatIconModule],\n  templateUrl: './contact-us.component.html',\n  styleUrl: './contact-us.component.scss',\n})\nexport class ContactUsComponent {\n  @Input() buttonText = 'Need more help?';\n  @Input() linkLabel = 'Contact us';\n}\n",
             "styleUrl": "./contact-us.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<mat-card class=\"mat-typography contact-us-container\">\n  <div class=\"need-help\">\n    <div class=\"content\">\n      <mat-icon fontSet=\"material-icons-outlined\" class=\"mail-icon mr1\"\n        >mail</mat-icon\n      >\n      <div class=\"section\">\n        <span class=\"row centered\">\n          <mat-icon fontSet=\"material-icons-outlined\" class=\"mail-icon mr1\"\n            >mail</mat-icon\n          >\n          <div class=\"button-text mr1\">Need more help?</div>\n        </span>\n\n        <span class=\"row centered\">\n          <div class=\"link\">Contact us</div>\n          <mat-icon class=\"go-icon\">chevron_right</mat-icon>\n        </span>\n      </div>\n      <mat-icon class=\"mobile-icon\">chevron_right</mat-icon>\n    </div>\n  </div>\n</mat-card>\n"
+            "templateData": "<mat-card class=\"mat-typography contact-us-container\">\n  <div class=\"need-help\">\n    <div class=\"content\">\n      <mat-icon fontSet=\"material-icons-outlined\" class=\"mail-icon mr1\"\n        >mail</mat-icon\n      >\n      <div class=\"section\">\n        <span class=\"row centered\">\n          <mat-icon fontSet=\"material-icons-outlined\" class=\"mail-icon mr1\"\n            >mail</mat-icon\n          >\n          <div class=\"button-text mr1\">{{ buttonText }}</div>\n        </span>\n\n        <span class=\"row centered\">\n          <div class=\"link\">{{ linkLabel }}</div>\n          <mat-icon class=\"go-icon\">chevron_right</mat-icon>\n        </span>\n      </div>\n      <mat-icon class=\"mobile-icon\">chevron_right</mat-icon>\n    </div>\n  </div>\n</mat-card>\n"
         },
         {
             "name": "ContextualMessageComponent",
@@ -1997,7 +2210,7 @@
         },
         {
             "name": "DashboardComponent",
-            "id": "component-DashboardComponent-4f297593962a5d05a4dbe8837f122d30775e042582efa22d391621053c2dd913a1ec2fdda6c541c384bcc201b362ab665f2a0cc0512553c357df1c4a88a92e61",
+            "id": "component-DashboardComponent-0d01e6cf82a23d4a5781d85e69165d0684dda114d5f88fe5a1b45295c97d79242c1b147e02258f3f9b00d833b2ed5fb5c6ac9b091fecf555b09e2416344cdd06",
             "file": "src/app/components/dashboard/dashboard.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2229,7 +2442,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {\n  AfterViewInit,\n  Component,\n  ComponentRef,\n  OnDestroy,\n  ViewChild,\n  ViewContainerRef,\n} from '@angular/core';\nimport { inject } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { AuthService } from '../../services/auth.service';\nimport { ContactUsComponent } from '../shared/contact-us/contact-us.component';\nimport { BannerComponent } from '../shared/banner/banner.component';\nimport { CarouselComponent } from '../shared/carousel/carousel.component';\nimport { ArticleIndexComponent } from '../shared/article-index/article-index.component';\nimport { ModalComponent } from '../shared/modal/modal.component';\nimport { TableComponent } from '../shared/table/table.component';\nimport { CommonModule } from '@angular/common';\nimport {\n  MatChipSelectionChange,\n  MatChipsModule,\n} from '@angular/material/chips';\nimport { PillBarComponent } from '../shared/pill-bar/pill-bar.component';\nimport { AccordionComponent } from '../shared/accordion/accordion.component';\nimport { ArticleFeedbackComponent } from '../shared/article-feedback/article-feedback.component';\nimport { BreadcrumbComponent } from '../shared/breadcrumb/breadcrumb.component';\nimport { CardComponent } from '../shared/card/card.component';\nimport { CenterTabBarComponent } from '../shared/center-tab-bar/center-tab-bar.component';\nimport { FooterComponent } from '../shared/footer/footer.component';\nimport { HeaderComponent } from '../shared/header/header.component';\nimport { ImageComponent } from '../shared/image/image.component';\nimport { LabelComponent } from '../shared/label/label.component';\nimport { LinkComponent } from '../shared/link/link.component';\nimport { RelatedArticlesComponent } from '../shared/related-articles/related-articles.component';\nimport { SearchBarComponent } from '../shared/search-bar/search-bar.component';\nimport { SidebarComponent } from '../shared/sidebar/sidebar.component';\nimport { SubtitleComponent } from '../shared/subtitle/subtitle.component';\nimport { TitleComponent } from '../shared/title/title.component';\nimport { VideoPlayerComponent } from '../shared/video-player/video-player.component';\n\n@Component({\n  selector: 'app-dashboard',\n  standalone: true,\n  imports: [CommonModule, MatChipsModule],\n  templateUrl: './dashboard.component.html',\n  styleUrl: './dashboard.component.scss',\n})\nexport class DashboardComponent implements AfterViewInit, OnDestroy {\n  private authService = inject(AuthService);\n  private router = inject(Router);\n\n  @ViewChild('dynamicContainer', { read: ViewContainerRef })\n  dynamicContainer!: ViewContainerRef;\n\n  chipLabels = [\n    { label: 'Carousel', value: CarouselComponent, selected: false },\n    { label: 'Accordion', value: AccordionComponent, selected: false },\n    {\n      label: 'Article Feedback',\n      value: ArticleFeedbackComponent,\n      selected: false,\n    },\n    { label: 'Article Index', value: ArticleIndexComponent, selected: false },\n    { label: 'Banner', value: BannerComponent, selected: false },\n    { label: 'Breadcrumb', value: BreadcrumbComponent, selected: false },\n    { label: 'Card', value: CardComponent, selected: false },\n    { label: 'Center Tab Bar', value: CenterTabBarComponent, selected: false },\n    { label: 'Contact Us', value: ContactUsComponent, selected: false },\n    { label: 'Footer', value: FooterComponent, selected: false },\n    { label: 'Header', value: HeaderComponent, selected: false },\n    { label: 'Image', value: ImageComponent, selected: false },\n    { label: 'Label', value: LabelComponent, selected: false },\n    { label: 'Link', value: LinkComponent, selected: false },\n    { label: 'Modal', value: ModalComponent, selected: false },\n    { label: 'Pill Bar', value: PillBarComponent, selected: false },\n    {\n      label: 'Related Articles',\n      value: RelatedArticlesComponent,\n      selected: false,\n    },\n    { label: 'Search Bar', value: SearchBarComponent, selected: false },\n    { label: 'Sidebar', value: SidebarComponent, selected: false },\n    { label: 'Subtitle', value: SubtitleComponent, selected: false },\n    { label: 'Table', value: TableComponent, selected: false },\n    { label: 'Title', value: TitleComponent, selected: false },\n    { label: 'Video', value: VideoPlayerComponent, selected: false },\n  ];\n\n  itemType = ArticleIndexComponent;\n  private componentRefs: ComponentRef<any>[] = [];\n\n  template: Object[] = [];\n\n  ngAfterViewInit(): void {\n    if (this.dynamicContainer) {\n      this.renderTemplate();\n    }\n  }\n\n  private renderTemplate(): void {\n    this.componentRefs.forEach((ref) => ref.destroy());\n    this.template.forEach((item: any) => {\n      const componentRef: ComponentRef<any> =\n        this.dynamicContainer.createComponent(item.type);\n      this.componentRefs.push(componentRef);\n\n      // Pass input properties dynamically\n      Object.keys(item).forEach((key) => {\n        if (key !== 'type' && key in componentRef.instance) {\n          componentRef.instance[key] = item[key];\n        }\n      });\n    });\n  }\n\n  private renderSelectedComponents(): void {\n    this.componentRefs.forEach((ref) => ref.destroy());\n    this.componentRefs = [];\n\n    const selectedComponents = this.chipLabels.filter((chip) => chip.selected);\n\n    selectedComponents.forEach((chip) => {\n      const componentRef = this.dynamicContainer.createComponent(chip.value);\n      this.componentRefs.push(componentRef);\n    });\n  }\n\n  logout(): void {\n    this.authService.logout();\n    this.router.navigate(['/login']);\n  }\n\n  ngOnDestroy(): void {\n    this.componentRefs.forEach((ref) => ref.destroy());\n  }\n\n  onChipSelect(event: MatChipSelectionChange, chip: any): void {\n    chip.selected = event.selected;\n    this.renderSelectedComponents();\n  }\n}\n",
+            "sourceCode": "import {\n  AfterViewInit,\n  Component,\n  ComponentRef,\n  OnDestroy,\n  ViewChild,\n  ViewContainerRef,\n} from '@angular/core';\nimport { inject } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { AuthService } from '../../services/auth.service';\nimport { TableComponent } from '../shared/table/table.component';\nimport { CommonModule } from '@angular/common';\nimport {\n  MatChipSelectionChange,\n  MatChipsModule,\n} from '@angular/material/chips';\nimport { BreadcrumbComponent } from '../shared/breadcrumb/breadcrumb.component';\nimport { CardComponent } from '../shared/card/card.component';\nimport { CenterTabBarComponent } from '../shared/center-tab-bar/center-tab-bar.component';\nimport { FooterComponent } from '../shared/footer/footer.component';\nimport { HeaderComponent } from '../shared/header/header.component';\nimport { ImageComponent } from '../shared/image/image.component';\nimport { LabelComponent } from '../shared/label/label.component';\nimport { LinkComponent } from '../shared/link/link.component';\nimport { RelatedArticlesComponent } from '../shared/related-articles/related-articles.component';\nimport { SearchBarComponent } from '../shared/search-bar/search-bar.component';\nimport { SidebarComponent } from '../shared/sidebar/sidebar.component';\nimport { SubtitleComponent } from '../shared/subtitle/subtitle.component';\nimport { TitleComponent } from '../shared/title/title.component';\nimport { VideoPlayerComponent } from '../shared/video-player/video-player.component';\nimport { AccordionComponent } from '../shared/accordion/accordion.component';\nimport { ArticleFeedbackComponent } from '../shared/article-feedback/article-feedback.component';\nimport { ArticleIndexComponent } from '../shared/article-index/article-index.component';\nimport { BannerComponent } from '../shared/banner/banner.component';\nimport { CarouselComponent } from '../shared/carousel/carousel.component';\nimport { ContactUsComponent } from '../shared/contact-us/contact-us.component';\nimport { ModalComponent } from '../shared/modal/modal.component';\nimport { PillBarComponent } from '../shared/pill-bar/pill-bar.component';\n\n@Component({\n  selector: 'app-dashboard',\n  standalone: true,\n  imports: [CommonModule, MatChipsModule],\n  templateUrl: './dashboard.component.html',\n  styleUrl: './dashboard.component.scss',\n})\nexport class DashboardComponent implements AfterViewInit, OnDestroy {\n  private authService = inject(AuthService);\n  private router = inject(Router);\n\n  @ViewChild('dynamicContainer', { read: ViewContainerRef })\n  dynamicContainer!: ViewContainerRef;\n\n  chipLabels = [\n    { label: 'Carousel', value: CarouselComponent, selected: false },\n    { label: 'Accordion', value: AccordionComponent, selected: false },\n    {\n      label: 'Article Feedback',\n      value: ArticleFeedbackComponent,\n      selected: false,\n    },\n    { label: 'Article Index', value: ArticleIndexComponent, selected: false },\n    { label: 'Banner', value: BannerComponent, selected: false },\n    { label: 'Breadcrumb', value: BreadcrumbComponent, selected: false },\n    { label: 'Card', value: CardComponent, selected: false },\n    { label: 'Center Tab Bar', value: CenterTabBarComponent, selected: false },\n    { label: 'Contact Us', value: ContactUsComponent, selected: false },\n    { label: 'Footer', value: FooterComponent, selected: false },\n    { label: 'Header', value: HeaderComponent, selected: false },\n    { label: 'Image', value: ImageComponent, selected: false },\n    { label: 'Label', value: LabelComponent, selected: false },\n    { label: 'Link', value: LinkComponent, selected: false },\n    { label: 'Modal', value: ModalComponent, selected: false },\n    { label: 'Pill Bar', value: PillBarComponent, selected: false },\n    {\n      label: 'Related Articles',\n      value: RelatedArticlesComponent,\n      selected: false,\n    },\n    { label: 'Search Bar', value: SearchBarComponent, selected: false },\n    { label: 'Sidebar', value: SidebarComponent, selected: false },\n    { label: 'Subtitle', value: SubtitleComponent, selected: false },\n    { label: 'Table', value: TableComponent, selected: false },\n    { label: 'Title', value: TitleComponent, selected: false },\n    { label: 'Video', value: VideoPlayerComponent, selected: false },\n  ];\n\n  itemType = ArticleIndexComponent;\n  private componentRefs: ComponentRef<any>[] = [];\n\n  template: Object[] = [];\n\n  ngAfterViewInit(): void {\n    if (this.dynamicContainer) {\n      this.renderTemplate();\n    }\n  }\n\n  private renderTemplate(): void {\n    this.componentRefs.forEach((ref) => ref.destroy());\n    this.template.forEach((item: any) => {\n      const componentRef: ComponentRef<any> =\n        this.dynamicContainer.createComponent(item.type);\n      this.componentRefs.push(componentRef);\n\n      // Pass input properties dynamically\n      Object.keys(item).forEach((key) => {\n        if (key !== 'type' && key in componentRef.instance) {\n          componentRef.instance[key] = item[key];\n        }\n      });\n    });\n  }\n\n  private renderSelectedComponents(): void {\n    this.componentRefs.forEach((ref) => ref.destroy());\n    this.componentRefs = [];\n\n    const selectedComponents = this.chipLabels.filter((chip) => chip.selected);\n\n    selectedComponents.forEach((chip: any) => {\n      const componentRef = this.dynamicContainer.createComponent(chip.value);\n      this.componentRefs.push(componentRef);\n    });\n  }\n\n  logout(): void {\n    this.authService.logout();\n    this.router.navigate(['/login']);\n  }\n\n  ngOnDestroy(): void {\n    this.componentRefs.forEach((ref) => ref.destroy());\n  }\n\n  onChipSelect(event: MatChipSelectionChange, chip: any): void {\n    chip.selected = event.selected;\n    this.renderSelectedComponents();\n  }\n}\n",
             "styleUrl": "./dashboard.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -2239,11 +2452,11 @@
                 "AfterViewInit",
                 "OnDestroy"
             ],
-            "templateData": "<div class=\"container\">\n  <h2>Dashboard</h2>\n  <button (click)=\"logout()\">Logout</button>\n  <p>Welcome to your dashboard!</p>\n  <!-- <app-carousel [style.display]=\"'none'\" [itemType]=\"itemType\"></app-carousel> -->\n\n  <mat-chip-listbox\n    aria-orientation=\"horizontal\"\n    class=\"pill-container\"\n    multiple\n  >\n    <div class=\"pill-spacer\">spacer</div>\n    <mat-chip-option\n      *ngFor=\"let chip of chipLabels\"\n      class=\"pill\"\n      [selected]=\"chip.selected\"\n      (selectionChange)=\"onChipSelect($event, chip)\"\n    >\n      {{ chip.label }}\n    </mat-chip-option>\n    <div class=\"pill-spacer\">spacer</div>\n  </mat-chip-listbox>\n\n  <ng-container #dynamicContainer></ng-container>\n</div>\n"
+            "templateData": "<div class=\"container\">\n  <h2>Dashboard</h2>\n  <button (click)=\"logout()\">Logout</button>\n\n  <mat-chip-listbox\n    aria-orientation=\"horizontal\"\n    class=\"pill-container\"\n    multiple\n  >\n    <div class=\"pill-spacer\">spacer</div>\n    <mat-chip-option\n      *ngFor=\"let chip of chipLabels\"\n      class=\"pill\"\n      [selected]=\"chip.selected\"\n      (selectionChange)=\"onChipSelect($event, chip)\"\n    >\n      {{ chip.label }}\n    </mat-chip-option>\n    <div class=\"pill-spacer\">spacer</div>\n  </mat-chip-listbox>\n\n  <ng-container #dynamicContainer></ng-container>\n</div>\n"
         },
         {
             "name": "FooterComponent",
-            "id": "component-FooterComponent-45c8b21a5a2ef5cf17ae1b254643c95bbfb68df2b2dbdf9576d82f26b32394b40ce2c65fddbb0993969ae88e7e8eb00383f6d3be1b4f3d629bd15bb495a23d29",
+            "id": "component-FooterComponent-b9e1524b1f4a59090b30aaa45f97ca4fc6844e2083d9217a6eaaa35e586391722bf805f70d96f927ca164c1d50c6716c6196e762b20e47546b322701c4994357",
             "file": "src/app/components/shared/footer/footer.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2258,7 +2471,26 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "disclaimer",
+                    "defaultValue": "'Copyright © 2024 Paysafe Holdings UK Limited. All rights reserved. Paysafe Financial Services Limited (FRN:900015)'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "links",
+                    "defaultValue": "[\n    'Cookie Settings',\n    'Contact Us',\n    'Privacy Policy',\n    'Regulatory Disclosures',\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "{}",
+                    "decorators": []
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [
                 {
@@ -2270,7 +2502,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 16,
+                    "line": 23,
                     "modifierKind": [
                         123
                     ]
@@ -2283,7 +2515,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 20,
+                    "line": 27,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -2295,6 +2527,10 @@
             "standalone": true,
             "imports": [
                 {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
                     "name": "MatDividerModule",
                     "type": "module"
                 }
@@ -2302,7 +2538,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { inject } from '@angular/core';\nimport {MatDividerModule} from '@angular/material/divider';\n\n\n@Component({\n  selector: 'app-footer',\n  standalone: true,\n  imports: [MatDividerModule],\n  templateUrl: './footer.component.html',\n  styleUrl: './footer.component.scss'\n})\nexport class FooterComponent {\n\n  private router = inject(Router);\n\n  constructor() {}\n\n  ngOnInit(): void {\n\n  }\n\n\n}",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { inject } from '@angular/core';\nimport { MatDividerModule } from '@angular/material/divider';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n  selector: 'app-footer',\n  standalone: true,\n  imports: [CommonModule, MatDividerModule],\n  templateUrl: './footer.component.html',\n  styleUrl: './footer.component.scss',\n})\nexport class FooterComponent {\n  @Input() links = [\n    'Cookie Settings',\n    'Contact Us',\n    'Privacy Policy',\n    'Regulatory Disclosures',\n  ];\n  @Input() disclaimer: string =\n    'Copyright © 2024 Paysafe Holdings UK Limited. All rights reserved. Paysafe Financial Services Limited (FRN:900015)';\n  private router = inject(Router);\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
             "styleUrl": "./footer.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -2313,14 +2549,14 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 16
+                "line": 23
             },
             "extends": [],
-            "templateData": "<footer class=\"footer\">\n    <div class=\"nav-container\">\n        <nav class=\"navigation\">\n            <ul>\n                <li><a href=\"\">Cookie Settings</a></li>\n                <li><a href=\"\">Contact Us</a></li>\n                <li><a href=\"\">Privacy Policy</a></li>\n                <li><a href=\"\">Regulatory Disclosures</a></li>\n            </ul>\n        </nav>\n    </div>\n    <mat-divider class=\"divider\" [vertical]=\"true\"></mat-divider>\n    <div class=\"sm-container\">\n        <small>Copyright © 2024 Paysafe Holdings UK Limited. All rights reserved. Paysafe Financial Services Limited (FRN:900015)</small>\n    </div>\n</footer>"
+            "templateData": "<footer class=\"footer\">\n  <div class=\"nav-container\">\n    <nav class=\"navigation\">\n      <ul>\n        <li *ngFor=\"let link of links; let index = index\">\n          <a href=\"\">{{ link }}</a>\n        </li>\n      </ul>\n    </nav>\n  </div>\n  <mat-divider class=\"divider\" [vertical]=\"true\"></mat-divider>\n  <div class=\"sm-container\">\n    <small>{{ disclaimer }}</small>\n  </div>\n</footer>\n"
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-9b07c778f7a08c738ed0437f770c4475afce82fcf5ea1aab21c235c4463e0e57e47a8a797443a616d35b95d72b5134c69d8de0e59b1360ef940f586ab0597d4c",
+            "id": "component-HeaderComponent-b6a9b91766e1efa03ddeadf097a365f47bf4e6c5201e74cc084045bf93c9e0178679202019dcb9b066ca05fbc3b0fb77ba2b552a7178be79338696a076fb9dab",
             "file": "src/app/components/shared/header/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2335,7 +2571,35 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "loginLabel",
+                    "defaultValue": "'Login'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 41,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "tabs",
+                    "defaultValue": "['Small Buisness', 'Enterprise', 'Partners']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 43,
+                    "type": "{}",
+                    "decorators": []
+                },
+                {
+                    "name": "title",
+                    "defaultValue": "\"Need Help? Let's find it together!\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 42,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [
                 {
@@ -2347,7 +2611,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 45
+                    "line": 50
                 },
                 {
                     "name": "authSubscription",
@@ -2357,7 +2621,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 41,
+                    "line": 46,
                     "modifierKind": [
                         123
                     ]
@@ -2371,7 +2635,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 47
+                    "line": 52
                 },
                 {
                     "name": "isLoggedIn",
@@ -2382,7 +2646,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 42
+                    "line": 47
                 },
                 {
                     "name": "logoPath",
@@ -2393,7 +2657,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 43
+                    "line": 48
                 },
                 {
                     "name": "router",
@@ -2404,7 +2668,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 40,
+                    "line": 45,
                     "modifierKind": [
                         123
                     ]
@@ -2424,7 +2688,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 81,
+                    "line": 86,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -2445,7 +2709,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 70,
+                    "line": 75,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -2455,7 +2719,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 61,
+                    "line": 66,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -2465,7 +2729,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 114,
+                    "line": 119,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -2475,7 +2739,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 86,
+                    "line": 91,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -2485,7 +2749,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 97,
+                    "line": 102,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -2495,7 +2759,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 102,
+                    "line": 107,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -2505,7 +2769,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 107,
+                    "line": 112,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -2515,7 +2779,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 76,
+                    "line": 81,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -2527,6 +2791,10 @@
             "standalone": true,
             "imports": [
                 {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
                     "name": "MatButtonModule",
                     "type": "module"
                 },
@@ -2536,10 +2804,6 @@
                 },
                 {
                     "name": "MatIconModule",
-                    "type": "module"
-                },
-                {
-                    "name": "CommonModule",
                     "type": "module"
                 },
                 {
@@ -2561,12 +2825,20 @@
                 {
                     "name": "MatFormFieldModule",
                     "type": "module"
+                },
+                {
+                    "name": "TitleComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "CenterTabBarComponent",
+                    "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, OnDestroy, viewChild } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { Router } from '@angular/router';\nimport { inject } from '@angular/core';\nimport { MatIconModule } from '@angular/material/icon';\nimport { MatButtonModule } from '@angular/material/button';\nimport { MatDividerModule } from '@angular/material/divider';\nimport { AuthService } from '../../../services/auth.service';\nimport { Subscription } from 'rxjs';\nimport { DragScrollDirective } from './drag-scroll.directive';\nimport { SearchBarComponent } from '../search-bar/search-bar.component';\n\nimport { NgFor } from '@angular/common';\nimport { MatInputModule } from '@angular/material/input';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport { MatLabel } from '@angular/material/form-field';\nimport { PillBarComponent } from '../pill-bar/pill-bar.component';\nimport { MatChipsModule } from '@angular/material/chips';\nimport { FormControl } from '@angular/forms';\n\n@Component({\n  selector: 'app-header',\n  standalone: true,\n  imports: [\n    MatButtonModule,\n    MatDividerModule,\n    MatIconModule,\n    CommonModule,\n    MatChipsModule,\n    PillBarComponent,\n    SearchBarComponent,\n    MatInputModule,\n    MatFormFieldModule,\n  ],\n\n  templateUrl: './header.component.html',\n  styleUrl: './header.component.scss',\n})\nexport class HeaderComponent implements OnInit, OnDestroy {\n  private router = inject(Router);\n  private authSubscription!: Subscription;\n  isLoggedIn = false;\n  logoPath = 'assets/icons/top-bar/Optic_Logo_White.svg';\n\n  _query: FormControl = new FormControl('');\n\n  chipLabels: string[] = [\n    //make input parameter for this\n    'Get Started!',\n    'Wallet',\n    'Payment Link',\n    'Disputes',\n    'Payments',\n    'My Account',\n  ];\n\n  constructor(private authService: AuthService) {\n    this.authSubscription = new Subscription();\n  }\n\n  ngOnInit() {\n    this.authSubscription = this.authService.isLoggedIn$.subscribe(\n      (isLoggedIn) => {\n        this.isLoggedIn = isLoggedIn;\n        console.log('Auth state changed: ', this.isLoggedIn);\n      }\n    );\n  }\n\n  ngOnDestroy() {\n    if (this.authSubscription) {\n      this.authSubscription.unsubscribe();\n    }\n  }\n\n  toggleLogin() {\n    // TEST FUNCTION, DELETE\n    this.isLoggedIn = !this.isLoggedIn;\n  }\n\n  handlePillEvent(message: string) {\n    if (message === this._query.value) this._query = new FormControl('');\n    else this._query = new FormControl(message);\n  }\n\n  onLogin() {\n    //Login logic here\n    //link to login page\n\n    //this.router.navigate(['/dashboard']);\n    console.log('login button clicked');\n    //once logged in\n\n    this.toggleLogin(); // DELETE\n  }\n\n  onMenu() {\n    //Menu logic here\n    console.log('menu button clicked');\n  }\n\n  onProfile() {\n    //Profile logic here\n    console.log('profile button clicked');\n  }\n\n  onSearch() {\n    //Search logic here\n    console.log('search button clicked');\n\n    this.toggleLogin(); // DELETE\n  }\n\n  onLang() {\n    //Language/region logic here\n    console.log('language button clicked');\n  }\n}\n",
+            "sourceCode": "import { Component, OnInit, OnDestroy, Input } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { Router } from '@angular/router';\nimport { inject } from '@angular/core';\nimport { MatIconModule } from '@angular/material/icon';\nimport { MatButtonModule } from '@angular/material/button';\nimport { MatDividerModule } from '@angular/material/divider';\nimport { AuthService } from '../../../services/auth.service';\nimport { Subscription } from 'rxjs';\nimport { SearchBarComponent } from '../search-bar/search-bar.component';\n\nimport { MatInputModule } from '@angular/material/input';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport { MatChipsModule } from '@angular/material/chips';\nimport { FormControl } from '@angular/forms';\nimport { PillBarComponent } from '../pill-bar/pill-bar.component';\nimport { TitleComponent } from '../title/title.component';\nimport { CenterTabBarComponent } from '../center-tab-bar/center-tab-bar.component';\n\n@Component({\n  selector: 'app-header',\n  standalone: true,\n  imports: [\n    CommonModule,\n    MatButtonModule,\n    MatDividerModule,\n    MatIconModule,\n    MatChipsModule,\n    PillBarComponent,\n    SearchBarComponent,\n    MatInputModule,\n    MatFormFieldModule,\n    TitleComponent,\n    CenterTabBarComponent,\n  ],\n\n  templateUrl: './header.component.html',\n  styleUrl: './header.component.scss',\n})\nexport class HeaderComponent implements OnInit, OnDestroy {\n  @Input() loginLabel = 'Login';\n  @Input() title = \"Need Help? Let's find it together!\";\n  @Input() tabs = ['Small Buisness', 'Enterprise', 'Partners'];\n\n  private router = inject(Router);\n  private authSubscription!: Subscription;\n  isLoggedIn = false;\n  logoPath = 'assets/icons/top-bar/Optic_Logo_White.svg';\n\n  _query: FormControl = new FormControl('');\n\n  chipLabels: string[] = [\n    //make input parameter for this\n    'Get Started!',\n    'Wallet',\n    'Payment Link',\n    'Disputes',\n    'Payments',\n    'My Account',\n  ];\n\n  constructor(private authService: AuthService) {\n    this.authSubscription = new Subscription();\n  }\n\n  ngOnInit() {\n    this.authSubscription = this.authService.isLoggedIn$.subscribe(\n      (isLoggedIn) => {\n        this.isLoggedIn = isLoggedIn;\n        console.log('Auth state changed: ', this.isLoggedIn);\n      }\n    );\n  }\n\n  ngOnDestroy() {\n    if (this.authSubscription) {\n      this.authSubscription.unsubscribe();\n    }\n  }\n\n  toggleLogin() {\n    // TEST FUNCTION, DELETE\n    this.isLoggedIn = !this.isLoggedIn;\n  }\n\n  handlePillEvent(message: string) {\n    if (message === this._query.value) this._query = new FormControl('');\n    else this._query = new FormControl(message);\n  }\n\n  onLogin() {\n    //Login logic here\n    //link to login page\n\n    //this.router.navigate(['/dashboard']);\n    console.log('login button clicked');\n    //once logged in\n\n    this.toggleLogin(); // DELETE\n  }\n\n  onMenu() {\n    //Menu logic here\n    console.log('menu button clicked');\n  }\n\n  onProfile() {\n    //Profile logic here\n    console.log('profile button clicked');\n  }\n\n  onSearch() {\n    //Search logic here\n    console.log('search button clicked');\n\n    this.toggleLogin(); // DELETE\n  }\n\n  onLang() {\n    //Language/region logic here\n    console.log('language button clicked');\n  }\n}\n",
             "styleUrl": "./header.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -2584,7 +2856,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 55,
+                "line": 60,
                 "jsdoctags": [
                     {
                         "name": "authService",
@@ -2602,7 +2874,7 @@
                 "OnInit",
                 "OnDestroy"
             ],
-            "templateData": "\n<div class=\"grid-container\">\n    <header class=\"item1\">\n        <div class=\"lhs-container\">\n\n            <button *ngIf=\"isLoggedIn\" mat-icon-button (click)=\"onMenu()\" class=\"menu-toggle lh-button\">\n                <span class=\"material-symbols-outlined\">\n                    menu\n                </span>\n            </button>\n            <img [src]=\"logoPath\" alt=\"Optic Logo\">\n        </div>\n\n        <nav class=\"navigation\">\n            <div class=\"rhs-container\">\n\n                <div *ngIf=\"!isLoggedIn\" class=\"user-buttons-container\"> \n                    <button  mat-button (click)=\"onLogin()\" class=\"rh-button login-button\">Login</button>\n                    <mat-divider class=\"divider\" [vertical]=\"true\"></mat-divider>\n                    <button mat-icon-button color=\"primary\" class=\"rh-button\" (click)=\"onLang()\" aria-label=\"Language/Region Button\">\n                        <span class=\"material-symbols-outlined\">\n                            captive_portal\n                        </span>\n                    </button>\n                </div>\n\n                <div *ngIf=\"isLoggedIn\" class=\"user-buttons-container\">\n                    <button mat-icon-button (click)=\"onSearch()\" class=\"rh-button\">\n                        <span class=\"material-symbols-outlined\">\n                            search\n                        </span>\n                    </button>\n                    <mat-divider class=\"divider mobile-divider\" [vertical]=\"true\"></mat-divider>\n                    <button mat-icon-button (click)=\"onProfile()\" class=\"rh-button\">\n                        <span class=\"material-symbols-outlined\">\n                            person\n                        </span>\n                    </button>\n                    <mat-divider class=\"divider fs-divider\" [vertical]=\"true\"></mat-divider>\n                    <button mat-icon-button color=\"primary\" class=\"rh-button language-button\" (click)=\"onLang()\" aria-label=\"Language/Region Button\">\n                        <span class=\"material-symbols-outlined\">\n                            captive_portal\n                        </span>\n                    </button>\n                </div>\n            </div>\n        </nav>\n    </header>\n\n    <div class=\"item2\" *ngIf=\"!isLoggedIn\"> \n        <h1>Need Help? Let's find it together!</h1>\n        <div class=\"tab-container\">\n            <a class=\"lh-tab tab-cell\">Small Buisness</a>\n            <a class=\"tab-cell\">Enterprise</a>\n            <a class=\"rh-tab tab-cell\">Partners</a>\n        </div>\n        <div class=\"search-container\">\n            <app-search-bar [searchString]=\"_query\"></app-search-bar>\n        </div>\n\n        <div class=\"pill-bar-container\">\n            <app-pill-bar (notifyParentEvent)=\"handlePillEvent($event)\"></app-pill-bar>\n        \n        </div>\n\n    </div>    \n</div>\n"
+            "templateData": "<div class=\"header-container\">\n  <header class=\"collapsed\">\n    <div class=\"lhs-container\">\n      <button\n        *ngIf=\"isLoggedIn\"\n        mat-icon-button\n        (click)=\"onMenu()\"\n        class=\"menu-toggle lh-button\"\n      >\n        <span class=\"material-symbols-outlined\"> menu </span>\n      </button>\n      <img [src]=\"logoPath\" alt=\"Optic Logo\" />\n    </div>\n\n    <nav class=\"navigation\">\n      <div class=\"rhs-container\">\n        <div *ngIf=\"!isLoggedIn\" class=\"user-buttons-container\">\n          <button mat-button (click)=\"onLogin()\" class=\"rh-button login-button\">\n            {{ loginLabel }}\n          </button>\n          <mat-divider class=\"divider\" [vertical]=\"true\"></mat-divider>\n          <button\n            mat-icon-button\n            color=\"primary\"\n            class=\"rh-button\"\n            (click)=\"onLang()\"\n            aria-label=\"Language/Region Button\"\n          >\n            <span class=\"material-symbols-outlined\"> captive_portal </span>\n          </button>\n        </div>\n\n        <div *ngIf=\"isLoggedIn\" class=\"user-buttons-container\">\n          <button mat-icon-button (click)=\"onSearch()\" class=\"rh-button\">\n            <span class=\"material-symbols-outlined\"> search </span>\n          </button>\n          <mat-divider\n            class=\"divider mobile-divider\"\n            [vertical]=\"true\"\n          ></mat-divider>\n          <button mat-icon-button (click)=\"onProfile()\" class=\"rh-button\">\n            <span class=\"material-symbols-outlined\"> person </span>\n          </button>\n          <mat-divider\n            class=\"divider fs-divider\"\n            [vertical]=\"true\"\n          ></mat-divider>\n          <button\n            mat-icon-button\n            color=\"primary\"\n            class=\"rh-button language-button\"\n            (click)=\"onLang()\"\n            aria-label=\"Language/Region Button\"\n          >\n            <span class=\"material-symbols-outlined\"> captive_portal </span>\n          </button>\n        </div>\n      </div>\n    </nav>\n  </header>\n\n  <div class=\"expanded\" *ngIf=\"!isLoggedIn\">\n    <app-title [title]=\"title\"></app-title>\n\n    <app-center-tab-bar [tabs]=\"tabs\"></app-center-tab-bar>\n\n    <!-- <div class=\"tab-container\">\n      <a *ngFor=\"let tab of tabs\" class=\"tab-cell\">{{ tab }}</a>\n    </div> -->\n\n    <div class=\"search-container\">\n      <app-search-bar [searchString]=\"_query\"></app-search-bar>\n    </div>\n\n    <div class=\"pill-bar-container\">\n      <app-pill-bar\n        (notifyParentEvent)=\"handlePillEvent($event)\"\n      ></app-pill-bar>\n    </div>\n  </div>\n</div>\n"
         },
         {
             "name": "ImageComponent",
@@ -3054,7 +3326,7 @@
         },
         {
             "name": "PillBarComponent",
-            "id": "component-PillBarComponent-0270c10e02c9763379ad6271e49977d42b57b0aab7c9ca97a67686755ac2af41b636950e27bc01a6a7c28494d50a80d57cdee6ca5840d123ff4a9b6f204177ed",
+            "id": "component-PillBarComponent-a6f1c196a915d44b5ddb50bf4ca2b1d349a8ced466d4d95a05fc8956a9945ef8394d80803f5347d6c3a2d99d32ea142ee9071cfb3aecd30af3647501f11e57b2",
             "file": "src/app/components/shared/pill-bar/pill-bar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3069,47 +3341,34 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "chipLabels",
+                    "defaultValue": "[\n    //make input parameter for this\n    'Get Started!',\n    'Wallet',\n    'Payment Link',\n    'Disputes',\n    'Payments',\n    'My Account',\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 32,
+                    "type": "string[]",
+                    "decorators": []
+                }
+            ],
             "outputsClass": [
                 {
                     "name": "notifyParentEvent",
                     "defaultValue": "new EventEmitter<string>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 44,
+                    "line": 42,
                     "type": "EventEmitter"
                 },
                 {
                     "name": "onChipSelect",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 47
+                    "line": 44
                 }
             ],
-            "propertiesClass": [
-                {
-                    "name": "_query",
-                    "defaultValue": "\"\"",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 33
-                },
-                {
-                    "name": "chipLabels",
-                    "defaultValue": "[  //make input parameter for this\n    'Get Started!',\n    'Wallet',\n    'Payment Link',\n    'Disputes',\n    'Payments',\n    'My Account',\n  ]",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string[]",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 35
-                }
-            ],
+            "propertiesClass": [],
             "methodsClass": [
                 {
                     "name": "onChipSelect",
@@ -3124,7 +3383,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 47,
+                    "line": 44,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "decorators": [
@@ -3191,7 +3450,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Output } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { MatIconModule } from '@angular/material/icon';\nimport { MatButtonModule } from '@angular/material/button';\nimport { MatDividerModule } from '@angular/material/divider';\n\nimport { DragScrollDirective } from '../header/drag-scroll.directive';\nimport { MatChipsModule } from '@angular/material/chips';\nimport { MatChipSelectionChange } from '@angular/material/chips';\nimport { NgFor } from '@angular/common';\nimport { MatInputModule } from '@angular/material/input';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport { MatLabel } from '@angular/material/form-field';\n\n@Component({\n  selector: 'app-pill-bar',\n  standalone: true,\n  imports: [\n    MatButtonModule,\n    MatDividerModule,\n    MatIconModule,\n    CommonModule,\n    DragScrollDirective, \n    MatInputModule,\n    MatChipsModule, \n    MatFormFieldModule, \n  ],\n  templateUrl: './pill-bar.component.html',\n  styleUrl: './pill-bar.component.scss'\n})\n\nexport class PillBarComponent {\n  _query: string = \"\";\n\n  chipLabels: string[] = [  //make input parameter for this\n    'Get Started!',\n    'Wallet',\n    'Payment Link',\n    'Disputes',\n    'Payments',\n    'My Account',\n  ]\n\n  @Output() notifyParentEvent = new EventEmitter<string>();\n  \n\n  @Output() onChipSelect(event: MatChipSelectionChange) {\n    const val = event.source.value;\n\n    if (!event.source.selected){\n      event.source.deselect;\n      this.notifyParentEvent.emit(\"\");\n    } else if (val) {\n      console.log(\"value: \" + val);\n      this.notifyParentEvent.emit(val);\n    }\n\n  } \n\n}",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { MatIconModule } from '@angular/material/icon';\nimport { MatButtonModule } from '@angular/material/button';\nimport { MatDividerModule } from '@angular/material/divider';\n\nimport { DragScrollDirective } from '../header/drag-scroll.directive';\nimport { MatChipsModule } from '@angular/material/chips';\nimport { MatChipSelectionChange } from '@angular/material/chips';\nimport { NgFor } from '@angular/common';\nimport { MatInputModule } from '@angular/material/input';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport { MatLabel } from '@angular/material/form-field';\n\n@Component({\n  selector: 'app-pill-bar',\n  standalone: true,\n  imports: [\n    MatButtonModule,\n    MatDividerModule,\n    MatIconModule,\n    CommonModule,\n    DragScrollDirective,\n    MatInputModule,\n    MatChipsModule,\n    MatFormFieldModule,\n  ],\n  templateUrl: './pill-bar.component.html',\n  styleUrl: './pill-bar.component.scss',\n})\nexport class PillBarComponent {\n  @Input() chipLabels: string[] = [\n    //make input parameter for this\n    'Get Started!',\n    'Wallet',\n    'Payment Link',\n    'Disputes',\n    'Payments',\n    'My Account',\n  ];\n\n  @Output() notifyParentEvent = new EventEmitter<string>();\n\n  @Output() onChipSelect(event: MatChipSelectionChange) {\n    const val = event.source.value;\n\n    if (!event.source.selected) {\n      event.source.deselect;\n      this.notifyParentEvent.emit('');\n    } else if (val) {\n      console.log('value: ' + val);\n      this.notifyParentEvent.emit(val);\n    }\n  }\n}\n",
             "styleUrl": "./pill-bar.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -3201,7 +3460,7 @@
         },
         {
             "name": "RelatedArticlesComponent",
-            "id": "component-RelatedArticlesComponent-641e8cc3d25131caf0355abcabbbf78cef60a1af6af143b570c38d500bc852866ccd4b510e2ae4f35431d24106641a0af854e764b2a4743b5fc8aeaf4073240f",
+            "id": "component-RelatedArticlesComponent-623d410be7d45bff0901de71a691e98c179e2787586f1aaa8464e2aed660a30fd0f13889201b12be0487af5bece028c39fc58e419c22ea65f347e165483a9c37",
             "file": "src/app/components/shared/related-articles/related-articles.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3216,7 +3475,35 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "relatedLinks",
+                    "defaultValue": "[\n    {\n      title: 'Paysafe Glossary of Payment Terms for Merchants',\n      url: '#',\n    },\n    {\n      title: 'Accept payments with Tap to Pay on iPhone',\n      url: '#',\n    },\n    {\n      title: 'Set up and edit transfer options',\n      url: '#',\n    },\n    {\n      title: 'Chargeback Guide',\n      url: '#',\n    },\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "IInputData[]",
+                    "decorators": []
+                },
+                {
+                    "name": "title",
+                    "defaultValue": "'Related articles'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "viewMoreLabel",
+                    "defaultValue": "'View More'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [
                 {
@@ -3228,21 +3515,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 30,
-                    "modifierKind": [
-                        125
-                    ]
-                },
-                {
-                    "name": "relatedLinks",
-                    "defaultValue": "[\n    {\n      \"title\": \"Paysafe Glossary of Payment Terms for Merchants\",\n      \"link\": \"#\"\n    },\n    {\n      \"title\": \"Accept payments with Tap to Pay on iPhone\",\n      \"link\": \"#\"\n    },\n    {\n      \"title\": \"Set up and edit transfer options\",\n      \"link\": \"#\"\n    },\n    {\n      \"title\": \"Chargeback Guide\",\n      \"link\": \"#\"\n    }\n]",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "any[]",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 12,
+                    "line": 33,
                     "modifierKind": [
                         125
                     ]
@@ -3263,17 +3536,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { MatIconModule } from '@angular/material/icon';\n\n@Component({\n  selector: 'app-related-articles',\n  standalone: true,\n  imports: [MatIconModule],\n  templateUrl: './related-articles.component.html',\n  styleUrl: './related-articles.component.scss'\n})\nexport class RelatedArticlesComponent {\n  public relatedLinks: any[] = [\n    {\n      \"title\": \"Paysafe Glossary of Payment Terms for Merchants\",\n      \"link\": \"#\"\n    },\n    {\n      \"title\": \"Accept payments with Tap to Pay on iPhone\",\n      \"link\": \"#\"\n    },\n    {\n      \"title\": \"Set up and edit transfer options\",\n      \"link\": \"#\"\n    },\n    {\n      \"title\": \"Chargeback Guide\",\n      \"link\": \"#\"\n    }\n];\n  public onClickViewMore = () =>{\n    alert(\"View more clicked\");\n  }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { MatIconModule } from '@angular/material/icon';\nimport { IInputData } from 'app/interfaces/input-data.interface';\n\n@Component({\n  selector: 'app-related-articles',\n  standalone: true,\n  imports: [MatIconModule],\n  templateUrl: './related-articles.component.html',\n  styleUrl: './related-articles.component.scss',\n})\nexport class RelatedArticlesComponent {\n  @Input() title = 'Related articles';\n  @Input() viewMoreLabel = 'View More';\n  @Input() relatedLinks: IInputData[] = [\n    {\n      title: 'Paysafe Glossary of Payment Terms for Merchants',\n      url: '#',\n    },\n    {\n      title: 'Accept payments with Tap to Pay on iPhone',\n      url: '#',\n    },\n    {\n      title: 'Set up and edit transfer options',\n      url: '#',\n    },\n    {\n      title: 'Chargeback Guide',\n      url: '#',\n    },\n  ];\n  public onClickViewMore = () => {\n    alert('View more clicked');\n  };\n}\n",
             "styleUrl": "./related-articles.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"related-articles-container\">\n    <div class=\"related-title-container\">\n        <div class=\"icon-holder\">\n            <img src=\"./../../../../assets/icons/common/note-stack-icon.svg\" width=\"22\" height=\"22\"> \n        </div>\n        <h2 class=\"related-title-bg\">Related articles</h2>\n        <h3 class=\"related-title-mb\">Related articles</h3>\n    </div>\n    <div class=\"related-articles-content\">\n        <div class=\"related-links-container\">\n            @for (relatedLink of relatedLinks; track relatedLink.title) {\n                <a class=\"link-element\" href=\"{{relatedLink.link}}\">\n                    <span class=\"related-link\">{{ relatedLink.title }}</span>\n                    <mat-icon class=\"arrow-outward-icon\" fontIcon=\"arrow_outward\"></mat-icon>\n                </a>\n            }      \n        </div>\n        <button class=\"view-more-btn\" (click)=\"onClickViewMore()\">\n            View More\n            <mat-icon class=\"arrow-outward-icon\" fontIcon=\"arrow_forward\"></mat-icon>\n        </button>\n    </div>\n</div>"
+            "templateData": "<div class=\"related-articles-container\">\n  <div class=\"related-title-container\">\n    <div class=\"icon-holder\">\n      <img\n        src=\"./../../../../assets/icons/common/note-stack-icon.svg\"\n        width=\"22\"\n        height=\"22\"\n      />\n    </div>\n    <h2 class=\"related-title\">{{ title }}</h2>\n  </div>\n  <div class=\"related-articles-content\">\n    <div class=\"related-links-container\">\n      @for (relatedLink of relatedLinks; track relatedLink.title) {\n      <a class=\"link-element\" href=\"{{ relatedLink.url }}\">\n        <span class=\"related-link\">{{ relatedLink.title }}</span>\n        <mat-icon\n          class=\"arrow-outward-icon\"\n          fontIcon=\"arrow_outward\"\n        ></mat-icon>\n      </a>\n      }\n    </div>\n    <button class=\"view-more-btn\" (click)=\"onClickViewMore()\">\n      {{ viewMoreLabel }}\n      <mat-icon class=\"arrow-outward-icon\" fontIcon=\"arrow_forward\"></mat-icon>\n    </button>\n  </div>\n</div>\n"
         },
         {
             "name": "SearchBarComponent",
-            "id": "component-SearchBarComponent-58dd38581a6ae3ecc4f3d23f1f49c45d30159f14fa04c59afb3dbd33c651702161eff2a11ebdb88c47acd413efbdeaa34aa2ed802555ec523423228a7de7e625",
+            "id": "component-SearchBarComponent-d4fdcc8b50c61c99e098c640d84b30cfc59980048702a64acfdb98f61c8c573e91e54b619e998c8147b72e885a6a9bf421d9b670bb6567d82e08fe72d5ccdb70",
             "file": "src/app/components/shared/search-bar/search-bar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3290,12 +3563,30 @@
             "hostDirectives": [],
             "inputsClass": [
                 {
-                    "name": "options",
-                    "defaultValue": "[\n    'Paysafe Glossary of Payment Terms for Merchants', \n    'Paysafe Glossary of Payment Terms for Merchants', \n    'Paysafe Glossary of Payment Terms for Merchants',\n    'Paysafe Glossary of Payment Terms for Merchants',\n    \"Wallet\",\n    \"Payment Link\",\n    \"Disputes\"\n  ]",
+                    "name": "isPanelOpened",
+                    "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 30,
+                    "line": 48,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "options",
+                    "defaultValue": "[\n    'Paysafe Glossary of Payment Terms for Merchants',\n    'Paysafe Glossary of Payment Terms for Merchants',\n    'Paysafe Glossary of Payment Terms for Merchants',\n    'Paysafe Glossary of Payment Terms for Merchants',\n    'Wallet',\n    'Payment Link',\n    'Disputes',\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 39,
                     "type": "string[]",
+                    "decorators": []
+                },
+                {
+                    "name": "searchFocus",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 49,
+                    "type": "boolean",
                     "decorators": []
                 },
                 {
@@ -3303,8 +3594,17 @@
                     "defaultValue": "new FormControl('')",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 26,
+                    "line": 37,
                     "type": "any",
+                    "decorators": []
+                },
+                {
+                    "name": "title",
+                    "defaultValue": "'Popular articles'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 36,
+                    "type": "string",
                     "decorators": []
                 }
             ],
@@ -3318,7 +3618,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 40,
+                    "line": 51,
                     "decorators": [
                         {
                             "name": "ViewChild",
@@ -3338,7 +3638,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 41
+                    "line": 52
                 },
                 {
                     "name": "inputElement",
@@ -3348,7 +3648,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 29,
+                    "line": 38,
                     "decorators": [
                         {
                             "name": "ViewChild",
@@ -3358,28 +3658,6 @@
                     "modifierKind": [
                         170
                     ]
-                },
-                {
-                    "name": "isPanelOpened",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 27
-                },
-                {
-                    "name": "searchFocus",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 28
                 }
             ],
             "methodsClass": [
@@ -3396,7 +3674,7 @@
                     "optional": false,
                     "returnType": "string[]",
                     "typeParameters": [],
-                    "line": 94,
+                    "line": 107,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -3427,7 +3705,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 81,
+                    "line": 94,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -3455,7 +3733,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 87,
+                    "line": 100,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -3476,7 +3754,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 48,
+                    "line": 58,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -3493,7 +3771,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 67,
+                    "line": 77,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -3514,7 +3792,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 61,
+                    "line": 71,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -3524,7 +3802,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 77,
+                    "line": 90,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -3534,7 +3812,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 73,
+                    "line": 86,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -3551,7 +3829,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 55,
+                    "line": 65,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "decorators": [
@@ -3595,7 +3873,7 @@
                     ],
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 55
+                    "line": 65
                 }
             ],
             "standalone": true,
@@ -3624,7 +3902,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component, ElementRef, Input, OnChanges, SimpleChanges, ViewChild, PLATFORM_ID, Inject} from '@angular/core';\nimport {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';\nimport {MatAutocompleteModule} from '@angular/material/autocomplete';\nimport {MatInputModule} from '@angular/material/input';\nimport {MatFormFieldModule} from '@angular/material/form-field';\n\nimport { isPlatformBrowser } from '@angular/common';\n\nimport { AfterViewInit, HostListener } from '@angular/core';\n\nimport { MatAutocompleteTrigger } from '@angular/material/autocomplete';\n\n@Component({\n  selector: 'app-search-bar',\n  standalone: true,\n  imports: [FormsModule,\n    MatFormFieldModule,\n    MatInputModule,\n    MatAutocompleteModule,\n    ReactiveFormsModule,\n    ],\n  templateUrl: './search-bar.component.html',\n  styleUrl: './search-bar.component.scss'\n})\nexport class SearchBarComponent implements OnChanges,  AfterViewInit{\n  @Input() searchString = new FormControl('');\n  isPanelOpened = false;\n  searchFocus = false;\n  @ViewChild(\"searchInput\") inputElement!: ElementRef;\n  @Input() options: string[] = [\n    'Paysafe Glossary of Payment Terms for Merchants', \n    'Paysafe Glossary of Payment Terms for Merchants', \n    'Paysafe Glossary of Payment Terms for Merchants',\n    'Paysafe Glossary of Payment Terms for Merchants',\n    \"Wallet\",\n    \"Payment Link\",\n    \"Disputes\"\n  ];\n  @ViewChild(MatAutocompleteTrigger)\n  autocomplete: MatAutocompleteTrigger | undefined;\n  filteredOptions: any[] = [];\n\n\n  constructor(@Inject(PLATFORM_ID) private platformId: Object) {\n    this.autocomplete = undefined;\n  }\n  \n  ngAfterViewInit() {\n    if (isPlatformBrowser(this.platformId)) {\n      window.addEventListener('scroll', this.onWindowScroll.bind(this));\n    }\n  }\n\n  @HostListener('window:scroll', ['$event'])\n  onWindowScroll(event: any) {\n    if (this.autocomplete && this.autocomplete.panelOpen) {\n      this.autocomplete.closePanel();\n    }\n  }\n\n  ngOnDestroy() {\n    if (isPlatformBrowser(this.platformId)) {\n      window.removeEventListener('scroll', this.onWindowScroll);\n    }\n  }\n\n  ngOnChanges(changes: SimpleChanges) {\n    if(this.searchString.value != \"\" && this._filter(this.searchString.value || \"\").length > 0){\n      this.inputElement.nativeElement.click();\n    }\n  }\n\n  onSearchChange() {\n    this.filteredOptions = this._filter(this.searchString.value || \"\");\n  }\n\n  onClosedEvent(){\n    this.isPanelOpened = false;\n  }\n\n  cleanSearch(event: Event) {\n    this.searchString.setValue(\"\"); \n    this.filteredOptions = this._filter(this.searchString.value || \"\");\n    this.closePanel(event);\n  }\n\n  closePanel(event: Event) {\n    if (this.autocomplete?.panelOpen) {\n      event.stopPropagation();\n      this.autocomplete?.closePanel();\n    }\n  }\n\n  private _filter(value: string): string[] {\n    const filterValue = value.toLowerCase();\n    const filteredItems = this.options.filter(option => option.toLowerCase().includes(filterValue));\n    this.isPanelOpened = filteredItems.length != 0;\n    return filteredItems;\n  }\n}\n",
+            "sourceCode": "import {\n  Component,\n  ElementRef,\n  Input,\n  OnChanges,\n  SimpleChanges,\n  ViewChild,\n  PLATFORM_ID,\n  Inject,\n} from '@angular/core';\nimport { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { MatAutocompleteModule } from '@angular/material/autocomplete';\nimport { MatInputModule } from '@angular/material/input';\nimport { MatFormFieldModule } from '@angular/material/form-field';\n\nimport { isPlatformBrowser } from '@angular/common';\n\nimport { AfterViewInit, HostListener } from '@angular/core';\n\nimport { MatAutocompleteTrigger } from '@angular/material/autocomplete';\n\n@Component({\n  selector: 'app-search-bar',\n  standalone: true,\n  imports: [\n    FormsModule,\n    MatFormFieldModule,\n    MatInputModule,\n    MatAutocompleteModule,\n    ReactiveFormsModule,\n  ],\n  templateUrl: './search-bar.component.html',\n  styleUrl: './search-bar.component.scss',\n})\nexport class SearchBarComponent implements OnChanges, AfterViewInit {\n  @Input() title = 'Popular articles';\n  @Input() searchString = new FormControl('');\n  @ViewChild('searchInput') inputElement!: ElementRef;\n  @Input() options: string[] = [\n    'Paysafe Glossary of Payment Terms for Merchants',\n    'Paysafe Glossary of Payment Terms for Merchants',\n    'Paysafe Glossary of Payment Terms for Merchants',\n    'Paysafe Glossary of Payment Terms for Merchants',\n    'Wallet',\n    'Payment Link',\n    'Disputes',\n  ];\n  @Input() isPanelOpened = false;\n  @Input() searchFocus = false;\n  @ViewChild(MatAutocompleteTrigger)\n  autocomplete: MatAutocompleteTrigger | undefined;\n  filteredOptions: any[] = [];\n\n  constructor(@Inject(PLATFORM_ID) private platformId: Object) {\n    this.autocomplete = undefined;\n  }\n\n  ngAfterViewInit() {\n    if (isPlatformBrowser(this.platformId)) {\n      window.addEventListener('scroll', this.onWindowScroll.bind(this));\n    }\n  }\n\n  @HostListener('window:scroll', ['$event'])\n  onWindowScroll(event: any) {\n    if (this.autocomplete && this.autocomplete.panelOpen) {\n      this.autocomplete.closePanel();\n    }\n  }\n\n  ngOnDestroy() {\n    if (isPlatformBrowser(this.platformId)) {\n      window.removeEventListener('scroll', this.onWindowScroll);\n    }\n  }\n\n  ngOnChanges(changes: SimpleChanges) {\n    if (\n      this.searchString.value != '' &&\n      this._filter(this.searchString.value || '').length > 0\n    ) {\n      this.inputElement.nativeElement.click();\n    }\n  }\n\n  onSearchChange() {\n    this.filteredOptions = this._filter(this.searchString.value || '');\n  }\n\n  onClosedEvent() {\n    this.isPanelOpened = false;\n  }\n\n  cleanSearch(event: Event) {\n    this.searchString.setValue('');\n    this.filteredOptions = this._filter(this.searchString.value || '');\n    this.closePanel(event);\n  }\n\n  closePanel(event: Event) {\n    if (this.autocomplete?.panelOpen) {\n      event.stopPropagation();\n      this.autocomplete?.closePanel();\n    }\n  }\n\n  private _filter(value: string): string[] {\n    const filterValue = value.toLowerCase();\n    const filteredItems = this.options.filter((option) =>\n      option.toLowerCase().includes(filterValue)\n    );\n    this.isPanelOpened = filteredItems.length != 0;\n    return filteredItems;\n  }\n}\n",
             "styleUrl": "./search-bar.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -3642,7 +3920,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 41,
+                "line": 52,
                 "jsdoctags": [
                     {
                         "name": "platformId",
@@ -3660,11 +3938,11 @@
                 "OnChanges",
                 "AfterViewInit"
             ],
-            "templateData": "<mat-form-field [class.search-bar-container]=\"isPanelOpened\" #matSelect = 'matFormField' (click)=\"onSearchChange()\">\n    <span class=\"material-symbols-outlined search-icon\">search</span>\n    <input type=\"text\"\n            placeholder=\"Search\"\n            class=\"search-input\"\n            matInput\n            #searchInput\n            (input)=\"onSearchChange()\"\n            [formControl]=\"searchString\"\n            [matAutocomplete]=\"auto\">\n    <span class=\"material-symbols-outlined close-icon\" (click)=\"cleanSearch($event)\">close</span>\n    <mat-autocomplete #auto=\"matAutocomplete\" class=\"autocomplete-container\" (closed)=\"onClosedEvent()\" >\n        <div class=\"divider-line\"></div>\n        <span class=\"option-header\">Popular articles</span>\n        <div class=\"options-list\">\n            @for (option of filteredOptions; track option) {\n                <mat-option [value]=\"option\" class=\"option-container\">\n                    <span class=\"material-symbols-outlined search-icon\">search</span>\n                    <span class=\"option-text\">{{option}}</span>\n                </mat-option>\n            }\n        </div>\n    </mat-autocomplete>\n</mat-form-field>"
+            "templateData": "<mat-form-field\n  [class.search-bar-container]=\"isPanelOpened\"\n  #matSelect=\"matFormField\"\n  (click)=\"onSearchChange()\"\n>\n  <span class=\"material-symbols-outlined search-icon\">search</span>\n  <input\n    type=\"text\"\n    placeholder=\"Search\"\n    class=\"search-input\"\n    matInput\n    #searchInput\n    (input)=\"onSearchChange()\"\n    [formControl]=\"searchString\"\n    [matAutocomplete]=\"auto\"\n  />\n  <span\n    class=\"material-symbols-outlined close-icon\"\n    (click)=\"cleanSearch($event)\"\n    >close</span\n  >\n  <mat-autocomplete\n    #auto=\"matAutocomplete\"\n    class=\"autocomplete-container\"\n    (closed)=\"onClosedEvent()\"\n  >\n    <div class=\"divider-line\"></div>\n    <span class=\"option-header\">{{ title }}</span>\n    <div class=\"options-list\">\n      @for (option of filteredOptions; track option) {\n      <mat-option [value]=\"option\" class=\"option-container\">\n        <span class=\"material-symbols-outlined search-icon\">search</span>\n        <span class=\"option-text\">{{ option }}</span>\n      </mat-option>\n      }\n    </div>\n  </mat-autocomplete>\n</mat-form-field>\n"
         },
         {
             "name": "SidebarComponent",
-            "id": "component-SidebarComponent-39083d383fce93ee220ef7cf2e33fa00dd9c555fd35201edd7d6e78a3697ac8a76829dc37b2f528ae626b522d187f9a825b9f52e4d9ece9f06644512fed63d64",
+            "id": "component-SidebarComponent-a83ba720405d723b2f2a85b9f9c19e85bcb708986b0bb000f87043556d47903b4c5cc4b4cf0e940958c1ad322fbb5a9f9ea97cdd5c6153cc40f5dc1dc08ee197",
             "file": "src/app/components/shared/sidebar/sidebar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3679,37 +3957,37 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [
+            "inputsClass": [
                 {
                     "name": "businessOptions",
-                    "defaultValue": "[\n    {option: \"Small business\"},\n    {option: \"Enterprise\"},\n    {option: \"Partners\"}\n  ]",
+                    "defaultValue": "[\n    { option: 'Small business' },\n    { option: 'Enterprise' },\n    { option: 'Partners' },\n  ]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "any[]",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 17,
-                    "modifierKind": [
-                        125
-                    ]
+                    "line": 28,
+                    "type": "IBusinessOption[]",
+                    "decorators": []
                 },
                 {
                     "name": "businessPanelOpened",
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
+                    "line": 176,
                     "type": "boolean",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 165,
-                    "modifierKind": [
-                        125
-                    ]
+                    "decorators": []
                 },
+                {
+                    "name": "menuSections",
+                    "defaultValue": "[\n    {\n      title: 'News & Updates',\n      sections: [\n        {\n          title: 'News & Updates',\n          iconUrl: 'newspaper',\n          menuItems: [\n            { title: 'Link 1', url: '#' },\n            { title: 'Link 2', url: '#' },\n            { title: 'Link 3', url: '#' },\n          ],\n        },\n      ],\n    },\n    {\n      title: 'Products',\n      sections: [\n        {\n          title: 'Payments',\n          iconUrl: 'attach_money',\n          menuItems: [\n            { title: 'Link 1', url: '#' },\n            { title: 'Link 2', url: '#' },\n            { title: 'Link 3', url: '#' },\n          ],\n        },\n        {\n          title: 'Wallet',\n          iconUrl: 'account_balance_wallet',\n          menuItems: [\n            { title: 'Link 1', url: '#' },\n            { title: 'Link 2', url: '#' },\n            { title: 'Link 3', url: '#' },\n          ],\n        },\n        {\n          title: 'Paysafe Card',\n          iconUrl: 'credit_card',\n          menuItems: [\n            { title: 'Link 1', url: '#' },\n            { title: 'Link 2', url: '#' },\n            { title: 'Link 3', url: '#' },\n          ],\n        },\n      ],\n    },\n    {\n      title: 'Topics',\n      sections: [\n        {\n          title: 'Getting started',\n          iconUrl: 'arrow_upward',\n          menuItems: [\n            { title: 'Link 1', url: '#' },\n            { title: 'Link 2', url: '#' },\n            { title: 'Link 3', url: '#' },\n          ],\n        },\n        {\n          title: 'My account',\n          iconUrl: 'person',\n          menuItems: [\n            { title: 'Link 1', url: '#' },\n            { title: 'Link 2', url: '#' },\n            { title: 'Link 3', url: '#' },\n          ],\n        },\n        {\n          title: 'Disputes',\n          iconUrl: 'error',\n          menuItems: [\n            { title: 'Link 1', url: '#' },\n            { title: 'Link 2', url: '#' },\n            { title: 'Link 3', url: '#' },\n          ],\n        },\n        {\n          title: 'Analytics',\n          iconUrl: 'trending_up',\n          menuItems: [\n            { title: 'Link 1', url: '#' },\n            { title: 'Link 2', url: '#' },\n            { title: 'Link 3', url: '#' },\n          ],\n        },\n        {\n          title: 'Transactions',\n          svgUrl: './../../../../assets/icons/common/chip-extraction-icon.svg',\n          iconUrl: 'chip_extraction',\n          menuItems: [\n            { title: 'Link 1', url: '#' },\n            { title: 'Link 2', url: '#' },\n            { title: 'Link 3', url: '#' },\n          ],\n        },\n        {\n          title: 'Fees & Pricing',\n          iconUrl: 'receipt_long',\n          menuItems: [\n            { title: 'Link 1', url: '#' },\n            { title: 'Link 2', url: '#' },\n            { title: 'Link 3', url: '#' },\n          ],\n        },\n      ],\n    },\n    {\n      title: 'Resources',\n      isLastSection: true,\n      sections: [\n        {\n          title: 'Glosary',\n          iconUrl: 'receipt',\n          menuItems: [\n            { title: 'Link 1', url: '#' },\n            { title: 'Link 2', url: '#' },\n            { title: 'Link 3', url: '#' },\n          ],\n        },\n        {\n          title: 'FAQs',\n          iconUrl: 'question_mark',\n          menuItems: [\n            { title: 'Link 1', url: '#' },\n            { title: 'Link 2', url: '#' },\n            { title: 'Link 3', url: '#' },\n          ],\n        },\n        {\n          title: 'Trending Articles',\n          iconUrl: 'arrow_outward',\n          menuItems: [\n            { title: 'Link 1', url: '#' },\n            { title: 'Link 2', url: '#' },\n            { title: 'Link 3', url: '#' },\n          ],\n        },\n      ],\n    },\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 34,
+                    "type": "ISidebarSection[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
                 {
                     "name": "currentActiveItem",
                     "defaultValue": "null",
@@ -3719,21 +3997,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 169,
-                    "modifierKind": [
-                        125
-                    ]
-                },
-                {
-                    "name": "menuSections",
-                    "defaultValue": "[\n    {\n      title: \"News & Updates\",\n      sections: [\n        {\n          title: \"News & Updates\",\n          iconUrl: \"newspaper\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        }  \n      ]\n    },\n    {\n      title: \"Products\",\n      sections: [\n        {\n          title: \"Payments\",\n          iconUrl: \"attach_money\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"Wallet\",\n          iconUrl: \"account_balance_wallet\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"Paysafe Card\",\n          iconUrl: \"credit_card\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        }  \n      ]\n    },\n    {\n      title: \"Topics\",\n      sections: [\n        {\n          title: \"Getting started\",\n          iconUrl: \"arrow_upward\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"My account\",\n          iconUrl: \"person\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"Disputes\",\n          iconUrl: \"error\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"Analytics\",\n          iconUrl: \"trending_up\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"Transactions\",\n          svgUrl: \"./../../../../assets/icons/common/chip-extraction-icon.svg\",\n          iconUrl: \"chip_extraction\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"Fees & Pricing\",\n          iconUrl: \"receipt_long\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ] \n        }\n      ]\n    },\n    {\n      title: \"Resources\",\n      isLastSection: true,\n      sections: [\n        {\n          title: \"Glosary\",\n          iconUrl: \"receipt\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"FAQs\",\n          iconUrl: \"question_mark\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"Trending Articles\",\n          iconUrl: \"arrow_outward\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        }  \n      ]\n    },\n  ]",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "any[]",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 23,
+                    "line": 180,
                     "modifierKind": [
                         125
                     ]
@@ -3747,7 +4011,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 167,
+                    "line": 178,
                     "modifierKind": [
                         125
                     ]
@@ -3767,7 +4031,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 185,
+                    "line": 194,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -3798,7 +4062,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 173,
+                    "line": 182,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -3851,7 +4115,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { MatIconModule } from '@angular/material/icon';\nimport { MatExpansionModule } from '@angular/material/expansion';\nimport { MatListModule } from '@angular/material/list';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport { MatSelectModule } from '@angular/material/select';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n  selector: 'app-sidebar',\n  standalone: true,\n  imports: [MatIconModule, MatExpansionModule, MatListModule, MatFormFieldModule, MatSelectModule, CommonModule],\n  templateUrl: './sidebar.component.html',\n  styleUrl: './sidebar.component.scss'\n})\nexport class SidebarComponent {\n  public businessOptions: any[] = [\n    {option: \"Small business\"},\n    {option: \"Enterprise\"},\n    {option: \"Partners\"}\n  ];\n\n  public menuSections: any[] = [\n    {\n      title: \"News & Updates\",\n      sections: [\n        {\n          title: \"News & Updates\",\n          iconUrl: \"newspaper\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        }  \n      ]\n    },\n    {\n      title: \"Products\",\n      sections: [\n        {\n          title: \"Payments\",\n          iconUrl: \"attach_money\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"Wallet\",\n          iconUrl: \"account_balance_wallet\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"Paysafe Card\",\n          iconUrl: \"credit_card\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        }  \n      ]\n    },\n    {\n      title: \"Topics\",\n      sections: [\n        {\n          title: \"Getting started\",\n          iconUrl: \"arrow_upward\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"My account\",\n          iconUrl: \"person\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"Disputes\",\n          iconUrl: \"error\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"Analytics\",\n          iconUrl: \"trending_up\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"Transactions\",\n          svgUrl: \"./../../../../assets/icons/common/chip-extraction-icon.svg\",\n          iconUrl: \"chip_extraction\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"Fees & Pricing\",\n          iconUrl: \"receipt_long\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ] \n        }\n      ]\n    },\n    {\n      title: \"Resources\",\n      isLastSection: true,\n      sections: [\n        {\n          title: \"Glosary\",\n          iconUrl: \"receipt\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"FAQs\",\n          iconUrl: \"question_mark\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        },\n        {\n          title: \"Trending Articles\",\n          iconUrl: \"arrow_outward\",\n          menuItems: [\n            {title: \"Link 1\", url: \"#\"},\n            {title: \"Link 2\", url: \"#\"},\n            {title: \"Link 3\", url: \"#\"}\n          ]\n        }  \n      ]\n    },\n  ];\n\n  public businessPanelOpened: boolean = false;\n\n  public selectedBusiness: any = this.businessOptions[0];\n\n  public currentActiveItem: any = null;\n\n  \n\n  public onMenuItemClick(event: any){\n    let eventTarget = event.target;\n    if(event.target.childElementCount == 1){\n      eventTarget = eventTarget.firstChild;\n    }\n    if (this.currentActiveItem !== null){\n      this.currentActiveItem.classList.remove('menu-element-active');\n    }\n    eventTarget.parentElement.classList.add('menu-element-active');\n    this.currentActiveItem = eventTarget.parentElement;\n  }\n  \n  public changeOption (option: any){\n    this.selectedBusiness = option;\n    this.businessPanelOpened = !this.businessPanelOpened ;\n  }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { MatIconModule } from '@angular/material/icon';\nimport { MatExpansionModule } from '@angular/material/expansion';\nimport { MatListModule } from '@angular/material/list';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport { MatSelectModule } from '@angular/material/select';\nimport { CommonModule } from '@angular/common';\nimport {\n  IBusinessOption,\n  ISidebarSection,\n} from 'app/interfaces/input-data.interface';\n\n@Component({\n  selector: 'app-sidebar',\n  standalone: true,\n  imports: [\n    MatIconModule,\n    MatExpansionModule,\n    MatListModule,\n    MatFormFieldModule,\n    MatSelectModule,\n    CommonModule,\n  ],\n  templateUrl: './sidebar.component.html',\n  styleUrl: './sidebar.component.scss',\n})\nexport class SidebarComponent {\n  @Input() businessOptions: IBusinessOption[] = [\n    { option: 'Small business' },\n    { option: 'Enterprise' },\n    { option: 'Partners' },\n  ];\n\n  @Input() menuSections: ISidebarSection[] = [\n    {\n      title: 'News & Updates',\n      sections: [\n        {\n          title: 'News & Updates',\n          iconUrl: 'newspaper',\n          menuItems: [\n            { title: 'Link 1', url: '#' },\n            { title: 'Link 2', url: '#' },\n            { title: 'Link 3', url: '#' },\n          ],\n        },\n      ],\n    },\n    {\n      title: 'Products',\n      sections: [\n        {\n          title: 'Payments',\n          iconUrl: 'attach_money',\n          menuItems: [\n            { title: 'Link 1', url: '#' },\n            { title: 'Link 2', url: '#' },\n            { title: 'Link 3', url: '#' },\n          ],\n        },\n        {\n          title: 'Wallet',\n          iconUrl: 'account_balance_wallet',\n          menuItems: [\n            { title: 'Link 1', url: '#' },\n            { title: 'Link 2', url: '#' },\n            { title: 'Link 3', url: '#' },\n          ],\n        },\n        {\n          title: 'Paysafe Card',\n          iconUrl: 'credit_card',\n          menuItems: [\n            { title: 'Link 1', url: '#' },\n            { title: 'Link 2', url: '#' },\n            { title: 'Link 3', url: '#' },\n          ],\n        },\n      ],\n    },\n    {\n      title: 'Topics',\n      sections: [\n        {\n          title: 'Getting started',\n          iconUrl: 'arrow_upward',\n          menuItems: [\n            { title: 'Link 1', url: '#' },\n            { title: 'Link 2', url: '#' },\n            { title: 'Link 3', url: '#' },\n          ],\n        },\n        {\n          title: 'My account',\n          iconUrl: 'person',\n          menuItems: [\n            { title: 'Link 1', url: '#' },\n            { title: 'Link 2', url: '#' },\n            { title: 'Link 3', url: '#' },\n          ],\n        },\n        {\n          title: 'Disputes',\n          iconUrl: 'error',\n          menuItems: [\n            { title: 'Link 1', url: '#' },\n            { title: 'Link 2', url: '#' },\n            { title: 'Link 3', url: '#' },\n          ],\n        },\n        {\n          title: 'Analytics',\n          iconUrl: 'trending_up',\n          menuItems: [\n            { title: 'Link 1', url: '#' },\n            { title: 'Link 2', url: '#' },\n            { title: 'Link 3', url: '#' },\n          ],\n        },\n        {\n          title: 'Transactions',\n          svgUrl: './../../../../assets/icons/common/chip-extraction-icon.svg',\n          iconUrl: 'chip_extraction',\n          menuItems: [\n            { title: 'Link 1', url: '#' },\n            { title: 'Link 2', url: '#' },\n            { title: 'Link 3', url: '#' },\n          ],\n        },\n        {\n          title: 'Fees & Pricing',\n          iconUrl: 'receipt_long',\n          menuItems: [\n            { title: 'Link 1', url: '#' },\n            { title: 'Link 2', url: '#' },\n            { title: 'Link 3', url: '#' },\n          ],\n        },\n      ],\n    },\n    {\n      title: 'Resources',\n      isLastSection: true,\n      sections: [\n        {\n          title: 'Glosary',\n          iconUrl: 'receipt',\n          menuItems: [\n            { title: 'Link 1', url: '#' },\n            { title: 'Link 2', url: '#' },\n            { title: 'Link 3', url: '#' },\n          ],\n        },\n        {\n          title: 'FAQs',\n          iconUrl: 'question_mark',\n          menuItems: [\n            { title: 'Link 1', url: '#' },\n            { title: 'Link 2', url: '#' },\n            { title: 'Link 3', url: '#' },\n          ],\n        },\n        {\n          title: 'Trending Articles',\n          iconUrl: 'arrow_outward',\n          menuItems: [\n            { title: 'Link 1', url: '#' },\n            { title: 'Link 2', url: '#' },\n            { title: 'Link 3', url: '#' },\n          ],\n        },\n      ],\n    },\n  ];\n\n  @Input() businessPanelOpened: boolean = false;\n\n  public selectedBusiness: any = this.businessOptions[0];\n\n  public currentActiveItem: any = null;\n\n  public onMenuItemClick(event: any) {\n    let eventTarget = event.target;\n    if (event.target.childElementCount == 1) {\n      eventTarget = eventTarget.firstChild;\n    }\n    if (this.currentActiveItem !== null) {\n      this.currentActiveItem.classList.remove('menu-element-active');\n    }\n    eventTarget.parentElement.classList.add('menu-element-active');\n    this.currentActiveItem = eventTarget.parentElement;\n  }\n\n  public changeOption(option: any) {\n    this.selectedBusiness = option;\n    this.businessPanelOpened = !this.businessPanelOpened;\n  }\n}\n",
             "styleUrl": "./sidebar.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -3914,7 +4178,7 @@
         },
         {
             "name": "TableComponent",
-            "id": "component-TableComponent-e68e26f8b461962075af8a4dc6386ba204e39aa02b82eddfae58568b2edb40984d2b607aede332dc2c5c8d95e0ba37091d5901fe96580dcbeff77be6fa7e01cf",
+            "id": "component-TableComponent-baaf60c7f1eb8150eb21e0044d2118df26058be4f48ac7b58f55ce62e842e5b493830464fe666d1c2c8f7e58de0a3fa1d83d586cfa2085cb34e7b80b2175cf08",
             "file": "src/app/components/shared/table/table.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3935,8 +4199,17 @@
                     "defaultValue": "['feature 1', 'feature 2', 'feature 3']",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 57,
+                    "line": 58,
                     "type": "string[]",
+                    "decorators": []
+                },
+                {
+                    "name": "noDataMessage",
+                    "defaultValue": "'No data available.'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
                     "decorators": []
                 },
                 {
@@ -3944,7 +4217,7 @@
                     "defaultValue": "[\n    {\n      'feature 1': 'Create a Payment Link',\n      'feature 2':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n      'feature 3':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n    },\n    {\n      'feature 1': 'Copy the QR Code',\n      'feature 2':\n        'Click \"Download\" to save the QR code in a preferred format (such as PNG, JPEG, or SVG). This makes it easy to share digitally or in print.',\n      'feature 3':\n        'Click \"Download\" to save the QR code in a preferred format (such as PNG, JPEG, or SVG). This makes it easy to share digitally or in print.',\n    },\n    {\n      'feature 1': 'Download the QR Code',\n      'feature 2':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n      'feature 3':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n    },\n    {\n      'feature 1': 'Share or Display the QR Code',\n      'feature 2':\n        'You can now add the QR code to invoices, emails, or your website. Customers simply scan the code with their mobile device to be redirected to the payment page, enabling quick and easy payment.',\n      'feature 3':\n        'You can now add the QR code to invoices, emails, or your website. Customers simply scan the code with their mobile device to be redirected to the payment page, enabling quick and easy payment.',\n    },\n    {\n      'feature 1': 'Download the QR Code',\n      'feature 2':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n      'feature 3':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n    },\n    {\n      'feature 1': 'Share or Display the QR Code',\n      'feature 2':\n        'You can now add the QR code to invoices, emails, or your website. Customers simply scan the code with their mobile device to be redirected to the payment page, enabling quick and easy payment.',\n      'feature 3':\n        'You can now add the QR code to invoices, emails, or your website. Customers simply scan the code with their mobile device to be redirected to the payment page, enabling quick and easy payment.',\n    },\n  ]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 14,
                     "type": "any[]",
                     "decorators": []
                 }
@@ -3970,13 +4243,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input } from '@angular/core';\nimport { MatTableModule } from '@angular/material/table';\n\n@Component({\n  selector: 'app-table',\n  standalone: true,\n  imports: [CommonModule, MatTableModule],\n  templateUrl: './table.component.html',\n  styleUrl: './table.component.scss',\n})\nexport class TableComponent {\n  @Input() tableData: any[] = [\n    {\n      'feature 1': 'Create a Payment Link',\n      'feature 2':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n      'feature 3':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n    },\n    {\n      'feature 1': 'Copy the QR Code',\n      'feature 2':\n        'Click \"Download\" to save the QR code in a preferred format (such as PNG, JPEG, or SVG). This makes it easy to share digitally or in print.',\n      'feature 3':\n        'Click \"Download\" to save the QR code in a preferred format (such as PNG, JPEG, or SVG). This makes it easy to share digitally or in print.',\n    },\n    {\n      'feature 1': 'Download the QR Code',\n      'feature 2':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n      'feature 3':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n    },\n    {\n      'feature 1': 'Share or Display the QR Code',\n      'feature 2':\n        'You can now add the QR code to invoices, emails, or your website. Customers simply scan the code with their mobile device to be redirected to the payment page, enabling quick and easy payment.',\n      'feature 3':\n        'You can now add the QR code to invoices, emails, or your website. Customers simply scan the code with their mobile device to be redirected to the payment page, enabling quick and easy payment.',\n    },\n    {\n      'feature 1': 'Download the QR Code',\n      'feature 2':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n      'feature 3':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n    },\n    {\n      'feature 1': 'Share or Display the QR Code',\n      'feature 2':\n        'You can now add the QR code to invoices, emails, or your website. Customers simply scan the code with their mobile device to be redirected to the payment page, enabling quick and easy payment.',\n      'feature 3':\n        'You can now add the QR code to invoices, emails, or your website. Customers simply scan the code with their mobile device to be redirected to the payment page, enabling quick and easy payment.',\n    },\n  ]; // Data for the table\n  @Input() columnKeys: string[] = ['feature 1', 'feature 2', 'feature 3']; // Column keys for headers\n}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input } from '@angular/core';\nimport { MatTableModule } from '@angular/material/table';\n\n@Component({\n  selector: 'app-table',\n  standalone: true,\n  imports: [CommonModule, MatTableModule],\n  templateUrl: './table.component.html',\n  styleUrl: './table.component.scss',\n})\nexport class TableComponent {\n  @Input() noDataMessage = 'No data available.';\n  @Input() tableData: any[] = [\n    {\n      'feature 1': 'Create a Payment Link',\n      'feature 2':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n      'feature 3':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n    },\n    {\n      'feature 1': 'Copy the QR Code',\n      'feature 2':\n        'Click \"Download\" to save the QR code in a preferred format (such as PNG, JPEG, or SVG). This makes it easy to share digitally or in print.',\n      'feature 3':\n        'Click \"Download\" to save the QR code in a preferred format (such as PNG, JPEG, or SVG). This makes it easy to share digitally or in print.',\n    },\n    {\n      'feature 1': 'Download the QR Code',\n      'feature 2':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n      'feature 3':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n    },\n    {\n      'feature 1': 'Share or Display the QR Code',\n      'feature 2':\n        'You can now add the QR code to invoices, emails, or your website. Customers simply scan the code with their mobile device to be redirected to the payment page, enabling quick and easy payment.',\n      'feature 3':\n        'You can now add the QR code to invoices, emails, or your website. Customers simply scan the code with their mobile device to be redirected to the payment page, enabling quick and easy payment.',\n    },\n    {\n      'feature 1': 'Download the QR Code',\n      'feature 2':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n      'feature 3':\n        'Start by creating a payment link. This link directs users to the specific payment page where they can complete their transaction.',\n    },\n    {\n      'feature 1': 'Share or Display the QR Code',\n      'feature 2':\n        'You can now add the QR code to invoices, emails, or your website. Customers simply scan the code with their mobile device to be redirected to the payment page, enabling quick and easy payment.',\n      'feature 3':\n        'You can now add the QR code to invoices, emails, or your website. Customers simply scan the code with their mobile device to be redirected to the payment page, enabling quick and easy payment.',\n    },\n  ]; // Data for the table\n  @Input() columnKeys: string[] = ['feature 1', 'feature 2', 'feature 3']; // Column keys for headers\n}\n",
             "styleUrl": "./table.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div *ngIf=\"tableData!.length > 0\">\n  <table mat-table [dataSource]=\"tableData\" class=\"mat-elevation-z8\">\n    <!-- Dynamic Columns -->\n    <ng-container *ngFor=\"let column of columnKeys\" [matColumnDef]=\"column\">\n      <th\n        mat-header-cell\n        *matHeaderCellDef\n        [style.width.%]=\"100 / columnKeys.length\"\n        class=\"cell-header\"\n      >\n        {{ column | uppercase }}\n      </th>\n      <td mat-cell class=\"cell-content\" *matCellDef=\"let element\">\n        {{ element[column] }}\n      </td>\n    </ng-container>\n\n    <!-- Header Row -->\n    <tr mat-header-row *matHeaderRowDef=\"columnKeys\"></tr>\n\n    <!-- Data Rows -->\n    <tr\n      mat-row\n      *matRowDef=\"let row; columns: columnKeys\"\n      [class.white-row]=\"tableData!.indexOf(row) % 2 === 0\"\n      [class.gray-row]=\"tableData!.indexOf(row) % 2 !== 0\"\n    ></tr>\n  </table>\n</div>\n<p *ngIf=\"!tableData!.length\">No data available.</p>\n"
+            "templateData": "<div *ngIf=\"tableData!.length > 0\">\n  <table mat-table [dataSource]=\"tableData\" class=\"mat-elevation-z8\">\n    <!-- Dynamic Columns -->\n    <ng-container *ngFor=\"let column of columnKeys\" [matColumnDef]=\"column\">\n      <th\n        mat-header-cell\n        *matHeaderCellDef\n        [style.width.%]=\"100 / columnKeys.length\"\n        class=\"cell-header\"\n      >\n        {{ column | uppercase }}\n      </th>\n      <td mat-cell class=\"cell-content\" *matCellDef=\"let element\">\n        {{ element[column] }}\n      </td>\n    </ng-container>\n\n    <!-- Header Row -->\n    <tr mat-header-row *matHeaderRowDef=\"columnKeys\"></tr>\n\n    <!-- Data Rows -->\n    <tr\n      mat-row\n      *matRowDef=\"let row; columns: columnKeys\"\n      [class.white-row]=\"tableData!.indexOf(row) % 2 === 0\"\n      [class.gray-row]=\"tableData!.indexOf(row) % 2 !== 0\"\n    ></tr>\n  </table>\n</div>\n<p *ngIf=\"!tableData!.length\">{{ noDataMessage }}</p>\n"
         },
         {
             "name": "TabsBarComponent",
@@ -5616,12 +5889,21 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/components/shared/accordion/accordion.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IAccordionData",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/components/shared/article-feedback/article-feedback.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ArticleFeedbackComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/9",
+                "coverageCount": "0/11",
                 "status": "low"
             },
             {
@@ -5674,8 +5956,8 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "CarouselComponent",
-                "coveragePercent": 4,
-                "coverageCount": "1/25",
+                "coveragePercent": 3,
+                "coverageCount": "1/26",
                 "status": "low"
             },
             {
@@ -5693,7 +5975,7 @@
                 "linktype": "component",
                 "name": "ContactUsComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -5711,7 +5993,7 @@
                 "linktype": "component",
                 "name": "FooterComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -5729,7 +6011,7 @@
                 "linktype": "component",
                 "name": "HeaderComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/17",
+                "coverageCount": "0/20",
                 "status": "low"
             },
             {
@@ -5774,7 +6056,7 @@
                 "linktype": "component",
                 "name": "PillBarComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -5783,7 +6065,7 @@
                 "linktype": "component",
                 "name": "RelatedArticlesComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -5792,7 +6074,7 @@
                 "linktype": "component",
                 "name": "SearchBarComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/19",
+                "coverageCount": "0/20",
                 "status": "low"
             },
             {
@@ -5819,7 +6101,7 @@
                 "linktype": "component",
                 "name": "TableComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -5858,6 +6140,42 @@
                 "name": "authInterceptor",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/interfaces/input-data.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IBusinessOption",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/interfaces/input-data.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IInputData",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/interfaces/input-data.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ISection",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/interfaces/input-data.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ISidebarSection",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {

@@ -1,93 +1,112 @@
-
 @import "./../../../../styles/mixins.scss";
 
-:host ::ng-deep .mat-mdc-chip-listbox 
-    .mdc-evolution-chip-set__chips {
-    display: flex;
-    flex-direction: row;
-    max-width: 100%;
-    flex-wrap: nowrap;
-    gap: var(--spacing-3);
-    margin-left: 0;
-    overflow-y: hidden;
-    
-    -ms-text-overflow: none; /* IE10+ */
-    scrollbar-width: none; /* Firefox */
+:host ::ng-deep .mat-mdc-chip-listbox .mdc-evolution-chip-set__chips {
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+  flex-wrap: nowrap;
+  gap: var(--spacing-3);
+  margin-left: 0;
+  overflow-y: hidden;
+  -ms-text-overflow: none; /* IE10+ */
+  scrollbar-width: none; /* Firefox */
 }
 
-:host ::ng-deep .mat-mdc-chip-listbox 
-    .mdc-evolution-chip-set__chips::-webkit-scrollbar {
-    display: none; /* Safari + Chrome */
+:host
+  ::ng-deep
+  .mat-mdc-chip-listbox
+  .mdc-evolution-chip-set__chips::-webkit-scrollbar {
+  display: none; /* Safari + Chrome */
 }
 
-
-:host ::ng-deep .mat-mdc-standard-chip.mdc-evolution-chip--selected:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__text-label {
-    color: var(--hc-link-color);
+:host
+  ::ng-deep
+  .mat-mdc-standard-chip.mdc-evolution-chip--selected:not(
+    .mdc-evolution-chip--disabled
+  )
+  .mdc-evolution-chip__text-label {
+  color: var(--hc-link-color);
 }
 
-:host ::ng-deep .mat-mdc-standard-chip.mdc-evolution-chip--selected:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__text-label .mat-mdc-chip-selected.mdc-evolution-chip--selected {
-    color: var(--hc-link-color)!important;
-    background-color: #fff !important;
+:host
+  ::ng-deep
+  .mat-mdc-standard-chip.mdc-evolution-chip--selected:not(
+    .mdc-evolution-chip--disabled
+  )
+  .mdc-evolution-chip__text-label
+  .mat-mdc-chip-selected.mdc-evolution-chip--selected {
+  color: var(--hc-link-color) !important;
+  background-color: #fff !important;
 }
 
 :host ::ng-deep .mdc-evolution-chip__graphic.mat-mdc-chip-graphic {
-    display: none;
+  display: none;
 }
 
-:host ::ng-deep .mat-mdc-standard-chip.mdc-evolution-chip--with-primary-graphic .mdc-evolution-chip__action--primary {
-    padding-right: 0px;
+:host
+  ::ng-deep
+  .mat-mdc-standard-chip.mdc-evolution-chip--with-primary-graphic
+  .mdc-evolution-chip__action--primary {
+  padding-right: 0px;
 }
 
 :host ::ng-deep .mat-mdc-chip-selected.mdc-evolution-chip--selected {
-    color: var(--hc-link-color)!important;
-    background-color: #fff !important;
+  color: var(--hc-link-color) !important;
+  background-color: #fff !important;
 }
 
-
-:host ::ng-deep .mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__text-label:active {
-    color: var(--hc-link-color);
+:host
+  ::ng-deep
+  .mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled)
+  .mdc-evolution-chip__text-label:active {
+  color: var(--hc-link-color);
 }
 
-:host ::ng-deep .mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__text-label {
-    color:  var(--hc-color-paysafe-blue-05);
+:host
+  ::ng-deep
+  .mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled)
+  .mdc-evolution-chip__text-label {
+  color: var(--hc-color-paysafe-blue-05);
 }
 
 /* Pill styles */
-:host ::ng-deep .mdc-evolution-chip__action.mat-mdc-chip-action.mdc-evolution-chip__action--primary {
-    margin: 0;
-    max-height: 33px;
-    box-sizing: border-box;
-    padding: var(--spacing-2) var(--spacing-5) var(--spacing-2) var(--spacing-5);
+:host
+  ::ng-deep
+  .mdc-evolution-chip__action.mat-mdc-chip-action.mdc-evolution-chip__action--primary {
+  margin: 0;
+  max-height: 33px;
+  box-sizing: border-box;
+  padding: var(--spacing-2) var(--spacing-5) var(--spacing-2) var(--spacing-5);
 }
 
 .pill-container {
-    margin-bottom: var(--spacing-8);
+  margin-bottom: var(--spacing-8);
 
-    .pill {
-        color: var(--hc-color-paysafe-blue-05);
-        background: var(--hc-color-paysafe-blue-50);
-        margin: 0;
-        --mdc-chip-container-height: 33px;
-        font-size: var(--spacing-5);
-        border-radius: var(--spacing-99);
-        border: none;
-        line-height: normal;
-        font-weight: normal;
-    }
+  .pill {
+    color: var(--hc-color-paysafe-blue-05);
+    background: var(--hc-color-paysafe-blue-50);
+    margin: 0;
+    --mdc-chip-container-height: 33px;
+    font-size: var(--spacing-5);
+    border-radius: var(--spacing-99);
+    border: none;
+    line-height: normal;
+    font-weight: normal;
+  }
 
-    .pill:active {
-        background-color: #fff;
-        color: var(--hc-link-color);
-    }
+  .pill:active {
+    background-color: #fff;
+    color: var(--hc-link-color);
+  }
 
-    .pill-spacer {
-        display: flex;
-        justify-content: flex-end;
-        width: var(--spacing-8);
-        margin: 0;
-        max-height: 26px;
-        opacity: 0;
-        cursor: default;
-        pointer-events: none;
-    }    
+  .pill-spacer {
+    display: flex;
+    justify-content: flex-end;
+    width: var(--spacing-8);
+    margin: 0;
+    max-height: 26px;
+    opacity: 0;
+    cursor: default;
+    pointer-events: none;
+  }
 }

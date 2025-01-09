@@ -2,7 +2,6 @@ import { moduleMetadata, Meta, StoryFn } from '@storybook/angular';
 import { MatIconModule } from '@angular/material/icon';
 import { CardComponent } from '../app/components/shared/card/card.component';
 import { CarouselComponent } from 'app/components/shared/carousel/carousel.component';
-
 export default {
   title: 'Shared/Carousel',
   component: CarouselComponent,

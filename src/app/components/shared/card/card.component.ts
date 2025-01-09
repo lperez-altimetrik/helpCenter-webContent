@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { LinkComponent } from '../link/link.component';
 
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [MatCardModule, MatIconModule, CommonModule],
+  imports: [MatCardModule, MatIconModule, CommonModule, LinkComponent],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
 })

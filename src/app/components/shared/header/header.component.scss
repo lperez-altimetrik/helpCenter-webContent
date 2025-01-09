@@ -12,233 +12,186 @@ $inter-size-6: 170px;
 $inter-size-7: 400px;
 $inter-size-9: 480px;
 
+.header-container {
+  .collapsed {
+    display: flex;
+    min-width: $inter-size-9;
+    box-sizing: border-box;
+    height: $inter-size-4;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-6) var(--spacing-9);
+    background-color: var(--hc-primary-color);
+    color: white;
 
+    .lhs-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0px;
 
-.grid-container {
-
-    .item1 {
+      .lh-button {
         display: flex;
-        min-width: $inter-size-9;
-        box-sizing: border-box;
-        height: $inter-size-4;
-        justify-content: space-between;
+        width: var(--spacing-8);
+        height: var(--spacing-8);
+        flex-direction: row;
+        justify-content: center;
         align-items: center;
-        padding: var(--spacing-6) var(--spacing-9);
         background-color: var(--hc-primary-color);
         color: white;
-        
-        .lhs-container {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 0px;
+        border: none;
+        border-radius: $inter-size-1;
+        cursor: pointer;
+        font-size: var(--spacing-6);
+        transition: background-color 0.3s;
+      }
 
-            .lh-button{
-                display: flex;
-                width: var(--spacing-8);
-                height: var(--spacing-8);
-                flex-direction:row;
-                justify-content:center;
-                align-items:center;   
-                background-color: var(--hc-primary-color);
-                color: white;
-                border: none;
-                border-radius: $inter-size-1;
-                cursor: pointer;
-                font-size: var(--spacing-6);
-                transition: background-color 0.3s;
-            }
+      .lh-button:hover {
+        background-color: var(--hc-primary-color-dark);
+      }
 
-            .lh-button:hover {
-                background-color: var(--hc-primary-color-dark);
-            }
-
-            .menu-toggle {
-                display: none;
-                @include respond-to("mobile-mb") {
-                    display: flex;
-                }
-            }
-
-            img {
-                vertical-align: middle;
-                display: flex;
-                height: var(--spacing-9);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: var(--spacing-3);
-            }
+      .menu-toggle {
+        display: none;
+        @include respond-to("mobile-mb") {
+          display: flex;
         }
-        .navigation {
-            display: flex;
-            align-items: center;
+      }
 
-            .rhs-container {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                gap: var(--spacing-6);
-                
-                .divider {
-                    display: flex;
-                    background-color: var(--hc-divider-purple);
-                    --mat-divider-width: $inter-size-0;
-                    width: 0;
-                    height: var(--spacing-7);
-                }
-                
-                .rh-button {
-                    display: flex;
-                    width: var(--spacing-8);
-                    height: var(--spacing-8);
-                    flex-direction:row;
-                    justify-content:center;
-                    align-items:center;   
-                    background-color: var(--hc-primary-color);
-                    color: white;
-                    border: none;
-                    border-radius: $inter-size-1;
-                    cursor: pointer;
-                    font-size: var(--spacing-6);
-                    transition: background-color 0.3s;
-                }
-
-                .rh-button:hover {
-                    background-color: var(--hc-primary-color-dark);
-                }
-
-                .user-buttons-container {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    gap: var(--spacing-6);
-
-                    @include respond-to("mobile-mb") {
-                        gap: var(--spacing-6);
-                    }
-
-                    .login-button {
-                        max-width: $inter-size-3;
-                        min-width: $inter-size-3;
-                        padding-inline-end: 0;
-                        padding-inline-start: 0;
-                    } 
-
-                    .fs-divider {
-                        @include respond-to("mobile-mb") { 
-                            display: none;
-                        }
-                    }
-
-                    .mobile-divider {
-                        display: none;
-                        @include respond-to("mobile-mb") {
-                            display: flex;
-                        }
-                    }
-                }
-
-                .language-button {
-                    @include respond-to("mobile-mb") {
-                        display: none;
-                    }
-                }
-            }
-        }
-    }
-
-    .item2 {
+      img {
+        vertical-align: middle;
         display: flex;
-        min-width: $inter-size-9;
-        min-height: fit-content;
+        height: var(--spacing-9);
         flex-direction: column;
         justify-content: center;
-        box-sizing: border-box;
-        height: $inter-size-4;
         align-items: center;
-        text-align: center;
-        scroll-padding-bottom: var(--spacing-6);
-        background-color: var(--hc-primary-color);
-        color: white;
-        padding-top: 0;
-
-        h1 {
-
-            font-size: clamp(var(--spacing-7), 5vw, var(--spacing-9));
-            white-space: nowrap;
-            font-style: normal;
-            letter-spacing: $inter-size;
-            line-height: 96%;
-            font-weight: 500;
-            margin-top: var(--spacing-6);
-            margin-bottom: var(--spacing-6);
-            @include respond-to("mobile-mb") {
-                font-size: var(--spacing-7);
-            }
-        }
-
-        .tab-container {
-            display: flex;
-            flex-wrap: nowrap;
-            overflow-x: visible;
-            flex-direction: row;
-            margin-top: var(--spacing-6);
-            margin-bottom: var(--spacing-9);
-            max-width: 100%;
-            padding: 0 var(--spacing-9);
-            @include respond-to("mobile-mb") {
-                flex-basis: 15%;
-                max-width: 80%;
-            }
-
-            .tab-cell {
-                box-sizing: border-box;
-                font-size: clamp(var(--spacing-5), 2vw, var(--spacing-6));
-                font-weight: 400;
-                flex: 1;
-                cursor: pointer;
-                width: clamp($inter-size-5, 20vw, $inter-size-6);;
-                min-width: $inter-size-5;
-                max-width: 100%;
-                border: 1px solid var(--hc-link-color);
-                background: var(--hc-primary-color);
-                padding: var(--spacing-4);
-                @include respond-to("mobile-mb") {
-                    flex-basis: 15%;
-                    min-width: $inter-size-5-0;
-                    font-size: var(--spacing-5);
-                }
-            }
-
-            .lh-tab {
-                border-top-left-radius: var(--spacing-1);
-                border-bottom-left-radius: var(--spacing-1);
-                border-right: 0px !important;
-            }
-
-            .rh-tab {
-                border-top-right-radius: var(--spacing-1);
-                border-bottom-right-radius: var(--spacing-1);
-                border-left: 0px !important;
-            }
-
-            .tab-cell:hover {
-                background-color: white;
-                color: var(--hc-primary-color);
-            }
-        }
-
-        .pill-bar-container {
-            box-sizing: border-box;
-            display: flex;
-            max-width: 100%;
-
-            app-pill-bar {
-                box-sizing: border-box;
-                max-width: 100%;
-            }
-        }
-
+        gap: var(--spacing-3);
+      }
     }
+    .navigation {
+      display: flex;
+      align-items: center;
+
+      .rhs-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: var(--spacing-6);
+
+        .divider {
+          display: flex;
+          background-color: var(--hc-divider-purple);
+          --mat-divider-width: $inter-size-0;
+          width: 0;
+          height: var(--spacing-7);
+        }
+
+        .rh-button {
+          display: flex;
+          width: var(--spacing-8);
+          height: var(--spacing-8);
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          background-color: var(--hc-primary-color);
+          color: white;
+          border: none;
+          border-radius: $inter-size-1;
+          cursor: pointer;
+          font-size: var(--spacing-6);
+          transition: background-color 0.3s;
+        }
+
+        .rh-button:hover {
+          background-color: var(--hc-primary-color-dark);
+        }
+
+        .user-buttons-container {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: var(--spacing-6);
+
+          @include respond-to("mobile-mb") {
+            gap: var(--spacing-6);
+          }
+
+          .login-button {
+            max-width: $inter-size-3;
+            min-width: $inter-size-3;
+            padding-inline-end: 0;
+            padding-inline-start: 0;
+          }
+
+          .fs-divider {
+            @include respond-to("mobile-mb") {
+              display: none;
+            }
+          }
+
+          .mobile-divider {
+            display: none;
+            @include respond-to("mobile-mb") {
+              display: flex;
+            }
+          }
+        }
+
+        .language-button {
+          @include respond-to("mobile-mb") {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .expanded {
+    display: flex;
+    min-width: $inter-size-9;
+    min-height: fit-content;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    height: $inter-size-4;
+    align-items: center;
+    text-align: center;
+    scroll-padding-bottom: var(--spacing-6);
+    background-color: var(--hc-primary-color);
+    color: white;
+    padding-top: 0;
+
+    h1 {
+      font-size: clamp(var(--spacing-7), 5vw, var(--spacing-9));
+      white-space: nowrap;
+      font-style: normal;
+      letter-spacing: $inter-size;
+      line-height: 96%;
+      font-weight: 500;
+      margin-top: var(--spacing-6);
+      margin-bottom: var(--spacing-6);
+      @include respond-to("mobile-mb") {
+        font-size: var(--spacing-7);
+      }
+    }
+
+    .tab-container {
+      display: flex;
+      max-width: 670px;
+      width: 100%;
+      @include respond-to("mobile-mb") {
+        max-width: 80%;
+      }
+    }
+
+    .pill-bar-container {
+      box-sizing: border-box;
+      display: flex;
+      max-width: 100%;
+
+      app-pill-bar {
+        box-sizing: border-box;
+        max-width: 100%;
+      }
+    }
+  }
 }

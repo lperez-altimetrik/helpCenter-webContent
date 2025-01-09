@@ -1,67 +1,82 @@
+<div class="header-container">
+  <header class="collapsed">
+    <div class="lhs-container">
+      <button
+        *ngIf="isLoggedIn"
+        mat-icon-button
+        (click)="onMenu()"
+        class="menu-toggle lh-button"
+      >
+        <span class="material-symbols-outlined"> menu </span>
+      </button>
+      <img [src]="logoPath" alt="Optic Logo" />
+    </div>
 
-<div class="grid-container">
-    <header class="item1">
-        <div class="lhs-container">
-
-            <button *ngIf="isLoggedIn" mat-icon-button (click)="onMenu()" class="menu-toggle lh-button">
-                <span class="material-symbols-outlined">
-                    menu
-                </span>
-            </button>
-            <img [src]="logoPath" alt="Optic Logo">
+    <nav class="navigation">
+      <div class="rhs-container">
+        <div *ngIf="!isLoggedIn" class="user-buttons-container">
+          <button mat-button (click)="onLogin()" class="rh-button login-button">
+            {{ loginLabel }}
+          </button>
+          <mat-divider class="divider" [vertical]="true"></mat-divider>
+          <button
+            mat-icon-button
+            color="primary"
+            class="rh-button"
+            (click)="onLang()"
+            aria-label="Language/Region Button"
+          >
+            <span class="material-symbols-outlined"> captive_portal </span>
+          </button>
         </div>
 
-        <nav class="navigation">
-            <div class="rhs-container">
-
-                <div *ngIf="!isLoggedIn" class="user-buttons-container"> 
-                    <button  mat-button (click)="onLogin()" class="rh-button login-button">Login</button>
-                    <mat-divider class="divider" [vertical]="true"></mat-divider>
-                    <button mat-icon-button color="primary" class="rh-button" (click)="onLang()" aria-label="Language/Region Button">
-                        <span class="material-symbols-outlined">
-                            captive_portal
-                        </span>
-                    </button>
-                </div>
-
-                <div *ngIf="isLoggedIn" class="user-buttons-container">
-                    <button mat-icon-button (click)="onSearch()" class="rh-button">
-                        <span class="material-symbols-outlined">
-                            search
-                        </span>
-                    </button>
-                    <mat-divider class="divider mobile-divider" [vertical]="true"></mat-divider>
-                    <button mat-icon-button (click)="onProfile()" class="rh-button">
-                        <span class="material-symbols-outlined">
-                            person
-                        </span>
-                    </button>
-                    <mat-divider class="divider fs-divider" [vertical]="true"></mat-divider>
-                    <button mat-icon-button color="primary" class="rh-button language-button" (click)="onLang()" aria-label="Language/Region Button">
-                        <span class="material-symbols-outlined">
-                            captive_portal
-                        </span>
-                    </button>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <div class="item2" *ngIf="!isLoggedIn"> 
-        <h1>Need Help? Let's find it together!</h1>
-        <div class="tab-container">
-            <a class="lh-tab tab-cell">Small Buisness</a>
-            <a class="tab-cell">Enterprise</a>
-            <a class="rh-tab tab-cell">Partners</a>
+        <div *ngIf="isLoggedIn" class="user-buttons-container">
+          <button mat-icon-button (click)="onSearch()" class="rh-button">
+            <span class="material-symbols-outlined"> search </span>
+          </button>
+          <mat-divider
+            class="divider mobile-divider"
+            [vertical]="true"
+          ></mat-divider>
+          <button mat-icon-button (click)="onProfile()" class="rh-button">
+            <span class="material-symbols-outlined"> person </span>
+          </button>
+          <mat-divider
+            class="divider fs-divider"
+            [vertical]="true"
+          ></mat-divider>
+          <button
+            mat-icon-button
+            color="primary"
+            class="rh-button language-button"
+            (click)="onLang()"
+            aria-label="Language/Region Button"
+          >
+            <span class="material-symbols-outlined"> captive_portal </span>
+          </button>
         </div>
-        <div class="search-container">
-            <app-search-bar [searchString]="_query"></app-search-bar>
-        </div>
+      </div>
+    </nav>
+  </header>
 
-        <div class="pill-bar-container">
-            <app-pill-bar (notifyParentEvent)="handlePillEvent($event)"></app-pill-bar>
-        
-        </div>
+  <div class="expanded" *ngIf="!isLoggedIn">
+    <h1>
+      {{ title }}
+    </h1>
 
-    </div>    
+    <app-center-tab-bar
+      class="tab-container"
+      [tabs]="tabs"
+    ></app-center-tab-bar>
+
+    <div class="search-container">
+      <app-search-bar [searchString]="_query"></app-search-bar>
+    </div>
+
+    <div class="pill-bar-container">
+      <app-pill-bar
+        (notifyParentEvent)="handlePillEvent($event)"
+      ></app-pill-bar>
+    </div>
+  </div>
 </div>

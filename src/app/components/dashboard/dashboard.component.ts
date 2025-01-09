@@ -10,20 +10,12 @@ import {
 import { inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
-import { ContactUsComponent } from '../shared/contact-us/contact-us.component';
-import { BannerComponent } from '../shared/banner/banner.component';
-import { CarouselComponent } from '../shared/carousel/carousel.component';
-import { ArticleIndexComponent } from '../shared/article-index/article-index.component';
-import { ModalComponent } from '../shared/modal/modal.component';
 import { TableComponent } from '../shared/table/table.component';
 import { CommonModule } from '@angular/common';
 import {
   MatChipSelectionChange,
   MatChipsModule,
 } from '@angular/material/chips';
-import { PillBarComponent } from '../shared/pill-bar/pill-bar.component';
-import { AccordionComponent } from '../shared/accordion/accordion.component';
-import { ArticleFeedbackComponent } from '../shared/article-feedback/article-feedback.component';
 import { BreadcrumbComponent } from '../shared/breadcrumb/breadcrumb.component';
 import { CardComponent } from '../shared/card/card.component';
 import { CenterTabBarComponent } from '../shared/center-tab-bar/center-tab-bar.component';
@@ -38,6 +30,14 @@ import { SidebarComponent } from '../shared/sidebar/sidebar.component';
 import { SubtitleComponent } from '../shared/subtitle/subtitle.component';
 import { TitleComponent } from '../shared/title/title.component';
 import { VideoPlayerComponent } from '../shared/video-player/video-player.component';
+import { AccordionComponent } from '../shared/accordion/accordion.component';
+import { ArticleFeedbackComponent } from '../shared/article-feedback/article-feedback.component';
+import { ArticleIndexComponent } from '../shared/article-index/article-index.component';
+import { BannerComponent } from '../shared/banner/banner.component';
+import { CarouselComponent } from '../shared/carousel/carousel.component';
+import { ContactUsComponent } from '../shared/contact-us/contact-us.component';
+import { ModalComponent } from '../shared/modal/modal.component';
+import { PillBarComponent } from '../shared/pill-bar/pill-bar.component';
 
 @Component({
   selector: 'app-dashboard',

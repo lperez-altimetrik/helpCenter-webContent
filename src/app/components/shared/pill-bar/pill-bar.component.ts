@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -20,41 +20,36 @@ import { MatLabel } from '@angular/material/form-field';
     MatDividerModule,
     MatIconModule,
     CommonModule,
-    DragScrollDirective, 
+    DragScrollDirective,
     MatInputModule,
-    MatChipsModule, 
-    MatFormFieldModule, 
+    MatChipsModule,
+    MatFormFieldModule,
   ],
   templateUrl: './pill-bar.component.html',
-  styleUrl: './pill-bar.component.scss'
+  styleUrl: './pill-bar.component.scss',
 })
-
 export class PillBarComponent {
-  _query: string = "";
-
-  chipLabels: string[] = [  //make input parameter for this
+  @Input() chipLabels: string[] = [
+    //make input parameter for this
     'Get Started!',
     'Wallet',
     'Payment Link',
     'Disputes',
     'Payments',
     'My Account',
-  ]
+  ];
 
   @Output() notifyParentEvent = new EventEmitter<string>();
-  
 
   @Output() onChipSelect(event: MatChipSelectionChange) {
     const val = event.source.value;
 
-    if (!event.source.selected){
+    if (!event.source.selected) {
       event.source.deselect;
-      this.notifyParentEvent.emit("");
+      this.notifyParentEvent.emit('');
     } else if (val) {
-      console.log("value: " + val);
+      console.log('value: ' + val);
       this.notifyParentEvent.emit(val);
     }
-
-  } 
-
+  }
 }

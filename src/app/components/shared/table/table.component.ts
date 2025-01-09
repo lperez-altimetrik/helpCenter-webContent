@@ -10,6 +10,7 @@ import { MatTableModule } from '@angular/material/table';
   styleUrl: './table.component.scss',
 })
 export class TableComponent {
+  @Input() noDataMessage = 'No data available.';
   @Input() tableData: any[] = [
     {
       'feature 1': 'Create a Payment Link',
