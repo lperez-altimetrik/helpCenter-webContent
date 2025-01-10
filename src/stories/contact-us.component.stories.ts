@@ -3,7 +3,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { ContactUsComponent } from '../app/components/shared/contact-us/contact-us.component';
+import { ContactUsComponent } from 'app/components/shared/contact-us/contact-us.component';
 
 export default {
   title: 'Shared/ContactUs',

@@ -38,6 +38,7 @@ export class CarouselComponent implements AfterViewInit {
   ];
 
   @Input() itemType: any = CardComponent;
+  @Input() title: string = 'Carousel Title';
   @ViewChild('dynamic', { static: true, read: ViewContainerRef }) dynHost: any;
   public componentRef: ComponentRef<any> | undefined;
 

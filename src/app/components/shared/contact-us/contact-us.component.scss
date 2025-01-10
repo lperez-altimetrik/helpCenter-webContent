@@ -11,6 +11,7 @@
   .need-help {
     padding: var(--spacing-6);
     width: 100%;
+
     .content {
       cursor: pointer;
       display: flex;
@@ -71,6 +72,7 @@
           }
         }
       }
+
       .mobile-icon {
         display: none;
         @include respond-to("mobile-mb") {

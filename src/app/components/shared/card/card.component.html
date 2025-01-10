@@ -18,14 +18,8 @@
       <p>
         {{ text }}
       </p>
-      <a [href]="linkUrl" target="_blank">
-        <span>
-          {{ link }}
-        </span>
-        <mat-icon class="flat-icon">
-          {{ linkIcon }}
-        </mat-icon>
-      </a>
+
+      <app-link [url]="linkUrl" [label]="link"></app-link>
     </div>
     <mat-icon class="go-icon">chevron_right</mat-icon>
   </mat-card-content>

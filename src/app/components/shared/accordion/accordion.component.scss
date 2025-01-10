@@ -24,27 +24,27 @@ mat-expansion-panel {
     leading-trim: both;
     text-edge: cap;
     font-variant-numeric: lining-nums;
-  
+
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-  
+
     @include respond-to("mobile-mb") {
       font-size: 16px;
     }
 
-    &:hover{
+    &:hover {
       color: var(--hc-color-fg-primary);
     }
   }
 
-  .accordion-paragraph{
+  .accordion-paragraph {
     color: var(--hc-color-fg-secondary);
     leading-trim: both;
     text-edge: cap;
     font-variant-numeric: lining-nums;
-  
+
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -52,7 +52,6 @@ mat-expansion-panel {
     @include respond-to("mobile-mb") {
       color: var(--color-fg-secondary, #414641);
       leading-trim: both;
-
       text-edge: cap;
       font-variant-numeric: lining-nums;
       font-size: 12px;
@@ -62,7 +61,6 @@ mat-expansion-panel {
     }
   }
 }
-
 
 :host ::ng-deep .mat-expansion-indicator:after {
   --mat-expansion-header-indicator-color: var(--hc-primary-color);

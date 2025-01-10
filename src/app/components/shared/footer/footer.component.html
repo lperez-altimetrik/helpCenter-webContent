@@ -1,16 +1,15 @@
 <footer class="footer">
-    <div class="nav-container">
-        <nav class="navigation">
-            <ul>
-                <li><a href="">Cookie Settings</a></li>
-                <li><a href="">Contact Us</a></li>
-                <li><a href="">Privacy Policy</a></li>
-                <li><a href="">Regulatory Disclosures</a></li>
-            </ul>
-        </nav>
-    </div>
-    <mat-divider class="divider" [vertical]="true"></mat-divider>
-    <div class="sm-container">
-        <small>Copyright © 2024 Paysafe Holdings UK Limited. All rights reserved. Paysafe Financial Services Limited (FRN:900015)</small>
-    </div>
+  <div class="nav-container">
+    <nav class="navigation">
+      <ul>
+        <li *ngFor="let link of links; let index = index">
+          <a href="">{{ link }}</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <mat-divider class="divider" [vertical]="true"></mat-divider>
+  <div class="sm-container">
+    <small>{{ disclaimer }}</small>
+  </div>
 </footer>

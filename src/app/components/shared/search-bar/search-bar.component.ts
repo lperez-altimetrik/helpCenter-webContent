@@ -1,8 +1,17 @@
-import {Component, ElementRef, Input, OnChanges, SimpleChanges, ViewChild, PLATFORM_ID, Inject} from '@angular/core';
-import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import {
+  Component,
+  ElementRef,
+  Input,
+  OnChanges,
+  SimpleChanges,
+  ViewChild,
+  PLATFORM_ID,
+  Inject,
+} from '@angular/core';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { isPlatformBrowser } from '@angular/common';
 
@@ -13,38 +22,39 @@ import { MatAutocompleteTrigger } from '@angular/material/autocomplete';
 @Component({
   selector: 'app-search-bar',
   standalone: true,
-  imports: [FormsModule,
+  imports: [
+    FormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatAutocompleteModule,
     ReactiveFormsModule,
-    ],
+  ],
   templateUrl: './search-bar.component.html',
-  styleUrl: './search-bar.component.scss'
+  styleUrl: './search-bar.component.scss',
 })
-export class SearchBarComponent implements OnChanges,  AfterViewInit{
+export class SearchBarComponent implements OnChanges, AfterViewInit {
+  @Input() title = 'Popular articles';
   @Input() searchString = new FormControl('');
-  isPanelOpened = false;
-  searchFocus = false;
-  @ViewChild("searchInput") inputElement!: ElementRef;
+  @ViewChild('searchInput') inputElement!: ElementRef;
   @Input() options: string[] = [
-    'Paysafe Glossary of Payment Terms for Merchants', 
-    'Paysafe Glossary of Payment Terms for Merchants', 
     'Paysafe Glossary of Payment Terms for Merchants',
     'Paysafe Glossary of Payment Terms for Merchants',
-    "Wallet",
-    "Payment Link",
-    "Disputes"
+    'Paysafe Glossary of Payment Terms for Merchants',
+    'Paysafe Glossary of Payment Terms for Merchants',
+    'Wallet',
+    'Payment Link',
+    'Disputes',
   ];
+  @Input() isPanelOpened = false;
+  @Input() searchFocus = false;
   @ViewChild(MatAutocompleteTrigger)
   autocomplete: MatAutocompleteTrigger | undefined;
   filteredOptions: any[] = [];
 
-
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     this.autocomplete = undefined;
   }
-  
+
   ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
       window.addEventListener('scroll', this.onWindowScroll.bind(this));
@@ -65,22 +75,25 @@ export class SearchBarComponent implements OnChanges,  AfterViewInit{
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    if(this.searchString.value != "" && this._filter(this.searchString.value || "").length > 0){
+    if (
+      this.searchString.value != '' &&
+      this._filter(this.searchString.value || '').length > 0
+    ) {
       this.inputElement.nativeElement.click();
     }
   }
 
   onSearchChange() {
-    this.filteredOptions = this._filter(this.searchString.value || "");
+    this.filteredOptions = this._filter(this.searchString.value || '');
   }
 
-  onClosedEvent(){
+  onClosedEvent() {
     this.isPanelOpened = false;
   }
 
   cleanSearch(event: Event) {
-    this.searchString.setValue(""); 
-    this.filteredOptions = this._filter(this.searchString.value || "");
+    this.searchString.setValue('');
+    this.filteredOptions = this._filter(this.searchString.value || '');
     this.closePanel(event);
   }
 
@@ -93,7 +106,9 @@ export class SearchBarComponent implements OnChanges,  AfterViewInit{
 
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
-    const filteredItems = this.options.filter(option => option.toLowerCase().includes(filterValue));
+    const filteredItems = this.options.filter((option) =>
+      option.toLowerCase().includes(filterValue)
+    );
     this.isPanelOpened = filteredItems.length != 0;
     return filteredItems;
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, viewChild } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { inject } from '@angular/core';
@@ -7,36 +7,41 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { AuthService } from '../../../services/auth.service';
 import { Subscription } from 'rxjs';
-import { DragScrollDirective } from './drag-scroll.directive';
 import { SearchBarComponent } from '../search-bar/search-bar.component';
 
-import { NgFor } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatLabel } from '@angular/material/form-field';
-import { PillBarComponent } from '../pill-bar/pill-bar.component';
 import { MatChipsModule } from '@angular/material/chips';
 import { FormControl } from '@angular/forms';
+import { PillBarComponent } from '../pill-bar/pill-bar.component';
+import { TitleComponent } from '../title/title.component';
+import { CenterTabBarComponent } from '../center-tab-bar/center-tab-bar.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [
+    CommonModule,
     MatButtonModule,
     MatDividerModule,
     MatIconModule,
-    CommonModule,
     MatChipsModule,
     PillBarComponent,
     SearchBarComponent,
     MatInputModule,
     MatFormFieldModule,
+    TitleComponent,
+    CenterTabBarComponent,
   ],
 
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent implements OnInit, OnDestroy {
+  @Input() loginLabel = 'Login';
+  @Input() title = "Need Help? Let's find it together!";
+  @Input() tabs = ['Small Buisness', 'Enterprise', 'Partners'];
+
   private router = inject(Router);
   private authSubscription!: Subscription;
   isLoggedIn = false;

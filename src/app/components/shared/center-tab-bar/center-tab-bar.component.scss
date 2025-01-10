@@ -2,8 +2,13 @@
 
 .tab-bar {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-wrap: nowrap;
+  overflow-x: visible;
+  flex-direction: row;
+  margin-top: var(--spacing-6);
+  margin-bottom: var(--spacing-9);
+  width: 100%;
+  padding: 0 var(--spacing-9);
 
   .tab {
     flex: 1;
@@ -36,6 +41,7 @@
       border-bottom-right-radius: 4px;
     }
   }
+
   .active {
     color: var(--hc-primary-color);
     background: var(--hc-color-white);

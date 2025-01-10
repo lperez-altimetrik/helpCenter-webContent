@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 
 import { MatCardModule } from '@angular/material/card';
@@ -12,4 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: './contact-us.component.html',
   styleUrl: './contact-us.component.scss',
 })
-export class ContactUsComponent {}
+export class ContactUsComponent {
+  @Input() buttonText = 'Need more help?';
+  @Input() linkLabel = 'Contact us';
+}
