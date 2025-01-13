@@ -38,7 +38,12 @@ import { CarouselComponent } from '../shared/carousel/carousel.component';
 import { ContactUsComponent } from '../shared/contact-us/contact-us.component';
 import { ModalComponent } from '../shared/modal/modal.component';
 import { PillBarComponent } from '../shared/pill-bar/pill-bar.component';
+import { DataService } from 'app/services/data.service';
 
+const componentMapping: { [key: string]: any } = {
+  card_carousel: CarouselComponent,
+  related_articles: RelatedArticlesComponent
+};
 @Component({
   selector: 'app-dashboard',
   standalone: true,
@@ -49,6 +54,7 @@ import { PillBarComponent } from '../shared/pill-bar/pill-bar.component';
 export class DashboardComponent implements AfterViewInit, OnDestroy {
   private authService = inject(AuthService);
   private router = inject(Router);
+  private dataService = inject(DataService);
 
   @ViewChild('dynamicContainer', { read: ViewContainerRef })
   dynamicContainer!: ViewContainerRef;
@@ -92,10 +98,32 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
 
   template: Object[] = [];
 
-  ngAfterViewInit(): void {
+  async ngAfterViewInit() {
     if (this.dynamicContainer) {
+     await this.setUpTemplateData();
       this.renderTemplate();
     }
+  }
+
+  private async setUpTemplateData() {
+    return new Promise((resolve, rejects) =>{
+      this.dataService.getTemplate().subscribe((jsonData: any) => {
+        this.template = jsonData.template.attributes.section_list.map((section: any) => {
+          const component = componentMapping[section.display_component];
+          if (!component) {
+            console.error(`Component not found for ${section.display_component}`);
+            return null;
+          }
+    
+          return {
+            type: component,
+            ...section,
+          };
+        }).filter((item: any) => item !== null);
+        resolve(this.template);
+      });
+    });
+
   }
 
   private renderTemplate(): void {
