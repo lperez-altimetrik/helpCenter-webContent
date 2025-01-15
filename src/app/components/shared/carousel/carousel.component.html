@@ -11,7 +11,11 @@
 
   <div class="carousel-container">
     <div class="header">
-      <span class="material-symbols-outlined icon">note_stack</span>
+      <span
+        class="material-symbols-outlined icon"
+        [attr.aria-label]="iconName"
+        >{{ iconName }}</span
+      >
       <h3>{{ title }}</h3>
     </div>
 

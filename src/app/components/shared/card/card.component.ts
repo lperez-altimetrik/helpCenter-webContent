@@ -1,13 +1,14 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, Type, ViewChild, ViewContainerRef } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import { LinkComponent } from '../link/link.component';
+import { TopicsContainerComponent } from './topics-container/topics-container.component';
+import { ProductsContainerComponent } from './products-container/products-container.component';
 
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [MatCardModule, MatIconModule, CommonModule, LinkComponent],
+  imports: [MatCardModule, MatIconModule, CommonModule],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
 })
@@ -20,4 +21,16 @@ export class CardComponent {
   @Input() link = 'Learn more';
   @Input() linkUrl = 'https://www.paysafe.com/us-en/';
   @Input() linkIcon = 'north_east';
+
+  @Input() dynamicComponent?: Type<any> = ProductsContainerComponent; // Accept the component type as input
+
+  @ViewChild('dynamicContainer', { read: ViewContainerRef })
+  dynamicContainer!: ViewContainerRef;
+
+  ngAfterViewInit(): void {
+    if (this.dynamicComponent) {
+      this.dynamicContainer.clear(); // Clear any existing view
+      this.dynamicContainer.createComponent(this.dynamicComponent); // Dynamically create the component
+    }
+  }
 }

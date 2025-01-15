@@ -96,19 +96,19 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
   itemType = ArticleIndexComponent;
   private componentRefs: ComponentRef<any>[] = [];
 
-  template: Object[] = [];
+  sectionList: Object[] = [];
 
   async ngAfterViewInit() {
     if (this.dynamicContainer) {
-     await this.setUpTemplateData();
-      this.renderTemplate();
+     await this.setUpsectionListData();
+      this.rendersectionList();
     }
   }
 
-  private async setUpTemplateData() {
+  private async setUpsectionListData() {
     return new Promise((resolve, rejects) =>{
-      this.dataService.getTemplate().subscribe((jsonData: any) => {
-        this.template = jsonData.template.attributes.section_list.map((section: any) => {
+      this.dataService.getSectionList().subscribe((jsonData: any) => {
+        this.sectionList = jsonData.template.attributes.section_list.map((section: any) => {
           const component = componentMapping[section.display_component];
           if (!component) {
             console.error(`Component not found for ${section.display_component}`);
@@ -116,19 +116,19 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
           }
     
           return {
-            type: component,
+            type: CarouselComponent,
             ...section,
           };
         }).filter((item: any) => item !== null);
-        resolve(this.template);
+        resolve(this.sectionList);
       });
     });
 
   }
 
-  private renderTemplate(): void {
+  private rendersectionList(): void {
     this.componentRefs.forEach((ref) => ref.destroy());
-    this.template.forEach((item: any) => {
+    this.sectionList.forEach((item: any) => {
       const componentRef: ComponentRef<any> =
         this.dynamicContainer.createComponent(item.type);
       this.componentRefs.push(componentRef);
