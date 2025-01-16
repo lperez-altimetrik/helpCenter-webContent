@@ -17,7 +17,6 @@ import {
   MatChipsModule,
 } from '@angular/material/chips';
 import { BreadcrumbComponent } from '../shared/breadcrumb/breadcrumb.component';
-import { CardComponent } from '../shared/card/card.component';
 import { CenterTabBarComponent } from '../shared/center-tab-bar/center-tab-bar.component';
 import { FooterComponent } from '../shared/footer/footer.component';
 import { HeaderComponent } from '../shared/header/header.component';
@@ -39,10 +38,12 @@ import { ContactUsComponent } from '../shared/contact-us/contact-us.component';
 import { ModalComponent } from '../shared/modal/modal.component';
 import { PillBarComponent } from '../shared/pill-bar/pill-bar.component';
 import { DataService } from 'app/services/data.service';
+import { TopicsContainerComponent } from '../shared/card/topics-container/topics-container.component';
+import { NewsContainerComponent } from '../shared/card/news-container/news-container.component';
+import { ProductsContainerComponent } from '../shared/card/products-container/products-container.component';
 
 const componentMapping: { [key: string]: any } = {
   card_carousel: CarouselComponent,
-  related_articles: RelatedArticlesComponent
 };
 @Component({
   selector: 'app-dashboard',
@@ -70,7 +71,6 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
     { label: 'Article Index', value: ArticleIndexComponent, selected: false },
     { label: 'Banner', value: BannerComponent, selected: false },
     { label: 'Breadcrumb', value: BreadcrumbComponent, selected: false },
-    { label: 'Card', value: CardComponent, selected: false },
     { label: 'Center Tab Bar', value: CenterTabBarComponent, selected: false },
     { label: 'Contact Us', value: ContactUsComponent, selected: false },
     { label: 'Footer', value: FooterComponent, selected: false },
@@ -100,59 +100,86 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
 
   async ngAfterViewInit() {
     if (this.dynamicContainer) {
-     await this.setUpsectionListData();
-      this.rendersectionList();
+      const sectionList = await this.fetchSectionList();
+      this.renderSections(sectionList);
     }
   }
 
-  private async setUpsectionListData() {
-    return new Promise((resolve, rejects) =>{
-      this.dataService.getSectionList().subscribe((jsonData: any) => {
-        this.sectionList = jsonData.template.attributes.section_list.map((section: any) => {
-          const component = componentMapping[section.display_component];
-          if (!component) {
-            console.error(`Component not found for ${section.display_component}`);
-            return null;
-          }
-    
-          return {
-            type: CarouselComponent,
-            ...section,
-          };
-        }).filter((item: any) => item !== null);
-        resolve(this.sectionList);
+  private async fetchSectionList(): Promise<any[]> {
+    return new Promise((resolve) => {
+      this.dataService.getSectionList().subscribe((data: any) => {
+        const sectionList = data?.template?.data?.attributes?.section_list || [];
+        resolve(sectionList);
       });
     });
-
   }
 
-  private rendersectionList(): void {
-    this.componentRefs.forEach((ref) => ref.destroy());
-    this.sectionList.forEach((item: any) => {
-      const componentRef: ComponentRef<any> =
-        this.dynamicContainer.createComponent(item.type);
-      this.componentRefs.push(componentRef);
 
-      // Pass input properties dynamically
-      Object.keys(item).forEach((key) => {
-        if (key !== 'type' && key in componentRef.instance) {
-          componentRef.instance[key] = item[key];
+  private renderSections(sectionList: any[]): void {
+    this.componentRefs.forEach((ref) => ref.destroy()); // Destroy existing components
+    this.componentRefs = [];
+   this.dataService.getSectionList().subscribe((data: any) => {
+      const sectionList = data?.template?.data?.attributes?.section_list || [];
+      sectionList.forEach((section: any) => {
+  
+        if (section.display_component === 'card_carousel') {
+          // Fetch topics from the service
+            // Create CarouselComponent
+            const carouselRef = this.dynamicContainer.createComponent(CarouselComponent);
+            this.componentRefs.push(carouselRef);
+  
+            // Set carousel title
+            carouselRef.instance.title = section.title;
+            carouselRef.instance.iconName = section.icon.data.attributes.name.split('.')[0];
+  
+            console.log('');
+            console.log('');
+            console.log('section.title ',section.title);
+            console.log('');
+            console.log('');
+  
+            switch(section.title) {
+              case 'News & Updates': {
+                carouselRef.instance.itemType = NewsContainerComponent;
+                const articles = data?.articles?.data || [];
+                // Populate the carousel with cards having a dynamic component of TopicsContainerComponent
+                carouselRef.instance.items = articles.map((topic: any) => ({
+                  title: topic.attributes.title,
+                  body: topic.attributes.short_description,
+                }));
+                break;
+              }
+              case 'Topics': {
+                carouselRef.instance.itemType = TopicsContainerComponent;
+                const topics = data?.topics?.data || [];
+                // Populate the carousel with cards having a dynamic component of TopicsContainerComponent
+                carouselRef.instance.items = topics.map((topic: any) => ({
+                  title: topic.attributes.title,
+                  body: topic.attributes.short_description,
+                }));
+  
+                break;
+              }
+                case 'Products': {
+                carouselRef.instance.itemType = ProductsContainerComponent;
+                const topics = data?.topics?.data || [];
+                // Populate the carousel with cards having a dynamic component of TopicsContainerComponent
+                carouselRef.instance.items = topics.map((topic: any) => ({
+                  title: topic.attributes.title,
+                  body: topic.attributes.short_description,
+                }));
+  
+                break;
+              }
+            }
+            // Trigger change detection
+            carouselRef.changeDetectorRef.detectChanges();
         }
       });
     });
+
   }
 
-  private renderSelectedComponents(): void {
-    this.componentRefs.forEach((ref) => ref.destroy());
-    this.componentRefs = [];
-
-    const selectedComponents = this.chipLabels.filter((chip) => chip.selected);
-
-    selectedComponents.forEach((chip: any) => {
-      const componentRef = this.dynamicContainer.createComponent(chip.value);
-      this.componentRefs.push(componentRef);
-    });
-  }
 
   logout(): void {
     this.authService.logout();
@@ -165,6 +192,5 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
 
   onChipSelect(event: MatChipSelectionChange, chip: any): void {
     chip.selected = event.selected;
-    this.renderSelectedComponents();
   }
 }

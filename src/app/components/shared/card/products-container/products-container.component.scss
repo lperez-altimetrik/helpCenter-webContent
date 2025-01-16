@@ -1,96 +1,114 @@
 @import "./../../../../../styles/mixins.scss";
 
-mat-card-content {
-    display: flex;
-    flex-flow: column;
-    padding: 0 !important;
+mat-card {
     width: 100%;
-    max-width: 371px;
-    justify-content: center;
+    box-shadow: none;
+    border: 1px solid var(--hc-color-bg-secondary);
 
     @include respond-to("mobile-mb") {
-        display: flex;
-        flex-flow: row;
-        align-items: center;
+        max-width: 100%;
     }
 
-    .header {
-        display: flex;
-
-        @include respond-to("mobile-mb") {
-            flex: 2;
-        }
-
-        .image {
-            height: 157px;
-            object-fit: cover;
-            box-sizing: border-box;
-            border-top-right-radius: 3px;
-            border-top-left-radius: 3px;
-            width: 100%;
-
-            @include respond-to("mobile-mb") {
-                height: 88px;
-                border-top-left-radius: 3px;
-                border-bottom-left-radius: 3px;
-                border-top-right-radius: 0;
-            }
-        }
+    &:hover {
+        box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.04),
+            0px 4px 6px -1px rgba(0, 0, 0, 0.06);
     }
 
-    .content {
-        padding: 24px;
+    &:active {
+        border: 1px solid var(--hc-gray-color);
+    }
+    mat-card-content {
         display: flex;
         flex-flow: column;
-        align-items: center;
-        text-align: center;
-
+        padding: 0 !important;
+        width: 100%;
+        max-width: 371px;
+        justify-content: center;
+    
         @include respond-to("mobile-mb") {
-            padding: 8px;
             display: flex;
-            flex: 4;
-            flex-flow: column;
+            flex-flow: row;
+            align-items: center;
         }
-
-        .title-section {
+    
+        .header {
+            display: flex;
+    
             @include respond-to("mobile-mb") {
-                display: flex;
-                align-items: center;
+                flex: 2;
             }
-
-            h4 {
-                color: var(--hc-color-fg-primary);
-                font-size: 18px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: normal;
-                margin: 0;
-                margin-bottom: 12px;
-
+    
+            .image {
+                height: 157px;
+                object-fit: cover;
+                box-sizing: border-box;
+                border-top-right-radius: 3px;
+                border-top-left-radius: 3px;
+                width: 100%;
+    
                 @include respond-to("mobile-mb") {
-                    font-size: 12px;
-                    margin: 0;
+                    height: 88px;
+                    border-top-left-radius: 3px;
+                    border-bottom-left-radius: 3px;
+                    border-top-right-radius: 0;
                 }
             }
         }
-
-        p {
-            color: var(--hc-light-black);
-            font-size: 12px;
-            font-weight: 300;
-                margin: 0;
-
+    
+        .content {
+            padding: 24px;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            text-align: center;
+    
             @include respond-to("mobile-mb") {
-                display: -webkit-box;
-                max-height: 3em;
-                line-height: 1.5em;
-                margin-bottom: 0;
-                font-size: 10px;
-                min-width: 160px;
-                overflow: hidden;
-                -webkit-box-orient: vertical;
-                -webkit-line-clamp: 2;
-                align-self: stretch;
+                padding: 8px;
+                display: flex;
+                flex: 4;
+                flex-flow: column;
+            }
+    
+            .title-section {
+                @include respond-to("mobile-mb") {
+                    display: flex;
+                    align-items: center;
+                }
+    
+                h4 {
+                    color: var(--hc-color-fg-primary);
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    margin: 0;
+                    margin-bottom: 12px;
+    
+                    @include respond-to("mobile-mb") {
+                        font-size: 12px;
+                        margin: 0;
+                    }
+                }
+            }
+    
+            p {
+                color: var(--hc-light-black);
+                font-size: 12px;
+                font-weight: 300;
+                    margin: 0;
+    
+                @include respond-to("mobile-mb") {
+                    display: -webkit-box;
+                    max-height: 3em;
+                    line-height: 1.5em;
+                    margin-bottom: 0;
+                    font-size: 10px;
+                    min-width: 160px;
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                    align-self: stretch;
+                }
             }
         }
     }
