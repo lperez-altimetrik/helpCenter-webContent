@@ -5,7 +5,7 @@ mat-card-content {
     display: flex;
     flex-flow: column;
     padding: 0;
-    max-width: 257px;
+    max-width: 256px;
 
     @include respond-to("mobile-mb") {
       display: flex;

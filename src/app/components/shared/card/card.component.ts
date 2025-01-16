@@ -4,6 +4,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { TopicsContainerComponent } from './topics-container/topics-container.component';
 import { ProductsContainerComponent } from './products-container/products-container.component';
+import { NewsContainerComponent } from './news-container/news-container.component';
 
 @Component({
   selector: 'app-card',
@@ -22,7 +23,7 @@ export class CardComponent {
   @Input() linkUrl = 'https://www.paysafe.com/us-en/';
   @Input() linkIcon = 'north_east';
 
-  @Input() dynamicComponent?: Type<any> = ProductsContainerComponent; // Accept the component type as input
+  @Input() dynamicComponent?: Type<any> = TopicsContainerComponent; // Accept the component type as input
 
   @ViewChild('dynamicContainer', { read: ViewContainerRef })
   dynamicContainer!: ViewContainerRef;
