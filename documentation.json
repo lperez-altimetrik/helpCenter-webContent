@@ -359,6 +359,41 @@
             "type": "injectable"
         },
         {
+            "name": "DataService",
+            "id": "injectable-DataService-e4b2a15697e8e6e72c83b5f340874fe9f4423324923d08eadc1fd50b5023dd44ae658ab0ca852268e65fc9780c2fe4df64d6a30bd7bf5e771b095b24ad279b29",
+            "file": "src/app/services/data.service.ts",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "getSectionList",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Observable<any>",
+                    "typeParameters": [],
+                    "line": 16,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nSimulates an asynchronous call to fetch the JSON contract.\nReplace the mock data with a real HTTP call in production.\n",
+                    "description": "<p>Simulates an asynchronous call to fetch the JSON contract.\nReplace the mock data with a real HTTP call in production.</p>\n"
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { Observable, of } from 'rxjs';\nimport { delay } from 'rxjs/operators';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class DataService {\n\n  constructor() {}\n\n  /**\n   * Simulates an asynchronous call to fetch the JSON contract.\n   * Replace the mock data with a real HTTP call in production.\n   */\n  getSectionList(): Observable<any> {\n    // This is your mock JSON contract (shortened here for example).\n    const mockJsonContract = {\n        \"template\": {\n            \"id\": 1,\n            \"attributes\": {\n                \"createdAt\": \"2025-01-07T08:35:37.351Z\",\n                \"updatedAt\": \"2025-01-12T17:05:34.814Z\",\n                \"publishedAt\": \"2025-01-07T08:35:38.567Z\",\n                \"locale\": \"en\",\n                \"section_list\": [\n                    {\n                        \"id\": 4,\n                        \"title\": \"News & Updates\",\n                        \"section_size\": \"full\",\n                        \"display_component\": \"card_carousel\",\n                        \"max_display_items\": 5,\n                        \"topics\": false,\n                        \"icon\": {\n                            \"data\": {\n                                \"id\": 14,\n                                \"attributes\": {\n                                    \"name\": \"newspaper.svg\",\n                                    \"alternativeText\": null,\n                                    \"caption\": null,\n                                    \"width\": 22,\n                                    \"height\": 22,\n                                    \"formats\": null,\n                                    \"hash\": \"newspaper_3c3e1fdfb3\",\n                                    \"ext\": \".svg\",\n                                    \"mime\": \"image/svg+xml\",\n                                    \"size\": 0.97,\n                                    \"url\": \"/uploads/newspaper_3c3e1fdfb3.svg\",\n                                    \"previewUrl\": null,\n                                    \"provider\": \"local\",\n                                    \"provider_metadata\": null,\n                                    \"createdAt\": \"2025-01-07T07:15:04.763Z\",\n                                    \"updatedAt\": \"2025-01-07T07:15:57.408Z\"\n                                }\n                            }\n                        },\n                        \"category\": {\n                            \"data\": {\n                                \"id\": 6,\n                                \"attributes\": {\n                                    \"slug\": \"news-updates\",\n                                    \"description\": null,\n                                    \"createdAt\": \"2025-01-07T07:16:22.380Z\",\n                                    \"updatedAt\": \"2025-01-07T07:38:29.493Z\",\n                                    \"short_description\": \"News & Updates\",\n                                    \"title\": \"News & Updates\",\n                                    \"publishedAt\": \"2025-01-07T07:21:05.768Z\",\n                                    \"locale\": \"en\",\n                                    \"root_category\": true\n                                }\n                            }\n                        }\n                    },\n                    {\n                        \"id\": 5,\n                        \"title\": \"Products\",\n                        \"section_size\": \"full\",\n                        \"display_component\": \"card_carousel\",\n                        \"max_display_items\": 3,\n                        \"topics\": false,\n                        \"icon\": {\n                            \"data\": {\n                                \"id\": 15,\n                                \"attributes\": {\n                                    \"name\": \"category.svg\",\n                                    \"alternativeText\": null,\n                                    \"caption\": null,\n                                    \"width\": 22,\n                                    \"height\": 22,\n                                    \"formats\": null,\n                                    \"hash\": \"category_a8d318040a\",\n                                    \"ext\": \".svg\",\n                                    \"mime\": \"image/svg+xml\",\n                                    \"size\": 1.36,\n                                    \"url\": \"/uploads/category_a8d318040a.svg\",\n                                    \"previewUrl\": null,\n                                    \"provider\": \"local\",\n                                    \"provider_metadata\": null,\n                                    \"createdAt\": \"2025-01-07T07:17:23.549Z\",\n                                    \"updatedAt\": \"2025-01-07T07:17:23.549Z\"\n                                }\n                            }\n                        },\n                        \"category\": {\n                            \"data\": {\n                                \"id\": 7,\n                                \"attributes\": {\n                                    \"slug\": \"products\",\n                                    \"description\": null,\n                                    \"createdAt\": \"2025-01-07T07:16:56.996Z\",\n                                    \"updatedAt\": \"2025-01-07T07:38:35.945Z\",\n                                    \"short_description\": \"Products\",\n                                    \"title\": \"Products\",\n                                    \"publishedAt\": \"2025-01-07T07:17:28.132Z\",\n                                    \"locale\": \"en\",\n                                    \"root_category\": true\n                                }\n                            }\n                        }\n                    },\n                    {\n                        \"id\": 6,\n                        \"title\": \"Topics\",\n                        \"section_size\": \"full\",\n                        \"display_component\": \"card_carousel\",\n                        \"max_display_items\": 5,\n                        \"topics\": true,\n                        \"icon\": {\n                            \"data\": {\n                                \"id\": 23,\n                                \"attributes\": {\n                                    \"name\": \"subject.svg\",\n                                    \"alternativeText\": null,\n                                    \"caption\": null,\n                                    \"width\": 22,\n                                    \"height\": 22,\n                                    \"formats\": null,\n                                    \"hash\": \"subject_baeb56d1a2\",\n                                    \"ext\": \".svg\",\n                                    \"mime\": \"image/svg+xml\",\n                                    \"size\": 0.58,\n                                    \"url\": \"/uploads/subject_baeb56d1a2.svg\",\n                                    \"previewUrl\": null,\n                                    \"provider\": \"local\",\n                                    \"provider_metadata\": null,\n                                    \"createdAt\": \"2025-01-07T08:34:08.218Z\",\n                                    \"updatedAt\": \"2025-01-07T08:34:08.218Z\"\n                                }\n                            }\n                        },\n                        \"category\": {\n                            \"data\": null\n                        }\n                    },\n                    {\n                        \"id\": 7,\n                        \"title\": \"Trending Articles\",\n                        \"section_size\": \"half\",\n                        \"display_component\": \"related_articles\",\n                        \"max_display_items\": 5,\n                        \"topics\": false,\n                        \"icon\": {\n                            \"data\": {\n                                \"id\": 16,\n                                \"attributes\": {\n                                    \"name\": \"arrow_outward.svg\",\n                                    \"alternativeText\": null,\n                                    \"caption\": null,\n                                    \"width\": 22,\n                                    \"height\": 22,\n                                    \"formats\": null,\n                                    \"hash\": \"arrow_outward_220bc7bc73\",\n                                    \"ext\": \".svg\",\n                                    \"mime\": \"image/svg+xml\",\n                                    \"size\": 0.5,\n                                    \"url\": \"/uploads/arrow_outward_220bc7bc73.svg\",\n                                    \"previewUrl\": null,\n                                    \"provider\": \"local\",\n                                    \"provider_metadata\": null,\n                                    \"createdAt\": \"2025-01-07T07:19:41.719Z\",\n                                    \"updatedAt\": \"2025-01-07T07:19:41.719Z\"\n                                }\n                            }\n                        },\n                        \"category\": {\n                            \"data\": {\n                                \"id\": 8,\n                                \"attributes\": {\n                                    \"slug\": \"trending-articles\",\n                                    \"description\": null,\n                                    \"createdAt\": \"2025-01-07T07:19:59.167Z\",\n                                    \"updatedAt\": \"2025-01-07T07:38:48.614Z\",\n                                    \"short_description\": \"Trending Articles\",\n                                    \"title\": \"Trending Articles\",\n                                    \"publishedAt\": \"2025-01-07T07:20:00.253Z\",\n                                    \"locale\": \"en\",\n                                    \"root_category\": true\n                                }\n                            }\n                        }\n                    },\n                    {\n                        \"id\": 8,\n                        \"title\": \"FAQs\",\n                        \"section_size\": \"half\",\n                        \"display_component\": \"related_articles\",\n                        \"max_display_items\": 5,\n                        \"topics\": false,\n                        \"icon\": {\n                            \"data\": {\n                                \"id\": 17,\n                                \"attributes\": {\n                                    \"name\": \"question_mark.svg\",\n                                    \"alternativeText\": null,\n                                    \"caption\": null,\n                                    \"width\": 22,\n                                    \"height\": 22,\n                                    \"formats\": null,\n                                    \"hash\": \"question_mark_1c80802bfa\",\n                                    \"ext\": \".svg\",\n                                    \"mime\": \"image/svg+xml\",\n                                    \"size\": 1.55,\n                                    \"url\": \"/uploads/question_mark_1c80802bfa.svg\",\n                                    \"previewUrl\": null,\n                                    \"provider\": \"local\",\n                                    \"provider_metadata\": null,\n                                    \"createdAt\": \"2025-01-07T07:22:26.688Z\",\n                                    \"updatedAt\": \"2025-01-07T07:22:26.688Z\"\n                                }\n                            }\n                        },\n                        \"category\": {\n                            \"data\": {\n                                \"id\": 9,\n                                \"attributes\": {\n                                    \"slug\": \"faqs\",\n                                    \"description\": null,\n                                    \"createdAt\": \"2025-01-07T07:22:38.128Z\",\n                                    \"updatedAt\": \"2025-01-07T07:38:22.570Z\",\n                                    \"short_description\": \"FAQs\",\n                                    \"title\": \"FAQs\",\n                                    \"publishedAt\": \"2025-01-07T07:22:50.046Z\",\n                                    \"locale\": \"en\",\n                                    \"root_category\": true\n                                }\n                            }\n                        }\n                    }\n                ],\n                \"search_area\": [\n                    {\n                        \"id\": 1,\n                        \"__component\": \"shared.title\",\n                        \"title\": \"Need Help? Let's find it together!\"\n                    },\n                    {\n                        \"id\": 1,\n                        \"__component\": \"category.category-group-selector\",\n                        \"category_groups\": {\n                            \"data\": [\n                                {\n                                    \"id\": 2,\n                                    \"attributes\": {\n                                        \"title\": \"Enterprise\",\n                                        \"description\": null,\n                                        \"createdAt\": \"2025-01-07T07:09:49.545Z\",\n                                        \"updatedAt\": \"2025-01-07T07:10:20.425Z\",\n                                        \"publishedAt\": \"2025-01-07T07:09:50.473Z\",\n                                        \"locale\": \"en\"\n                                    }\n                                },\n                                {\n                                    \"id\": 1,\n                                    \"attributes\": {\n                                        \"title\": \"Small Business\",\n                                        \"description\": null,\n                                        \"createdAt\": \"2025-01-07T07:09:27.975Z\",\n                                        \"updatedAt\": \"2025-01-07T07:10:33.570Z\",\n                                        \"publishedAt\": \"2025-01-07T07:09:28.779Z\",\n                                        \"locale\": \"en\"\n                                    }\n                                },\n                                {\n                                    \"id\": 3,\n                                    \"attributes\": {\n                                        \"title\": \"Partners\",\n                                        \"description\": null,\n                                        \"createdAt\": \"2025-01-07T07:10:09.889Z\",\n                                        \"updatedAt\": \"2025-01-07T07:10:10.883Z\",\n                                        \"publishedAt\": \"2025-01-07T07:10:10.881Z\",\n                                        \"locale\": \"en\"\n                                    }\n                                }\n                            ]\n                        }\n                    },\n                    {\n                        \"id\": 1,\n                        \"__component\": \"shared.search-bar\",\n                        \"search_api\": \"/search?topic={topic}\",\n                        \"topics\": {\n                            \"data\": [\n                                {\n                                    \"id\": 1,\n                                    \"attributes\": {\n                                        \"title\": \"Getting Started\",\n                                        \"short_description\": \"We give ambitious businesses their launchpad through safe and secure online payment solutions.\",\n                                        \"createdAt\": \"2025-01-07T07:23:46.633Z\",\n                                        \"updatedAt\": \"2025-01-07T07:24:23.903Z\",\n                                        \"publishedAt\": \"2025-01-07T07:24:23.901Z\",\n                                        \"searchable\": true,\n                                        \"locale\": \"en\",\n                                        \"description\": null\n                                    }\n                                },\n                                {\n                                    \"id\": 2,\n                                    \"attributes\": {\n                                        \"title\": \"My account\",\n                                        \"short_description\": \"We give ambitious businesses their launchpad through safe and secure online payment solutions.\",\n                                        \"createdAt\": \"2025-01-07T07:29:06.074Z\",\n                                        \"updatedAt\": \"2025-01-07T07:29:07.904Z\",\n                                        \"publishedAt\": \"2025-01-07T07:29:07.902Z\",\n                                        \"searchable\": true,\n                                        \"locale\": \"en\",\n                                        \"description\": null\n                                    }\n                                },\n                                {\n                                    \"id\": 4,\n                                    \"attributes\": {\n                                        \"title\": \"Analytics\",\n                                        \"short_description\": \"We give ambitious businesses their launchpad through safe and secure online payment solutions\",\n                                        \"createdAt\": \"2025-01-07T07:30:59.897Z\",\n                                        \"updatedAt\": \"2025-01-07T07:31:00.700Z\",\n                                        \"publishedAt\": \"2025-01-07T07:31:00.698Z\",\n                                        \"searchable\": true,\n                                        \"locale\": \"en\",\n                                        \"description\": null\n                                    }\n                                },\n                                {\n                                    \"id\": 3,\n                                    \"attributes\": {\n                                        \"title\": \"Disputes\",\n                                        \"short_description\": \"We give ambitious businesses their launchpad through safe and secure online payment solutions.\",\n                                        \"createdAt\": \"2025-01-07T07:30:02.498Z\",\n                                        \"updatedAt\": \"2025-01-07T07:30:04.916Z\",\n                                        \"publishedAt\": \"2025-01-07T07:30:04.913Z\",\n                                        \"searchable\": true,\n                                        \"locale\": \"en\",\n                                        \"description\": null\n                                    }\n                                }\n                            ]\n                        }\n                    }\n                ],\n                \"page_template\": {\n                    \"data\": {\n                        \"id\": 1,\n                        \"attributes\": {\n                            \"createdAt\": \"2025-01-07T08:52:12.103Z\",\n                            \"updatedAt\": \"2025-01-07T09:18:34.267Z\",\n                            \"publishedAt\": \"2025-01-07T09:07:52.298Z\",\n                            \"styles\": null,\n                            \"theme\": null,\n                            \"name\": \"Default Template\",\n                            \"slug\": \"default-template\",\n                            \"locale\": \"en\",\n                            \"header\": {\n                                \"id\": 1,\n                                \"logo\": {\n                                    \"id\": 3,\n                                    \"logo\": {\n                                        \"data\": {\n                                            \"id\": 24,\n                                            \"attributes\": {\n                                                \"name\": \"vector.svg\",\n                                                \"alternativeText\": null,\n                                                \"caption\": null,\n                                                \"width\": 119,\n                                                \"height\": 28,\n                                                \"formats\": null,\n                                                \"hash\": \"vector_64d394624c\",\n                                                \"ext\": \".svg\",\n                                                \"mime\": \"image/svg+xml\",\n                                                \"size\": 4.96,\n                                                \"url\": \"/uploads/vector_64d394624c.svg\",\n                                                \"previewUrl\": null,\n                                                \"provider\": \"local\",\n                                                \"provider_metadata\": null,\n                                                \"createdAt\": \"2025-01-07T08:49:51.124Z\",\n                                                \"updatedAt\": \"2025-01-07T08:49:51.124Z\"\n                                            }\n                                        }\n                                    }\n                                },\n                                \"mobile_logo\": {\n                                    \"id\": 3,\n                                    \"mobile_logo\": {\n                                        \"data\": {\n                                            \"id\": 24,\n                                            \"attributes\": {\n                                                \"name\": \"vector.svg\",\n                                                \"alternativeText\": null,\n                                                \"caption\": null,\n                                                \"width\": 119,\n                                                \"height\": 28,\n                                                \"formats\": null,\n                                                \"hash\": \"vector_64d394624c\",\n                                                \"ext\": \".svg\",\n                                                \"mime\": \"image/svg+xml\",\n                                                \"size\": 4.96,\n                                                \"url\": \"/uploads/vector_64d394624c.svg\",\n                                                \"previewUrl\": null,\n                                                \"provider\": \"local\",\n                                                \"provider_metadata\": null,\n                                                \"createdAt\": \"2025-01-07T08:49:51.124Z\",\n                                                \"updatedAt\": \"2025-01-07T08:49:51.124Z\"\n                                            }\n                                        }\n                                    }\n                                },\n                                \"user_login\": {\n                                    \"id\": 3,\n                                    \"token_variable\": \"auth_token\",\n                                    \"login_url\": \"https://login_url\"\n                                },\n                                \"language_selector\": {\n                                    \"id\": 3,\n                                    \"languages\": {\n                                        \"data\": [\n                                            {\n                                                \"id\": 4,\n                                                \"attributes\": {\n                                                    \"name\": \"British English\",\n                                                    \"code\": \"en-gb\",\n                                                    \"createdAt\": \"2025-01-07T09:02:29.996Z\",\n                                                    \"updatedAt\": \"2025-01-07T09:02:30.859Z\",\n                                                    \"publishedAt\": \"2025-01-07T09:02:30.858Z\",\n                                                    \"display\": null\n                                                }\n                                            },\n                                            {\n                                                \"id\": 2,\n                                                \"attributes\": {\n                                                    \"name\": \"Canadian English\",\n                                                    \"code\": \"en-ca\",\n                                                    \"createdAt\": \"2025-01-07T09:00:03.390Z\",\n                                                    \"updatedAt\": \"2025-01-07T09:02:47.463Z\",\n                                                    \"publishedAt\": \"2025-01-07T09:00:04.322Z\",\n                                                    \"display\": null\n                                                }\n                                            },\n                                            {\n                                                \"id\": 3,\n                                                \"attributes\": {\n                                                    \"name\": \"Canadian French\",\n                                                    \"code\": \"fr-ca\",\n                                                    \"createdAt\": \"2025-01-07T09:00:28.952Z\",\n                                                    \"updatedAt\": \"2025-01-07T09:03:05.472Z\",\n                                                    \"publishedAt\": \"2025-01-07T09:00:29.662Z\",\n                                                    \"display\": null\n                                                }\n                                            },\n                                            {\n                                                \"id\": 1,\n                                                \"attributes\": {\n                                                    \"name\": \"US English\",\n                                                    \"code\": \"en-us\",\n                                                    \"createdAt\": \"2025-01-07T08:59:20.383Z\",\n                                                    \"updatedAt\": \"2025-01-07T09:03:21.186Z\",\n                                                    \"publishedAt\": \"2025-01-07T08:59:21.443Z\",\n                                                    \"display\": null\n                                                }\n                                            }\n                                        ]\n                                    }\n                                }\n                            }\n                        }\n                    }\n                }\n            }\n        },\n        \"categories\": [],\n        \"topics\": [],\n        \"articles\": []\n    };\n    return of(mockJsonContract).pipe(delay(1000));\n  }\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "extends": [],
+            "type": "injectable"
+        },
+        {
             "name": "StrapiService",
             "id": "injectable-StrapiService-66c205f2a803b4c69e23ac70bf34000017f9f25d7b39361b4835a96116d351854269886e8815e44e47b01f9c6ab735d9d8d4f926176f5fee5cd2ba02fffee0ab",
             "file": "src/app/services/strapi-service.ts",
@@ -2210,7 +2245,7 @@
         },
         {
             "name": "DashboardComponent",
-            "id": "component-DashboardComponent-0d01e6cf82a23d4a5781d85e69165d0684dda114d5f88fe5a1b45295c97d79242c1b147e02258f3f9b00d833b2ed5fb5c6ac9b091fecf555b09e2416344cdd06",
+            "id": "component-DashboardComponent-a0e85033de531347e9fb222a61c75d3230cc68ef524b337df41f9486099a5fd8d50d6fc437dedba5c2c25fbe6efe143fa09b34f38b65f13dc3f082a1ffc88d7e",
             "file": "src/app/components/dashboard/dashboard.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2237,7 +2272,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 50,
+                    "line": 55,
                     "modifierKind": [
                         123
                     ]
@@ -2251,7 +2286,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 56
+                    "line": 62
                 },
                 {
                     "name": "componentRefs",
@@ -2262,7 +2297,21 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 91,
+                    "line": 97,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "dataService",
+                    "defaultValue": "inject(DataService)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 57,
                     "modifierKind": [
                         123
                     ]
@@ -2275,7 +2324,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 54,
+                    "line": 60,
                     "decorators": [
                         {
                             "name": "ViewChild",
@@ -2295,7 +2344,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 90
+                    "line": 96
                 },
                 {
                     "name": "router",
@@ -2306,13 +2355,13 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 51,
+                    "line": 56,
                     "modifierKind": [
                         123
                     ]
                 },
                 {
-                    "name": "template",
+                    "name": "sectionList",
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -2320,7 +2369,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 93
+                    "line": 99
                 }
             ],
             "methodsClass": [
@@ -2330,7 +2379,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 129,
+                    "line": 159,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -2338,11 +2387,14 @@
                     "name": "ngAfterViewInit",
                     "args": [],
                     "optional": false,
-                    "returnType": "void",
+                    "returnType": "any",
                     "typeParameters": [],
-                    "line": 95,
+                    "line": 101,
                     "deprecated": false,
-                    "deprecationMessage": ""
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        134
+                    ]
                 },
                 {
                     "name": "ngOnDestroy",
@@ -2350,7 +2402,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 134,
+                    "line": 164,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -2373,7 +2425,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 138,
+                    "line": 168,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -2398,12 +2450,12 @@
                     ]
                 },
                 {
-                    "name": "renderSelectedComponents",
+                    "name": "rendersectionList",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 117,
+                    "line": 131,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -2411,16 +2463,30 @@
                     ]
                 },
                 {
-                    "name": "renderTemplate",
+                    "name": "renderSelectedComponents",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 101,
+                    "line": 147,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
                         123
+                    ]
+                },
+                {
+                    "name": "setUpsectionListData",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "unknown",
+                    "typeParameters": [],
+                    "line": 108,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123,
+                        134
                     ]
                 }
             ],
@@ -2442,7 +2508,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {\n  AfterViewInit,\n  Component,\n  ComponentRef,\n  OnDestroy,\n  ViewChild,\n  ViewContainerRef,\n} from '@angular/core';\nimport { inject } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { AuthService } from '../../services/auth.service';\nimport { TableComponent } from '../shared/table/table.component';\nimport { CommonModule } from '@angular/common';\nimport {\n  MatChipSelectionChange,\n  MatChipsModule,\n} from '@angular/material/chips';\nimport { BreadcrumbComponent } from '../shared/breadcrumb/breadcrumb.component';\nimport { CardComponent } from '../shared/card/card.component';\nimport { CenterTabBarComponent } from '../shared/center-tab-bar/center-tab-bar.component';\nimport { FooterComponent } from '../shared/footer/footer.component';\nimport { HeaderComponent } from '../shared/header/header.component';\nimport { ImageComponent } from '../shared/image/image.component';\nimport { LabelComponent } from '../shared/label/label.component';\nimport { LinkComponent } from '../shared/link/link.component';\nimport { RelatedArticlesComponent } from '../shared/related-articles/related-articles.component';\nimport { SearchBarComponent } from '../shared/search-bar/search-bar.component';\nimport { SidebarComponent } from '../shared/sidebar/sidebar.component';\nimport { SubtitleComponent } from '../shared/subtitle/subtitle.component';\nimport { TitleComponent } from '../shared/title/title.component';\nimport { VideoPlayerComponent } from '../shared/video-player/video-player.component';\nimport { AccordionComponent } from '../shared/accordion/accordion.component';\nimport { ArticleFeedbackComponent } from '../shared/article-feedback/article-feedback.component';\nimport { ArticleIndexComponent } from '../shared/article-index/article-index.component';\nimport { BannerComponent } from '../shared/banner/banner.component';\nimport { CarouselComponent } from '../shared/carousel/carousel.component';\nimport { ContactUsComponent } from '../shared/contact-us/contact-us.component';\nimport { ModalComponent } from '../shared/modal/modal.component';\nimport { PillBarComponent } from '../shared/pill-bar/pill-bar.component';\n\n@Component({\n  selector: 'app-dashboard',\n  standalone: true,\n  imports: [CommonModule, MatChipsModule],\n  templateUrl: './dashboard.component.html',\n  styleUrl: './dashboard.component.scss',\n})\nexport class DashboardComponent implements AfterViewInit, OnDestroy {\n  private authService = inject(AuthService);\n  private router = inject(Router);\n\n  @ViewChild('dynamicContainer', { read: ViewContainerRef })\n  dynamicContainer!: ViewContainerRef;\n\n  chipLabels = [\n    { label: 'Carousel', value: CarouselComponent, selected: false },\n    { label: 'Accordion', value: AccordionComponent, selected: false },\n    {\n      label: 'Article Feedback',\n      value: ArticleFeedbackComponent,\n      selected: false,\n    },\n    { label: 'Article Index', value: ArticleIndexComponent, selected: false },\n    { label: 'Banner', value: BannerComponent, selected: false },\n    { label: 'Breadcrumb', value: BreadcrumbComponent, selected: false },\n    { label: 'Card', value: CardComponent, selected: false },\n    { label: 'Center Tab Bar', value: CenterTabBarComponent, selected: false },\n    { label: 'Contact Us', value: ContactUsComponent, selected: false },\n    { label: 'Footer', value: FooterComponent, selected: false },\n    { label: 'Header', value: HeaderComponent, selected: false },\n    { label: 'Image', value: ImageComponent, selected: false },\n    { label: 'Label', value: LabelComponent, selected: false },\n    { label: 'Link', value: LinkComponent, selected: false },\n    { label: 'Modal', value: ModalComponent, selected: false },\n    { label: 'Pill Bar', value: PillBarComponent, selected: false },\n    {\n      label: 'Related Articles',\n      value: RelatedArticlesComponent,\n      selected: false,\n    },\n    { label: 'Search Bar', value: SearchBarComponent, selected: false },\n    { label: 'Sidebar', value: SidebarComponent, selected: false },\n    { label: 'Subtitle', value: SubtitleComponent, selected: false },\n    { label: 'Table', value: TableComponent, selected: false },\n    { label: 'Title', value: TitleComponent, selected: false },\n    { label: 'Video', value: VideoPlayerComponent, selected: false },\n  ];\n\n  itemType = ArticleIndexComponent;\n  private componentRefs: ComponentRef<any>[] = [];\n\n  template: Object[] = [];\n\n  ngAfterViewInit(): void {\n    if (this.dynamicContainer) {\n      this.renderTemplate();\n    }\n  }\n\n  private renderTemplate(): void {\n    this.componentRefs.forEach((ref) => ref.destroy());\n    this.template.forEach((item: any) => {\n      const componentRef: ComponentRef<any> =\n        this.dynamicContainer.createComponent(item.type);\n      this.componentRefs.push(componentRef);\n\n      // Pass input properties dynamically\n      Object.keys(item).forEach((key) => {\n        if (key !== 'type' && key in componentRef.instance) {\n          componentRef.instance[key] = item[key];\n        }\n      });\n    });\n  }\n\n  private renderSelectedComponents(): void {\n    this.componentRefs.forEach((ref) => ref.destroy());\n    this.componentRefs = [];\n\n    const selectedComponents = this.chipLabels.filter((chip) => chip.selected);\n\n    selectedComponents.forEach((chip: any) => {\n      const componentRef = this.dynamicContainer.createComponent(chip.value);\n      this.componentRefs.push(componentRef);\n    });\n  }\n\n  logout(): void {\n    this.authService.logout();\n    this.router.navigate(['/login']);\n  }\n\n  ngOnDestroy(): void {\n    this.componentRefs.forEach((ref) => ref.destroy());\n  }\n\n  onChipSelect(event: MatChipSelectionChange, chip: any): void {\n    chip.selected = event.selected;\n    this.renderSelectedComponents();\n  }\n}\n",
+            "sourceCode": "import {\n  AfterViewInit,\n  Component,\n  ComponentRef,\n  OnDestroy,\n  ViewChild,\n  ViewContainerRef,\n} from '@angular/core';\nimport { inject } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { AuthService } from '../../services/auth.service';\nimport { TableComponent } from '../shared/table/table.component';\nimport { CommonModule } from '@angular/common';\nimport {\n  MatChipSelectionChange,\n  MatChipsModule,\n} from '@angular/material/chips';\nimport { BreadcrumbComponent } from '../shared/breadcrumb/breadcrumb.component';\nimport { CardComponent } from '../shared/card/card.component';\nimport { CenterTabBarComponent } from '../shared/center-tab-bar/center-tab-bar.component';\nimport { FooterComponent } from '../shared/footer/footer.component';\nimport { HeaderComponent } from '../shared/header/header.component';\nimport { ImageComponent } from '../shared/image/image.component';\nimport { LabelComponent } from '../shared/label/label.component';\nimport { LinkComponent } from '../shared/link/link.component';\nimport { RelatedArticlesComponent } from '../shared/related-articles/related-articles.component';\nimport { SearchBarComponent } from '../shared/search-bar/search-bar.component';\nimport { SidebarComponent } from '../shared/sidebar/sidebar.component';\nimport { SubtitleComponent } from '../shared/subtitle/subtitle.component';\nimport { TitleComponent } from '../shared/title/title.component';\nimport { VideoPlayerComponent } from '../shared/video-player/video-player.component';\nimport { AccordionComponent } from '../shared/accordion/accordion.component';\nimport { ArticleFeedbackComponent } from '../shared/article-feedback/article-feedback.component';\nimport { ArticleIndexComponent } from '../shared/article-index/article-index.component';\nimport { BannerComponent } from '../shared/banner/banner.component';\nimport { CarouselComponent } from '../shared/carousel/carousel.component';\nimport { ContactUsComponent } from '../shared/contact-us/contact-us.component';\nimport { ModalComponent } from '../shared/modal/modal.component';\nimport { PillBarComponent } from '../shared/pill-bar/pill-bar.component';\nimport { DataService } from 'app/services/data.service';\n\nconst componentMapping: { [key: string]: any } = {\n  card_carousel: CarouselComponent,\n  related_articles: RelatedArticlesComponent\n};\n@Component({\n  selector: 'app-dashboard',\n  standalone: true,\n  imports: [CommonModule, MatChipsModule],\n  templateUrl: './dashboard.component.html',\n  styleUrl: './dashboard.component.scss',\n})\nexport class DashboardComponent implements AfterViewInit, OnDestroy {\n  private authService = inject(AuthService);\n  private router = inject(Router);\n  private dataService = inject(DataService);\n\n  @ViewChild('dynamicContainer', { read: ViewContainerRef })\n  dynamicContainer!: ViewContainerRef;\n\n  chipLabels = [\n    { label: 'Carousel', value: CarouselComponent, selected: false },\n    { label: 'Accordion', value: AccordionComponent, selected: false },\n    {\n      label: 'Article Feedback',\n      value: ArticleFeedbackComponent,\n      selected: false,\n    },\n    { label: 'Article Index', value: ArticleIndexComponent, selected: false },\n    { label: 'Banner', value: BannerComponent, selected: false },\n    { label: 'Breadcrumb', value: BreadcrumbComponent, selected: false },\n    { label: 'Card', value: CardComponent, selected: false },\n    { label: 'Center Tab Bar', value: CenterTabBarComponent, selected: false },\n    { label: 'Contact Us', value: ContactUsComponent, selected: false },\n    { label: 'Footer', value: FooterComponent, selected: false },\n    { label: 'Header', value: HeaderComponent, selected: false },\n    { label: 'Image', value: ImageComponent, selected: false },\n    { label: 'Label', value: LabelComponent, selected: false },\n    { label: 'Link', value: LinkComponent, selected: false },\n    { label: 'Modal', value: ModalComponent, selected: false },\n    { label: 'Pill Bar', value: PillBarComponent, selected: false },\n    {\n      label: 'Related Articles',\n      value: RelatedArticlesComponent,\n      selected: false,\n    },\n    { label: 'Search Bar', value: SearchBarComponent, selected: false },\n    { label: 'Sidebar', value: SidebarComponent, selected: false },\n    { label: 'Subtitle', value: SubtitleComponent, selected: false },\n    { label: 'Table', value: TableComponent, selected: false },\n    { label: 'Title', value: TitleComponent, selected: false },\n    { label: 'Video', value: VideoPlayerComponent, selected: false },\n  ];\n\n  itemType = ArticleIndexComponent;\n  private componentRefs: ComponentRef<any>[] = [];\n\n  sectionList: Object[] = [];\n\n  async ngAfterViewInit() {\n    if (this.dynamicContainer) {\n     await this.setUpsectionListData();\n      this.rendersectionList();\n    }\n  }\n\n  private async setUpsectionListData() {\n    return new Promise((resolve, rejects) =>{\n      this.dataService.getSectionList().subscribe((jsonData: any) => {\n        this.sectionList = jsonData.sectionList.attributes.section_list.map((section: any) => {\n          const component = componentMapping[section.display_component];\n          if (!component) {\n            console.error(`Component not found for ${section.display_component}`);\n            return null;\n          }\n    \n          return {\n            type: CarouselComponent,\n            ...section,\n            itemType: ArticleIndexComponent\n\n          };\n        }).filter((item: any) => item !== null);\n        resolve(this.sectionList);\n      });\n    });\n\n  }\n\n  private rendersectionList(): void {\n    this.componentRefs.forEach((ref) => ref.destroy());\n    this.sectionList.forEach((item: any) => {\n      const componentRef: ComponentRef<any> =\n        this.dynamicContainer.createComponent(item.type);\n      this.componentRefs.push(componentRef);\n\n      // Pass input properties dynamically\n      Object.keys(item).forEach((key) => {\n        if (key !== 'type' && key in componentRef.instance) {\n          componentRef.instance[key] = item[key];\n        }\n      });\n    });\n  }\n\n  private renderSelectedComponents(): void {\n    this.componentRefs.forEach((ref) => ref.destroy());\n    this.componentRefs = [];\n\n    const selectedComponents = this.chipLabels.filter((chip) => chip.selected);\n\n    selectedComponents.forEach((chip: any) => {\n      const componentRef = this.dynamicContainer.createComponent(chip.value);\n      this.componentRefs.push(componentRef);\n    });\n  }\n\n  logout(): void {\n    this.authService.logout();\n    this.router.navigate(['/login']);\n  }\n\n  ngOnDestroy(): void {\n    this.componentRefs.forEach((ref) => ref.destroy());\n  }\n\n  onChipSelect(event: MatChipSelectionChange, chip: any): void {\n    chip.selected = event.selected;\n    this.renderSelectedComponents();\n  }\n}\n",
             "styleUrl": "./dashboard.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -2452,7 +2518,7 @@
                 "AfterViewInit",
                 "OnDestroy"
             ],
-            "templateData": "<div class=\"container\">\n  <h2>Dashboard</h2>\n  <button (click)=\"logout()\">Logout</button>\n\n  <mat-chip-listbox\n    aria-orientation=\"horizontal\"\n    class=\"pill-container\"\n    multiple\n  >\n    <div class=\"pill-spacer\">spacer</div>\n    <mat-chip-option\n      *ngFor=\"let chip of chipLabels\"\n      class=\"pill\"\n      [selected]=\"chip.selected\"\n      (selectionChange)=\"onChipSelect($event, chip)\"\n    >\n      {{ chip.label }}\n    </mat-chip-option>\n    <div class=\"pill-spacer\">spacer</div>\n  </mat-chip-listbox>\n\n  <ng-container #dynamicContainer></ng-container>\n</div>\n"
+            "templateData": "<div class=\"container\">\n  <!-- <h2>Dashboard</h2> -->\n  <!-- <button (click)=\"logout()\">Logout</button> -->\n\n  <!-- <mat-chip-listbox\n    aria-orientation=\"horizontal\"\n    class=\"pill-container\"\n    multiple\n  >\n    <div class=\"pill-spacer\">spacer</div>\n    <mat-chip-option\n      *ngFor=\"let chip of chipLabels\"\n      class=\"pill\"\n      [selected]=\"chip.selected\"\n      (selectionChange)=\"onChipSelect($event, chip)\"\n    >\n      {{ chip.label }}\n    </mat-chip-option>\n    <div class=\"pill-spacer\">spacer</div>\n  </mat-chip-listbox> -->\n\n  <ng-container #dynamicContainer></ng-container>\n</div>\n"
         },
         {
             "name": "FooterComponent",
@@ -2874,7 +2940,7 @@
                 "OnInit",
                 "OnDestroy"
             ],
-            "templateData": "<div class=\"header-container\">\n  <header class=\"collapsed\">\n    <div class=\"lhs-container\">\n      <button\n        *ngIf=\"isLoggedIn\"\n        mat-icon-button\n        (click)=\"onMenu()\"\n        class=\"menu-toggle lh-button\"\n      >\n        <span class=\"material-symbols-outlined\"> menu </span>\n      </button>\n      <img [src]=\"logoPath\" alt=\"Optic Logo\" />\n    </div>\n\n    <nav class=\"navigation\">\n      <div class=\"rhs-container\">\n        <div *ngIf=\"!isLoggedIn\" class=\"user-buttons-container\">\n          <button mat-button (click)=\"onLogin()\" class=\"rh-button login-button\">\n            {{ loginLabel }}\n          </button>\n          <mat-divider class=\"divider\" [vertical]=\"true\"></mat-divider>\n          <button\n            mat-icon-button\n            color=\"primary\"\n            class=\"rh-button\"\n            (click)=\"onLang()\"\n            aria-label=\"Language/Region Button\"\n          >\n            <span class=\"material-symbols-outlined\"> captive_portal </span>\n          </button>\n        </div>\n\n        <div *ngIf=\"isLoggedIn\" class=\"user-buttons-container\">\n          <button mat-icon-button (click)=\"onSearch()\" class=\"rh-button\">\n            <span class=\"material-symbols-outlined\"> search </span>\n          </button>\n          <mat-divider\n            class=\"divider mobile-divider\"\n            [vertical]=\"true\"\n          ></mat-divider>\n          <button mat-icon-button (click)=\"onProfile()\" class=\"rh-button\">\n            <span class=\"material-symbols-outlined\"> person </span>\n          </button>\n          <mat-divider\n            class=\"divider fs-divider\"\n            [vertical]=\"true\"\n          ></mat-divider>\n          <button\n            mat-icon-button\n            color=\"primary\"\n            class=\"rh-button language-button\"\n            (click)=\"onLang()\"\n            aria-label=\"Language/Region Button\"\n          >\n            <span class=\"material-symbols-outlined\"> captive_portal </span>\n          </button>\n        </div>\n      </div>\n    </nav>\n  </header>\n\n  <div class=\"expanded\" *ngIf=\"!isLoggedIn\">\n    <app-title [title]=\"title\"></app-title>\n\n    <app-center-tab-bar [tabs]=\"tabs\"></app-center-tab-bar>\n\n    <!-- <div class=\"tab-container\">\n      <a *ngFor=\"let tab of tabs\" class=\"tab-cell\">{{ tab }}</a>\n    </div> -->\n\n    <div class=\"search-container\">\n      <app-search-bar [searchString]=\"_query\"></app-search-bar>\n    </div>\n\n    <div class=\"pill-bar-container\">\n      <app-pill-bar\n        (notifyParentEvent)=\"handlePillEvent($event)\"\n      ></app-pill-bar>\n    </div>\n  </div>\n</div>\n"
+            "templateData": "<div class=\"header-container\">\n  <header class=\"collapsed\">\n    <div class=\"lhs-container\">\n      <button\n        *ngIf=\"isLoggedIn\"\n        mat-icon-button\n        (click)=\"onMenu()\"\n        class=\"menu-toggle lh-button\"\n      >\n        <span class=\"material-symbols-outlined\"> menu </span>\n      </button>\n      <img [src]=\"logoPath\" alt=\"Optic Logo\" />\n    </div>\n\n    <nav class=\"navigation\">\n      <div class=\"rhs-container\">\n        <div *ngIf=\"!isLoggedIn\" class=\"user-buttons-container\">\n          <button mat-button (click)=\"onLogin()\" class=\"rh-button login-button\">\n            {{ loginLabel }}\n          </button>\n          <mat-divider class=\"divider\" [vertical]=\"true\"></mat-divider>\n          <button\n            mat-icon-button\n            color=\"primary\"\n            class=\"rh-button\"\n            (click)=\"onLang()\"\n            aria-label=\"Language/Region Button\"\n          >\n            <span class=\"material-symbols-outlined\"> captive_portal </span>\n          </button>\n        </div>\n\n        <div *ngIf=\"isLoggedIn\" class=\"user-buttons-container\">\n          <button mat-icon-button (click)=\"onSearch()\" class=\"rh-button\">\n            <span class=\"material-symbols-outlined\"> search </span>\n          </button>\n          <mat-divider\n            class=\"divider mobile-divider\"\n            [vertical]=\"true\"\n          ></mat-divider>\n          <button mat-icon-button (click)=\"onProfile()\" class=\"rh-button\">\n            <span class=\"material-symbols-outlined\"> person </span>\n          </button>\n          <mat-divider\n            class=\"divider fs-divider\"\n            [vertical]=\"true\"\n          ></mat-divider>\n          <button\n            mat-icon-button\n            color=\"primary\"\n            class=\"rh-button language-button\"\n            (click)=\"onLang()\"\n            aria-label=\"Language/Region Button\"\n          >\n            <span class=\"material-symbols-outlined\"> captive_portal </span>\n          </button>\n        </div>\n      </div>\n    </nav>\n  </header>\n\n  <div class=\"expanded\" *ngIf=\"!isLoggedIn\">\n    <h1>\n      {{ title }}\n    </h1>\n\n    <app-center-tab-bar\n      class=\"tab-container\"\n      [tabs]=\"tabs\"\n    ></app-center-tab-bar>\n\n    <div class=\"search-container\">\n      <app-search-bar [searchString]=\"_query\"></app-search-bar>\n    </div>\n\n    <div class=\"pill-bar-container\">\n      <app-pill-bar\n        (notifyParentEvent)=\"handlePillEvent($event)\"\n      ></app-pill-bar>\n    </div>\n  </div>\n</div>\n"
         },
         {
             "name": "ImageComponent",
@@ -3460,7 +3526,7 @@
         },
         {
             "name": "RelatedArticlesComponent",
-            "id": "component-RelatedArticlesComponent-623d410be7d45bff0901de71a691e98c179e2787586f1aaa8464e2aed660a30fd0f13889201b12be0487af5bece028c39fc58e419c22ea65f347e165483a9c37",
+            "id": "component-RelatedArticlesComponent-0285e7e13894488bead3ad451929b1db73b3fed20b8ab2561cef68b52796624a924fc9a12adde7ae6c68284e1c17fb2885aa3d354cfef4428e8a0de5ab47d35f",
             "file": "src/app/components/shared/related-articles/related-articles.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3481,7 +3547,7 @@
                     "defaultValue": "[\n    {\n      title: 'Paysafe Glossary of Payment Terms for Merchants',\n      url: '#',\n    },\n    {\n      title: 'Accept payments with Tap to Pay on iPhone',\n      url: '#',\n    },\n    {\n      title: 'Set up and edit transfer options',\n      url: '#',\n    },\n    {\n      title: 'Chargeback Guide',\n      url: '#',\n    },\n  ]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 16,
                     "type": "IInputData[]",
                     "decorators": []
                 },
@@ -3490,7 +3556,7 @@
                     "defaultValue": "'Related articles'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 14,
                     "type": "string",
                     "decorators": []
                 },
@@ -3499,7 +3565,7 @@
                     "defaultValue": "'View More'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 14,
+                    "line": 15,
                     "type": "string",
                     "decorators": []
                 }
@@ -3515,7 +3581,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 33,
+                    "line": 34,
                     "modifierKind": [
                         125
                     ]
@@ -3531,18 +3597,22 @@
                 {
                     "name": "MatIconModule",
                     "type": "module"
+                },
+                {
+                    "name": "LinkComponent",
+                    "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { MatIconModule } from '@angular/material/icon';\nimport { IInputData } from 'app/interfaces/input-data.interface';\n\n@Component({\n  selector: 'app-related-articles',\n  standalone: true,\n  imports: [MatIconModule],\n  templateUrl: './related-articles.component.html',\n  styleUrl: './related-articles.component.scss',\n})\nexport class RelatedArticlesComponent {\n  @Input() title = 'Related articles';\n  @Input() viewMoreLabel = 'View More';\n  @Input() relatedLinks: IInputData[] = [\n    {\n      title: 'Paysafe Glossary of Payment Terms for Merchants',\n      url: '#',\n    },\n    {\n      title: 'Accept payments with Tap to Pay on iPhone',\n      url: '#',\n    },\n    {\n      title: 'Set up and edit transfer options',\n      url: '#',\n    },\n    {\n      title: 'Chargeback Guide',\n      url: '#',\n    },\n  ];\n  public onClickViewMore = () => {\n    alert('View more clicked');\n  };\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { MatIconModule } from '@angular/material/icon';\nimport { IInputData } from 'app/interfaces/input-data.interface';\nimport { LinkComponent } from '../link/link.component';\n\n@Component({\n  selector: 'app-related-articles',\n  standalone: true,\n  imports: [MatIconModule, LinkComponent],\n  templateUrl: './related-articles.component.html',\n  styleUrl: './related-articles.component.scss',\n})\nexport class RelatedArticlesComponent {\n  @Input() title = 'Related articles';\n  @Input() viewMoreLabel = 'View More';\n  @Input() relatedLinks: IInputData[] = [\n    {\n      title: 'Paysafe Glossary of Payment Terms for Merchants',\n      url: '#',\n    },\n    {\n      title: 'Accept payments with Tap to Pay on iPhone',\n      url: '#',\n    },\n    {\n      title: 'Set up and edit transfer options',\n      url: '#',\n    },\n    {\n      title: 'Chargeback Guide',\n      url: '#',\n    },\n  ];\n  public onClickViewMore = () => {\n    alert('View more clicked');\n  };\n}\n",
             "styleUrl": "./related-articles.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"related-articles-container\">\n  <div class=\"related-title-container\">\n    <div class=\"icon-holder\">\n      <img\n        src=\"./../../../../assets/icons/common/note-stack-icon.svg\"\n        width=\"22\"\n        height=\"22\"\n      />\n    </div>\n    <h2 class=\"related-title\">{{ title }}</h2>\n  </div>\n  <div class=\"related-articles-content\">\n    <div class=\"related-links-container\">\n      @for (relatedLink of relatedLinks; track relatedLink.title) {\n      <a class=\"link-element\" href=\"{{ relatedLink.url }}\">\n        <span class=\"related-link\">{{ relatedLink.title }}</span>\n        <mat-icon\n          class=\"arrow-outward-icon\"\n          fontIcon=\"arrow_outward\"\n        ></mat-icon>\n      </a>\n      }\n    </div>\n    <button class=\"view-more-btn\" (click)=\"onClickViewMore()\">\n      {{ viewMoreLabel }}\n      <mat-icon class=\"arrow-outward-icon\" fontIcon=\"arrow_forward\"></mat-icon>\n    </button>\n  </div>\n</div>\n"
+            "templateData": "<div class=\"related-articles-container\">\n  <div class=\"related-title-container\">\n    <div class=\"icon-holder\">\n      <img\n        src=\"./../../../../assets/icons/common/note-stack-icon.svg\"\n        width=\"22\"\n        height=\"22\"\n      />\n    </div>\n    <h2 class=\"related-title\">{{ title }}</h2>\n  </div>\n  <div class=\"related-articles-content\">\n    <div class=\"related-links-container\">\n      @for (relatedLink of relatedLinks; track relatedLink.title) {\n      <app-link [url]=\"relatedLink.url\" [label]=\"relatedLink.title\"></app-link>\n      }\n    </div>\n    <button class=\"view-more-btn\" (click)=\"onClickViewMore()\">\n      {{ viewMoreLabel }}\n      <mat-icon class=\"arrow-outward-icon\" fontIcon=\"arrow_forward\"></mat-icon>\n    </button>\n  </div>\n</div>\n"
         },
         {
             "name": "SearchBarComponent",
@@ -4460,6 +4530,16 @@
                 "defaultValue": "() => bootstrapApplication(AppComponent, config)"
             },
             {
+                "name": "componentMapping",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/dashboard/dashboard.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "literal type",
+                "defaultValue": "{\n  card_carousel: CarouselComponent,\n  related_articles: RelatedArticlesComponent\n}"
+            },
+            {
                 "name": "config",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -5116,6 +5196,18 @@
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "() => bootstrapApplication(AppComponent, config)"
+                }
+            ],
+            "src/app/components/dashboard/dashboard.component.ts": [
+                {
+                    "name": "componentMapping",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/dashboard/dashboard.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "literal type",
+                    "defaultValue": "{\n  card_carousel: CarouselComponent,\n  related_articles: RelatedArticlesComponent\n}"
                 }
             ],
             "src/app/app.config.server.ts": [
@@ -5849,7 +5941,17 @@
                 "linktype": "component",
                 "name": "DashboardComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/14",
+                "coverageCount": "0/16",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/dashboard/dashboard.component.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "componentMapping",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -6186,6 +6288,15 @@
                 "coveragePercent": 0,
                 "coverageCount": "0/10",
                 "status": "low"
+            },
+            {
+                "filePath": "src/app/services/data.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "DataService",
+                "coveragePercent": 33,
+                "coverageCount": "1/3",
+                "status": "medium"
             },
             {
                 "filePath": "src/app/services/strapi-service.ts",

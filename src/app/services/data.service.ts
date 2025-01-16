@@ -13,7 +13,7 @@ export class DataService {
    * Simulates an asynchronous call to fetch the JSON contract.
    * Replace the mock data with a real HTTP call in production.
    */
-  getTemplate(): Observable<any> {
+  getSectionList(): Observable<any> {
     // This is your mock JSON contract (shortened here for example).
     const mockJsonContract = {
         "template": {
