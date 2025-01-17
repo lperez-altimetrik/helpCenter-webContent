@@ -14,16 +14,7 @@ import { NewsContainerComponent } from './news-container/news-container.componen
   styleUrl: './card.component.scss',
 })
 export class CardComponent {
-  @Input() image = 'assets/images/card-image.png';
-  @Input() title = 'new optic app';
-  @Input() span = '15 min read';
-  @Input() text =
-    'We give ambitious businesses their launchpad through safe and secure online payment solutions';
-  @Input() link = 'Learn more';
-  @Input() linkUrl = 'https://www.paysafe.com/us-en/';
-  @Input() linkIcon = 'north_east';
-
-  @Input() dynamicComponent?: Type<any> = TopicsContainerComponent; // Accept the component type as input
+  @Input() dynamicComponent?: Type<any> = NewsContainerComponent; // Accept the component type as input
 
   @ViewChild('dynamicContainer', { read: ViewContainerRef })
   dynamicContainer!: ViewContainerRef;

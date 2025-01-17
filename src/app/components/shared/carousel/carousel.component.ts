@@ -11,8 +11,8 @@ import {
   ViewContainerRef,
 } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { CardComponent } from '../card/card.component';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { NewsContainerComponent } from '../card/news-container/news-container.component';
 
 @Component({
   selector: 'app-carousel',
@@ -37,7 +37,7 @@ export class CarouselComponent implements AfterViewInit {
     { id: 6, name: 'Item 6' },
   ];
 
-  @Input() itemType: any = CardComponent;
+  @Input() itemType: any = NewsContainerComponent;
   @Input() title: string = 'Carousel Title';
   @Input() iconName: string = 'note_stack';
   @ViewChild('dynamic', { static: true, read: ViewContainerRef }) dynHost: any;
