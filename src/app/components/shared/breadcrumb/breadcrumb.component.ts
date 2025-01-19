@@ -3,7 +3,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { IInputData } from 'app/interfaces/input-data.interface';
 
 @Component({
-  selector: 'app-breadcrum',
+  selector: 'app-breadcrumb',
   standalone: true,
   imports: [MatIconModule],
   templateUrl: './breadcrumb.component.html',

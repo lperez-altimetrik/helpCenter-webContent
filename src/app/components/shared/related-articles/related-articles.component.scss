@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: flex-start;
   gap: var(--spacing-6);
+  padding: var(--spacing-9) 27px;
   border-radius: var(--spacing-3);
 
   .related-title-container {
@@ -55,8 +56,7 @@
       display: flex;
       height: 32px;
       min-width: 80px;
-      padding: var(--spacing-3) var(--spacing-3) var(--spacing-3)
-        var(--spacing-4);
+      padding: var(--spacing-3) var(--spacing-3) var(--spacing-3) var(--spacing-4);
       justify-content: center;
       align-items: center;
       gap: var(--spacing-1);
