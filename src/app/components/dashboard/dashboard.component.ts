@@ -40,7 +40,10 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
 
   @ViewChild('dynamicContainer', { read: ViewContainerRef })
   dynamicContainer!: ViewContainerRef;
+  @ViewChild('listContainer', { read: ViewContainerRef })
+  listContainer!: ViewContainerRef;
   private componentRefs: ComponentRef<any>[] = [];
+  private componentListRefs: ComponentRef<any>[] = [];
 
   async ngAfterViewInit() {
     if (this.dynamicContainer) {
@@ -104,6 +107,16 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
           }
           // Trigger change detection
           carouselRef.changeDetectorRef.detectChanges();
+        }
+        if (section.display_component === 'list') {
+            // Fetch topics from the service
+          // Create CarouselComponent
+          const listRef = this.listContainer.createComponent(RelatedArticlesComponent);
+          this.componentListRefs.push(listRef);
+          listRef.instance.title = section.title;
+
+          // Trigger change detection
+          listRef.changeDetectorRef.detectChanges();
         }
       });
     });

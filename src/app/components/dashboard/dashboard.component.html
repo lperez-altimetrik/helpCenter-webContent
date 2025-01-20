@@ -4,18 +4,18 @@
   <div class="content-container">
     <ng-container #dynamicContainer></ng-container>
     <div class="list-container">
-      <div class="mid-container">
+      <ng-container #listContainer class="mid-container"></ng-container>
+      <!-- <div class="mid-container">
         <app-related-articles></app-related-articles>
       </div>
       <div class="mid-container">
         <app-related-articles title="FAQs"></app-related-articles>
-      </div>
+      </div> -->
     </div>
 
     <div class="list-container">
-      <app-contact-us style="width: 100%;"></app-contact-us>
+      <app-contact-us style="width: 100%"></app-contact-us>
     </div>
-
   </div>
   <app-footer></app-footer>
 </div>
