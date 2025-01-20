@@ -10,7 +10,7 @@
       @for (option of filteredOptions; track option) {
       <mat-option [value]="option.title" class="option-container">
         <span class="material-symbols-outlined search-icon">search</span>
-        <span class="option-text">{{ option.title }}</span>
+        <span class="option-text" (click)="onOptionClick(option)">{{ option.title }}</span>
       </mat-option>
       }
     </div>

@@ -7,6 +7,7 @@ import {
   ViewChild,
   PLATFORM_ID,
   Inject,
+  inject,
 } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -19,6 +20,7 @@ import { AfterViewInit, HostListener } from '@angular/core';
 
 import { MatAutocompleteTrigger } from '@angular/material/autocomplete';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -53,6 +55,7 @@ export class SearchBarComponent implements OnChanges, AfterViewInit {
   autocomplete: MatAutocompleteTrigger | undefined;
   filteredOptions: any[] = [];
   searchControl = new FormControl('');
+  private router = inject(Router);
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object, private http: HttpClient) {
     this.autocomplete = undefined;
@@ -117,6 +120,10 @@ export class SearchBarComponent implements OnChanges, AfterViewInit {
 
   onSearchChange() {
     this.filteredOptions = this._filter(this.searchString.value || '');
+  }
+  onOptionClick(option: any) {
+    console.log(option)
+    this.router.navigate([`/article/${option.id}`]);
   }
 
   onClosedEvent() {
