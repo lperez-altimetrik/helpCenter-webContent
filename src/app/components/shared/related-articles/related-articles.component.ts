@@ -31,6 +31,7 @@ export class RelatedArticlesComponent {
       url: '#',
     },
   ];
+  @Input() iconName = ''
   public onClickViewMore = () => {
     alert('View more clicked');
   };
