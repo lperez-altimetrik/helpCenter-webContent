@@ -40,9 +40,9 @@ export class CarouselComponent implements AfterViewInit {
   @Input() itemType: any = NewsContainerComponent;
   @Input() title: string = 'Carousel Title';
   @Input() iconName: string = 'note_stack';
-  @ViewChild('dynamic', { static: true, read: ViewContainerRef }) dynHost: any;
+@ViewChild('dynHost', { static: true, read: ViewContainerRef }) dynHost!: ViewContainerRef;
 
-  public componentRef: ComponentRef<any> | undefined;
+  public componentRefs: ComponentRef<any>[] = [];
 
   visibleItems: any[] = [];
   scrollPosition: number = 0;
@@ -61,8 +61,8 @@ export class CarouselComponent implements AfterViewInit {
   ) {}
 
   ngAfterViewInit(): void {
-    this.updateScrollLimits();
     this.loadComponent();
+    this.updateScrollLimits();
   }
 
   ngOnInit(): void {
@@ -122,23 +122,47 @@ export class CarouselComponent implements AfterViewInit {
     this.canScrollRight = this.scrollPosition < trackWidth;
   }
 
-  /**
-   * Load dynamicly row component.
-   */
   private loadComponent(): void {
-    if (this.dynHost) this.dynHost?.clear();
-    const factory: ComponentFactory<any> =
-      this.componentFactoryResolver.resolveComponentFactory(this.itemType);
+    // Clear existing components if needed
+    if (this.dynHost) {
+      this.dynHost.clear();
+    } else {
+      console.error('dynHost is not defined. Make sure the ViewChild is properly bound.');
+      return;
+    }
 
-    this.componentRef = this.dynHost?.createComponent(factory);
-    this.componentRef?.location?.nativeElement?.setAttribute(
-      'style',
-      'width: 100%'
-    );
+    for (let item of this.items) {
+      try {
+        const factory: ComponentFactory<any> =
+          this.componentFactoryResolver.resolveComponentFactory(this.itemType);
 
-    // Pass the title to the dynamically created component
-    if (this.componentRef?.instance) {
-      this.componentRef.instance.title = this.title; // Pass title
+        const itemRef: ComponentRef<any> = this.dynHost.createComponent(factory);
+
+        if (itemRef && itemRef.instance) {
+          // Set properties for the dynamically created component
+          
+          // Add the component reference to the array for cleanup
+          
+          itemRef.instance.location?.nativeElement?.setAttribute(
+            'style',
+            'width: 100%',
+          );
+           itemRef.instance.location?.nativeElement?.setAttribute(
+            'style',
+            'display: block',
+          );
+          itemRef.instance.title = item.title;
+          this.componentRefs.push(itemRef);
+
+          // Trigger change detection
+          itemRef.changeDetectorRef.detectChanges();
+        } else {
+          console.warn('Component reference or instance is undefined.');
+        }
+      } catch (error) {
+        console.error('Error creating component:', error);
+      }
     }
   }
+
 }

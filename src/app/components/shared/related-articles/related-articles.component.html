@@ -1,11 +1,11 @@
 <div class="related-articles-container">
   <div class="related-title-container">
     <div class="icon-holder">
-      <img
-        src="./../../../../assets/icons/common/note-stack-icon.svg"
-        width="22"
-        height="22"
-      />
+      <span
+        class="material-symbols-outlined icon"
+        [attr.aria-label]="iconName"
+        >{{ iconName }}</span
+      >
     </div>
     <h2 class="related-title">{{ title }}</h2>
   </div>
@@ -16,8 +16,15 @@
       }
     </div>
     <button class="view-more-btn" (click)="onClickViewMore()">
-      {{ viewMoreLabel }}
-      <mat-icon class="arrow-outward-icon" fontIcon="arrow_forward"></mat-icon>
+      <p>
+        {{ viewMoreLabel }}
+      </p>
+      <span>
+        <mat-icon
+          class="arrow-outward-icon"
+          fontIcon="arrow_forward"
+        ></mat-icon>
+      </span>
     </button>
   </div>
 </div>

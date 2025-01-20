@@ -52,7 +52,7 @@
   }
 
   .carousel-container {
-    display: flex;
+    display: grid;
     flex-flow: column;
     justify-content: center;
     overflow: hidden;
@@ -137,6 +137,7 @@
         background: var(--hc-color-bg-secondary);
         border-radius: var(--spacing-3);
         transition: transform 0.2s ease;
+        width: 100%;
 
         @include respond-to("mobile-mb") {
           margin: var(--spacing-3) 0; // Space between items

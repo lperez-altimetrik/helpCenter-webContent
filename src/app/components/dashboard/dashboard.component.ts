@@ -112,11 +112,43 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
             // Fetch topics from the service
           // Create CarouselComponent
           const listRef = this.listContainer.createComponent(RelatedArticlesComponent);
-          this.componentListRefs.push(listRef);
-          listRef.instance.title = section.title;
+          const categories = data?.categories?.data || [];
+          listRef.instance.iconName = section.icon.data.attributes.name.split('.')[0];
 
-          // Trigger change detection
-          listRef.changeDetectorRef.detectChanges();
+          switch (section.title) {
+            case 'Trending Articles': {
+               
+          const category = categories.find((item: any) => item.attributes.slug == "trending-articles");
+
+          listRef.instance.title = section.title;
+          listRef.instance.relatedLinks = category.attributes.articles.data.map((topic: any) => ({
+                title: topic?.attributes?.title,
+              }));
+          
+
+            this.componentListRefs.push(listRef);
+
+              // Trigger change detection
+              listRef.changeDetectorRef.detectChanges();
+              break;
+            }
+             case 'FAQs': {
+               
+              const category = categories.find((item: any) => item.attributes.slug == "faqs");
+
+              listRef.instance.title = section.title;
+              listRef.instance.relatedLinks = category.attributes.articles.data.map((topic: any) => ({
+                    title: topic?.attributes?.title,
+                  }));
+              
+              this.componentListRefs.push(listRef);
+
+              // Trigger change detection
+              listRef.changeDetectorRef.detectChanges();
+              break;
+            }
+          }
+         
         }
       });
     });
