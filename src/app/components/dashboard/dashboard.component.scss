@@ -1,10 +1,81 @@
+@import "./../../../styles/mixins.scss";
 
 :host {
   position: relative;
 }
 
-.container {
-  padding: 40px;
-  padding-bottom: 140px;
+.purple-bar {
+  background-color: var(--hc-color-bg-cta);
+  width: 100%;
+  height: 80px;
+  position: absolute;
 }
 
+.list-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: var(--spacing-6);
+  max-width: 1600px;
+
+  @include respond-to("mobile-mb") {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.mid-container {
+  border-radius: 8px;
+  background: var(--hc-color-bg-primary);
+  position: relative;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.04), 0px 4px 6px -1px rgba(0, 0, 0, 0.06);
+}
+
+.content-container {
+  background-color: var(--hc-color-bg-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-8);
+
+  ::ng-deep * {
+    max-width: 1600px;
+  }
+
+  @include respond-to("mobile-mb") {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.pill-container {
+  margin-bottom: var(--spacing-8);
+
+  .pill {
+    margin: 0;
+    --mdc-chip-container-height: 33px;
+    font-size: var(--spacing-5);
+    border-radius: var(--spacing-99);
+    border: none;
+    line-height: normal;
+    font-weight: normal;
+    color: white !important;
+  }
+
+  .pill:active {
+    background-color: #fff;
+    color: var(--hc-link-color);
+  }
+
+  .pill-spacer {
+    display: flex;
+    justify-content: flex-end;
+    width: var(--spacing-8);
+    margin: 0;
+    max-height: 26px;
+    opacity: 0;
+    cursor: default;
+    pointer-events: none;
+  }
+}

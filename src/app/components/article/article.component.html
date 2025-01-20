@@ -1,3 +1,22 @@
-<div class="container">
-  <ng-container #dynamicContainer></ng-container>
+<app-header></app-header>
+<div class="main-container">
+    <div class="purple-bar"></div>
+    <app-sidebar></app-sidebar>
+    <div>
+        <div class="article-container">
+            <app-breadcrumb></app-breadcrumb>
+            <div class="article-info-container">
+                <div class="article-index-container">
+                    <app-article-index></app-article-index>
+                </div>
+                <div class="content-container">
+                    <ng-container #dynamicContainer></ng-container>
+                </div>
+            </div>
+            <app-article-feedback></app-article-feedback>
+            <app-related-articles></app-related-articles>
+        </div>
+        <app-contact-us></app-contact-us>
+    </div>
 </div>
+<app-footer></app-footer>

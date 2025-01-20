@@ -20,10 +20,16 @@ import { TopicsContainerComponent } from '../shared/card/topics-container/topics
 import { NewsContainerComponent } from '../shared/card/news-container/news-container.component';
 import { ProductsContainerComponent } from '../shared/card/products-container/products-container.component';
 
+import { HeaderComponent } from '../shared/header/header.component';
+import { FooterComponent } from '../shared/footer/footer.component';
+import { ContactUsComponent } from '../shared/contact-us/contact-us.component';
+import { RelatedArticlesComponent } from "../shared/related-articles/related-articles.component";
+
+
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, MatChipsModule],
+  imports: [CommonModule, MatChipsModule, HeaderComponent, FooterComponent, ContactUsComponent, RelatedArticlesComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })
@@ -45,56 +51,59 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
   private renderSections(): void {
     this.componentRefs.forEach((ref) => ref.destroy()); // Destroy existing components
     this.componentRefs = [];
-   this.dataService.getSectionList().subscribe((data: any) => {
+    this.dataService.getSectionList().subscribe((data: any) => {
       const sectionList = data?.template?.data?.attributes?.section_list || [];
       sectionList.forEach((section: any) => {
-  
+
         if (section.display_component === 'card_carousel') {
           // Fetch topics from the service
-            // Create CarouselComponent
-            const carouselRef = this.dynamicContainer.createComponent(CarouselComponent);
-            this.componentRefs.push(carouselRef);
-  
-            // Set carousel title
-            carouselRef.instance.title = section.title;
-            carouselRef.instance.iconName = section.icon.data.attributes.name.split('.')[0];
-  
-            switch(section.title) {
-              case 'News & Updates': {
-                carouselRef.instance.itemType = NewsContainerComponent;
-                const articles = data?.articles?.data || [];
-                // Populate the carousel with cards having a dynamic component of TopicsContainerComponent
-                carouselRef.instance.items = articles.map((topic: any) => ({
-                  title: topic.attributes.title,
-                  body: topic.attributes.short_description,
-                }));
-                break;
-              }
-              case 'Topics': {
-                carouselRef.instance.itemType = TopicsContainerComponent;
-                const topics = data?.topics?.data || [];
-                // Populate the carousel with cards having a dynamic component of TopicsContainerComponent
-                carouselRef.instance.items = topics.map((topic: any) => ({
-                  title: topic.attributes.title,
-                  body: topic.attributes.short_description,
-                }));
-  
-                break;
-              }
-              case 'Products': {
-                carouselRef.instance.itemType = ProductsContainerComponent;
-                const topics = data?.topics?.data || [];
-                // Populate the carousel with cards having a dynamic component of TopicsContainerComponent
-                carouselRef.instance.items = topics.map((topic: any) => ({
-                  title: topic.attributes.title,
-                  body: topic.attributes.short_description,
-                }));
-  
-                break;
-              }
+          // Create CarouselComponent
+          const carouselRef = this.dynamicContainer.createComponent(CarouselComponent);
+          this.componentRefs.push(carouselRef);
+
+          // Set carousel title
+          carouselRef.instance.title = section.title;
+          carouselRef.instance.iconName = section.icon.data.attributes.name.split('.')[0];
+
+          switch (section.title) {
+            case 'News & Updates': {
+              carouselRef.instance.itemType = NewsContainerComponent;
+              const categories = data?.categories?.data || [];
+              // Populate the carousel with cards having a dynamic component of TopicsContainerComponent
+              const category = categories.find((item: any) => item.attributes.slug == "news-updates");
+              const articles = category.attributes.articles.data;
+              carouselRef.instance.items = articles.map((topic: any) => ({
+                title: topic.attributes.title,
+                body: topic.attributes.short_description,
+              }));
+              break;
             }
-            // Trigger change detection
-            carouselRef.changeDetectorRef.detectChanges();
+            case 'Topics': {
+              carouselRef.instance.itemType = TopicsContainerComponent;
+              const topics = data?.topics?.data || [];
+              // Populate the carousel with cards having a dynamic component of TopicsContainerComponent
+              console.log(topics)
+              carouselRef.instance.items = topics.map((topic: any) => ({
+                title: topic.attributes.title,
+                body: topic.attributes.short_description,
+              }));
+
+              break;
+            }
+            case 'Products': {
+              carouselRef.instance.itemType = ProductsContainerComponent;
+              const topics = data?.topics?.data || [];
+              // Populate the carousel with cards having a dynamic component of TopicsContainerComponent
+              carouselRef.instance.items = topics.map((topic: any) => ({
+                title: topic.attributes.title,
+                body: topic.attributes.short_description,
+              }));
+
+              break;
+            }
+          }
+          // Trigger change detection
+          carouselRef.changeDetectorRef.detectChanges();
         }
       });
     });

@@ -2,7 +2,8 @@
 
 .contact-us-container {
   padding: 0;
-  margin: 40px;
+  margin: 40px 0px;
+  max-width: 1600px;
   border-radius: 8px;
   border: 1px solid var(--hc-color-bg-primary);
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.04),
@@ -10,7 +11,6 @@
 
   .need-help {
     padding: var(--spacing-6);
-    width: 100%;
 
     .content {
       cursor: pointer;
@@ -20,6 +20,7 @@
 
       .mail-icon {
         display: none;
+
         @include respond-to("mobile-mb") {
           display: flex;
           @include icon-style();
@@ -35,6 +36,7 @@
 
         .mail-icon {
           @include icon-style();
+
           @include respond-to("mobile-mb") {
             display: none;
           }
@@ -43,6 +45,7 @@
         .button-text {
           font-size: 22px;
           font-weight: 500;
+
           @include respond-to("mobile-mb") {
             font-size: 14px;
           }
@@ -60,6 +63,7 @@
         .link {
           font-size: 18px;
           color: var(--hc-link-color);
+
           @include respond-to("mobile-mb") {
             font-size: 12px;
           }
@@ -67,6 +71,7 @@
 
         .go-icon {
           color: var(--hc-link-color);
+
           @include respond-to("mobile-mb") {
             display: none;
           }
@@ -75,6 +80,7 @@
 
       .mobile-icon {
         display: none;
+
         @include respond-to("mobile-mb") {
           display: block;
         }

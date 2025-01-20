@@ -18,7 +18,7 @@ export class AuthService {
 
   login(username: string, password: string): boolean {
     if (username === 'root' && password === 'root') {
-      this.cookieService.set(this.TOKEN_KEY, 'mock-token', 1);
+      this.cookieService.set(this.TOKEN_KEY, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtb2NrVXNlcklkIiwicm9sZXMiOlsiVVNFUiJdLCJleHAiOjE3NjkwNTkyMDB9.GSfFu2Km1nDvv6rxkhA88LfjPrnfMo_SdW2dUiEpicY', 1);
       this._isLoggedInSubject.next(true);
       return true;
     }
@@ -35,7 +35,7 @@ export class AuthService {
     const isLoggedIn = this.cookieService.check(this.TOKEN_KEY);
 
     this._isLoggedInSubject.next(isLoggedIn);
-    
+
     return isLoggedIn;
   }
 
