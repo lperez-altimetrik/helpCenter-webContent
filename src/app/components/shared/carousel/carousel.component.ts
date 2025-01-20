@@ -135,5 +135,10 @@ export class CarouselComponent implements AfterViewInit {
       'style',
       'width: 100%'
     );
+
+    // Pass the title to the dynamically created component
+    if (this.componentRef?.instance) {
+      this.componentRef.instance.title = this.title; // Pass title
+    }
   }
 }
