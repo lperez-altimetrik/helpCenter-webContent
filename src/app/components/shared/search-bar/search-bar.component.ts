@@ -64,14 +64,14 @@ export class SearchBarComponent implements OnChanges, AfterViewInit {
   ngOnInit(): void {
     this.searchControl.valueChanges
       .pipe(
-        debounceTime(300), // Reduce llamadas frecuentes a la API
-        distinctUntilChanged() // Evita llamadas si el valor no cambia
+        debounceTime(300),
+        distinctUntilChanged()
       )
       .subscribe((query: any) => {
         if (query.trim()) {
           this.searchArticles(query);
         } else {
-          this.options = []; // Limpia los resultados si no hay texto
+          this.options = [];
         }
       });
   }
@@ -80,12 +80,12 @@ export class SearchBarComponent implements OnChanges, AfterViewInit {
     const apiUrl = 'http://localhost:8080/api/search/articles';
     this.http.get<any[]>(`${apiUrl}?query=${query}`).subscribe({
       next: (data) => {
-        this.options = data.map(item => { return { title: item.title, id: item.id } }); // Asigna los resultados a la variable `options`
+        this.options = data.map(item => { return { title: item.title, id: item.id } });
         this.inputElement.nativeElement.click();
       },
       error: (err) => {
         console.error('Error fetching search results:', err);
-        this.options = []; // Limpia los resultados en caso de error
+        this.options = [];
       },
     });
   }
