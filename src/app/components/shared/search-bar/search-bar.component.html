@@ -1,36 +1,16 @@
-<mat-form-field
-  [class.search-bar-container]="isPanelOpened"
-  #matSelect="matFormField"
-  (click)="onSearchChange()"
->
+<mat-form-field [class.search-bar-container]="isPanelOpened" #matSelect="matFormField" (click)="onSearchChange()">
   <span class="material-symbols-outlined search-icon">search</span>
-  <input
-    type="text"
-    placeholder="Search"
-    class="search-input"
-    matInput
-    #searchInput
-    (input)="onSearchChange()"
-    [formControl]="searchString"
-    [matAutocomplete]="auto"
-  />
-  <span
-    class="material-symbols-outlined close-icon"
-    (click)="cleanSearch($event)"
-    >close</span
-  >
-  <mat-autocomplete
-    #auto="matAutocomplete"
-    class="autocomplete-container"
-    (closed)="onClosedEvent()"
-  >
+  <input type="text" placeholder="Search" class="search-input" matInput #searchInput (input)="onSearchChange()"
+    [formControl]="searchString" [matAutocomplete]="auto" />
+  <span class="material-symbols-outlined close-icon" (click)="cleanSearch($event)">close</span>
+  <mat-autocomplete #auto="matAutocomplete" class="autocomplete-container" (closed)="onClosedEvent()">
     <div class="divider-line"></div>
     <span class="option-header">{{ title }}</span>
     <div class="options-list">
       @for (option of filteredOptions; track option) {
-      <mat-option [value]="option" class="option-container">
+      <mat-option [value]="option" class="option-container" (click)="redirectToArticle(option.id)">
         <span class="material-symbols-outlined search-icon">search</span>
-        <span class="option-text">{{ option }}</span>
+        <span class="option-text">{{ option.name }}</span>
       </mat-option>
       }
     </div>
