@@ -122,7 +122,6 @@ export class SearchBarComponent implements OnChanges, AfterViewInit {
     this.filteredOptions = this._filter(this.searchString.value || '');
   }
   onOptionClick(option: any) {
-    console.log(option)
     this.router.navigate([`/article/${option.id}`]);
   }
 
