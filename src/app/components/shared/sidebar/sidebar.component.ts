@@ -5,6 +5,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import {
   IBusinessOption,
   ISidebarSection,
@@ -175,11 +176,13 @@ export class SidebarComponent {
 
   @Input() businessPanelOpened: boolean = false;
 
+  constructor(private router: Router) { }
+
   public selectedBusiness: any = this.businessOptions[0];
 
   public currentActiveItem: any = null;
 
-  public onMenuItemClick(event: any) {
+  public onMenuItemClick(event: any, articleUrl: any) {
     let eventTarget = event.target;
     if (event.target.childElementCount == 1) {
       eventTarget = eventTarget.firstChild;
@@ -189,6 +192,7 @@ export class SidebarComponent {
     }
     eventTarget.parentElement.classList.add('menu-element-active');
     this.currentActiveItem = eventTarget.parentElement;
+    this.router.navigate([articleUrl]);
   }
 
   public changeOption(option: any) {
