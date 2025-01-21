@@ -15,6 +15,7 @@ export interface IAccordionData {
   styleUrl: './accordion.component.scss',
 })
 export class AccordionComponent {
+  @Input() title = "Accordion title";
   @Input() accordionData: IAccordionData[] = [
     {
       title: 'Accordion Section Title',
