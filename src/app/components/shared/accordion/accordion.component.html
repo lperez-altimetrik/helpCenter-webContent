@@ -1,16 +1,16 @@
 <mat-accordion>
   <mat-expansion-panel>
     <mat-expansion-panel-header class="accordion">
-      <mat-panel-title> Accordion Section Title </mat-panel-title>
+      <mat-panel-title> {{title}} </mat-panel-title>
     </mat-expansion-panel-header>
     <div class="content">
       @for(context of accordionData; track context.title){
-        <div>
-          <app-link [label]='context.title'> </app-link>
-          <p class="accordion-paragraph">
-            {{context.text}}
-          </p>
-        </div>
+      <div>
+        <app-link [label]='context.title'> </app-link>
+        <p class="accordion-paragraph">
+          {{context.text}}
+        </p>
+      </div>
       }
     </div>
   </mat-expansion-panel>

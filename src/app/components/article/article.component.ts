@@ -16,6 +16,13 @@ import { SidebarComponent } from "../shared/sidebar/sidebar.component";
 import { ActivatedRoute, Router } from '@angular/router';
 import { TitleComponent } from '../shared/title/title.component';
 import { SubtitleComponent } from '../shared/subtitle/subtitle.component';
+import { LabelComponent } from '../shared/label/label.component';
+import { LinkComponent } from '../shared/link/link.component';
+import { BannerComponent } from '../shared/banner/banner.component';
+import { ArticleSectionTitleComponent } from '../shared/article-section-title/article-section-title.component';
+import { ProductsContainerComponent } from '../shared/card/products-container/products-container.component';
+import { VideoPlayerComponent } from '../shared/video-player/video-player.component';
+import { RichTextComponent } from '../shared/rich-text/rich-text.component';
 
 
 @Component({
@@ -27,6 +34,7 @@ import { SubtitleComponent } from '../shared/subtitle/subtitle.component';
 })
 
 export class ArticleComponent {
+  resourcesUrl = "http://localhost:1337";
   private dataService = inject(DataService);
   articleId!: string;
   @ViewChild('dynamicContainer', { read: ViewContainerRef })
@@ -60,6 +68,9 @@ export class ArticleComponent {
               this.createComponent(section, ImageComponent);
               break;
             case 'shared.rich-text':
+              this.createComponent(section, RichTextComponent);
+              break;
+            case 'shared.subtitle':
               this.createComponent(section, SubtitleComponent);
               break;
             case 'shared.accordion':
@@ -67,6 +78,24 @@ export class ArticleComponent {
               break;
             case 'shared.title':
               this.createComponent(section, TitleComponent);
+              break;
+            case 'shared.label':
+              this.createComponent(section, LabelComponent);
+              break;
+            case 'shared.link':
+              this.createComponent(section, LinkComponent);
+              break;
+            case 'shared.banner':
+              this.createComponent(section, BannerComponent);
+              break;
+            case 'shared.article-section-title':
+              this.createComponent(section, ArticleSectionTitleComponent);
+              break;
+            case 'shared.product-card':
+              this.createComponent(section, ProductsContainerComponent);
+              break;
+            case 'shared.video':
+              this.createComponent(section, VideoPlayerComponent);
               break;
             // Add cases for other components as needed
           }
@@ -83,6 +112,41 @@ export class ArticleComponent {
   private setComponentData(section: any, componentRef: any) {
     for (const prop in section) {
       componentRef.instance[prop] = section[prop];
+    }
+
+    switch (section.__component) {
+      case "shared.accordion":
+        const newData = section["accordionData"].map((item: any) => {
+          if (item.text == null) return { title: null, text: null };
+          return {
+            title: item.title,
+            text: item.text.map((currentItem: any) => { return currentItem.children[0].text }).join(" ")
+          }
+        })
+        componentRef.instance["accordionData"] = newData;
+        break;
+      case "shared.image":
+      case "shared.product-card":
+        componentRef.instance["src"] = this.resourcesUrl + section.image?.data?.attributes?.url;
+        break;
+      case "shared.table":
+        const rows = section.rows;
+        if (rows != null) {
+          const columnKeys = rows[0].cells.map((cell: any) => cell.label);
+          const remainingRows = rows.slice(1);
+          const data = remainingRows.map((row: any) => {
+            return row.cells.map((cell: any) => cell.label)
+          });
+          const tableData = data.map((row: any) => {
+            return row.reduce((obj: any, value: any, index: number) => {
+              obj[columnKeys[index]] = value;
+              return obj;
+            }, {});
+          });
+          componentRef.instance["columnKeys"] = columnKeys;
+          componentRef.instance["tableData"] = tableData;
+        }
+        break;
     }
   }
 
