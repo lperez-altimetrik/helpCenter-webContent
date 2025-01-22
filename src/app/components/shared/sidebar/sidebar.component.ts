@@ -26,11 +26,8 @@ import {
   styleUrl: './sidebar.component.scss',
 })
 export class SidebarComponent {
-  @Input() businessOptions: IBusinessOption[] = [
-    { option: 'Small business' },
-    { option: 'Enterprise' },
-    { option: 'Partners' },
-  ];
+  @Input() businessOptions: IBusinessOption[] = [];
+  @Input() menuDataSection: any = {};
 
   @Input() menuSections: ISidebarSection[] = [
     {
@@ -120,7 +117,6 @@ export class SidebarComponent {
         },
         {
           title: 'Transactions',
-          svgUrl: './../../../../assets/icons/common/chip-extraction-icon.svg',
           iconUrl: 'chip_extraction',
           menuItems: [
             { title: 'Link 1', url: '#' },
@@ -178,7 +174,7 @@ export class SidebarComponent {
 
   constructor(private router: Router) { }
 
-  public selectedBusiness: any = this.businessOptions[0];
+  @Input() selectedBusiness: any = "";
 
   public currentActiveItem: any = null;
 
@@ -196,7 +192,8 @@ export class SidebarComponent {
   }
 
   public changeOption(option: any) {
-    this.selectedBusiness = option;
+    this.selectedBusiness = option.option;
     this.businessPanelOpened = !this.businessPanelOpened;
+    this.menuSections = this.menuDataSection[this.selectedBusiness];
   }
 }

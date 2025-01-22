@@ -1,7 +1,8 @@
 <app-header></app-header>
 <div class="main-container">
     <div class="purple-bar"></div>
-    <app-sidebar [menuSections]="sidebarData"></app-sidebar>
+    <app-sidebar [menuDataSection]="sidebarData" [businessOptions]="businessOptions"
+        [selectedBusiness]="selectedOptionSidebar" [menuSections]="menuSections"></app-sidebar>
     <div>
         <div class="article-container">
             <app-breadcrumb></app-breadcrumb>
