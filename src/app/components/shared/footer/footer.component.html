@@ -3,7 +3,7 @@
     <nav class="navigation">
       <ul>
         <li *ngFor="let link of links; let index = index">
-          <a href="">{{ link }}</a>
+          <a [href]="link.url">{{ link.label }}</a>
         </li>
       </ul>
     </nav>

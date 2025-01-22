@@ -15,7 +15,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClient } from '@angular/common/http';
 import { isPlatformBrowser } from '@angular/common';
-
 import { AfterViewInit, HostListener } from '@angular/core';
 
 import { MatAutocompleteTrigger } from '@angular/material/autocomplete';
@@ -55,9 +54,11 @@ export class SearchBarComponent implements OnChanges, AfterViewInit {
   autocomplete: MatAutocompleteTrigger | undefined;
   filteredOptions: any[] = [];
   searchControl = new FormControl('');
-  private router = inject(Router);
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object, private http: HttpClient) {
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, 
+  private http: HttpClient, 
+  private router: Router) {
     this.autocomplete = undefined;
   }
 
@@ -116,6 +117,10 @@ export class SearchBarComponent implements OnChanges, AfterViewInit {
     ) {
       this.inputElement.nativeElement.click();
     }
+  }
+
+  redirectToArticle(optionId: string) {
+    this.router.navigate(['/article', optionId]);
   }
 
   onSearchChange() {

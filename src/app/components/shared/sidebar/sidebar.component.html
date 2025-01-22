@@ -1,10 +1,10 @@
 <div class="sidebar-container">
     <mat-expansion-panel [(expanded)]="businessPanelOpened" class="business-select">
         <mat-expansion-panel-header class="business-select-header">
-            <mat-panel-title class="business-selected-option"> {{selectedBusiness.option}} </mat-panel-title>
+            <mat-panel-title class="business-selected-option"> {{selectedBusiness}} </mat-panel-title>
         </mat-expansion-panel-header>
         @for (option of businessOptions; track option.option) {
-        @if(option.option !== selectedBusiness.option){
+        @if(option.option !== selectedBusiness){
         <div class="business-option" (click)="changeOption(option)">
             <span class="business-option-text">
                 {{option.option}}
@@ -32,7 +32,7 @@
                                 }
                                 @else {
                                 <div class="title-icon">
-                                    <span class="material-symbols-outlined">{{menuElement.iconUrl}}</span>
+                                    <img src={{menuElement.iconUrl}}>
                                 </div>
                                 }
                             </div>
