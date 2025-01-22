@@ -5,6 +5,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import {
   IBusinessOption,
   ISidebarSection,
@@ -25,11 +26,8 @@ import {
   styleUrl: './sidebar.component.scss',
 })
 export class SidebarComponent {
-  @Input() businessOptions: IBusinessOption[] = [
-    { option: 'Small business' },
-    { option: 'Enterprise' },
-    { option: 'Partners' },
-  ];
+  @Input() businessOptions: IBusinessOption[] = [];
+  @Input() menuDataSection: any = {};
 
   @Input() menuSections: ISidebarSection[] = [
     {
@@ -119,7 +117,6 @@ export class SidebarComponent {
         },
         {
           title: 'Transactions',
-          svgUrl: './../../../../assets/icons/common/chip-extraction-icon.svg',
           iconUrl: 'chip_extraction',
           menuItems: [
             { title: 'Link 1', url: '#' },
@@ -175,11 +172,13 @@ export class SidebarComponent {
 
   @Input() businessPanelOpened: boolean = false;
 
-  public selectedBusiness: any = this.businessOptions[0];
+  constructor(private router: Router) { }
+
+  @Input() selectedBusiness: any = "";
 
   public currentActiveItem: any = null;
 
-  public onMenuItemClick(event: any) {
+  public onMenuItemClick(event: any, articleUrl: any) {
     let eventTarget = event.target;
     if (event.target.childElementCount == 1) {
       eventTarget = eventTarget.firstChild;
@@ -189,10 +188,12 @@ export class SidebarComponent {
     }
     eventTarget.parentElement.classList.add('menu-element-active');
     this.currentActiveItem = eventTarget.parentElement;
+    this.router.navigate([articleUrl]);
   }
 
   public changeOption(option: any) {
-    this.selectedBusiness = option;
+    this.selectedBusiness = option.option;
     this.businessPanelOpened = !this.businessPanelOpened;
+    this.menuSections = this.menuDataSection[this.selectedBusiness];
   }
 }

@@ -45,6 +45,9 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
   private componentRefs: ComponentRef<any>[] = [];
   private componentListRefs: ComponentRef<any>[] = [];
 
+  public contactUsComponent: any;
+  public footerComponent: any;
+
   async ngAfterViewInit() {
     if (this.dynamicContainer) {
       this.renderSections();
@@ -151,8 +154,24 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
          
         }
       });
+
+      this.contactUsComponent = data?.template?.data?.attributes?.page_template?.data?.attributes?.contact_us;
+      
+      this.footerComponent = data?.template?.data?.attributes?.page_template?.data?.attributes?.footer_section;
+   
     });
 
+  }
+
+  getFooterDisclaimer() {
+    try {
+      if (this.footerComponent?.copyright[0]?.children[0].text) {
+        return this.footerComponent?.copyright[0]?.children[0].text;
+      }
+      return undefined;
+    } catch(e){
+      return undefined;
+    }
   }
 
   logout(): void {

@@ -13,10 +13,18 @@ import { CommonModule } from '@angular/common';
 })
 export class FooterComponent {
   @Input() links = [
-    'Cookie Settings',
-    'Contact Us',
-    'Privacy Policy',
-    'Regulatory Disclosures',
+    {label: 'Cookie Settings',
+      url: ''
+    },
+    {label: 'Contact Us',
+         url: ''
+    },
+    {label: 'Privacy Policy',
+         url: ''
+    },
+    {label: 'Regulatory Disclosures',
+         url: ''
+    }
   ];
   @Input() disclaimer: string =
     'Copyright © 2024 Paysafe Holdings UK Limited. All rights reserved. Paysafe Financial Services Limited (FRN:900015)';
