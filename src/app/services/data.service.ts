@@ -27,11 +27,240 @@ export class DataService {
             "id": 1,
             "attributes": {
                 "createdAt": "2025-01-07T08:35:37.351Z",
-                "updatedAt": "2025-01-07T08:44:27.534Z",
+                "updatedAt": "2025-01-21T18:56:55.180Z",
                 "publishedAt": "2025-01-07T08:35:38.567Z",
                 "locale": "en",
                 "page_template": {
-                    "data": null
+                    "data": {
+                        "id": 1,
+                        "attributes": {
+                            "createdAt": "2025-01-07T08:52:12.103Z",
+                            "updatedAt": "2025-01-21T18:51:34.340Z",
+                            "publishedAt": "2025-01-07T09:07:52.298Z",
+                            "styles": null,
+                            "theme": null,
+                            "name": "Default Template",
+                            "slug": "default-template",
+                            "locale": "en",
+                            "header": {
+                                "id": 1,
+                                "language_selector": {
+                                    "id": 3,
+                                    "languages": {
+                                        "data": [
+                                            {
+                                                "id": 4,
+                                                "attributes": {
+                                                    "name": "British English",
+                                                    "code": "en-gb",
+                                                    "createdAt": "2025-01-07T09:02:29.996Z",
+                                                    "updatedAt": "2025-01-07T09:02:30.859Z",
+                                                    "publishedAt": "2025-01-07T09:02:30.858Z",
+                                                    "display": null
+                                                }
+                                            },
+                                            {
+                                                "id": 2,
+                                                "attributes": {
+                                                    "name": "Canadian English",
+                                                    "code": "en-ca",
+                                                    "createdAt": "2025-01-07T09:00:03.390Z",
+                                                    "updatedAt": "2025-01-07T09:02:47.463Z",
+                                                    "publishedAt": "2025-01-07T09:00:04.322Z",
+                                                    "display": null
+                                                }
+                                            },
+                                            {
+                                                "id": 3,
+                                                "attributes": {
+                                                    "name": "Canadian French",
+                                                    "code": "fr-ca",
+                                                    "createdAt": "2025-01-07T09:00:28.952Z",
+                                                    "updatedAt": "2025-01-07T09:03:05.472Z",
+                                                    "publishedAt": "2025-01-07T09:00:29.662Z",
+                                                    "display": null
+                                                }
+                                            },
+                                            {
+                                                "id": 1,
+                                                "attributes": {
+                                                    "name": "US English",
+                                                    "code": "en-us",
+                                                    "createdAt": "2025-01-07T08:59:20.383Z",
+                                                    "updatedAt": "2025-01-07T09:03:21.186Z",
+                                                    "publishedAt": "2025-01-07T08:59:21.443Z",
+                                                    "display": null
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                "logo": {
+                                    "id": 3,
+                                    "logo": {
+                                        "data": {
+                                            "id": 24,
+                                            "attributes": {
+                                                "name": "vector.svg",
+                                                "alternativeText": null,
+                                                "caption": null,
+                                                "width": 119,
+                                                "height": 28,
+                                                "formats": null,
+                                                "hash": "vector_64d394624c",
+                                                "ext": ".svg",
+                                                "mime": "image/svg+xml",
+                                                "size": 4.96,
+                                                "url": "/uploads/vector_64d394624c.svg",
+                                                "previewUrl": null,
+                                                "provider": "local",
+                                                "provider_metadata": null,
+                                                "createdAt": "2025-01-07T08:49:51.124Z",
+                                                "updatedAt": "2025-01-07T08:49:51.124Z"
+                                            }
+                                        }
+                                    }
+                                },
+                                "mobile_logo": {
+                                    "id": 3,
+                                    "mobile_logo": {
+                                        "data": {
+                                            "id": 24,
+                                            "attributes": {
+                                                "name": "vector.svg",
+                                                "alternativeText": null,
+                                                "caption": null,
+                                                "width": 119,
+                                                "height": 28,
+                                                "formats": null,
+                                                "hash": "vector_64d394624c",
+                                                "ext": ".svg",
+                                                "mime": "image/svg+xml",
+                                                "size": 4.96,
+                                                "url": "/uploads/vector_64d394624c.svg",
+                                                "previewUrl": null,
+                                                "provider": "local",
+                                                "provider_metadata": null,
+                                                "createdAt": "2025-01-07T08:49:51.124Z",
+                                                "updatedAt": "2025-01-07T08:49:51.124Z"
+                                            }
+                                        }
+                                    }
+                                },
+                                "user_login": {
+                                    "id": 3,
+                                    "token_variable": "auth_token",
+                                    "login_url": "https://login_url"
+                                }
+                            },
+                            "sidebar": null,
+                            "feedback_section": null,
+                            "contact_us": {
+                                "id": 2,
+                                "title": "Need more help?",
+                                "subtitle": "Contact us",
+                                "url": "#",
+                                "icon": {
+                                    "data": {
+                                        "id": 33,
+                                        "attributes": {
+                                            "name": "large_a_bug_is_becoming_a_meme_on_the_internet_2afbff8119.jpg",
+                                            "alternativeText": null,
+                                            "caption": null,
+                                            "width": 1000,
+                                            "height": 666,
+                                            "formats": {
+                                                "thumbnail": {
+                                                    "name": "thumbnail_large_a_bug_is_becoming_a_meme_on_the_internet_2afbff8119.jpg",
+                                                    "hash": "thumbnail_large_a_bug_is_becoming_a_meme_on_the_internet_2afbff8119_7dbd58accc",
+                                                    "ext": ".jpg",
+                                                    "mime": "image/jpeg",
+                                                    "path": null,
+                                                    "width": 234,
+                                                    "height": 156,
+                                                    "size": 6.75,
+                                                    "sizeInBytes": 6750,
+                                                    "url": "/uploads/thumbnail_large_a_bug_is_becoming_a_meme_on_the_internet_2afbff8119_7dbd58accc.jpg"
+                                                },
+                                                "medium": {
+                                                    "name": "medium_large_a_bug_is_becoming_a_meme_on_the_internet_2afbff8119.jpg",
+                                                    "hash": "medium_large_a_bug_is_becoming_a_meme_on_the_internet_2afbff8119_7dbd58accc",
+                                                    "ext": ".jpg",
+                                                    "mime": "image/jpeg",
+                                                    "path": null,
+                                                    "width": 750,
+                                                    "height": 500,
+                                                    "size": 33.98,
+                                                    "sizeInBytes": 33983,
+                                                    "url": "/uploads/medium_large_a_bug_is_becoming_a_meme_on_the_internet_2afbff8119_7dbd58accc.jpg"
+                                                },
+                                                "small": {
+                                                    "name": "small_large_a_bug_is_becoming_a_meme_on_the_internet_2afbff8119.jpg",
+                                                    "hash": "small_large_a_bug_is_becoming_a_meme_on_the_internet_2afbff8119_7dbd58accc",
+                                                    "ext": ".jpg",
+                                                    "mime": "image/jpeg",
+                                                    "path": null,
+                                                    "width": 500,
+                                                    "height": 333,
+                                                    "size": 19.55,
+                                                    "sizeInBytes": 19548,
+                                                    "url": "/uploads/small_large_a_bug_is_becoming_a_meme_on_the_internet_2afbff8119_7dbd58accc.jpg"
+                                                }
+                                            },
+                                            "hash": "large_a_bug_is_becoming_a_meme_on_the_internet_2afbff8119_7dbd58accc",
+                                            "ext": ".jpg",
+                                            "mime": "image/jpeg",
+                                            "size": 50.97,
+                                            "url": "/uploads/large_a_bug_is_becoming_a_meme_on_the_internet_2afbff8119_7dbd58accc.jpg",
+                                            "previewUrl": null,
+                                            "provider": "local",
+                                            "provider_metadata": null,
+                                            "createdAt": "2025-01-16T22:55:14.125Z",
+                                            "updatedAt": "2025-01-19T05:05:51.968Z"
+                                        }
+                                    }
+                                }
+                            },
+                            "footer_section": {
+                                "id": 4,
+                                "label": "Footer",
+                                "copyright": [
+                                    {
+                                        "type": "paragraph",
+                                        "children": [
+                                            {
+                                                "type": "text",
+                                                "text": "Copyright © 2024 Paysafe Holdings UK Limited. All rights reserved. Paysafe Financial Services Limited (FRN:900015)"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "max_colums": 4,
+                                "footer_links": [
+                                    {
+                                        "id": 11,
+                                        "label": "Cookie Setings",
+                                        "url": "$"
+                                    },
+                                    {
+                                        "id": 12,
+                                        "label": "Contact Us",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "id": 13,
+                                        "label": "Privacy Policy",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "id": 14,
+                                        "label": "Regulatory Disclosures",
+                                        "url": "#None"
+                                    }
+                                ]
+                            }
+                        }
+                    }
                 },
                 "search_area": [
                     {
@@ -355,7 +584,7 @@ export class DataService {
                                     "slug": "faqs",
                                     "description": null,
                                     "createdAt": "2025-01-07T07:22:38.128Z",
-                                    "updatedAt": "2025-01-07T07:38:22.570Z",
+                                    "updatedAt": "2025-01-20T18:39:19.473Z",
                                     "short_description": "FAQs",
                                     "title": "FAQs",
                                     "publishedAt": "2025-01-07T07:22:50.046Z",
@@ -413,7 +642,7 @@ export class DataService {
                                 "attributes": {
                                     "title": "Payment Link",
                                     "createdAt": "2025-01-07T16:08:46.699Z",
-                                    "updatedAt": "2025-01-07T16:48:28.428Z",
+                                    "updatedAt": "2025-01-20T18:41:51.031Z",
                                     "publishedAt": "2025-01-07T16:08:49.482Z",
                                     "subtitle": "Payments in a matter of seconds",
                                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
@@ -426,7 +655,7 @@ export class DataService {
                                 "attributes": {
                                     "title": "Payments API",
                                     "createdAt": "2025-01-16T18:55:28.251Z",
-                                    "updatedAt": "2025-01-19T05:10:28.286Z",
+                                    "updatedAt": "2025-01-20T22:52:52.843Z",
                                     "publishedAt": "2025-01-16T19:00:41.980Z",
                                     "subtitle": "Payments API Sub",
                                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
@@ -504,7 +733,7 @@ export class DataService {
                                 "attributes": {
                                     "title": "New Optic App",
                                     "createdAt": "2025-01-19T05:11:39.275Z",
-                                    "updatedAt": "2025-01-19T05:11:48.916Z",
+                                    "updatedAt": "2025-01-21T18:42:12.905Z",
                                     "publishedAt": "2025-01-19T05:11:48.911Z",
                                     "subtitle": "New Optic App",
                                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
@@ -556,8 +785,60 @@ export class DataService {
                                 "attributes": {
                                     "title": "Different Article",
                                     "createdAt": "2025-01-19T18:30:40.297Z",
-                                    "updatedAt": "2025-01-20T14:57:03.088Z",
+                                    "updatedAt": "2025-01-20T22:31:11.930Z",
                                     "publishedAt": "2025-01-19T18:31:50.655Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 18,
+                                "attributes": {
+                                    "title": "FAQ Article Item",
+                                    "createdAt": "2025-01-21T18:42:20.700Z",
+                                    "updatedAt": "2025-01-21T18:42:50.750Z",
+                                    "publishedAt": "2025-01-21T18:42:50.747Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 19,
+                                "attributes": {
+                                    "title": "Different FAQ Item",
+                                    "createdAt": "2025-01-21T18:43:02.542Z",
+                                    "updatedAt": "2025-01-21T18:43:13.786Z",
+                                    "publishedAt": "2025-01-21T18:43:13.782Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 20,
+                                "attributes": {
+                                    "title": "Trending Article Item",
+                                    "createdAt": "2025-01-21T18:44:41.789Z",
+                                    "updatedAt": "2025-01-21T18:44:53.022Z",
+                                    "publishedAt": "2025-01-21T18:44:53.019Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 21,
+                                "attributes": {
+                                    "title": "Different Trending Article",
+                                    "createdAt": "2025-01-21T18:45:00.750Z",
+                                    "updatedAt": "2025-01-21T18:45:17.814Z",
+                                    "publishedAt": "2025-01-21T18:45:17.812Z",
                                     "subtitle": "Paysafe Checkout",
                                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
                                     "locale": "en",
@@ -626,7 +907,7 @@ export class DataService {
                                 "attributes": {
                                     "title": "Payment Link",
                                     "createdAt": "2025-01-07T16:08:46.699Z",
-                                    "updatedAt": "2025-01-07T16:48:28.428Z",
+                                    "updatedAt": "2025-01-20T18:41:51.031Z",
                                     "publishedAt": "2025-01-07T16:08:49.482Z",
                                     "subtitle": "Payments in a matter of seconds",
                                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
@@ -639,7 +920,7 @@ export class DataService {
                                 "attributes": {
                                     "title": "Payments API",
                                     "createdAt": "2025-01-16T18:55:28.251Z",
-                                    "updatedAt": "2025-01-19T05:10:28.286Z",
+                                    "updatedAt": "2025-01-20T22:52:52.843Z",
                                     "publishedAt": "2025-01-16T19:00:41.980Z",
                                     "subtitle": "Payments API Sub",
                                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
@@ -717,7 +998,7 @@ export class DataService {
                                 "attributes": {
                                     "title": "New Optic App",
                                     "createdAt": "2025-01-19T05:11:39.275Z",
-                                    "updatedAt": "2025-01-19T05:11:48.916Z",
+                                    "updatedAt": "2025-01-21T18:42:12.905Z",
                                     "publishedAt": "2025-01-19T05:11:48.911Z",
                                     "subtitle": "New Optic App",
                                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
@@ -769,8 +1050,60 @@ export class DataService {
                                 "attributes": {
                                     "title": "Different Article",
                                     "createdAt": "2025-01-19T18:30:40.297Z",
-                                    "updatedAt": "2025-01-20T14:57:03.088Z",
+                                    "updatedAt": "2025-01-20T22:31:11.930Z",
                                     "publishedAt": "2025-01-19T18:31:50.655Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 18,
+                                "attributes": {
+                                    "title": "FAQ Article Item",
+                                    "createdAt": "2025-01-21T18:42:20.700Z",
+                                    "updatedAt": "2025-01-21T18:42:50.750Z",
+                                    "publishedAt": "2025-01-21T18:42:50.747Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 19,
+                                "attributes": {
+                                    "title": "Different FAQ Item",
+                                    "createdAt": "2025-01-21T18:43:02.542Z",
+                                    "updatedAt": "2025-01-21T18:43:13.786Z",
+                                    "publishedAt": "2025-01-21T18:43:13.782Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 20,
+                                "attributes": {
+                                    "title": "Trending Article Item",
+                                    "createdAt": "2025-01-21T18:44:41.789Z",
+                                    "updatedAt": "2025-01-21T18:44:53.022Z",
+                                    "publishedAt": "2025-01-21T18:44:53.019Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 21,
+                                "attributes": {
+                                    "title": "Different Trending Article",
+                                    "createdAt": "2025-01-21T18:45:00.750Z",
+                                    "updatedAt": "2025-01-21T18:45:17.814Z",
+                                    "publishedAt": "2025-01-21T18:45:17.812Z",
                                     "subtitle": "Paysafe Checkout",
                                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
                                     "locale": "en",
@@ -895,7 +1228,7 @@ export class DataService {
                                 "attributes": {
                                     "title": "Payment Link",
                                     "createdAt": "2025-01-07T16:08:46.699Z",
-                                    "updatedAt": "2025-01-07T16:48:28.428Z",
+                                    "updatedAt": "2025-01-20T18:41:51.031Z",
                                     "publishedAt": "2025-01-07T16:08:49.482Z",
                                     "subtitle": "Payments in a matter of seconds",
                                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
@@ -908,7 +1241,7 @@ export class DataService {
                                 "attributes": {
                                     "title": "Payments API",
                                     "createdAt": "2025-01-16T18:55:28.251Z",
-                                    "updatedAt": "2025-01-19T05:10:28.286Z",
+                                    "updatedAt": "2025-01-20T22:52:52.843Z",
                                     "publishedAt": "2025-01-16T19:00:41.980Z",
                                     "subtitle": "Payments API Sub",
                                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
@@ -986,7 +1319,7 @@ export class DataService {
                                 "attributes": {
                                     "title": "New Optic App",
                                     "createdAt": "2025-01-19T05:11:39.275Z",
-                                    "updatedAt": "2025-01-19T05:11:48.916Z",
+                                    "updatedAt": "2025-01-21T18:42:12.905Z",
                                     "publishedAt": "2025-01-19T05:11:48.911Z",
                                     "subtitle": "New Optic App",
                                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
@@ -1038,8 +1371,60 @@ export class DataService {
                                 "attributes": {
                                     "title": "Different Article",
                                     "createdAt": "2025-01-19T18:30:40.297Z",
-                                    "updatedAt": "2025-01-20T14:57:03.088Z",
+                                    "updatedAt": "2025-01-20T22:31:11.930Z",
                                     "publishedAt": "2025-01-19T18:31:50.655Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 18,
+                                "attributes": {
+                                    "title": "FAQ Article Item",
+                                    "createdAt": "2025-01-21T18:42:20.700Z",
+                                    "updatedAt": "2025-01-21T18:42:50.750Z",
+                                    "publishedAt": "2025-01-21T18:42:50.747Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 19,
+                                "attributes": {
+                                    "title": "Different FAQ Item",
+                                    "createdAt": "2025-01-21T18:43:02.542Z",
+                                    "updatedAt": "2025-01-21T18:43:13.786Z",
+                                    "publishedAt": "2025-01-21T18:43:13.782Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 20,
+                                "attributes": {
+                                    "title": "Trending Article Item",
+                                    "createdAt": "2025-01-21T18:44:41.789Z",
+                                    "updatedAt": "2025-01-21T18:44:53.022Z",
+                                    "publishedAt": "2025-01-21T18:44:53.019Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 21,
+                                "attributes": {
+                                    "title": "Different Trending Article",
+                                    "createdAt": "2025-01-21T18:45:00.750Z",
+                                    "updatedAt": "2025-01-21T18:45:17.814Z",
+                                    "publishedAt": "2025-01-21T18:45:17.812Z",
                                     "subtitle": "Paysafe Checkout",
                                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
                                     "locale": "en",
@@ -1294,7 +1679,7 @@ export class DataService {
                                 "attributes": {
                                     "title": "Payment Link",
                                     "createdAt": "2025-01-07T16:08:46.699Z",
-                                    "updatedAt": "2025-01-07T16:48:28.428Z",
+                                    "updatedAt": "2025-01-20T18:41:51.031Z",
                                     "publishedAt": "2025-01-07T16:08:49.482Z",
                                     "subtitle": "Payments in a matter of seconds",
                                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
@@ -1307,7 +1692,7 @@ export class DataService {
                                 "attributes": {
                                     "title": "Payments API",
                                     "createdAt": "2025-01-16T18:55:28.251Z",
-                                    "updatedAt": "2025-01-19T05:10:28.286Z",
+                                    "updatedAt": "2025-01-20T22:52:52.843Z",
                                     "publishedAt": "2025-01-16T19:00:41.980Z",
                                     "subtitle": "Payments API Sub",
                                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
@@ -1385,7 +1770,7 @@ export class DataService {
                                 "attributes": {
                                     "title": "New Optic App",
                                     "createdAt": "2025-01-19T05:11:39.275Z",
-                                    "updatedAt": "2025-01-19T05:11:48.916Z",
+                                    "updatedAt": "2025-01-21T18:42:12.905Z",
                                     "publishedAt": "2025-01-19T05:11:48.911Z",
                                     "subtitle": "New Optic App",
                                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
@@ -1437,8 +1822,60 @@ export class DataService {
                                 "attributes": {
                                     "title": "Different Article",
                                     "createdAt": "2025-01-19T18:30:40.297Z",
-                                    "updatedAt": "2025-01-20T14:57:03.088Z",
+                                    "updatedAt": "2025-01-20T22:31:11.930Z",
                                     "publishedAt": "2025-01-19T18:31:50.655Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 18,
+                                "attributes": {
+                                    "title": "FAQ Article Item",
+                                    "createdAt": "2025-01-21T18:42:20.700Z",
+                                    "updatedAt": "2025-01-21T18:42:50.750Z",
+                                    "publishedAt": "2025-01-21T18:42:50.747Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 19,
+                                "attributes": {
+                                    "title": "Different FAQ Item",
+                                    "createdAt": "2025-01-21T18:43:02.542Z",
+                                    "updatedAt": "2025-01-21T18:43:13.786Z",
+                                    "publishedAt": "2025-01-21T18:43:13.782Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 20,
+                                "attributes": {
+                                    "title": "Trending Article Item",
+                                    "createdAt": "2025-01-21T18:44:41.789Z",
+                                    "updatedAt": "2025-01-21T18:44:53.022Z",
+                                    "publishedAt": "2025-01-21T18:44:53.019Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 21,
+                                "attributes": {
+                                    "title": "Different Trending Article",
+                                    "createdAt": "2025-01-21T18:45:00.750Z",
+                                    "updatedAt": "2025-01-21T18:45:17.814Z",
+                                    "publishedAt": "2025-01-21T18:45:17.812Z",
                                     "subtitle": "Paysafe Checkout",
                                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
                                     "locale": "en",
@@ -1497,7 +1934,7 @@ export class DataService {
                                 "attributes": {
                                     "title": "Payments API",
                                     "createdAt": "2025-01-16T18:55:28.251Z",
-                                    "updatedAt": "2025-01-19T05:10:28.286Z",
+                                    "updatedAt": "2025-01-20T22:52:52.843Z",
                                     "publishedAt": "2025-01-16T19:00:41.980Z",
                                     "subtitle": "Payments API Sub",
                                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
@@ -1523,7 +1960,7 @@ export class DataService {
                                 "attributes": {
                                     "title": "New Optic App",
                                     "createdAt": "2025-01-19T05:11:39.275Z",
-                                    "updatedAt": "2025-01-19T05:11:48.916Z",
+                                    "updatedAt": "2025-01-21T18:42:12.905Z",
                                     "publishedAt": "2025-01-19T05:11:48.911Z",
                                     "subtitle": "New Optic App",
                                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
@@ -1575,7 +2012,7 @@ export class DataService {
                                 "attributes": {
                                     "title": "Different Article",
                                     "createdAt": "2025-01-19T18:30:40.297Z",
-                                    "updatedAt": "2025-01-20T14:57:03.088Z",
+                                    "updatedAt": "2025-01-20T22:31:11.930Z",
                                     "publishedAt": "2025-01-19T18:31:50.655Z",
                                     "subtitle": "Paysafe Checkout",
                                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
@@ -1684,19 +2121,6 @@ export class DataService {
                     "root_category": true,
                     "articles": {
                         "data": [
-                            {
-                                "id": 6,
-                                "attributes": {
-                                    "title": "Payment Link",
-                                    "createdAt": "2025-01-07T16:08:46.699Z",
-                                    "updatedAt": "2025-01-07T16:48:28.428Z",
-                                    "publishedAt": "2025-01-07T16:08:49.482Z",
-                                    "subtitle": "Payments in a matter of seconds",
-                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
-                                    "locale": "en",
-                                    "time_to_read": "15 mins"
-                                }
-                            },
                             {
                                 "id": 8,
                                 "attributes": {
@@ -1873,6 +2297,32 @@ export class DataService {
                                     "locale": "en",
                                     "time_to_read": "15 mins"
                                 }
+                            },
+                            {
+                                "id": 20,
+                                "attributes": {
+                                    "title": "Trending Article Item",
+                                    "createdAt": "2025-01-21T18:44:41.789Z",
+                                    "updatedAt": "2025-01-21T18:44:53.022Z",
+                                    "publishedAt": "2025-01-21T18:44:53.019Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 21,
+                                "attributes": {
+                                    "title": "Different Trending Article",
+                                    "createdAt": "2025-01-21T18:45:00.750Z",
+                                    "updatedAt": "2025-01-21T18:45:17.814Z",
+                                    "publishedAt": "2025-01-21T18:45:17.812Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
                             }
                         ]
                     },
@@ -1967,7 +2417,7 @@ export class DataService {
                     "slug": "faqs",
                     "description": null,
                     "createdAt": "2025-01-07T07:22:38.128Z",
-                    "updatedAt": "2025-01-07T07:38:22.570Z",
+                    "updatedAt": "2025-01-20T18:39:19.473Z",
                     "short_description": "FAQs",
                     "title": "FAQs",
                     "publishedAt": "2025-01-07T07:22:50.046Z",
@@ -1983,6 +2433,32 @@ export class DataService {
                                     "updatedAt": "2025-01-20T15:11:54.647Z",
                                     "publishedAt": "2025-01-16T21:52:22.503Z",
                                     "subtitle": "Embedded Wallets",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 18,
+                                "attributes": {
+                                    "title": "FAQ Article Item",
+                                    "createdAt": "2025-01-21T18:42:20.700Z",
+                                    "updatedAt": "2025-01-21T18:42:50.750Z",
+                                    "publishedAt": "2025-01-21T18:42:50.747Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 19,
+                                "attributes": {
+                                    "title": "Different FAQ Item",
+                                    "createdAt": "2025-01-21T18:43:02.542Z",
+                                    "updatedAt": "2025-01-21T18:43:13.786Z",
+                                    "publishedAt": "2025-01-21T18:43:13.782Z",
+                                    "subtitle": "Paysafe Checkout",
                                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
                                     "locale": "en",
                                     "time_to_read": "15 mins"
@@ -2174,6 +2650,120 @@ export class DataService {
                         "data": []
                     }
                 }
+            },
+            {
+                "id": 11,
+                "attributes": {
+                    "slug": "paysafe-card",
+                    "description": null,
+                    "createdAt": "2025-01-20T18:41:24.576Z",
+                    "updatedAt": "2025-01-20T18:41:25.299Z",
+                    "short_description": "Paysafe Card Data",
+                    "title": "Paysafe Card",
+                    "publishedAt": "2025-01-20T18:41:25.298Z",
+                    "locale": "en",
+                    "root_category": null,
+                    "articles": {
+                        "data": [
+                            {
+                                "id": 6,
+                                "attributes": {
+                                    "title": "Payment Link",
+                                    "createdAt": "2025-01-07T16:08:46.699Z",
+                                    "updatedAt": "2025-01-20T18:41:51.031Z",
+                                    "publishedAt": "2025-01-07T16:08:49.482Z",
+                                    "subtitle": "Payments in a matter of seconds",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            }
+                        ]
+                    },
+                    "icon": {
+                        "data": {
+                            "id": 24,
+                            "attributes": {
+                                "name": "vector.svg",
+                                "alternativeText": null,
+                                "caption": null,
+                                "width": 119,
+                                "height": 28,
+                                "formats": null,
+                                "hash": "vector_64d394624c",
+                                "ext": ".svg",
+                                "mime": "image/svg+xml",
+                                "size": 4.96,
+                                "url": "/uploads/vector_64d394624c.svg",
+                                "previewUrl": null,
+                                "provider": "local",
+                                "provider_metadata": null,
+                                "createdAt": "2025-01-07T08:49:51.124Z",
+                                "updatedAt": "2025-01-07T08:49:51.124Z"
+                            }
+                        }
+                    },
+                    "sub_categories": {
+                        "data": []
+                    },
+                    "category_groups": {
+                        "data": [
+                            {
+                                "id": 2,
+                                "attributes": {
+                                    "title": "Enterprise",
+                                    "description": null,
+                                    "createdAt": "2025-01-07T07:09:49.545Z",
+                                    "updatedAt": "2025-01-07T07:10:20.425Z",
+                                    "publishedAt": "2025-01-07T07:09:50.473Z",
+                                    "locale": "en"
+                                }
+                            },
+                            {
+                                "id": 3,
+                                "attributes": {
+                                    "title": "Partners",
+                                    "description": null,
+                                    "createdAt": "2025-01-07T07:10:09.889Z",
+                                    "updatedAt": "2025-01-07T07:10:10.883Z",
+                                    "publishedAt": "2025-01-07T07:10:10.881Z",
+                                    "locale": "en"
+                                }
+                            },
+                            {
+                                "id": 1,
+                                "attributes": {
+                                    "title": "Small Business",
+                                    "description": null,
+                                    "createdAt": "2025-01-07T07:09:27.975Z",
+                                    "updatedAt": "2025-01-07T07:10:33.570Z",
+                                    "publishedAt": "2025-01-07T07:09:28.779Z",
+                                    "locale": "en"
+                                }
+                            }
+                        ]
+                    },
+                    "content_classification": {
+                        "data": {
+                            "id": 1,
+                            "attributes": {
+                                "name": "Public",
+                                "description": null,
+                                "public": true,
+                                "createdAt": "2025-01-07T07:06:07.701Z",
+                                "updatedAt": "2025-01-07T07:06:09.301Z",
+                                "publishedAt": "2025-01-07T07:06:09.297Z",
+                                "slug": "public"
+                            }
+                        }
+                    },
+                    "products": {
+                        "data": []
+                    },
+                    "localizations": {
+                        "data": []
+                    }
+                }
             }
         ],
         "meta": {
@@ -2181,7 +2771,7 @@ export class DataService {
                 "page": 1,
                 "pageSize": 25,
                 "pageCount": 1,
-                "total": 5
+                "total": 6
             }
         }
     },
@@ -2192,7 +2782,7 @@ export class DataService {
                 "attributes": {
                     "title": "Payment Link",
                     "createdAt": "2025-01-07T16:08:46.699Z",
-                    "updatedAt": "2025-01-07T16:48:28.428Z",
+                    "updatedAt": "2025-01-20T18:41:51.031Z",
                     "publishedAt": "2025-01-07T16:08:49.482Z",
                     "subtitle": "Payments in a matter of seconds",
                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
@@ -2259,17 +2849,17 @@ export class DataService {
                     },
                     "category": {
                         "data": {
-                            "id": 7,
+                            "id": 11,
                             "attributes": {
-                                "slug": "products",
+                                "slug": "paysafe-card",
                                 "description": null,
-                                "createdAt": "2025-01-07T07:16:56.996Z",
-                                "updatedAt": "2025-01-07T07:38:35.945Z",
-                                "short_description": "Products",
-                                "title": "Products",
-                                "publishedAt": "2025-01-07T07:17:28.132Z",
+                                "createdAt": "2025-01-20T18:41:24.576Z",
+                                "updatedAt": "2025-01-20T18:41:25.299Z",
+                                "short_description": "Paysafe Card Data",
+                                "title": "Paysafe Card",
+                                "publishedAt": "2025-01-20T18:41:25.298Z",
                                 "locale": "en",
-                                "root_category": true
+                                "root_category": null
                             }
                         }
                     },
@@ -2335,7 +2925,7 @@ export class DataService {
                             "id": 2,
                             "attributes": {
                                 "createdAt": "2025-01-07T09:20:54.152Z",
-                                "updatedAt": "2025-01-16T23:08:39.088Z",
+                                "updatedAt": "2025-01-21T18:54:15.877Z",
                                 "publishedAt": "2025-01-07T09:20:57.228Z",
                                 "styles": null,
                                 "theme": null,
@@ -2390,7 +2980,7 @@ export class DataService {
                 "attributes": {
                     "title": "Payments API",
                     "createdAt": "2025-01-16T18:55:28.251Z",
-                    "updatedAt": "2025-01-19T05:10:28.286Z",
+                    "updatedAt": "2025-01-20T22:52:52.843Z",
                     "publishedAt": "2025-01-16T19:00:41.980Z",
                     "subtitle": "Payments API Sub",
                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
@@ -2533,7 +3123,7 @@ export class DataService {
                             "id": 2,
                             "attributes": {
                                 "createdAt": "2025-01-07T09:20:54.152Z",
-                                "updatedAt": "2025-01-16T23:08:39.088Z",
+                                "updatedAt": "2025-01-21T18:54:15.877Z",
                                 "publishedAt": "2025-01-07T09:20:57.228Z",
                                 "styles": null,
                                 "theme": null,
@@ -2736,7 +3326,7 @@ export class DataService {
                             "id": 2,
                             "attributes": {
                                 "createdAt": "2025-01-07T09:20:54.152Z",
-                                "updatedAt": "2025-01-16T23:08:39.088Z",
+                                "updatedAt": "2025-01-21T18:54:15.877Z",
                                 "publishedAt": "2025-01-07T09:20:57.228Z",
                                 "styles": null,
                                 "theme": null,
@@ -2863,7 +3453,7 @@ export class DataService {
                                 "slug": "faqs",
                                 "description": null,
                                 "createdAt": "2025-01-07T07:22:38.128Z",
-                                "updatedAt": "2025-01-07T07:38:22.570Z",
+                                "updatedAt": "2025-01-20T18:39:19.473Z",
                                 "short_description": "FAQs",
                                 "title": "FAQs",
                                 "publishedAt": "2025-01-07T07:22:50.046Z",
@@ -2890,7 +3480,73 @@ export class DataService {
                         "data": []
                     },
                     "connected_articles": {
-                        "data": []
+                        "data": [
+                            {
+                                "id": 17,
+                                "attributes": {
+                                    "title": "Different Article",
+                                    "createdAt": "2025-01-19T18:30:40.297Z",
+                                    "updatedAt": "2025-01-20T22:31:11.930Z",
+                                    "publishedAt": "2025-01-19T18:31:50.655Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 18,
+                                "attributes": {
+                                    "title": "FAQ Article Item",
+                                    "createdAt": "2025-01-21T18:42:20.700Z",
+                                    "updatedAt": "2025-01-21T18:42:50.750Z",
+                                    "publishedAt": "2025-01-21T18:42:50.747Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 19,
+                                "attributes": {
+                                    "title": "Different FAQ Item",
+                                    "createdAt": "2025-01-21T18:43:02.542Z",
+                                    "updatedAt": "2025-01-21T18:43:13.786Z",
+                                    "publishedAt": "2025-01-21T18:43:13.782Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 20,
+                                "attributes": {
+                                    "title": "Trending Article Item",
+                                    "createdAt": "2025-01-21T18:44:41.789Z",
+                                    "updatedAt": "2025-01-21T18:44:53.022Z",
+                                    "publishedAt": "2025-01-21T18:44:53.019Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 21,
+                                "attributes": {
+                                    "title": "Different Trending Article",
+                                    "createdAt": "2025-01-21T18:45:00.750Z",
+                                    "updatedAt": "2025-01-21T18:45:17.814Z",
+                                    "publishedAt": "2025-01-21T18:45:17.812Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            }
+                        ]
                     },
                     "category_groups": {
                         "data": [
@@ -2934,7 +3590,7 @@ export class DataService {
                             "id": 2,
                             "attributes": {
                                 "createdAt": "2025-01-07T09:20:54.152Z",
-                                "updatedAt": "2025-01-16T23:08:39.088Z",
+                                "updatedAt": "2025-01-21T18:54:15.877Z",
                                 "publishedAt": "2025-01-07T09:20:57.228Z",
                                 "styles": null,
                                 "theme": null,
@@ -2985,7 +3641,8 @@ export class DataService {
                         },
                         {
                             "id": 2,
-                            "__component": "shared.accordion"
+                            "__component": "shared.accordion",
+                            "title": null
                         }
                     ],
                     "localizations": {
@@ -3141,7 +3798,7 @@ export class DataService {
                             "id": 2,
                             "attributes": {
                                 "createdAt": "2025-01-07T09:20:54.152Z",
-                                "updatedAt": "2025-01-16T23:08:39.088Z",
+                                "updatedAt": "2025-01-21T18:54:15.877Z",
                                 "publishedAt": "2025-01-07T09:20:57.228Z",
                                 "styles": null,
                                 "theme": null,
@@ -3339,7 +3996,7 @@ export class DataService {
                             "id": 2,
                             "attributes": {
                                 "createdAt": "2025-01-07T09:20:54.152Z",
-                                "updatedAt": "2025-01-16T23:08:39.088Z",
+                                "updatedAt": "2025-01-21T18:54:15.877Z",
                                 "publishedAt": "2025-01-07T09:20:57.228Z",
                                 "styles": null,
                                 "theme": null,
@@ -3537,7 +4194,7 @@ export class DataService {
                             "id": 2,
                             "attributes": {
                                 "createdAt": "2025-01-07T09:20:54.152Z",
-                                "updatedAt": "2025-01-16T23:08:39.088Z",
+                                "updatedAt": "2025-01-21T18:54:15.877Z",
                                 "publishedAt": "2025-01-07T09:20:57.228Z",
                                 "styles": null,
                                 "theme": null,
@@ -3604,7 +4261,7 @@ export class DataService {
                 "attributes": {
                     "title": "New Optic App",
                     "createdAt": "2025-01-19T05:11:39.275Z",
-                    "updatedAt": "2025-01-19T05:11:48.916Z",
+                    "updatedAt": "2025-01-21T18:42:12.905Z",
                     "publishedAt": "2025-01-19T05:11:48.911Z",
                     "subtitle": "New Optic App",
                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
@@ -3703,7 +4360,73 @@ export class DataService {
                         "data": []
                     },
                     "connected_articles": {
-                        "data": []
+                        "data": [
+                            {
+                                "id": 17,
+                                "attributes": {
+                                    "title": "Different Article",
+                                    "createdAt": "2025-01-19T18:30:40.297Z",
+                                    "updatedAt": "2025-01-20T22:31:11.930Z",
+                                    "publishedAt": "2025-01-19T18:31:50.655Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 18,
+                                "attributes": {
+                                    "title": "FAQ Article Item",
+                                    "createdAt": "2025-01-21T18:42:20.700Z",
+                                    "updatedAt": "2025-01-21T18:42:50.750Z",
+                                    "publishedAt": "2025-01-21T18:42:50.747Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 19,
+                                "attributes": {
+                                    "title": "Different FAQ Item",
+                                    "createdAt": "2025-01-21T18:43:02.542Z",
+                                    "updatedAt": "2025-01-21T18:43:13.786Z",
+                                    "publishedAt": "2025-01-21T18:43:13.782Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 20,
+                                "attributes": {
+                                    "title": "Trending Article Item",
+                                    "createdAt": "2025-01-21T18:44:41.789Z",
+                                    "updatedAt": "2025-01-21T18:44:53.022Z",
+                                    "publishedAt": "2025-01-21T18:44:53.019Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 21,
+                                "attributes": {
+                                    "title": "Different Trending Article",
+                                    "createdAt": "2025-01-21T18:45:00.750Z",
+                                    "updatedAt": "2025-01-21T18:45:17.814Z",
+                                    "publishedAt": "2025-01-21T18:45:17.812Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            }
+                        ]
                     },
                     "category_groups": {
                         "data": [
@@ -3747,7 +4470,7 @@ export class DataService {
                             "id": 2,
                             "attributes": {
                                 "createdAt": "2025-01-07T09:20:54.152Z",
-                                "updatedAt": "2025-01-16T23:08:39.088Z",
+                                "updatedAt": "2025-01-21T18:54:15.877Z",
                                 "publishedAt": "2025-01-07T09:20:57.228Z",
                                 "styles": null,
                                 "theme": null,
@@ -3945,7 +4668,7 @@ export class DataService {
                             "id": 2,
                             "attributes": {
                                 "createdAt": "2025-01-07T09:20:54.152Z",
-                                "updatedAt": "2025-01-16T23:08:39.088Z",
+                                "updatedAt": "2025-01-21T18:54:15.877Z",
                                 "publishedAt": "2025-01-07T09:20:57.228Z",
                                 "styles": null,
                                 "theme": null,
@@ -4099,7 +4822,73 @@ export class DataService {
                         "data": []
                     },
                     "connected_articles": {
-                        "data": []
+                        "data": [
+                            {
+                                "id": 17,
+                                "attributes": {
+                                    "title": "Different Article",
+                                    "createdAt": "2025-01-19T18:30:40.297Z",
+                                    "updatedAt": "2025-01-20T22:31:11.930Z",
+                                    "publishedAt": "2025-01-19T18:31:50.655Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 18,
+                                "attributes": {
+                                    "title": "FAQ Article Item",
+                                    "createdAt": "2025-01-21T18:42:20.700Z",
+                                    "updatedAt": "2025-01-21T18:42:50.750Z",
+                                    "publishedAt": "2025-01-21T18:42:50.747Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 19,
+                                "attributes": {
+                                    "title": "Different FAQ Item",
+                                    "createdAt": "2025-01-21T18:43:02.542Z",
+                                    "updatedAt": "2025-01-21T18:43:13.786Z",
+                                    "publishedAt": "2025-01-21T18:43:13.782Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 20,
+                                "attributes": {
+                                    "title": "Trending Article Item",
+                                    "createdAt": "2025-01-21T18:44:41.789Z",
+                                    "updatedAt": "2025-01-21T18:44:53.022Z",
+                                    "publishedAt": "2025-01-21T18:44:53.019Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 21,
+                                "attributes": {
+                                    "title": "Different Trending Article",
+                                    "createdAt": "2025-01-21T18:45:00.750Z",
+                                    "updatedAt": "2025-01-21T18:45:17.814Z",
+                                    "publishedAt": "2025-01-21T18:45:17.812Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            }
+                        ]
                     },
                     "category_groups": {
                         "data": [
@@ -4143,7 +4932,7 @@ export class DataService {
                             "id": 2,
                             "attributes": {
                                 "createdAt": "2025-01-07T09:20:54.152Z",
-                                "updatedAt": "2025-01-16T23:08:39.088Z",
+                                "updatedAt": "2025-01-21T18:54:15.877Z",
                                 "publishedAt": "2025-01-07T09:20:57.228Z",
                                 "styles": null,
                                 "theme": null,
@@ -4346,7 +5135,7 @@ export class DataService {
                             "id": 2,
                             "attributes": {
                                 "createdAt": "2025-01-07T09:20:54.152Z",
-                                "updatedAt": "2025-01-16T23:08:39.088Z",
+                                "updatedAt": "2025-01-21T18:54:15.877Z",
                                 "publishedAt": "2025-01-07T09:20:57.228Z",
                                 "styles": null,
                                 "theme": null,
@@ -4401,7 +5190,7 @@ export class DataService {
                 "attributes": {
                     "title": "Different Article",
                     "createdAt": "2025-01-19T18:30:40.297Z",
-                    "updatedAt": "2025-01-20T14:57:03.088Z",
+                    "updatedAt": "2025-01-20T22:31:11.930Z",
                     "publishedAt": "2025-01-19T18:31:50.655Z",
                     "subtitle": "Paysafe Checkout",
                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
@@ -4497,7 +5286,47 @@ export class DataService {
                         }
                     },
                     "related_articles": {
-                        "data": []
+                        "data": [
+                            {
+                                "id": 9,
+                                "attributes": {
+                                    "title": "Embedded Wallets",
+                                    "createdAt": "2025-01-16T21:50:44.982Z",
+                                    "updatedAt": "2025-01-20T15:11:54.647Z",
+                                    "publishedAt": "2025-01-16T21:52:22.503Z",
+                                    "subtitle": "Embedded Wallets",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 13,
+                                "attributes": {
+                                    "title": "New Optic App",
+                                    "createdAt": "2025-01-19T05:11:39.275Z",
+                                    "updatedAt": "2025-01-21T18:42:12.905Z",
+                                    "publishedAt": "2025-01-19T05:11:48.911Z",
+                                    "subtitle": "New Optic App",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 15,
+                                "attributes": {
+                                    "title": "Payments API",
+                                    "createdAt": "2025-01-19T05:12:30.950Z",
+                                    "updatedAt": "2025-01-19T05:12:52.711Z",
+                                    "publishedAt": "2025-01-19T05:12:52.709Z",
+                                    "subtitle": "Payments API Sub",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            }
+                        ]
                     },
                     "connected_articles": {
                         "data": []
@@ -4544,7 +5373,7 @@ export class DataService {
                             "id": 2,
                             "attributes": {
                                 "createdAt": "2025-01-07T09:20:54.152Z",
-                                "updatedAt": "2025-01-16T23:08:39.088Z",
+                                "updatedAt": "2025-01-21T18:54:15.877Z",
                                 "publishedAt": "2025-01-07T09:20:57.228Z",
                                 "styles": null,
                                 "theme": null,
@@ -4592,14 +5421,9 @@ export class DataService {
                             "title": "Article 17"
                         },
                         {
-                            "id": 2,
-                            "__component": "shared.carrousel",
-                            "title": "Carousel article",
-                            "short_description": null
-                        },
-                        {
                             "id": 1,
-                            "__component": "shared.accordion"
+                            "__component": "shared.accordion",
+                            "title": "This is the acordion"
                         },
                         {
                             "id": 3,
@@ -4619,6 +5443,1286 @@ export class DataService {
                             "id": 3,
                             "__component": "shared.title",
                             "title": "Main Title For Article"
+                        },
+                        {
+                            "id": 1,
+                            "__component": "shared.label",
+                            "label": "This is an label example"
+                        },
+                        {
+                            "id": 1,
+                            "__component": "shared.link",
+                            "label": "Articulo 7",
+                            "url": "/article/7",
+                            "linkIcon": "north_east",
+                            "displayIcon": true
+                        },
+                        {
+                            "id": 1,
+                            "__component": "shared.banner",
+                            "title": "Los Payments mas chidos del condado",
+                            "subtitle": "Los Payments mas chidos del condado",
+                            "description": "Los Payments mas chidos del condado",
+                            "url": "/article/16"
+                        },
+                        {
+                            "id": 1,
+                            "__component": "shared.article-section-title",
+                            "title": "Section here",
+                            "url": "#section"
+                        },
+                        {
+                            "id": 1,
+                            "__component": "shared.product-card",
+                            "title": "Product card ",
+                            "text": "text for this card"
+                        },
+                        {
+                            "id": 1,
+                            "__component": "shared.subtitle",
+                            "subtitle": "THis is a subtitle"
+                        },
+                        {
+                            "id": 3,
+                            "__component": "shared.accordion",
+                            "title": "Accordion number 2"
+                        },
+                        {
+                            "id": 16,
+                            "__component": "shared.image",
+                            "title": "Image Title"
+                        }
+                    ],
+                    "localizations": {
+                        "data": []
+                    }
+                }
+            },
+            {
+                "id": 18,
+                "attributes": {
+                    "title": "FAQ Article Item",
+                    "createdAt": "2025-01-21T18:42:20.700Z",
+                    "updatedAt": "2025-01-21T18:42:50.750Z",
+                    "publishedAt": "2025-01-21T18:42:50.747Z",
+                    "subtitle": "Paysafe Checkout",
+                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                    "locale": "en",
+                    "time_to_read": "15 mins",
+                    "medias": {
+                        "data": null
+                    },
+                    "topics": {
+                        "data": [
+                            {
+                                "id": 4,
+                                "attributes": {
+                                    "title": "Analytics",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "createdAt": "2025-01-07T07:30:59.897Z",
+                                    "updatedAt": "2025-01-07T07:31:00.700Z",
+                                    "publishedAt": "2025-01-07T07:31:00.698Z",
+                                    "searchable": true,
+                                    "locale": "en",
+                                    "description": null
+                                }
+                            },
+                            {
+                                "id": 2,
+                                "attributes": {
+                                    "title": "My account",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions.",
+                                    "createdAt": "2025-01-07T07:29:06.074Z",
+                                    "updatedAt": "2025-01-07T07:29:07.904Z",
+                                    "publishedAt": "2025-01-07T07:29:07.902Z",
+                                    "searchable": true,
+                                    "locale": "en",
+                                    "description": null
+                                }
+                            },
+                            {
+                                "id": 1,
+                                "attributes": {
+                                    "title": "Getting Started",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions.",
+                                    "createdAt": "2025-01-07T07:23:46.633Z",
+                                    "updatedAt": "2025-01-07T07:24:23.903Z",
+                                    "publishedAt": "2025-01-07T07:24:23.901Z",
+                                    "searchable": true,
+                                    "locale": "en",
+                                    "description": null
+                                }
+                            },
+                            {
+                                "id": 7,
+                                "attributes": {
+                                    "title": "Mock Topic",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions.",
+                                    "createdAt": "2025-01-19T05:06:06.496Z",
+                                    "updatedAt": "2025-01-19T05:06:26.126Z",
+                                    "publishedAt": "2025-01-19T05:06:26.124Z",
+                                    "searchable": true,
+                                    "locale": "en",
+                                    "description": null
+                                }
+                            }
+                        ]
+                    },
+                    "category": {
+                        "data": {
+                            "id": 9,
+                            "attributes": {
+                                "slug": "faqs",
+                                "description": null,
+                                "createdAt": "2025-01-07T07:22:38.128Z",
+                                "updatedAt": "2025-01-20T18:39:19.473Z",
+                                "short_description": "FAQs",
+                                "title": "FAQs",
+                                "publishedAt": "2025-01-07T07:22:50.046Z",
+                                "locale": "en",
+                                "root_category": true
+                            }
+                        }
+                    },
+                    "content_classification": {
+                        "data": {
+                            "id": 1,
+                            "attributes": {
+                                "name": "Public",
+                                "description": null,
+                                "public": true,
+                                "createdAt": "2025-01-07T07:06:07.701Z",
+                                "updatedAt": "2025-01-07T07:06:09.301Z",
+                                "publishedAt": "2025-01-07T07:06:09.297Z",
+                                "slug": "public"
+                            }
+                        }
+                    },
+                    "related_articles": {
+                        "data": [
+                            {
+                                "id": 9,
+                                "attributes": {
+                                    "title": "Embedded Wallets",
+                                    "createdAt": "2025-01-16T21:50:44.982Z",
+                                    "updatedAt": "2025-01-20T15:11:54.647Z",
+                                    "publishedAt": "2025-01-16T21:52:22.503Z",
+                                    "subtitle": "Embedded Wallets",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 13,
+                                "attributes": {
+                                    "title": "New Optic App",
+                                    "createdAt": "2025-01-19T05:11:39.275Z",
+                                    "updatedAt": "2025-01-21T18:42:12.905Z",
+                                    "publishedAt": "2025-01-19T05:11:48.911Z",
+                                    "subtitle": "New Optic App",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 15,
+                                "attributes": {
+                                    "title": "Payments API",
+                                    "createdAt": "2025-01-19T05:12:30.950Z",
+                                    "updatedAt": "2025-01-19T05:12:52.711Z",
+                                    "publishedAt": "2025-01-19T05:12:52.709Z",
+                                    "subtitle": "Payments API Sub",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            }
+                        ]
+                    },
+                    "connected_articles": {
+                        "data": []
+                    },
+                    "category_groups": {
+                        "data": [
+                            {
+                                "id": 2,
+                                "attributes": {
+                                    "title": "Enterprise",
+                                    "description": null,
+                                    "createdAt": "2025-01-07T07:09:49.545Z",
+                                    "updatedAt": "2025-01-07T07:10:20.425Z",
+                                    "publishedAt": "2025-01-07T07:09:50.473Z",
+                                    "locale": "en"
+                                }
+                            },
+                            {
+                                "id": 3,
+                                "attributes": {
+                                    "title": "Partners",
+                                    "description": null,
+                                    "createdAt": "2025-01-07T07:10:09.889Z",
+                                    "updatedAt": "2025-01-07T07:10:10.883Z",
+                                    "publishedAt": "2025-01-07T07:10:10.881Z",
+                                    "locale": "en"
+                                }
+                            },
+                            {
+                                "id": 1,
+                                "attributes": {
+                                    "title": "Small Business",
+                                    "description": null,
+                                    "createdAt": "2025-01-07T07:09:27.975Z",
+                                    "updatedAt": "2025-01-07T07:10:33.570Z",
+                                    "publishedAt": "2025-01-07T07:09:28.779Z",
+                                    "locale": "en"
+                                }
+                            }
+                        ]
+                    },
+                    "page_template": {
+                        "data": {
+                            "id": 2,
+                            "attributes": {
+                                "createdAt": "2025-01-07T09:20:54.152Z",
+                                "updatedAt": "2025-01-21T18:54:15.877Z",
+                                "publishedAt": "2025-01-07T09:20:57.228Z",
+                                "styles": null,
+                                "theme": null,
+                                "name": "Article Template",
+                                "slug": "article-template",
+                                "locale": "en"
+                            }
+                        }
+                    },
+                    "sections": [
+                        {
+                            "id": 13,
+                            "__component": "shared.rich-text",
+                            "content": [
+                                {
+                                    "type": "paragraph",
+                                    "children": [
+                                        {
+                                            "type": "text",
+                                            "text": "In today’s fast-paced world, your customers expect quick and easy ways to make payments. A payment link delivers just that, transforming how you collect payments. No more waiting for checks to arrive, chasing down invoices, or dealing with complicated bank transfers. With just a few clicks, you can offer a professional, secure, and convenient way for your customers to pay you. Whether you’re closing a deal, collecting donations, or just making everyday transactions smoother, a payment link is the perfect solution."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "children": [
+                                        {
+                                            "type": "text",
+                                            "text": "Ready to get started? Log in to your account now and create your first payment link!"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": 6,
+                            "__component": "shared.contextual-message",
+                            "title": "Example contextual",
+                            "message": null,
+                            "state": "Danger"
+                        },
+                        {
+                            "id": 6,
+                            "__component": "shared.title",
+                            "title": "Article 17"
+                        },
+                        {
+                            "id": 4,
+                            "__component": "shared.accordion",
+                            "title": "This is the acordion"
+                        },
+                        {
+                            "id": 7,
+                            "__component": "shared.contextual-message",
+                            "title": "Example for Contextual",
+                            "message": "Message with mock information",
+                            "state": "Positive"
+                        },
+                        {
+                            "id": 8,
+                            "__component": "shared.contextual-message",
+                            "title": "Title for dem",
+                            "message": "Example message",
+                            "state": "Warning"
+                        },
+                        {
+                            "id": 7,
+                            "__component": "shared.title",
+                            "title": "Main Title For Article"
+                        },
+                        {
+                            "id": 2,
+                            "__component": "shared.label",
+                            "label": "This is an label example"
+                        },
+                        {
+                            "id": 2,
+                            "__component": "shared.link",
+                            "label": "Articulo 7",
+                            "url": "/article/7",
+                            "linkIcon": "north_east",
+                            "displayIcon": true
+                        },
+                        {
+                            "id": 2,
+                            "__component": "shared.banner",
+                            "title": "Los Payments mas chidos del condado",
+                            "subtitle": "Los Payments mas chidos del condado",
+                            "description": "Los Payments mas chidos del condado",
+                            "url": "/article/16"
+                        },
+                        {
+                            "id": 2,
+                            "__component": "shared.article-section-title",
+                            "title": "Section here",
+                            "url": "#section"
+                        },
+                        {
+                            "id": 2,
+                            "__component": "shared.product-card",
+                            "title": "Product card ",
+                            "text": "text for this card"
+                        },
+                        {
+                            "id": 2,
+                            "__component": "shared.subtitle",
+                            "subtitle": "THis is a subtitle"
+                        },
+                        {
+                            "id": 5,
+                            "__component": "shared.accordion",
+                            "title": "Accordion number 2"
+                        }
+                    ],
+                    "localizations": {
+                        "data": []
+                    }
+                }
+            },
+            {
+                "id": 19,
+                "attributes": {
+                    "title": "Different FAQ Item",
+                    "createdAt": "2025-01-21T18:43:02.542Z",
+                    "updatedAt": "2025-01-21T18:43:13.786Z",
+                    "publishedAt": "2025-01-21T18:43:13.782Z",
+                    "subtitle": "Paysafe Checkout",
+                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                    "locale": "en",
+                    "time_to_read": "15 mins",
+                    "medias": {
+                        "data": null
+                    },
+                    "topics": {
+                        "data": [
+                            {
+                                "id": 4,
+                                "attributes": {
+                                    "title": "Analytics",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "createdAt": "2025-01-07T07:30:59.897Z",
+                                    "updatedAt": "2025-01-07T07:31:00.700Z",
+                                    "publishedAt": "2025-01-07T07:31:00.698Z",
+                                    "searchable": true,
+                                    "locale": "en",
+                                    "description": null
+                                }
+                            },
+                            {
+                                "id": 2,
+                                "attributes": {
+                                    "title": "My account",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions.",
+                                    "createdAt": "2025-01-07T07:29:06.074Z",
+                                    "updatedAt": "2025-01-07T07:29:07.904Z",
+                                    "publishedAt": "2025-01-07T07:29:07.902Z",
+                                    "searchable": true,
+                                    "locale": "en",
+                                    "description": null
+                                }
+                            },
+                            {
+                                "id": 1,
+                                "attributes": {
+                                    "title": "Getting Started",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions.",
+                                    "createdAt": "2025-01-07T07:23:46.633Z",
+                                    "updatedAt": "2025-01-07T07:24:23.903Z",
+                                    "publishedAt": "2025-01-07T07:24:23.901Z",
+                                    "searchable": true,
+                                    "locale": "en",
+                                    "description": null
+                                }
+                            },
+                            {
+                                "id": 7,
+                                "attributes": {
+                                    "title": "Mock Topic",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions.",
+                                    "createdAt": "2025-01-19T05:06:06.496Z",
+                                    "updatedAt": "2025-01-19T05:06:26.126Z",
+                                    "publishedAt": "2025-01-19T05:06:26.124Z",
+                                    "searchable": true,
+                                    "locale": "en",
+                                    "description": null
+                                }
+                            }
+                        ]
+                    },
+                    "category": {
+                        "data": {
+                            "id": 9,
+                            "attributes": {
+                                "slug": "faqs",
+                                "description": null,
+                                "createdAt": "2025-01-07T07:22:38.128Z",
+                                "updatedAt": "2025-01-20T18:39:19.473Z",
+                                "short_description": "FAQs",
+                                "title": "FAQs",
+                                "publishedAt": "2025-01-07T07:22:50.046Z",
+                                "locale": "en",
+                                "root_category": true
+                            }
+                        }
+                    },
+                    "content_classification": {
+                        "data": {
+                            "id": 1,
+                            "attributes": {
+                                "name": "Public",
+                                "description": null,
+                                "public": true,
+                                "createdAt": "2025-01-07T07:06:07.701Z",
+                                "updatedAt": "2025-01-07T07:06:09.301Z",
+                                "publishedAt": "2025-01-07T07:06:09.297Z",
+                                "slug": "public"
+                            }
+                        }
+                    },
+                    "related_articles": {
+                        "data": [
+                            {
+                                "id": 9,
+                                "attributes": {
+                                    "title": "Embedded Wallets",
+                                    "createdAt": "2025-01-16T21:50:44.982Z",
+                                    "updatedAt": "2025-01-20T15:11:54.647Z",
+                                    "publishedAt": "2025-01-16T21:52:22.503Z",
+                                    "subtitle": "Embedded Wallets",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 13,
+                                "attributes": {
+                                    "title": "New Optic App",
+                                    "createdAt": "2025-01-19T05:11:39.275Z",
+                                    "updatedAt": "2025-01-21T18:42:12.905Z",
+                                    "publishedAt": "2025-01-19T05:11:48.911Z",
+                                    "subtitle": "New Optic App",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 15,
+                                "attributes": {
+                                    "title": "Payments API",
+                                    "createdAt": "2025-01-19T05:12:30.950Z",
+                                    "updatedAt": "2025-01-19T05:12:52.711Z",
+                                    "publishedAt": "2025-01-19T05:12:52.709Z",
+                                    "subtitle": "Payments API Sub",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            }
+                        ]
+                    },
+                    "connected_articles": {
+                        "data": []
+                    },
+                    "category_groups": {
+                        "data": [
+                            {
+                                "id": 2,
+                                "attributes": {
+                                    "title": "Enterprise",
+                                    "description": null,
+                                    "createdAt": "2025-01-07T07:09:49.545Z",
+                                    "updatedAt": "2025-01-07T07:10:20.425Z",
+                                    "publishedAt": "2025-01-07T07:09:50.473Z",
+                                    "locale": "en"
+                                }
+                            },
+                            {
+                                "id": 3,
+                                "attributes": {
+                                    "title": "Partners",
+                                    "description": null,
+                                    "createdAt": "2025-01-07T07:10:09.889Z",
+                                    "updatedAt": "2025-01-07T07:10:10.883Z",
+                                    "publishedAt": "2025-01-07T07:10:10.881Z",
+                                    "locale": "en"
+                                }
+                            },
+                            {
+                                "id": 1,
+                                "attributes": {
+                                    "title": "Small Business",
+                                    "description": null,
+                                    "createdAt": "2025-01-07T07:09:27.975Z",
+                                    "updatedAt": "2025-01-07T07:10:33.570Z",
+                                    "publishedAt": "2025-01-07T07:09:28.779Z",
+                                    "locale": "en"
+                                }
+                            }
+                        ]
+                    },
+                    "page_template": {
+                        "data": {
+                            "id": 2,
+                            "attributes": {
+                                "createdAt": "2025-01-07T09:20:54.152Z",
+                                "updatedAt": "2025-01-21T18:54:15.877Z",
+                                "publishedAt": "2025-01-07T09:20:57.228Z",
+                                "styles": null,
+                                "theme": null,
+                                "name": "Article Template",
+                                "slug": "article-template",
+                                "locale": "en"
+                            }
+                        }
+                    },
+                    "sections": [
+                        {
+                            "id": 14,
+                            "__component": "shared.rich-text",
+                            "content": [
+                                {
+                                    "type": "paragraph",
+                                    "children": [
+                                        {
+                                            "type": "text",
+                                            "text": "In today’s fast-paced world, your customers expect quick and easy ways to make payments. A payment link delivers just that, transforming how you collect payments. No more waiting for checks to arrive, chasing down invoices, or dealing with complicated bank transfers. With just a few clicks, you can offer a professional, secure, and convenient way for your customers to pay you. Whether you’re closing a deal, collecting donations, or just making everyday transactions smoother, a payment link is the perfect solution."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "children": [
+                                        {
+                                            "type": "text",
+                                            "text": "Ready to get started? Log in to your account now and create your first payment link!"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": 9,
+                            "__component": "shared.contextual-message",
+                            "title": "Example contextual",
+                            "message": null,
+                            "state": "Danger"
+                        },
+                        {
+                            "id": 8,
+                            "__component": "shared.title",
+                            "title": "Article 17"
+                        },
+                        {
+                            "id": 6,
+                            "__component": "shared.accordion",
+                            "title": "This is the acordion"
+                        },
+                        {
+                            "id": 10,
+                            "__component": "shared.contextual-message",
+                            "title": "Example for Contextual",
+                            "message": "Message with mock information",
+                            "state": "Positive"
+                        },
+                        {
+                            "id": 11,
+                            "__component": "shared.contextual-message",
+                            "title": "Title for dem",
+                            "message": "Example message",
+                            "state": "Warning"
+                        },
+                        {
+                            "id": 9,
+                            "__component": "shared.title",
+                            "title": "Main Title For Article"
+                        },
+                        {
+                            "id": 3,
+                            "__component": "shared.label",
+                            "label": "This is an label example"
+                        },
+                        {
+                            "id": 3,
+                            "__component": "shared.link",
+                            "label": "Articulo 7",
+                            "url": "/article/7",
+                            "linkIcon": "north_east",
+                            "displayIcon": true
+                        },
+                        {
+                            "id": 3,
+                            "__component": "shared.banner",
+                            "title": "Los Payments mas chidos del condado",
+                            "subtitle": "Los Payments mas chidos del condado",
+                            "description": "Los Payments mas chidos del condado",
+                            "url": "/article/16"
+                        },
+                        {
+                            "id": 3,
+                            "__component": "shared.article-section-title",
+                            "title": "Section here",
+                            "url": "#section"
+                        },
+                        {
+                            "id": 3,
+                            "__component": "shared.product-card",
+                            "title": "Product card ",
+                            "text": "text for this card"
+                        },
+                        {
+                            "id": 3,
+                            "__component": "shared.subtitle",
+                            "subtitle": "THis is a subtitle"
+                        },
+                        {
+                            "id": 7,
+                            "__component": "shared.accordion",
+                            "title": "Accordion number 2"
+                        }
+                    ],
+                    "localizations": {
+                        "data": []
+                    }
+                }
+            },
+            {
+                "id": 20,
+                "attributes": {
+                    "title": "Trending Article Item",
+                    "createdAt": "2025-01-21T18:44:41.789Z",
+                    "updatedAt": "2025-01-21T18:44:53.022Z",
+                    "publishedAt": "2025-01-21T18:44:53.019Z",
+                    "subtitle": "Paysafe Checkout",
+                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                    "locale": "en",
+                    "time_to_read": "15 mins",
+                    "medias": {
+                        "data": null
+                    },
+                    "topics": {
+                        "data": [
+                            {
+                                "id": 4,
+                                "attributes": {
+                                    "title": "Analytics",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "createdAt": "2025-01-07T07:30:59.897Z",
+                                    "updatedAt": "2025-01-07T07:31:00.700Z",
+                                    "publishedAt": "2025-01-07T07:31:00.698Z",
+                                    "searchable": true,
+                                    "locale": "en",
+                                    "description": null
+                                }
+                            },
+                            {
+                                "id": 2,
+                                "attributes": {
+                                    "title": "My account",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions.",
+                                    "createdAt": "2025-01-07T07:29:06.074Z",
+                                    "updatedAt": "2025-01-07T07:29:07.904Z",
+                                    "publishedAt": "2025-01-07T07:29:07.902Z",
+                                    "searchable": true,
+                                    "locale": "en",
+                                    "description": null
+                                }
+                            },
+                            {
+                                "id": 1,
+                                "attributes": {
+                                    "title": "Getting Started",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions.",
+                                    "createdAt": "2025-01-07T07:23:46.633Z",
+                                    "updatedAt": "2025-01-07T07:24:23.903Z",
+                                    "publishedAt": "2025-01-07T07:24:23.901Z",
+                                    "searchable": true,
+                                    "locale": "en",
+                                    "description": null
+                                }
+                            },
+                            {
+                                "id": 7,
+                                "attributes": {
+                                    "title": "Mock Topic",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions.",
+                                    "createdAt": "2025-01-19T05:06:06.496Z",
+                                    "updatedAt": "2025-01-19T05:06:26.126Z",
+                                    "publishedAt": "2025-01-19T05:06:26.124Z",
+                                    "searchable": true,
+                                    "locale": "en",
+                                    "description": null
+                                }
+                            }
+                        ]
+                    },
+                    "category": {
+                        "data": {
+                            "id": 8,
+                            "attributes": {
+                                "slug": "trending-articles",
+                                "description": null,
+                                "createdAt": "2025-01-07T07:19:59.167Z",
+                                "updatedAt": "2025-01-07T07:38:48.614Z",
+                                "short_description": "Trending Articles",
+                                "title": "Trending Articles",
+                                "publishedAt": "2025-01-07T07:20:00.253Z",
+                                "locale": "en",
+                                "root_category": true
+                            }
+                        }
+                    },
+                    "content_classification": {
+                        "data": {
+                            "id": 1,
+                            "attributes": {
+                                "name": "Public",
+                                "description": null,
+                                "public": true,
+                                "createdAt": "2025-01-07T07:06:07.701Z",
+                                "updatedAt": "2025-01-07T07:06:09.301Z",
+                                "publishedAt": "2025-01-07T07:06:09.297Z",
+                                "slug": "public"
+                            }
+                        }
+                    },
+                    "related_articles": {
+                        "data": [
+                            {
+                                "id": 9,
+                                "attributes": {
+                                    "title": "Embedded Wallets",
+                                    "createdAt": "2025-01-16T21:50:44.982Z",
+                                    "updatedAt": "2025-01-20T15:11:54.647Z",
+                                    "publishedAt": "2025-01-16T21:52:22.503Z",
+                                    "subtitle": "Embedded Wallets",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 13,
+                                "attributes": {
+                                    "title": "New Optic App",
+                                    "createdAt": "2025-01-19T05:11:39.275Z",
+                                    "updatedAt": "2025-01-21T18:42:12.905Z",
+                                    "publishedAt": "2025-01-19T05:11:48.911Z",
+                                    "subtitle": "New Optic App",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 15,
+                                "attributes": {
+                                    "title": "Payments API",
+                                    "createdAt": "2025-01-19T05:12:30.950Z",
+                                    "updatedAt": "2025-01-19T05:12:52.711Z",
+                                    "publishedAt": "2025-01-19T05:12:52.709Z",
+                                    "subtitle": "Payments API Sub",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            }
+                        ]
+                    },
+                    "connected_articles": {
+                        "data": []
+                    },
+                    "category_groups": {
+                        "data": [
+                            {
+                                "id": 2,
+                                "attributes": {
+                                    "title": "Enterprise",
+                                    "description": null,
+                                    "createdAt": "2025-01-07T07:09:49.545Z",
+                                    "updatedAt": "2025-01-07T07:10:20.425Z",
+                                    "publishedAt": "2025-01-07T07:09:50.473Z",
+                                    "locale": "en"
+                                }
+                            },
+                            {
+                                "id": 3,
+                                "attributes": {
+                                    "title": "Partners",
+                                    "description": null,
+                                    "createdAt": "2025-01-07T07:10:09.889Z",
+                                    "updatedAt": "2025-01-07T07:10:10.883Z",
+                                    "publishedAt": "2025-01-07T07:10:10.881Z",
+                                    "locale": "en"
+                                }
+                            },
+                            {
+                                "id": 1,
+                                "attributes": {
+                                    "title": "Small Business",
+                                    "description": null,
+                                    "createdAt": "2025-01-07T07:09:27.975Z",
+                                    "updatedAt": "2025-01-07T07:10:33.570Z",
+                                    "publishedAt": "2025-01-07T07:09:28.779Z",
+                                    "locale": "en"
+                                }
+                            }
+                        ]
+                    },
+                    "page_template": {
+                        "data": {
+                            "id": 2,
+                            "attributes": {
+                                "createdAt": "2025-01-07T09:20:54.152Z",
+                                "updatedAt": "2025-01-21T18:54:15.877Z",
+                                "publishedAt": "2025-01-07T09:20:57.228Z",
+                                "styles": null,
+                                "theme": null,
+                                "name": "Article Template",
+                                "slug": "article-template",
+                                "locale": "en"
+                            }
+                        }
+                    },
+                    "sections": [
+                        {
+                            "id": 15,
+                            "__component": "shared.rich-text",
+                            "content": [
+                                {
+                                    "type": "paragraph",
+                                    "children": [
+                                        {
+                                            "type": "text",
+                                            "text": "In today’s fast-paced world, your customers expect quick and easy ways to make payments. A payment link delivers just that, transforming how you collect payments. No more waiting for checks to arrive, chasing down invoices, or dealing with complicated bank transfers. With just a few clicks, you can offer a professional, secure, and convenient way for your customers to pay you. Whether you’re closing a deal, collecting donations, or just making everyday transactions smoother, a payment link is the perfect solution."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "children": [
+                                        {
+                                            "type": "text",
+                                            "text": "Ready to get started? Log in to your account now and create your first payment link!"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": 12,
+                            "__component": "shared.contextual-message",
+                            "title": "Example contextual",
+                            "message": null,
+                            "state": "Danger"
+                        },
+                        {
+                            "id": 10,
+                            "__component": "shared.title",
+                            "title": "Article 17"
+                        },
+                        {
+                            "id": 8,
+                            "__component": "shared.accordion",
+                            "title": "This is the acordion"
+                        },
+                        {
+                            "id": 13,
+                            "__component": "shared.contextual-message",
+                            "title": "Example for Contextual",
+                            "message": "Message with mock information",
+                            "state": "Positive"
+                        },
+                        {
+                            "id": 14,
+                            "__component": "shared.contextual-message",
+                            "title": "Title for dem",
+                            "message": "Example message",
+                            "state": "Warning"
+                        },
+                        {
+                            "id": 11,
+                            "__component": "shared.title",
+                            "title": "Main Title For Article"
+                        },
+                        {
+                            "id": 4,
+                            "__component": "shared.label",
+                            "label": "This is an label example"
+                        },
+                        {
+                            "id": 4,
+                            "__component": "shared.link",
+                            "label": "Articulo 7",
+                            "url": "/article/7",
+                            "linkIcon": "north_east",
+                            "displayIcon": true
+                        },
+                        {
+                            "id": 4,
+                            "__component": "shared.banner",
+                            "title": "Los Payments mas chidos del condado",
+                            "subtitle": "Los Payments mas chidos del condado",
+                            "description": "Los Payments mas chidos del condado",
+                            "url": "/article/16"
+                        },
+                        {
+                            "id": 4,
+                            "__component": "shared.article-section-title",
+                            "title": "Section here",
+                            "url": "#section"
+                        },
+                        {
+                            "id": 4,
+                            "__component": "shared.product-card",
+                            "title": "Product card ",
+                            "text": "text for this card"
+                        },
+                        {
+                            "id": 4,
+                            "__component": "shared.subtitle",
+                            "subtitle": "THis is a subtitle"
+                        },
+                        {
+                            "id": 9,
+                            "__component": "shared.accordion",
+                            "title": "Accordion number 2"
+                        }
+                    ],
+                    "localizations": {
+                        "data": []
+                    }
+                }
+            },
+            {
+                "id": 21,
+                "attributes": {
+                    "title": "Different Trending Article",
+                    "createdAt": "2025-01-21T18:45:00.750Z",
+                    "updatedAt": "2025-01-21T18:45:17.814Z",
+                    "publishedAt": "2025-01-21T18:45:17.812Z",
+                    "subtitle": "Paysafe Checkout",
+                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                    "locale": "en",
+                    "time_to_read": "15 mins",
+                    "medias": {
+                        "data": null
+                    },
+                    "topics": {
+                        "data": [
+                            {
+                                "id": 4,
+                                "attributes": {
+                                    "title": "Analytics",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "createdAt": "2025-01-07T07:30:59.897Z",
+                                    "updatedAt": "2025-01-07T07:31:00.700Z",
+                                    "publishedAt": "2025-01-07T07:31:00.698Z",
+                                    "searchable": true,
+                                    "locale": "en",
+                                    "description": null
+                                }
+                            },
+                            {
+                                "id": 2,
+                                "attributes": {
+                                    "title": "My account",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions.",
+                                    "createdAt": "2025-01-07T07:29:06.074Z",
+                                    "updatedAt": "2025-01-07T07:29:07.904Z",
+                                    "publishedAt": "2025-01-07T07:29:07.902Z",
+                                    "searchable": true,
+                                    "locale": "en",
+                                    "description": null
+                                }
+                            },
+                            {
+                                "id": 1,
+                                "attributes": {
+                                    "title": "Getting Started",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions.",
+                                    "createdAt": "2025-01-07T07:23:46.633Z",
+                                    "updatedAt": "2025-01-07T07:24:23.903Z",
+                                    "publishedAt": "2025-01-07T07:24:23.901Z",
+                                    "searchable": true,
+                                    "locale": "en",
+                                    "description": null
+                                }
+                            },
+                            {
+                                "id": 7,
+                                "attributes": {
+                                    "title": "Mock Topic",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions.",
+                                    "createdAt": "2025-01-19T05:06:06.496Z",
+                                    "updatedAt": "2025-01-19T05:06:26.126Z",
+                                    "publishedAt": "2025-01-19T05:06:26.124Z",
+                                    "searchable": true,
+                                    "locale": "en",
+                                    "description": null
+                                }
+                            }
+                        ]
+                    },
+                    "category": {
+                        "data": {
+                            "id": 8,
+                            "attributes": {
+                                "slug": "trending-articles",
+                                "description": null,
+                                "createdAt": "2025-01-07T07:19:59.167Z",
+                                "updatedAt": "2025-01-07T07:38:48.614Z",
+                                "short_description": "Trending Articles",
+                                "title": "Trending Articles",
+                                "publishedAt": "2025-01-07T07:20:00.253Z",
+                                "locale": "en",
+                                "root_category": true
+                            }
+                        }
+                    },
+                    "content_classification": {
+                        "data": {
+                            "id": 1,
+                            "attributes": {
+                                "name": "Public",
+                                "description": null,
+                                "public": true,
+                                "createdAt": "2025-01-07T07:06:07.701Z",
+                                "updatedAt": "2025-01-07T07:06:09.301Z",
+                                "publishedAt": "2025-01-07T07:06:09.297Z",
+                                "slug": "public"
+                            }
+                        }
+                    },
+                    "related_articles": {
+                        "data": [
+                            {
+                                "id": 9,
+                                "attributes": {
+                                    "title": "Embedded Wallets",
+                                    "createdAt": "2025-01-16T21:50:44.982Z",
+                                    "updatedAt": "2025-01-20T15:11:54.647Z",
+                                    "publishedAt": "2025-01-16T21:52:22.503Z",
+                                    "subtitle": "Embedded Wallets",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 13,
+                                "attributes": {
+                                    "title": "New Optic App",
+                                    "createdAt": "2025-01-19T05:11:39.275Z",
+                                    "updatedAt": "2025-01-21T18:42:12.905Z",
+                                    "publishedAt": "2025-01-19T05:11:48.911Z",
+                                    "subtitle": "New Optic App",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 15,
+                                "attributes": {
+                                    "title": "Payments API",
+                                    "createdAt": "2025-01-19T05:12:30.950Z",
+                                    "updatedAt": "2025-01-19T05:12:52.711Z",
+                                    "publishedAt": "2025-01-19T05:12:52.709Z",
+                                    "subtitle": "Payments API Sub",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            }
+                        ]
+                    },
+                    "connected_articles": {
+                        "data": []
+                    },
+                    "category_groups": {
+                        "data": [
+                            {
+                                "id": 2,
+                                "attributes": {
+                                    "title": "Enterprise",
+                                    "description": null,
+                                    "createdAt": "2025-01-07T07:09:49.545Z",
+                                    "updatedAt": "2025-01-07T07:10:20.425Z",
+                                    "publishedAt": "2025-01-07T07:09:50.473Z",
+                                    "locale": "en"
+                                }
+                            },
+                            {
+                                "id": 3,
+                                "attributes": {
+                                    "title": "Partners",
+                                    "description": null,
+                                    "createdAt": "2025-01-07T07:10:09.889Z",
+                                    "updatedAt": "2025-01-07T07:10:10.883Z",
+                                    "publishedAt": "2025-01-07T07:10:10.881Z",
+                                    "locale": "en"
+                                }
+                            },
+                            {
+                                "id": 1,
+                                "attributes": {
+                                    "title": "Small Business",
+                                    "description": null,
+                                    "createdAt": "2025-01-07T07:09:27.975Z",
+                                    "updatedAt": "2025-01-07T07:10:33.570Z",
+                                    "publishedAt": "2025-01-07T07:09:28.779Z",
+                                    "locale": "en"
+                                }
+                            }
+                        ]
+                    },
+                    "page_template": {
+                        "data": {
+                            "id": 2,
+                            "attributes": {
+                                "createdAt": "2025-01-07T09:20:54.152Z",
+                                "updatedAt": "2025-01-21T18:54:15.877Z",
+                                "publishedAt": "2025-01-07T09:20:57.228Z",
+                                "styles": null,
+                                "theme": null,
+                                "name": "Article Template",
+                                "slug": "article-template",
+                                "locale": "en"
+                            }
+                        }
+                    },
+                    "sections": [
+                        {
+                            "id": 16,
+                            "__component": "shared.rich-text",
+                            "content": [
+                                {
+                                    "type": "paragraph",
+                                    "children": [
+                                        {
+                                            "type": "text",
+                                            "text": "In today’s fast-paced world, your customers expect quick and easy ways to make payments. A payment link delivers just that, transforming how you collect payments. No more waiting for checks to arrive, chasing down invoices, or dealing with complicated bank transfers. With just a few clicks, you can offer a professional, secure, and convenient way for your customers to pay you. Whether you’re closing a deal, collecting donations, or just making everyday transactions smoother, a payment link is the perfect solution."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "children": [
+                                        {
+                                            "type": "text",
+                                            "text": "Ready to get started? Log in to your account now and create your first payment link!"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": 15,
+                            "__component": "shared.contextual-message",
+                            "title": "Example contextual",
+                            "message": null,
+                            "state": "Danger"
+                        },
+                        {
+                            "id": 12,
+                            "__component": "shared.title",
+                            "title": "Article 17"
+                        },
+                        {
+                            "id": 10,
+                            "__component": "shared.accordion",
+                            "title": "This is the acordion"
+                        },
+                        {
+                            "id": 16,
+                            "__component": "shared.contextual-message",
+                            "title": "Example for Contextual",
+                            "message": "Message with mock information",
+                            "state": "Positive"
+                        },
+                        {
+                            "id": 17,
+                            "__component": "shared.contextual-message",
+                            "title": "Title for dem",
+                            "message": "Example message",
+                            "state": "Warning"
+                        },
+                        {
+                            "id": 13,
+                            "__component": "shared.title",
+                            "title": "Main Title For Article"
+                        },
+                        {
+                            "id": 5,
+                            "__component": "shared.label",
+                            "label": "This is an label example"
+                        },
+                        {
+                            "id": 5,
+                            "__component": "shared.link",
+                            "label": "Articulo 7",
+                            "url": "/article/7",
+                            "linkIcon": "north_east",
+                            "displayIcon": true
+                        },
+                        {
+                            "id": 5,
+                            "__component": "shared.banner",
+                            "title": "Los Payments mas chidos del condado",
+                            "subtitle": "Los Payments mas chidos del condado",
+                            "description": "Los Payments mas chidos del condado",
+                            "url": "/article/16"
+                        },
+                        {
+                            "id": 5,
+                            "__component": "shared.article-section-title",
+                            "title": "Section here",
+                            "url": "#section"
+                        },
+                        {
+                            "id": 5,
+                            "__component": "shared.product-card",
+                            "title": "Product card ",
+                            "text": "text for this card"
+                        },
+                        {
+                            "id": 5,
+                            "__component": "shared.subtitle",
+                            "subtitle": "THis is a subtitle"
+                        },
+                        {
+                            "id": 11,
+                            "__component": "shared.accordion",
+                            "title": "Accordion number 2"
                         }
                     ],
                     "localizations": {
@@ -4632,7 +6736,7 @@ export class DataService {
                 "page": 1,
                 "pageSize": 25,
                 "pageCount": 1,
-                "total": 12
+                "total": 16
             }
         }
     },
@@ -4697,7 +6801,7 @@ export class DataService {
                                     "slug": "faqs",
                                     "description": null,
                                     "createdAt": "2025-01-07T07:22:38.128Z",
-                                    "updatedAt": "2025-01-07T07:38:22.570Z",
+                                    "updatedAt": "2025-01-20T18:39:19.473Z",
                                     "short_description": "FAQs",
                                     "title": "FAQs",
                                     "publishedAt": "2025-01-07T07:22:50.046Z",
@@ -4717,6 +6821,20 @@ export class DataService {
                                     "publishedAt": "2025-01-07T12:30:06.701Z",
                                     "locale": "en",
                                     "root_category": true
+                                }
+                            },
+                            {
+                                "id": 11,
+                                "attributes": {
+                                    "slug": "paysafe-card",
+                                    "description": null,
+                                    "createdAt": "2025-01-20T18:41:24.576Z",
+                                    "updatedAt": "2025-01-20T18:41:25.299Z",
+                                    "short_description": "Paysafe Card Data",
+                                    "title": "Paysafe Card",
+                                    "publishedAt": "2025-01-20T18:41:25.298Z",
+                                    "locale": "en",
+                                    "root_category": null
                                 }
                             }
                         ]
@@ -4742,7 +6860,7 @@ export class DataService {
                                 "attributes": {
                                     "title": "Payment Link",
                                     "createdAt": "2025-01-07T16:08:46.699Z",
-                                    "updatedAt": "2025-01-07T16:48:28.428Z",
+                                    "updatedAt": "2025-01-20T18:41:51.031Z",
                                     "publishedAt": "2025-01-07T16:08:49.482Z",
                                     "subtitle": "Payments in a matter of seconds",
                                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
@@ -4755,7 +6873,7 @@ export class DataService {
                                 "attributes": {
                                     "title": "Payments API",
                                     "createdAt": "2025-01-16T18:55:28.251Z",
-                                    "updatedAt": "2025-01-19T05:10:28.286Z",
+                                    "updatedAt": "2025-01-20T22:52:52.843Z",
                                     "publishedAt": "2025-01-16T19:00:41.980Z",
                                     "subtitle": "Payments API Sub",
                                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
@@ -4833,7 +6951,7 @@ export class DataService {
                                 "attributes": {
                                     "title": "New Optic App",
                                     "createdAt": "2025-01-19T05:11:39.275Z",
-                                    "updatedAt": "2025-01-19T05:11:48.916Z",
+                                    "updatedAt": "2025-01-21T18:42:12.905Z",
                                     "publishedAt": "2025-01-19T05:11:48.911Z",
                                     "subtitle": "New Optic App",
                                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
@@ -4885,8 +7003,60 @@ export class DataService {
                                 "attributes": {
                                     "title": "Different Article",
                                     "createdAt": "2025-01-19T18:30:40.297Z",
-                                    "updatedAt": "2025-01-20T14:57:03.088Z",
+                                    "updatedAt": "2025-01-20T22:31:11.930Z",
                                     "publishedAt": "2025-01-19T18:31:50.655Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 18,
+                                "attributes": {
+                                    "title": "FAQ Article Item",
+                                    "createdAt": "2025-01-21T18:42:20.700Z",
+                                    "updatedAt": "2025-01-21T18:42:50.750Z",
+                                    "publishedAt": "2025-01-21T18:42:50.747Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 19,
+                                "attributes": {
+                                    "title": "Different FAQ Item",
+                                    "createdAt": "2025-01-21T18:43:02.542Z",
+                                    "updatedAt": "2025-01-21T18:43:13.786Z",
+                                    "publishedAt": "2025-01-21T18:43:13.782Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 20,
+                                "attributes": {
+                                    "title": "Trending Article Item",
+                                    "createdAt": "2025-01-21T18:44:41.789Z",
+                                    "updatedAt": "2025-01-21T18:44:53.022Z",
+                                    "publishedAt": "2025-01-21T18:44:53.019Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 21,
+                                "attributes": {
+                                    "title": "Different Trending Article",
+                                    "createdAt": "2025-01-21T18:45:00.750Z",
+                                    "updatedAt": "2025-01-21T18:45:17.814Z",
+                                    "publishedAt": "2025-01-21T18:45:17.812Z",
                                     "subtitle": "Paysafe Checkout",
                                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
                                     "locale": "en",
@@ -4999,7 +7169,7 @@ export class DataService {
                                     "slug": "faqs",
                                     "description": null,
                                     "createdAt": "2025-01-07T07:22:38.128Z",
-                                    "updatedAt": "2025-01-07T07:38:22.570Z",
+                                    "updatedAt": "2025-01-20T18:39:19.473Z",
                                     "short_description": "FAQs",
                                     "title": "FAQs",
                                     "publishedAt": "2025-01-07T07:22:50.046Z",
@@ -5019,6 +7189,20 @@ export class DataService {
                                     "publishedAt": "2025-01-07T12:30:06.701Z",
                                     "locale": "en",
                                     "root_category": true
+                                }
+                            },
+                            {
+                                "id": 11,
+                                "attributes": {
+                                    "slug": "paysafe-card",
+                                    "description": null,
+                                    "createdAt": "2025-01-20T18:41:24.576Z",
+                                    "updatedAt": "2025-01-20T18:41:25.299Z",
+                                    "short_description": "Paysafe Card Data",
+                                    "title": "Paysafe Card",
+                                    "publishedAt": "2025-01-20T18:41:25.298Z",
+                                    "locale": "en",
+                                    "root_category": null
                                 }
                             }
                         ]
@@ -5044,7 +7228,7 @@ export class DataService {
                                 "attributes": {
                                     "title": "Payment Link",
                                     "createdAt": "2025-01-07T16:08:46.699Z",
-                                    "updatedAt": "2025-01-07T16:48:28.428Z",
+                                    "updatedAt": "2025-01-20T18:41:51.031Z",
                                     "publishedAt": "2025-01-07T16:08:49.482Z",
                                     "subtitle": "Payments in a matter of seconds",
                                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
@@ -5057,7 +7241,7 @@ export class DataService {
                                 "attributes": {
                                     "title": "Payments API",
                                     "createdAt": "2025-01-16T18:55:28.251Z",
-                                    "updatedAt": "2025-01-19T05:10:28.286Z",
+                                    "updatedAt": "2025-01-20T22:52:52.843Z",
                                     "publishedAt": "2025-01-16T19:00:41.980Z",
                                     "subtitle": "Payments API Sub",
                                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
@@ -5135,7 +7319,7 @@ export class DataService {
                                 "attributes": {
                                     "title": "New Optic App",
                                     "createdAt": "2025-01-19T05:11:39.275Z",
-                                    "updatedAt": "2025-01-19T05:11:48.916Z",
+                                    "updatedAt": "2025-01-21T18:42:12.905Z",
                                     "publishedAt": "2025-01-19T05:11:48.911Z",
                                     "subtitle": "New Optic App",
                                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
@@ -5187,8 +7371,60 @@ export class DataService {
                                 "attributes": {
                                     "title": "Different Article",
                                     "createdAt": "2025-01-19T18:30:40.297Z",
-                                    "updatedAt": "2025-01-20T14:57:03.088Z",
+                                    "updatedAt": "2025-01-20T22:31:11.930Z",
                                     "publishedAt": "2025-01-19T18:31:50.655Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 18,
+                                "attributes": {
+                                    "title": "FAQ Article Item",
+                                    "createdAt": "2025-01-21T18:42:20.700Z",
+                                    "updatedAt": "2025-01-21T18:42:50.750Z",
+                                    "publishedAt": "2025-01-21T18:42:50.747Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 19,
+                                "attributes": {
+                                    "title": "Different FAQ Item",
+                                    "createdAt": "2025-01-21T18:43:02.542Z",
+                                    "updatedAt": "2025-01-21T18:43:13.786Z",
+                                    "publishedAt": "2025-01-21T18:43:13.782Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 20,
+                                "attributes": {
+                                    "title": "Trending Article Item",
+                                    "createdAt": "2025-01-21T18:44:41.789Z",
+                                    "updatedAt": "2025-01-21T18:44:53.022Z",
+                                    "publishedAt": "2025-01-21T18:44:53.019Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 21,
+                                "attributes": {
+                                    "title": "Different Trending Article",
+                                    "createdAt": "2025-01-21T18:45:00.750Z",
+                                    "updatedAt": "2025-01-21T18:45:17.814Z",
+                                    "publishedAt": "2025-01-21T18:45:17.812Z",
                                     "subtitle": "Paysafe Checkout",
                                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
                                     "locale": "en",
@@ -5301,7 +7537,7 @@ export class DataService {
                                     "slug": "faqs",
                                     "description": null,
                                     "createdAt": "2025-01-07T07:22:38.128Z",
-                                    "updatedAt": "2025-01-07T07:38:22.570Z",
+                                    "updatedAt": "2025-01-20T18:39:19.473Z",
                                     "short_description": "FAQs",
                                     "title": "FAQs",
                                     "publishedAt": "2025-01-07T07:22:50.046Z",
@@ -5321,6 +7557,20 @@ export class DataService {
                                     "publishedAt": "2025-01-07T12:30:06.701Z",
                                     "locale": "en",
                                     "root_category": true
+                                }
+                            },
+                            {
+                                "id": 11,
+                                "attributes": {
+                                    "slug": "paysafe-card",
+                                    "description": null,
+                                    "createdAt": "2025-01-20T18:41:24.576Z",
+                                    "updatedAt": "2025-01-20T18:41:25.299Z",
+                                    "short_description": "Paysafe Card Data",
+                                    "title": "Paysafe Card",
+                                    "publishedAt": "2025-01-20T18:41:25.298Z",
+                                    "locale": "en",
+                                    "root_category": null
                                 }
                             }
                         ]
@@ -5346,7 +7596,7 @@ export class DataService {
                                 "attributes": {
                                     "title": "Payment Link",
                                     "createdAt": "2025-01-07T16:08:46.699Z",
-                                    "updatedAt": "2025-01-07T16:48:28.428Z",
+                                    "updatedAt": "2025-01-20T18:41:51.031Z",
                                     "publishedAt": "2025-01-07T16:08:49.482Z",
                                     "subtitle": "Payments in a matter of seconds",
                                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
@@ -5359,7 +7609,7 @@ export class DataService {
                                 "attributes": {
                                     "title": "Payments API",
                                     "createdAt": "2025-01-16T18:55:28.251Z",
-                                    "updatedAt": "2025-01-19T05:10:28.286Z",
+                                    "updatedAt": "2025-01-20T22:52:52.843Z",
                                     "publishedAt": "2025-01-16T19:00:41.980Z",
                                     "subtitle": "Payments API Sub",
                                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
@@ -5437,7 +7687,7 @@ export class DataService {
                                 "attributes": {
                                     "title": "New Optic App",
                                     "createdAt": "2025-01-19T05:11:39.275Z",
-                                    "updatedAt": "2025-01-19T05:11:48.916Z",
+                                    "updatedAt": "2025-01-21T18:42:12.905Z",
                                     "publishedAt": "2025-01-19T05:11:48.911Z",
                                     "subtitle": "New Optic App",
                                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
@@ -5489,8 +7739,60 @@ export class DataService {
                                 "attributes": {
                                     "title": "Different Article",
                                     "createdAt": "2025-01-19T18:30:40.297Z",
-                                    "updatedAt": "2025-01-20T14:57:03.088Z",
+                                    "updatedAt": "2025-01-20T22:31:11.930Z",
                                     "publishedAt": "2025-01-19T18:31:50.655Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 18,
+                                "attributes": {
+                                    "title": "FAQ Article Item",
+                                    "createdAt": "2025-01-21T18:42:20.700Z",
+                                    "updatedAt": "2025-01-21T18:42:50.750Z",
+                                    "publishedAt": "2025-01-21T18:42:50.747Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 19,
+                                "attributes": {
+                                    "title": "Different FAQ Item",
+                                    "createdAt": "2025-01-21T18:43:02.542Z",
+                                    "updatedAt": "2025-01-21T18:43:13.786Z",
+                                    "publishedAt": "2025-01-21T18:43:13.782Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 20,
+                                "attributes": {
+                                    "title": "Trending Article Item",
+                                    "createdAt": "2025-01-21T18:44:41.789Z",
+                                    "updatedAt": "2025-01-21T18:44:53.022Z",
+                                    "publishedAt": "2025-01-21T18:44:53.019Z",
+                                    "subtitle": "Paysafe Checkout",
+                                    "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
+                                    "locale": "en",
+                                    "time_to_read": "15 mins"
+                                }
+                            },
+                            {
+                                "id": 21,
+                                "attributes": {
+                                    "title": "Different Trending Article",
+                                    "createdAt": "2025-01-21T18:45:00.750Z",
+                                    "updatedAt": "2025-01-21T18:45:17.814Z",
+                                    "publishedAt": "2025-01-21T18:45:17.812Z",
                                     "subtitle": "Paysafe Checkout",
                                     "short_description": "We give ambitious businesses their launchpad through safe and secure online payment solutions",
                                     "locale": "en",
