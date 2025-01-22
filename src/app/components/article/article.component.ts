@@ -23,6 +23,7 @@ import { ArticleSectionTitleComponent } from '../shared/article-section-title/ar
 import { ProductsContainerComponent } from '../shared/card/products-container/products-container.component';
 import { VideoPlayerComponent } from '../shared/video-player/video-player.component';
 import { RichTextComponent } from '../shared/rich-text/rich-text.component';
+import { ModalComponent } from '../shared/modal/modal.component';
 
 
 @Component({
@@ -40,6 +41,8 @@ export class ArticleComponent {
   @ViewChild('dynamicContainer', { read: ViewContainerRef })
   dynamicContainer!: ViewContainerRef;
   private componentRefs: ComponentRef<any>[] = [];
+  private templateData: any = {};
+  sidebarData: any;
 
   constructor(private route: ActivatedRoute, private router: Router) { }
 
@@ -55,6 +58,7 @@ export class ArticleComponent {
     this.componentRefs = [];
     this.dataService.getArticlesTemplate(this.articleId).subscribe({
       next: (data: any) => {
+        this.templateData = data;
         const sectionList = data?.data?.attributes?.sections || [];
         sectionList.forEach((section: any) => {
           switch (section.__component) {
@@ -97,9 +101,14 @@ export class ArticleComponent {
             case 'shared.video':
               this.createComponent(section, VideoPlayerComponent);
               break;
+            case 'shared.modal':
+              this.createComponent(section, ModalComponent);
+              break;
             // Add cases for other components as needed
           }
         });
+
+        this.sidebarData = this.renderSidebar();
       },
       error: (error) => {
         console.error('Error fetching article template:', error);
@@ -107,6 +116,23 @@ export class ArticleComponent {
         this.router.navigate(['/article-not-found']);
       },
     });
+
+  }
+
+  private renderSidebar() {
+    const sidebarTemplate = this.templateData?.data?.attributes?.page_template?.data?.attributes?.sidebar;
+    const sections = sidebarTemplate.sidebar_sections.map((section: any) => {
+      const sectionObj: any = { title: section.title };
+      sectionObj["sections"] = section.categories.data.map((category: any) => {
+        const itemObj: any = { title: category.attributes.title, iconUrl: this.resourcesUrl + category.attributes.icon.data.attributes.url }
+        itemObj["menuItems"] = category.attributes.articles.data.map((article: any) => {
+          return { title: article.attributes.title, url: "/article/" + article.id }
+        });
+        return itemObj
+      })
+      return sectionObj;
+    });
+    return sections;
   }
 
   private setComponentData(section: any, componentRef: any) {
@@ -128,6 +154,9 @@ export class ArticleComponent {
       case "shared.image":
       case "shared.product-card":
         componentRef.instance["src"] = this.resourcesUrl + section.image?.data?.attributes?.url;
+        break;
+      case "shared.modal":
+        componentRef.instance["content"] = section.content.map((currentItem: any) => { return currentItem.children[0].text }).join(" ")
         break;
       case "shared.table":
         const rows = section.rows;

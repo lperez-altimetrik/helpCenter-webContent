@@ -77,6 +77,10 @@
       border: none;
       cursor: pointer;
 
+      span {
+        width: fit-content;
+      }
+
       .arrow-outward-icon {
         transform: scale(0.66);
       }
