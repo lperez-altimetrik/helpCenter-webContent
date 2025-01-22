@@ -45,6 +45,9 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
   private componentRefs: ComponentRef<any>[] = [];
   private componentListRefs: ComponentRef<any>[] = [];
 
+  public contactUsComponent: any;
+  public footerComponent: any;
+
   async ngAfterViewInit() {
     if (this.dynamicContainer) {
       this.renderSections();
@@ -151,6 +154,11 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
          
         }
       });
+
+      this.contactUsComponent = data?.template?.data?.attributes?.page_template?.data?.attributes?.contact_us;
+      
+      this.footerComponent = data?.template?.data?.attributes?.page_template?.data?.attributes?.footer_section;
+   
     });
 
   }

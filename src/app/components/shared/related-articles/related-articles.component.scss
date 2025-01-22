@@ -1,5 +1,9 @@
 @import "./../../../../styles/mixins.scss";
 
+:host {
+  width: 100%;
+}
+
 .related-articles-container {
   display: inline-flex;
   flex-direction: column;
@@ -9,8 +13,8 @@
   padding: var(--spacing-9) 27px;
   border-radius: var(--spacing-3);
   background: var(--hc-color-bg-primary);
-
-    
+  width: 100%;
+  box-sizing: border-box;
 
   .related-title-container {
     display: flex;

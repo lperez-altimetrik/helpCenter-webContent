@@ -8,8 +8,15 @@
     </div>
 
     <div class="list-container">
-      <app-contact-us style="width: 100%"></app-contact-us>
+      <app-contact-us
+        style="width: 100%"
+        [buttonText]="contactUsComponent?.title"
+        [linkLabel]="contactUsComponent?.subtitle"
+      ></app-contact-us>
     </div>
   </div>
-  <app-footer></app-footer>
+  <app-footer
+    [links]="footerComponent?.footer_links"
+    [disclaimer]="footerComponent?.copyright[0]?.children[0].text"
+  ></app-footer>
 </div>
