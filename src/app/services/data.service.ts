@@ -15,11 +15,11 @@ export class DataService {
      * Replace the mock data with a real HTTP call in production.
      */
     getSectionList(): Observable<any> {
-        // const headers = new HttpHeaders({
-        //     'User-Roles': 'ADMIN',
-        //     'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtb2NrVXNlcklkIiwicm9sZXMiOlsiVVNFUiJdLCJleHAiOjE3NjkwNTkyMDB9.GSfFu2Km1nDvv6rxkhA88LfjPrnfMo_SdW2dUiEpicY',
-        // });
-        // return this.http.get(`${this.baseUrl}/landing-page`, { headers });
+        const headers = new HttpHeaders({
+            'User-Roles': 'ADMIN',
+        });
+        return this.http.get(`${this.baseUrl}/landing-page`, { headers });
+
 
         const mockJsonContract ={
     "template": {
@@ -7868,8 +7868,7 @@ export class DataService {
     getArticlesTemplate(articleId: any): Observable<any> {
 
         const headers = new HttpHeaders({
-            'User-Roles': 'ADMIN',
-            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtb2NrVXNlcklkIiwicm9sZXMiOlsiVVNFUiJdLCJleHAiOjE3NjkwNTkyMDB9.GSfFu2Km1nDvv6rxkhA88LfjPrnfMo_SdW2dUiEpicY',
+            'User-Roles': 'ADMIN'
         });
         return this.http.get(`${this.baseUrl}/articles/${articleId}`, { headers });
 

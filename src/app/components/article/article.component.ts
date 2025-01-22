@@ -24,7 +24,7 @@ import { ProductsContainerComponent } from '../shared/card/products-container/pr
 import { VideoPlayerComponent } from '../shared/video-player/video-player.component';
 import { RichTextComponent } from '../shared/rich-text/rich-text.component';
 import { ModalComponent } from '../shared/modal/modal.component';
-
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-article',
@@ -42,7 +42,12 @@ export class ArticleComponent {
   dynamicContainer!: ViewContainerRef;
   private componentRefs: ComponentRef<any>[] = [];
   private templateData: any = {};
+
+  //Sidebar data
   sidebarData: any;
+  businessOptions: any;
+  selectedOptionSidebar: any = "";
+  menuSections: any = [];
 
   constructor(private route: ActivatedRoute, private router: Router) { }
 
@@ -108,7 +113,7 @@ export class ArticleComponent {
           }
         });
 
-        this.sidebarData = this.renderSidebar();
+        this.renderSidebar();
       },
       error: (error) => {
         console.error('Error fetching article template:', error);
@@ -120,19 +125,34 @@ export class ArticleComponent {
   }
 
   private renderSidebar() {
-    const sidebarTemplate = this.templateData?.data?.attributes?.page_template?.data?.attributes?.sidebar;
-    const sections = sidebarTemplate.sidebar_sections.map((section: any) => {
-      const sectionObj: any = { title: section.title };
-      sectionObj["sections"] = section.categories.data.map((category: any) => {
-        const itemObj: any = { title: category.attributes.title, iconUrl: this.resourcesUrl + category.attributes.icon.data.attributes.url }
-        itemObj["menuItems"] = category.attributes.articles.data.map((article: any) => {
-          return { title: article.attributes.title, url: "/article/" + article.id }
-        });
-        return itemObj
-      })
-      return sectionObj;
-    });
-    return sections;
+    const sidebarTemplate = _.get(this.templateData, "data.attributes.page_template.data.attributes.sidebar", {});
+    const businessOptionsObj: any = _.get(sidebarTemplate, "category_selector.category_groups.data", [])
+      .map((categoryGroup: any) => {
+        return { "option": _.get(categoryGroup, "attributes.title") };
+      });
+    const businessOptions = businessOptionsObj.map((BO: any) => BO.option);
+    const sectionsBO = _.mapValues(_.keyBy(businessOptions), () => ({}));
+
+    for (const optionBO of businessOptions) {
+      const sections = sidebarTemplate.sidebar_sections.map((section: any) => {
+        const sectionObj: any = { title: section.title };
+        sectionObj["sections"] = section.categories.data.map((category: any) => {
+          const itemObj: any = { title: _.get(category, "attributes.title"), iconUrl: this.resourcesUrl + _.get(category, "attributes.icon.data.attributes.url") }
+          const filteredItems: any = _.get(category, "attributes.articles.data", []).filter((article: any) => {
+            return _.get(article, "attributes.category_groups.data", []).find((categoryGroup: any) => optionBO == _.get(categoryGroup, "attributes.title", ""))
+          });
+          itemObj["menuItems"] = filteredItems.map((article: any) => {
+            return { title: article.attributes.title, url: "/article/" + article.id }
+          });
+          return itemObj
+        })
+        return sectionObj;
+      });
+      sectionsBO[optionBO] = sections;
+    }
+    [this.sidebarData, this.businessOptions] = [sectionsBO, businessOptionsObj]
+    this.selectedOptionSidebar = _.get(this.businessOptions, "0.option", "");
+    this.menuSections = sectionsBO[this.selectedOptionSidebar];
   }
 
   private setComponentData(section: any, componentRef: any) {
