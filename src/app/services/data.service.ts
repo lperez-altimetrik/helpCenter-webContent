@@ -17,7 +17,6 @@ export class DataService {
     getSectionList(): Observable<any> {
         const headers = new HttpHeaders({
             'User-Roles': 'ADMIN',
-            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtb2NrVXNlcklkIiwicm9sZXMiOlsiVVNFUiJdLCJleHAiOjE3NjkwNTkyMDB9.GSfFu2Km1nDvv6rxkhA88LfjPrnfMo_SdW2dUiEpicY',
         });
         return this.http.get(`${this.baseUrl}/landing-page`, { headers });
 
