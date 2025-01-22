@@ -17,6 +17,6 @@
   </div>
   <app-footer
     [links]="footerComponent?.footer_links"
-    [disclaimer]="footerComponent?.copyright[0]?.children[0].text"
+    [disclaimer]="getFooterDisclaimer()"
   ></app-footer>
 </div>

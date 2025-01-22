@@ -163,6 +163,17 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
 
   }
 
+  getFooterDisclaimer() {
+    try {
+      if (this.footerComponent?.copyright[0]?.children[0].text) {
+        return this.footerComponent?.copyright[0]?.children[0].text;
+      }
+      return undefined;
+    } catch(e){
+      return undefined;
+    }
+  }
+
   logout(): void {
     this.authService.logout();
     this.router.navigate(['/login']);
