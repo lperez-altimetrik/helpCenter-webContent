@@ -7,7 +7,6 @@ import {
   ViewContainerRef,
 } from '@angular/core';
 import { inject } from '@angular/core';
-import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
 import {
@@ -16,6 +15,7 @@ import {
 } from '@angular/material/chips';
 import { CarouselComponent } from '../shared/carousel/carousel.component';
 import { DataService } from 'app/services/data.service';
+import { NavigateService } from 'app/services/navigate.service';
 import { TopicsContainerComponent } from '../shared/card/topics-container/topics-container.component';
 import { NewsContainerComponent } from '../shared/card/news-container/news-container.component';
 import { ProductsContainerComponent } from '../shared/card/products-container/products-container.component';
@@ -35,7 +35,7 @@ import { RelatedArticlesComponent } from "../shared/related-articles/related-art
 })
 export class DashboardComponent implements AfterViewInit, OnDestroy {
   private authService = inject(AuthService);
-  private router = inject(Router);
+  private navigateService = inject(NavigateService);
   private dataService = inject(DataService);
 
   @ViewChild('dynamicContainer', { read: ViewContainerRef })
@@ -109,7 +109,7 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
           carouselRef.changeDetectorRef.detectChanges();
         }
         if (section.display_component === 'list') {
-            // Fetch topics from the service
+          // Fetch topics from the service
           // Create CarouselComponent
           const listRef = this.listContainer.createComponent(RelatedArticlesComponent);
           const categories = data?.categories?.data || [];
@@ -117,30 +117,30 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
 
           switch (section.title) {
             case 'Trending Articles': {
-               
-          const category = categories.find((item: any) => item.attributes.slug == "trending-articles");
 
-          listRef.instance.title = section.title;
-          listRef.instance.relatedLinks = category.attributes.articles.data.map((topic: any) => ({
+              const category = categories.find((item: any) => item.attributes.slug == "trending-articles");
+
+              listRef.instance.title = section.title;
+              listRef.instance.relatedLinks = category.attributes.articles.data.map((topic: any) => ({
                 title: topic?.attributes?.title,
               }));
-          
 
-            this.componentListRefs.push(listRef);
+
+              this.componentListRefs.push(listRef);
 
               // Trigger change detection
               listRef.changeDetectorRef.detectChanges();
               break;
             }
-             case 'FAQs': {
-               
+            case 'FAQs': {
+
               const category = categories.find((item: any) => item.attributes.slug == "faqs");
 
               listRef.instance.title = section.title;
               listRef.instance.relatedLinks = category.attributes.articles.data.map((topic: any) => ({
-                    title: topic?.attributes?.title,
-                  }));
-              
+                title: topic?.attributes?.title,
+              }));
+
               this.componentListRefs.push(listRef);
 
               // Trigger change detection
@@ -148,7 +148,7 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
               break;
             }
           }
-         
+
         }
       });
     });
@@ -157,7 +157,7 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
 
   logout(): void {
     this.authService.logout();
-    this.router.navigate(['/login']);
+    this.navigateService.navigateTo('/login');
   }
 
   ngOnDestroy(): void {
