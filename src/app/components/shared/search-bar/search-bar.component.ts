@@ -15,8 +15,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClient } from '@angular/common/http';
 import { isPlatformBrowser } from '@angular/common';
-import { Router } from '@angular/router';
-
 import { AfterViewInit, HostListener } from '@angular/core';
 
 import { MatAutocompleteTrigger } from '@angular/material/autocomplete';
@@ -56,10 +54,11 @@ export class SearchBarComponent implements OnChanges, AfterViewInit {
   autocomplete: MatAutocompleteTrigger | undefined;
   filteredOptions: any[] = [];
   searchControl = new FormControl('');
-  private router = inject(Router);
 
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object, private http: HttpClient, private router: Router) {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, 
+  private http: HttpClient, 
+  private router: Router) {
     this.autocomplete = undefined;
   }
 
