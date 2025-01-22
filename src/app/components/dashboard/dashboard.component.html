@@ -4,18 +4,19 @@
   <div class="content-container">
     <ng-container #dynamicContainer></ng-container>
     <div class="list-container">
-      <div class="mid-container">
-        <app-related-articles></app-related-articles>
-      </div>
-      <div class="mid-container">
-        <app-related-articles title="FAQs"></app-related-articles>
-      </div>
+      <ng-container #listContainer class="mid-container"></ng-container>
     </div>
 
     <div class="list-container">
-      <app-contact-us style="width: 100%;"></app-contact-us>
+      <app-contact-us
+        style="width: 100%"
+        [buttonText]="contactUsComponent?.title"
+        [linkLabel]="contactUsComponent?.subtitle"
+      ></app-contact-us>
     </div>
-
   </div>
-  <app-footer></app-footer>
+  <app-footer
+    [links]="footerComponent?.footer_links"
+    [disclaimer]="getFooterDisclaimer()"
+  ></app-footer>
 </div>

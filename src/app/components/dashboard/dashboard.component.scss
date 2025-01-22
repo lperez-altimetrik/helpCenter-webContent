@@ -25,12 +25,12 @@
   }
 }
 
-.mid-container {
-  border-radius: 8px;
-  background: var(--hc-color-bg-primary);
-  position: relative;
-  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.04), 0px 4px 6px -1px rgba(0, 0, 0, 0.06);
-}
+// .mid-container {
+//   border-radius: 8px;
+//   background: var(--hc-color-bg-primary);
+//   position: relative;
+//   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.04), 0px 4px 6px -1px rgba(0, 0, 0, 0.06);
+// }
 
 .content-container {
   background-color: var(--hc-color-bg-secondary);
@@ -38,10 +38,10 @@
   flex-direction: column;
   align-items: center;
   gap: var(--spacing-8);
-
-  ::ng-deep * {
-    max-width: 1600px;
-  }
+  padding: 20px;
+  max-width: 1600px;
+  width: 100%;
+  box-sizing: border-box;
 
   @include respond-to("mobile-mb") {
     display: flex;

@@ -40,7 +40,13 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
 
   @ViewChild('dynamicContainer', { read: ViewContainerRef })
   dynamicContainer!: ViewContainerRef;
+  @ViewChild('listContainer', { read: ViewContainerRef })
+  listContainer!: ViewContainerRef;
   private componentRefs: ComponentRef<any>[] = [];
+  private componentListRefs: ComponentRef<any>[] = [];
+
+  public contactUsComponent: any;
+  public footerComponent: any;
 
   async ngAfterViewInit() {
     if (this.dynamicContainer) {
@@ -105,9 +111,67 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
           // Trigger change detection
           carouselRef.changeDetectorRef.detectChanges();
         }
+        if (section.display_component === 'list') {
+            // Fetch topics from the service
+          // Create CarouselComponent
+          const listRef = this.listContainer.createComponent(RelatedArticlesComponent);
+          const categories = data?.categories?.data || [];
+          listRef.instance.iconName = section.icon.data.attributes.name.split('.')[0];
+
+          switch (section.title) {
+            case 'Trending Articles': {
+               
+          const category = categories.find((item: any) => item.attributes.slug == "trending-articles");
+
+          listRef.instance.title = section.title;
+          listRef.instance.relatedLinks = category.attributes.articles.data.map((topic: any) => ({
+                title: topic?.attributes?.title,
+              }));
+          
+
+            this.componentListRefs.push(listRef);
+
+              // Trigger change detection
+              listRef.changeDetectorRef.detectChanges();
+              break;
+            }
+             case 'FAQs': {
+               
+              const category = categories.find((item: any) => item.attributes.slug == "faqs");
+
+              listRef.instance.title = section.title;
+              listRef.instance.relatedLinks = category.attributes.articles.data.map((topic: any) => ({
+                    title: topic?.attributes?.title,
+                  }));
+              
+              this.componentListRefs.push(listRef);
+
+              // Trigger change detection
+              listRef.changeDetectorRef.detectChanges();
+              break;
+            }
+          }
+         
+        }
       });
+
+      this.contactUsComponent = data?.template?.data?.attributes?.page_template?.data?.attributes?.contact_us;
+      
+      this.footerComponent = data?.template?.data?.attributes?.page_template?.data?.attributes?.footer_section;
+   
     });
 
+  }
+
+  getFooterDisclaimer() {
+    try {
+      if (this.footerComponent?.copyright[0]?.children[0].text) {
+        return this.footerComponent?.copyright[0]?.children[0].text;
+      }
+      return undefined;
+    } catch(e){
+      return undefined;
+    }
   }
 
   logout(): void {

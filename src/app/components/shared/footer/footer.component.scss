@@ -75,6 +75,7 @@
           }
 
           a {
+            color: var(----hc-color-white);
             text-decoration: none;
 
             @include respond-to("mobile-mb") {
