@@ -62,6 +62,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
   constructor(private authService: AuthService) {
     this.authSubscription = new Subscription();
   }
+  toggleLogin() {
+    // TEST FUNCTION, DELETE
+    this.isLoggedIn = !this.isLoggedIn;
+  }
 
   ngOnInit() {
     this.authSubscription = this.authService.isLoggedIn$.subscribe(
@@ -102,7 +106,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   onSearch() {
     //Search logic here
     console.log('search button clicked');
-
+    this.toggleLogin();
   }
 
   onLang() {

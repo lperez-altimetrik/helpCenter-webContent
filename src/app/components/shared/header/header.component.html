@@ -1,12 +1,7 @@
 <div class="header-container">
   <header class="collapsed">
     <div class="lhs-container">
-      <button
-        *ngIf="isLoggedIn"
-        mat-icon-button
-        (click)="onMenu()"
-        class="menu-toggle lh-button"
-      >
+      <button *ngIf="isLoggedIn" mat-icon-button (click)="onMenu()" class="menu-toggle lh-button">
         <span class="material-symbols-outlined"> menu </span>
       </button>
       <img [src]="logoPath" alt="Optic Logo" />
@@ -19,13 +14,8 @@
             {{ loginLabel }}
           </button>
           <mat-divider class="divider" [vertical]="true"></mat-divider>
-          <button
-            mat-icon-button
-            color="primary"
-            class="rh-button"
-            (click)="onLang()"
-            aria-label="Language/Region Button"
-          >
+          <button mat-icon-button color="primary" class="rh-button" (click)="onLang()"
+            aria-label="Language/Region Button">
             <span class="material-symbols-outlined"> captive_portal </span>
           </button>
         </div>
@@ -34,24 +24,13 @@
           <button mat-icon-button (click)="onSearch()" class="rh-button">
             <span class="material-symbols-outlined"> search </span>
           </button>
-          <mat-divider
-            class="divider mobile-divider"
-            [vertical]="true"
-          ></mat-divider>
+          <mat-divider class="divider mobile-divider" [vertical]="true"></mat-divider>
           <button mat-icon-button (click)="onProfile()" class="rh-button">
             <span class="material-symbols-outlined"> person </span>
           </button>
-          <mat-divider
-            class="divider fs-divider"
-            [vertical]="true"
-          ></mat-divider>
-          <button
-            mat-icon-button
-            color="primary"
-            class="rh-button language-button"
-            (click)="onLang()"
-            aria-label="Language/Region Button"
-          >
+          <mat-divider class="divider fs-divider" [vertical]="true"></mat-divider>
+          <button mat-icon-button color="primary" class="rh-button language-button" (click)="onLang()"
+            aria-label="Language/Region Button">
             <span class="material-symbols-outlined"> captive_portal </span>
           </button>
         </div>
@@ -64,19 +43,14 @@
       {{ title }}
     </h1>
 
-    <app-center-tab-bar
-      class="tab-container"
-      [tabs]="tabs"
-    ></app-center-tab-bar>
+    <app-center-tab-bar class="tab-container" [tabs]="tabs"></app-center-tab-bar>
 
     <div class="search-container">
       <app-search-bar [searchString]="_query"></app-search-bar>
     </div>
 
     <div class="pill-bar-container">
-      <app-pill-bar
-        (notifyParentEvent)="handlePillEvent($event)"
-      ></app-pill-bar>
+      <app-pill-bar [chipLabels]="chipLabels" (notifyParentEvent)="handlePillEvent($event)"></app-pill-bar>
     </div>
   </div>
 </div>
