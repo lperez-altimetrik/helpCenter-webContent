@@ -40,7 +40,7 @@ export class CarouselComponent implements AfterViewInit {
   @Input() itemType: any = NewsContainerComponent;
   @Input() title: string = 'Carousel Title';
   @Input() iconName: string = 'note_stack';
-@ViewChild('dynHost', { static: true, read: ViewContainerRef }) dynHost!: ViewContainerRef;
+  @ViewChild('dynHost', { static: true, read: ViewContainerRef }) dynHost!: ViewContainerRef;
 
   public componentRefs: ComponentRef<any>[] = [];
 
@@ -58,7 +58,7 @@ export class CarouselComponent implements AfterViewInit {
   constructor(
     private breakpointObserver: BreakpointObserver,
     public componentFactoryResolver: ComponentFactoryResolver
-  ) {}
+  ) { }
 
   ngAfterViewInit(): void {
     this.loadComponent();
@@ -140,18 +140,21 @@ export class CarouselComponent implements AfterViewInit {
 
         if (itemRef && itemRef.instance) {
           // Set properties for the dynamically created component
-          
+
           // Add the component reference to the array for cleanup
-          
+
           itemRef.instance.location?.nativeElement?.setAttribute(
             'style',
             'width: 100%',
           );
-           itemRef.instance.location?.nativeElement?.setAttribute(
+          itemRef.instance.location?.nativeElement?.setAttribute(
             'style',
             'display: block',
           );
-          itemRef.instance.title = item.title;
+          for (const prop in item) {
+            if (item[prop])
+              itemRef.instance[prop] = item[prop];
+          }
           this.componentRefs.push(itemRef);
 
           // Trigger change detection

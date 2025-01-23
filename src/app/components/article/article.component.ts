@@ -176,7 +176,7 @@ export class ArticleComponent {
         componentRef.instance["src"] = this.resourcesUrl + section.image?.data?.attributes?.url;
         break;
       case "shared.modal":
-        componentRef.instance["content"] = section.content.map((currentItem: any) => { return currentItem.children[0].text }).join(" ")
+        componentRef.instance["content"] = _.get(section, "content", []).map((currentItem: any) => { return currentItem.children[0].text }).join(" ")
         break;
       case "shared.table":
         const rows = section.rows;

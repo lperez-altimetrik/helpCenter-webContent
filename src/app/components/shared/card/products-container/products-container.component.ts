@@ -13,4 +13,10 @@ export class ProductsContainerComponent {
   @Input() src: string = 'assets/images/product-image.png';
   @Input() title: string = 'Optic Mobile';
   @Input() text: string = 'We give ambitious businesses their launchpad through safe and secure online payment solutions';
+  @Input() articleId: any;
+
+
+  navigateToArticle() {
+    alert(this.articleId)
+  }
 }

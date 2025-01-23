@@ -29,7 +29,7 @@ import { RelatedArticlesComponent } from "../shared/related-articles/related-art
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, MatChipsModule, HeaderComponent, FooterComponent, ContactUsComponent, RelatedArticlesComponent],
+  imports: [CommonModule, MatChipsModule, HeaderComponent, FooterComponent, ContactUsComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })
@@ -80,18 +80,22 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
               const articles = category.attributes.articles.data;
               carouselRef.instance.items = articles.map((topic: any) => ({
                 title: topic.attributes.title,
-                body: topic.attributes.short_description,
+                text: topic.attributes.short_description,
+                image: undefined,
+                span: topic.attributes.time_to_read,
+                linkUrl: "/article/" + topic.id
               }));
+              console.log(articles)
               break;
             }
             case 'Topics': {
               carouselRef.instance.itemType = TopicsContainerComponent;
               const topics = data?.topics?.data || [];
               // Populate the carousel with cards having a dynamic component of TopicsContainerComponent
-              console.log(topics)
               carouselRef.instance.items = topics.map((topic: any) => ({
                 title: topic.attributes.title,
                 body: topic.attributes.short_description,
+                articleId: topic.id
               }));
 
               break;
@@ -103,6 +107,7 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
               carouselRef.instance.items = topics.map((topic: any) => ({
                 title: topic.attributes.title,
                 body: topic.attributes.short_description,
+                articleId: topic.id
               }));
 
               break;
@@ -112,7 +117,7 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
           carouselRef.changeDetectorRef.detectChanges();
         }
         if (section.display_component === 'list') {
-            // Fetch topics from the service
+          // Fetch topics from the service
           // Create CarouselComponent
           const listRef = this.listContainer.createComponent(RelatedArticlesComponent);
           const categories = data?.categories?.data || [];
@@ -120,30 +125,32 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
 
           switch (section.title) {
             case 'Trending Articles': {
-               
-          const category = categories.find((item: any) => item.attributes.slug == "trending-articles");
 
-          listRef.instance.title = section.title;
-          listRef.instance.relatedLinks = category.attributes.articles.data.map((topic: any) => ({
+              const category = categories.find((item: any) => item.attributes.slug == "trending-articles");
+
+              listRef.instance.title = section.title;
+              listRef.instance.relatedLinks = category.attributes.articles.data.map((topic: any) => ({
                 title: topic?.attributes?.title,
+                url: "/article/" + topic.id
               }));
-          
 
-            this.componentListRefs.push(listRef);
+
+              this.componentListRefs.push(listRef);
 
               // Trigger change detection
               listRef.changeDetectorRef.detectChanges();
               break;
             }
-             case 'FAQs': {
-               
+            case 'FAQs': {
+
               const category = categories.find((item: any) => item.attributes.slug == "faqs");
 
               listRef.instance.title = section.title;
               listRef.instance.relatedLinks = category.attributes.articles.data.map((topic: any) => ({
-                    title: topic?.attributes?.title,
-                  }));
-              
+                title: topic?.attributes?.title,
+                url: "/article/" + topic.id
+              }));
+
               this.componentListRefs.push(listRef);
 
               // Trigger change detection
@@ -151,14 +158,14 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
               break;
             }
           }
-         
+
         }
       });
 
       this.contactUsComponent = data?.template?.data?.attributes?.page_template?.data?.attributes?.contact_us;
-      
+
       this.footerComponent = data?.template?.data?.attributes?.page_template?.data?.attributes?.footer_section;
-   
+
     });
 
   }
@@ -169,7 +176,7 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
         return this.footerComponent?.copyright[0]?.children[0].text;
       }
       return undefined;
-    } catch(e){
+    } catch (e) {
       return undefined;
     }
   }

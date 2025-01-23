@@ -1,6 +1,7 @@
 @import "./../../../../../styles/mixins.scss";
 
 mat-card {
+  cursor: pointer;
   width: 160px;
   box-shadow: none;
   border: 1px solid var(--hc-color-bg-secondary);
@@ -17,6 +18,7 @@ mat-card {
   &:active {
     border: 1px solid var(--hc-gray-color);
   }
+
   mat-card-content {
     display: flex;
     padding: var(--spacing-7, 24px);
@@ -25,9 +27,9 @@ mat-card {
     gap: 12px;
     align-self: stretch;
     max-width: 160px;
-  
+
     .header {
-      
+
       .icon {
         @include icon-style();
         height: 28px;
@@ -36,13 +38,13 @@ mat-card {
         box-sizing: border-box;
         font-size: 16px;
         margin-bottom: 12px;
-    
+
         @include respond-to("mobile-mb") {
           margin: 0;
           margin-right: 4px;
         }
       }
-  
+
       h4 {
         font-size: 18px;
         font-style: normal;
@@ -50,14 +52,14 @@ mat-card {
         line-height: normal;
         color: var(--hc-color-fg-primary);
         margin-bottom: 0;
-        
+
         @include respond-to("mobile-mb") {
           font-size: 12px;
           margin: 0;
         }
       }
     }
-  
+
     .content {
       p {
         font-size: 12px;
@@ -70,4 +72,3 @@ mat-card {
     }
   }
 }
-
