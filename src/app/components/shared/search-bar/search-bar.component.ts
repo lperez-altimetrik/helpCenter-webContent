@@ -19,7 +19,7 @@ import { AfterViewInit, HostListener } from '@angular/core';
 
 import { MatAutocompleteTrigger } from '@angular/material/autocomplete';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
-import { Router } from '@angular/router';
+import { NavigateService } from 'app/services/navigate.service';
 
 
 @Component({
@@ -36,6 +36,7 @@ import { Router } from '@angular/router';
   styleUrl: './search-bar.component.scss',
 })
 export class SearchBarComponent implements OnChanges, AfterViewInit {
+  private navigateService = inject(NavigateService);
   @Input() title = 'Popular articles';
   @Input() searchString = new FormControl('');
   @ViewChild('searchInput') inputElement!: ElementRef;
@@ -57,8 +58,7 @@ export class SearchBarComponent implements OnChanges, AfterViewInit {
 
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object,
-    private http: HttpClient,
-    private router: Router) {
+    private http: HttpClient) {
     this.autocomplete = undefined;
   }
 
@@ -120,14 +120,14 @@ export class SearchBarComponent implements OnChanges, AfterViewInit {
   }
 
   redirectToArticle(optionId: string) {
-    this.router.navigate(['/article', optionId]);
+    this.navigateService.navigateTo("/article/" + optionId);
   }
 
   onSearchChange() {
     this.filteredOptions = this._filter(this.searchString.value || '');
   }
   onOptionClick(option: any) {
-    this.router.navigate([`/articles/${option.id}`]);
+    this.navigateService.navigateTo(`/articles/${option.id}`);
   }
 
   onClosedEvent() {

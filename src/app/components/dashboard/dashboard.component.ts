@@ -121,7 +121,7 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
           // Create CarouselComponent
           const listRef = this.listContainer.createComponent(RelatedArticlesComponent);
           const categories = data?.categories?.data || [];
-          listRef.instance.iconName = section.icon.data.attributes.name.split('.')[0];
+          listRef.instance.iconName = _.get(section, "icon.data.attributes.name", "").split('.')[0];
 
           switch (section.title) {
             case 'Trending Articles': {
@@ -129,7 +129,7 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
               const category = categories.find((item: any) => item.attributes.slug == "trending-articles");
 
               listRef.instance.title = section.title;
-              listRef.instance.relatedLinks = category.attributes.articles.data.map((topic: any) => ({
+              listRef.instance.relatedLinks = _.get(category, "attributes.articles.data", []).map((topic: any) => ({
                 title: topic?.attributes?.title,
                 url: "/articles/" + topic.id
               }));
@@ -146,7 +146,7 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
               const category = categories.find((item: any) => item.attributes.slug == "faqs");
 
               listRef.instance.title = section.title;
-              listRef.instance.relatedLinks = category.attributes.articles.data.map((topic: any) => ({
+              listRef.instance.relatedLinks = _.get(category, "attributes.articles.data", []).map((topic: any) => ({
                 title: topic?.attributes?.title,
                 url: "/articles/" + topic.id
               }));
@@ -162,9 +162,9 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
         }
       });
 
-      this.contactUsComponent = data?.template?.data?.attributes?.page_template?.data?.attributes?.contact_us;
+      this.contactUsComponent = _.get(data, "template.data.attributes.page_template.data.attributes.contact_us");
 
-      this.footerComponent = data?.template?.data?.attributes?.page_template?.data?.attributes?.footer_section;
+      this.footerComponent = _.get(data, "template.data.attributes.page_template.data.attributes.footer_section");
 
     });
 
@@ -172,10 +172,7 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
 
   getFooterDisclaimer() {
     try {
-      if (this.footerComponent?.copyright[0]?.children[0].text) {
-        return this.footerComponent?.copyright[0]?.children[0].text;
-      }
-      return undefined;
+      return _.get(this.footerComponent, "copyright[0].children[0].text", undefined);
     } catch (e) {
       return undefined;
     }
