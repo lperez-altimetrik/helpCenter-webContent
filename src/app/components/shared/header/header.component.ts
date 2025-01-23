@@ -43,15 +43,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   @Input() title = "Need Help? Let's find it together!";
   @Input() tabs = ['Small Buisness', 'Enterprise', 'Partners'];
 
-  private navigateService = inject(NavigateService);
-  private authSubscription!: Subscription;
-  isLoggedIn = false;
-  logoPath = 'assets/icons/top-bar/Optic_Logo_White.svg';
-
-  _query: FormControl = new FormControl('');
-
-  chipLabels: string[] = [
-    //make input parameter for this
+  @Input() chipLabels: string[] = [
     'Get Started!',
     'Wallet',
     'Payment Link',
@@ -59,6 +51,15 @@ export class HeaderComponent implements OnInit, OnDestroy {
     'Payments',
     'My Account',
   ];
+
+  private navigateService = inject(NavigateService);
+  private authSubscription!: Subscription;
+  isLoggedIn = false;
+  logoPath = 'assets/icons/top-bar/Optic_Logo_White.svg';
+
+  _query: FormControl = new FormControl('');
+
+
 
   constructor(private authService: AuthService) {
     this.authSubscription = new Subscription();
