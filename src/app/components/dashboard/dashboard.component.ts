@@ -48,6 +48,7 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
 
   public contactUsComponent: any;
   public footerComponent: any;
+  public searchPills: any;
 
   async ngAfterViewInit() {
     if (this.dynamicContainer) {
@@ -160,6 +161,10 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
           }
 
         }
+      });
+
+      this.searchPills = _.get(data, "template.data.attributes.page_template.data.attributes.header.pill", []).map((pillItem: any) => {
+        return pillItem.title;
       });
 
       this.contactUsComponent = _.get(data, "template.data.attributes.page_template.data.attributes.contact_us");
