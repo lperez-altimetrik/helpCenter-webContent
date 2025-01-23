@@ -1,11 +1,14 @@
 @import "./../../../../styles/mixins.scss";
 
+:host {
+  width: 100%;
+}
+
 .carousel {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: var(--spacing-6);
-  max-width: 1600px;
   padding: var(--spacing-9) 27px;
   border-radius: 8px;
   background: var(--hc-color-bg-primary);
