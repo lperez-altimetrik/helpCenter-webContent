@@ -58,62 +58,64 @@ export class ArticleComponent {
     }
   }
 
-  private renderTemplate(): void {
-    this.componentRefs.forEach((ref) => ref.destroy()); // Destroy existing components
+  private renderArticleContent(data: any = {}): void {
+    const sectionList = _.get(data, "data.attributes.sections", []);
+    sectionList.forEach((section: any) => {
+      switch (section.__component) {
+        case 'shared.table':
+          this.createComponent(section, TableComponent);
+          break;
+        case 'shared.contextual-message':
+          this.createComponent(section, ContextualMessageComponent);
+          break;
+        case 'shared.image':
+          this.createComponent(section, ImageComponent);
+          break;
+        case 'shared.rich-text':
+          this.createComponent(section, RichTextComponent);
+          break;
+        case 'shared.subtitle':
+          this.createComponent(section, SubtitleComponent);
+          break;
+        case 'shared.accordion':
+          this.createComponent(section, AccordionComponent);
+          break;
+        case 'shared.title':
+          this.createComponent(section, TitleComponent);
+          break;
+        case 'shared.label':
+          this.createComponent(section, LabelComponent);
+          break;
+        case 'shared.link':
+          this.createComponent(section, LinkComponent);
+          break;
+        case 'shared.banner':
+          this.createComponent(section, BannerComponent);
+          break;
+        case 'shared.article-section-title':
+          this.createComponent(section, ArticleSectionTitleComponent);
+          break;
+        case 'shared.product-card':
+          this.createComponent(section, ProductsContainerComponent);
+          break;
+        case 'shared.video':
+          this.createComponent(section, VideoPlayerComponent);
+          break;
+        case 'shared.modal':
+          this.createComponent(section, ModalComponent);
+          break;
+        // Add cases for other components as needed
+      }
+    });
+  }
+
+  public renderContent(articleId: any): void {
+    this.componentRefs?.forEach((ref) => ref.destroy()); // Destroy existing components
     this.componentRefs = [];
-    this.dataService.getArticlesTemplate(this.articleId).subscribe({
+    this.dataService.getArticlesTemplate(articleId).subscribe({
       next: (data: any) => {
         this.templateData = data;
-        const sectionList = _.get(data, "data.attributes.sections", []);
-        sectionList.forEach((section: any) => {
-          switch (section.__component) {
-            case 'shared.table':
-              this.createComponent(section, TableComponent);
-              break;
-            case 'shared.contextual-message':
-              this.createComponent(section, ContextualMessageComponent);
-              break;
-            case 'shared.image':
-              this.createComponent(section, ImageComponent);
-              break;
-            case 'shared.rich-text':
-              this.createComponent(section, RichTextComponent);
-              break;
-            case 'shared.subtitle':
-              this.createComponent(section, SubtitleComponent);
-              break;
-            case 'shared.accordion':
-              this.createComponent(section, AccordionComponent);
-              break;
-            case 'shared.title':
-              this.createComponent(section, TitleComponent);
-              break;
-            case 'shared.label':
-              this.createComponent(section, LabelComponent);
-              break;
-            case 'shared.link':
-              this.createComponent(section, LinkComponent);
-              break;
-            case 'shared.banner':
-              this.createComponent(section, BannerComponent);
-              break;
-            case 'shared.article-section-title':
-              this.createComponent(section, ArticleSectionTitleComponent);
-              break;
-            case 'shared.product-card':
-              this.createComponent(section, ProductsContainerComponent);
-              break;
-            case 'shared.video':
-              this.createComponent(section, VideoPlayerComponent);
-              break;
-            case 'shared.modal':
-              this.createComponent(section, ModalComponent);
-              break;
-            // Add cases for other components as needed
-          }
-        });
-
-        this.renderSidebar();
+        this.renderArticleContent(data);
       },
       error: (error) => {
         console.error('Error fetching article template:', error);
@@ -121,10 +123,26 @@ export class ArticleComponent {
         this.router.navigate(['/article-not-found']);
       },
     });
-
   }
 
-  private renderSidebar() {
+  private renderTemplate(): void {
+    this.componentRefs.forEach((ref) => ref.destroy()); // Destroy existing components
+    this.componentRefs = [];
+    this.dataService.getArticlesTemplate(this.articleId).subscribe({
+      next: (data: any) => {
+        this.templateData = data;
+        this.renderArticleContent(data);
+        this.renderSidebar(data);
+      },
+      error: (error) => {
+        console.error('Error fetching article template:', error);
+        // Redirigir a la página de "Artículo no encontrado"
+        this.router.navigate(['/article-not-found']);
+      },
+    });
+  }
+
+  private renderSidebar(data: any = {}) {
     const sidebarTemplate = _.get(this.templateData, "data.attributes.page_template.data.attributes.sidebar", {});
     const businessOptionsObj: any = _.get(sidebarTemplate, "category_selector.category_groups.data", [])
       .map((categoryGroup: any) => {
@@ -142,7 +160,7 @@ export class ArticleComponent {
             return _.get(article, "attributes.category_groups.data", []).find((categoryGroup: any) => optionBO == _.get(categoryGroup, "attributes.title", ""))
           });
           itemObj["menuItems"] = filteredItems.map((article: any) => {
-            return { title: article.attributes.title, url: "/articles/" + article.id }
+            return { title: article.attributes.title, url: article.id }
           });
           return itemObj
         })

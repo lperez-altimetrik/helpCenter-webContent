@@ -1,11 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
 import {
   IBusinessOption,
   ISidebarSection,
@@ -28,6 +27,8 @@ import {
 export class SidebarComponent {
   @Input() businessOptions: IBusinessOption[] = [];
   @Input() menuDataSection: any = {};
+  @Output() renderTemplate = new EventEmitter<any>();
+
 
   @Input() menuSections: ISidebarSection[] = [
     {
@@ -172,8 +173,6 @@ export class SidebarComponent {
 
   @Input() businessPanelOpened: boolean = false;
 
-  constructor(private router: Router) { }
-
   @Input() selectedBusiness: any = "";
 
   public currentActiveItem: any = null;
@@ -188,7 +187,7 @@ export class SidebarComponent {
     }
     eventTarget.parentElement.classList.add('menu-element-active');
     this.currentActiveItem = eventTarget.parentElement;
-    this.router.navigate([articleUrl]);
+    this.renderTemplate.emit(articleUrl);
   }
 
   public changeOption(option: any) {

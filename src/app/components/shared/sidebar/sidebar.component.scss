@@ -130,6 +130,11 @@
                 justify-content: center;
 
                 .title-icon {
+                    img {
+                        height: 12px;
+                        width: 12px;
+                    }
+
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -141,7 +146,11 @@
                 }
 
                 .title-icon-svg {
-                    transform: scale(0.5);
+                    img {
+                        height: 12px;
+                        width: 12px;
+                    }
+
                     display: flex;
                     align-items: center;
                     justify-content: center;
