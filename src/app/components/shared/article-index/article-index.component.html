@@ -2,7 +2,7 @@
   <label class="top-text"> In this article </label>
   <div class="content-container">
     @for (articleLink of articleLinks; track articleLink.title) {
-    <div class="link-content" (click)="onLinkClick($event)">
+    <div class="link-content" (click)="onLinkClick($event, articleLink.url)">
       <label class="article-link">{{ articleLink.title }}</label>
     </div>
     }
