@@ -1,7 +1,5 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
-import { inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
@@ -42,7 +40,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   @Input() title = "Need Help? Let's find it together!";
   @Input() tabs = ['Small Buisness', 'Enterprise', 'Partners'];
 
-  private router = inject(Router);
   private authSubscription!: Subscription;
   isLoggedIn = false;
   logoPath = 'assets/icons/top-bar/Optic_Logo_White.svg';
