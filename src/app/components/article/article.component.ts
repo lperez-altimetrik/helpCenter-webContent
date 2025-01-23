@@ -107,7 +107,6 @@ export class ArticleComponent {
         case 'shared.modal':
           this.createComponent(section, ModalComponent);
           break;
-        // Add cases for other components as needed
       }
     });
   }
@@ -122,7 +121,6 @@ export class ArticleComponent {
       },
       error: (error) => {
         console.error('Error fetching article template:', error);
-        // Redirigir a la página de "Artículo no encontrado"
         this.navigateService.navigateTo('/article-not-found');
       },
     });
@@ -139,7 +137,6 @@ export class ArticleComponent {
       },
       error: (error) => {
         console.error('Error fetching article template:', error);
-        // Redirigir a la página de "Artículo no encontrado"
         this.navigateService.navigateTo('/article-not-found');
       },
     });

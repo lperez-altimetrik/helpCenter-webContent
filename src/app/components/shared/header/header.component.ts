@@ -4,6 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { AuthService } from '../../../services/auth.service';
+import { NavigateService } from 'app/services/navigate.service';
 import { Subscription } from 'rxjs';
 import { SearchBarComponent } from '../search-bar/search-bar.component';
 
@@ -40,14 +41,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   @Input() title = "Need Help? Let's find it together!";
   @Input() tabs = ['Small Buisness', 'Enterprise', 'Partners'];
 
-  private authSubscription!: Subscription;
-  isLoggedIn = false;
-  logoPath = 'assets/icons/top-bar/Optic_Logo_White.svg';
-
-  _query: FormControl = new FormControl('');
-
-  chipLabels: string[] = [
-    //make input parameter for this
+  @Input() chipLabels: string[] = [
     'Get Started!',
     'Wallet',
     'Payment Link',
@@ -55,6 +49,15 @@ export class HeaderComponent implements OnInit, OnDestroy {
     'Payments',
     'My Account',
   ];
+
+  private navigateService = inject(NavigateService);
+  private authSubscription!: Subscription;
+  isLoggedIn = false;
+  logoPath = 'assets/icons/top-bar/Optic_Logo_White.svg';
+
+  _query: FormControl = new FormControl('');
+
+
 
   constructor(private authService: AuthService) {
     this.authSubscription = new Subscription();
@@ -75,11 +78,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
     }
   }
 
-  toggleLogin() {
-    // TEST FUNCTION, DELETE
-    this.isLoggedIn = !this.isLoggedIn;
-  }
-
   handlePillEvent(message: string) {
     if (message === this._query.value) this._query = new FormControl('');
     else this._query = new FormControl(message);
@@ -87,13 +85,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   onLogin() {
     //Login logic here
-    //link to login page
 
-    //this.router.navigate(['/dashboard']);
-    console.log('login button clicked');
-    //once logged in
-
-    this.toggleLogin(); // DELETE
+    this.navigateService.navigateTo('/login');
   }
 
   onMenu() {
@@ -110,7 +103,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
     //Search logic here
     console.log('search button clicked');
 
-    this.toggleLogin(); // DELETE
   }
 
   onLang() {
