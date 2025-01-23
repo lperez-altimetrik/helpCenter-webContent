@@ -64,7 +64,7 @@ export class ArticleComponent {
     this.dataService.getArticlesTemplate(this.articleId).subscribe({
       next: (data: any) => {
         this.templateData = data;
-        const sectionList = data?.data?.attributes?.sections || [];
+        const sectionList = _.get(data, "data.attributes.sections", []);
         sectionList.forEach((section: any) => {
           switch (section.__component) {
             case 'shared.table':
@@ -142,7 +142,7 @@ export class ArticleComponent {
             return _.get(article, "attributes.category_groups.data", []).find((categoryGroup: any) => optionBO == _.get(categoryGroup, "attributes.title", ""))
           });
           itemObj["menuItems"] = filteredItems.map((article: any) => {
-            return { title: article.attributes.title, url: "/article/" + article.id }
+            return { title: article.attributes.title, url: "/articles/" + article.id }
           });
           return itemObj
         })
@@ -173,7 +173,7 @@ export class ArticleComponent {
         break;
       case "shared.image":
       case "shared.product-card":
-        componentRef.instance["src"] = this.resourcesUrl + section.image?.data?.attributes?.url;
+        componentRef.instance["src"] = this.resourcesUrl + _.get(section, "image.data.attributes.url");
         break;
       case "shared.modal":
         componentRef.instance["content"] = _.get(section, "content", []).map((currentItem: any) => { return currentItem.children[0].text }).join(" ")

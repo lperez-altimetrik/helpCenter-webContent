@@ -16,6 +16,6 @@ export class TopicsContainerComponent {
   @Input() articleId: any;
 
   navigateToArticle() {
-    alert(this.articleId)
+
   }
 }

@@ -17,6 +17,6 @@ export class ProductsContainerComponent {
 
 
   navigateToArticle() {
-    alert(this.articleId)
+
   }
 }

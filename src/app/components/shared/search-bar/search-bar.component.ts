@@ -56,9 +56,9 @@ export class SearchBarComponent implements OnChanges, AfterViewInit {
   searchControl = new FormControl('');
 
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object, 
-  private http: HttpClient, 
-  private router: Router) {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object,
+    private http: HttpClient,
+    private router: Router) {
     this.autocomplete = undefined;
   }
 
@@ -127,7 +127,7 @@ export class SearchBarComponent implements OnChanges, AfterViewInit {
     this.filteredOptions = this._filter(this.searchString.value || '');
   }
   onOptionClick(option: any) {
-    this.router.navigate([`/article/${option.id}`]);
+    this.router.navigate([`/articles/${option.id}`]);
   }
 
   onClosedEvent() {
