@@ -45,6 +45,7 @@ export class ArticleComponent {
   dynamicContainer!: ViewContainerRef;
   private componentRefs: ComponentRef<any>[] = [];
   private templateData: any = {};
+  public searchPills: any;
 
   //Sidebar data
   sidebarData: any;
@@ -140,6 +141,9 @@ export class ArticleComponent {
         this.templateData = data;
         this.renderArticleContent(data);
         this.renderSidebar(data);
+        this.searchPills = _.get(data, "data.attributes.page_template.data.attributes.header.pill", []).map((pillItem: any) => {
+          return pillItem.title;
+        });
       },
       error: (error) => {
         console.error('Error fetching article template:', error);
