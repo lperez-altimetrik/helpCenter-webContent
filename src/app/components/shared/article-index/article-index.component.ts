@@ -20,7 +20,7 @@ export class ArticleIndexComponent {
     { title: 'QR Codes', url: '#' },
   ];
 
-  public onLinkClick = (event: any) => {
+  public onLinkClick = (event: any, sectionUrl: string) => {
     if (this.currentSelectedSection) {
       this.currentSelectedSection.classList.remove('header-title');
       this.currentSelectedSection.parentElement.classList.remove(
@@ -30,10 +30,19 @@ export class ArticleIndexComponent {
     event.target.classList.add('header-title');
     event.target.parentElement.classList.add('header-content');
     this.currentSelectedSection = event.target;
+    this.navigateToPageSection(sectionUrl);
   };
 
   public changeOption(option: any) {
     this.selectedSectionTitle = option.title;
     this.articlePanelOpened = !this.articlePanelOpened;
+    this.navigateToPageSection(option.url);
+  }
+
+  private navigateToPageSection(section: string) {
+    const element = document.getElementById(section);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 }

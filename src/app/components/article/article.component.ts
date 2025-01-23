@@ -51,6 +51,7 @@ export class ArticleComponent {
   businessOptions: any;
   selectedOptionSidebar: any = "";
   menuSections: any = [];
+  articleIndexSections: any = [];
 
   constructor(private route: ActivatedRoute) { }
 
@@ -110,6 +111,11 @@ export class ArticleComponent {
         // Add cases for other components as needed
       }
     });
+    this.articleIndexSections = sectionList.filter((section: any) => {
+      return _.get(section, "__component", "") == "shared.article-section-title"
+    }).map((articleIndex: any) => {
+      return { title: articleIndex.title, url: articleIndex.url }
+    })
   }
 
   public renderContent(articleId: any): void {

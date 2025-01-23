@@ -1,9 +1,9 @@
-<div class="section-title">
+<div class="section-title" [id]="url">
   <img class="icon" src="assets/icons/common/note-stack-icon.svg" />
 
   <h2>
     {{ title }}
   </h2>
 
-  <mat-icon class="flat-icon" (click) = "copyArticleUrl()" matTooltip="Click to copy article URL"> link </mat-icon>
+  <mat-icon class="flat-icon" (click)="copyArticleUrl()" matTooltip="Click to copy article URL"> link </mat-icon>
 </div>
