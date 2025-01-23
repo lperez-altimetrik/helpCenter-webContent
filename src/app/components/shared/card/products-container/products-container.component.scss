@@ -17,6 +17,7 @@ mat-card {
     &:active {
         border: 1px solid var(--hc-gray-color);
     }
+
     mat-card-content {
         display: flex;
         flex-flow: column;
@@ -24,20 +25,21 @@ mat-card {
         width: 100%;
         max-width: 371px;
         justify-content: center;
-    
+
         @include respond-to("mobile-mb") {
             display: flex;
             flex-flow: row;
             align-items: center;
         }
-    
+
         .header {
             display: flex;
-    
+            cursor: pointer;
+
             @include respond-to("mobile-mb") {
                 flex: 2;
             }
-    
+
             .image {
                 height: 157px;
                 object-fit: cover;
@@ -45,7 +47,7 @@ mat-card {
                 border-top-right-radius: 3px;
                 border-top-left-radius: 3px;
                 width: 100%;
-    
+
                 @include respond-to("mobile-mb") {
                     height: 88px;
                     border-top-left-radius: 3px;
@@ -54,27 +56,27 @@ mat-card {
                 }
             }
         }
-    
+
         .content {
             padding: 24px;
             display: flex;
             flex-flow: column;
             align-items: center;
             text-align: center;
-    
+
             @include respond-to("mobile-mb") {
                 padding: 8px;
                 display: flex;
                 flex: 4;
                 flex-flow: column;
             }
-    
+
             .title-section {
                 @include respond-to("mobile-mb") {
                     display: flex;
                     align-items: center;
                 }
-    
+
                 h4 {
                     color: var(--hc-color-fg-primary);
                     font-size: 18px;
@@ -83,20 +85,20 @@ mat-card {
                     line-height: normal;
                     margin: 0;
                     margin-bottom: 12px;
-    
+
                     @include respond-to("mobile-mb") {
                         font-size: 12px;
                         margin: 0;
                     }
                 }
             }
-    
+
             p {
                 color: var(--hc-light-black);
                 font-size: 12px;
                 font-weight: 300;
-                    margin: 0;
-    
+                margin: 0;
+
                 @include respond-to("mobile-mb") {
                     display: -webkit-box;
                     max-height: 3em;

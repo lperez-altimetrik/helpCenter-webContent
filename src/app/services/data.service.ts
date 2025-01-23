@@ -20,7 +20,7 @@ export class DataService {
         const headers = new HttpHeaders({
             'User-Roles': 'ADMIN',
         });
-        // return this.http.get(`${this.baseUrl}/landing-page`, { headers });
+        return this.http.get(`${this.baseUrl}/landing-page`, { headers });
 
 
         const mockJsonContract = {
@@ -7872,7 +7872,7 @@ export class DataService {
         const headers = new HttpHeaders({
             'User-Roles': 'ADMIN'
         });
-        // return this.http.get(`${this.baseUrl}/articles/${articleId}`, { headers });
+        return this.http.get(`${this.baseUrl}/articles/${articleId}`, { headers });
 
         const mockJsonContract =
         {

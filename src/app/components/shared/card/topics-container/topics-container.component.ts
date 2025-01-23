@@ -13,4 +13,9 @@ import { MatIconModule } from '@angular/material/icon';
 export class TopicsContainerComponent {
   @Input() title = 'Getting started';
   @Input() body = 'We give ambitious businesses their launchpad through safe and secure online payment solutions';
+  @Input() articleId: any;
+
+  navigateToArticle() {
+
+  }
 }

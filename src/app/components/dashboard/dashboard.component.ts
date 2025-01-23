@@ -24,12 +24,13 @@ import { HeaderComponent } from '../shared/header/header.component';
 import { FooterComponent } from '../shared/footer/footer.component';
 import { ContactUsComponent } from '../shared/contact-us/contact-us.component';
 import { RelatedArticlesComponent } from "../shared/related-articles/related-articles.component";
+import * as _ from 'lodash';
 
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, MatChipsModule, HeaderComponent, FooterComponent, ContactUsComponent, RelatedArticlesComponent],
+  imports: [CommonModule, MatChipsModule, HeaderComponent, FooterComponent, ContactUsComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })
@@ -58,7 +59,7 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
     this.componentRefs.forEach((ref) => ref.destroy()); // Destroy existing components
     this.componentRefs = [];
     this.dataService.getSectionList().subscribe((data: any) => {
-      const sectionList = data?.template?.data?.attributes?.section_list || [];
+      const sectionList = _.get(data, "template.data.attributes.section_list");
       sectionList.forEach((section: any) => {
 
         if (section.display_component === 'card_carousel') {
@@ -69,40 +70,45 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
 
           // Set carousel title
           carouselRef.instance.title = section.title;
-          carouselRef.instance.iconName = section.icon.data.attributes.name.split('.')[0];
+          carouselRef.instance.iconName = _.get(section, "icon.data.attributes.name", "").split('.')[0];
 
           switch (section.title) {
             case 'News & Updates': {
               carouselRef.instance.itemType = NewsContainerComponent;
-              const categories = data?.categories?.data || [];
+              const categories = _.get(data, "categories.data", []);
               // Populate the carousel with cards having a dynamic component of TopicsContainerComponent
               const category = categories.find((item: any) => item.attributes.slug == "news-updates");
               const articles = category.attributes.articles.data;
               carouselRef.instance.items = articles.map((topic: any) => ({
                 title: topic.attributes.title,
-                body: topic.attributes.short_description,
+                text: topic.attributes.short_description,
+                image: undefined,
+                span: topic.attributes.time_to_read,
+                linkUrl: "/articles/" + topic.id
               }));
+              console.log(articles)
               break;
             }
             case 'Topics': {
               carouselRef.instance.itemType = TopicsContainerComponent;
-              const topics = data?.topics?.data || [];
+              const topics = _.get(data, "topics.data", []);
               // Populate the carousel with cards having a dynamic component of TopicsContainerComponent
-              console.log(topics)
               carouselRef.instance.items = topics.map((topic: any) => ({
                 title: topic.attributes.title,
                 body: topic.attributes.short_description,
+                articleId: topic.id
               }));
 
               break;
             }
             case 'Products': {
               carouselRef.instance.itemType = ProductsContainerComponent;
-              const topics = data?.topics?.data || [];
+              const topics = _.get(data, "topics.data", []);
               // Populate the carousel with cards having a dynamic component of TopicsContainerComponent
               carouselRef.instance.items = topics.map((topic: any) => ({
                 title: topic.attributes.title,
                 body: topic.attributes.short_description,
+                articleId: topic.id
               }));
 
               break;
@@ -126,6 +132,7 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
               listRef.instance.title = section.title;
               listRef.instance.relatedLinks = category.attributes.articles.data.map((topic: any) => ({
                 title: topic?.attributes?.title,
+                url: "/articles/" + topic.id
               }));
 
 
@@ -142,6 +149,7 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
               listRef.instance.title = section.title;
               listRef.instance.relatedLinks = category.attributes.articles.data.map((topic: any) => ({
                 title: topic?.attributes?.title,
+                url: "/articles/" + topic.id
               }));
 
               this.componentListRefs.push(listRef);
@@ -156,9 +164,9 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
       });
 
       this.contactUsComponent = data?.template?.data?.attributes?.page_template?.data?.attributes?.contact_us;
-      
+
       this.footerComponent = data?.template?.data?.attributes?.page_template?.data?.attributes?.footer_section;
-   
+
     });
 
   }
@@ -169,7 +177,7 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
         return this.footerComponent?.copyright[0]?.children[0].text;
       }
       return undefined;
-    } catch(e){
+    } catch (e) {
       return undefined;
     }
   }
