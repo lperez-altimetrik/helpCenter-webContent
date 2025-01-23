@@ -86,7 +86,6 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
                 span: topic.attributes.time_to_read,
                 linkUrl: "/articles/" + topic.id
               }));
-              console.log(articles)
               break;
             }
             case 'Topics': {

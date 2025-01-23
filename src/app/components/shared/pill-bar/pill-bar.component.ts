@@ -30,7 +30,6 @@ import { MatLabel } from '@angular/material/form-field';
 })
 export class PillBarComponent {
   @Input() chipLabels: string[] = [
-    //make input parameter for this
     'Get Started!',
     'Wallet',
     'Payment Link',
@@ -48,7 +47,6 @@ export class PillBarComponent {
       event.source.deselect;
       this.notifyParentEvent.emit('');
     } else if (val) {
-      console.log('value: ' + val);
       this.notifyParentEvent.emit(val);
     }
   }
