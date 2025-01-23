@@ -13,7 +13,8 @@ import { AccordionComponent } from '../shared/accordion/accordion.component';
 import { ArticleFeedbackComponent } from "../shared/article-feedback/article-feedback.component";
 import { RelatedArticlesComponent } from "../shared/related-articles/related-articles.component";
 import { SidebarComponent } from "../shared/sidebar/sidebar.component";
-import { ActivatedRoute, Router } from '@angular/router';
+import { NavigateService } from 'app/services/navigate.service';
+import { ActivatedRoute } from '@angular/router';
 import { TitleComponent } from '../shared/title/title.component';
 import { SubtitleComponent } from '../shared/subtitle/subtitle.component';
 import { LabelComponent } from '../shared/label/label.component';
@@ -24,6 +25,7 @@ import { ProductsContainerComponent } from '../shared/card/products-container/pr
 import { VideoPlayerComponent } from '../shared/video-player/video-player.component';
 import { RichTextComponent } from '../shared/rich-text/rich-text.component';
 import { ModalComponent } from '../shared/modal/modal.component';
+import { environment } from 'environments/environment';
 import * as _ from 'lodash';
 
 @Component({
@@ -35,8 +37,9 @@ import * as _ from 'lodash';
 })
 
 export class ArticleComponent {
-  resourcesUrl = "http://localhost:1337";
+  resourcesUrl = environment.resourcesUrl;
   private dataService = inject(DataService);
+  private navigateService = inject(NavigateService);
   articleId!: string;
   @ViewChild('dynamicContainer', { read: ViewContainerRef })
   dynamicContainer!: ViewContainerRef;
@@ -49,7 +52,7 @@ export class ArticleComponent {
   selectedOptionSidebar: any = "";
   menuSections: any = [];
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(private route: ActivatedRoute) { }
 
   async ngAfterViewInit() {
     if (this.dynamicContainer) {
@@ -118,7 +121,7 @@ export class ArticleComponent {
       error: (error) => {
         console.error('Error fetching article template:', error);
         // Redirigir a la página de "Artículo no encontrado"
-        this.router.navigate(['/article-not-found']);
+        this.navigateService.navigateTo('/article-not-found');
       },
     });
 

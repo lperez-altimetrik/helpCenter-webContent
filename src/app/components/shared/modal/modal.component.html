@@ -1,23 +1,25 @@
-<mat-card>
-  <div class="header-container">
-    <button mat-icon-button type="button" class="up-arrow">
-      <span class="material-symbols-outlined arrow-icon"> arrow_upward </span>
-    </button>
-    <mat-card-header>
-      <mat-card-title class="title">{{ title }}</mat-card-title>
-      <mat-card-subtitle class="subtitle">{{ subtitle }}</mat-card-subtitle>
-    </mat-card-header>
-    <button mat-icon-button type="button" class="close">
-      <span class="material-symbols-outlined"> close </span>
-    </button>
-  </div>
-  <mat-card-content>
-    <p>
-      {{ content }}
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button class="primary-button">{{ primaryButton }}</button>
-    <button mat-button class="secondary-button">{{ secondaryButton }}</button>
-  </mat-card-actions>
-</mat-card>
+<div class="modal-overlay" *ngIf="showModal">
+  <mat-card>
+    <div class="header-container">
+      <button mat-icon-button type="button" class="up-arrow">
+        <span class="material-symbols-outlined arrow-icon"> arrow_upward </span>
+      </button>
+      <mat-card-header>
+        <mat-card-title class="title">{{ title }}</mat-card-title>
+        <mat-card-subtitle class="subtitle">{{ subtitle }}</mat-card-subtitle>
+      </mat-card-header>
+      <button mat-icon-button type="button" class="close" (click)="closeModal()">
+        <span class="material-symbols-outlined"> close </span>
+      </button>
+    </div>
+    <mat-card-content>
+      <p>
+        {{ content }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button class="primary-button">{{ primaryButton }}</button>
+      <button mat-button class="secondary-button">{{ secondaryButton }}</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

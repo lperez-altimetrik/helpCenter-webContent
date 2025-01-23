@@ -1,6 +1,6 @@
 // src/app/auth.service.ts
 import { inject, Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigateService } from './navigate.service';
 import { CookieService } from 'ngx-cookie-service';
 import { Observable, BehaviorSubject } from 'rxjs';
 
@@ -10,7 +10,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
 export class AuthService {
   private readonly TOKEN_KEY = 'auth_token';
 
-  private router = inject(Router);
+  private navigateService = inject(NavigateService);
   private cookieService = inject(CookieService);
 
   private _isLoggedInSubject = new BehaviorSubject<boolean>(false);
@@ -28,7 +28,7 @@ export class AuthService {
   logout(): void {
     this.cookieService.delete(this.TOKEN_KEY);
     this._isLoggedInSubject.next(false);
-    this.router.navigate(['/login']);
+    this.navigateService.navigateTo('/login');
   }
 
   isLoggedIn(): boolean {
