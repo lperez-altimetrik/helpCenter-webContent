@@ -1,4 +1,4 @@
-<app-header [chipLabels]="searchPills"></app-header>
+<app-header [chipLabels]="searchPills" [tabs]="categoryGroupsTabs" (tabChanged)="tabChanged"></app-header>
 <div class="main-container">
     <div class="purple-bar"></div>
     <app-sidebar class="sidebar" [menuDataSection]="sidebarData" [businessOptions]="businessOptions"
@@ -13,7 +13,7 @@
                 </div>
 
                 <app-article-feedback></app-article-feedback>
-                <app-related-articles></app-related-articles>
+                <app-related-articles [relatedLinks]="relatedArticles"></app-related-articles>
             </div>
 
             <app-article-index class="article-index" [articleLinks]="articleIndexSections"></app-article-index>

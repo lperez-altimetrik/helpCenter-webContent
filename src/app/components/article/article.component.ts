@@ -53,6 +53,8 @@ export class ArticleComponent {
   selectedOptionSidebar: any = "";
   menuSections: any = [];
   articleIndexSections: any = [];
+  relatedArticles: any;
+  categoryGroupsTabs: any;
 
   constructor(private route: ActivatedRoute) { }
 
@@ -61,6 +63,10 @@ export class ArticleComponent {
       this.articleId = this.route.snapshot.paramMap.get('articleId')!;
       this.renderTemplate();
     }
+  }
+
+  public tabChanged(index: number, tab: string) {
+    alert(tab)
   }
 
   private renderArticleContent(data: any = {}): void {
@@ -115,7 +121,11 @@ export class ArticleComponent {
       return _.get(section, "__component", "") == "shared.article-section-title"
     }).map((articleIndex: any) => {
       return { title: articleIndex.title, url: articleIndex.url }
-    })
+    });
+    this.relatedArticles = _.get(data, "data.attributes.related_articles.data", []).map((element: any) => {
+      return { title: element.attributes.title, url: "/articles/" + element.id }
+    });
+
   }
 
   public renderContent(articleId: any): void {
@@ -143,6 +153,9 @@ export class ArticleComponent {
         this.renderSidebar(data);
         this.searchPills = _.get(data, "data.attributes.page_template.data.attributes.header.pill", []).map((pillItem: any) => {
           return pillItem.title;
+        });
+        this.categoryGroupsTabs = _.get(data, "data.attributes.category.data.attributes.category_groups.data", []).map((categoryG: any) => {
+          return categoryG.attributes.title;
         });
       },
       error: (error) => {

@@ -49,6 +49,7 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
   public contactUsComponent: any;
   public footerComponent: any;
   public searchPills: any;
+  categoryGroupsTabs: any;
 
   async ngAfterViewInit() {
     if (this.dynamicContainer) {
@@ -170,6 +171,10 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
       this.contactUsComponent = _.get(data, "template.data.attributes.page_template.data.attributes.contact_us");
 
       this.footerComponent = _.get(data, "template.data.attributes.page_template.data.attributes.footer_section");
+
+      this.categoryGroupsTabs = _.get(data, "category_groups.data", []).map((categoryG: any) => {
+        return categoryG.attributes.title;
+      });
 
     });
 

@@ -13,7 +13,7 @@ import { LinkComponent } from '../link/link.component';
 export class RelatedArticlesComponent {
   @Input() title = 'Related articles';
   @Input() viewMoreLabel = 'View More';
-  @Input() relatedLinks: IInputData[] = [
+  @Input() relatedLinks: any[] = [
     {
       title: 'Paysafe Glossary of Payment Terms for Merchants',
       url: '#',
@@ -31,7 +31,7 @@ export class RelatedArticlesComponent {
       url: '#',
     },
   ];
-  @Input() iconName = ''
+  @Input() iconName = 'arrow_outward'
   public onClickViewMore = () => {
 
   };

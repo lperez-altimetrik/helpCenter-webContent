@@ -63,7 +63,7 @@ export class SearchBarComponent implements OnChanges, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.searchControl.valueChanges
+    this.searchString.valueChanges
       .pipe(
         debounceTime(300),
         distinctUntilChanged()
