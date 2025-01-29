@@ -13,13 +13,13 @@ import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { HttpClient } from '@angular/common/http';
 import { isPlatformBrowser } from '@angular/common';
 import { AfterViewInit, HostListener } from '@angular/core';
 
 import { MatAutocompleteTrigger } from '@angular/material/autocomplete';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { NavigateService } from 'app/services/navigate.service';
+import { DataService } from 'app/services/data.service';
 
 
 @Component({
@@ -38,6 +38,7 @@ import { NavigateService } from 'app/services/navigate.service';
 export class SearchBarComponent implements OnChanges, AfterViewInit {
   private navigateService = inject(NavigateService);
   @Input() title = 'Popular articles';
+  @Input() category_group = '';
   @Input() searchString = new FormControl('');
   @ViewChild('searchInput') inputElement!: ElementRef;
   @Input() options: any[] = [
@@ -51,14 +52,14 @@ export class SearchBarComponent implements OnChanges, AfterViewInit {
   ];
   @Input() isPanelOpened = false;
   @Input() searchFocus = false;
+  private dataService = inject(DataService);
   @ViewChild(MatAutocompleteTrigger)
   autocomplete: MatAutocompleteTrigger | undefined;
   filteredOptions: any[] = [];
   searchControl = new FormControl('');
 
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object,
-    private http: HttpClient) {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     this.autocomplete = undefined;
   }
 
@@ -77,14 +78,14 @@ export class SearchBarComponent implements OnChanges, AfterViewInit {
       });
   }
 
-  searchArticles(query: string): void {
-    const apiUrl = 'http://localhost:8080/api/search/articles';
-    this.http.get<any[]>(`${apiUrl}?query=${query}`).subscribe({
-      next: (data) => {
-        this.options = data.map(item => { return { title: item.title, id: item.id } });
+  searchArticles(query: string) {
+    console.log(this.category_group)
+    this.dataService.searchArticles(query, this.category_group).subscribe({
+      next: (data: any) => {
+        this.options = data.map((item: any) => { return { title: item.title, id: item.id } });
         this.inputElement.nativeElement.click();
       },
-      error: (err) => {
+      error: (err: any) => {
         console.error('Error fetching search results:', err);
         this.options = [];
       },

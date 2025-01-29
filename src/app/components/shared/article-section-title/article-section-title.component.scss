@@ -48,6 +48,8 @@
     font-style: normal;
     font-weight: 400;
 
+    margin: 0px;
+
     @include respond-to("mobile-mb") {
       font-size: 22px;
     }
