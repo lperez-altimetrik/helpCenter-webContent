@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { environment } from 'environments/environment';
 
 export interface AppState {
-    isLoading: boolean;
+    categoryGroup: string;
     user: any;
     language: string;
 }
@@ -17,7 +17,7 @@ export class DataService {
     constructor(private http: HttpClient) { }
 
     private helpCenterState: AppState = {
-        isLoading: false,
+        categoryGroup: "",
         user: null,
         language: 'English',
     };
@@ -36,14 +36,12 @@ export class DataService {
         this.state$.next({ ...this.currentState, ...newState });
         this.getState().subscribe((state: AppState) => {
             localStorage.setItem('helpCenterState', JSON.stringify(state));
-            console.log('Stored state:', localStorage);
         })
     }
 
     restoreState() {
         console.log(localStorage)
         const storedState = localStorage.getItem('helpCenterState');
-        console.log('Stored state:', storedState);
         if (storedState) {
             this.state$.next(JSON.parse(storedState));
         }
@@ -53,11 +51,13 @@ export class DataService {
      * Simulates an asynchronous call to fetch the JSON contract.
      * Replace the mock data with a real HTTP call in production.
      */
-    getSectionList(): Observable<any> {
+    getSectionList(language: string): Observable<any> {
         const headers = new HttpHeaders({
             'User-Roles': 'ADMIN',
         });
-        return this.http.get(`${this.baseUrl}/landing-page`, { headers });
+        const params = new HttpParams()
+            .set('language', language)
+        return this.http.get(`${this.baseUrl}/landing-page`, { headers, params });
 
     }
 
@@ -65,12 +65,14 @@ export class DataService {
    * Simulates an asynchronous call to fetch the JSON contract.
    * Replace the mock data with a real HTTP call in production.
    */
-    getArticlesTemplate(articleId: any): Observable<any> {
+    getArticlesTemplate(articleId: any, language: string): Observable<any> {
 
         const headers = new HttpHeaders({
             'User-Roles': 'ADMIN'
         });
-        return this.http.get(`${this.baseUrl}/articles/${articleId}`, { headers });
+        const params = new HttpParams()
+            .set('language', language)
+        return this.http.get(`${this.baseUrl}/articles/${articleId}`, { headers, params });
 
     }
 

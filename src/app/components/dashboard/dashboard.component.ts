@@ -14,7 +14,7 @@ import {
   MatChipsModule,
 } from '@angular/material/chips';
 import { CarouselComponent } from '../shared/carousel/carousel.component';
-import { DataService } from 'app/services/data.service';
+import { AppState, DataService } from 'app/services/data.service';
 import { NavigateService } from 'app/services/navigate.service';
 import { TopicsContainerComponent } from '../shared/card/topics-container/topics-container.component';
 import { NewsContainerComponent } from '../shared/card/news-container/news-container.component';
@@ -50,6 +50,16 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
   public footerComponent: any;
   public searchPills: any;
   categoryGroupsTabs: any;
+  state!: AppState;
+  private helpCenterState = inject(DataService);
+
+
+  ngOnInit(): void {
+    this.helpCenterState.restoreState();
+    this.helpCenterState.getState().subscribe((state: AppState) => {
+      this.state = state;
+    });
+  }
 
   async ngAfterViewInit() {
     if (this.dynamicContainer) {
@@ -60,7 +70,8 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
   private renderSections(): void {
     this.componentRefs.forEach((ref) => ref.destroy()); // Destroy existing components
     this.componentRefs = [];
-    this.dataService.getSectionList().subscribe((data: any) => {
+
+    this.dataService.getSectionList(this.state.language).subscribe((data: any) => {
       const sectionList = _.get(data, "template.data.attributes.section_list");
       sectionList.forEach((section: any) => {
 
@@ -164,8 +175,13 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
         }
       });
 
+      /* //search by pills component
       this.searchPills = _.get(data, "template.data.attributes.page_template.data.attributes.header.pill", []).map((pillItem: any) => {
         return pillItem.title;
+      });
+      */
+      this.searchPills = _.get(data, "topics.data", []).map((pillItem: any) => {
+        return _.get(pillItem, "attributes.title");
       });
 
       this.contactUsComponent = _.get(data, "template.data.attributes.page_template.data.attributes.contact_us");

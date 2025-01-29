@@ -16,7 +16,8 @@ import { PillBarComponent } from '../pill-bar/pill-bar.component';
 import { TitleComponent } from '../title/title.component';
 import { CenterTabBarComponent } from '../center-tab-bar/center-tab-bar.component';
 import { MatSelect, MatSelectModule } from '@angular/material/select';
-import { DataService } from 'app/services/data.service';
+import { AppState, DataService } from 'app/services/data.service';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-header',
@@ -43,6 +44,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   @Input() loginLabel = 'Login';
   @Input() title = "Need Help? Let's find it together!";
   @Input() tabs = ['Small Buisness', 'Enterprise', 'Partners'];
+  private helpCenterState = inject(DataService);
 
   @Input() chipLabels: string[] = [
     'Get Started!',
@@ -56,6 +58,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   private navigateService = inject(NavigateService);
   private authSubscription!: Subscription;
   public category_group: string = "";
+  public initialTabIndex: number = 0;
   isLoggedIn = false;
   logoPath = 'assets/icons/top-bar/Optic_Logo_White.svg';
 
@@ -69,17 +72,19 @@ export class HeaderComponent implements OnInit, OnDestroy {
     "Chinese",
     "Japanese"
   ];
-  selectedValue: string = this.languages[0];
-  private helpCenterState = inject(DataService);
+  selectedLanguage: string = this.languages[0];
   @ViewChild(MatSelect) matSelect!: MatSelect;
 
 
   constructor(private authService: AuthService) {
     this.authSubscription = new Subscription();
   }
+
   toggleLogin() {
     // TEST FUNCTION, DELETE
     this.isLoggedIn = !this.isLoggedIn;
+    console.log(this.tabs)
+    this.initialTabIndex = _.findIndex(this.tabs, (item) => item === this.category_group);
   }
 
   updateLanguage(option: string) {
@@ -93,6 +98,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
         console.log('Auth state changed: ', this.isLoggedIn);
       }
     );
+    this.helpCenterState.getState().subscribe((state: AppState) => {
+      this.selectedLanguage = state.language;
+      this.category_group = state.categoryGroup;
+      this.initialTabIndex = _.findIndex(this.tabs, (item) => item === this.category_group);
+    })
   }
 
   ngOnDestroy() {
@@ -102,6 +112,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   setCategoryGroup(categoryGroup: string): void {
+    if (_.isNil(categoryGroup)) {
+      return;
+    }
+    this.helpCenterState.updateState({ categoryGroup: categoryGroup })
     this.category_group = categoryGroup;
   }
 
