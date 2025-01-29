@@ -8,5 +8,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './rich-text.component.scss'
 })
 export class RichTextComponent {
-  @Input() text = "Default text";
+  @Input() text: string[] = ["Default text", "Second part"];
 }

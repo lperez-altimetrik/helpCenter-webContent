@@ -1,5 +1,5 @@
 import { Component, ComponentRef, inject, ViewChild, ViewContainerRef } from '@angular/core';
-import { DataService } from 'app/services/data.service';
+import { AppState, DataService } from 'app/services/data.service';
 import { TableComponent } from '../shared/table/table.component';
 import { ContextualMessageComponent } from '../shared/contextual-message/contextual-message.component';
 
@@ -27,6 +27,7 @@ import { RichTextComponent } from '../shared/rich-text/rich-text.component';
 import { ModalComponent } from '../shared/modal/modal.component';
 import { environment } from 'environments/environment';
 import * as _ from 'lodash';
+import { ArticleSectionIndexComponent } from '../shared/article-section-index/article-section-index.component';
 
 @Component({
   selector: 'app-article',
@@ -40,6 +41,7 @@ export class ArticleComponent {
   resourcesUrl = environment.resourcesUrl;
   private dataService = inject(DataService);
   private navigateService = inject(NavigateService);
+  private helpCenterState = inject(DataService); //duplicated with dataService but using this way for differentiating
   articleId!: string;
   @ViewChild('dynamicContainer', { read: ViewContainerRef })
   dynamicContainer!: ViewContainerRef;
@@ -55,8 +57,27 @@ export class ArticleComponent {
   articleIndexSections: any = [];
   relatedArticles: any;
   categoryGroupsTabs: any;
+  breadcrumbData: any;
+
+  state!: AppState;
+  languages: any[] = [
+    "English",
+    "Spanish",
+    "German",
+    "French",
+    "Chinese",
+    "Japanese"
+  ];
 
   constructor(private route: ActivatedRoute) { }
+
+
+  ngOnInit(): void {
+    this.helpCenterState.restoreState();
+    this.helpCenterState.getState().subscribe((state: AppState) => {
+      this.state = state;
+    });
+  }
 
   async ngAfterViewInit() {
     if (this.dynamicContainer) {
@@ -106,6 +127,9 @@ export class ArticleComponent {
         case 'shared.article-section-title':
           this.createComponent(section, ArticleSectionTitleComponent);
           break;
+        case 'shared.article-index-section':
+          this.createComponent(section, ArticleSectionIndexComponent);
+          break;
         case 'shared.product-card':
           this.createComponent(section, ProductsContainerComponent);
           break;
@@ -117,14 +141,35 @@ export class ArticleComponent {
           break;
       }
     });
+
+    //Article index mapping
     this.articleIndexSections = sectionList.filter((section: any) => {
-      return _.get(section, "__component", "") == "shared.article-section-title"
+      return _.get(section, "__component", "") == "shared.article-index-section"
     }).map((articleIndex: any) => {
-      return { title: articleIndex.title, url: articleIndex.url }
+      return { title: articleIndex.section, url: articleIndex.sectionId }
     });
+    //When no "article index sections" from strapi we map the sections using the "article section titles"
+    if (!this.articleIndexSections || _.isEmpty(this.articleIndexSections)) {
+      this.articleIndexSections = sectionList.filter((section: any) => {
+        return _.get(section, "__component", "") == "shared.article-section-title"
+      }).map((articleIndex: any) => {
+        return { title: articleIndex.title, url: articleIndex.title }
+      });
+    }
+
+    //mapping related article elements
     this.relatedArticles = _.get(data, "data.attributes.related_articles.data", []).map((element: any) => {
       return { title: element.attributes.title, url: "/articles/" + element.id }
     });
+
+    //mapping breadcrumb
+    this.breadcrumbData = {
+      "pagesPath": [
+        { title: "Home", url: "/dashboard" },
+        { title: _.get(data, "data.attributes.category.data.attributes.title", ""), url: "" }, //category is not navigable
+      ],
+      "currentElement": _.get(data, "data.attributes.title", "")
+    };
 
   }
 
@@ -211,6 +256,12 @@ export class ArticleComponent {
           }
         })
         componentRef.instance["accordionData"] = newData;
+        break;
+      case "shared.rich-text":
+        const paragraphs = _.get(section, "content", []).map((part: any) => {
+          return _.get(part, "children[0].text", "");
+        });
+        componentRef.instance["text"] = paragraphs;
         break;
       case "shared.image":
       case "shared.product-card":

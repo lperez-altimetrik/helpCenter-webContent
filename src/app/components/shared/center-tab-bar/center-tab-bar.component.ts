@@ -25,9 +25,10 @@ export class CenterTabBarComponent implements OnInit {
 
   ngOnInit(): void {
     this._activeTab = this.initialTabIndex;
+    this.tabChanged.emit(this.tabs[this.initialTabIndex]);
   }
-  onTabClicked(index: number) {
+  onTabClicked(index: number, tab: string) {
     this._activeTab = index;
-    this.tabChanged.emit(index);
+    this.tabChanged.emit(tab);
   }
 }

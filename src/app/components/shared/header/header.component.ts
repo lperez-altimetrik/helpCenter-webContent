@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Input, inject, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, inject, Output, EventEmitter, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -15,6 +15,8 @@ import { FormControl } from '@angular/forms';
 import { PillBarComponent } from '../pill-bar/pill-bar.component';
 import { TitleComponent } from '../title/title.component';
 import { CenterTabBarComponent } from '../center-tab-bar/center-tab-bar.component';
+import { MatSelect, MatSelectModule } from '@angular/material/select';
+import { DataService } from 'app/services/data.service';
 
 @Component({
   selector: 'app-header',
@@ -31,6 +33,7 @@ import { CenterTabBarComponent } from '../center-tab-bar/center-tab-bar.componen
     MatFormFieldModule,
     TitleComponent,
     CenterTabBarComponent,
+    MatSelectModule
   ],
 
   templateUrl: './header.component.html',
@@ -52,11 +55,23 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   private navigateService = inject(NavigateService);
   private authSubscription!: Subscription;
+  public category_group: string = "";
   isLoggedIn = false;
   logoPath = 'assets/icons/top-bar/Optic_Logo_White.svg';
 
   _query: FormControl = new FormControl('');
 
+  languages: any[] = [
+    "English",
+    "Spanish",
+    "German",
+    "French",
+    "Chinese",
+    "Japanese"
+  ];
+  selectedValue: string = this.languages[0];
+  private helpCenterState = inject(DataService);
+  @ViewChild(MatSelect) matSelect!: MatSelect;
 
 
   constructor(private authService: AuthService) {
@@ -65,6 +80,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
   toggleLogin() {
     // TEST FUNCTION, DELETE
     this.isLoggedIn = !this.isLoggedIn;
+  }
+
+  updateLanguage(option: string) {
+    this.helpCenterState.updateState({ language: option })
   }
 
   ngOnInit() {
@@ -80,6 +99,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
     if (this.authSubscription) {
       this.authSubscription.unsubscribe();
     }
+  }
+
+  setCategoryGroup(categoryGroup: string): void {
+    this.category_group = categoryGroup;
   }
 
   handlePillEvent(message: string) {
@@ -109,8 +132,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.toggleLogin();
   }
 
-  onLang() {
-    //Language/region logic here
-    console.log('language button clicked');
+  openSelect() {
+    this.matSelect.open();
   }
+
+
 }
