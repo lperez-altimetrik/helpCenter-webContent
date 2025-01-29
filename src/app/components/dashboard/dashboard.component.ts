@@ -71,7 +71,7 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
     this.componentRefs.forEach((ref) => ref.destroy()); // Destroy existing components
     this.componentRefs = [];
 
-    this.dataService.getSectionList(this.state.language).subscribe((data: any) => {
+    this.dataService.getSectionList(this.state.language, this.state.categoryGroup).subscribe((data: any) => {
       const sectionList = _.get(data, "template.data.attributes.section_list");
       sectionList.forEach((section: any) => {
 

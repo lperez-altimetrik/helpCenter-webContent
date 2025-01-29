@@ -51,12 +51,13 @@ export class DataService {
      * Simulates an asynchronous call to fetch the JSON contract.
      * Replace the mock data with a real HTTP call in production.
      */
-    getSectionList(language: string): Observable<any> {
+    getSectionList(language: string, category_group: string): Observable<any> {
         const headers = new HttpHeaders({
             'User-Roles': 'ADMIN',
         });
         const params = new HttpParams()
-            .set('language', language)
+            .set('lng', language)
+            .set('cat_group', category_group)
         return this.http.get(`${this.baseUrl}/landing-page`, { headers, params });
 
     }
@@ -65,13 +66,14 @@ export class DataService {
    * Simulates an asynchronous call to fetch the JSON contract.
    * Replace the mock data with a real HTTP call in production.
    */
-    getArticlesTemplate(articleId: any, language: string): Observable<any> {
+    getArticlesTemplate(articleId: any, language: string, category_group: string): Observable<any> {
 
         const headers = new HttpHeaders({
             'User-Roles': 'ADMIN'
         });
         const params = new HttpParams()
-            .set('language', language)
+            .set('lng', language)
+            .set('cat_group', category_group)
         return this.http.get(`${this.baseUrl}/articles/${articleId}`, { headers, params });
 
     }

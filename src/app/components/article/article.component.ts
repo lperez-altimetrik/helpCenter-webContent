@@ -176,7 +176,7 @@ export class ArticleComponent {
   public renderContent(articleId: any): void {
     this.componentRefs?.forEach((ref) => ref.destroy()); // Destroy existing components
     this.componentRefs = [];
-    this.dataService.getArticlesTemplate(articleId, this.state.language).subscribe({
+    this.dataService.getArticlesTemplate(articleId, this.state.language, this.state.categoryGroup).subscribe({
       next: (data: any) => {
         this.templateData = data;
         this.renderArticleContent(data);
@@ -191,7 +191,7 @@ export class ArticleComponent {
   private renderTemplate(): void {
     this.componentRefs.forEach((ref) => ref.destroy()); // Destroy existing components
     this.componentRefs = [];
-    this.dataService.getArticlesTemplate(this.articleId, this.state.language).subscribe({
+    this.dataService.getArticlesTemplate(this.articleId, this.state.language, this.state.categoryGroup).subscribe({
       next: (data: any) => {
         this.templateData = data;
         this.renderArticleContent(data);
