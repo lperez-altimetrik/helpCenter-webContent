@@ -73,6 +73,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     "Japanese"
   ];
   selectedLanguage: string = this.languages[0];
+  @Output() tabChanged = new EventEmitter();
   @ViewChild(MatSelect) matSelect!: MatSelect;
 
 
@@ -89,6 +90,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   updateLanguage(option: string) {
     this.helpCenterState.updateState({ language: option })
+    this.tabChanged.emit(option);
   }
 
   ngOnInit() {
@@ -117,6 +119,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     }
     this.helpCenterState.updateState({ categoryGroup: categoryGroup })
     this.category_group = categoryGroup;
+    this.tabChanged.emit(this.category_group);
   }
 
   handlePillEvent(message: string) {

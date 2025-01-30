@@ -63,11 +63,11 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
 
   async ngAfterViewInit() {
     if (this.dynamicContainer) {
-      this.renderSections();
+      this.renderSections(null);
     }
   }
 
-  private renderSections(): void {
+  public renderSections(category_group: any): void {
     this.componentRefs.forEach((ref) => ref.destroy()); // Destroy existing components
     this.componentRefs = [];
 

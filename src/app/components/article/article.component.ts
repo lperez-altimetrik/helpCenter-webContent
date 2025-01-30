@@ -82,7 +82,7 @@ export class ArticleComponent {
   async ngAfterViewInit() {
     if (this.dynamicContainer) {
       this.articleId = this.route.snapshot.paramMap.get('articleId')!;
-      this.renderTemplate();
+      this.renderTemplate(null);
     }
   }
 
@@ -188,7 +188,7 @@ export class ArticleComponent {
     });
   }
 
-  private renderTemplate(): void {
+  public renderTemplate(data: any): void {
     this.componentRefs.forEach((ref) => ref.destroy()); // Destroy existing components
     this.componentRefs = [];
     this.dataService.getArticlesTemplate(this.articleId, this.state.language, this.state.categoryGroup).subscribe({

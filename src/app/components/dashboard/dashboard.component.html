@@ -1,5 +1,5 @@
 <div class="container">
-  <app-header [chipLabels]="searchPills" [tabs]="categoryGroupsTabs"></app-header>
+  <app-header [chipLabels]="searchPills" [tabs]="categoryGroupsTabs" (tabChanged)="renderSections($event)"></app-header>
   <div class="purple-bar"></div>
   <div class="content-container">
     <ng-container #dynamicContainer></ng-container>
