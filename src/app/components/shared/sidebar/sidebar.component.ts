@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
@@ -9,6 +9,8 @@ import {
   IBusinessOption,
   ISidebarSection,
 } from 'app/interfaces/input-data.interface';
+import { AppState, DataService } from 'app/services/data.service';
+
 
 @Component({
   selector: 'app-sidebar',
@@ -175,7 +177,14 @@ export class SidebarComponent {
 
   @Input() selectedBusiness: any = "";
 
+  ngOnInit() {
+    this.helpCenterState.getState().subscribe((state: AppState) => {
+      this.selectedBusiness = state.categoryGroup;
+    });
+  }
+
   public currentActiveItem: any = null;
+  private helpCenterState = inject(DataService);
 
   public onMenuItemClick(event: any, articleUrl: any) {
     let eventTarget = event.target;
@@ -192,6 +201,7 @@ export class SidebarComponent {
 
   public changeOption(option: any) {
     this.selectedBusiness = option.option;
+    this.helpCenterState.updateState({ categoryGroup: this.selectedBusiness });
     this.businessPanelOpened = !this.businessPanelOpened;
     this.menuSections = this.menuDataSection[this.selectedBusiness];
   }

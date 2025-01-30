@@ -7,7 +7,7 @@
     <div class="divider-line"></div>
     <span class="option-header">{{ title }}</span>
     <div class="options-list">
-      @for (option of filteredOptions; track option) {
+      @for (option of options; track option) {
       <mat-option [value]="option.title" class="option-container" (click)="redirectToArticle(option.id)">
         <span class="material-symbols-outlined search-icon">search</span>
         <span class="option-text" (click)="onOptionClick(option)">{{ option.title }}</span>
