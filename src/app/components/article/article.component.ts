@@ -82,7 +82,7 @@ export class ArticleComponent {
   async ngAfterViewInit() {
     if (this.dynamicContainer) {
       this.articleId = this.route.snapshot.paramMap.get('articleId')!;
-      this.renderTemplate();
+      this.renderTemplate(null);
     }
   }
 
@@ -176,7 +176,7 @@ export class ArticleComponent {
   public renderContent(articleId: any): void {
     this.componentRefs?.forEach((ref) => ref.destroy()); // Destroy existing components
     this.componentRefs = [];
-    this.dataService.getArticlesTemplate(articleId).subscribe({
+    this.dataService.getArticlesTemplate(articleId, this.state.language, this.state.categoryGroup).subscribe({
       next: (data: any) => {
         this.templateData = data;
         this.renderArticleContent(data);
@@ -188,10 +188,10 @@ export class ArticleComponent {
     });
   }
 
-  private renderTemplate(): void {
+  public renderTemplate(data: any): void {
     this.componentRefs.forEach((ref) => ref.destroy()); // Destroy existing components
     this.componentRefs = [];
-    this.dataService.getArticlesTemplate(this.articleId).subscribe({
+    this.dataService.getArticlesTemplate(this.articleId, this.state.language, this.state.categoryGroup).subscribe({
       next: (data: any) => {
         this.templateData = data;
         this.renderArticleContent(data);
@@ -227,15 +227,18 @@ export class ArticleComponent {
           const filteredItems: any = _.get(category, "attributes.articles.data", []).filter((article: any) => {
             return _.get(article, "attributes.category_groups.data", []).find((categoryGroup: any) => optionBO == _.get(categoryGroup, "attributes.title", ""))
           });
-          itemObj["menuItems"] = filteredItems.map((article: any) => {
+          const menuItems = filteredItems.map((article: any) => {
             return { title: article.attributes.title, url: article.id }
           });
+          itemObj["menuItems"] = menuItems;
           return itemObj
         })
+        sectionObj["sections"] = sectionObj["sections"].filter((subMenu: any) => { return !_.isEmpty(subMenu.menuItems) });
         return sectionObj;
       });
       sectionsBO[optionBO] = sections;
     }
+    console.log(sectionsBO);
     [this.sidebarData, this.businessOptions] = [sectionsBO, businessOptionsObj]
     this.selectedOptionSidebar = _.get(this.businessOptions, "0.option", "");
     this.menuSections = sectionsBO[this.selectedOptionSidebar];

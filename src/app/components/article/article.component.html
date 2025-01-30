@@ -1,7 +1,7 @@
 <app-header
   [chipLabels]="searchPills"
   [tabs]="categoryGroupsTabs"
-  (tabChanged)="(tabChanged)"
+  (tabChanged)="renderTemplate($event)"
 ></app-header>
 <div class="main-container">
   <app-sidebar

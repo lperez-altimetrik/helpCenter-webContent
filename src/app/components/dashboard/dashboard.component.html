@@ -1,9 +1,14 @@
 <div class="container">
+<<<<<<< HEAD
   <app-header
     [chipLabels]="searchPills"
     [tabs]="categoryGroupsTabs"
     [expanded]="true"
   ></app-header>
+=======
+  <app-header [chipLabels]="searchPills" [tabs]="categoryGroupsTabs" (tabChanged)="renderSections($event)"></app-header>
+  <div class="purple-bar"></div>
+>>>>>>> b125f6909121f1c5edcd3d49c9c1d1776aab88cb
   <div class="content-container">
     <ng-container #dynamicContainer></ng-container>
     <div class="list-container">

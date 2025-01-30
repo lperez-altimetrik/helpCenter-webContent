@@ -43,9 +43,6 @@ export class SearchBarComponent implements OnChanges, AfterViewInit {
   @ViewChild('searchInput') inputElement!: ElementRef;
   @Input() options: any[] = [
     { title: 'Paysafe Glossary of Payment Terms for Merchants', id: 6 },
-    { title: 'Paysafe Glossary of Payment Terms for Merchants', id: 6 },
-    { title: 'Paysafe Glossary of Payment Terms for Merchants', id: 6 },
-    { title: 'Paysafe Glossary of Payment Terms for Merchants', id: 6 },
     { title: 'Wallet', id: 7 },
     { title: 'Payment Link', id: 8 },
     { title: 'Disputes', id: 9 }
