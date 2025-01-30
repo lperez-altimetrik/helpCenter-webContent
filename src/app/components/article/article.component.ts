@@ -227,15 +227,18 @@ export class ArticleComponent {
           const filteredItems: any = _.get(category, "attributes.articles.data", []).filter((article: any) => {
             return _.get(article, "attributes.category_groups.data", []).find((categoryGroup: any) => optionBO == _.get(categoryGroup, "attributes.title", ""))
           });
-          itemObj["menuItems"] = filteredItems.map((article: any) => {
+          const menuItems = filteredItems.map((article: any) => {
             return { title: article.attributes.title, url: article.id }
           });
+          itemObj["menuItems"] = menuItems;
           return itemObj
         })
+        sectionObj["sections"] = sectionObj["sections"].filter((subMenu: any) => { return !_.isEmpty(subMenu.menuItems) });
         return sectionObj;
       });
       sectionsBO[optionBO] = sections;
     }
+    console.log(sectionsBO);
     [this.sidebarData, this.businessOptions] = [sectionsBO, businessOptionsObj]
     this.selectedOptionSidebar = _.get(this.businessOptions, "0.option", "");
     this.menuSections = sectionsBO[this.selectedOptionSidebar];
