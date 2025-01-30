@@ -10,6 +10,11 @@
   width: 100%;
   padding: 0 var(--spacing-9);
 
+  @include respond-to("mobile-mb") {
+    margin-top: var(--spacing-4);
+    margin-bottom: var(--spacing-7);
+  }
+
   .tab {
     flex: 1;
     justify-content: center;

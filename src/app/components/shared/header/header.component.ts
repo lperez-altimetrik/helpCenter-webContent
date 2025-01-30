@@ -16,6 +16,7 @@ import { PillBarComponent } from '../pill-bar/pill-bar.component';
 import { TitleComponent } from '../title/title.component';
 import { CenterTabBarComponent } from '../center-tab-bar/center-tab-bar.component';
 import { MatSelect, MatSelectModule } from '@angular/material/select';
+import { MatMenu, MatMenuModule } from '@angular/material/menu'
 import { DataService } from 'app/services/data.service';
 
 @Component({
@@ -31,6 +32,7 @@ import { DataService } from 'app/services/data.service';
     SearchBarComponent,
     MatInputModule,
     MatFormFieldModule,
+    MatMenuModule,
     TitleComponent,
     CenterTabBarComponent,
     MatSelectModule
@@ -52,6 +54,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     'Payments',
     'My Account',
   ];
+  @Input() expanded = false;
 
   private navigateService = inject(NavigateService);
   private authSubscription!: Subscription;
@@ -72,7 +75,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   selectedValue: string = this.languages[0];
   private helpCenterState = inject(DataService);
   @ViewChild(MatSelect) matSelect!: MatSelect;
-
+  @ViewChild(MatMenu) matMenu!: MatMenu;
 
   constructor(private authService: AuthService) {
     this.authSubscription = new Subscription();

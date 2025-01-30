@@ -28,7 +28,7 @@
         <ng-container #dynHost></ng-container>
       </div>
 
-      <div class="toggle-button">
+      <div class="toggle-button" *ngIf="isMobile">
         <a (click)="toggleView()">
           {{ isCollapsed ? "See All Items" : "Collapse" }}
         </a>
@@ -46,3 +46,52 @@
     <span class="material-symbols-outlined">chevron_right</span>
   </button>
 </div>
+
+<!-- <div class="carousel">
+  <button
+    class="nav-button prev"
+    [disabled]="!canScrollLeft"
+    (mousedown)="startScroll(-1)"
+    (mouseup)="stopScroll()"
+    (mouseleave)="stopScroll()"
+  >
+    <span class="material-symbols-outlined">chevron_left</span>
+  </button>
+
+  <div class="carousel-container">
+    <div class="header">
+      <span
+        class="material-symbols-outlined icon"
+        [attr.aria-label]="iconName"
+        >{{ iconName }}</span
+      >
+      <h3>{{ title }}</h3>
+    </div>
+
+    <div class="carousel-track-wrapper">
+      <div
+        class="carousel-track"
+        #carouselTrack
+        [style.transform]="'translateX(-' + scrollPosition + 'px)'"
+      >
+        <ng-container #dynHost></ng-container>
+      </div>
+
+      <div class="toggle-button">
+        <a (click)="toggleView()">
+          {{ isCollapsed ? "See All Items" : "Collapse" }}
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <button
+    class="nav-button next"
+    (mousedown)="startScroll(1)"
+    (mouseup)="stopScroll()"
+    (mouseleave)="stopScroll()"
+    [disabled]="!canScrollRight"
+  >
+    <span class="material-symbols-outlined">chevron_right</span>
+  </button>
+</div> -->

@@ -9,6 +9,11 @@
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.04),
     0px 4px 6px -1px rgba(0, 0, 0, 0.06);
 
+  @include respond-to("mobile-mb") {
+    margin: 0px;
+    margin-bottom: 20px;
+  }
+
   .need-help {
     padding: var(--spacing-6);
 

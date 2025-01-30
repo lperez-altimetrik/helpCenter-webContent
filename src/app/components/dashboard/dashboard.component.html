@@ -1,6 +1,9 @@
 <div class="container">
-  <app-header [chipLabels]="searchPills" [tabs]="categoryGroupsTabs"></app-header>
-  <div class="purple-bar"></div>
+  <app-header
+    [chipLabels]="searchPills"
+    [tabs]="categoryGroupsTabs"
+    [expanded]="true"
+  ></app-header>
   <div class="content-container">
     <ng-container #dynamicContainer></ng-container>
     <div class="list-container">
@@ -8,9 +11,15 @@
     </div>
 
     <div class="list-container">
-      <app-contact-us style="width: 100%" [buttonText]="contactUsComponent?.title"
-        [linkLabel]="contactUsComponent?.subtitle"></app-contact-us>
+      <app-contact-us
+        style="width: 100%"
+        [buttonText]="contactUsComponent?.title"
+        [linkLabel]="contactUsComponent?.subtitle"
+      ></app-contact-us>
     </div>
   </div>
-  <app-footer [links]="footerComponent?.footer_links" [disclaimer]="getFooterDisclaimer()"></app-footer>
+  <app-footer
+    [links]="footerComponent?.footer_links"
+    [disclaimer]="getFooterDisclaimer()"
+  ></app-footer>
 </div>

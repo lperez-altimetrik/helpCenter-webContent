@@ -16,6 +16,10 @@
   width: 100%;
   box-sizing: border-box;
 
+  @include respond-to("mobile-mb") {
+    padding: var(--spacing-6);
+  }
+
   .related-title-container {
     display: flex;
     height: 40px;
@@ -55,6 +59,10 @@
     flex-direction: column;
     align-items: flex-start;
     gap: var(--spacing-7);
+
+    @include respond-to("mobile-mb") {
+      padding-left: 0;
+    }
 
     .related-links-container {
       display: flex;
