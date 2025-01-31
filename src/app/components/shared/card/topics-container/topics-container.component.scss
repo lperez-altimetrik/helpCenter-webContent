@@ -2,7 +2,7 @@
 
 mat-card {
   cursor: pointer;
-  width: 160px;
+  width: 206px;
   box-shadow: none;
   border: 1px solid var(--hc-color-bg-secondary);
 
@@ -26,9 +26,10 @@ mat-card {
     align-items: flex-start;
     gap: 12px;
     align-self: stretch;
-    max-width: 160px;
+    max-width: 206px;
 
     .header {
+      max-width: 100%;
 
       .icon {
         @include icon-style();
@@ -53,6 +54,10 @@ mat-card {
         color: var(--hc-color-fg-primary);
         margin-bottom: 0;
 
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
         @include respond-to("mobile-mb") {
           font-size: 12px;
           margin: 0;
@@ -68,6 +73,14 @@ mat-card {
         margin: 0;
         line-height: normal;
         color: var(--hc-color-fg-secondary);
+
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        min-height: var(--size-3-lines);
+        overflow: hidden;
+        text-overflow: ellipsis;
+
       }
     }
   }

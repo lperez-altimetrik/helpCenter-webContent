@@ -7,6 +7,7 @@ export interface AppState {
     categoryGroup: string;
     user: any;
     language: string;
+    categoryGroups: string[];
 }
 
 @Injectable({
@@ -17,9 +18,10 @@ export class DataService {
     constructor(private http: HttpClient) { }
 
     private helpCenterState: AppState = {
-        categoryGroup: "",
+        categoryGroup: "Small Business",
         user: null,
         language: 'English',
+        categoryGroups: ["Small Business", "Enterprise", "Partners"]
     };
 
     private state$ = new BehaviorSubject<AppState>(this.helpCenterState);

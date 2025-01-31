@@ -70,6 +70,7 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
   }
 
   public renderSections(category_group: any): void {
+    this.helpCenterState.restoreState();
     this.componentRefs.forEach((ref) => ref.destroy()); // Destroy existing components
     this.componentListRefs.forEach((ref) => ref.destroy());
     this.componentRefs = [];
@@ -167,7 +168,7 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
                   this.state.categoryGroup);
               });
 
-              listRef.instance.relatedLinks = articles.map((topic: any) => ({
+              listRef.instance.relatedLinks = _.takeRight(articles, 4).map((topic: any) => ({
                 title: topic?.attributes?.title,
                 url: "/articles/" + topic.id
               }));
@@ -192,7 +193,7 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
               });
 
 
-              listRef.instance.relatedLinks = articles.map((topic: any) => ({
+              listRef.instance.relatedLinks = _.takeRight(articles, 4).map((topic: any) => ({
                 title: topic?.attributes?.title,
                 url: "/articles/" + topic.id
               }));
@@ -208,22 +209,21 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
         }
       });
 
-      /* //search by pills component
-      this.searchPills = _.get(data, "template.data.attributes.page_template.data.attributes.header.pill", []).map((pillItem: any) => {
-        return pillItem.title;
-      });
-      */
       this.searchPills = _.get(data, "topics.data", []).map((pillItem: any) => {
         return _.get(pillItem, "attributes.title");
       });
+
+
 
       this.contactUsComponent = _.get(data, "template.data.attributes.page_template.data.attributes.contact_us");
 
       this.footerComponent = _.get(data, "template.data.attributes.page_template.data.attributes.footer_section");
 
-      this.categoryGroupsTabs = _.get(data, "category_groups.data", []).map((categoryG: any) => {
+      const categoryGroups = _.get(data, "category_groups.data", []).map((categoryG: any) => {
         return categoryG.attributes.title;
       });
+      this.categoryGroupsTabs = categoryGroups
+      this.helpCenterState.updateState({ categoryGroups: categoryGroups });
 
     });
 

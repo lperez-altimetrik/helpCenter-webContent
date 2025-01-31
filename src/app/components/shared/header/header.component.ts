@@ -18,6 +18,7 @@ import { CenterTabBarComponent } from '../center-tab-bar/center-tab-bar.componen
 import { MatSelect, MatSelectModule } from '@angular/material/select';
 import { AppState, DataService } from 'app/services/data.service';
 import * as _ from 'lodash';
+import { environment } from 'environments/environment';
 
 @Component({
   selector: 'app-header',
@@ -60,18 +61,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
   public category_group: string = "";
   public initialTabIndex: number = 0;
   isLoggedIn = false;
+  @Input() showSearchBar = false;
   logoPath = 'assets/icons/top-bar/Optic_Logo_White.svg';
 
   _query: FormControl = new FormControl('');
 
-  languages: any[] = [
-    "English",
-    "Spanish",
-    "German",
-    "French",
-    "Chinese",
-    "Japanese"
-  ];
+  languages: any[] = environment.languages;
   selectedLanguage: string = this.languages[0];
   @Output() tabChanged = new EventEmitter();
   @ViewChild(MatSelect) matSelect!: MatSelect;
@@ -82,8 +77,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   toggleLogin() {
-    // TEST FUNCTION, DELETE
     this.isLoggedIn = !this.isLoggedIn;
+    this.showSearchBar = !this.showSearchBar;
     this.initialTabIndex = _.findIndex(this.tabs, (item) => item === this.category_group);
   }
 
@@ -100,9 +95,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
       }
     );
     this.helpCenterState.getState().subscribe((state: AppState) => {
-      this.selectedLanguage = state.language;
-      this.category_group = state.categoryGroup;
-      this.initialTabIndex = _.findIndex(this.tabs, (item) => item === this.category_group);
+      if (!_.isNil(this.tabs)) {
+        console.log(this.tabs)
+        this.selectedLanguage = state.language;
+        this.category_group = state.categoryGroup;
+        this.initialTabIndex = _.findIndex(this.tabs, (item) => item === this.category_group);
+      }
     })
   }
 

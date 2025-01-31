@@ -30,7 +30,7 @@
         </div>
 
         <div *ngIf="isLoggedIn" class="user-buttons-container">
-          <button mat-icon-button (click)="onSearch()" class="rh-button">
+          <button mat-icon-button (click)="onSearch()" class="rh-button" *ngIf="!showSearchBar">
             <span class="material-symbols-outlined"> search </span>
           </button>
           <mat-divider class="divider mobile-divider" [vertical]="true"></mat-divider>
@@ -58,7 +58,7 @@
     </nav>
   </header>
 
-  <div class="expanded" *ngIf="!isLoggedIn">
+  <div class="expanded" *ngIf="showSearchBar">
     <h1>
       {{ title }}
     </h1>

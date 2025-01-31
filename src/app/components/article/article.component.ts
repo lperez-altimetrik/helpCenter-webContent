@@ -60,14 +60,7 @@ export class ArticleComponent {
   breadcrumbData: any;
 
   state!: AppState;
-  languages: any[] = [
-    "English",
-    "Spanish",
-    "German",
-    "French",
-    "Chinese",
-    "Japanese"
-  ];
+  languages: any[] = environment.languages;
 
   constructor(private route: ActivatedRoute) { }
 
@@ -239,7 +232,10 @@ export class ArticleComponent {
       sectionsBO[optionBO] = sections;
     }
     [this.sidebarData, this.businessOptions] = [sectionsBO, businessOptionsObj]
-    this.selectedOptionSidebar = _.get(this.businessOptions, "0.option", "");
+    this.helpCenterState.updateState({ categoryGroups: businessOptionsObj.map((option: any) => option.option) });
+    this.helpCenterState.getState().subscribe((state: AppState) => {
+      this.selectedOptionSidebar = state.categoryGroup;
+    });
     this.menuSections = sectionsBO[this.selectedOptionSidebar];
   }
 
