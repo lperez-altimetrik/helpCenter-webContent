@@ -40,7 +40,6 @@ export class DataService {
     }
 
     restoreState() {
-        console.log(localStorage)
         const storedState = localStorage.getItem('helpCenterState');
         if (storedState) {
             this.state$.next(JSON.parse(storedState));
@@ -85,7 +84,8 @@ export class DataService {
         });
         const params = new HttpParams()
             .set('query', query)
-            .set('category_group', category_group);
+            .set('category_group', category_group)
+            .set('lng', this.state$.getValue().language)
         return this.http.get(apiUrl, { headers, params });
     }
 }

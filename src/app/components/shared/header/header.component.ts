@@ -84,7 +84,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   toggleLogin() {
     // TEST FUNCTION, DELETE
     this.isLoggedIn = !this.isLoggedIn;
-    console.log(this.tabs)
     this.initialTabIndex = _.findIndex(this.tabs, (item) => item === this.category_group);
   }
 

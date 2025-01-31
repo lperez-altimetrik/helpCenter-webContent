@@ -76,7 +76,6 @@ export class SearchBarComponent implements OnChanges, AfterViewInit {
   }
 
   searchArticles(query: string) {
-    console.log(this.category_group)
     this.dataService.searchArticles(query, this.category_group).subscribe({
       next: (data: any) => {
         this.options = data.map((item: any) => { return { title: item.title, id: item.id } });

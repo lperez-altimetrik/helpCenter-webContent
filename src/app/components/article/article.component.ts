@@ -238,7 +238,6 @@ export class ArticleComponent {
       });
       sectionsBO[optionBO] = sections;
     }
-    console.log(sectionsBO);
     [this.sidebarData, this.businessOptions] = [sectionsBO, businessOptionsObj]
     this.selectedOptionSidebar = _.get(this.businessOptions, "0.option", "");
     this.menuSections = sectionsBO[this.selectedOptionSidebar];
