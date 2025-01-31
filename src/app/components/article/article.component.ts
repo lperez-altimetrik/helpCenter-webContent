@@ -60,7 +60,6 @@ export class ArticleComponent {
   breadcrumbData: any;
 
   state!: AppState;
-  languages: any[] = environment.languages;
 
   constructor(private route: ActivatedRoute) { }
 
@@ -159,10 +158,15 @@ export class ArticleComponent {
     this.breadcrumbData = {
       "pagesPath": [
         { title: "Home", url: "/dashboard" },
-        { title: _.get(data, "data.attributes.category.data.attributes.title", ""), url: "" }, //category is not navigable
+        { title: _.get(data, "data.attributes.category.data.attributes.title", ""), url: "/dashboard" }, //category is not navigable
       ],
       "currentElement": _.get(data, "data.attributes.title", "")
     };
+
+    //mapping languages
+    const serviceLanguages = _.get(data, "data.attributes.page_template.data.attributes.header.language_selector.languages.data", []).map(
+      (lang: any) => _.get(lang, "attributes.name"));
+    this.helpCenterState.updateState({ languages: serviceLanguages });
 
   }
 

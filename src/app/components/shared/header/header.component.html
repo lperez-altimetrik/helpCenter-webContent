@@ -4,7 +4,9 @@
       <button *ngIf="isLoggedIn" mat-icon-button (click)="onMenu()" class="menu-toggle lh-button">
         <span class="material-symbols-outlined"> menu </span>
       </button>
-      <img [src]="logoPath" alt="Optic Logo" />
+      <a href="/dashboard">
+        <img [src]="logoPath" alt="Optic Logo" />
+      </a>
     </div>
 
     <nav class="navigation">

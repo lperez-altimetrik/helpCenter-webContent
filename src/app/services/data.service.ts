@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { environment } from 'environments/environment';
 
 export interface AppState {
+    languages: any[];
     categoryGroup: string;
     user: any;
     language: string;
@@ -21,6 +22,7 @@ export class DataService {
         categoryGroup: "Small Business",
         user: null,
         language: 'English',
+        languages: environment.languages,
         categoryGroups: ["Small Business", "Enterprise", "Partners"]
     };
 

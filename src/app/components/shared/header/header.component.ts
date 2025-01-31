@@ -80,7 +80,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   toggleLogin() {
-    this.isLoggedIn = !this.isLoggedIn;
     this.showSearchBar = !this.showSearchBar;
     this.initialTabIndex = _.findIndex(this.tabs, (item) => item === this.category_group);
   }
@@ -98,9 +97,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
       }
     );
     this.helpCenterState.getState().subscribe((state: AppState) => {
+      this.languages = _.get(state, "languages", environment.languages);
+      this.selectedLanguage = state.language;
       if (!_.isNil(this.tabs)) {
-        console.log(this.tabs)
-        this.selectedLanguage = state.language;
         this.category_group = state.categoryGroup;
         this.initialTabIndex = _.findIndex(this.tabs, (item) => item === this.category_group);
       }

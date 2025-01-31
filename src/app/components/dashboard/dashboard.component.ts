@@ -225,6 +225,11 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
       this.categoryGroupsTabs = categoryGroups
       this.helpCenterState.updateState({ categoryGroups: categoryGroups });
 
+      const serviceLanguages = _.get(data, "template.data.attributes.page_template.data.attributes.header.language_selector.languages.data", []).map(
+        (lang: any) => _.get(lang, "attributes.name"));
+      console.log(serviceLanguages)
+      this.helpCenterState.updateState({ languages: serviceLanguages });
+
     });
 
   }
