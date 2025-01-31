@@ -111,7 +111,7 @@
                 display: -webkit-box;
                 -webkit-box-orient: vertical;
                 -webkit-line-clamp: 3;
-                /* Número de líneas permitidas */
+                min-height: var(--size-3-lines);
                 overflow: hidden;
                 text-overflow: ellipsis;
 

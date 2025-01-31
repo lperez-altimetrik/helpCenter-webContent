@@ -36,6 +36,7 @@
         border-radius: 5px;
         border: 1px solid var(--hc-color-bg-tertiary);
         background: var(--hc-color-bg-secondary);
+        box-shadow: none;
 
         .business-select-header {
             height: auto;
@@ -51,6 +52,10 @@
                 font-style: normal;
                 font-weight: 500;
                 line-height: normal;
+            }
+
+            &:hover {
+                background: var(--hc-color-bg-secondary);
             }
         }
 

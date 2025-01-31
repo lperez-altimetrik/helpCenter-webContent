@@ -25,6 +25,7 @@ import { FooterComponent } from '../shared/footer/footer.component';
 import { ContactUsComponent } from '../shared/contact-us/contact-us.component';
 import { RelatedArticlesComponent } from "../shared/related-articles/related-articles.component";
 import * as _ from 'lodash';
+import { environment } from 'environments/environment';
 
 
 @Component({
@@ -52,6 +53,7 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
   categoryGroupsTabs: any;
   state!: AppState;
   private helpCenterState = inject(DataService);
+  resourcesUrl = environment.resourcesUrl;
 
 
   ngOnInit(): void {
@@ -68,8 +70,11 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
   }
 
   public renderSections(category_group: any): void {
+    this.helpCenterState.restoreState();
     this.componentRefs.forEach((ref) => ref.destroy()); // Destroy existing components
+    this.componentListRefs.forEach((ref) => ref.destroy());
     this.componentRefs = [];
+    this.componentListRefs = [];
 
     this.dataService.getSectionList(this.state.language, this.state.categoryGroup).subscribe((data: any) => {
       const sectionList = _.get(data, "template.data.attributes.section_list");
@@ -91,11 +96,18 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
               const categories = _.get(data, "categories.data", []);
               // Populate the carousel with cards having a dynamic component of TopicsContainerComponent
               const category = categories.find((item: any) => item.attributes.slug == "news-updates");
-              const articles = category.attributes.articles.data;
+              const allNnUArticlesIds = _.get(category, "attributes.articles.data", []).map((article: any) => article.id);
+              const allArticlesNnU = _.filter(_.get(data, "articles.data", []), (article: any) => _.includes(allNnUArticlesIds, article.id));
+              const articles = allArticlesNnU.filter((article: any) => {
+                return _.includes(
+                  _.get(article, "attributes.category_groups.data", []).map((catGroup: any) => _.get(catGroup, "attributes.title")),
+                  this.state.categoryGroup);
+              });
+
               carouselRef.instance.items = articles.map((topic: any) => ({
                 title: topic.attributes.title,
                 text: topic.attributes.short_description,
-                image: undefined,
+                image: this.resourcesUrl + _.get(topic, "attributes.medias.data[0].attributes.url", undefined),
                 span: topic.attributes.time_to_read,
                 linkUrl: "/articles/" + topic.id
               }));
@@ -115,12 +127,18 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
             }
             case 'Products': {
               carouselRef.instance.itemType = ProductsContainerComponent;
-              const topics = _.get(data, "topics.data", []);
+              const categories = _.get(data, "categories.data", []);
+
+              const targetCategoryGroup = _.find(_.get(data, "category_groups.data", []), (catG: any) => {
+                return _.get(catG, "attributes.title") == this.state.categoryGroup;
+              });
+              const catGProducts = _.get(targetCategoryGroup, "attributes.products.data", []);
               // Populate the carousel with cards having a dynamic component of TopicsContainerComponent
-              carouselRef.instance.items = topics.map((topic: any) => ({
-                title: topic.attributes.title,
-                body: topic.attributes.short_description,
-                articleId: topic.id
+              carouselRef.instance.items = catGProducts.map((product: any) => ({
+                title: product.attributes.title,
+                text: product.attributes.short_description,
+                src: this.resourcesUrl + _.get(product, "attributes.medias.data[0].attributes.url", undefined),
+                articleId: product.id
               }));
 
               break;
@@ -140,9 +158,17 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
             case 'Trending Articles': {
 
               const category = categories.find((item: any) => item.attributes.slug == "trending-articles");
-
               listRef.instance.title = section.title;
-              listRef.instance.relatedLinks = _.get(category, "attributes.articles.data", []).map((topic: any) => ({
+
+              const allNnUArticlesIds = _.get(category, "attributes.articles.data", []).map((article: any) => article.id);
+              const allArticlesNnU = _.filter(_.get(data, "articles.data", []), (article: any) => _.includes(allNnUArticlesIds, article.id));
+              const articles = allArticlesNnU.filter((article: any) => {
+                return _.includes(
+                  _.get(article, "attributes.category_groups.data", []).map((catGroup: any) => _.get(catGroup, "attributes.title")),
+                  this.state.categoryGroup);
+              });
+
+              listRef.instance.relatedLinks = _.takeRight(articles, 4).map((topic: any) => ({
                 title: topic?.attributes?.title,
                 url: "/articles/" + topic.id
               }));
@@ -157,9 +183,17 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
             case 'FAQs': {
 
               const category = categories.find((item: any) => item.attributes.slug == "faqs");
-
               listRef.instance.title = section.title;
-              listRef.instance.relatedLinks = _.get(category, "attributes.articles.data", []).map((topic: any) => ({
+              const allNnUArticlesIds = _.get(category, "attributes.articles.data", []).map((article: any) => article.id);
+              const allArticlesNnU = _.filter(_.get(data, "articles.data", []), (article: any) => _.includes(allNnUArticlesIds, article.id));
+              const articles = allArticlesNnU.filter((article: any) => {
+                return _.includes(
+                  _.get(article, "attributes.category_groups.data", []).map((catGroup: any) => _.get(catGroup, "attributes.title")),
+                  this.state.categoryGroup);
+              });
+
+
+              listRef.instance.relatedLinks = _.takeRight(articles, 4).map((topic: any) => ({
                 title: topic?.attributes?.title,
                 url: "/articles/" + topic.id
               }));
@@ -175,22 +209,26 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
         }
       });
 
-      /* //search by pills component
-      this.searchPills = _.get(data, "template.data.attributes.page_template.data.attributes.header.pill", []).map((pillItem: any) => {
-        return pillItem.title;
-      });
-      */
       this.searchPills = _.get(data, "topics.data", []).map((pillItem: any) => {
         return _.get(pillItem, "attributes.title");
       });
+
+
 
       this.contactUsComponent = _.get(data, "template.data.attributes.page_template.data.attributes.contact_us");
 
       this.footerComponent = _.get(data, "template.data.attributes.page_template.data.attributes.footer_section");
 
-      this.categoryGroupsTabs = _.get(data, "category_groups.data", []).map((categoryG: any) => {
+      const categoryGroups = _.get(data, "category_groups.data", []).map((categoryG: any) => {
         return categoryG.attributes.title;
       });
+      this.categoryGroupsTabs = categoryGroups
+      this.helpCenterState.updateState({ categoryGroups: categoryGroups });
+
+      const serviceLanguages = _.get(data, "template.data.attributes.page_template.data.attributes.header.language_selector.languages.data", []).map(
+        (lang: any) => _.get(lang, "attributes.name"));
+      console.log(serviceLanguages)
+      this.helpCenterState.updateState({ languages: serviceLanguages });
 
     });
 

@@ -9,6 +9,7 @@
 .sidebar {
     display: flex;
     flex: 0;
+    z-index: 1;
 }
 
 .content {
@@ -21,13 +22,18 @@
     padding: 0 48px;
 }
 
+.contact-us-wrapper {
+    margin-left: var(--spacing-10);
+    margin-right: var(--spacing-10);
+}
+
 .article-container {
     position: relative;
     display: flex;
     background-color: var(--hc-color-white);
     margin-left: var(--spacing-10);
     margin-right: var(--spacing-10);
-    padding: var(--spacing-8, 32px) var(--spacing-9, 40px);
+    padding: var(--spacing-8) var(--spacing-9);
     border-radius: 8px;
     gap: 40px;
     overflow: auto;
@@ -37,6 +43,7 @@
         gap: 40px;
         flex-flow: column;
         flex: 1;
+
     }
 
     .article-index {

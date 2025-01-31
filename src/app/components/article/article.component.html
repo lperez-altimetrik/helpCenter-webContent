@@ -1,39 +1,26 @@
-<app-header
-  [chipLabels]="searchPills"
-  [tabs]="categoryGroupsTabs"
-  (tabChanged)="renderTemplate($event)"
-></app-header>
+<app-header [chipLabels]="searchPills" [tabs]="categoryGroupsTabs" (tabChanged)="renderTemplate($event)"></app-header>
 <div class="main-container">
-  <app-sidebar
-    class="sidebar"
-    [menuDataSection]="sidebarData"
-    [businessOptions]="businessOptions"
-    [selectedBusiness]="selectedOptionSidebar"
-    [menuSections]="menuSections"
-    (renderTemplate)="renderContent($event)"
-  ></app-sidebar>
-  <div class="content">
-    <div class="article-container">
-      <div class="article-info-container">
-        <app-breadcrumb
-          [pagesPath]="breadcrumbData?.pagesPath"
-          [currentElement]="breadcrumbData?.currentElement"
-        ></app-breadcrumb>
-        <div class="content-container">
-          <ng-container #dynamicContainer></ng-container>
-        </div>
-        <app-article-feedback></app-article-feedback>
-        <app-related-articles
-          [relatedLinks]="relatedArticles"
-        ></app-related-articles>
-      </div>
+    <div class="purple-bar"></div>
+    <app-sidebar class="sidebar" [menuDataSection]="sidebarData" [businessOptions]="businessOptions"
+        [selectedBusiness]="selectedOptionSidebar" [menuSections]="menuSections"
+        (renderTemplate)="renderContent($event)"></app-sidebar>
+    <div class="content">
+        <div class="article-container">
+            <div class="article-info-container">
+                <app-breadcrumb [pagesPath]="breadcrumbData?.pagesPath"
+                    [currentElement]="breadcrumbData?.currentElement"></app-breadcrumb>
+                <div class="content-container">
+                    <ng-container #dynamicContainer></ng-container>
+                </div>
+                <app-article-feedback></app-article-feedback>
+                <app-related-articles [relatedLinks]="relatedArticles"></app-related-articles>
+            </div>
 
-      <app-article-index
-        class="article-index"
-        [articleLinks]="articleIndexSections"
-      ></app-article-index>
+            <app-article-index class="article-index" [articleLinks]="articleIndexSections"></app-article-index>
+        </div>
+        <div class="contact-us-wrapper">
+            <app-contact-us class="contact-us-container"></app-contact-us>
+        </div>
     </div>
-    <app-contact-us class="contact-us-container"></app-contact-us>
-  </div>
 </div>
 <app-footer></app-footer>

@@ -4,9 +4,11 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { environment } from 'environments/environment';
 
 export interface AppState {
+    languages: any[];
     categoryGroup: string;
     user: any;
     language: string;
+    categoryGroups: string[];
 }
 
 @Injectable({
@@ -17,9 +19,11 @@ export class DataService {
     constructor(private http: HttpClient) { }
 
     private helpCenterState: AppState = {
-        categoryGroup: "",
+        categoryGroup: "Small Business",
         user: null,
         language: 'English',
+        languages: environment.languages,
+        categoryGroups: ["Small Business", "Enterprise", "Partners"]
     };
 
     private state$ = new BehaviorSubject<AppState>(this.helpCenterState);
@@ -40,7 +44,6 @@ export class DataService {
     }
 
     restoreState() {
-        console.log(localStorage)
         const storedState = localStorage.getItem('helpCenterState');
         if (storedState) {
             this.state$.next(JSON.parse(storedState));
@@ -85,7 +88,8 @@ export class DataService {
         });
         const params = new HttpParams()
             .set('query', query)
-            .set('category_group', category_group);
+            .set('category_group', category_group)
+            .set('lng', this.state$.getValue().language)
         return this.http.get(apiUrl, { headers, params });
     }
 }

@@ -72,6 +72,8 @@ mat-card {
             }
 
             .title-section {
+                width: 100%;
+
                 @include respond-to("mobile-mb") {
                     display: flex;
                     align-items: center;
@@ -85,6 +87,11 @@ mat-card {
                     line-height: normal;
                     margin: 0;
                     margin-bottom: 12px;
+                    max-width: 100%;
+
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
 
                     @include respond-to("mobile-mb") {
                         font-size: 12px;
@@ -98,6 +105,13 @@ mat-card {
                 font-size: 12px;
                 font-weight: 300;
                 margin: 0;
+
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                min-height: var(--size-2-lines);
+                overflow: hidden;
+                text-overflow: ellipsis;
 
                 @include respond-to("mobile-mb") {
                     display: -webkit-box;

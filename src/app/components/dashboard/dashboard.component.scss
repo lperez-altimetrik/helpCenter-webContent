@@ -10,7 +10,6 @@
   flex-direction: row;
   justify-content: space-between;
   gap: var(--spacing-6);
-  max-width: 1600px;
 
   @include respond-to("mobile-mb") {
     display: flex;
@@ -18,12 +17,11 @@
   }
 }
 
-// .mid-container {
-//   border-radius: 8px;
-//   background: var(--hc-color-bg-primary);
-//   position: relative;
-//   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.04), 0px 4px 6px -1px rgba(0, 0, 0, 0.06);
-// }
+.sections-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px
+}
 
 .content-container {
   background-color: var(--hc-color-bg-secondary);
@@ -31,13 +29,14 @@
   flex-direction: column;
   align-items: center;
   gap: var(--spacing-8);
-  padding: 20px;
+  padding: 0px var(--spacing-10) var(--spacing-8) var(--spacing-10);
   width: 100%;
   box-sizing: border-box;
 
   @include respond-to("mobile-mb") {
     display: flex;
     flex-direction: column;
+    padding: 0px var(--spacing-6) var(--spacing-6) var(--spacing-6);
   }
 }
 
