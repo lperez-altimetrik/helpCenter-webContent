@@ -20,7 +20,8 @@
                         <ng-container #dynamicContainer></ng-container>
                     </div>
                     <app-article-feedback></app-article-feedback>
-                    <app-related-articles [relatedLinks]="relatedArticles"></app-related-articles>
+                    <app-related-articles [relatedLinks]="relatedArticles"
+                        *ngIf="showRelatedArticles"></app-related-articles>
                 </div>
                 <div class="article-index-container">
                     <app-article-index class="article-index" [articleLinks]="articleIndexSections"></app-article-index>

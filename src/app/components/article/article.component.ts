@@ -31,13 +31,14 @@ import { MatDrawerMode, MatSidenav, MatSidenavModule } from '@angular/material/s
 import { ArticleSectionIndexComponent } from '../shared/article-section-index/article-section-index.component';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { SidenavService } from 'app/services/sidenav.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-article',
   standalone: true,
   imports: [HeaderComponent, FooterComponent, ContactUsComponent,
     BreadcrumbComponent, ArticleIndexComponent, ArticleFeedbackComponent, MatSidenavModule,
-    RelatedArticlesComponent, SidebarComponent],
+    RelatedArticlesComponent, SidebarComponent, CommonModule],
   templateUrl: './article.component.html',
   styleUrl: './article.component.scss'
 })
@@ -68,6 +69,7 @@ export class ArticleComponent {
   relatedArticles: any;
   categoryGroupsTabs: any;
   breadcrumbData: any;
+  showRelatedArticles: boolean = false;
 
   state!: AppState;
   languages: any[] = [
@@ -83,15 +85,15 @@ export class ArticleComponent {
   ngOnInit(): void {
 
     this.sidenavService.toggleSidenav$.subscribe((open: boolean) => {
-        this.sidenav.toggle();
+      this.sidenav.toggle();
     })
 
     this.breakpointObserver
       .observe(['(min-width: 480px)'])
       .subscribe((state: BreakpointState) => {
         if (state.matches) {
-           this.sidenavOpen = true;
-           this.sidenavMode = 'side';
+          this.sidenavOpen = true;
+          this.sidenavMode = 'side';
         } else {
           this.sidenavOpen = false;
           this.sidenavMode = 'over';
@@ -185,6 +187,7 @@ export class ArticleComponent {
     this.relatedArticles = _.get(data, "data.attributes.related_articles.data", []).map((element: any) => {
       return { title: element.attributes.title, url: "/articles/" + element.id }
     });
+    this.showRelatedArticles = !_.isEmpty(this.relatedArticles);
 
     //mapping breadcrumb
     this.breadcrumbData = {
