@@ -147,6 +147,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     //Search logic here
     console.log('search button clicked');
     this.expanded = !this.expanded;
+    this.showSearchBar = !this.showSearchBar;
   }
 
   openSelect() {
