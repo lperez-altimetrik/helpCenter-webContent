@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { environment } from 'environments/environment';
+import * as _ from 'lodash';
 
 export interface AppState {
     languages: any[];
@@ -9,6 +10,7 @@ export interface AppState {
     user: any;
     language: string;
     categoryGroups: string[];
+    searchPath: string
 }
 
 @Injectable({
@@ -23,7 +25,8 @@ export class DataService {
         user: null,
         language: 'English',
         languages: environment.languages,
-        categoryGroups: ["Small Business", "Enterprise", "Partners"]
+        categoryGroups: ["Small Business", "Enterprise", "Partners"],
+        searchPath: "api/search/articles"
     };
 
     private state$ = new BehaviorSubject<AppState>(this.helpCenterState);
@@ -82,7 +85,7 @@ export class DataService {
     }
 
     searchArticles(query: string, category_group: string): Observable<any> {
-        const apiUrl = 'http://localhost:8080/api/search/articles';
+        const apiUrl = 'http://localhost:8080/' + _.get(this.state$.getValue(), "searchPath", environment.searchPath);
         const headers = new HttpHeaders({
             'User-Roles': 'ADMIN'
         });

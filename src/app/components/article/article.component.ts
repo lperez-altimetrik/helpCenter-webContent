@@ -197,11 +197,14 @@ export class ArticleComponent {
         this.searchPills = _.get(data, "data.attributes.page_template.data.attributes.header.search_bar.topics.data", []).map((topic: any) => {
           return _.get(topic, "attributes.title");
         })
+        const searchPath = _.get(data, "data.attributes.page_template.data.attributes.header.search_bar.search_api", environment.searchPath);
         if (!this.searchPills) {
           this.searchPills = _.get(data, "data.attributes.page_template.data.attributes.header.pill", []).map((pillItem: any) => {
             return pillItem.title;
           });
         }
+
+        this.helpCenterState.updateState({ searchPath: searchPath });
 
 
         this.categoryGroupsTabs = _.get(data, "data.attributes.category.data.attributes.category_groups.data", []).map((categoryG: any) => {

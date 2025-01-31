@@ -213,6 +213,7 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
       this.searchPills = _.get(data, "template.data.attributes.page_template.data.attributes.header.search_bar.topics.data", []).map((topic: any) => {
         return _.get(topic, "attributes.title");
       })
+      const searchPath = _.get(data, "template.data.attributes.page_template.data.attributes.header.search_bar.search_api", environment.searchPath);
       if (!this.searchPills) {
         this.searchPills = _.get(data, "topics.data", []).map((pillItem: any) => {
           return _.get(pillItem, "attributes.title");
@@ -233,8 +234,8 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
 
       const serviceLanguages = _.get(data, "template.data.attributes.page_template.data.attributes.header.language_selector.languages.data", []).map(
         (lang: any) => _.get(lang, "attributes.name"));
-      console.log(serviceLanguages)
-      this.helpCenterState.updateState({ languages: serviceLanguages });
+
+      this.helpCenterState.updateState({ languages: serviceLanguages, searchPath: searchPath });
 
     });
 
