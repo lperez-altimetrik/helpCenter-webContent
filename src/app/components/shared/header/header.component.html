@@ -14,19 +14,18 @@
             {{ loginLabel }}
           </button>
           <mat-divider class="divider" [vertical]="true"></mat-divider>
-          <button mat-icon-button color="primary" class="rh-button" (click)="openSelect()"
+
+          <button mat-icon-button color="primary" class="rh-button" [matMenuTriggerFor]="menu"
             aria-label="Language/Region Button">
-            <span class="material-symbols-outlined"> captive_portal </span>
+            <span class="material-symbols-outlined">captive_portal</span>
           </button>
 
-          <mat-form-field appearance="outline" class="full-width">
-            <mat-label>{{selectedLanguage}}</mat-label>
-            <mat-select [(value)]="selectedLanguage" disableOptionCentering>
-              <mat-option *ngFor="let option of languages" [value]="option" (click)="updateLanguage(option)">
-                {{ option }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
+          <!-- Menu with language options -->
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item *ngFor="let option of languages" (click)="updateLanguage(option)">
+              {{ option }}
+            </button>
+          </mat-menu>
         </div>
 
         <div *ngIf="isLoggedIn" class="user-buttons-container">
@@ -39,20 +38,17 @@
           </button>
           <mat-divider class="divider fs-divider" [vertical]="true"></mat-divider>
 
-          <button mat-icon-button color="primary" class="rh-button" (click)="openSelect()"
+          <button mat-icon-button color="primary" class="rh-button" [matMenuTriggerFor]="menu"
             aria-label="Language/Region Button">
-            <span class="material-symbols-outlined"> captive_portal </span>
+            <span class="material-symbols-outlined">captive_portal</span>
           </button>
 
-          <mat-form-field appearance="outline" class="full-width">
-            <mat-label>{{selectedLanguage}}</mat-label>
-            <mat-select [(value)]="selectedLanguage" disableOptionCentering>
-              <mat-option *ngFor="let option of languages" [value]="option" (click)="updateLanguage(option)">
-                {{ option }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-
+          <!-- Menu with language options -->
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item *ngFor="let option of languages" (click)="updateLanguage(option)">
+              {{ option }}
+            </button>
+          </mat-menu>
         </div>
       </div>
     </nav>
@@ -63,8 +59,8 @@
       {{ title }}
     </h1>
 
-    <app-center-tab-bar class="tab-container" [tabs]="tabs" (tabChanged)="setCategoryGroup($event)"
-      [initialTabIndex]="initialTabIndex"></app-center-tab-bar>
+    <app-center-tab-bar class="tab-container" [tabs]="tabs"
+      (tabChanged)="setCategoryGroup($event)"></app-center-tab-bar>
 
     <div class="search-container">
       <app-search-bar [searchString]="_query" [category_group]="category_group"></app-search-bar>
@@ -73,5 +69,6 @@
     <div class="pill-bar-container">
       <app-pill-bar [chipLabels]="chipLabels" (notifyParentEvent)="handlePillEvent($event)"></app-pill-bar>
     </div>
+
+    <div class="overflow"></div>
   </div>
-</div>

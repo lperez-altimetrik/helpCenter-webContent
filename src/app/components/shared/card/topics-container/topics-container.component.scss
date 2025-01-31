@@ -7,6 +7,10 @@ mat-card {
   border: 1px solid var(--hc-color-bg-secondary);
 
   @include respond-to("mobile-mb") {
+    width: 100%;
+  }
+
+  @include respond-to("mobile-mb") {
     max-width: 100%;
   }
 
@@ -27,6 +31,10 @@ mat-card {
     gap: 12px;
     align-self: stretch;
     max-width: 206px;
+
+    @include respond-to("mobile-mb") {
+      max-width: 100%;
+    }
 
     .header {
       max-width: 100%;

@@ -21,6 +21,7 @@ import { NewsContainerComponent } from '../card/news-container/news-container.co
   templateUrl: './carousel.component.html',
   styleUrl: './carousel.component.scss',
 })
+
 export class CarouselComponent implements AfterViewInit {
   @ViewChild('carouselTrack') carouselTrack!: ElementRef;
 
@@ -31,10 +32,10 @@ export class CarouselComponent implements AfterViewInit {
     { id: 4, name: 'Item 4' },
     { id: 5, name: 'Item 5' },
     { id: 6, name: 'Item 6' },
-    { id: 6, name: 'Item 6' },
-    { id: 6, name: 'Item 6' },
-    { id: 6, name: 'Item 6' },
-    { id: 6, name: 'Item 6' },
+    { id: 7, name: 'Item 7' },
+    { id: 8, name: 'Item 8' },
+    { id: 9, name: 'Item 9' },
+    { id: 10, name: 'Item 10' },
   ];
 
   @Input() itemType: any = NewsContainerComponent;
@@ -58,7 +59,7 @@ export class CarouselComponent implements AfterViewInit {
   constructor(
     private breakpointObserver: BreakpointObserver,
     public componentFactoryResolver: ComponentFactoryResolver
-  ) { }
+  ) {}
 
   ngAfterViewInit(): void {
     this.loadComponent();
@@ -101,11 +102,19 @@ export class CarouselComponent implements AfterViewInit {
     this.scrollDirection = 0;
   }
 
+  // Update items visibility based on mobile view and collapsed state, show a maximum of 5 items
   updateVisibleItems(): void {
-    this.visibleItems =
-      this.isMobile && this.isCollapsed ? this.items.slice(0, 3) : this.items;
+    if (this.isMobile) {
+      // For mobile view, show up to 3 items when collapsed and up to 5 when expanded
+      this.visibleItems = this.isCollapsed ? this.items.slice(0, 3) : this.items.slice(0, this.items.length);
+    } else {
+      // For non-mobile view, show up to 5 items
+      this.visibleItems = this.items.slice(0, this.items.length);
+    }
+    this.loadComponent(); // Reload components to reflect the updated items
   }
 
+  // Toggle the collapsed/expanded state for mobile view
   toggleView(): void {
     if (this.isMobile) {
       this.isCollapsed = !this.isCollapsed;
@@ -131,7 +140,7 @@ export class CarouselComponent implements AfterViewInit {
       return;
     }
 
-    for (let item of this.items) {
+    for (let item of this.visibleItems) {
       try {
         const factory: ComponentFactory<any> =
           this.componentFactoryResolver.resolveComponentFactory(this.itemType);
@@ -142,7 +151,6 @@ export class CarouselComponent implements AfterViewInit {
           // Set properties for the dynamically created component
 
           // Add the component reference to the array for cleanup
-
           itemRef.instance.location?.nativeElement?.setAttribute(
             'style',
             'width: 100%',
@@ -152,8 +160,7 @@ export class CarouselComponent implements AfterViewInit {
             'display: block',
           );
           for (const prop in item) {
-            if (item[prop])
-              itemRef.instance[prop] = item[prop];
+            if (item[prop]) itemRef.instance[prop] = item[prop];
           }
           this.componentRefs.push(itemRef);
 
@@ -167,5 +174,4 @@ export class CarouselComponent implements AfterViewInit {
       }
     }
   }
-
 }
