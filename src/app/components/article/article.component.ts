@@ -27,19 +27,27 @@ import { RichTextComponent } from '../shared/rich-text/rich-text.component';
 import { ModalComponent } from '../shared/modal/modal.component';
 import { environment } from 'environments/environment';
 import * as _ from 'lodash';
+import { MatDrawerMode, MatSidenav, MatSidenavModule } from '@angular/material/sidenav'
 import { ArticleSectionIndexComponent } from '../shared/article-section-index/article-section-index.component';
+import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
+import { SidenavService } from 'app/services/sidenav.service';
 
 @Component({
   selector: 'app-article',
   standalone: true,
-  imports: [HeaderComponent, FooterComponent, ContactUsComponent, BreadcrumbComponent, ArticleIndexComponent, ArticleFeedbackComponent, RelatedArticlesComponent, SidebarComponent],
+  imports: [HeaderComponent, FooterComponent, ContactUsComponent,
+    BreadcrumbComponent, ArticleIndexComponent, ArticleFeedbackComponent, MatSidenavModule,
+    RelatedArticlesComponent, SidebarComponent],
   templateUrl: './article.component.html',
   styleUrl: './article.component.scss'
 })
 
 export class ArticleComponent {
   resourcesUrl = environment.resourcesUrl;
+  public route = inject(ActivatedRoute);
   private dataService = inject(DataService);
+  private sidenavService = inject(SidenavService);
+  private breakpointObserver = inject(BreakpointObserver);
   private navigateService = inject(NavigateService);
   private helpCenterState = inject(DataService); //duplicated with dataService but using this way for differentiating
   articleId!: string;
@@ -50,6 +58,8 @@ export class ArticleComponent {
   public searchPills: any;
 
   //Sidebar data
+  sidenavOpen = true;
+  sidenavMode: MatDrawerMode = 'side';
   sidebarData: any;
   businessOptions: any;
   selectedOptionSidebar: any = "";
@@ -60,11 +70,33 @@ export class ArticleComponent {
   breadcrumbData: any;
 
   state!: AppState;
-
-  constructor(private route: ActivatedRoute) { }
-
+  languages: any[] = [
+    "English",
+    "Spanish",
+    "German",
+    "French",
+    "Chinese",
+    "Japanese"
+  ];
+  @ViewChild('sidenav') sidenav!: MatSidenav;
 
   ngOnInit(): void {
+
+    this.sidenavService.toggleSidenav$.subscribe((open: boolean) => {
+        this.sidenav.toggle();
+    })
+
+    this.breakpointObserver
+      .observe(['(min-width: 480px)'])
+      .subscribe((state: BreakpointState) => {
+        if (state.matches) {
+           this.sidenavOpen = true;
+           this.sidenavMode = 'side';
+        } else {
+          this.sidenavOpen = false;
+          this.sidenavMode = 'over';
+        }
+      });
     this.helpCenterState.restoreState();
     this.helpCenterState.getState().subscribe((state: AppState) => {
       this.state = state;
