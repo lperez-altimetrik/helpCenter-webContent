@@ -29,6 +29,10 @@
             [pagesPath]="breadcrumbData?.pagesPath"
             [currentElement]="breadcrumbData?.currentElement"
           ></app-breadcrumb>
+          <app-article-index
+            class="article-index-mobile"
+            [articleLinks]="articleIndexSections"
+          ></app-article-index>
           <div class="content-container">
             <ng-container #dynamicContainer></ng-container>
           </div>
@@ -37,12 +41,14 @@
             [relatedLinks]="relatedArticles"
           ></app-related-articles>
         </div>
-
-        <app-article-index
-          class="article-index"
-          [articleLinks]="articleIndexSections"
-        ></app-article-index>
+        <div class="article-index-container">
+          <app-article-index
+            class="article-index"
+            [articleLinks]="articleIndexSections"
+          ></app-article-index>
+        </div>
       </div>
+
       <div class="contact-us-wrapper">
         <app-contact-us class="contact-us-container"></app-contact-us>
       </div>

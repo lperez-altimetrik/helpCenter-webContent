@@ -12,7 +12,6 @@
     background-color: transparent;
     border: none;
     box-shadow: none;
-    z-index: 1;
 }
 
 .content {
@@ -51,13 +50,15 @@
 .article-container {
     position: relative;
     background-color: var(--hc-color-white);
-    margin-left: var(--spacing-10);
-    margin-right: var(--spacing-10);
+    margin-left: var(--spacing-6);
+    margin-right: var(--spacing-6);
     padding: var(--spacing-8) var(--spacing-9);
     border-radius: 8px;
     gap: 40px;
+    display: flex;
 
     @include respond-to("mobile-mb") {
+        display: block;
         margin: 0;
         margin-bottom: var(--spacing-4);
         padding: var(--spacing-7) var(--spacing-7);
@@ -72,15 +73,21 @@
     }
 
     .article-index {
-        display: block;
-        position: sticky;
         top: 32px;
         right: 32px;
+        position: sticky;
 
         @include respond-to("mobile-mb") {
             display: none;
         }
 
+        &-mobile {
+            display: block;
+            width: 100%;
+            @include respond-to("medium") {
+                display: none;
+            }
+        }
     }
 }
 
@@ -101,13 +108,8 @@
 
 .article-index-container {
     width: 275px;
-    height: 200px;
+    height: 100%;
 
-    * {
-        position: fixed;
-    }
-
-    //position: fixed;
 }
 
 .overflow {
