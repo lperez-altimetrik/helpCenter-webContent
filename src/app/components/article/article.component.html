@@ -3,37 +3,50 @@
   [tabs]="categoryGroupsTabs"
   (tabChanged)="renderTemplate($event)"
 ></app-header>
-<div class="main-container">
-  <app-sidebar
+<mat-sidenav-container class="main-container">
+  <!-- Sidebar (Hidden on Mobile, Opens on Click) -->
+  <mat-sidenav
+    #sidenav
+    [mode]="sidenavMode"
+    backdrop="false"
     class="sidebar"
-    [menuDataSection]="sidebarData"
-    [businessOptions]="businessOptions"
-    [selectedBusiness]="selectedOptionSidebar"
-    [menuSections]="menuSections"
-    (renderTemplate)="renderContent($event)"
-  ></app-sidebar>
-  <div class="content">
-    <div class="article-container">
-      <div class="article-info-container">
-        <app-breadcrumb
-          [pagesPath]="breadcrumbData?.pagesPath"
-          [currentElement]="breadcrumbData?.currentElement"
-        ></app-breadcrumb>
-        <div class="content-container">
-          <ng-container #dynamicContainer></ng-container>
+    [opened]="sidenavOpen"
+  >
+    <app-sidebar
+      [menuDataSection]="sidebarData"
+      [businessOptions]="businessOptions"
+      [selectedBusiness]="selectedOptionSidebar"
+      [menuSections]="menuSections"
+      (renderTemplate)="renderContent($event)"
+    ></app-sidebar>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="overflow"></div>
+    <div class="content">
+      <div class="article-container">
+        <div class="article-info-container">
+          <app-breadcrumb
+            [pagesPath]="breadcrumbData?.pagesPath"
+            [currentElement]="breadcrumbData?.currentElement"
+          ></app-breadcrumb>
+          <div class="content-container">
+            <ng-container #dynamicContainer></ng-container>
+          </div>
+          <app-article-feedback></app-article-feedback>
+          <app-related-articles
+            [relatedLinks]="relatedArticles"
+          ></app-related-articles>
         </div>
-        <app-article-feedback></app-article-feedback>
-        <app-related-articles
-          [relatedLinks]="relatedArticles"
-        ></app-related-articles>
-      </div>
 
-      <app-article-index
-        class="article-index"
-        [articleLinks]="articleIndexSections"
-      ></app-article-index>
+        <app-article-index
+          class="article-index"
+          [articleLinks]="articleIndexSections"
+        ></app-article-index>
+      </div>
+      <app-contact-us class="contact-us-container"></app-contact-us>
     </div>
-    <app-contact-us class="contact-us-container"></app-contact-us>
-  </div>
-</div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<div class="main-container"></div>
 <app-footer></app-footer>
