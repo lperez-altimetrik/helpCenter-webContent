@@ -10,5 +10,6 @@ export const environment = {
         "French",
         "Chinese",
         "Japanese"
-    ]
+    ],
+    searchPath: "api/search/articles"
 };

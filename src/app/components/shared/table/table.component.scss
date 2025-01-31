@@ -4,9 +4,12 @@
   width: 100%;
 }
 
+
+
 table {
   width: 100%;
   box-shadow: none;
+  table-layout: fixed;
 
   .cell-header {
     color: var(--hc-dark-gray);
