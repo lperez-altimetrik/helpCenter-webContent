@@ -1,15 +1,13 @@
 @import "./../../../../styles/mixins.scss";
 
-:host {
-    width: fit-content;
-}
+
 
 .breadcrumb-container {
     display: inline-flex;
     height: 24px;
     align-items: center;
     gap: var(--spacing-1);
-    width: fit-content;
+    max-width: 100%;
     flex-shrink: 0;
 
     .chevron-icon {
@@ -41,10 +39,6 @@
 }
 
 .current-element {
-    display: inline-flex;
-    height: 24px;
-    align-items: center;
-    gap: var(--spacing-1);
     flex-shrink: 0;
 
     color: var(--hc-color-fg-secondary);
@@ -57,4 +51,8 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    @include respond-to("mobile-mb") {
+        max-width: 30%;
+    }
 }
