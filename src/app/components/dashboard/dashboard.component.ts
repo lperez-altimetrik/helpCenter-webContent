@@ -209,9 +209,15 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
         }
       });
 
-      this.searchPills = _.get(data, "topics.data", []).map((pillItem: any) => {
-        return _.get(pillItem, "attributes.title");
-      });
+
+      this.searchPills = _.get(data, "template.data.attributes.page_template.data.attributes.header.search_bar.topics.data", []).map((topic: any) => {
+        return _.get(topic, "attributes.title");
+      })
+      if (!this.searchPills) {
+        this.searchPills = _.get(data, "topics.data", []).map((pillItem: any) => {
+          return _.get(pillItem, "attributes.title");
+        });
+      }
 
 
 

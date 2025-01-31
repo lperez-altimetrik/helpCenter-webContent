@@ -193,9 +193,17 @@ export class ArticleComponent {
         this.templateData = data;
         this.renderArticleContent(data);
         this.renderSidebar(data);
-        this.searchPills = _.get(data, "data.attributes.page_template.data.attributes.header.pill", []).map((pillItem: any) => {
-          return pillItem.title;
-        });
+
+        this.searchPills = _.get(data, "data.attributes.page_template.data.attributes.header.search_bar.topics.data", []).map((topic: any) => {
+          return _.get(topic, "attributes.title");
+        })
+        if (!this.searchPills) {
+          this.searchPills = _.get(data, "data.attributes.page_template.data.attributes.header.pill", []).map((pillItem: any) => {
+            return pillItem.title;
+          });
+        }
+
+
         this.categoryGroupsTabs = _.get(data, "data.attributes.category.data.attributes.category_groups.data", []).map((categoryG: any) => {
           return categoryG.attributes.title;
         });
