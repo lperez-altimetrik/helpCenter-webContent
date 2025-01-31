@@ -124,6 +124,7 @@ mat-card {
                     -webkit-box-orient: vertical;
                     -webkit-line-clamp: 2;
                     align-self: stretch;
+                    min-height: var(--size-2-lines);
                 }
             }
         }

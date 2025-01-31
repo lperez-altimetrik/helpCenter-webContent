@@ -1,7 +1,9 @@
 <mat-card class="news-container">
   <mat-card-content>
     <div class="header">
-      <img [src]="image" alt="Card image" class="image" />
+      <a href="{{linkUrl}}">
+        <img [src]="image" alt="Card image" class="image" />
+      </a>
     </div>
     <div class="content">
       <div class="title-section">
@@ -19,7 +21,7 @@
         {{ text }}
       </p>
 
-      <app-link [url]="linkUrl" [label]="link"></app-link>
+      <app-link [url]="linkUrl" [label]="link" class="article-link"></app-link>
     </div>
     <mat-icon class="go-icon">chevron_right</mat-icon>
   </mat-card-content>

@@ -39,7 +39,7 @@ mat-card {
     .header {
       max-width: 100%;
 
-      .icon {
+      .icon-bg {
         @include icon-style();
         height: 28px;
         width: 28px;
@@ -49,8 +49,7 @@ mat-card {
         margin-bottom: 12px;
 
         @include respond-to("mobile-mb") {
-          margin: 0;
-          margin-right: 4px;
+          display: none;
         }
       }
 
@@ -89,6 +88,10 @@ mat-card {
         overflow: hidden;
         text-overflow: ellipsis;
 
+        @include respond-to("mobile-mb") {
+          -webkit-line-clamp: 2;
+          min-height: var(--size-2-lines);
+        }
       }
     }
   }
