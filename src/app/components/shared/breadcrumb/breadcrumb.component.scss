@@ -1,18 +1,23 @@
 @import "./../../../../styles/mixins.scss";
 
-.breadcrumb-container{
+:host {
+    width: fit-content;
+}
+
+.breadcrumb-container {
     display: inline-flex;
     height: 24px;
     align-items: center;
     gap: var(--spacing-1);
+    width: fit-content;
     flex-shrink: 0;
 
-    .chevron-icon{
+    .chevron-icon {
         color: var(--hc-color-fg-secondary);
     }
 }
 
-.prev-link-item{
+.prev-link-item {
     color: var(--hc-color-bg-cta);
     leading-trim: both;
     text-edge: cap;
@@ -29,9 +34,13 @@
     text-decoration-thickness: auto;
     text-underline-offset: auto;
     text-underline-position: from-font;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.current-element{
+.current-element {
     display: inline-flex;
     height: 24px;
     align-items: center;
@@ -44,4 +53,8 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

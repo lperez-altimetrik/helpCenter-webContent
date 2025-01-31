@@ -19,6 +19,7 @@ import { MatSelect, MatSelectModule } from '@angular/material/select';
 import { MatMenu, MatMenuModule } from '@angular/material/menu';
 import { AppState, DataService } from 'app/services/data.service';
 import * as _ from 'lodash';
+import { SidenavService } from 'app/services/sidenav.service';
 import { environment } from 'environments/environment';
 
 @Component({
@@ -59,6 +60,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ];
   @Input() expanded = false;
 
+  private sidenavService = inject(SidenavService);
   private navigateService = inject(NavigateService);
   private authSubscription!: Subscription;
   public category_group: string = "";
@@ -133,8 +135,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   onMenu() {
-    //Menu logic here
-    console.log('menu button clicked');
+    this.sidenavService.toggleSidenav$.emit(true);
   }
 
   onProfile() {
@@ -145,7 +146,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   onSearch() {
     //Search logic here
     console.log('search button clicked');
-    this.toggleLogin();
+    this.expanded = !this.expanded;
+    this.showSearchBar = !this.showSearchBar;
   }
 
   openSelect() {

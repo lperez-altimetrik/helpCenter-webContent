@@ -1,4 +1,4 @@
-import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, inject, Input, Output } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
@@ -30,8 +30,6 @@ export class SidebarComponent {
   @Input() businessOptions: IBusinessOption[] = [];
   @Input() menuDataSection: any = {};
   @Output() renderTemplate = new EventEmitter<any>();
-
-
   @Input() menuSections: ISidebarSection[] = [
     {
       title: 'News & Updates',

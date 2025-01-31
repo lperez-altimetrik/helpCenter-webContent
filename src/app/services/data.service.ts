@@ -69,8 +69,7 @@ export class DataService {
    * Simulates an asynchronous call to fetch the JSON contract.
    * Replace the mock data with a real HTTP call in production.
    */
-    getArticlesTemplate(articleId: any, language: string, category_group: string): Observable<any> {
-
+   getArticlesTemplate(articleId: any, language: string, category_group: string): Observable<any> {
         const headers = new HttpHeaders({
             'User-Roles': 'ADMIN'
         });
