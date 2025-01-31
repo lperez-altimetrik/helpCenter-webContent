@@ -1,3 +1,7 @@
+:host {
+  width: 100%;
+}
+
 mat-card {
   border: 0px;
   padding: 4px 3px 4px 3px;
@@ -30,12 +34,15 @@ mat-card {
     .neutral-detail {
       background-color: var(--hc-link-color);
     }
+
     .positive-detail {
       background-color: var(--hc-color-positive-accent);
     }
+
     .warning-detail {
       background-color: var(--hc-color-warning-accent);
     }
+
     .danger-detail {
       background-color: var(--hc-color-danger-accent);
     }
@@ -61,12 +68,15 @@ mat-card {
       .neutral-title {
         color: var(--hc-color-paysafe-blue-50);
       }
+
       .positive-title {
         color: var(--hc-color-positive-title);
       }
+
       .warning-title {
         color: var(--hc-color-warning-title);
       }
+
       .danger-title {
         color: var(--hc-color-danger-title);
       }

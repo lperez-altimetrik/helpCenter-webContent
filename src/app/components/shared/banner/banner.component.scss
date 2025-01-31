@@ -1,5 +1,9 @@
 @import "./../../../../styles/mixins.scss";
 
+:host {
+  width: 100%;
+}
+
 .banner-container {
   display: flex;
   justify-content: space-between;

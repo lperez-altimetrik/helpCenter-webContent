@@ -2,11 +2,14 @@ import { CommonModule } from '@angular/common';
 import {
   Component,
   EventEmitter,
+  inject,
   Input,
   OnInit,
   Output,
   ViewEncapsulation,
 } from '@angular/core';
+import { AppState, DataService } from 'app/services/data.service';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-center-tab-bar',
@@ -20,12 +23,16 @@ export class CenterTabBarComponent implements OnInit {
   @Input() tabs: string[] = ['Small Business', 'Enterprise', 'Partners'];
   @Input() initialTabIndex = 0;
   @Output() tabChanged = new EventEmitter();
+  private helpCenterState = inject(DataService);
 
   _activeTab: number = 0;
 
   ngOnInit(): void {
     this._activeTab = this.initialTabIndex;
-    this.tabChanged.emit(this.tabs[this.initialTabIndex]);
+    this.helpCenterState.getState().subscribe((state: AppState) => {
+      this.tabs = state.categoryGroups;
+      this._activeTab = _.findIndex(this.tabs, (item) => item === _.get(state, "categoryGroup"));
+    });
   }
   onTabClicked(index: number, tab: string) {
     this._activeTab = index;

@@ -1,5 +1,9 @@
 @import "./../../../../styles/mixins.scss";
 
+:host {
+  width: 100%;
+}
+
 mat-expansion-panel {
   box-shadow: none !important;
   border: none;
@@ -9,6 +13,7 @@ mat-expansion-panel {
     border-bottom: 1px solid var(--hc-color-grey-20);
     background: white;
   }
+
   .mat-expansion-panel-header {
     &:hover {
       background: white !important;
@@ -48,7 +53,9 @@ mat-expansion-panel {
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px; /* 171.429% */
+    line-height: 24px;
+
+    /* 171.429% */
     @include respond-to("mobile-mb") {
       color: var(--color-fg-secondary, #414641);
       leading-trim: both;

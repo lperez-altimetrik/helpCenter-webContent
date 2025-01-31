@@ -1,26 +1,18 @@
 <div class="container">
-  <app-header
-    [chipLabels]="searchPills"
-    [tabs]="categoryGroupsTabs"
-    (tabChanged)="renderSections($event)"
-  ></app-header>
+  <app-header [chipLabels]="searchPills" [tabs]="categoryGroupsTabs" (tabChanged)="renderSections($event)"
+    [showSearchBar]="true"></app-header>
   <div class="purple-bar"></div>
   <div class="content-container">
-    <ng-container #dynamicContainer></ng-container>
-    <div class="list-container">
-      <ng-container #listContainer class="mid-container"></ng-container>
-    </div>
+    <div class="sections-container">
+      <ng-container #dynamicContainer></ng-container>
+      <div class="list-container">
+        <ng-container #listContainer class="mid-container"></ng-container>
+      </div>
 
-    <div class="list-container">
-      <app-contact-us
-        style="width: 100%"
-        [buttonText]="contactUsComponent?.title"
-        [linkLabel]="contactUsComponent?.subtitle"
-      ></app-contact-us>
+      <div class="list-container">
+        <app-contact-us style="width: 100%" [buttonText]="contactUsComponent?.title"
+          [linkLabel]="contactUsComponent?.subtitle"></app-contact-us>
+      </div>
     </div>
   </div>
-  <app-footer
-    [links]="footerComponent?.footer_links"
-    [disclaimer]="getFooterDisclaimer()"
-  ></app-footer>
-</div>
+  <app-footer [links]="footerComponent?.footer_links" [disclaimer]="getFooterDisclaimer()"></app-footer>

@@ -1,5 +1,9 @@
 @import "./../../../../styles/mixins.scss";
 
+:host {
+  width: 100%;
+}
+
 .video-container {
   position: relative;
   margin: 30px;
@@ -8,6 +12,7 @@
   @include respond-to("mobile-mb") {
     margin: 10px;
   }
+
   iframe {
     position: absolute;
     top: 0;
