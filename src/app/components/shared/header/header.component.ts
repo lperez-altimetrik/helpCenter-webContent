@@ -16,13 +16,9 @@ import { PillBarComponent } from '../pill-bar/pill-bar.component';
 import { TitleComponent } from '../title/title.component';
 import { CenterTabBarComponent } from '../center-tab-bar/center-tab-bar.component';
 import { MatSelect, MatSelectModule } from '@angular/material/select';
-<<<<<<< HEAD
-import { MatMenu, MatMenuModule } from '@angular/material/menu'
-import { DataService } from 'app/services/data.service';
-=======
+import { MatMenu, MatMenuModule } from '@angular/material/menu';
 import { AppState, DataService } from 'app/services/data.service';
 import * as _ from 'lodash';
->>>>>>> b125f6909121f1c5edcd3d49c9c1d1776aab88cb
 
 @Component({
   selector: 'app-header',

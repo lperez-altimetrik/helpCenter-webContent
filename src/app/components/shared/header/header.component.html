@@ -30,7 +30,6 @@
             <span class="material-symbols-outlined">captive_portal</span>
           </button>
 
-<<<<<<< HEAD
           <!-- Menu with language options -->
           <mat-menu #menu="matMenu">
             <button
@@ -41,16 +40,6 @@
               {{ option }}
             </button>
           </mat-menu>
-=======
-          <mat-form-field appearance="outline" class="full-width">
-            <mat-label>{{selectedLanguage}}</mat-label>
-            <mat-select [(value)]="selectedLanguage" disableOptionCentering>
-              <mat-option *ngFor="let option of languages" [value]="option" (click)="updateLanguage(option)">
-                {{ option }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
->>>>>>> b125f6909121f1c5edcd3d49c9c1d1776aab88cb
         </div>
 
         <div *ngIf="isLoggedIn" class="user-buttons-container">
@@ -79,7 +68,6 @@
             <span class="material-symbols-outlined">captive_portal</span>
           </button>
 
-<<<<<<< HEAD
           <!-- Menu with language options -->
           <mat-menu #menu="matMenu">
             <button
@@ -90,17 +78,6 @@
               {{ option }}
             </button>
           </mat-menu>
-=======
-          <mat-form-field appearance="outline" class="full-width">
-            <mat-label>{{selectedLanguage}}</mat-label>
-            <mat-select [(value)]="selectedLanguage" disableOptionCentering>
-              <mat-option *ngFor="let option of languages" [value]="option" (click)="updateLanguage(option)">
-                {{ option }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-
->>>>>>> b125f6909121f1c5edcd3d49c9c1d1776aab88cb
         </div>
       </div>
     </nav>
@@ -111,16 +88,11 @@
       {{ title }}
     </h1>
 
-<<<<<<< HEAD
     <app-center-tab-bar
       class="tab-container"
       [tabs]="tabs"
       (tabChanged)="setCategoryGroup($event)"
     ></app-center-tab-bar>
-=======
-    <app-center-tab-bar class="tab-container" [tabs]="tabs" (tabChanged)="setCategoryGroup($event)"
-      [initialTabIndex]="initialTabIndex"></app-center-tab-bar>
->>>>>>> b125f6909121f1c5edcd3d49c9c1d1776aab88cb
 
     <div class="search-container">
       <app-search-bar
