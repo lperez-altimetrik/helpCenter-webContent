@@ -37,8 +37,8 @@
 }
 
 .contact-us-wrapper {
-    margin-left: var(--spacing-10);
-    margin-right: var(--spacing-10);
+    margin-left: var(--spacing-6);
+    margin-right: var(--spacing-6);
 
     @include respond-to("mobile-mb") {
         margin-left: 0px;
@@ -83,6 +83,7 @@
         &-mobile {
             display: block;
             width: 100%;
+
             @include respond-to("medium") {
                 display: none;
             }

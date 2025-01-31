@@ -1,15 +1,18 @@
 <mat-card>
   <mat-card-content (click)="navigateToArticle()">
-    <div class="header">
-      <mat-icon class="icon-bg"> attach_money </mat-icon>
-      <h4>
-        {{ title | titlecase }}
-      </h4>
-    </div>
-    <div class="content">
-      <p>
-        {{ body }}
-      </p>
+    <mat-icon class="icon-mb"> attach_money </mat-icon>
+    <div class="card-content">
+      <div class="header">
+        <mat-icon class="icon-bg"> attach_money </mat-icon>
+        <h4>
+          {{ title | titlecase }}
+        </h4>
+      </div>
+      <div class="content">
+        <p>
+          {{ body }}
+        </p>
+      </div>
     </div>
   </mat-card-content>
 </mat-card>

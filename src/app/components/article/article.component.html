@@ -1,59 +1,37 @@
-<app-header
-  [chipLabels]="searchPills"
-  [tabs]="categoryGroupsTabs"
-  (tabChanged)="renderTemplate($event)"
-></app-header>
+<app-header [chipLabels]="searchPills" [tabs]="categoryGroupsTabs" (tabChanged)="renderTemplate($event)"></app-header>
 <mat-sidenav-container class="main-container">
-  <!-- Sidebar (Hidden on Mobile, Opens on Click) -->
-  <mat-sidenav
-    #sidenav
-    [mode]="sidenavMode"
-    backdrop="false"
-    class="sidebar"
-    [opened]="sidenavOpen"
-  >
-    <app-sidebar
-      [menuDataSection]="sidebarData"
-      [businessOptions]="businessOptions"
-      [selectedBusiness]="selectedOptionSidebar"
-      [menuSections]="menuSections"
-      (renderTemplate)="renderContent($event)"
-    ></app-sidebar>
-  </mat-sidenav>
-  <mat-sidenav-content>
+    <!-- Sidebar (Hidden on Mobile, Opens on Click) -->
+    <mat-sidenav #sidenav [mode]="sidenavMode" backdrop="false" class="sidebar" [opened]="sidenavOpen">
+        <app-sidebar [menuDataSection]="sidebarData" [businessOptions]="businessOptions"
+            [selectedBusiness]="selectedOptionSidebar" [menuSections]="menuSections"
+            (renderTemplate)="renderContent($event)"></app-sidebar>
+    </mat-sidenav>
     <div class="overflow"></div>
-    <div class="content">
-      <div class="article-container">
-        <div class="article-info-container">
-          <app-breadcrumb
-            [pagesPath]="breadcrumbData?.pagesPath"
-            [currentElement]="breadcrumbData?.currentElement"
-          ></app-breadcrumb>
-          <app-article-index
-            class="article-index-mobile"
-            [articleLinks]="articleIndexSections"
-          ></app-article-index>
-          <div class="content-container">
-            <ng-container #dynamicContainer></ng-container>
-          </div>
-          <app-article-feedback></app-article-feedback>
-          <app-related-articles
-            [relatedLinks]="relatedArticles"
-          ></app-related-articles>
-        </div>
-        <div class="article-index-container">
-          <app-article-index
-            class="article-index"
-            [articleLinks]="articleIndexSections"
-          ></app-article-index>
-        </div>
-      </div>
+    <mat-sidenav-content>
+        <div class="overflow"></div>
+        <div class="content">
+            <div class="article-container">
+                <div class="article-info-container">
+                    <app-breadcrumb [pagesPath]="breadcrumbData?.pagesPath"
+                        [currentElement]="breadcrumbData?.currentElement"></app-breadcrumb>
+                    <app-article-index class="article-index-mobile"
+                        [articleLinks]="articleIndexSections"></app-article-index>
+                    <div class="content-container">
+                        <ng-container #dynamicContainer></ng-container>
+                    </div>
+                    <app-article-feedback></app-article-feedback>
+                    <app-related-articles [relatedLinks]="relatedArticles"></app-related-articles>
+                </div>
+                <div class="article-index-container">
+                    <app-article-index class="article-index" [articleLinks]="articleIndexSections"></app-article-index>
+                </div>
+            </div>
 
-      <div class="contact-us-wrapper">
-        <app-contact-us class="contact-us-container"></app-contact-us>
-      </div>
-    </div>
-  </mat-sidenav-content>
+            <div class="contact-us-wrapper">
+                <app-contact-us class="contact-us-container"></app-contact-us>
+            </div>
+        </div>
+    </mat-sidenav-content>
 </mat-sidenav-container>
 
 <app-footer></app-footer>
