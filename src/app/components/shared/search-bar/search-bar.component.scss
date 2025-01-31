@@ -31,10 +31,9 @@
 
   @include respond-to("mobile-mb") {
     height: 18px;
-    width: 275px;
+    min-width: 290px;
     display: inline-flex;
     height: 32px;
-    min-width: 290px;
     padding: 7px var(--spacing-3, 8px);
     flex-direction: column;
     align-items: flex-start;

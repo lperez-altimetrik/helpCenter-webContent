@@ -1,7 +1,12 @@
 <div class="header-container">
   <header class="collapsed">
     <div class="lhs-container">
-      <button *ngIf="isLoggedIn" mat-icon-button (click)="onMenu()" class="menu-toggle lh-button">
+      <button
+        *ngIf="isLoggedIn"
+        mat-icon-button
+        (click)="onMenu()"
+        class="menu-toggle lh-button"
+      >
         <span class="material-symbols-outlined"> menu </span>
       </button>
       <img [src]="logoPath" alt="Optic Logo" />
@@ -14,11 +19,29 @@
             {{ loginLabel }}
           </button>
           <mat-divider class="divider" [vertical]="true"></mat-divider>
-          <button mat-icon-button color="primary" class="rh-button" (click)="openSelect()"
-            aria-label="Language/Region Button">
-            <span class="material-symbols-outlined"> captive_portal </span>
+
+          <button
+            mat-icon-button
+            color="primary"
+            class="rh-button"
+            [matMenuTriggerFor]="menu"
+            aria-label="Language/Region Button"
+          >
+            <span class="material-symbols-outlined">captive_portal</span>
           </button>
 
+<<<<<<< HEAD
+          <!-- Menu with language options -->
+          <mat-menu #menu="matMenu">
+            <button
+              mat-menu-item
+              *ngFor="let option of languages"
+              (click)="updateLanguage(option)"
+            >
+              {{ option }}
+            </button>
+          </mat-menu>
+=======
           <mat-form-field appearance="outline" class="full-width">
             <mat-label>{{selectedLanguage}}</mat-label>
             <mat-select [(value)]="selectedLanguage" disableOptionCentering>
@@ -27,23 +50,47 @@
               </mat-option>
             </mat-select>
           </mat-form-field>
+>>>>>>> b125f6909121f1c5edcd3d49c9c1d1776aab88cb
         </div>
 
         <div *ngIf="isLoggedIn" class="user-buttons-container">
           <button mat-icon-button (click)="onSearch()" class="rh-button">
             <span class="material-symbols-outlined"> search </span>
           </button>
-          <mat-divider class="divider mobile-divider" [vertical]="true"></mat-divider>
+          <mat-divider
+            class="divider mobile-divider"
+            [vertical]="true"
+          ></mat-divider>
           <button mat-icon-button (click)="onProfile()" class="rh-button">
             <span class="material-symbols-outlined"> person </span>
           </button>
-          <mat-divider class="divider fs-divider" [vertical]="true"></mat-divider>
+          <mat-divider
+            class="divider fs-divider"
+            [vertical]="true"
+          ></mat-divider>
 
-          <button mat-icon-button color="primary" class="rh-button" (click)="openSelect()"
-            aria-label="Language/Region Button">
-            <span class="material-symbols-outlined"> captive_portal </span>
+          <button
+            mat-icon-button
+            color="primary"
+            class="rh-button"
+            [matMenuTriggerFor]="menu"
+            aria-label="Language/Region Button"
+          >
+            <span class="material-symbols-outlined">captive_portal</span>
           </button>
 
+<<<<<<< HEAD
+          <!-- Menu with language options -->
+          <mat-menu #menu="matMenu">
+            <button
+              mat-menu-item
+              *ngFor="let option of languages"
+              (click)="updateLanguage(option)"
+            >
+              {{ option }}
+            </button>
+          </mat-menu>
+=======
           <mat-form-field appearance="outline" class="full-width">
             <mat-label>{{selectedLanguage}}</mat-label>
             <mat-select [(value)]="selectedLanguage" disableOptionCentering>
@@ -53,25 +100,41 @@
             </mat-select>
           </mat-form-field>
 
+>>>>>>> b125f6909121f1c5edcd3d49c9c1d1776aab88cb
         </div>
       </div>
     </nav>
   </header>
 
-  <div class="expanded" *ngIf="!isLoggedIn">
+  <header class="expanded" *ngIf="expanded">
     <h1>
       {{ title }}
     </h1>
 
+<<<<<<< HEAD
+    <app-center-tab-bar
+      class="tab-container"
+      [tabs]="tabs"
+      (tabChanged)="setCategoryGroup($event)"
+    ></app-center-tab-bar>
+=======
     <app-center-tab-bar class="tab-container" [tabs]="tabs" (tabChanged)="setCategoryGroup($event)"
       [initialTabIndex]="initialTabIndex"></app-center-tab-bar>
+>>>>>>> b125f6909121f1c5edcd3d49c9c1d1776aab88cb
 
     <div class="search-container">
-      <app-search-bar [searchString]="_query" [category_group]="category_group"></app-search-bar>
+      <app-search-bar
+        [searchString]="_query"
+        [category_group]="category_group"
+      ></app-search-bar>
     </div>
 
     <div class="pill-bar-container">
-      <app-pill-bar [chipLabels]="chipLabels" (notifyParentEvent)="handlePillEvent($event)"></app-pill-bar>
+      <app-pill-bar
+        [chipLabels]="chipLabels"
+        (notifyParentEvent)="handlePillEvent($event)"
+      ></app-pill-bar>
     </div>
-  </div>
+  </header>
+  <div class="overflow"></div>
 </div>

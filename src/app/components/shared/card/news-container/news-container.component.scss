@@ -6,7 +6,7 @@
     border: 1px solid var(--hc-color-bg-secondary);
 
     @include respond-to("mobile-mb") {
-        max-width: 100%;
+        width: 100%;
     }
 
     &:hover {
@@ -25,9 +25,16 @@
         max-width: 256px;
 
         @include respond-to("mobile-mb") {
+<<<<<<< HEAD
+          display: flex;
+          flex-flow: row;
+          align-items: center;
+          max-width: 100%;
+=======
             display: flex;
             flex-flow: row;
             align-items: center;
+>>>>>>> b125f6909121f1c5edcd3d49c9c1d1776aab88cb
         }
 
         .header {

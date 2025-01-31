@@ -15,6 +15,10 @@
   position: relative;
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.04),
     0px 4px 6px -1px rgba(0, 0, 0, 0.06);
+  
+  @include respond-to("mobile-mb") {
+    padding: var(--spacing-6);
+  }
 
   .nav-button {
     transform: translateY(-50%);
@@ -65,6 +69,7 @@
     .header {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 8px; // Space between the icon and title
 
       .icon {
