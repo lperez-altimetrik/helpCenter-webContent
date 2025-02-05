@@ -5,6 +5,7 @@ import { LinkComponent } from '../link/link.component';
 export interface IAccordionData {
   title: string;
   text: string;
+  url: string;
 }
 
 @Component({
@@ -25,6 +26,7 @@ export class AccordionComponent {
           Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque
           nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare
           tempor nisl.`,
+      url: "#"
     },
     {
       title: 'Accordion Section Title',
@@ -34,6 +36,7 @@ export class AccordionComponent {
           Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque
           nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare
           tempor nisl.`,
+      url: "#"
     },
     {
       title: 'Accordion Section Title',
@@ -43,6 +46,7 @@ export class AccordionComponent {
           Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque
           nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare
           tempor nisl.`,
+      url: "#"
     },
     {
       title: 'Accordion Section Title',
@@ -52,6 +56,7 @@ export class AccordionComponent {
           Integer tincidunt tempus dapibus purus. Lectus in in eu justo quisque
           nunc fusce mauris et. Id cras cursus porttitor lacus erat ornare
           tempor nisl.`,
+      url: "#"
     },
   ];
 }

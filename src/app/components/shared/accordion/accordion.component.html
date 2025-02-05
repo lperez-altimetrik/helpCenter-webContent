@@ -6,7 +6,7 @@
     <div class="content">
       @for(context of accordionData; track context.title){
       <div>
-        <app-link [label]='context.title'> </app-link>
+        <app-link [label]='context.title' [url]="context.url"> </app-link>
         <p class="accordion-paragraph">
           {{context.text}}
         </p>

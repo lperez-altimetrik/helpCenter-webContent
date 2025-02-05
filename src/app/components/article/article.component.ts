@@ -300,6 +300,7 @@ export class ArticleComponent {
           if (item.text == null) return { title: null, text: null };
           return {
             title: item.title,
+            url: item.url,
             text: item.text.map((currentItem: any) => { return currentItem.children[0].text }).join(" ")
           }
         })
